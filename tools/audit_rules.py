@@ -1,4 +1,6 @@
 import argparse
+import json
+from pathlib import Path
 import re
 import sys
 from lib import load_problem_files
@@ -68,6 +70,46 @@ def iter_definition_ids(problem):
             yield from as_list(item.get("definition_ids"))
 
 
+def split_cli_values(values):
+    out = []
+    for value in values or []:
+        out.extend(part.strip() for part in str(value).split(",") if part.strip())
+    return out
+
+
+def validate_viewer_smoke_report(path, required_labels):
+    errors = []
+    report_path = Path(path)
+    if not report_path.exists():
+        return [f"viewer browser smoke report is missing: {report_path}"]
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return [f"viewer browser smoke report is not valid JSON: {report_path}: {exc}"]
+    pages = report.get("pages")
+    if not isinstance(pages, list) or not pages:
+        return [f"viewer browser smoke report has no pages: {report_path}"]
+    by_label = {str(page.get("label", "")): page for page in pages if isinstance(page, dict)}
+    for label in required_labels:
+        if label not in by_label:
+            errors.append(f"viewer browser smoke report missing required page: {label}")
+    for page in pages:
+        if not isinstance(page, dict):
+            errors.append("viewer browser smoke report contains a non-object page entry")
+            continue
+        label = page.get("label") or page.get("url") or "unnamed page"
+        url = page.get("url")
+        if not url:
+            errors.append(f"{label}: viewer browser smoke page has no url")
+        hits = page.get("hits") or []
+        if hits:
+            sample = ", ".join(str((hit or {}).get("hit", hit)) for hit in hits[:5])
+            errors.append(f"{label}: browser-visible raw TeX/ASCII math remains: {sample}")
+        if page.get("expected_formula") and not ((page.get("katex") or 0) + (page.get("fallback") or 0)):
+            errors.append(f"{label}: expected rendered formulas, but no KaTeX/fallback nodes were found")
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-items", type=int, default=20)
@@ -76,9 +118,29 @@ def main():
         action="store_true",
         help="Report possible TeX/ASCII math fragments in visible fields. Noisy until the legacy corpus is cleaned.",
     )
+    parser.add_argument(
+        "--ids",
+        action="append",
+        default=[],
+        help="Limit checks to selected card/problem ids. May be repeated or comma-separated.",
+    )
+    parser.add_argument(
+        "--viewer-smoke-report",
+        help="Validate a browser-rendered viewer smoke JSON report. Intended for targeted visible-card checks.",
+    )
+    parser.add_argument(
+        "--viewer-smoke-require",
+        action="append",
+        default=[],
+        help="Require a page label in --viewer-smoke-report. May be repeated or comma-separated.",
+    )
     args = parser.parse_args()
     warnings = []
+    errors = []
+    selected_ids = set(split_cli_values(args.ids))
     for path, p in load_problem_files():
+        if selected_ids and p.get("id") not in selected_ids:
+            continue
         tags = set(p.get("tags", []))
         kind = p.get("kind", {})
         secondary = set(as_list(kind.get("secondary")))
@@ -134,12 +196,25 @@ def main():
                     warnings.append(f"{p.get('id')}#{sol.get('id')}: contains weak proof word {weak}")
         if p.get("kind", {}).get("primary") in {"theorem", "lemma"} and not p.get("solutions"):
             warnings.append(f"{p.get('id')}: theorem/lemma has no proof")
+    if selected_ids:
+        seen_ids = {p.get("id") for _, p in load_problem_files()}
+        for missing in sorted(selected_ids - seen_ids):
+            warnings.append(f"{missing}: selected id not found")
+    if args.viewer_smoke_report:
+        errors.extend(
+            validate_viewer_smoke_report(
+                args.viewer_smoke_report,
+                split_cli_values(args.viewer_smoke_require),
+            )
+        )
+    for e in errors:
+        print("ERROR:", e)
     for w in warnings[:args.max_items]:
         print("WARN:", w)
     if len(warnings) > args.max_items:
         print(f"... {len(warnings) - args.max_items} more warnings")
     print(f"OK: audit finished with {len(warnings)} warnings.")
-    return 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

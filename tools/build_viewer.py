@@ -1,4 +1,5 @@
 import json
+from html import escape as html_escape
 
 from build_index import COURSE_TAGS, build_data
 from lib import ROOT
@@ -6,6 +7,10 @@ from lib import ROOT
 
 def safe_json(data):
     return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def esc_html(value):
+    return html_escape(str(value or ""), quote=True)
 
 
 def card_kind(card):
@@ -38,6 +43,22 @@ def build_home_html(data):
     cluster_card_count = sum(1 for card in cards if is_cluster_card(card))
     public_ready_count = sum(1 for card in cards if card.get("public_ready"))
     tag_count = len({tag for card in cards for tag in (card.get("tags") or [])})
+    cluster_task_counts = {
+        cluster.get("id"): sum(
+            1
+            for card in cards
+            if card_kind(card) == "problem" and cluster.get("id") in (card.get("cluster_ids") or [])
+        )
+        for cluster in clusters
+    }
+    cluster_links_html = "\n".join(
+        f"""
+        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster={esc_html(cluster.get('id'))}">
+          <strong>{esc_html(cluster.get('title') or cluster.get('title_ru') or cluster.get('id'))}</strong>
+          <span>{cluster_task_counts.get(cluster.get('id'), 0)} задач</span>
+        </a>"""
+        for cluster in sorted(clusters, key=lambda item: str(item.get("title") or item.get("id")))
+    )
     hrefs = {
         "cards": "viewer/index.html?nav=cards",
         "clusters": "viewer/index.html?nav=clusters",
@@ -368,6 +389,41 @@ def build_home_html(data):
       text-decoration: none;
     }}
 
+    .cluster-links {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 8px;
+    }}
+
+    .cluster-link {{
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px 11px;
+      text-decoration: none;
+      min-height: 56px;
+    }}
+
+    .cluster-link:hover {{
+      border-color: #9acfc4;
+      background: var(--soft);
+    }}
+
+    .cluster-link strong {{
+      font-size: 14px;
+      line-height: 1.25;
+    }}
+
+    .cluster-link span {{
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }}
+
     @media (max-width: 900px) {{
       .layout {{ grid-template-columns: 1fr; }}
       .entry-grid {{ grid-template-columns: 1fr 1fr; }}
@@ -464,6 +520,16 @@ def build_home_html(data):
           <span>Уровни, теги, курс и готовность к публикации.</span>
           <em>{tag_count} меток</em>
         </a>{optional_entries_html}
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>Все кластеры</h2>
+        <a href="{hrefs['clusters']}">Открыть каталог</a>
+      </div>
+      <div class="cluster-links" aria-label="Главные страницы кластеров">
+        {cluster_links_html}
       </div>
     </section>
 
@@ -846,6 +912,12 @@ def build_html(data):
       gap: 7px;
     }
 
+    .cluster-task-wrap {
+      display: grid;
+      gap: 4px;
+      align-content: start;
+    }
+
     .cluster-task-list.prominent {
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
@@ -877,6 +949,17 @@ def build_html(data):
       margin-top: 4px;
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .cluster-back-link {
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .cluster-back-link:hover {
+      text-decoration: underline;
     }
 
     .task-link {
@@ -1688,8 +1771,52 @@ def build_html(data):
         .replace(/-∞/g, '-∞');
     }
 
+    function autoDelimitPlainMath(text) {
+      const value = String(text ?? '');
+      if (/\\\\\\(|\\\\\\[|\\$/.test(value)) return value;
+      const patterns = [
+        /(?:d\\/dt\\s*)?(?:det\\()?\\w*\\(?e\\^\\{[^{}]{1,50}\\}\\)?[\\w()^{}+\\-*/ ]*(?:=\\s*[\\w()^{}+\\-*/ ]*e\\^\\{[^{}]{1,50}\\}[\\w()^{}+\\-*/ ]*)+/g,
+        /\\b[A-Za-z][A-Za-z0-9]*'{1,2}\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,36}/g,
+        /\\b[A-Za-z][A-Za-z0-9]*\\([^)]{1,24}\\)\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,36}/g,
+        /\\b[A-Za-z]_\\{[^{}]{1,40}\\}\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,50}/g,
+        /\\b(?:int|sum|prod)_[A-Za-z0-9{}()'\\\\^+\\-]+(?:\\^[A-Za-z0-9{}()'\\\\^+\\-]+)?/g,
+        /\\b[A-Za-z][A-Za-z0-9]*_\\{[^{}]{1,40}\\}(?:\\^[A-Za-z0-9{}()+\\-]+)?/g,
+        /\\b(?:e|E)\\^\\{[^{}]{1,50}\\}/g,
+        /\\b[A-Za-z][A-Za-z0-9]*\\^\\{[^{}]{1,40}\\}/g,
+        /\\b(?:C\\^1|R\\^n|M\\^n|t\\^k)\\b/g,
+        /\\b[A-Za-z]\\^[A-Za-z0-9{}()+\\-]+/g
+      ];
+      const ranges = [];
+      for (const pattern of patterns) {
+        for (const match of value.matchAll(pattern)) {
+          const raw = match[0];
+          const trimmedStart = raw.search(/\\S/);
+          const trimmedEnd = raw.search(/\\s*$/);
+          const start = match.index + Math.max(trimmedStart, 0);
+          const end = match.index + (trimmedEnd >= 0 ? trimmedEnd : raw.length);
+          const candidate = value.slice(start, end);
+          if (candidate.length < 2 || /[А-Яа-яЁё]/.test(candidate)) continue;
+          if (!/[=_^']|\\b(?:int|sum|prod)\\b/.test(candidate)) continue;
+          if (ranges.some(range => start < range.end && end > range.start)) continue;
+          ranges.push({ start, end });
+          if (ranges.length >= 80) break;
+        }
+        if (ranges.length >= 80) break;
+      }
+      ranges.sort((a, b) => a.start - b.start || b.end - a.end);
+      let out = '';
+      let pos = 0;
+      for (const range of ranges) {
+        if (range.start < pos) continue;
+        out += value.slice(pos, range.start);
+        out += `\\\\(${value.slice(range.start, range.end)}\\\\)`;
+        pos = range.end;
+      }
+      return out + value.slice(pos);
+    }
+
     function renderMathText(text) {
-      return prettifyPlainMath(esc(text || ''));
+      return prettifyPlainMath(esc(autoDelimitPlainMath(text || '')));
     }
 
     function fallbackFormulaText(text) {
@@ -2975,11 +3102,18 @@ def build_html(data):
     }
 
     function renderClusterTask(card) {
+      const clusterId = (card.cluster_ids || []).find(id => selectionHas('cluster', id)) || (card.cluster_ids || [])[0] || '';
+      const clusterLink = clusterId ? `
+        <a class="cluster-back-link" href="${esc(clusterRouteHref(clusterId))}">К странице кластера</a>
+      ` : '';
       return `
-        <button class="cluster-task" type="button" data-open-card="${esc(card.id)}" title="${esc(`Открыть карточку ${card.id}`)}">
-          <span class="cluster-task-title tex-content">${renderMathText(card.title)}</span>
-          <span class="cluster-task-meta">${esc(card.id)} · идея ${esc(card.idea_score ?? '-')} · техника ${esc(card.technical_score ?? '-')} · ${esc(labelFor('difficultyMain', card.difficulty_main))}</span>
-        </button>
+        <div class="cluster-task-wrap">
+          <button class="cluster-task" type="button" data-open-card="${esc(card.id)}" title="${esc(`Открыть карточку ${card.id}`)}">
+            <span class="cluster-task-title tex-content">${renderMathText(card.title)}</span>
+            <span class="cluster-task-meta">${esc(card.id)} · идея ${esc(card.idea_score ?? '-')} · техника ${esc(card.technical_score ?? '-')} · ${esc(labelFor('difficultyMain', card.difficulty_main))}</span>
+          </button>
+          ${clusterLink}
+        </div>
       `;
     }
 
@@ -3005,10 +3139,13 @@ def build_html(data):
       if (!guides.length) return '';
       return `
         <div class="cluster-guide-strip">
-          <h3>Методические блоки</h3>
+          <h3>Теоретический блок</h3>
           ${guides.map(card => `
             <details>
               <summary class="tex-content">${renderMathText(card.title)}</summary>
+              <div class="quick-actions">
+                ${(card.cluster_ids || []).map(id => `<a class="cluster-back-link" href="${esc(clusterRouteHref(id))}">К странице кластера: ${esc(labelFor('cluster', id))}</a>`).join('')}
+              </div>
               <div class="block tex-content">${renderMathText(card.statement || '')}</div>
               ${renderMethodGuideRoute(card)}
             </details>
@@ -3017,16 +3154,46 @@ def build_html(data):
       `;
     }
 
+    function clusterSearchText(cluster) {
+      return normalize([
+        cluster.id,
+        cluster.title,
+        cluster.title_ru,
+        cluster.goal,
+        ...(cluster.duplicate_signals || []),
+        ...(cluster.canonical_solution_plan || []),
+        ...(cluster.allowed_variants || []).map(item => `${item.id || ''} ${item.description || ''} ${item.use_when || ''}`)
+      ].join(' '));
+    }
+
+    function clusterMatchesQuery(cluster) {
+      const query = normalize(state.q).trim();
+      if (!query) return true;
+      const haystack = clusterSearchText(cluster);
+      return query.split(/\\s+/).filter(Boolean).every(token => haystack.includes(token));
+    }
+
     function renderClusterFocus(items) {
       const selectedClusters = selectedValues('cluster');
       const selectedTitles = selectedClusters.map(id => labelFor('cluster', id));
       const tasks = items.filter(isClusterTask).sort(routeSort);
-      const heading = selectedTitles.length ? selectedTitles.join(' + ') : 'Задачи в текущей кластерной выборке';
+      const heading = selectedTitles.length ? selectedTitles.join(' + ') : 'Поиск и выбор кластера';
+      const taskBlock = selectedClusters.length ? `
+          ${renderClusterGuides(items)}
+          <div>
+            <h3>Список задач</h3>
+            <div class="cluster-task-list prominent">
+              ${tasks.length ? tasks.slice(0, 48).map(renderClusterTask).join('') : '<div class="empty">В выбранных кластерах задач не найдено. Ослабьте фильтры выше.</div>'}
+            </div>
+          </div>
+      ` : `
+          <div class="empty">Выберите кластер из каталога ниже. До выбора кластера задачи и методические карточки не выводятся общим списком.</div>
+      `;
       return `
         <div class="cluster-focus" id="clusters-directory">
           <div>
             <h3>${esc(heading)}</h3>
-            <p class="home-note">Фильтры по кластерам, идеям, сложности и источникам можно выбирать по несколько сразу; внутри каждого фильтра работает «или», между фильтрами - «и».</p>
+            <p class="home-note">В режиме кластеров строка поиска ищет кластеры по названию и описанию. Задачи показываются только после открытия конкретного кластера; методические блоки отделены от списка задач.</p>
           </div>
           <div class="cluster-filter-grid">
             ${renderClusterFilterBlock('cluster', 'Темы / кластеры', 12)}
@@ -3034,13 +3201,7 @@ def build_html(data):
             ${renderClusterFilterBlock('difficultyMain', 'Сложности', 8)}
             ${renderClusterFilterBlock('source', 'Источники', 12)}
           </div>
-          <div>
-            <h3>Список задач</h3>
-            <div class="cluster-task-list prominent">
-              ${tasks.length ? tasks.slice(0, 48).map(renderClusterTask).join('') : '<div class="empty">В выбранных кластерах задач не найдено. Ослабьте фильтры выше.</div>'}
-            </div>
-          </div>
-          ${renderClusterGuides(items)}
+          ${taskBlock}
         </div>
       `;
     }
@@ -3072,6 +3233,7 @@ def build_html(data):
     function renderClusterDirectory(items) {
       const clusters = (DB.task_clusters || [])
         .map(cluster => ({ cluster, count: clusterTaskCards(cluster.id).length }))
+        .filter(item => clusterMatchesQuery(item.cluster))
         .filter(item => item.count > 0 || selectionHas('cluster', item.cluster.id))
         .sort((a, b) => b.count - a.count || labelFor('cluster', a.cluster.id).localeCompare(labelFor('cluster', b.cluster.id), 'ru', { numeric: true }));
       return `
@@ -3157,6 +3319,48 @@ def build_html(data):
       `;
     }
 
+    function hasActiveSearchContext() {
+      if (state.q.trim()) return true;
+      if (state.studyMode !== 'all') return true;
+      if (state.excludeOlympiad !== 'all') return true;
+      return filterKeys.some(key => key !== 'studyMode' && key !== 'excludeOlympiad' && selectedValues(key).length);
+    }
+
+    function renderViewerLanding() {
+      const landingClusters = (DB.task_clusters || [])
+        .map(cluster => ({ cluster, count: clusterTaskCards(cluster.id, { studyMode: 'clusters' }).length }))
+        .filter(item => item.count > 0)
+        .sort((a, b) => b.count - a.count || labelFor('cluster', a.cluster.id).localeCompare(labelFor('cluster', b.cluster.id), 'ru', { numeric: true }))
+      byId('results').innerHTML = `
+        <section class="home-directory" aria-label="Навигация по базе">
+          <div class="home-directory-grid">
+            <div>
+              <h3>Начать с маршрута</h3>
+              <div class="quick-actions">
+                <button class="quick-button" type="button" data-quick-mode="clusters">Кластеры <span class="chip-count">${(DB.task_clusters || []).length}</span></button>
+                <button class="quick-button" type="button" data-quick-mode="exam_simulation">Симуляция экзамена</button>
+                <button class="quick-button" type="button" data-quick-mode="written_minimum">Письменный минимум</button>
+                <button class="quick-button" type="button" data-quick-mode="exam_middle">Средний экзамен</button>
+                <button class="quick-button" type="button" data-quick-mode="theory">Теория</button>
+                <button class="quick-button" type="button" data-quick-mode="definitions">Определения</button>
+              </div>
+            </div>
+            <div>
+              <h3>Все кластеры</h3>
+              <div class="chip-row">
+                ${landingClusters.map(item => `
+                  <button class="chip" type="button" data-open-cluster="${esc(item.cluster.id)}">
+                    <span>${esc(labelFor('cluster', item.cluster.id))}</span><span class="chip-count">${item.count}</span>
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+          <p class="home-note">Карточки задач появляются после выбора маршрута, кластера, фильтра или поискового запроса. Стартовая страница не является выдачей всех задач.</p>
+        </section>
+      `;
+    }
+
     function renderExamStatus() {
       const estimate = examEstimate();
       const answered = examState.history.length;
@@ -3198,16 +3402,8 @@ def build_html(data):
           <button class="button primary" type="button" data-exam-submit="input">Ответить</button>
         `;
       }
-      const criteria = (interaction.criteria || []).length ? `
-        <details>
-          <summary>Критерии самопроверки</summary>
-          <ul>
-            ${interaction.criteria.map(item => `<li>${renderMathText(item)}</li>`).join('')}
-          </ul>
-        </details>
-      ` : '';
       return `
-        ${criteria}
+        <div class="muted compact">Подсказки и критерии скрыты в режиме симуляции. Оцените ответ честно; после завершения можно открыть исходную карточку из обычного viewer.</div>
         <div class="quick-actions">
           <button class="button primary" type="button" data-exam-self="correct">Получилось без подсказки</button>
           <button class="button" type="button" data-exam-self="wrong">Не получилось / нужна подсказка</button>
@@ -3235,8 +3431,6 @@ def build_html(data):
             <button class="button primary" type="button" data-exam-next>${examState.finished || shouldFinishExam() ? 'Показать итог' : 'Следующий вопрос'}</button>
           </div>
         </div>
-        ${renderReveal('exam-ideas', 'Идеи', renderIdeas(problem), '<div class="empty">Идеи не указаны.</div>')}
-        ${renderReveal('exam-solution', proofLabel, renderSolutions(problem, proofLabel), `<div class="empty">${proofLabel} пока не добавлено.</div>`)}
       ` : `<div class="exam-answer-area">${renderExamAnswerControls(current)}</div>`;
       return `
         <div class="exam-question">
@@ -3323,8 +3517,8 @@ def build_html(data):
       ].join('');
 
       const clusterLinks = (card.cluster_ids || []).map(clusterId => `
-        <a class="chip good" href="${esc(clusterRouteHref(clusterId))}">
-          <span>${esc(labelFor('cluster', clusterId))}</span>
+        <a class="cluster-back-link" href="${esc(clusterRouteHref(clusterId))}">
+          <span>К странице кластера: ${esc(labelFor('cluster', clusterId))}</span>
         </a>
       `).join('');
       const relatedLinks = relatedCardsFor(card).map(item => `
@@ -3382,6 +3576,24 @@ def build_html(data):
       renderSummary(items);
       if (state.studyMode === 'exam_simulation') {
         byId('results').innerHTML = '<div class="empty">Во время симуляции список карточек скрыт, чтобы не подсказывать решение текущего вопроса.</div>';
+        return;
+      }
+      if (state.studyMode === 'clusters') {
+        byId('summary').innerHTML = [
+          renderPill('навигация по кластерам', 'code'),
+          renderPill(countText((DB.task_clusters || []).filter(clusterMatchesQuery).length, 'кластер найден', 'кластера найдено', 'кластеров найдено')),
+          ...selectedValues('cluster').map(id => renderPill(labelFor('cluster', id), 'good'))
+        ].join('');
+        byId('results').innerHTML = '';
+        return;
+      }
+      if (!hasActiveSearchContext()) {
+        byId('summary').innerHTML = [
+          renderPill('главная навигация', 'code'),
+          renderPill(countText(cards.length, 'карточка', 'карточки', 'карточек')),
+          renderPill(countText((DB.task_clusters || []).length, 'кластер', 'кластера', 'кластеров'))
+        ].join('');
+        renderViewerLanding();
         return;
       }
       byId('results').innerHTML = items.length
