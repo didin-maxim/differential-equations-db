@@ -38,6 +38,7 @@
           "fundamental_matrix",
           "gronwall_inequality",
           "lipschitz_condition",
+          "variational_equation",
           "variation_of_constants_system"
         ]
       }

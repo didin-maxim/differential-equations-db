@@ -612,6 +612,7 @@ def build_html(data):
       --warn: #fff4d6;
       --bad: #ffe5e0;
       --good: #e4f5e7;
+      --shadow: 0 8px 24px rgba(32, 37, 34, .12);
     }
 
     * { box-sizing: border-box; }
@@ -637,6 +638,10 @@ def build_html(data):
       min-height: 100vh;
     }
 
+    body.sidebar-collapsed .shell {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     aside {
       position: sticky;
       top: 0;
@@ -645,6 +650,18 @@ def build_html(data):
       background: var(--sidebar);
       border-right: 1px solid var(--line);
       padding: 16px;
+    }
+
+    body.sidebar-collapsed aside {
+      display: none;
+    }
+
+    .sidebar-toggle {
+      position: fixed;
+      z-index: 30;
+      left: 12px;
+      bottom: 12px;
+      box-shadow: var(--shadow);
     }
 
     main {
@@ -684,6 +701,36 @@ def build_html(data):
       display: grid;
       gap: 9px;
       margin-top: 14px;
+    }
+
+    .route-nav {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .route-nav-title {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .route-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .route-nav-grid .button {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
 
     .filters details {
@@ -1576,28 +1623,20 @@ def build_html(data):
     .muted { color: var(--muted); }
     .compact { font-size: 13px; }
 
-    body.single-card-route .shell {
-      display: block;
-      min-height: 100vh;
-    }
-
-    body.single-card-route aside {
-      display: none;
-    }
-
     body.single-card-route main {
-      width: min(1120px, 100%);
-      margin: 0 auto;
+      min-width: 0;
     }
 
     @media (max-width: 860px) {
       .shell { grid-template-columns: 1fr; }
+      body.sidebar-collapsed .shell { grid-template-columns: 1fr; }
       aside {
         position: static;
         height: auto;
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
+      body.sidebar-collapsed aside { display: none; }
       .filter-grid { grid-template-columns: 1fr; }
       .card-head { display: block; }
       .home-stats { grid-template-columns: 1fr 1fr; }
@@ -1626,10 +1665,12 @@ def build_html(data):
   </style>
 </head>
 <body>
+  <button class="button sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="search-sidebar" aria-expanded="true">Скрыть поиск</button>
   <div class="shell">
-    <aside>
+    <aside id="search-sidebar">
       <h1>Дифференциальные уравнения</h1>
       <div class="db-meta" id="db-meta"></div>
+      <nav class="route-nav" id="route-nav" aria-label="Быстрая навигация"></nav>
 
       <div class="filters">
         <label>Поиск
@@ -1645,9 +1686,6 @@ def build_html(data):
           </label>
         </div>
 
-        <label data-filter-field="cluster">Кластер
-          <select id="cluster"></select>
-        </label>
         <label data-filter-field="source">Источник
           <select id="source"></select>
         </label>
@@ -1675,6 +1713,9 @@ def build_html(data):
 
             <label data-filter-field="author">Автор / создатель
               <select id="author"></select>
+            </label>
+            <label data-filter-field="cluster">Кластер
+              <select id="cluster"></select>
             </label>
             <label data-filter-field="standardIdea">Стандартная идея
               <select id="standard-idea"></select>
@@ -1945,6 +1986,7 @@ def build_html(data):
       energy_method: 'энергетический метод',
       green_kernel: 'функция Грина',
       fredholm_alternative: 'альтернатива Фредгольма',
+      solvability_condition: 'условие разрешимости',
       floquet_theory: 'теория Флоке',
       first_order_pde_characteristics: 'характеристики уравнения первого порядка',
       pde_characteristics: 'характеристики',
@@ -2080,6 +2122,7 @@ def build_html(data):
       ];
       const patterns = [
         /(?:[A-Za-z][A-Za-z0-9]*'{1,4}|[A-Za-z][A-Za-z0-9]*\\([^)]{1,24}\\)|[A-Za-z][A-Za-z0-9]*(?:_\\{[^{}]{1,40}\\})?|\\([^)]{1,24}\\)|e\\^\\{[^{}]{1,50}\\})[A-Za-z0-9_{}()[\\]'^+*/.,\\\\ \\-]{0,80}(?:=|<=|>=|<|>|≤|≥)[A-Za-z0-9_{}()[\\]'^+*/.,\\\\ \\-]{1,90}(?=[,.;:) ]|$)/g,
+        /\\b[A-Za-z][A-Za-z0-9]*_[A-Za-z0-9]+(?:\\^[A-Za-z0-9{}()+\\-]+)?/g,
         /\\[[A-Za-z0-9_{}+\\-]+,\\s*[A-Za-z0-9_{}+\\-]+\\]/g,
         /(?:d\\/dt\\s*)?(?:det\\()?\\w*\\(?e\\^\\{[^{}]{1,50}\\}\\)?[\\w()^{}+\\-*/ ]*(?:=\\s*[\\w()^{}+\\-*/ ]*e\\^\\{[^{}]{1,50}\\}[\\w()^{}+\\-*/ ]*)+/g,
         /\\b[A-Za-z][A-Za-z0-9]*'{1,2}\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,36}/g,
@@ -3020,7 +3063,6 @@ def build_html(data):
     }
 
     function renderFacets() {
-      const hideClusterFacet = state.studyMode === 'clusters' && selectedValues('cluster').length;
       byId('facets').innerHTML = [
         renderFacet('kind', 'Типы'),
         renderFacet('scoreRange', 'Уровни по баллам'),
@@ -3028,7 +3070,6 @@ def build_html(data):
         renderFacet('ideaScore', 'Идейная сложность'),
         renderFacet('technicalScore', 'Техническая сложность'),
         renderFacet('difficultyMain', 'Сложность'),
-        hideClusterFacet ? '' : renderFacet('cluster', 'Кластеры', 10),
         renderFacet('definition', 'Определения', 18),
         renderFacet('source', 'Источники', 10),
         renderFacet('standardIdea', 'Стандартные идеи', 10),
@@ -3110,8 +3151,68 @@ def build_html(data):
       return `${window.location.pathname}?${params.toString()}`;
     }
 
+    function homeRouteHref() {
+      return window.location.pathname;
+    }
+
+    function blockIdForCluster(clusterId) {
+      if (!clusterId) return '';
+      const block = taskBlocks.find(item => (item.cluster_ids || []).includes(clusterId));
+      return block?.id || '';
+    }
+
+    function primaryClusterIdForCard(card) {
+      if (!card) return '';
+      if (navigation.fromCluster && (card.cluster_ids || []).includes(navigation.fromCluster)) return navigation.fromCluster;
+      return (card.cluster_ids || [])[0] || '';
+    }
+
+    function primaryBlockIdForCard(card) {
+      if (!card) return '';
+      const clusterBlock = blockIdForCluster(primaryClusterIdForCard(card));
+      return clusterBlock || (card.task_block_ids || [])[0] || '';
+    }
+
     function renderBackButton(label = 'Назад', fallbackHref = searchRouteHref()) {
       return `<button class="button primary" type="button" data-go-back data-fallback-href="${esc(fallbackHref)}">${esc(label)}</button>`;
+    }
+
+    function renderRouteNav() {
+      const selectedClusters = selectedValues('cluster');
+      const card = currentRouteCard();
+      const clusterId = card ? primaryClusterIdForCard(card) : (selectedClusters[0] || '');
+      const blockId = card ? primaryBlockIdForCard(card) : (navigation.blockId || blockIdForCluster(clusterId));
+      const isContextRoute = Boolean(card || selectedClusters.length || navigation.blockId || state.studyMode === 'blocks' || state.studyMode === 'clusters');
+      const links = [`<a class="button primary" href="${esc(homeRouteHref())}">Главная</a>`];
+      if (isContextRoute) {
+        links.push(`<button class="button" type="button" data-go-back data-fallback-href="${esc(searchRouteHref())}">Назад</button>`);
+      } else {
+        links.push(`<a class="button" href="${esc(taskBlockRouteHref())}" data-open-task-block="">Блоки</a>`);
+        links.push(`<a class="button" href="${esc(`${window.location.pathname}?nav=clusters`)}">Кластеры</a>`);
+      }
+      if (blockId && taskBlockById[blockId] && !navigation.blockId) {
+        links.push(`<a class="button" href="${esc(taskBlockRouteHref(blockId))}" data-open-task-block="${esc(blockId)}">Блок</a>`);
+      } else if (state.studyMode === 'blocks' && navigation.blockId) {
+        links.push(`<a class="button" href="${esc(taskBlockRouteHref())}" data-open-task-block="">Блоки</a>`);
+      }
+      if (card && clusterId && clusterById[clusterId]) {
+        links.push(`<a class="button" href="${esc(clusterRouteHref(clusterId))}" data-open-cluster="${esc(clusterId)}">Кластер</a>`);
+      }
+      const routeTitle = card
+        ? 'Карточка'
+        : selectedClusters.length
+          ? 'Кластер'
+          : navigation.blockId
+            ? 'Блок'
+            : state.studyMode === 'blocks'
+              ? 'Блоки'
+              : state.studyMode === 'clusters'
+                ? 'Кластеры'
+                : 'Навигация';
+      byId('route-nav').innerHTML = `
+        <div class="route-nav-title">${esc(routeTitle)}</div>
+        <div class="route-nav-grid">${links.join('')}</div>
+      `;
     }
 
     function goBackOrFallback(fallbackHref) {
@@ -3937,7 +4038,7 @@ def build_html(data):
     }
 
     function renderStudyHome(items) {
-      if (state.studyMode === 'clusters' && selectedValues('cluster').length) {
+      if (state.studyMode === 'blocks' || state.studyMode === 'clusters') {
         byId('study-home').innerHTML = renderStudyDirectory();
         return;
       }
@@ -4289,6 +4390,7 @@ def build_html(data):
         countText(clusterCount, 'кластер', 'кластера', 'кластеров')
       ].join(', ');
       document.body.classList.toggle('single-card-route', Boolean(navigation.cardId));
+      renderRouteNav();
       renderFilters();
       renderActiveFilters();
       renderFacets();
@@ -4327,6 +4429,7 @@ def build_html(data):
       navigation.focus = '';
       navigation.cardId = '';
       navigation.blockId = '';
+      navigation.fromCluster = '';
     }
 
     function activateQuickMode(mode, toggle = false) {
@@ -4477,6 +4580,14 @@ def build_html(data):
     });
 
     document.addEventListener('click', event => {
+      const sidebarToggle = event.target.closest('#sidebar-toggle');
+      if (sidebarToggle) {
+        const collapsed = !document.body.classList.contains('sidebar-collapsed');
+        document.body.classList.toggle('sidebar-collapsed', collapsed);
+        sidebarToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        sidebarToggle.textContent = collapsed ? 'Показать поиск' : 'Скрыть поиск';
+        return;
+      }
       const backButton = event.target.closest('[data-go-back]');
       if (backButton) {
         event.preventDefault();

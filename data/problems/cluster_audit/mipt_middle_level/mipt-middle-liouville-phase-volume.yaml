@@ -25,6 +25,7 @@
         },
         "definition_ids": [
           "linear_system",
+          "variational_equation",
           "stability"
         ]
       }

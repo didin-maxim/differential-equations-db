@@ -22,7 +22,8 @@
         },
         "definition_ids": [
           "initial_value_problem",
-          "maximal_solution"
+          "maximal_solution",
+          "bounded_solution"
         ]
       }
     ]
@@ -81,10 +82,13 @@
     "status": "ai_checked"
   },
   "tags": [
+    "local_du",
+    "written_exam",
     "continuation",
     "global_solution",
     "boundedness",
     "standard_course_methods",
+    "mipt_core",
     "low_technical",
     "exam_score_3"
   ],

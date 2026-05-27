@@ -21,7 +21,8 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "initial_value_problem"
+          "initial_value_problem",
+          "variational_equation"
         ]
       }
     ]

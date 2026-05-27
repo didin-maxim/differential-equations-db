@@ -25,7 +25,9 @@
         },
         "definition_ids": [
           "ordinary_differential_equation",
-          "solution"
+          "solution",
+          "bounded_solution",
+          "periodic_solution"
         ]
       }
     ]

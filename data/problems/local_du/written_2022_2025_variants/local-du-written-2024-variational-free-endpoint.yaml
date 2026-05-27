@@ -87,6 +87,8 @@
     "status": "ai_checked"
   },
   "tags": [
+    "local_du",
+    "written_exam",
     "variational_calculus",
     "euler_lagrange",
     "natural_boundary_conditions",
@@ -95,6 +97,8 @@
     "boundary_value",
     "resonance",
     "standard_course_methods",
+    "advanced_standard_course",
+    "mipt_core",
     "complete_proof"
   ],
   "sources": [

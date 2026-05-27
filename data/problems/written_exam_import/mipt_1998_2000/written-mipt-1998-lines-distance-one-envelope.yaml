@@ -24,7 +24,10 @@
         },
         "definition_ids": [
           "ordinary_differential_equation",
-          "solution"
+          "solution",
+          "integral_curve",
+          "singular_solution",
+          "discriminant_curve"
         ]
       }
     ]
@@ -102,6 +105,7 @@
     "implicit_ode_discriminant",
     "clairaut",
     "standard_course_methods",
+    "advanced_standard_course",
     "low_technical",
     "exam_score_8"
   ],

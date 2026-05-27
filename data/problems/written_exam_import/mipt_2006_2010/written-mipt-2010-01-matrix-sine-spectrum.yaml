@@ -21,7 +21,8 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "matrix_exponential"
+          "matrix_exponential",
+          "matrix_eigenvalue"
         ]
       }
     ]

@@ -26,7 +26,8 @@
           "ordinary_differential_equation",
           "solution",
           "wronskian",
-          "linear_independence_solutions"
+          "linear_independence_solutions",
+          "bounded_solution"
         ]
       }
     ]

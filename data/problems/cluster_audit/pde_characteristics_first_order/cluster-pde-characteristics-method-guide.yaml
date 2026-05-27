@@ -31,6 +31,7 @@
         },
         "definition_ids": [
           "pde_characteristic_first_order",
+          "noncharacteristic_curve",
           "cauchy_problem",
           "integral_curve",
           "first_integral",
@@ -74,6 +75,7 @@
       "status": "ai_checked",
       "definition_ids": [
         "pde_characteristic_first_order",
+        "noncharacteristic_curve",
         "cauchy_problem",
         "integral_curve"
       ]
@@ -122,6 +124,7 @@
       ],
       "definition_ids": [
         "pde_characteristic_first_order",
+        "noncharacteristic_curve",
         "cauchy_problem",
         "first_integral"
       ]
@@ -311,7 +314,7 @@
     "relations_status": "cluster-pde-characteristics-method-guide",
     "notes": [
       "Добавлено как теоретико-методический блок кластера, а не как новая вычислительная задача.",
-      "Новые определения не добавлялись: использованы существующие definition_ids pde_characteristic_first_order, cauchy_problem, integral_curve и first_integral; отдельных definitions для нехарактеристической кривой и области продолжения в слое definitions пока нет.",
+      "Аудит определений 2026-05-27: добавлен definition_id noncharacteristic_curve; отдельного definition для области продолжения пока нет, потому что в базовых задачах это обычно описывается словами через покрытие характеристиками.",
       "Блок намеренно ограничен линейными однородными и простыми линейными ЧП первого порядка стандартного курса."
     ]
   }

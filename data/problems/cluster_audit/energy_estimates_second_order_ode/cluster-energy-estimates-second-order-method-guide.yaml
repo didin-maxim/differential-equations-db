@@ -34,6 +34,7 @@
           "autonomous_equation",
           "first_integral",
           "phase_trajectory",
+          "bounded_solution",
           "equilibrium",
           "lyapunov_function",
           "lyapunov_stability",

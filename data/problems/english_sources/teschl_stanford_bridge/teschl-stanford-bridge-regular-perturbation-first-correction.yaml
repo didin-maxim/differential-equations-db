@@ -25,7 +25,8 @@
         },
         "definition_ids": [
           "initial_value_problem",
-          "linear_system"
+          "linear_system",
+          "variational_equation"
         ]
       }
     ]

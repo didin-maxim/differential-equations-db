@@ -23,6 +23,7 @@
         "definition_ids": [
           "cauchy_problem",
           "pde_characteristic_first_order",
+          "noncharacteristic_curve",
           "integral_curve",
           "first_integral"
         ]

@@ -59,8 +59,8 @@
     ],
     "methods": [
       "resonance_condition",
-      "fredholm_alternative",
-      "orthogonality"
+      "orthogonality",
+      "solvability_condition"
     ],
     "objects": [
       "eigenfunction",
@@ -89,7 +89,7 @@
   "tags": [
     "boundary_value",
     "resonance",
-    "fredholm_alternative",
+    "solvability_condition",
     "eigenvalues",
     "sturm_liouville",
     "standard_course_methods",

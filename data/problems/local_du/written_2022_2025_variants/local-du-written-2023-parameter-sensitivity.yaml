@@ -22,7 +22,8 @@
         },
         "definition_ids": [
           "initial_value_problem",
-          "linear_first_order_equation"
+          "linear_first_order_equation",
+          "variational_equation"
         ]
       }
     ]
@@ -82,9 +83,12 @@
     "status": "ai_checked"
   },
   "tags": [
+    "local_du",
+    "written_exam",
     "linear_first_order",
     "parameter_sensitivity_ivp",
     "standard_course_methods",
+    "mipt_core",
     "complete_proof",
     "exam_score_5"
   ],

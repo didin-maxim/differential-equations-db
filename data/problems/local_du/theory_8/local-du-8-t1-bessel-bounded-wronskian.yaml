@@ -26,6 +26,7 @@
         "definition_ids": [
           "ordinary_differential_equation",
           "solution",
+          "bounded_solution",
           "wronskian"
         ]
       }

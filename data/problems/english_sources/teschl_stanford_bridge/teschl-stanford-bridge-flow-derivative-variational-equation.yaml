@@ -26,6 +26,7 @@
         "definition_ids": [
           "initial_value_problem",
           "linear_system",
+          "variational_equation",
           "fundamental_matrix"
         ]
       }

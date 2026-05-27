@@ -36,6 +36,7 @@
           "differential_inequality",
           "barrier_argument",
           "invariant_region",
+          "bounded_solution",
           "finite_time_blowup",
           "gronwall_inequality"
         ]

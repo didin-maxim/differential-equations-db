@@ -167,11 +167,11 @@
     "status": "ai_checked"
   },
   "difficulty": {
-    "main": "course_core",
+    "main": "course_advanced",
     "local_score": 6,
     "idea_score": 7,
     "technical_score": 2,
-    "comment": "Методический блок почти не добавляет вычислений; сложность в том, чтобы не потерять условия при дифференцировании и правильно отделить ОДУ-задачу от настоящей теории интегральных уравнений.",
+    "comment": "Методический блок почти не добавляет вычислений, но язык интегральных уравнений Вольтерра/Фредгольма и Green-операторов выходит за обычную программу МФТИ; оставлен как продвинутый мост к ОДУ-редукциям, не как регулярная экзаменационная задача.",
     "status": "ai_checked"
   },
   "tags": [
@@ -186,18 +186,16 @@
     "green_kernel",
     "fredholm_alternative",
     "cauchy_uniqueness",
-    "standard_course_methods",
-    "theoretical_exam_task",
-    "mipt_core",
+    "beyond_standard_course",
     "low_technical",
     "complete_proof"
   ],
   "sources": [
     {
       "source_id": "src-local-du-8-program-or-exam",
-      "role": "course_baseline",
+      "role": "course_boundary",
       "status": "source_verified",
-      "note": "Локальный курс ДУ задает базовый язык задач Коши, краевых задач, линейных уравнений и интегральных представлений решений."
+      "note": "Локальный курс ДУ задает базовый язык задач Коши, краевых задач и линейных уравнений, но интегральные уравнения Вольтерра/Фредгольма не являются обычным экзаменационным блоком."
     },
     {
       "source_id": "src-coddington-levinson",
@@ -222,7 +220,7 @@
     {
       "source_id": "src-local-du-8-program-or-exam",
       "priority": 1,
-      "comment": "Базовая программа курса ДУ."
+      "comment": "Граница стандартной программы: редукция к ОДУ допустима, но сам язык интегральных уравнений вынесен в продвинутый слой."
     },
     {
       "source_id": "src-coddington-levinson",
@@ -248,6 +246,7 @@
     "relations_status": "cluster-integral-equation-to-ode-method-guide",
     "notes": [
       "Добавлено как теоретико-методический блок кластера integral-equation-to-ode, а не как новая вычислительная задача.",
+      "Аудит определений 2026-05-27: снят статус обычного MIPT-core/theoretical_exam_task; Volterra/Fredholm и Green/Fredholm vocabulary помечены как beyond_standard_course.",
       "Карточка закрывает дифференцирование интегрального уравнения, перенос условий, потерю констант, базовое различие Volterra/Fredholm и границы с чистыми интегральными уравнениями.",
       "Соседние связи вынесены в data/relations/relations.d/cluster-integral-equation-to-ode.yaml."
     ]

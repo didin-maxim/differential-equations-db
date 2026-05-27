@@ -69,6 +69,7 @@
     "oscillation",
     "maximum_principle",
     "fredholm_alternative",
+    "solvability_condition",
     "green_identity",
     "floquet_theory",
     "functional_differential",
