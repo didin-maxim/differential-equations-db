@@ -7,7 +7,7 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f5f4ef;
+      --bg: #f6f4ee;
       --panel: #ffffff;
       --ink: #202522;
       --muted: #65716d;
@@ -15,10 +15,16 @@
       --accent: #176b5f;
       --accent-dark: #0f4039;
       --soft: #e7f3ef;
+      --soft-2: #eef0df;
       --warn: #fff4d6;
     }
 
     * { box-sizing: border-box; }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
 
     body {
       margin: 0;
@@ -30,15 +36,17 @@
 
     a { color: inherit; }
 
+    input, button { font: inherit; }
+
     .page {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 24px clamp(16px, 4vw, 42px) 46px;
+      padding: 24px clamp(16px, 4vw, 42px) 48px;
     }
 
     header {
       border-bottom: 1px solid var(--line);
-      padding: 10px 0 22px;
+      padding: 10px 0 24px;
     }
 
     .topline {
@@ -59,10 +67,16 @@
       font-size: 13px;
     }
 
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: start;
+    }
+
     h1 {
-      max-width: 860px;
       margin: 0;
-      font-size: clamp(31px, 6vw, 56px);
+      font-size: clamp(34px, 6vw, 58px);
       line-height: 1.04;
       letter-spacing: 0;
     }
@@ -74,45 +88,160 @@
       font-size: 18px;
     }
 
-    .actions {
+    .search-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(32, 37, 34, 0.06);
+    }
+
+    .search-panel h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .search-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+    }
+
+    .search-row input {
+      min-width: 0;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 9px 11px;
+    }
+
+    .button, .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button.primary, .action.primary {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #fff;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions, .quick-links {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
       margin-top: 18px;
     }
 
-    .action {
-      display: inline-flex;
-      align-items: center;
-      min-height: 39px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: #fff;
-      color: var(--ink);
-      padding: 8px 11px;
+    .quick-links {
+      margin-top: 12px;
+    }
+
+    .quick-links a {
+      border-bottom: 1px solid rgba(23, 107, 95, 0.45);
+      color: var(--accent-dark);
+      font-size: 13px;
       text-decoration: none;
     }
 
-    .action.primary {
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      color: #fff;
-    }
-
-    .grid {
+    .entry-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .stat, .panel {
+    .entry {
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
+      padding: 16px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .entry:hover {
+      border-color: #9acfc4;
+      box-shadow: 0 10px 24px rgba(32, 37, 34, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .entry.primary {
+      background: var(--soft);
+      border-color: #b9d9d1;
+    }
+
+    .entry.compact {
+      min-height: 145px;
+      background: #fbfaf7;
+    }
+
+    .entry-kicker {
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .entry strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .entry span:not(.entry-kicker) {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .entry em {
+      margin-top: auto;
+      color: #3b4945;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 650;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf7;
       padding: 12px;
     }
 
@@ -122,7 +251,7 @@
       line-height: 1.1;
     }
 
-    .stat span, .panel p {
+    .stat span {
       color: var(--muted);
       font-size: 13px;
     }
@@ -138,22 +267,8 @@
       letter-spacing: 0;
     }
 
-    .panel {
-      padding: 14px;
-    }
-
-    .panel h3 {
-      margin: 0 0 6px;
-      font-size: 16px;
-      line-height: 1.2;
-    }
-
-    .panel p {
-      margin: 0;
-    }
-
     .note {
-      max-width: 900px;
+      max-width: 930px;
       border-left: 4px solid #d5a021;
       border-radius: 0 8px 8px 0;
       background: var(--warn);
@@ -162,59 +277,147 @@
       margin: 0;
     }
 
-    @media (max-width: 760px) {
-      .grid { grid-template-columns: 1fr 1fr; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+    }
+
+    .section-head a {
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .entry-grid { grid-template-columns: 1fr 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
       .lead { font-size: 16px; }
     }
 
     @media (max-width: 480px) {
       .page { padding: 16px 12px 34px; }
-      .grid { grid-template-columns: 1fr; }
+      .entry-grid, .stats, .search-row { grid-template-columns: 1fr; }
       .action { width: 100%; justify-content: center; }
+      .button { width: 100%; }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="topline">
-        <span class="pill">431 карточек</span>
-        <span class="pill">333 задач</span>
-        <span class="pill">34 кластеров</span>
-        <span class="pill">49 источников</span>
-      </div>
-      <h1>База по дифференциальным уравнениям</h1>
-      <p class="lead">Рабочая база для подготовки и преподавания: карточки задач, теория, кластеры близких приёмов, источники и пробная симуляция устного экзамена.</p>
-      <div class="actions" aria-label="Основная навигация">
-        <a class="action primary" href="viewer/index.html?nav=cards">Карточки и поиск</a>
-        <a class="action" href="viewer/index.html?nav=clusters">Кластеры</a>
-        <a class="action" href="viewer/index.html?nav=exam">Симуляция экзамена</a>
-        <a class="action" href="viewer/index.html?nav=theory">Теоретические карточки</a>
-        <a class="action" href="viewer/index.html?nav=definitions">Определения</a>
-        <a class="action" href="viewer/index.html?nav=problems">Задачи</a>
-        <a class="action" href="viewer/index.html?nav=sources">Источники и авторы</a>
-        <a class="action" href="viewer/index.html?nav=difficulty">Сложности и метки</a>
-      </div>
-      <div class="grid" aria-label="Сводка базы">
-        <div class="stat"><strong>431</strong><span>карточек всего</span></div>
-        <div class="stat"><strong>429</strong><span>готово к публикации</span></div>
-        <div class="stat"><strong>98</strong><span>теория и леммы</span></div>
-        <div class="stat"><strong>409</strong><span>карточек в кластерах</span></div>
-        <div class="stat"><strong>966</strong><span>связей</span></div>
-        <div class="stat"><strong>76</strong><span>определений</span></div>
-        <div class="stat"><strong>31</strong><span>стандартных идей</span></div>
-        <div class="stat"><strong>151</strong><span>меток</span></div>
-        <div class="stat"><strong>49</strong><span>источников</span></div>
+      <div class="layout">
+        <div>
+          <div class="topline">
+            <span class="pill">431 карточек</span>
+            <span class="pill">333 задач</span>
+            <span class="pill">34 кластеров</span>
+            <span class="pill">76 определений</span>
+            <span class="pill">49 источников</span>
+          </div>
+          <h1>База по дифференциальным уравнениям</h1>
+          <p class="lead">Навигационная стартовая страница для поиска по базе, перехода к режимам просмотра, кластерам задач, определениям, источникам и симуляции устного экзамена.</p>
+          <div class="actions" aria-label="Основная навигация">
+            <a class="action primary" href="viewer/index.html?nav=cards">Открыть режим просмотра</a>
+            <a class="action" href="viewer/index.html?nav=clusters">Кластеры</a>
+            <a class="action" href="viewer/index.html?nav=exam">Симуляция экзамена</a>
+          </div>
+        </div>
+        <aside class="search-panel" aria-label="Поиск по базе">
+          <h2>Найти в базе</h2>
+          <form class="search-form" action="viewer/index.html" method="get">
+            <input type="hidden" name="nav" value="search">
+            <div class="search-row">
+              <input name="q" type="search" autocomplete="off" placeholder="Например: Риккати, устойчивость, Лаплас">
+              <button class="button primary" type="submit">Искать</button>
+            </div>
+            <p class="hint">Поиск откроется во viewer вместе с фильтрами, сортировкой и карточками результатов.</p>
+          </form>
+          <div class="quick-links" aria-label="Быстрые ссылки поиска">
+            <a href="viewer/index.html?nav=search&q=Риккати">Риккати</a>
+            <a href="viewer/index.html?nav=search&q=устойчивость">устойчивость</a>
+            <a href="viewer/index.html?nav=search&q=Лаплас">Лаплас</a>
+          </div>
+        </aside>
       </div>
     </header>
 
     <section class="band">
-      <h2>Основные входы</h2>
-      <div class="grid">
-        <div class="panel"><h3>Поиск</h3><p>Открывает viewer со строкой поиска и полным списком карточек.</p></div>
-        <div class="panel"><h3>Кластеры</h3><p>Показывает карточки, привязанные к кластерам задач и стандартных ходов.</p></div>
-        <div class="panel"><h3>Экзамен</h3><p>Запускает режим симуляции: список карточек скрыт, пока идёт вопрос.</p></div>
-        <div class="panel"><h3>Срезы базы</h3><p>Теория, задачи, источники, авторы, сложности и теги открываются как реальные фильтры viewer.</p></div>
+      <div class="section-head">
+        <h2>Входы в базу</h2>
+        <a href="viewer/index.html?nav=cards">Все фильтры</a>
+      </div>
+      <div class="entry-grid">
+        <a class="entry primary" href="viewer/index.html?nav=cards">
+          <span class="entry-kicker">Поиск и просмотр</span>
+          <strong>Viewer базы</strong>
+          <span>Полный список с поиском, фильтрами, сортировкой, идеями и решениями.</span>
+          <em>431 карточек</em>
+        </a>
+        <a class="entry" href="viewer/index.html?nav=clusters">
+          <span class="entry-kicker">Методы</span>
+          <strong>Кластеры задач</strong>
+          <span>Группы похожих приемов, маршруты и стандартные идеи.</span>
+          <em>34 кластеров</em>
+        </a>
+        <a class="entry" href="viewer/index.html?nav=exam">
+          <span class="entry-kicker">Тренировка</span>
+          <strong>Симуляция экзамена</strong>
+          <span>Адаптивные вопросы без показа списка карточек во время ответа.</span>
+          <em>режим проверки</em>
+        </a>
+        <a class="entry compact" href="viewer/index.html?nav=problems">
+          <span class="entry-kicker">Практика</span>
+          <strong>Задачи</strong>
+          <span>Фильтр по задачам без теоретических карточек.</span>
+          <em>333 задач</em>
+        </a>
+        <a class="entry compact" href="viewer/index.html?nav=theory">
+          <span class="entry-kicker">Теория</span>
+          <strong>Теоретические карточки</strong>
+          <span>Теоремы, леммы, следствия и определения.</span>
+          <em>98 карточек</em>
+        </a>
+        <a class="entry compact" href="viewer/index.html?nav=difficulty">
+          <span class="entry-kicker">Отбор</span>
+          <strong>Сложности и метки</strong>
+          <span>Уровни, теги, курс и готовность к публикации.</span>
+          <em>151 меток</em>
+        </a>
+        <a class="entry compact" href="viewer/index.html?nav=definitions">
+          <span class="entry-kicker">Справочник</span>
+          <strong>Определения</strong>
+          <span>Термины и связанные с ними карточки.</span>
+          <em>76 определений</em>
+        </a>
+        <a class="entry compact" href="viewer/index.html?nav=sources">
+          <span class="entry-kicker">Библиография</span>
+          <strong>Источники и авторы</strong>
+          <span>Учебники, листки, экзамены и привязки к авторам.</span>
+          <em>49 источников</em>
+        </a>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Сводка</h2>
+      <div class="stats" aria-label="Сводка базы">
+        <div class="stat"><strong>431</strong><span>карточек всего</span></div>
+        <div class="stat"><strong>429</strong><span>готово к публикации</span></div>
+        <div class="stat"><strong>409</strong><span>карточек в кластерах</span></div>
+        <div class="stat"><strong>966</strong><span>связей</span></div>
+        <div class="stat"><strong>76</strong><span>определений</span></div>
+        <div class="stat"><strong>31</strong><span>стандартных идей</span></div>
+        <div class="stat"><strong>49</strong><span>источников</span></div>
+        <div class="stat"><strong>151</strong><span>меток</span></div>
       </div>
     </section>
 

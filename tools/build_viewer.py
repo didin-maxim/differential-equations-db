@@ -48,6 +48,28 @@ def build_home_html(data):
         "sources": "viewer/index.html?nav=sources",
         "difficulty": "viewer/index.html?nav=difficulty",
     }
+    optional_entries = []
+    if definitions:
+        optional_entries.append(
+            f"""
+        <a class="entry compact" href="{hrefs['definitions']}">
+          <span class="entry-kicker">Справочник</span>
+          <strong>Определения</strong>
+          <span>Термины и связанные с ними карточки.</span>
+          <em>{len(definitions)} определений</em>
+        </a>"""
+        )
+    if sources:
+        optional_entries.append(
+            f"""
+        <a class="entry compact" href="{hrefs['sources']}">
+          <span class="entry-kicker">Библиография</span>
+          <strong>Источники и авторы</strong>
+          <span>Учебники, листки, экзамены и привязки к авторам.</span>
+          <em>{len(sources)} источников</em>
+        </a>"""
+        )
+    optional_entries_html = "".join(optional_entries)
     page = f"""<!doctype html>
 <html lang="ru">
 <head>
@@ -57,7 +79,7 @@ def build_home_html(data):
   <style>
     :root {{
       color-scheme: light;
-      --bg: #f5f4ef;
+      --bg: #f6f4ee;
       --panel: #ffffff;
       --ink: #202522;
       --muted: #65716d;
@@ -65,10 +87,16 @@ def build_home_html(data):
       --accent: #176b5f;
       --accent-dark: #0f4039;
       --soft: #e7f3ef;
+      --soft-2: #eef0df;
       --warn: #fff4d6;
     }}
 
     * {{ box-sizing: border-box; }}
+
+    html, body {{
+      max-width: 100%;
+      overflow-x: clip;
+    }}
 
     body {{
       margin: 0;
@@ -80,15 +108,17 @@ def build_home_html(data):
 
     a {{ color: inherit; }}
 
+    input, button {{ font: inherit; }}
+
     .page {{
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 24px clamp(16px, 4vw, 42px) 46px;
+      padding: 24px clamp(16px, 4vw, 42px) 48px;
     }}
 
     header {{
       border-bottom: 1px solid var(--line);
-      padding: 10px 0 22px;
+      padding: 10px 0 24px;
     }}
 
     .topline {{
@@ -109,10 +139,16 @@ def build_home_html(data):
       font-size: 13px;
     }}
 
+    .layout {{
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: start;
+    }}
+
     h1 {{
-      max-width: 860px;
       margin: 0;
-      font-size: clamp(31px, 6vw, 56px);
+      font-size: clamp(34px, 6vw, 58px);
       line-height: 1.04;
       letter-spacing: 0;
     }}
@@ -124,45 +160,160 @@ def build_home_html(data):
       font-size: 18px;
     }}
 
-    .actions {{
+    .search-panel {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(32, 37, 34, 0.06);
+    }}
+
+    .search-panel h2 {{
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }}
+
+    .search-form {{
+      display: grid;
+      gap: 10px;
+    }}
+
+    .search-row {{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+    }}
+
+    .search-row input {{
+      min-width: 0;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 9px 11px;
+    }}
+
+    .button, .action {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }}
+
+    .button.primary, .action.primary {{
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #fff;
+    }}
+
+    .hint {{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }}
+
+    .actions, .quick-links {{
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
       margin-top: 18px;
     }}
 
-    .action {{
-      display: inline-flex;
-      align-items: center;
-      min-height: 39px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: #fff;
-      color: var(--ink);
-      padding: 8px 11px;
+    .quick-links {{
+      margin-top: 12px;
+    }}
+
+    .quick-links a {{
+      border-bottom: 1px solid rgba(23, 107, 95, 0.45);
+      color: var(--accent-dark);
+      font-size: 13px;
       text-decoration: none;
     }}
 
-    .action.primary {{
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      color: #fff;
-    }}
-
-    .grid {{
+    .entry-grid {{
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
     }}
 
-    .stat, .panel {{
+    .entry {{
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
+      padding: 16px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }}
+
+    .entry:hover {{
+      border-color: #9acfc4;
+      box-shadow: 0 10px 24px rgba(32, 37, 34, 0.08);
+      transform: translateY(-1px);
+    }}
+
+    .entry.primary {{
+      background: var(--soft);
+      border-color: #b9d9d1;
+    }}
+
+    .entry.compact {{
+      min-height: 145px;
+      background: #fbfaf7;
+    }}
+
+    .entry-kicker {{
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }}
+
+    .entry strong {{
+      display: block;
+      margin-top: 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }}
+
+    .entry span:not(.entry-kicker) {{
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 14px;
+    }}
+
+    .entry em {{
+      margin-top: auto;
+      color: #3b4945;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 650;
+    }}
+
+    .stats {{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
     }}
 
     .stat {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf7;
       padding: 12px;
     }}
 
@@ -172,7 +323,7 @@ def build_home_html(data):
       line-height: 1.1;
     }}
 
-    .stat span, .panel p {{
+    .stat span {{
       color: var(--muted);
       font-size: 13px;
     }}
@@ -188,22 +339,8 @@ def build_home_html(data):
       letter-spacing: 0;
     }}
 
-    .panel {{
-      padding: 14px;
-    }}
-
-    .panel h3 {{
-      margin: 0 0 6px;
-      font-size: 16px;
-      line-height: 1.2;
-    }}
-
-    .panel p {{
-      margin: 0;
-    }}
-
     .note {{
-      max-width: 900px;
+      max-width: 930px;
       border-left: 4px solid #d5a021;
       border-radius: 0 8px 8px 0;
       background: var(--warn);
@@ -212,59 +349,135 @@ def build_home_html(data):
       margin: 0;
     }}
 
-    @media (max-width: 760px) {{
-      .grid {{ grid-template-columns: 1fr 1fr; }}
+    .section-head {{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }}
+
+    .section-head h2 {{
+      margin: 0;
+    }}
+
+    .section-head a {{
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
+    }}
+
+    @media (max-width: 900px) {{
+      .layout {{ grid-template-columns: 1fr; }}
+      .entry-grid {{ grid-template-columns: 1fr 1fr; }}
+      .stats {{ grid-template-columns: 1fr 1fr; }}
       .lead {{ font-size: 16px; }}
     }}
 
     @media (max-width: 480px) {{
       .page {{ padding: 16px 12px 34px; }}
-      .grid {{ grid-template-columns: 1fr; }}
+      .entry-grid, .stats, .search-row {{ grid-template-columns: 1fr; }}
       .action {{ width: 100%; justify-content: center; }}
+      .button {{ width: 100%; }}
     }}
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="topline">
-        <span class="pill">{len(cards)} карточек</span>
-        <span class="pill">{problem_count} задач</span>
-        <span class="pill">{len(clusters)} кластеров</span>
-        <span class="pill">{len(sources)} источников</span>
-      </div>
-      <h1>База по дифференциальным уравнениям</h1>
-      <p class="lead">Рабочая база для подготовки и преподавания: карточки задач, теория, кластеры близких приёмов, источники и пробная симуляция устного экзамена.</p>
-      <div class="actions" aria-label="Основная навигация">
-        <a class="action primary" href="{hrefs['cards']}">Карточки и поиск</a>
-        <a class="action" href="{hrefs['clusters']}">Кластеры</a>
-        <a class="action" href="{hrefs['exam']}">Симуляция экзамена</a>
-        <a class="action" href="{hrefs['theory']}">Теоретические карточки</a>
-        <a class="action" href="{hrefs['definitions']}">Определения</a>
-        <a class="action" href="{hrefs['problems']}">Задачи</a>
-        <a class="action" href="{hrefs['sources']}">Источники и авторы</a>
-        <a class="action" href="{hrefs['difficulty']}">Сложности и метки</a>
-      </div>
-      <div class="grid" aria-label="Сводка базы">
-        <div class="stat"><strong>{len(cards)}</strong><span>карточек всего</span></div>
-        <div class="stat"><strong>{public_ready_count}</strong><span>готово к публикации</span></div>
-        <div class="stat"><strong>{theory_count}</strong><span>теория и леммы</span></div>
-        <div class="stat"><strong>{cluster_card_count}</strong><span>карточек в кластерах</span></div>
-        <div class="stat"><strong>{len(relations)}</strong><span>связей</span></div>
-        <div class="stat"><strong>{len(definitions)}</strong><span>определений</span></div>
-        <div class="stat"><strong>{len(standard_ideas)}</strong><span>стандартных идей</span></div>
-        <div class="stat"><strong>{tag_count}</strong><span>меток</span></div>
-        <div class="stat"><strong>{len(sources)}</strong><span>источников</span></div>
+      <div class="layout">
+        <div>
+          <div class="topline">
+            <span class="pill">{len(cards)} карточек</span>
+            <span class="pill">{problem_count} задач</span>
+            <span class="pill">{len(clusters)} кластеров</span>
+            {f'<span class="pill">{len(definitions)} определений</span>' if definitions else ''}
+            {f'<span class="pill">{len(sources)} источников</span>' if sources else ''}
+          </div>
+          <h1>База по дифференциальным уравнениям</h1>
+          <p class="lead">Навигационная стартовая страница для поиска по базе, перехода к режимам просмотра, кластерам задач, определениям, источникам и симуляции устного экзамена.</p>
+          <div class="actions" aria-label="Основная навигация">
+            <a class="action primary" href="{hrefs['cards']}">Открыть режим просмотра</a>
+            <a class="action" href="{hrefs['clusters']}">Кластеры</a>
+            <a class="action" href="{hrefs['exam']}">Симуляция экзамена</a>
+          </div>
+        </div>
+        <aside class="search-panel" aria-label="Поиск по базе">
+          <h2>Найти в базе</h2>
+          <form class="search-form" action="viewer/index.html" method="get">
+            <input type="hidden" name="nav" value="search">
+            <div class="search-row">
+              <input name="q" type="search" autocomplete="off" placeholder="Например: Риккати, устойчивость, Лаплас">
+              <button class="button primary" type="submit">Искать</button>
+            </div>
+            <p class="hint">Поиск откроется во viewer вместе с фильтрами, сортировкой и карточками результатов.</p>
+          </form>
+          <div class="quick-links" aria-label="Быстрые ссылки поиска">
+            <a href="viewer/index.html?nav=search&q=Риккати">Риккати</a>
+            <a href="viewer/index.html?nav=search&q=устойчивость">устойчивость</a>
+            <a href="viewer/index.html?nav=search&q=Лаплас">Лаплас</a>
+          </div>
+        </aside>
       </div>
     </header>
 
     <section class="band">
-      <h2>Основные входы</h2>
-      <div class="grid">
-        <div class="panel"><h3>Поиск</h3><p>Открывает viewer со строкой поиска и полным списком карточек.</p></div>
-        <div class="panel"><h3>Кластеры</h3><p>Показывает карточки, привязанные к кластерам задач и стандартных ходов.</p></div>
-        <div class="panel"><h3>Экзамен</h3><p>Запускает режим симуляции: список карточек скрыт, пока идёт вопрос.</p></div>
-        <div class="panel"><h3>Срезы базы</h3><p>Теория, задачи, источники, авторы, сложности и теги открываются как реальные фильтры viewer.</p></div>
+      <div class="section-head">
+        <h2>Входы в базу</h2>
+        <a href="{hrefs['cards']}">Все фильтры</a>
+      </div>
+      <div class="entry-grid">
+        <a class="entry primary" href="{hrefs['cards']}">
+          <span class="entry-kicker">Поиск и просмотр</span>
+          <strong>Viewer базы</strong>
+          <span>Полный список с поиском, фильтрами, сортировкой, идеями и решениями.</span>
+          <em>{len(cards)} карточек</em>
+        </a>
+        <a class="entry" href="{hrefs['clusters']}">
+          <span class="entry-kicker">Методы</span>
+          <strong>Кластеры задач</strong>
+          <span>Группы похожих приемов, маршруты и стандартные идеи.</span>
+          <em>{len(clusters)} кластеров</em>
+        </a>
+        <a class="entry" href="{hrefs['exam']}">
+          <span class="entry-kicker">Тренировка</span>
+          <strong>Симуляция экзамена</strong>
+          <span>Адаптивные вопросы без показа списка карточек во время ответа.</span>
+          <em>режим проверки</em>
+        </a>
+        <a class="entry compact" href="{hrefs['problems']}">
+          <span class="entry-kicker">Практика</span>
+          <strong>Задачи</strong>
+          <span>Фильтр по задачам без теоретических карточек.</span>
+          <em>{problem_count} задач</em>
+        </a>
+        <a class="entry compact" href="{hrefs['theory']}">
+          <span class="entry-kicker">Теория</span>
+          <strong>Теоретические карточки</strong>
+          <span>Теоремы, леммы, следствия и определения.</span>
+          <em>{theory_count} карточек</em>
+        </a>
+        <a class="entry compact" href="{hrefs['difficulty']}">
+          <span class="entry-kicker">Отбор</span>
+          <strong>Сложности и метки</strong>
+          <span>Уровни, теги, курс и готовность к публикации.</span>
+          <em>{tag_count} меток</em>
+        </a>{optional_entries_html}
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Сводка</h2>
+      <div class="stats" aria-label="Сводка базы">
+        <div class="stat"><strong>{len(cards)}</strong><span>карточек всего</span></div>
+        <div class="stat"><strong>{public_ready_count}</strong><span>готово к публикации</span></div>
+        <div class="stat"><strong>{cluster_card_count}</strong><span>карточек в кластерах</span></div>
+        <div class="stat"><strong>{len(relations)}</strong><span>связей</span></div>
+        <div class="stat"><strong>{len(definitions)}</strong><span>определений</span></div>
+        <div class="stat"><strong>{len(standard_ideas)}</strong><span>стандартных идей</span></div>
+        <div class="stat"><strong>{len(sources)}</strong><span>источников</span></div>
+        <div class="stat"><strong>{tag_count}</strong><span>меток</span></div>
       </div>
     </section>
 
@@ -401,6 +614,15 @@ def build_html(data):
       background: #fff;
       color: var(--ink);
       padding: 7px 9px;
+    }
+
+    select[multiple] {
+      min-height: 82px;
+      padding: 4px;
+    }
+
+    select[multiple] option {
+      padding: 3px 5px;
     }
 
     .toolbar {
@@ -590,6 +812,134 @@ def build_html(data):
       max-width: 86ch;
     }
 
+    .cluster-dashboard {
+      border-top: 1px solid var(--line);
+      margin-top: 14px;
+      padding-top: 12px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .cluster-focus {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf7;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .cluster-focus h3,
+    .cluster-directory h3,
+    .cluster-filter-block h3 {
+      margin: 0 0 7px;
+    }
+
+    .cluster-filter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .cluster-task-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .cluster-task-list.prominent {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .cluster-task {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 9px;
+      text-align: left;
+      cursor: pointer;
+      min-height: 58px;
+    }
+
+    .cluster-task:hover {
+      border-color: #9acfc4;
+      background: var(--soft);
+    }
+
+    .cluster-task-title {
+      display: block;
+      font-weight: 650;
+    }
+
+    .cluster-task-meta {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .task-link {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 9px 10px;
+      text-align: left;
+      cursor: pointer;
+      min-height: 58px;
+    }
+
+    .task-link:hover {
+      border-color: #9acfc4;
+      background: var(--soft);
+    }
+
+    .task-link-title {
+      display: block;
+      font-weight: 650;
+    }
+
+    .task-link-meta {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .cluster-directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 8px;
+    }
+
+    .cluster-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .cluster-card-title {
+      font-weight: 700;
+    }
+
+    .cluster-guide-strip {
+      display: grid;
+      gap: 7px;
+    }
+
+    .cluster-guide-strip details,
+    .method-guide-compact details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 10px;
+    }
+
     .home-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(120px, 1fr));
@@ -713,6 +1063,16 @@ def build_html(data):
       overflow-wrap: anywhere;
     }
 
+    .card.clickable-card {
+      cursor: pointer;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .card.clickable-card:hover {
+      border-color: #9acfc4;
+      box-shadow: 0 6px 18px rgba(15, 64, 57, .08);
+    }
+
     .card-head {
       display: flex;
       justify-content: space-between;
@@ -730,6 +1090,58 @@ def build_html(data):
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 8px;
+    }
+
+    .single-card-nav {
+      display: grid;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf7;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .single-card-nav h2 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .single-card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .related-card-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .related-card-link {
+      display: grid;
+      gap: 3px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      padding: 8px 9px;
+      text-decoration: none;
+    }
+
+    .related-card-link:hover {
+      border-color: #9acfc4;
+      background: var(--soft);
+    }
+
+    .related-card-title {
+      font-weight: 650;
+    }
+
+    .related-card-meta {
+      color: var(--muted);
+      font-size: 12px;
     }
 
     .method-route {
@@ -920,6 +1332,20 @@ def build_html(data):
     .muted { color: var(--muted); }
     .compact { font-size: 13px; }
 
+    body.single-card-route .shell {
+      display: block;
+      min-height: 100vh;
+    }
+
+    body.single-card-route aside {
+      display: none;
+    }
+
+    body.single-card-route main {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
     @media (max-width: 860px) {
       .shell { grid-template-columns: 1fr; }
       aside {
@@ -932,6 +1358,7 @@ def build_html(data):
       .card-head { display: block; }
       .home-stats { grid-template-columns: 1fr 1fr; }
       .home-directory-grid { grid-template-columns: 1fr; }
+      .cluster-filter-grid { grid-template-columns: 1fr; }
       .route-columns { grid-template-columns: 1fr; }
       .exam-status { grid-template-columns: 1fr 1fr; }
       .toolbar { display: block; }
@@ -1077,6 +1504,9 @@ def build_html(data):
     }
 
     const state = {
+      view: 'home',
+      activeCluster: '',
+      activeCard: '',
       q: '',
       studyMode: 'all',
       ideaScore: 'all',
@@ -1084,22 +1514,23 @@ def build_html(data):
       scoreRange: 'all',
       excludeOlympiad: 'all',
       assetFilter: 'all',
-      source: 'all',
+      source: [],
       author: 'all',
-      cluster: 'all',
-      standardIdea: 'all',
+      cluster: [],
+      standardIdea: [],
       definition: 'all',
       tag: 'all',
       kind: 'all',
       course: 'all',
       publicReady: 'all',
       reviewStatus: 'all',
-      difficultyMain: 'all',
+      difficultyMain: [],
       sort: 'title'
     };
 
     const navigation = {
-      focus: ''
+      focus: '',
+      cardId: ''
     };
 
     const examOverlay = DB.exam_simulation || {};
@@ -1126,6 +1557,12 @@ def build_html(data):
       'source', 'author', 'cluster', 'standardIdea', 'definition',
       'tag', 'kind', 'course', 'publicReady', 'reviewStatus', 'difficultyMain'
     ];
+
+    const multiFilterKeys = new Set([
+      'ideaScore', 'technicalScore', 'scoreRange', 'assetFilter',
+      'source', 'author', 'cluster', 'standardIdea', 'definition',
+      'tag', 'kind', 'course', 'publicReady', 'reviewStatus', 'difficultyMain'
+    ]);
 
     const selectConfig = {
       studyMode: { label: 'Режим', all: 'Все карточки' },
@@ -1162,6 +1599,10 @@ def build_html(data):
       difficultyMain: { id: 'difficulty-main', label: 'Сложность', all: 'Любая сложность' }
     };
 
+    for (const key of multiFilterKeys) {
+      if (selectConfig[key]) selectConfig[key].multi = true;
+    }
+
     const kindLabels = {
       problem: 'задача',
       theorem: 'теорема',
@@ -1192,6 +1633,7 @@ def build_html(data):
 
     const difficultyLabels = Object.fromEntries((DB.taxonomy?.difficulty || []).map(item => [item.id, item.title || item.id]));
     const fragmentLabels = Object.fromEntries((DB.taxonomy?.fragments || []).map(item => [item.id, item.title || item.id]));
+    const relationTypeLabels = Object.fromEntries((DB.taxonomy?.relation_types || []).map(item => [item.id, item.title || item.id]));
 
     const quickModes = [
       { id: 'problems', label: 'Задачи' },
@@ -1410,6 +1852,94 @@ def build_html(data):
       if (key === 'scoreRange') return scoreRangeValues(card);
       if (key === 'excludeOlympiad') return ['exclude'];
       return [];
+    }
+
+    function isMultiFilter(key) {
+      return multiFilterKeys.has(key);
+    }
+
+    function normalizeSelection(key, value) {
+      if (!isMultiFilter(key)) {
+        const raw = Array.isArray(value) ? value.find(item => item && item !== 'all') : value;
+        return raw && raw !== 'all' ? String(raw) : 'all';
+      }
+      const rawValues = Array.isArray(value) ? value : [value];
+      const values = [];
+      for (const item of rawValues) {
+        const text = String(item ?? '').trim();
+        if (!text || text === 'all' || values.includes(text)) continue;
+        values.push(text);
+      }
+      return values.length ? values : 'all';
+    }
+
+    function selectedValues(key, filters = state) {
+      const value = filters[key];
+      if (Array.isArray(value)) return value.map(String).filter(item => item && item !== 'all');
+      if (value && value !== 'all') return String(value).split('||').map(item => item.trim()).filter(item => item && item !== 'all');
+      return [];
+    }
+
+    function selectionHas(key, value, filters = state) {
+      return selectedValues(key, filters).includes(String(value));
+    }
+
+    function setSelection(key, values) {
+      if (!(key in state)) return;
+      state[key] = normalizeSelection(key, values);
+    }
+
+    function toggleSelection(key, value) {
+      setFilterSelection(key, value, true);
+    }
+
+    function hasSelectedValue(key, value, filters = state) {
+      return selectedValues(key, filters).includes(String(value));
+    }
+
+    function setFilterSelection(key, value, toggle = false) {
+      if (!(key in state)) return;
+      if (!isMultiFilter(key)) {
+        const next = normalizeSelection(key, value);
+        state[key] = toggle && state[key] === next ? 'all' : next;
+        return;
+      }
+      if (!toggle) {
+        state[key] = normalizeSelection(key, value);
+        return;
+      }
+      const values = selectedValues(key);
+      const toggled = Array.isArray(value) ? value : [value];
+      for (const item of toggled) {
+        const text = String(item ?? '').trim();
+        if (!text || text === 'all') continue;
+        const index = values.indexOf(text);
+        if (index >= 0) values.splice(index, 1);
+        else values.push(text);
+      }
+      state[key] = values.length ? values : 'all';
+    }
+
+    function clearFilterSelection(key, value = '') {
+      if (key === 'q') {
+        state.q = '';
+        return;
+      }
+      if (!(key in state)) return;
+      if (!value || !isMultiFilter(key)) {
+        state[key] = 'all';
+        return;
+      }
+      const values = selectedValues(key).filter(item => item !== String(value));
+      state[key] = values.length ? values : 'all';
+    }
+
+    function resetSearchContext() {
+      state.q = '';
+      for (const key of filterKeys) state[key] = 'all';
+      state.sort = 'title';
+      navigation.focus = '';
+      navigation.cardId = '';
     }
 
     function tagsOf(card) {
@@ -1875,10 +2405,11 @@ def build_html(data):
       if (!matchesStudyMode(card, filters.studyMode)) return false;
       if (filters.excludeOlympiad === 'exclude' && isOlympiadLike(card)) return false;
       for (const key of filterKeys) {
-        const selected = filters[key];
-        if (!selected || selected === 'all') continue;
+        const selected = selectedValues(key, filters);
+        if (!selected.length) continue;
         if (key === 'studyMode' || key === 'excludeOlympiad') continue;
-        if (!valuesFor(card, key).map(String).includes(String(selected))) return false;
+        const values = valuesFor(card, key).map(String);
+        if (!selected.some(value => values.includes(String(value)))) return false;
       }
       return true;
     }
@@ -1904,17 +2435,29 @@ def build_html(data):
     function renderSelect(key) {
       const config = selectConfig[key];
       if (!config?.id) return;
-      const selected = state[key];
+      const selected = selectedValues(key);
+      const isMulti = isMultiFilter(key);
       const allCount = matchingCards({ [key]: 'all' }).length;
       const options = uniqueOptions(key)
         .map(value => ({ value, label: labelFor(key, value), count: optionCount(key, value) }))
-        .filter(option => option.count > 0 || option.value === selected);
-      byId(config.id).innerHTML = [
+        .filter(option => option.count > 0 || selected.includes(option.value));
+      const control = byId(config.id);
+      control.multiple = isMulti;
+      if (isMulti) control.size = Math.min(6, Math.max(2, options.length + 1));
+      else control.removeAttribute('size');
+      control.innerHTML = [
         `<option value="all">${esc(config.all)} (${allCount})</option>`,
         ...options.map(option => `<option value="${esc(option.value)}">${esc(option.label)} (${option.count})</option>`)
       ].join('');
-      byId(config.id).value = options.some(option => option.value === selected) ? selected : 'all';
-      if (byId(config.id).value !== selected) state[key] = 'all';
+      const available = new Set(options.map(option => option.value));
+      const validSelected = selected.filter(value => available.has(value));
+      if (isMulti) {
+        for (const option of control.options) option.selected = validSelected.includes(option.value);
+        if (!validSelected.length) control.options[0].selected = true;
+      } else {
+        control.value = validSelected[0] || 'all';
+      }
+      state[key] = normalizeSelection(key, validSelected);
     }
 
     function renderFilters() {
@@ -1927,12 +2470,12 @@ def build_html(data):
       const items = [];
       if (state.q.trim()) items.push({ key: 'q', label: `поиск: ${state.q.trim()}` });
       for (const key of filterKeys) {
-        if (state[key] !== 'all') {
-          items.push({ key, label: `${selectConfig[key].label}: ${labelFor(key, state[key])}` });
+        for (const value of selectedValues(key)) {
+          items.push({ key, value, label: `${selectConfig[key].label}: ${labelFor(key, value)}` });
         }
       }
       byId('active-filters').innerHTML = items.map(item => `
-        <button class="chip active" type="button" data-clear-filter="${esc(item.key)}">${esc(item.label)} ×</button>
+        <button class="chip active" type="button" data-clear-filter="${esc(item.key)}" data-clear-value="${esc(item.value || '')}">${esc(item.label)} ×</button>
       `).join('');
       byId('top-active-filters').innerHTML = byId('active-filters').innerHTML;
     }
@@ -1958,7 +2501,7 @@ def build_html(data):
           <div class="facet-title"><span>${esc(title)}</span><span>${rows.length}</span></div>
           <div class="chip-row">
             ${rows.map(row => `
-              <button class="chip ${state[key] === row.value ? 'active' : ''}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(row.value)}">
+              <button class="chip ${selectionHas(key, row.value) ? 'active' : ''}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(row.value)}">
                 <span>${esc(row.label)}</span><span class="chip-count">${row.count}</span>
               </button>
             `).join('')}
@@ -1995,12 +2538,127 @@ def build_html(data):
 
     function renderFilterChip(key, value, text, cls = '') {
       if (!text || value == null || value === '') return '';
-      const activeClass = state[key] === String(value) ? ' active' : '';
+      const activeClass = selectionHas(key, value) ? ' active' : '';
       return `
-        <button class="chip ${esc(cls)}${activeClass}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(value)}" title="${esc(`Показать карточки: ${text}`)}">
+        <button class="chip ${esc(cls)}${activeClass}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(value)}" data-filter-scope="card" title="${esc(`Показать карточки: ${text}`)}">
           <span>${esc(text)}</span>
         </button>
       `;
+    }
+
+    function renderClusterLink(clusterId, cls = 'good') {
+      const title = labelFor('cluster', clusterId);
+      return `
+        <button class="chip ${esc(cls)}" type="button" data-open-cluster="${esc(clusterId)}" title="${esc(`Открыть кластер: ${title}`)}">
+          <span>${esc(title)}</span>
+        </button>
+      `;
+    }
+
+    function renderCardLink(card, cls = '') {
+      return `
+        <button class="task-link ${esc(cls)}" type="button" data-open-card="${esc(card.id)}">
+          <span class="task-link-title tex-content">${renderMathText(card.title)}</span>
+          <span class="task-link-meta">${esc(kindLabels[card.kind] || card.kind || 'карточка')} · идея ${esc(card.idea_score ?? '-')} · техника ${esc(card.technical_score ?? '-')}</span>
+        </button>
+      `;
+    }
+
+    function currentRouteCard() {
+      return navigation.cardId ? cardsById[navigation.cardId] || null : null;
+    }
+
+    function searchRouteHref() {
+      const params = new URLSearchParams(window.location.search || '');
+      params.delete('card');
+      params.delete('id');
+      if (![...params.keys()].length) params.set('nav', 'cards');
+      return `${window.location.pathname}?${params.toString()}${window.location.hash || ''}`;
+    }
+
+    function cardRouteHref(cardId) {
+      const params = new URLSearchParams();
+      params.set('card', cardId);
+      return `${window.location.pathname}?${params.toString()}`;
+    }
+
+    function clusterRouteHref(clusterId) {
+      const params = new URLSearchParams();
+      params.set('nav', 'clusters');
+      params.set('cluster', clusterId);
+      return `${window.location.pathname}?${params.toString()}`;
+    }
+
+    function linkedCardIdFromHash() {
+      const raw = decodeURIComponent((window.location.hash || '').replace(/^#/, ''));
+      if (!raw) return '';
+      return raw.startsWith('card-') ? raw.slice(5) : raw;
+    }
+
+    function isolateCardContext(cardId) {
+      if (!cardsById[cardId]) return false;
+      clearAllFilters();
+      navigation.cardId = cardId;
+      state.q = cardId;
+      state.sort = 'title';
+      return true;
+    }
+
+    function isolateClusterContext(clusterId) {
+      if (!clusterById[clusterId]) return false;
+      clearAllFilters();
+      activateQuickMode('clusters');
+      setSelection('cluster', [clusterId]);
+      navigation.focus = 'cluster';
+      return true;
+    }
+
+    function relatedCardsFor(card) {
+      const seen = new Set();
+      const related = [];
+      for (const relation of DB.relations || []) {
+        const from = relation.from;
+        const to = relation.to;
+        if (from !== card.id && to !== card.id) continue;
+        const otherId = from === card.id ? to : from;
+        if (seen.has(otherId)) continue;
+        const other = cardsById[otherId];
+        if (!other) continue;
+        seen.add(otherId);
+        const relationText = from === card.id ? relation.forward_text : relation.backward_text;
+        related.push({
+          card: other,
+          type: relationTypeLabels[relation.type] || relation.type || 'связь',
+          text: relationText || ''
+        });
+      }
+      if (related.length) return related.slice(0, 8);
+
+      const clusterIds = new Set(card.cluster_ids || []);
+      if (!clusterIds.size) return [];
+      return cards
+        .filter(item => item.id !== card.id && (item.cluster_ids || []).some(clusterId => clusterIds.has(clusterId)))
+        .sort(routeSort)
+        .slice(0, 8)
+        .map(item => ({ card: item, type: 'тот же кластер', text: '' }));
+    }
+
+    function openCardRoute(cardId) {
+      if (!isolateCardContext(cardId)) return;
+      if (window.history?.pushState) {
+        window.history.pushState(null, '', cardRouteHref(cardId));
+      }
+      render();
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    function openClusterRoute(clusterId) {
+      if (!isolateClusterContext(clusterId)) return;
+      if (window.history?.pushState) {
+        window.history.pushState(null, '', clusterRouteHref(clusterId));
+      }
+      render();
+      scrollToNavigationTarget();
     }
 
     function cardDefinitionLabel(card, id, index) {
@@ -2162,19 +2820,49 @@ def build_html(data):
       `;
     }
 
-    function renderCard(card) {
+    function renderCompactMethodGuideCard(card, options = {}) {
+      const clusterBadges = (card.cluster_ids || []).slice(0, 3).map(id => renderClusterLink(id)).join('');
+      const clickableAttrs = options.single ? '' : ` data-open-card-id="${esc(card.id)}"`;
+      const clickableClass = options.single ? '' : ' clickable-card';
+      return `
+        <article class="card method-guide-compact${clickableClass}" id="card-${esc(card.id)}"${clickableAttrs}>
+          <div class="card-head">
+            <div class="card-title">
+              <h2 class="tex-content">${renderMathText(card.title)}</h2>
+              <div class="meta-row">
+                ${renderPill(card.id, 'code')}
+                ${renderPill('методический блок')}
+                ${clusterBadges}
+              </div>
+            </div>
+          </div>
+          ${renderMethodGuideRoute(card)}
+          <details>
+            <summary>Показать методический текст</summary>
+            <div class="block tex-content">${renderMathText(card.statement || '')}</div>
+          </details>
+        </article>
+      `;
+    }
+
+    function renderCard(card, options = {}) {
+      if (state.studyMode === 'clusters' && isMethodGuideCard(card)) {
+        return renderCompactMethodGuideCard(card, options);
+      }
       const problem = problemsById[card.id] || {};
       const proofLabel = ['theorem', 'lemma', 'corollary', 'definition'].includes(card.kind) ? 'Доказательство' : 'Решение';
       const sourceBadges = (card.source_ids || []).slice(0, 3).map(id => renderFilterChip('source', id, labelFor('source', id))).join('');
-      const clusterBadges = (card.cluster_ids || []).slice(0, 2).map(id => renderFilterChip('cluster', id, labelFor('cluster', id), 'good')).join('');
+      const clusterBadges = (card.cluster_ids || []).slice(0, 2).map(id => renderClusterLink(id)).join('');
       const tagBadges = (card.tags || []).slice(0, 7).map(tag => renderFilterChip('tag', tag, tag)).join('');
       const ideaBadges = (card.standard_idea_ids || []).slice(0, 3).map(id => renderFilterChip('standardIdea', id, labelFor('standardIdea', id))).join('');
       const definitionBadges = (card.definition_ids || []).slice(0, 5).map((id, index) => renderFilterChip('definition', id, cardDefinitionLabel(card, id, index))).join('');
       const ideasHtml = renderIdeas(problem);
       const solutionsHtml = renderSolutions(problem, proofLabel);
       const methodRouteHtml = renderMethodGuideRoute(card);
+      const clickableAttrs = options.single ? '' : ` data-open-card-id="${esc(card.id)}"`;
+      const clickableClass = options.single ? '' : ' clickable-card';
       return `
-        <article class="card" id="card-${esc(card.id)}">
+        <article class="card${clickableClass}" id="card-${esc(card.id)}"${clickableAttrs}>
           <div class="card-head">
             <div class="card-title">
               <h2 class="tex-content">${renderMathText(card.title)}</h2>
@@ -2225,6 +2913,11 @@ def build_html(data):
       return out;
     }
 
+    function clusterSortedResults(items) {
+      const rank = card => isClusterTask(card) ? 0 : isMethodGuideCard(card) ? 2 : 1;
+      return sortedResults(items).sort((a, b) => rank(a) - rank(b) || routeSort(a, b));
+    }
+
     function renderSummary(items) {
       const kindCounts = facetCounts('kind');
       const readyCount = items.filter(card => card.public_ready).length;
@@ -2260,7 +2953,7 @@ def build_html(data):
           <h3>${esc(title)}</h3>
           <div class="chip-row">
             ${rows.map(row => `
-              <button class="chip ${state[key] === row.value ? 'active' : ''}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(row.value)}">
+              <button class="chip ${selectionHas(key, row.value) ? 'active' : ''}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(row.value)}">
                 <span>${esc(row.label)}</span><span class="chip-count">${row.count}</span>
               </button>
             `).join('')}
@@ -2269,7 +2962,133 @@ def build_html(data):
       `;
     }
 
+    function isClusterTask(card) {
+      return card.kind === 'problem' && !isMethodGuideCard(card);
+    }
+
+    function clusterCards(clusterId, overrides = {}) {
+      return sortedResults(matchingCards({ ...overrides, cluster: clusterId }));
+    }
+
+    function clusterTaskCards(clusterId, overrides = {}) {
+      return clusterCards(clusterId, overrides).filter(isClusterTask);
+    }
+
+    function renderClusterTask(card) {
+      return `
+        <button class="cluster-task" type="button" data-open-card="${esc(card.id)}" title="${esc(`Открыть карточку ${card.id}`)}">
+          <span class="cluster-task-title tex-content">${renderMathText(card.title)}</span>
+          <span class="cluster-task-meta">${esc(card.id)} · идея ${esc(card.idea_score ?? '-')} · техника ${esc(card.technical_score ?? '-')} · ${esc(labelFor('difficultyMain', card.difficulty_main))}</span>
+        </button>
+      `;
+    }
+
+    function renderClusterFilterBlock(key, title, limit = 14) {
+      const rows = facetCounts(key).slice(0, limit);
+      if (!rows.length) return '';
+      return `
+        <div class="cluster-filter-block">
+          <h3>${esc(title)}</h3>
+          <div class="chip-row">
+            ${rows.map(row => `
+              <button class="chip ${selectionHas(key, row.value) ? 'active' : ''}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(row.value)}">
+                <span>${esc(row.label)}</span><span class="chip-count">${row.count}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderClusterGuides(items) {
+      const guides = items.filter(isMethodGuideCard);
+      if (!guides.length) return '';
+      return `
+        <div class="cluster-guide-strip">
+          <h3>Методические блоки</h3>
+          ${guides.map(card => `
+            <details>
+              <summary class="tex-content">${renderMathText(card.title)}</summary>
+              <div class="block tex-content">${renderMathText(card.statement || '')}</div>
+              ${renderMethodGuideRoute(card)}
+            </details>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderClusterFocus(items) {
+      const selectedClusters = selectedValues('cluster');
+      const selectedTitles = selectedClusters.map(id => labelFor('cluster', id));
+      const tasks = items.filter(isClusterTask).sort(routeSort);
+      const heading = selectedTitles.length ? selectedTitles.join(' + ') : 'Задачи в текущей кластерной выборке';
+      return `
+        <div class="cluster-focus" id="clusters-directory">
+          <div>
+            <h3>${esc(heading)}</h3>
+            <p class="home-note">Фильтры по кластерам, идеям, сложности и источникам можно выбирать по несколько сразу; внутри каждого фильтра работает «или», между фильтрами - «и».</p>
+          </div>
+          <div class="cluster-filter-grid">
+            ${renderClusterFilterBlock('cluster', 'Темы / кластеры', 12)}
+            ${renderClusterFilterBlock('standardIdea', 'Идеи', 12)}
+            ${renderClusterFilterBlock('difficultyMain', 'Сложности', 8)}
+            ${renderClusterFilterBlock('source', 'Источники', 12)}
+          </div>
+          <div>
+            <h3>Список задач</h3>
+            <div class="cluster-task-list prominent">
+              ${tasks.length ? tasks.slice(0, 48).map(renderClusterTask).join('') : '<div class="empty">В выбранных кластерах задач не найдено. Ослабьте фильтры выше.</div>'}
+            </div>
+          </div>
+          ${renderClusterGuides(items)}
+        </div>
+      `;
+    }
+
+    function renderClusterCard(cluster) {
+      const items = clusterCards(cluster.id);
+      const tasks = items.filter(isClusterTask);
+      const guides = items.filter(isMethodGuideCard);
+      return `
+        <div class="cluster-card">
+          <div>
+            <div class="cluster-card-title">${esc(cluster.title || cluster.title_ru || cluster.id)}</div>
+            <div class="meta-row">
+              ${renderPill(countText(tasks.length, 'задача', 'задачи', 'задач'), 'code')}
+              ${guides.length ? renderPill(`${guides.length} методический блок`) : ''}
+              ${cluster.status ? renderPill(cluster.status) : ''}
+            </div>
+          </div>
+          <div class="cluster-task-list">
+            ${tasks.slice(0, 3).map(renderClusterTask).join('') || '<div class="empty">Пока нет задач в текущей выборке.</div>'}
+          </div>
+          <div class="quick-actions">
+            <button class="button primary" type="button" data-open-cluster="${esc(cluster.id)}">Открыть кластер</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderClusterDirectory(items) {
+      const clusters = (DB.task_clusters || [])
+        .map(cluster => ({ cluster, count: clusterTaskCards(cluster.id).length }))
+        .filter(item => item.count > 0 || selectionHas('cluster', item.cluster.id))
+        .sort((a, b) => b.count - a.count || labelFor('cluster', a.cluster.id).localeCompare(labelFor('cluster', b.cluster.id), 'ru', { numeric: true }));
+      return `
+        <div class="cluster-dashboard">
+          ${renderClusterFocus(items)}
+          <div class="cluster-directory">
+            <h3>Каталог кластеров</h3>
+            <div class="cluster-directory-grid">
+              ${clusters.slice(0, 18).map(item => renderClusterCard(item.cluster)).join('') || '<div class="empty">Кластеры не найдены.</div>'}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     function renderStudyDirectory() {
+      if (state.studyMode === 'clusters') return renderClusterDirectory(matchingCards());
       if (state.studyMode === 'sources_authors') {
         return `
           <div class="home-directory" id="sources-authors-directory">
@@ -2494,8 +3313,70 @@ def build_html(data):
       renderMathIn(panel);
     }
 
+    function renderSingleCardRoute(card) {
+      byId('study-home').innerHTML = '';
+      byId('exam-panel').classList.remove('active');
+      byId('exam-panel').innerHTML = '';
+      byId('summary').innerHTML = [
+        renderPill('отдельная карточка', 'code'),
+        renderPill(card.id, 'code')
+      ].join('');
+
+      const clusterLinks = (card.cluster_ids || []).map(clusterId => `
+        <a class="chip good" href="${esc(clusterRouteHref(clusterId))}">
+          <span>${esc(labelFor('cluster', clusterId))}</span>
+        </a>
+      `).join('');
+      const relatedLinks = relatedCardsFor(card).map(item => `
+        <a class="related-card-link" href="${esc(cardRouteHref(item.card.id))}">
+          <span class="related-card-title tex-content">${renderMathText(item.card.title)}</span>
+          <span class="related-card-meta">${esc(item.type)} · идея ${esc(item.card.idea_score ?? '-')} · техника ${esc(item.card.technical_score ?? '-')}</span>
+          ${item.text ? `<span class="related-card-meta">${renderMathText(item.text)}</span>` : ''}
+        </a>
+      `).join('');
+
+      byId('results').innerHTML = `
+        <section class="single-card-nav" aria-label="Навигация карточки">
+          <div class="single-card-actions">
+            <a class="button primary" href="${esc(searchRouteHref())}">Назад к поиску</a>
+            ${clusterLinks || '<span class="muted compact">Кластеры не указаны.</span>'}
+          </div>
+          <div>
+            <h2>Связанные карточки</h2>
+            <div class="related-card-list">
+              ${relatedLinks || '<div class="empty">Связанные карточки не найдены.</div>'}
+            </div>
+          </div>
+        </section>
+        ${renderCard(card, { single: true })}
+      `;
+      renderMathIn(byId('results'));
+    }
+
+    function renderMissingCardRoute() {
+      byId('study-home').innerHTML = '';
+      byId('exam-panel').classList.remove('active');
+      byId('exam-panel').innerHTML = '';
+      byId('summary').innerHTML = renderPill('карточка не найдена', 'bad');
+      byId('results').innerHTML = `
+        <section class="single-card-nav" aria-label="Навигация карточки">
+          <div class="single-card-actions">
+            <a class="button primary" href="${esc(searchRouteHref())}">Назад к поиску</a>
+          </div>
+          <div class="empty">Карточка ${esc(navigation.cardId)} не найдена в текущем индексе.</div>
+        </section>
+      `;
+    }
+
     function renderResults() {
-      const items = sortedResults(matchingCards());
+      if (navigation.cardId) {
+        const card = currentRouteCard();
+        if (card) renderSingleCardRoute(card);
+        else renderMissingCardRoute();
+        return;
+      }
+      const rawItems = matchingCards();
+      const items = state.studyMode === 'clusters' ? clusterSortedResults(rawItems) : sortedResults(rawItems);
       renderStudyHome(items);
       renderExamPanel();
       renderSummary(items);
@@ -2520,6 +3401,7 @@ def build_html(data):
         countText(relationCount, 'связь', 'связи', 'связей'),
         countText(clusterCount, 'кластер', 'кластера', 'кластеров')
       ].join(', ');
+      document.body.classList.toggle('single-card-route', Boolean(navigation.cardId));
       renderFilters();
       renderActiveFilters();
       renderFacets();
@@ -2541,7 +3423,9 @@ def build_html(data):
             ? 'definitions-directory'
             : state.studyMode === 'exam_simulation'
               ? 'exam-panel'
-              : 'results';
+              : state.studyMode === 'clusters'
+                ? 'clusters-directory'
+                : 'results';
       const target = byId(panelId) || byId('results');
       if (!target) return;
       requestAnimationFrame(() => target.scrollIntoView({ block: 'start', behavior: 'smooth' }));
@@ -2552,6 +3436,7 @@ def build_html(data):
       for (const key of filterKeys) state[key] = 'all';
       state.sort = 'title';
       navigation.focus = '';
+      navigation.cardId = '';
     }
 
     function activateQuickMode(mode, toggle = false) {
@@ -2598,19 +3483,40 @@ def build_html(data):
       } else if (quickModes.some(mode => mode.id === nav)) {
         activateQuickMode(nav);
       }
-      for (const key of ['q', ...filterKeys, 'sort']) {
-        const value = params.get(key);
-        if (value != null && key in state) state[key] = value;
+      const query = params.get('q');
+      if (query != null) state.q = query;
+      for (const key of filterKeys) {
+        const paramKey = key === 'studyMode' ? 'mode' : key;
+        const values = params.getAll(paramKey)
+          .flatMap(value => String(value).split('||'))
+          .flatMap(value => String(value).split(','))
+          .map(value => value.trim())
+          .filter(Boolean);
+        if (!values.length) continue;
+        if (isMultiFilter(key)) state[key] = normalizeSelection(key, values);
+        else state[key] = values[values.length - 1];
+      }
+      const sort = params.get('sort');
+      if (sort) state.sort = sort;
+      const linkedCardId = params.get('card') || params.get('id') || linkedCardIdFromHash();
+      if (linkedCardId && isolateCardContext(linkedCardId) && window.history?.replaceState) {
+        window.history.replaceState(null, '', cardRouteHref(linkedCardId));
       }
     }
 
     function syncQueryParams() {
       if (!window.history?.replaceState) return;
       const params = new URLSearchParams();
+      if (navigation.cardId) params.set('card', navigation.cardId);
       if (state.q.trim()) params.set('q', state.q.trim());
       for (const key of filterKeys) {
-        if (state[key] && state[key] !== 'all') {
-          params.set(key === 'studyMode' ? 'mode' : key, state[key]);
+        const values = selectedValues(key);
+        if (!values.length) continue;
+        const paramKey = key === 'studyMode' ? 'mode' : key;
+        if (isMultiFilter(key)) {
+          for (const value of values) params.append(paramKey, value);
+        } else {
+          params.set(paramKey, values[0]);
         }
       }
       if (state.sort && state.sort !== 'title') params.set('sort', state.sort);
@@ -2635,7 +3541,11 @@ def build_html(data):
     for (const [key, config] of Object.entries(selectConfig)) {
       if (!config.id) continue;
       byId(config.id).addEventListener('change', event => {
-        state[key] = event.target.value;
+        navigation.cardId = '';
+        const value = isMultiFilter(key)
+          ? [...event.target.selectedOptions].map(option => option.value).filter(value => value !== 'all')
+          : event.target.value;
+        setFilterSelection(key, value);
         render();
         syncQueryParams();
         scrollToResults();
@@ -2643,12 +3553,14 @@ def build_html(data):
     }
 
     byId('q').addEventListener('input', event => {
+      navigation.cardId = '';
       state.q = event.target.value;
       render();
       syncQueryParams();
     });
 
     byId('sort').addEventListener('change', event => {
+      navigation.cardId = '';
       state.sort = event.target.value;
       render();
       syncQueryParams();
@@ -2663,20 +3575,33 @@ def build_html(data):
     });
 
     document.addEventListener('click', event => {
-      const routeButton = event.target.closest('[data-route-card-id]');
-      if (routeButton) {
-        state.q = routeButton.dataset.routeCardId || '';
-        state.sort = 'difficulty_asc';
-        render();
-        syncQueryParams();
-        scrollToResults();
+      const directCardButton = event.target.closest('[data-open-card], [data-route-card-id]');
+      if (directCardButton) {
+        openCardRoute(directCardButton.dataset.openCard || directCardButton.dataset.routeCardId || '');
+        return;
+      }
+      const clusterButton = event.target.closest('[data-open-cluster]');
+      if (clusterButton) {
+        openClusterRoute(clusterButton.dataset.openCluster || '');
+        return;
+      }
+      const cardArticle = event.target.closest('[data-open-card-id]');
+      if (cardArticle && !event.target.closest('a, button, input, select, textarea, summary, details, .reveal')) {
+        openCardRoute(cardArticle.dataset.openCardId || '');
         return;
       }
       const setButton = event.target.closest('[data-set-filter]');
       if (setButton) {
+        navigation.cardId = '';
         const key = setButton.dataset.setFilter;
         const value = setButton.dataset.filterValue;
-        state[key] = state[key] === value ? 'all' : value;
+        if (setButton.dataset.filterScope === 'card') {
+          clearAllFilters();
+          if (key === 'cluster') activateQuickMode('clusters');
+          setFilterSelection(key, value);
+        } else {
+          setFilterSelection(key, value, true);
+        }
         render();
         syncQueryParams();
         scrollToResults();
@@ -2684,9 +3609,9 @@ def build_html(data):
       }
       const clearButton = event.target.closest('[data-clear-filter]');
       if (clearButton) {
+        navigation.cardId = '';
         const key = clearButton.dataset.clearFilter;
-        if (key === 'q') state.q = '';
-        else state[key] = 'all';
+        clearFilterSelection(key, clearButton.dataset.clearValue || '');
         render();
         syncQueryParams();
         scrollToResults();
@@ -2694,6 +3619,7 @@ def build_html(data):
       }
       const quickButton = event.target.closest('[data-quick-mode]');
       if (quickButton) {
+        navigation.cardId = '';
         const mode = quickButton.dataset.quickMode;
         activateQuickMode(mode, true);
         render();
@@ -2745,10 +3671,25 @@ def build_html(data):
       }
     });
 
+    window.addEventListener('popstate', () => {
+      clearAllFilters();
+      applyInitialNavigation();
+      render();
+      if (navigation.cardId) requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      else if (navigation.focus) scrollToNavigationTarget();
+    });
+
     applyInitialNavigation();
     render();
     focusInitialNavigationControl();
-    if (navigation.focus) scrollToNavigationTarget();
+    if (navigation.cardId) requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    else if (navigation.focus) scrollToNavigationTarget();
+    window.addEventListener('hashchange', () => {
+      if (!isolateCardContext(linkedCardIdFromHash())) return;
+      if (window.history?.replaceState) window.history.replaceState(null, '', cardRouteHref(navigation.cardId));
+      render();
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    });
     window.addEventListener('load', () => renderMathIn(document));
   </script>
 </body>

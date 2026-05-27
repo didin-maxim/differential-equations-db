@@ -1,14 +1,55 @@
 import argparse
+import re
 import sys
 from lib import load_problem_files
 
 
 EXAM_SCORE_TAGS = {f"exam_score_{score}" for score in range(3, 11)}
 TITLE_MARKERS = ["TODO", "???", "FIXME"]
+RAW_TEX_PATTERNS = [
+    re.compile(r"\b(?:int|sum|prod|lim|sup|inf)_[A-Za-z0-9{}()'\\^+-]+"),
+    re.compile(r"\b[A-Za-z][A-Za-z0-9]*_\{[^{}]{1,40}\}"),
+    re.compile(r"\b[A-Za-z][A-Za-z0-9]*\^[A-Za-z0-9{}()+-]+"),
+    re.compile(r"\bd\^?\d*/d[A-Za-z]\^?\d*"),
+    re.compile(r"\by\^\([^)]+\)"),
+]
 
 
 def as_list(value):
     return value if isinstance(value, list) else []
+
+
+def strip_delimited_math(text):
+    text = str(text or "")
+    patterns = [
+        r"\$\$.*?\$\$",
+        r"\\\[.*?\\\]",
+        r"\\\(.*?\\\)",
+        r"(?<!\\)\$.*?(?<!\\)\$",
+    ]
+    for pattern in patterns:
+        text = re.sub(pattern, " ", text, flags=re.DOTALL)
+    return text
+
+
+def raw_tex_hits(text):
+    visible = strip_delimited_math(text)
+    hits = []
+    for pattern in RAW_TEX_PATTERNS:
+        hits.extend(match.group(0) for match in pattern.finditer(visible))
+    return hits[:3]
+
+
+def iter_visible_texts(problem):
+    yield "title", problem.get("title", "")
+    for stmt_group in problem.get("statements", {}).values():
+        for stmt in as_list(stmt_group):
+            yield f"statement#{stmt.get('id', '?')}", stmt.get("text", "")
+            yield f"statement-title#{stmt.get('id', '?')}", stmt.get("title", "")
+    for group_name in ["ideas", "solutions"]:
+        for item in as_list(problem.get(group_name)):
+            yield f"{group_name}#{item.get('id', '?')}", item.get("text", "")
+            yield f"{group_name}-title#{item.get('id', '?')}", item.get("title", "")
 
 
 def has_method_guide_marker(problem):
@@ -30,6 +71,11 @@ def iter_definition_ids(problem):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-items", type=int, default=20)
+    parser.add_argument(
+        "--check-raw-tex",
+        action="store_true",
+        help="Report possible TeX/ASCII math fragments in visible fields. Noisy until the legacy corpus is cleaned.",
+    )
     args = parser.parse_args()
     warnings = []
     for path, p in load_problem_files():
@@ -58,6 +104,13 @@ def main():
             warnings.append(f"{p.get('id')}: exam_score tag with technical_score > 5")
         if "olympiad_above_exam" in tags and EXAM_SCORE_TAGS.intersection(tags):
             warnings.append(f"{p.get('id')}: olympiad_above_exam with exam_score tag")
+        if args.check_raw_tex:
+            for place, text in iter_visible_texts(p):
+                hits = raw_tex_hits(text)
+                if hits:
+                    warnings.append(
+                        f"{p.get('id')}#{place}: possible raw TeX outside delimiters: {', '.join(hits)}"
+                    )
 
         if has_method_guide_marker(p):
             if kind.get("primary") not in {"theorem", "standard_fact"}:
