@@ -16,7 +16,10 @@ def build_html(data):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>differential-equations-db viewer</title>
+  <title>База по дифференциальным уравнениям</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
   <style>
     :root {
       color-scheme: light;
@@ -35,6 +38,11 @@ def build_html(data):
     }
 
     * { box-sizing: border-box; }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
 
     body {
       margin: 0;
@@ -167,8 +175,10 @@ def build_html(data):
       background: #ece8dd;
       color: #303835;
       font-size: 12px;
+      line-height: 1.25;
       text-decoration: none;
       overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .pill.good { background: var(--good); }
@@ -181,6 +191,12 @@ def build_html(data):
       background: #fff;
       cursor: pointer;
       text-align: left;
+      white-space: normal;
+    }
+
+    .pill > span, .chip > span {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .chip.active {
@@ -188,6 +204,10 @@ def build_html(data):
       border-color: #9acfc4;
       color: var(--accent-dark);
       font-weight: 650;
+    }
+
+    .chip.good {
+      background: var(--good);
     }
 
     .chip-count {
@@ -223,12 +243,21 @@ def build_html(data):
       margin-top: 10px;
     }
 
+    .active-filters:empty {
+      display: none;
+    }
+
+    .top-active-filters {
+      margin: 0 0 12px;
+    }
+
     .study-home {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 14px;
+      overflow-wrap: anywhere;
     }
 
     .study-home h2 {
@@ -254,8 +283,10 @@ def build_html(data):
       background: #fff;
       color: var(--ink);
       min-height: 36px;
+      max-width: 100%;
       padding: 7px 10px;
       cursor: pointer;
+      overflow-wrap: anywhere;
     }
 
     .quick-button.active {
@@ -293,6 +324,7 @@ def build_html(data):
     .result-grid {
       display: grid;
       gap: 11px;
+      min-width: 0;
     }
 
     .card {
@@ -300,6 +332,7 @@ def build_html(data):
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 14px;
+      overflow-wrap: anywhere;
     }
 
     .card-head {
@@ -311,6 +344,7 @@ def build_html(data):
 
     .card-title {
       min-width: 0;
+      max-width: 100%;
     }
 
     .meta-row {
@@ -324,6 +358,45 @@ def build_html(data):
       margin: 10px 0 0;
       color: #2f3935;
       white-space: pre-wrap;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .tex-content {
+      max-width: 100%;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .tex-content .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 0;
+    }
+
+    .tex-content .katex {
+      max-width: 100%;
+      font-size: 1.03em;
+    }
+
+    .tex-fallback {
+      display: inline-block;
+      max-width: 100%;
+      overflow-x: auto;
+      vertical-align: baseline;
+      font-family: Cambria Math, "Times New Roman", serif;
+      font-size: 1.04em;
+      background: #fbfaf7;
+      border: 1px solid #e5e0d2;
+      border-radius: 4px;
+      padding: 0 4px;
+    }
+
+    .tex-fallback.display {
+      display: block;
+      margin: 8px 0;
+      padding: 6px 8px;
     }
 
     .reveal {
@@ -335,6 +408,7 @@ def build_html(data):
     .reveal > summary {
       display: inline-flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 7px;
       list-style: none;
       border: 1px solid #9acfc4;
@@ -342,9 +416,11 @@ def build_html(data):
       background: var(--soft);
       color: var(--accent-dark);
       min-height: 34px;
+      max-width: 100%;
       padding: 6px 10px;
       cursor: pointer;
       font-weight: 650;
+      white-space: normal;
     }
 
     .reveal > summary::-webkit-details-marker { display: none; }
@@ -353,7 +429,7 @@ def build_html(data):
 
     .asset-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
       gap: 10px;
       margin-top: 12px;
     }
@@ -385,6 +461,7 @@ def build_html(data):
     .block {
       white-space: pre-wrap;
       overflow-wrap: anywhere;
+      word-break: break-word;
       margin: 8px 0 0;
     }
 
@@ -395,6 +472,7 @@ def build_html(data):
       border: 1px dashed var(--line);
       border-radius: 8px;
       background: #fff;
+      overflow-wrap: anywhere;
     }
 
     .muted { color: var(--muted); }
@@ -411,6 +489,19 @@ def build_html(data):
       .filter-grid { grid-template-columns: 1fr; }
       .card-head { display: block; }
       .home-stats { grid-template-columns: 1fr 1fr; }
+      .toolbar { display: block; }
+      .toolbar label { margin-top: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      aside { padding: 12px; }
+      main { padding: 12px 12px 36px; }
+      h1 { font-size: 20px; }
+      h2 { font-size: 17px; }
+      .study-home, .card { padding: 12px; }
+      .home-stats { grid-template-columns: 1fr; }
+      .asset-grid { grid-template-columns: minmax(0, 1fr); }
+      .pill, .chip, .quick-button { font-size: 11px; }
     }
   </style>
 </head>
@@ -426,16 +517,16 @@ def build_html(data):
         </label>
 
         <div class="filter-grid">
-          <label>idea_score
+          <label>Идейная сложность
             <select id="idea-score"></select>
           </label>
-          <label>technical_score
+          <label>Техническая сложность
             <select id="technical-score"></select>
           </label>
         </div>
 
         <div class="filter-grid">
-          <label>Диапазон
+          <label>Уровень по баллам
             <select id="score-range"></select>
           </label>
           <label>Олимпиадность
@@ -450,7 +541,7 @@ def build_html(data):
         <label>Источник
           <select id="source"></select>
         </label>
-        <label>Автор / created_by
+        <label>Автор / создатель
           <select id="author"></select>
         </label>
         <label>Кластер
@@ -476,7 +567,7 @@ def build_html(data):
           <label>Готовность
             <select id="public-ready"></select>
           </label>
-          <label>Review
+          <label>Статус проверки
             <select id="review-status"></select>
           </label>
         </div>
@@ -498,14 +589,16 @@ def build_html(data):
         <label class="compact">Сортировка
           <select id="sort">
             <option value="title">Название</option>
-            <option value="idea_asc">idea_score ↑</option>
-            <option value="idea_desc">idea_score ↓</option>
-            <option value="technical_asc">technical_score ↑</option>
-            <option value="technical_desc">technical_score ↓</option>
+            <option value="difficulty_asc">Идея и техника ↑</option>
+            <option value="idea_asc">Идейная сложность ↑</option>
+            <option value="idea_desc">Идейная сложность ↓</option>
+            <option value="technical_asc">Техническая сложность ↑</option>
+            <option value="technical_desc">Техническая сложность ↓</option>
             <option value="kind">Тип</option>
           </select>
         </label>
       </div>
+      <div class="active-filters top-active-filters" id="top-active-filters"></div>
       <section class="study-home" id="study-home"></section>
       <div class="result-grid" id="results"></div>
     </main>
@@ -550,13 +643,13 @@ def build_html(data):
 
     const selectConfig = {
       studyMode: { label: 'Режим', all: 'Все карточки' },
-      ideaScore: { id: 'idea-score', label: 'idea_score', all: 'Все idea_score' },
-      technicalScore: { id: 'technical-score', label: 'technical_score', all: 'Все technical_score' },
+      ideaScore: { id: 'idea-score', label: 'Идейная сложность', all: 'Любая идейная сложность' },
+      technicalScore: { id: 'technical-score', label: 'Техническая сложность', all: 'Любая техническая сложность' },
       scoreRange: {
         id: 'score-range',
-        label: 'Диапазон',
-        all: 'Любой диапазон',
-        values: ['easy', 'middle', 'strong', 'excellent']
+        label: 'Уровень по баллам',
+        all: 'Любой уровень по баллам',
+        values: ['easy', 'middle', 'exam_middle', 'strong', 'excellent']
       },
       excludeOlympiad: {
         id: 'exclude-olympiad',
@@ -578,20 +671,45 @@ def build_html(data):
       kind: { id: 'kind', label: 'Тип', all: 'Все типы' },
       course: { id: 'course', label: 'Курс', all: 'Все уровни курса' },
       publicReady: { id: 'public-ready', label: 'Готовность', all: 'Любая готовность' },
-      reviewStatus: { id: 'review-status', label: 'Review', all: 'Любой review' },
+      reviewStatus: { id: 'review-status', label: 'Статус проверки', all: 'Любой статус проверки' },
       difficultyMain: { id: 'difficulty-main', label: 'Сложность', all: 'Любая сложность' }
     };
 
-    const courseLabels = {
-      standard_course_methods: 'standard_course_methods',
-      advanced_standard_course: 'advanced_standard_course',
-      beyond_standard_course: 'beyond_standard_course',
-      uncategorized: 'без course-tag'
+    const kindLabels = {
+      problem: 'задача',
+      theorem: 'теорема',
+      lemma: 'лемма',
+      definition: 'определение',
+      corollary: 'следствие'
     };
+
+    const courseLabels = {
+      standard_course_methods: 'методы стандартного курса',
+      advanced_standard_course: 'продвинутый стандартный курс',
+      beyond_standard_course: 'за пределами стандартного курса',
+      uncategorized: 'уровень курса не указан'
+    };
+
+    const publicReadyLabels = {
+      true: 'готово к публикации',
+      false: 'требует проверки'
+    };
+
+    const reviewStatusLabels = {
+      ai_checked: 'проверено агентом',
+      needs_human_review: 'нужна ручная проверка',
+      source_verified: 'источник проверен',
+      draft: 'черновик',
+      seed_links: 'заготовка связей'
+    };
+
+    const difficultyLabels = Object.fromEntries((DB.taxonomy?.difficulty || []).map(item => [item.id, item.title || item.id]));
+    const fragmentLabels = Object.fromEntries((DB.taxonomy?.fragments || []).map(item => [item.id, item.title || item.id]));
 
     const quickModes = [
       { id: 'written_minimum', label: 'Письменный минимум' },
       { id: 'written_middle', label: 'Средний письменный' },
+      { id: 'exam_middle', label: 'Средний экзамен' },
       { id: 'written_strong', label: 'Сильный письменный' },
       { id: 'theory', label: 'Теория' },
       { id: 'clusters', label: 'Кластеры' },
@@ -599,10 +717,11 @@ def build_html(data):
     ];
 
     const rangeLabels = {
-      easy: 'простые: idea/tech ≤ 4',
-      middle: 'средние: idea 5-7, tech ≤ 6',
-      strong: 'сильные: idea 7-8',
-      excellent: 'отлично: idea ≥ 8'
+      easy: 'простые: идея/техника ≤ 4',
+      middle: 'средние: идея 5-7, техника ≤ 6',
+      exam_middle: 'экзамен 5-7: идея 5-7, техника 3-7',
+      strong: 'сильные: идея 7-8',
+      excellent: 'отлично: идея ≥ 8'
     };
 
     const assetLabels = {
@@ -622,6 +741,127 @@ def build_html(data):
         '"': '&quot;',
         "'": '&#39;'
       })[char]);
+    }
+
+    function prettifyPlainMath(html) {
+      return String(html)
+        .replace(/-&gt;/g, '→')
+        .replace(/&lt;=/g, '≤')
+        .replace(/&gt;=/g, '≥')
+        .replace(/(?<!\\\\)\\bpi\\b/g, 'π')
+        .replace(/(?<!\\\\)\\binfty\\b/g, '∞')
+        .replace(/\\+∞/g, '+∞')
+        .replace(/-∞/g, '-∞');
+    }
+
+    function renderMathText(text) {
+      return prettifyPlainMath(esc(text || ''));
+    }
+
+    function fallbackFormulaText(text) {
+      return String(text || '')
+        .replace(/\\\\frac\\{([^{}]+)\\}\\{([^{}]+)\\}/g, '($1)/($2)')
+        .replace(/\\\\left|\\\\right/g, '')
+        .replace(/\\\\cdot/g, '·')
+        .replace(/\\\\times/g, '×')
+        .replace(/\\\\leq?|\\\\le/g, '≤')
+        .replace(/\\\\geq?|\\\\ge/g, '≥')
+        .replace(/\\\\to/g, '→')
+        .replace(/\\\\infty/g, '∞')
+        .replace(/\\\\pi/g, 'π')
+        .replace(/\\\\lambda/g, 'λ')
+        .replace(/\\\\mu/g, 'μ')
+        .replace(/\\\\alpha/g, 'α')
+        .replace(/\\\\beta/g, 'β')
+        .replace(/\\\\gamma/g, 'γ')
+        .replace(/\\\\Delta/g, 'Δ')
+        .replace(/\\\\Phi/g, 'Φ')
+        .replace(/\\\\sin/g, 'sin')
+        .replace(/\\\\cos/g, 'cos')
+        .replace(/\\\\exp/g, 'exp')
+        .replace(/\\\\ln/g, 'ln')
+        .replace(/\\\\int/g, '∫')
+        .replace(/\\\\sum/g, '∑')
+        .replace(/[{}]/g, '');
+    }
+
+    function splitDelimitedMath(text) {
+      const delimiters = [
+        { left: '$$', right: '$$', display: true },
+        { left: '\\\\[', right: '\\\\]', display: true },
+        { left: '\\\\(', right: '\\\\)', display: false },
+        { left: '$', right: '$', display: false }
+      ];
+      const parts = [];
+      let pos = 0;
+      while (pos < text.length) {
+        let best = null;
+        for (const delimiter of delimiters) {
+          const start = text.indexOf(delimiter.left, pos);
+          if (start >= 0 && (!best || start < best.start)) best = { ...delimiter, start };
+        }
+        if (!best) {
+          parts.push({ text: text.slice(pos), formula: false });
+          break;
+        }
+        if (best.start > pos) parts.push({ text: text.slice(pos, best.start), formula: false });
+        const contentStart = best.start + best.left.length;
+        const end = text.indexOf(best.right, contentStart);
+        if (end < 0) {
+          parts.push({ text: text.slice(best.start), formula: false });
+          break;
+        }
+        parts.push({ text: text.slice(contentStart, end), formula: true, display: best.display });
+        pos = end + best.right.length;
+      }
+      return parts;
+    }
+
+    function renderFallbackMath(target = document) {
+      const root = target.body || target;
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent || parent.closest('script, style, .katex, .tex-fallback')) return NodeFilter.FILTER_REJECT;
+          return /\\$|\\\\\\(|\\\\\\[/.test(node.nodeValue || '') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+      });
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      for (const node of nodes) {
+        const parts = splitDelimitedMath(node.nodeValue || '');
+        if (!parts.some(part => part.formula)) continue;
+        const fragment = document.createDocumentFragment();
+        for (const part of parts) {
+          if (!part.formula) {
+            fragment.appendChild(document.createTextNode(part.text));
+            continue;
+          }
+          const span = document.createElement('span');
+          span.className = `tex-fallback${part.display ? ' display' : ''}`;
+          span.textContent = fallbackFormulaText(part.text);
+          fragment.appendChild(span);
+        }
+        node.parentNode.replaceChild(fragment, node);
+      }
+    }
+
+    function renderMathIn(target = document) {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(target.body || target, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '\\\\[', right: '\\\\]', display: true },
+            { left: '\\\\(', right: '\\\\)', display: false },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          strict: 'ignore',
+          trust: false
+        });
+        return;
+      }
+      if (document.readyState === 'complete') renderFallbackMath(target);
     }
 
     function normalize(value) {
@@ -646,7 +886,10 @@ def build_html(data):
       if (key === 'standardIdea') return ideaById[value]?.title || value;
       if (key === 'cluster') return clusterById[value]?.title || clusterById[value]?.title_ru || value;
       if (key === 'course') return courseLabels[value] || value;
-      if (key === 'publicReady') return value === 'true' ? 'public_ready' : 'not public_ready';
+      if (key === 'publicReady') return publicReadyLabels[value] || value;
+      if (key === 'reviewStatus') return reviewStatusLabels[value] || value;
+      if (key === 'difficultyMain') return difficultyLabels[value] || value;
+      if (key === 'kind') return kindLabels[value] || value;
       if (key === 'studyMode') return quickModes.find(mode => mode.id === value)?.label || value;
       if (key === 'scoreRange') return rangeLabels[value] || value;
       if (key === 'excludeOlympiad') return value === 'exclude' ? 'без олимпиадных' : String(value);
@@ -686,6 +929,7 @@ def build_html(data):
       if (Number.isFinite(idea) && Number.isFinite(tech)) {
         if (idea <= 4 && tech <= 4) values.push('easy');
         if (idea >= 5 && idea <= 7 && tech <= 6) values.push('middle');
+        if (idea >= 5 && idea <= 7 && tech >= 3 && tech <= 7) values.push('exam_middle');
         if (idea >= 7 && idea <= 8) values.push('strong');
         if (idea >= 8) values.push('excellent');
       }
@@ -715,6 +959,23 @@ def build_html(data):
         && (!Number.isFinite(tech) || tech <= maxTech);
     }
 
+    function inScoreBox(card, minIdea, maxIdea, minTech, maxTech) {
+      const idea = Number(card.idea_score);
+      const tech = Number(card.technical_score);
+      return Number.isFinite(idea)
+        && Number.isFinite(tech)
+        && idea >= minIdea
+        && idea <= maxIdea
+        && tech >= minTech
+        && tech <= maxTech;
+    }
+
+    function hasIdeasAndSolutions(card) {
+      const problem = problemsById[card.id] || {};
+      return (problem.solutions || []).length > 0
+        && ((problem.ideas || []).length > 0 || (card.standard_idea_ids || []).length > 0);
+    }
+
     function matchesStudyMode(card, mode) {
       if (!mode || mode === 'all') return true;
       if (mode === 'no_olympiad') return !isOlympiadLike(card);
@@ -737,6 +998,12 @@ def build_html(data):
           && (hasAnyTag(card, ['written_exam', 'middle_student_check', 'model_exam_task', 'exam_score_5', 'exam_score_6', 'exam_score_7'])
             || (card.source_ids || []).includes('src-local-du-written-exams'))
           && (inScoreBand(card, 4, 7, 6) || hasAnyTag(card, ['exam_score_5', 'exam_score_6', 'exam_score_7']));
+      }
+      if (mode === 'exam_middle') {
+        return card.kind === 'problem'
+          && !isOlympiadLike(card)
+          && inScoreBox(card, 5, 7, 3, 7)
+          && hasIdeasAndSolutions(card);
       }
       if (mode === 'written_strong') {
         return !hasAnyTag(card, ['olympiad_above_exam', 'beyond_standard_course', 'needs_solution_completion'])
@@ -817,6 +1084,7 @@ def build_html(data):
       byId('active-filters').innerHTML = items.map(item => `
         <button class="chip active" type="button" data-clear-filter="${esc(item.key)}">${esc(item.label)} ×</button>
       `).join('');
+      byId('top-active-filters').innerHTML = byId('active-filters').innerHTML;
     }
 
     function facetCounts(key) {
@@ -852,10 +1120,10 @@ def build_html(data):
     function renderFacets() {
       byId('facets').innerHTML = [
         renderFacet('kind', 'Типы'),
-        renderFacet('scoreRange', 'Диапазоны'),
+        renderFacet('scoreRange', 'Уровни по баллам'),
         renderFacet('assetFilter', 'Материалы'),
-        renderFacet('ideaScore', 'idea_score'),
-        renderFacet('technicalScore', 'technical_score'),
+        renderFacet('ideaScore', 'Идейная сложность'),
+        renderFacet('technicalScore', 'Техническая сложность'),
         renderFacet('difficultyMain', 'Сложность'),
         renderFacet('cluster', 'Кластеры', 10),
         renderFacet('source', 'Источники', 10),
@@ -865,8 +1133,8 @@ def build_html(data):
     }
 
     function statusPill(card) {
-      if (card.public_ready) return '<span class="pill good">public_ready</span>';
-      return '<span class="pill warn">not public_ready</span>';
+      if (card.public_ready) return '<span class="pill good">готово к публикации</span>';
+      return '<span class="pill warn">требует проверки</span>';
     }
 
     function renderPill(text, cls = '') {
@@ -874,8 +1142,18 @@ def build_html(data):
       return `<span class="pill ${esc(cls)}">${esc(text)}</span>`;
     }
 
+    function renderFilterChip(key, value, text, cls = '') {
+      if (!text || value == null || value === '') return '';
+      const activeClass = state[key] === String(value) ? ' active' : '';
+      return `
+        <button class="chip ${esc(cls)}${activeClass}" type="button" data-set-filter="${esc(key)}" data-filter-value="${esc(value)}" title="${esc(`Показать карточки: ${text}`)}">
+          <span>${esc(text)}</span>
+        </button>
+      `;
+    }
+
     function renderText(text) {
-      return `<div class="block">${esc(text || '')}</div>`;
+      return `<div class="block tex-content">${renderMathText(text || '')}</div>`;
     }
 
     function renderReveal(kind, title, html, emptyHtml = '') {
@@ -895,7 +1173,7 @@ def build_html(data):
       const ideas = problem.ideas || [];
       if (!ideas.length) return '';
       return ideas.map(idea => `
-        <div class="block"><strong>${esc(idea.title || idea.id || 'Идея')}</strong><br>${esc(idea.text || '')}</div>
+        <div class="block tex-content"><strong>${renderMathText(idea.title || idea.id || 'Идея')}</strong><br>${renderMathText(idea.text || '')}</div>
       `).join('');
     }
 
@@ -903,7 +1181,7 @@ def build_html(data):
       const solutions = problem.solutions || [];
       if (!solutions.length) return '';
       return solutions.map(solution => `
-        <div class="block"><strong>${esc(solution.title || solution.id || label)}</strong><br>${esc(solution.text || '')}</div>
+        <div class="block tex-content"><strong>${renderMathText(solution.title || solution.id || label)}</strong><br>${renderMathText(solution.text || '')}</div>
       `).join('');
     }
 
@@ -944,31 +1222,31 @@ def build_html(data):
     function renderCard(card) {
       const problem = problemsById[card.id] || {};
       const proofLabel = ['theorem', 'lemma', 'corollary', 'definition'].includes(card.kind) ? 'Доказательство' : 'Решение';
-      const sourceBadges = (card.source_labels || []).slice(0, 3).map(label => renderPill(label)).join('');
-      const clusterBadges = (card.cluster_labels || []).slice(0, 2).map(label => renderPill(label, 'good')).join('');
-      const tagBadges = (card.tags || []).slice(0, 7).map(tag => renderPill(tag)).join('');
-      const ideaBadges = (card.standard_idea_labels || []).slice(0, 3).map(label => renderPill(label)).join('');
+      const sourceBadges = (card.source_ids || []).slice(0, 3).map(id => renderFilterChip('source', id, labelFor('source', id))).join('');
+      const clusterBadges = (card.cluster_ids || []).slice(0, 2).map(id => renderFilterChip('cluster', id, labelFor('cluster', id), 'good')).join('');
+      const tagBadges = (card.tags || []).slice(0, 7).map(tag => renderFilterChip('tag', tag, tag)).join('');
+      const ideaBadges = (card.standard_idea_ids || []).slice(0, 3).map(id => renderFilterChip('standardIdea', id, labelFor('standardIdea', id))).join('');
       const ideasHtml = renderIdeas(problem);
       const solutionsHtml = renderSolutions(problem, proofLabel);
       return `
         <article class="card" id="card-${esc(card.id)}">
           <div class="card-head">
             <div class="card-title">
-              <h2>${esc(card.title)}</h2>
+              <h2 class="tex-content">${renderMathText(card.title)}</h2>
               <div class="meta-row">
                 ${renderPill(card.id, 'code')}
-                ${renderPill(card.kind)}
-                ${renderPill(card.fragment)}
-                ${renderPill(card.difficulty_main)}
-                ${renderPill(`idea ${card.idea_score ?? '-'}`)}
-                ${renderPill(`tech ${card.technical_score ?? '-'}`)}
-                ${renderPill(card.course_bucket)}
+                ${renderPill(kindLabels[card.kind] || card.kind)}
+                ${renderPill(fragmentLabels[card.fragment] || card.fragment)}
+                ${renderPill(difficultyLabels[card.difficulty_main] || card.difficulty_main)}
+                ${renderPill(`идея ${card.idea_score ?? '-'}`)}
+                ${renderPill(`техника ${card.technical_score ?? '-'}`)}
+                ${renderPill(courseLabels[card.course_bucket] || card.course_bucket)}
                 ${statusPill(card)}
-                ${renderPill(card.review_status, card.review_status === 'needs_human_review' ? 'warn' : '')}
+                ${renderPill(reviewStatusLabels[card.review_status] || card.review_status, card.review_status === 'needs_human_review' ? 'warn' : '')}
               </div>
             </div>
           </div>
-          <p class="statement">${esc(card.statement)}</p>
+          <p class="statement tex-content">${renderMathText(card.statement)}</p>
           ${renderAssets(problem, card)}
           <div class="meta-row">${sourceBadges}${clusterBadges}${ideaBadges}${tagBadges}</div>
           ${renderReveal('ideas', 'Идеи', ideasHtml, '<div class="empty">Идеи не указаны.</div>')}
@@ -981,6 +1259,12 @@ def build_html(data):
       const out = [...items];
       if (state.sort === 'idea_asc') {
         out.sort((a, b) => (Number(a.idea_score) || 99) - (Number(b.idea_score) || 99) || a.title.localeCompare(b.title, 'ru'));
+      } else if (state.sort === 'difficulty_asc') {
+        out.sort((a, b) =>
+          (Number(a.idea_score) || 99) - (Number(b.idea_score) || 99)
+          || (Number(a.technical_score) || 99) - (Number(b.technical_score) || 99)
+          || a.title.localeCompare(b.title, 'ru')
+        );
       } else if (state.sort === 'idea_desc') {
         out.sort((a, b) => (Number(b.idea_score) || 0) - (Number(a.idea_score) || 0) || a.title.localeCompare(b.title, 'ru'));
       } else if (state.sort === 'technical_asc') {
@@ -1000,7 +1284,7 @@ def build_html(data):
       const readyCount = items.filter(card => card.public_ready).length;
       byId('summary').innerHTML = [
         renderPill(countText(items.length, 'карточка', 'карточки', 'карточек'), 'code'),
-        renderPill(`${readyCount} public_ready`, readyCount === items.length ? 'good' : 'warn'),
+        renderPill(`${readyCount} готово к публикации`, readyCount === items.length ? 'good' : 'warn'),
         ...kindCounts.slice(0, 4).map(item => renderPill(`${item.label}: ${item.count}`))
       ].join('');
     }
@@ -1049,16 +1333,30 @@ def build_html(data):
       byId('results').innerHTML = items.length
         ? items.map(renderCard).join('')
         : '<div class="empty">Ничего не найдено. Ослабьте фильтры или сбросьте их.</div>';
+      renderMathIn(byId('results'));
     }
 
     function render() {
       const meta = DB.meta || {};
       const problemCount = meta.problem_count ?? countBy(card => card.kind === 'problem');
-      byId('db-meta').textContent = `${cards.length} карточек, ${problemCount} задач, ${(DB.relations || []).length} связей, ${(DB.task_clusters || []).length} кластеров`;
+      const relationCount = (DB.relations || []).length;
+      const clusterCount = (DB.task_clusters || []).length;
+      byId('db-meta').textContent = [
+        countText(cards.length, 'карточка', 'карточки', 'карточек'),
+        countText(problemCount, 'задача', 'задачи', 'задач'),
+        countText(relationCount, 'связь', 'связи', 'связей'),
+        countText(clusterCount, 'кластер', 'кластера', 'кластеров')
+      ].join(', ');
       renderFilters();
       renderActiveFilters();
       renderFacets();
       renderResults();
+    }
+
+    function scrollToResults() {
+      const target = byId('results');
+      if (!target) return;
+      requestAnimationFrame(() => target.scrollIntoView({ block: 'start', behavior: 'smooth' }));
     }
 
     for (const [key, config] of Object.entries(selectConfig)) {
@@ -1066,6 +1364,7 @@ def build_html(data):
       byId(config.id).addEventListener('change', event => {
         state[key] = event.target.value;
         render();
+        scrollToResults();
       });
     }
 
@@ -1077,12 +1376,14 @@ def build_html(data):
     byId('sort').addEventListener('change', event => {
       state.sort = event.target.value;
       render();
+      scrollToResults();
     });
 
     byId('reset').addEventListener('click', () => {
       state.q = '';
       for (const key of filterKeys) state[key] = 'all';
       render();
+      scrollToResults();
     });
 
     document.addEventListener('click', event => {
@@ -1092,6 +1393,7 @@ def build_html(data):
         const value = setButton.dataset.filterValue;
         state[key] = state[key] === value ? 'all' : value;
         render();
+        scrollToResults();
         return;
       }
       const clearButton = event.target.closest('[data-clear-filter]');
@@ -1100,6 +1402,7 @@ def build_html(data):
         if (key === 'q') state.q = '';
         else state[key] = 'all';
         render();
+        scrollToResults();
         return;
       }
       const quickButton = event.target.closest('[data-quick-mode]');
@@ -1109,16 +1412,19 @@ def build_html(data):
           state.excludeOlympiad = state.excludeOlympiad === 'exclude' ? 'all' : 'exclude';
         } else {
           state.studyMode = state.studyMode === mode ? 'all' : mode;
-          if (mode.startsWith('written_')) state.excludeOlympiad = 'exclude';
-          if (mode === 'written_minimum') state.sort = 'technical_asc';
+          if (mode.startsWith('written_') || mode === 'exam_middle') state.excludeOlympiad = 'exclude';
+          if (mode === 'written_minimum') state.sort = 'difficulty_asc';
           if (mode === 'written_middle') state.scoreRange = 'middle';
+          if (mode === 'exam_middle') state.sort = 'difficulty_asc';
           if (mode === 'written_strong') state.sort = 'idea_desc';
         }
         render();
+        scrollToResults();
       }
     });
 
     render();
+    window.addEventListener('load', () => renderMathIn(document));
   </script>
 </body>
 </html>

@@ -50824,7 +50824,7 @@
         "integral-equation-to-ode"
       ],
       "cluster_labels": [
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "differentiate_auxiliary_function",
@@ -50841,7 +50841,7 @@
       "statement": "Для каждого t>0 доказать равенство двух параметрических интегралов: int_0^infty e^(-tx)/(1+x^2) dx = int_0^infty sin x/(t+x) dx.",
       "assets": [],
       "has_image": false,
-      "search_text": "istcim-2022-c-integral-identity-ode\nistcim 2022 c: тождество интегралов через одно и то же оду\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nintegral_equation_to_ode\nboundary_value\nasymptotic\ncomparison\nadvanced_standard_course\nsource_solution_checked\nдля каждого t>0 доказать равенство двух параметрических интегралов: int_0^infty e^(-tx)/(1+x^2) dx = int_0^infty sin x/(t+x) dx.\nidea-main\nсравнить параметры как решения оду\nобе стороны как функции t удовлетворяют одному неоднородному уравнению y''+y=1/t. их разность решает гармоническое однородное оду и стремится к нулю при t->infty, значит тождественно равна нулю.\nai_checked\ndifferentiate_auxiliary_function\ncomparison_argument\nsol-main\nрешение\nобозначим f(t)=int_0^infty e^(-tx)/(1+x^2) dx и g(t)=int_0^infty sin x/(t+x) dx. для t>0 допустимо дифференцировать под знаком интеграла на компактных промежутках по t: экспоненциальный множитель контролирует f, а для g производные по t оцениваются степенями (t+x)^(-1). тогда f''(t)=int_0^infty x^2 e^(-tx)/(1+x^2) dx = int_0^infty e^(-tx) dx - f(t)=1/t-f(t). для g имеем g'(t)=-int_0^infty sin x/(t+x)^2 dx, g''(t)=2int_0^infty sin x/(t+x)^3 dx. интегрируя по частям дважды, получаем g''(t)=1/t-g(t). значит h=f-g удовлетворяет h''+h=0. общее решение h(t)=a cos t+b sin t. при t->infty оба исходных интеграла стремятся к нулю: для f это следует из мажорирования e^(-tx), а для g - из интегрирования по частям или стандартной оценки осциллирующего интеграла дирихле. поэтому h(t)->0. но ненулевое a cos t+b sin t предела при бесконечности не имеет, следовательно a=b=0 и f=g для всех t>0.\nai_checked\nsrc-istcim-official\nistcim\ndifferentiate_auxiliary_function\ncomparison_argument\nдифференцировать специально выбранную вспомогательную функцию\nсравнить с явным уравнением\nintegral-equation-to-ode\n???????????? ??????? ??? ???\ncreated_by:ai\nstudent_olympiad\n9\n8\n7\nидея 8: увидеть в параметрических интегралах решения одного оду. техника 7: нужны аккуратное дифференцирование под интегралом, интегрирование по частям и условие на бесконечности.\nai_checked\nai_checked\ntrue"
+      "search_text": "istcim-2022-c-integral-identity-ode\nistcim 2022 c: тождество интегралов через одно и то же оду\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nintegral_equation_to_ode\nboundary_value\nasymptotic\ncomparison\nadvanced_standard_course\nsource_solution_checked\nдля каждого t>0 доказать равенство двух параметрических интегралов: int_0^infty e^(-tx)/(1+x^2) dx = int_0^infty sin x/(t+x) dx.\nidea-main\nсравнить параметры как решения оду\nобе стороны как функции t удовлетворяют одному неоднородному уравнению y''+y=1/t. их разность решает гармоническое однородное оду и стремится к нулю при t->infty, значит тождественно равна нулю.\nai_checked\ndifferentiate_auxiliary_function\ncomparison_argument\nsol-main\nрешение\nобозначим f(t)=int_0^infty e^(-tx)/(1+x^2) dx и g(t)=int_0^infty sin x/(t+x) dx. для t>0 допустимо дифференцировать под знаком интеграла на компактных промежутках по t: экспоненциальный множитель контролирует f, а для g производные по t оцениваются степенями (t+x)^(-1). тогда f''(t)=int_0^infty x^2 e^(-tx)/(1+x^2) dx = int_0^infty e^(-tx) dx - f(t)=1/t-f(t). для g имеем g'(t)=-int_0^infty sin x/(t+x)^2 dx, g''(t)=2int_0^infty sin x/(t+x)^3 dx. интегрируя по частям дважды, получаем g''(t)=1/t-g(t). значит h=f-g удовлетворяет h''+h=0. общее решение h(t)=a cos t+b sin t. при t->infty оба исходных интеграла стремятся к нулю: для f это следует из мажорирования e^(-tx), а для g - из интегрирования по частям или стандартной оценки осциллирующего интеграла дирихле. поэтому h(t)->0. но ненулевое a cos t+b sin t предела при бесконечности не имеет, следовательно a=b=0 и f=g для всех t>0.\nai_checked\nsrc-istcim-official\nistcim\ndifferentiate_auxiliary_function\ncomparison_argument\nдифференцировать специально выбранную вспомогательную функцию\nсравнить с явным уравнением\nintegral-equation-to-ode\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\nstudent_olympiad\n9\n8\n7\nидея 8: увидеть в параметрических интегралах решения одного оду. техника 7: нужны аккуратное дифференцирование под интегралом, интегрирование по частям и условие на бесконечности.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "istcim-2023-e-functional-ode-cosine",
@@ -51236,7 +51236,7 @@
       ],
       "cluster_labels": [
         "Линейное ОДУ первого порядка",
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "integrating_factor_linear"
@@ -51251,7 +51251,7 @@
       "statement": "Предполагая, что система условий имеет единственное решение, найти u(t), если u'(t)=u(t)+int_0^1 u(s) ds и u(0)=1.",
       "assets": [],
       "has_image": false,
-      "search_text": "putnam-early-1958-i3-integral-constraint\nputnam 1958 i-3: линейное уравнение с интегральной константой\nolympiad\nproblem\nolympiad_style\nlinear_first_order\nintegral_equation_to_ode\nstandard_course_methods\nsource_solution_checked\nпредполагая, что система условий имеет единственное решение, найти u(t), если u'(t)=u(t)+int_0^1 u(s) ds и u(0)=1.\nidea-main\nсчитать интеграл неизвестной константой\nпосле обозначения c=int_0^1 u(s) ds задача становится линейным уравнением u'=u+c; затем c определяется из условия самосогласованности.\nai_checked\nintegrating_factor_linear\nsol-main\nрешение\nобозначим c=int_0^1 u(s) ds. тогда u'-u=c и u(0)=1, откуда u(t)=(1+c)e^t-c. интегрируя это выражение от 0 до 1, получаем c=(1+c)(e-1)-c. значит c(3-e)=e-1, то есть c=(e-1)/(3-e). поэтому 1+c=2/(3-e), и окончательно u(t)=(2e^t-(e-1))/(3-e). прямая подстановка в уравнение и вычисление интеграла подтверждают, что это выражение действительно удовлетворяет обоим условиям.\nai_checked\nintegrating_factor_linear\nsrc-putnam-archive\nputnam\nintegrating_factor_linear\nумножить на exp интеграла коэффициента\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\n???????????? ??????? ??? ???\ncreated_by:ai\ncourse_core\n5\n5\n5\nидея шаблонная: заменить интеграл неизвестной константой и потребовать самосогласованность. техника умеренная: решение линейного уравнения и один скалярный расчет.\nai_checked\nai_checked\ntrue"
+      "search_text": "putnam-early-1958-i3-integral-constraint\nputnam 1958 i-3: линейное уравнение с интегральной константой\nolympiad\nproblem\nolympiad_style\nlinear_first_order\nintegral_equation_to_ode\nstandard_course_methods\nsource_solution_checked\nпредполагая, что система условий имеет единственное решение, найти u(t), если u'(t)=u(t)+int_0^1 u(s) ds и u(0)=1.\nidea-main\nсчитать интеграл неизвестной константой\nпосле обозначения c=int_0^1 u(s) ds задача становится линейным уравнением u'=u+c; затем c определяется из условия самосогласованности.\nai_checked\nintegrating_factor_linear\nsol-main\nрешение\nобозначим c=int_0^1 u(s) ds. тогда u'-u=c и u(0)=1, откуда u(t)=(1+c)e^t-c. интегрируя это выражение от 0 до 1, получаем c=(1+c)(e-1)-c. значит c(3-e)=e-1, то есть c=(e-1)/(3-e). поэтому 1+c=2/(3-e), и окончательно u(t)=(2e^t-(e-1))/(3-e). прямая подстановка в уравнение и вычисление интеграла подтверждают, что это выражение действительно удовлетворяет обоим условиям.\nai_checked\nintegrating_factor_linear\nsrc-putnam-archive\nputnam\nintegrating_factor_linear\nумножить на exp интеграла коэффициента\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\ncourse_core\n5\n5\n5\nидея шаблонная: заменить интеграл неизвестной константой и потребовать самосогласованность. техника умеренная: решение линейного уравнения и один скалярный расчет.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "putnam-early-1959-a5-pursuit-curve",
@@ -51646,7 +51646,7 @@
         "wronskian-nonlinear-transforms"
       ],
       "cluster_labels": [
-        "????????? ? ?????????? ?????????????? ???????"
+        "Вронскиан и нелинейные преобразования решений"
       ],
       "standard_idea_ids": [
         "wronskian_invariant"
@@ -51661,7 +51661,7 @@
       "statement": "На интервале I пусть y1 и y2 - линейно независимые положительные решения уравнения y''=f(x)y, где f непрерывна. Доказать, что существует положительная константа c такая, что z=c sqrt(y1 y2) удовлетворяет z''+1/z^3=f(x)z. Ясно указать, как c зависит от y1 и y2.",
       "assets": [],
       "has_image": false,
-      "search_text": "putnam-early-1975-a5-wronskian-nonlinear-transform\nputnam 1975 a5: преобразование вронскиана к уравнению пинни\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nadvanced_standard_course\nolympiad_above_exam\nsource_solution_checked\nна интервале i пусть y1 и y2 - линейно независимые положительные решения уравнения y''=f(x)y, где f непрерывна. доказать, что существует положительная константа c такая, что z=c sqrt(y1 y2) удовлетворяет z''+1/z^3=f(x)z. ясно указать, как c зависит от y1 и y2.\nidea-main\nиспользовать постоянный вронскиан\nтак как в уравнении нет y', вронскиан постоянен; дифференцирование z^2=c^2 y1 y2 выражает остаточный член через квадрат вронскиана.\nai_checked\nwronskian_invariant\nsol-main\nрешение\nпусть w=y1 y2'-y1' y2. тогда w'=y1 y2''-y1'' y2=f y1 y2-f y1 y2=0, так что w - постоянная. линейная независимость дает w!=0. возьмем z=c sqrt(y1y2) и обозначим alpha=c^2/2, тогда z^2=2alpha y1y2. дифференцируя, получаем zz'=alpha(y1y2'+y1'y2). еще раз: zz''+(z')^2=alpha(y1y2''+2y1'y2'+y1''y2)=fz^2+2alpha y1'y2'. умножим на z^2 и заменим (zz')^2 по первой формуле: z^3z''+alpha^2(y1y2'+y1'y2)^2=fz^4+4alpha^2 y1y2y1'y2'. перенося, получаем z^3z''+alpha^2(y1y2'-y1'y2)^2=fz^4, то есть z^3z''+alpha^2 w^2=fz^4. чтобы получить z''+1/z^3=fz, нужно alpha^2 w^2=1. значит alpha=1/|w| и c=sqrt(2/|w|). эта константа положительна и зависит только от постоянного вронскиана пары y1,y2.\nai_checked\nwronskian_invariant\nsrc-putnam-archive\nputnam\nwronskian_invariant\nиспользовать постоянство вронскиана\nwronskian-nonlinear-transforms\n????????? ? ?????????? ?????????????? ???????\ncreated_by:ai\nstudent_olympiad\n11\n10\n8\nидея сильная: постоянный вронскиан связывает линейное уравнение с нелинейным преобразованием. техника высокая: дифференцирование произведения и исключение членов требуют аккуратности.\nai_checked\nai_checked\ntrue"
+      "search_text": "putnam-early-1975-a5-wronskian-nonlinear-transform\nputnam 1975 a5: преобразование вронскиана к уравнению пинни\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nadvanced_standard_course\nolympiad_above_exam\nsource_solution_checked\nна интервале i пусть y1 и y2 - линейно независимые положительные решения уравнения y''=f(x)y, где f непрерывна. доказать, что существует положительная константа c такая, что z=c sqrt(y1 y2) удовлетворяет z''+1/z^3=f(x)z. ясно указать, как c зависит от y1 и y2.\nidea-main\nиспользовать постоянный вронскиан\nтак как в уравнении нет y', вронскиан постоянен; дифференцирование z^2=c^2 y1 y2 выражает остаточный член через квадрат вронскиана.\nai_checked\nwronskian_invariant\nsol-main\nрешение\nпусть w=y1 y2'-y1' y2. тогда w'=y1 y2''-y1'' y2=f y1 y2-f y1 y2=0, так что w - постоянная. линейная независимость дает w!=0. возьмем z=c sqrt(y1y2) и обозначим alpha=c^2/2, тогда z^2=2alpha y1y2. дифференцируя, получаем zz'=alpha(y1y2'+y1'y2). еще раз: zz''+(z')^2=alpha(y1y2''+2y1'y2'+y1''y2)=fz^2+2alpha y1'y2'. умножим на z^2 и заменим (zz')^2 по первой формуле: z^3z''+alpha^2(y1y2'+y1'y2)^2=fz^4+4alpha^2 y1y2y1'y2'. перенося, получаем z^3z''+alpha^2(y1y2'-y1'y2)^2=fz^4, то есть z^3z''+alpha^2 w^2=fz^4. чтобы получить z''+1/z^3=fz, нужно alpha^2 w^2=1. значит alpha=1/|w| и c=sqrt(2/|w|). эта константа положительна и зависит только от постоянного вронскиана пары y1,y2.\nai_checked\nwronskian_invariant\nsrc-putnam-archive\nputnam\nwronskian_invariant\nиспользовать постоянство вронскиана\nwronskian-nonlinear-transforms\nвронскиан и нелинейные преобразования решений\ncreated_by:ai\nstudent_olympiad\n11\n10\n8\nидея сильная: постоянный вронскиан связывает линейное уравнение с нелинейным преобразованием. техника высокая: дифференцирование произведения и исключение членов требуют аккуратности.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "putnam-modern-1979-b4",
@@ -51845,7 +51845,7 @@
       ],
       "cluster_labels": [
         "Линейное ОДУ первого порядка",
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "energy_monotonicity"
@@ -51860,7 +51860,7 @@
       "statement": "Найти все действительнозначные непрерывно дифференцируемые функции f на всей прямой, такие что для всех x выполнено f(x)^2 = int_0^x (f(t)^2+f'(t)^2) dt + 1990.",
       "assets": [],
       "has_image": false,
-      "search_text": "putnam-modern-1990-b1\nputnam 1990 b1: интегральное тождество и уравнение f'=f\nolympiad\nproblem\nolympiad_style\nintegral_equation_to_ode\nenergy_method\nlinear_first_order\nstandard_course_methods\nsource_solution_checked\nнайти все действительнозначные непрерывно дифференцируемые функции f на всей прямой, такие что для всех x выполнено f(x)^2 = int_0^x (f(t)^2+f'(t)^2) dt + 1990.\nidea-main\nдифференцировать энергию\nдифференцирование интегрального тождества дает полный квадрат (f'-f)^2.\nai_checked\nenergy_monotonicity\nsol-main\nрешение\nподставляя x=0, получаем f(0)^2=1990. дифференцируем исходное тождество: 2ff'=f^2+(f')^2. это равносильно (f'-f)^2=0, значит f'=f на всей прямой. поэтому f(x)=ce^x. из f(0)^2=1990 следует c=±sqrt(1990). проверка: для f=ce^x имеем f^2+(f')^2=2c^2e^(2x), int_0^x 2c^2e^(2t) dt = c^2(e^(2x)-1), и после добавления 1990=c^2 получается c^2e^(2x)=f(x)^2. ответ: f(x)=sqrt(1990)e^x и f(x)=-sqrt(1990)e^x.\nai_checked\nsrc-putnam-archive\nputnam\nenergy_monotonicity\nпостроить монотонную энергию\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\n???????????? ??????? ??? ???\ncreated_by:ai\ncourse_core\n6\n6\n4\nидея стандартная с красивым распознаванием полного квадрата после дифференцирования. техника короткая: вычисления почти сразу дают f'=f.\nai_checked\nai_checked\ntrue"
+      "search_text": "putnam-modern-1990-b1\nputnam 1990 b1: интегральное тождество и уравнение f'=f\nolympiad\nproblem\nolympiad_style\nintegral_equation_to_ode\nenergy_method\nlinear_first_order\nstandard_course_methods\nsource_solution_checked\nнайти все действительнозначные непрерывно дифференцируемые функции f на всей прямой, такие что для всех x выполнено f(x)^2 = int_0^x (f(t)^2+f'(t)^2) dt + 1990.\nidea-main\nдифференцировать энергию\nдифференцирование интегрального тождества дает полный квадрат (f'-f)^2.\nai_checked\nenergy_monotonicity\nsol-main\nрешение\nподставляя x=0, получаем f(0)^2=1990. дифференцируем исходное тождество: 2ff'=f^2+(f')^2. это равносильно (f'-f)^2=0, значит f'=f на всей прямой. поэтому f(x)=ce^x. из f(0)^2=1990 следует c=±sqrt(1990). проверка: для f=ce^x имеем f^2+(f')^2=2c^2e^(2x), int_0^x 2c^2e^(2t) dt = c^2(e^(2x)-1), и после добавления 1990=c^2 получается c^2e^(2x)=f(x)^2. ответ: f(x)=sqrt(1990)e^x и f(x)=-sqrt(1990)e^x.\nai_checked\nsrc-putnam-archive\nputnam\nenergy_monotonicity\nпостроить монотонную энергию\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\ncourse_core\n6\n6\n4\nидея стандартная с красивым распознаванием полного квадрата после дифференцирования. техника короткая: вычисления почти сразу дают f'=f.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "putnam-modern-1994-b3",
@@ -52363,7 +52363,7 @@
       ],
       "cluster_labels": [
         "Линейное ОДУ первого порядка",
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "picard_iteration",
@@ -52380,7 +52380,7 @@
       "statement": "Пусть f0 непрерывна на [0,1], а f_n(x)=∫_0^x f_{n-1}(t)dt для n>=1. Докажите равномерную сходимость ряда ∑_{n=1}^∞ f_n на [0,1] и найдите его сумму.",
       "assets": [],
       "has_image": false,
-      "search_text": "seemous-2010-p1-iterated-integrals-linear-ode\nseemous 2010 p1: сумма повторных интегралов как линейное оду\nolympiad\nproblem\nolympiad_style\nlinear_first_order\nintegrating_factor\nintegral_equation_to_ode\npicard_iteration\nstandard_course_methods\nsource_solution_checked\ncomplete_proof\nпусть f0 непрерывна на [0,1], а f_n(x)=∫_0^x f_{n-1}(t)dt для n>=1. докажите равномерную сходимость ряда ∑_{n=1}^∞ f_n на [0,1] и найдите его сумму.\nidea-main\nсумма ряда удовлетворяет линейному уравнению\nпосле доказательства равномерной сходимости можно дифференцировать сумму почленно: f'=f+f0. дальше задача становится обычным линейным уравнением первого порядка.\nai_checked\npicard_iteration\nintegrating_factor_linear\nsol-main\nрешение\nпусть m=max_{[0,1]} |f0|. индукцией из определения получаем |f_n(x)|<=m x^n/n!, значит ∑ f_n сходится равномерно на [0,1]. кроме того, f_n'=f_{n-1}, поэтому ряд производных ∑_{n>=1} f_n'=∑_{n>=0} f_n также сходится равномерно: к уже доказанной сходимости добавляется один член f0. обозначим f=∑_{n>=1} f_n. тогда f(0)=0 и f'=f0+f. умножая на e^{-x}, получаем (e^{-x}f(x))'=e^{-x}f0(x). интегрирование от 0 до x дает f(x)=e^x ∫_0^x f0(t)e^{-t}dt.\nsource_solution_checked\nintegrating_factor_linear\nsrc-seemous-archive\nseemous\npicard_iteration\nintegrating_factor_linear\nитерировать интегральный оператор\nумножить на exp интеграла коэффициента\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\n???????????? ??????? ??? ???\ncreated_by:ai\nstudent_olympiad\n7\n7\n5\nидея 7: распознать в сумме повторных интегралов решение линейного уравнения. техника 5: равномерная сходимость и один интегрирующий множитель.\nai_checked\nai_checked\ntrue"
+      "search_text": "seemous-2010-p1-iterated-integrals-linear-ode\nseemous 2010 p1: сумма повторных интегралов как линейное оду\nolympiad\nproblem\nolympiad_style\nlinear_first_order\nintegrating_factor\nintegral_equation_to_ode\npicard_iteration\nstandard_course_methods\nsource_solution_checked\ncomplete_proof\nпусть f0 непрерывна на [0,1], а f_n(x)=∫_0^x f_{n-1}(t)dt для n>=1. докажите равномерную сходимость ряда ∑_{n=1}^∞ f_n на [0,1] и найдите его сумму.\nidea-main\nсумма ряда удовлетворяет линейному уравнению\nпосле доказательства равномерной сходимости можно дифференцировать сумму почленно: f'=f+f0. дальше задача становится обычным линейным уравнением первого порядка.\nai_checked\npicard_iteration\nintegrating_factor_linear\nsol-main\nрешение\nпусть m=max_{[0,1]} |f0|. индукцией из определения получаем |f_n(x)|<=m x^n/n!, значит ∑ f_n сходится равномерно на [0,1]. кроме того, f_n'=f_{n-1}, поэтому ряд производных ∑_{n>=1} f_n'=∑_{n>=0} f_n также сходится равномерно: к уже доказанной сходимости добавляется один член f0. обозначим f=∑_{n>=1} f_n. тогда f(0)=0 и f'=f0+f. умножая на e^{-x}, получаем (e^{-x}f(x))'=e^{-x}f0(x). интегрирование от 0 до x дает f(x)=e^x ∫_0^x f0(t)e^{-t}dt.\nsource_solution_checked\nintegrating_factor_linear\nsrc-seemous-archive\nseemous\npicard_iteration\nintegrating_factor_linear\nитерировать интегральный оператор\nумножить на exp интеграла коэффициента\nlinear-first-order-ode\nintegral-equation-to-ode\nлинейное оду первого порядка\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\nstudent_olympiad\n7\n7\n5\nидея 7: распознать в сумме повторных интегралов решение линейного уравнения. техника 5: равномерная сходимость и один интегрирующий множитель.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "seemous-2020-p4-pole-fixed-point-series",
@@ -52530,7 +52530,7 @@
       ],
       "cluster_labels": [
         "Функционально-дифференциальные олимпиадные уравнения",
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "differentiate_auxiliary_function",
@@ -52547,7 +52547,7 @@
       "statement": "Пусть f:[0,∞)->R непрерывно дифференцируема и для всех x>=1 выполнено f(x)=∫_{x-1}^x f(t)dt. Докажите, что f имеет ограниченную вариацию на [1,∞), то есть ∫_1^∞ |f'(x)|dx<∞.",
       "assets": [],
       "has_image": false,
-      "search_text": "vjimc-2016-c2-p4-moving-average-delay-variation\nvjimc 2016 cii p4: уравнение скользящего среднего и ограниченная вариация\nolympiad\nproblem\nolympiad_style\nintegral_equation_to_ode\nboundedness\ncomparison\nglobal_solution\nbeyond_standard_course\nolympiad_above_exam\nsource_solution_checked\ncomplete_proof\nпусть f:[0,∞)->r непрерывно дифференцируема и для всех x>=1 выполнено f(x)=∫_{x-1}^x f(t)dt. докажите, что f имеет ограниченную вариацию на [1,∞), то есть ∫_1^∞ |f'(x)|dx<∞.\nidea-main\nотслеживать осцилляцию на единичных окнах\nдифференцирование превращает условие в уравнение с запаздыванием f'(x)=f(x)-f(x-1). если на каждом окне [n,n+1] взять максимум, минимум и размах, то уравнение среднего заставляет максимумы убывать, минимумы возрастать, а размах количественно затухать.\nai_checked\ndifferentiate_auxiliary_function\ncomparison_argument\nsol-main\nрешение\nиз условия получаем для x>1 равенство f'(x)=f(x)-f(x-1). обозначим a_n=max_{[n,n+1]} f, b_n=min_{[n,n+1]} f и d_n=a_n-b_n. если бы a_n>a_{n-1}, то в первой точке m∈[n,n+1], где f(m)=a_n, среднее ∫_{m-1}^m f(t)dt было бы строго меньше a_n, противореча f(m)=∫_{m-1}^m f. значит a_n<=a_{n-1}; тот же довод для -f дает b_n>=b_{n-1}, поэтому d_n невозрастает. кроме того, на [n+1,n+2] имеем |f'|<=d_n, так что достаточно доказать суммируемость d_n. официальное решение делает это количественно. так как график на [n,n+1] обязан соединить уровни a_n и b_n при наклоне не больше d_{n-1}, среднее на этом окне не превосходит a_n-d_n^2/(2d_{n-1}). повторяя этот барьер на двух следующих окнах, получают a_{n+2}<=a_n-d_n^5/(128d_{n-1}^4), а применением той же оценки к -f получают b_{n+2}>=b_n+d_n^5/(128d_{n-1}^4). поэтому d_{n+2}<=d_n-d_n^5/(64d_{n-1}^4). деление на d_n и монотонность d_n дают d_{n+2}/d_{n-2}<=63/64 для каждой из четырех подпоследовательностей по модулю 4. следовательно, sum d_n сходится. наконец ∫_1^∞ |f'|<=sum_{n>=1} d_{n-1}<∞.\nsource_solution_checked\ncomparison_argument\nsrc-vjimc-archive\nvjimc\ndifferentiate_auxiliary_function\ncomparison_argument\nдифференцировать специально выбранную вспомогательную функцию\nсравнить с явным уравнением\nolympiad-functional-differential-equations\nintegral-equation-to-ode\nфункционально-дифференциальные олимпиадные уравнения\n???????????? ??????? ??? ???\ncreated_by:ai\nstudent_olympiad\n11\n10\n9\nидея 10: нужно заменить интегральное условие на затухание осцилляции для уравнения с запаздыванием. техника 9: количественный барьер для d_n довольно длинный, но не является бессодержательным вычислительным монстром.\nai_checked\nai_checked\ntrue"
+      "search_text": "vjimc-2016-c2-p4-moving-average-delay-variation\nvjimc 2016 cii p4: уравнение скользящего среднего и ограниченная вариация\nolympiad\nproblem\nolympiad_style\nintegral_equation_to_ode\nboundedness\ncomparison\nglobal_solution\nbeyond_standard_course\nolympiad_above_exam\nsource_solution_checked\ncomplete_proof\nпусть f:[0,∞)->r непрерывно дифференцируема и для всех x>=1 выполнено f(x)=∫_{x-1}^x f(t)dt. докажите, что f имеет ограниченную вариацию на [1,∞), то есть ∫_1^∞ |f'(x)|dx<∞.\nidea-main\nотслеживать осцилляцию на единичных окнах\nдифференцирование превращает условие в уравнение с запаздыванием f'(x)=f(x)-f(x-1). если на каждом окне [n,n+1] взять максимум, минимум и размах, то уравнение среднего заставляет максимумы убывать, минимумы возрастать, а размах количественно затухать.\nai_checked\ndifferentiate_auxiliary_function\ncomparison_argument\nsol-main\nрешение\nиз условия получаем для x>1 равенство f'(x)=f(x)-f(x-1). обозначим a_n=max_{[n,n+1]} f, b_n=min_{[n,n+1]} f и d_n=a_n-b_n. если бы a_n>a_{n-1}, то в первой точке m∈[n,n+1], где f(m)=a_n, среднее ∫_{m-1}^m f(t)dt было бы строго меньше a_n, противореча f(m)=∫_{m-1}^m f. значит a_n<=a_{n-1}; тот же довод для -f дает b_n>=b_{n-1}, поэтому d_n невозрастает. кроме того, на [n+1,n+2] имеем |f'|<=d_n, так что достаточно доказать суммируемость d_n. официальное решение делает это количественно. так как график на [n,n+1] обязан соединить уровни a_n и b_n при наклоне не больше d_{n-1}, среднее на этом окне не превосходит a_n-d_n^2/(2d_{n-1}). повторяя этот барьер на двух следующих окнах, получают a_{n+2}<=a_n-d_n^5/(128d_{n-1}^4), а применением той же оценки к -f получают b_{n+2}>=b_n+d_n^5/(128d_{n-1}^4). поэтому d_{n+2}<=d_n-d_n^5/(64d_{n-1}^4). деление на d_n и монотонность d_n дают d_{n+2}/d_{n-2}<=63/64 для каждой из четырех подпоследовательностей по модулю 4. следовательно, sum d_n сходится. наконец ∫_1^∞ |f'|<=sum_{n>=1} d_{n-1}<∞.\nsource_solution_checked\ncomparison_argument\nsrc-vjimc-archive\nvjimc\ndifferentiate_auxiliary_function\ncomparison_argument\nдифференцировать специально выбранную вспомогательную функцию\nсравнить с явным уравнением\nolympiad-functional-differential-equations\nintegral-equation-to-ode\nфункционально-дифференциальные олимпиадные уравнения\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\nstudent_olympiad\n11\n10\n9\nидея 10: нужно заменить интегральное условие на затухание осцилляции для уравнения с запаздыванием. техника 9: количественный барьер для d_n довольно длинный, но не является бессодержательным вычислительным монстром.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "msu-ode-2023-2-infinite-zeros-linear-ode",
@@ -52898,7 +52898,7 @@
         "wronskian-nonlinear-transforms"
       ],
       "cluster_labels": [
-        "????????? ? ?????????? ?????????????? ???????"
+        "Вронскиан и нелинейные преобразования решений"
       ],
       "standard_idea_ids": [
         "logarithmic_derivative",
@@ -52915,7 +52915,7 @@
       "statement": "Пусть m != 0,1. Найти условие на p(x), q(x), при котором уравнение Y''+p(x)Y'+q(x)Y=0 имеет на интервале два решения вида y и y^m, где y нигде не обращается в нуль и y'/y не тождественно равна нулю.",
       "assets": [],
       "has_image": false,
-      "search_text": "olympiad-level-power-solution-linear-ode-criterion\nесли y и y^m решают одно линейное уравнение\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nsign_analysis\nadvanced_standard_course\nolympiad_above_exam\ncomplete_proof\nпусть m != 0,1. найти условие на p(x), q(x), при котором уравнение y''+p(x)y'+q(x)y=0 имеет на интервале два решения вида y и y^m, где y нигде не обращается в нуль и y'/y не тождественно равна нулю.\nidea-main\nсвести к логарифмической производной\nподстановка y и y^m дает две алгебраические связи для r=y'/y; их вычитание выражает q через r^2, а оставшаяся формула задает p.\nai_checked\nlogarithmic_derivative\nwronskian_liouville\nsol-main\nрешение\nобозначим r=y'/y. для y=y получаем r'+r^2+pr+q=0. для y=y^m логарифмическая производная равна mr, поэтому подстановка дает m r'+m^2 r^2+p m r+q=0. вычтем m раз первое равенство из второго: m(m-1)r^2+(1-m)q=0, откуда q=m r^2. тогда первое равенство принимает вид r'+(m+1)r^2+pr=0. поэтому критерий таков: существует гладкая функция r, не тождественно равная нулю, для которой q=m r^2 и r'+(m+1)r^2+pr=0. обратно, при таком r функция y=exp(int r dx) дает решения y и y^m; их отношение y^{m-1} непостоянно, если r не тождественно ноль, значит решения линейно независимы. случай m=2 возвращает условие q=2r^2, используемое в олимпиадной задаче хнурэ.\nai_checked\nlogarithmic_derivative\nsrc-student-olympiad-folklore\nолимпиадный фольклор\nlogarithmic_derivative\nwronskian_liouville\nвзять логарифмическую производную\nследить за вронскианом\nwronskian-nonlinear-transforms\n????????? ? ?????????? ?????????????? ???????\ncreated_by:ai\nstudent_olympiad\n10\n10\n6\nобобщение показывает, что после распознавания логарифмической производной задача становится шаблонной; это скорее верхний олимпиадный стандарт, чем уникальная идея 11+.\nai_checked\nai_checked\ntrue"
+      "search_text": "olympiad-level-power-solution-linear-ode-criterion\nесли y и y^m решают одно линейное уравнение\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nsign_analysis\nadvanced_standard_course\nolympiad_above_exam\ncomplete_proof\nпусть m != 0,1. найти условие на p(x), q(x), при котором уравнение y''+p(x)y'+q(x)y=0 имеет на интервале два решения вида y и y^m, где y нигде не обращается в нуль и y'/y не тождественно равна нулю.\nidea-main\nсвести к логарифмической производной\nподстановка y и y^m дает две алгебраические связи для r=y'/y; их вычитание выражает q через r^2, а оставшаяся формула задает p.\nai_checked\nlogarithmic_derivative\nwronskian_liouville\nsol-main\nрешение\nобозначим r=y'/y. для y=y получаем r'+r^2+pr+q=0. для y=y^m логарифмическая производная равна mr, поэтому подстановка дает m r'+m^2 r^2+p m r+q=0. вычтем m раз первое равенство из второго: m(m-1)r^2+(1-m)q=0, откуда q=m r^2. тогда первое равенство принимает вид r'+(m+1)r^2+pr=0. поэтому критерий таков: существует гладкая функция r, не тождественно равная нулю, для которой q=m r^2 и r'+(m+1)r^2+pr=0. обратно, при таком r функция y=exp(int r dx) дает решения y и y^m; их отношение y^{m-1} непостоянно, если r не тождественно ноль, значит решения линейно независимы. случай m=2 возвращает условие q=2r^2, используемое в олимпиадной задаче хнурэ.\nai_checked\nlogarithmic_derivative\nsrc-student-olympiad-folklore\nолимпиадный фольклор\nlogarithmic_derivative\nwronskian_liouville\nвзять логарифмическую производную\nследить за вронскианом\nwronskian-nonlinear-transforms\nвронскиан и нелинейные преобразования решений\ncreated_by:ai\nstudent_olympiad\n10\n10\n6\nобобщение показывает, что после распознавания логарифмической производной задача становится шаблонной; это скорее верхний олимпиадный стандарт, чем уникальная идея 11+.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "ru-misc-kfu-2015-15-4",
@@ -52949,7 +52949,7 @@
         "integral-equation-to-ode"
       ],
       "cluster_labels": [
-        "???????????? ??????? ??? ???"
+        "Интегральные уравнения, сводящиеся к ОДУ"
       ],
       "standard_idea_ids": [
         "separate_variables"
@@ -52964,7 +52964,7 @@
       "statement": "Найти функцию y(x), если int_0^{y'(x)} e^t/(1 + 2e^t) dt = (1/2) ln x и y(1) = -2/3.",
       "assets": [],
       "has_image": false,
-      "search_text": "ru-misc-kfu-2015-15-4\nинтегрально заданное уравнение для y'\nolympiad\nproblem\nolympiad_style\nseparable\nnonlinear_transform\nstandard_course_methods\nexam_score_6\nнайти функцию y(x), если int_0^{y'(x)} e^t/(1 + 2e^t) dt = (1/2) ln x и y(1) = -2/3.\nidea-main\nсначала выразить производную\nвнутренний интеграл зависит только от y'. его нужно вычислить явно, после чего задача превращается в одно обычное интегрирование по x.\nai_checked\nseparate_variables\nsol-main\nрешение\nвычислим интеграл по переменной t. при u = e^t получаем du = e^t dt и integral e^t/(1 + 2e^t) dt = (1/2) ln(1 + 2e^t). поэтому (1/2) ln((1 + 2e^{y'(x)})/3) = (1/2) ln x. так как рассматривается решение около x = 1, имеем x > 0, и отсюда 1 + 2e^{y'} = 3x. следовательно e^{y'} = (3x - 1)/2 и y'(x) = ln((3x - 1)/2), где x > 1/3 на интервале решения, содержащем точку 1. интегрируя, получаем y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) + c. при x = 1 первое слагаемое равно -2/3, поэтому из условия y(1) = -2/3 следует c = 0. ответ: y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) на x > 1/3.\nai_checked\nsrc-kfu-lobachevsky-olympiad\nкфу лобачевский\nseparate_variables\nразделить переменные\nintegral-equation-to-ode\n???????????? ??????? ??? ???\ncreated_by:ai\nstudent_olympiad\n6\n4\n5\nидейная сложность 4: нужно заметить, что интегральное условие явно выражает y'. техническая сложность 5: требуется аккуратно вычислить два стандартных интеграла и учесть область x>1/3.\nai_checked\nai_checked\ntrue"
+      "search_text": "ru-misc-kfu-2015-15-4\nинтегрально заданное уравнение для y'\nolympiad\nproblem\nolympiad_style\nseparable\nnonlinear_transform\nstandard_course_methods\nexam_score_6\nнайти функцию y(x), если int_0^{y'(x)} e^t/(1 + 2e^t) dt = (1/2) ln x и y(1) = -2/3.\nidea-main\nсначала выразить производную\nвнутренний интеграл зависит только от y'. его нужно вычислить явно, после чего задача превращается в одно обычное интегрирование по x.\nai_checked\nseparate_variables\nsol-main\nрешение\nвычислим интеграл по переменной t. при u = e^t получаем du = e^t dt и integral e^t/(1 + 2e^t) dt = (1/2) ln(1 + 2e^t). поэтому (1/2) ln((1 + 2e^{y'(x)})/3) = (1/2) ln x. так как рассматривается решение около x = 1, имеем x > 0, и отсюда 1 + 2e^{y'} = 3x. следовательно e^{y'} = (3x - 1)/2 и y'(x) = ln((3x - 1)/2), где x > 1/3 на интервале решения, содержащем точку 1. интегрируя, получаем y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) + c. при x = 1 первое слагаемое равно -2/3, поэтому из условия y(1) = -2/3 следует c = 0. ответ: y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) на x > 1/3.\nai_checked\nsrc-kfu-lobachevsky-olympiad\nкфу лобачевский\nseparate_variables\nразделить переменные\nintegral-equation-to-ode\nинтегральные уравнения, сводящиеся к оду\ncreated_by:ai\nstudent_olympiad\n6\n4\n5\nидейная сложность 4: нужно заметить, что интегральное условие явно выражает y'. техническая сложность 5: требуется аккуратно вычислить два стандартных интеграла и учесть область x>1/3.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "two-solutions-touching",
@@ -53050,7 +53050,7 @@
         "wronskian-nonlinear-transforms"
       ],
       "cluster_labels": [
-        "????????? ? ?????????? ?????????????? ???????"
+        "Вронскиан и нелинейные преобразования решений"
       ],
       "standard_idea_ids": [
         "logarithmic_derivative",
@@ -53067,7 +53067,7 @@
       "statement": "Найти условия на p(x) и q(x), при которых уравнение y'' + p(x)y' + q(x)y = 0 имеет два линейно независимых решения y1 и y2 = y1^2.",
       "assets": [],
       "has_image": false,
-      "search_text": "ru-misc-nure-8-3\nкогда y1 и y1^2 решают одно линейное уравнение\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nsign_analysis\nadvanced_standard_course\nsource_solution_checked\nolympiad_above_exam\nнайти условия на p(x) и q(x), при которых уравнение y'' + p(x)y' + q(x)y = 0 имеет два линейно независимых решения y1 и y2 = y1^2.\nidea-main\nисключить логарифмическую производную\nесли y и y^2 являются решениями, то вычитание двух подстановок дает связь между q и r = y'/y. затем исходное уравнение выражает p через r и r', что дает условие на p и q.\nai_checked\nlogarithmic_derivative\nwronskian_liouville\nsol-main\nрешение\nработаем на интервале, где p и q достаточно гладкие, а искомые решения линейно независимы. если y1(x0) = 0, то y2 = y1^2 имеет в x0 нулевые значение и производную, а значит для линейного уравнения y2 было бы тождественно нулевым; это невозможно. поэтому y1 не обращается в нуль. обозначим r = y1'/y1. подстановка y1 в уравнение дает r' + r^2 + pr + q = 0. подстановка y1^2 дает 2r' + 4r^2 + 2pr + q = 0. вычитая удвоенное первое равенство из второго, получаем 2r^2 - q = 0, то есть q = 2r^2. линейная независимость y1 и y1^2 требует r != 0, поэтому q > 0. из первого равенства следует r' + 3r^2 + pr = 0. беря ветвь r = sqrt(q/2) или r = -sqrt(q/2), получаем условие p = -r'/r - 3r. эквивалентно, для выбранного знака должно выполняться q' + 2pq + 6qr = 0, где r^2 = q/2. в частности для ветви r = sqrt(q/2) это q' + 2pq + 3sqrt(2) q^{3/2} = 0; для противоположной ветви знак последнего слагаемого меняется. обратно, если q > 0 и для одной из ветвей r = ±sqrt(q/2) выполнено r' + 3r^2 + pr = 0, то y1 = exp(integral r dx) и y2 = y1^2 = exp(integral 2r dx) удовлетворяют исходному уравнению. их отношение y2/y1 = y1 непостоянно, так как r != 0, значит решения линейно независимы.\nai_checked\nsrc-nure-student-olympiad-book\nхнурэ сборник\nlogarithmic_derivative\nwronskian_liouville\nвзять логарифмическую производную\nследить за вронскианом\nwronskian-nonlinear-transforms\n????????? ? ?????????? ?????????????? ???????\ncreated_by:ai\nstudent_olympiad\n10\n10\n7\nпосле аудита 2026-05-27 снижено с idea_score=11 до 10: характеризация через y и y^2 является сильным олимпиадным шаблоном на логарифмическую производную, но обобщение y и y^m показывает переносимый прием. техническая сложность 7 из-за ветвей знака оставлена.\nai_checked\nai_checked\ntrue"
+      "search_text": "ru-misc-nure-8-3\nкогда y1 и y1^2 решают одно линейное уравнение\nolympiad\nproblem\nolympiad_style\nlinear_higher_order\nwronskian\nnonlinear_transform\nsign_analysis\nadvanced_standard_course\nsource_solution_checked\nolympiad_above_exam\nнайти условия на p(x) и q(x), при которых уравнение y'' + p(x)y' + q(x)y = 0 имеет два линейно независимых решения y1 и y2 = y1^2.\nidea-main\nисключить логарифмическую производную\nесли y и y^2 являются решениями, то вычитание двух подстановок дает связь между q и r = y'/y. затем исходное уравнение выражает p через r и r', что дает условие на p и q.\nai_checked\nlogarithmic_derivative\nwronskian_liouville\nsol-main\nрешение\nработаем на интервале, где p и q достаточно гладкие, а искомые решения линейно независимы. если y1(x0) = 0, то y2 = y1^2 имеет в x0 нулевые значение и производную, а значит для линейного уравнения y2 было бы тождественно нулевым; это невозможно. поэтому y1 не обращается в нуль. обозначим r = y1'/y1. подстановка y1 в уравнение дает r' + r^2 + pr + q = 0. подстановка y1^2 дает 2r' + 4r^2 + 2pr + q = 0. вычитая удвоенное первое равенство из второго, получаем 2r^2 - q = 0, то есть q = 2r^2. линейная независимость y1 и y1^2 требует r != 0, поэтому q > 0. из первого равенства следует r' + 3r^2 + pr = 0. беря ветвь r = sqrt(q/2) или r = -sqrt(q/2), получаем условие p = -r'/r - 3r. эквивалентно, для выбранного знака должно выполняться q' + 2pq + 6qr = 0, где r^2 = q/2. в частности для ветви r = sqrt(q/2) это q' + 2pq + 3sqrt(2) q^{3/2} = 0; для противоположной ветви знак последнего слагаемого меняется. обратно, если q > 0 и для одной из ветвей r = ±sqrt(q/2) выполнено r' + 3r^2 + pr = 0, то y1 = exp(integral r dx) и y2 = y1^2 = exp(integral 2r dx) удовлетворяют исходному уравнению. их отношение y2/y1 = y1 непостоянно, так как r != 0, значит решения линейно независимы.\nai_checked\nsrc-nure-student-olympiad-book\nхнурэ сборник\nlogarithmic_derivative\nwronskian_liouville\nвзять логарифмическую производную\nследить за вронскианом\nwronskian-nonlinear-transforms\nвронскиан и нелинейные преобразования решений\ncreated_by:ai\nstudent_olympiad\n10\n10\n7\nпосле аудита 2026-05-27 снижено с idea_score=11 до 10: характеризация через y и y^2 является сильным олимпиадным шаблоном на логарифмическую производную, но обобщение y и y^m показывает переносимый прием. техническая сложность 7 из-за ветвей знака оставлена.\nai_checked\nai_checked\ntrue"
     },
     {
       "id": "solve-functional-ode-composition",
@@ -68443,59 +68443,59 @@
     },
     {
       "id": "integral-equation-to-ode",
-      "title": "???????????? ??????? ??? ???",
+      "title": "Интегральные уравнения, сводящиеся к ОДУ",
       "status": "watch",
-      "goal": "??????? ??????, ??? ???????????? ?????????, ????????? ????????? ??? ???????? ? ??????????? ?????????? ????? ?????????? ? ??????? ???????????????? ?????????, ?????????/??????? ??????? ??? ????????? ??????? ???????????????????.",
+      "goal": "Собрать задачи, где интегральное тождество, среднее значение или условие с интегралом после дифференцирования сводится к задаче для ОДУ, алгебраическому условию или проверке самосогласованности.",
       "duplicate_signals": [
-        "???????? ???????????????? ????? ???? ??? ? ????? ????? ???????? ??? ?????????????? ???????? ?????? ??????? ??? ?????? ??????? ???????????????????.",
-        "????? ?????? ?????????? ?????? ??????????????? ????????, ? ????: ?????????? ???????????? ?????????, ?????? ??? ? ?????????? ??????? - ?????????.",
-        "???????? ???????? ???????? ???????????? ???????????? ??? ???????????? ??????????, ? ?? ????????? ? ???.",
-        "????????? ????????? ???????????? ?????? ??? ?????????? ?????? ???? ?????? ??? ?????????? ??????."
+        "После дифференцирования получается тот же тип ОДУ и та же проверка констант или начальных условий.",
+        "План решения меняется только техническими деталями: пределами интегрирования, сдвигом или выбором удобной переменной.",
+        "Главная идея состоит в превращении интегрального условия в ОДУ, а не в вычислении самого интеграла.",
+        "Финальная проверка самосогласованности устроена так же, как в уже имеющейся задаче."
       ],
       "canonical_solution_plan": [
-        "???????? ??????????? ???????????? ????????, ???????? ??? ??????? ??????????.",
-        "???????????????? ????????? ???? ?????????? ????????? ????????? ??? ???????????? ????? ???.",
-        "?????? ?????????? ??? ??????????? ??????? ?????.",
-        "??????? ???????????? ??????? ??? ?????????, ??????? ??? ????????????????? ????????? ???????.",
-        "????????? ??????? ??????????? ? ???????????? ?????????????????/??????????."
+        "Выделить неизвестную интегральную величину, среднее или скрытую константу.",
+        "Дифференцировать равенство либо применить основную теорему анализа.",
+        "Получить начальные или граничные условия для ОДУ.",
+        "Решить полученное ОДУ или доказать нужное свойство без полного решения.",
+        "Проверить исходное интегральное условие и самосогласованность констант."
       ],
       "allowed_variants": [
         {
           "id": "unknown_constant_self_consistency",
-          "description": "???????? ?????? ??????????? ?????????, ??????? ???????????? ????? ??????? ???.",
-          "use_when": "??????? ??? - ?? ?????????? ?????????, ? ????????? ?????????? ???????."
+          "description": "Появляется скрытая постоянная, которая определяется после решения ОДУ.",
+          "use_when": "Главная идея - не вычисление интеграла, а закрытие условия согласования."
         },
         {
           "id": "iterated_integrals_picard",
-          "description": "????? ????????? ?????????? ???????????? ??? ??????? ????????????? ????????? ??? ???????? ??????.",
-          "use_when": "????? ??????? ???/???????? ? ???????? ??? ??? ??????? ??????????."
+          "description": "Цепочка повторных интегралов превращается в линейное ОДУ или систему ОДУ.",
+          "use_when": "После нескольких дифференцирований появляется задача Коши для простой системы."
         },
         {
           "id": "differentiate_parameter_integrals",
-          "description": "??????????????? ????????? ????????????? ?????? ? ???? ?? ??? ????? ????????????????? ??? ?????? ?????????.",
-          "use_when": "???????????? ???????????? ????????? ????? ????? ?????? ????/??????? ??????."
+          "description": "Параметрические интегралы дифференцируются по параметру и дают новое уравнение.",
+          "use_when": "Интегральное тождество содержит параметр и требует регулярного перехода к ОДУ."
         },
         {
           "id": "explicit_derivative_from_integral",
-          "description": "???????????? ??????? ??????? ???? ???????? ??????????? ??????????? ???????.",
-          "use_when": "????? ????????????? ???????? ???????? separable/linear ??????, ?? ???? ???????? ????????????."
+          "description": "Производная заданной функции прямо выражается через интегральное условие.",
+          "use_when": "После дифференцирования остается разделяющееся или линейное уравнение без тяжелого счета."
         }
       ],
       "saturation_policy": {
         "status": "watch",
         "target_representative_count": 8,
         "do_not_add_when": [
-          "????? ???????? ???????? ??? ????? ?????? ?????????????????? ????????????? ????????? ??? ?????? ???????.",
-          "??????????? ????????? ???? ?????? ?? ?????????? ???????? ?????????.",
-          "?????? ????? ????????? ? ????????????? ??????????, ???? ???????? ???????? ????????????, ? ?? ???????? ?????? ???."
+          "Новая задача отличается только видом уже дифференцируемого интегрального условия.",
+          "Единственный новый шаг состоит в громоздком вычислении интеграла.",
+          "Задача скорее относится к интегральным уравнениям, если главная трудность не в методах ОДУ."
         ]
       },
       "deficit_policy": {
         "priority": "low",
-        "need": "????? ???????????? ?????? ???? ????????????? ?? ????????? ???????????????????, ????????? ?????????, ??????????????? ????????? ? ????? ????????? ???????????. ????????? ?????? ??? ????? ????????? ???????? ?? ????????? ? ???.",
+        "need": "Нужно представлять разные способы перехода от интегрального условия к дифференциальному: средние значения, повторные интегралы, параметрические интегралы и условия самосогласованности. Массовый добор не нужен.",
         "prefer_new_cards": [
-          "???????? ?????? ?? ???????????? ????????? ?????????, ??? ??????? ?? ???????? ?????? ??? ????? ???????? ?????? ????????.",
-          "?????? ?? ??????????????? ?????????, ??? ????? ???-????????? ???????? ??????? ????."
+          "Короткие задачи на скрытую константу интегрирования, где решение не сводится к одной строке счета.",
+          "Задачи с параметрическим интегралом, где надо аккуратно получить ОДУ."
         ]
       },
       "representative_card_ids": [
@@ -68506,58 +68506,58 @@
         "ru-misc-kfu-2015-15-4",
         "vjimc-2016-c2-p4-moving-average-delay-variation"
       ],
-      "notes": "??????? ??????? ??????????? ????? ??? ????????? 2026-05-27. ??????? ?? ???????? ??? ???????????? ??????????? ? ?? ????????? ???????????? ??????????: ???? ???????? ?????? ??????, ??? ???????????? ?????? ???????? ?????? ? ??? ??? ??????? ???????????????????."
+      "notes": "Кластер создан после аудита олимпиадных задач 2026-05-27. Он не должен поглощать все интегральные неравенства и чистые интегральные уравнения: здесь важен именно переход к ОДУ или проверка самосогласованности."
     },
     {
       "id": "wronskian-nonlinear-transforms",
-      "title": "????????? ? ?????????? ?????????????? ???????",
+      "title": "Вронскиан и нелинейные преобразования решений",
       "status": "active",
-      "goal": "??????? ?????? ??????????? ??????, ??? ??????? ????????? ??? ??????????? ? ??????????? ???????????????? ????? y^m, ???????????? ??? ????????? ?????, ? ??????? ???????? - ??????????????? ???????????, ??????????? ?????????? ??? ?????????? ?????????????.",
+      "goal": "Собрать задачи повышенного уровня, где свойства решений или вронскиана переводятся в утверждения о нелинейных преобразованиях вроде y^m, отношениях решений или специальных комбинациях.",
       "duplicate_signals": [
-        "?????? ????? ????????? ?????? ??? ?? ???????? ??? y ? y^m ??? ?????? ??????.",
-        "???????????? ???????? ??????? ??????? ????????/??????? ? ?????? ???? ? ??????????????? ??????? ???????.",
-        "????????? ???????????? ???? ??? ??????????? ??????? ????????, ??? ??????????? ?????????????? ???????.",
-        "????? ???????? ?????????? ?????? ???????? m ??? ????????????? ???????."
+        "Задачи меняют только степень y^m или обозначения функций.",
+        "Используется тот же переход от исходного уравнения к уравнению для отношения или степени.",
+        "Ограничения на нули и знаки повторяют уже имеющуюся ветвь рассуждения.",
+        "Новая формулировка отличается только параметром степени или косметикой записи."
       ],
       "canonical_solution_plan": [
-        "???????? ???????? ????????? ??? ???????????? ????? ??? ???????? ???????.",
-        "??????? ? ??????????????? ???????????, ????????? ??????? ??? ??????????? ??????????.",
-        "????????? ???????????? ????????? ????????? ? ???????? ??????? ?? ?????????? ??????????????.",
-        "????????? ?????, ???? ? ?????????, ?? ??????? ?????? ?????????.",
-        "???????? ????? ???????? ?? ?????????? ??????? ??? ?????????? ?????????? ??????????."
+        "Выбрать отношение решений или нелинейную функцию от решения.",
+        "Перейти к логарифмической производной, вронскиану или уравнению для новой величины.",
+        "Использовать линейность исходного уравнения и поведение нулей/знаков.",
+        "Проверить точки, где преобразование может быть недопустимо.",
+        "Вернуться к исходной формулировке и отдельно разобрать исключительные случаи."
       ],
       "allowed_variants": [
         {
           "id": "power_of_solution",
-          "description": "??????? y ? ??????? y^m ?????? ???????????? ????????????? ?????? ????????? ?????????.",
-          "use_when": "??????? ??? - ??????????????? ??????????? ? ?????????? ?????????????."
+          "description": "Замена y на y^m задает специальное нелинейное свойство решения.",
+          "use_when": "Главная идея - логарифмическая производная и контроль вронскиана."
         },
         {
           "id": "pinney_wronskian_transform",
-          "description": "?????????? ????????? ???? ??????? ???????? ? ??????????? ????????? ???? ?????.",
-          "use_when": "??????? ??? - ?????????? ?????????? ??????????????? ???????."
+          "description": "Используется связь между парой линейных решений и нелинейным уравнением типа Пинни.",
+          "use_when": "Главная идея - сохранение вронскиана и специальная комбинация решений."
         },
         {
           "id": "sign_and_zero_branches",
-          "description": "???? ? ???? ??????? ??????????? ?????? ?? ???????????? ??????????? ??????????????.",
-          "use_when": "????? ???? ?????????????? ????????? ???????????, ? ?? ?????? ????????? ????????????????."
+          "description": "Нули и знаки решения требуют отдельного контроля допустимости преобразования.",
+          "use_when": "Надо явно разобрать ветви, а не только выполнить формальную подстановку."
         }
       ],
       "saturation_policy": {
         "status": "watch",
         "target_representative_count": 4,
         "do_not_add_when": [
-          "????? ?????? ???????? ??????? ??????? ??? ?????????? ???????? y ? y^m.",
-          "?????????? ?????? ??????? ??????? ?????????? ????????????? ??? ????? ????.",
-          "???????? ?????? ??????????? ??????? Riccati/Bernoulli-?????????."
+          "Новая задача меняет только степень или обозначение в преобразовании y -> y^m.",
+          "Отличие состоит лишь в более длинной алгебре после той же идеи.",
+          "Задача на самом деле является обычной редукцией Риккати или Бернулли."
         ]
       },
       "deficit_policy": {
         "priority": "low",
-        "need": "??????? ??? ? ????????? ???????????: ???? ?????????????? ?????????? ??? ?????????. ????????? ?????? ??? ????? ?????????? ?????????????? ??????????????? ???????.",
+        "need": "Кластер мал и специально ограничен: нужны только разные переносимые механизмы. Массовый добор похожих нелинейных преобразований не требуется.",
         "prefer_new_cards": [
-          "???? ???????? ?????? ?? ????????? ???? ??????? ? Schwarzian/Riccati, ???? ??? ????? ??????? ? ?????? ?????.",
-          "??????????? ?????? ?? Pinney/Ermakov ??? ??????? ??????? ??????."
+          "Одна короткая задача на переход к Schwarzian/Riccati, если она не дублирует текущие карточки.",
+          "Классическая задача типа Pinney/Ermakov с красивым коротким решением."
         ]
       },
       "representative_card_ids": [
@@ -68565,7 +68565,7 @@
         "ru-misc-nure-8-3",
         "putnam-early-1975-a5-wronskian-nonlinear-transform"
       ],
-      "notes": "??????? ??????? ??????????? ????? ??? ????????? 2026-05-27. ??? ?? ????? ??????? ?????????? ???: ?? ?????? ?????? ??????, ??? ???????????? ????????? ?? ????????? ????????? ????????? ? ??????????."
+      "notes": "Кластер создан после аудита олимпиадных задач 2026-05-27. Это не новый общий кластер линейных ОДУ: он нужен только там, где нелинейное преобразование решения является главной идеей."
     }
   ],
   "taxonomy": {
