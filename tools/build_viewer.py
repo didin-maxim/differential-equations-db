@@ -1465,6 +1465,17 @@ def build_html(data):
     .tex-content .katex {
       max-width: 100%;
       font-size: 1.03em;
+      overflow-wrap: normal;
+      word-break: normal;
+      white-space: nowrap;
+    }
+
+    .tex-content :not(.katex-display) > .katex {
+      display: inline-block;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      vertical-align: -0.18em;
     }
 
     .tex-fallback {
@@ -1880,6 +1891,100 @@ def build_html(data):
     const difficultyLabels = Object.fromEntries((DB.taxonomy?.difficulty || []).map(item => [item.id, item.title || item.id]));
     const fragmentLabels = Object.fromEntries((DB.taxonomy?.fragments || []).map(item => [item.id, item.title || item.id]));
     const relationTypeLabels = Object.fromEntries((DB.taxonomy?.relation_types || []).map(item => [item.id, item.title || item.id]));
+    const tagLabels = {
+      existence_uniqueness: 'существование и единственность',
+      picard_iteration: 'итерации Пикара',
+      peano: 'теорема Пеано',
+      continuation: 'продолжение решения',
+      gronwall: 'неравенство Гронуолла',
+      separable: 'уравнение с разделяющимися переменными',
+      linear_first_order: 'линейное уравнение первого порядка',
+      exact_equation: 'уравнение в полных дифференциалах',
+      integrating_factor: 'интегрирующий множитель',
+      bernoulli: 'уравнение Бернулли',
+      riccati: 'уравнение Риккати',
+      clairaut: 'уравнение Клеро',
+      implicit_ode_discriminant: 'неразрешенное ОДУ и дискриминант',
+      homogeneous_first_order: 'однородное уравнение первого порядка',
+      orthogonal_trajectories: 'ортогональные траектории',
+      linear_higher_order: 'линейные уравнения высших порядков',
+      constant_coefficients: 'постоянные коэффициенты',
+      variation_of_parameters: 'вариация постоянных',
+      wronskian: 'вронскиан',
+      matrix_exponential: 'матричная экспонента',
+      jordan_form: 'жорданова форма',
+      linear_systems: 'линейные системы',
+      stability: 'устойчивость',
+      phase_line: 'фазовая прямая',
+      phase_plane: 'фазовая плоскость',
+      first_integral: 'первый интеграл',
+      lyapunov: 'метод Ляпунова',
+      bendixson: 'критерий Бендиксона',
+      boundary_value: 'краевая задача',
+      shooting_parameter: 'метод стрельбы',
+      eigenvalues: 'собственные значения',
+      resonance: 'резонанс',
+      sturm_liouville: 'Штурм-Лиувилль',
+      sturm_comparison: 'сравнение Штурма',
+      sturm_zero_count: 'нули по Штурму',
+      prufer_angle: 'угол Прюфера',
+      series_solution: 'решение рядами',
+      frobenius: 'метод Фробениуса',
+      blow_up: 'выход решения на бесконечность',
+      global_solution: 'глобальное решение',
+      periodic_solution: 'периодическое решение',
+      olympiad_style: 'олимпиадный стиль',
+      olympiad_above_exam: 'выше экзамена',
+      mipt_core: 'программа МФТИ',
+      complete_proof: 'полное доказательство',
+      standard_course_methods: 'методы стандартного курса',
+      advanced_standard_course: 'продвинутый стандартный курс',
+      beyond_standard_course: 'за пределами стандартного курса',
+      source_solution_checked: 'сверено с решением',
+      differential_inequality: 'дифференциальное неравенство',
+      energy_method: 'энергетический метод',
+      green_kernel: 'функция Грина',
+      fredholm_alternative: 'альтернатива Фредгольма',
+      floquet_theory: 'теория Флоке',
+      first_order_pde_characteristics: 'характеристики уравнения первого порядка',
+      pde_characteristics: 'характеристики',
+      linear_first_order_pde: 'линейное уравнение первого порядка в частных производных',
+      cauchy_problem: 'задача Коши',
+      recover_ode_from_family: 'восстановление ОДУ по семейству',
+      cauchy_uniqueness: 'единственность задачи Коши',
+      graphical_construction: 'графическое построение',
+      oral_exam: 'устный экзамен',
+      resit_exam: 'пересдача',
+      low_technical: 'низкая техника',
+      self_authored: 'авторская задача',
+      model_exam_task: 'модельная экзаменационная задача',
+      counterexample: 'контрпример',
+      written_exam: 'письменный экзамен',
+      theoretical_exam_task: 'теоретическая задача экзамена',
+      variational_calculus: 'вариационное исчисление',
+      euler_lagrange: 'уравнение Эйлера-Лагранжа',
+      second_variation_test: 'проверка второй вариации',
+      quadratic_variational_bound: 'квадратичный функционал',
+      free_endpoint_variational: 'свободный конец',
+      natural_boundary_conditions: 'естественные граничные условия',
+      transversality: 'трансверсальность',
+      isoperimetric_problem: 'изопериметрическая задача',
+      euler_poisson: 'уравнение Эйлера-Пуассона',
+      higher_derivatives_functional: 'старшие производные в функционале',
+      second_variation: 'вторая вариация',
+      legendre_condition: 'условие Лежандра',
+      jacobi_condition: 'условие Якоби',
+      sturm_theorem: 'теорема Штурма',
+      trace_determinant: 'след и определитель',
+      linear_recurrence: 'линейная рекуррента',
+      task_cluster: 'кластер типовых задач',
+      method_guide: 'методический блок',
+      theory_bridge: 'теоретический мост',
+      cluster_representative: 'представитель кластера',
+      duplicate_filtered: 'дубли отфильтрованы',
+      program_deficit: 'дефицитная тема программы',
+      test_import: 'импорт из тестов'
+    };
 
     const quickModes = [
       { id: 'problems', label: 'Задачи' },
@@ -1935,10 +2040,44 @@ def build_html(data):
         .replace(/-∞/g, '-∞');
     }
 
+    function normalizePlainMathSegment(segment) {
+      return String(segment || '')
+        .replace(/∫/g, '\\\\int')
+        .replace(/∑/g, '\\\\sum')
+        .replace(/∏/g, '\\\\prod')
+        .replace(/π/g, '\\\\pi')
+        .replace(/∞/g, '\\\\infty')
+        .replace(/λ/g, '\\\\lambda')
+        .replace(/μ/g, '\\\\mu')
+        .replace(/≤/g, '\\\\le ')
+        .replace(/≥/g, '\\\\ge ')
+        .replace(/≠/g, '\\\\ne ')
+        .replace(/(?<!\\\\)\\b(?:int|sum|prod|lim)(?=_|\\b)/g, match => `\\\\${match}`)
+        .replace(/(?<!\\\\)\\bln\\b/g, '\\\\ln')
+        .replace(/(?<!\\\\)\\bexp\\b/g, '\\\\exp');
+    }
+
+    function repairSegmentedMath(text) {
+      return String(text || '')
+        .replace(
+          /([A-Za-z]\\s*(?:\\([^)]{1,40}\\)|\\[[^\\]]{1,40}\\])?\\s*=)\\s*\\\\\\(\\\\\\((\\\\int_[^)]{1,90})\\\\\\)\\\\\\)\\s*([^,.;\\n]{1,220}?\\s*d[A-Za-z])/g,
+          (_, head, integral, body) => `\\\\(${normalizePlainMathSegment(`${head}${integral} ${body}`)}\\\\)`
+        )
+        .replace(
+          /\\\\\\(\\\\\\((\\\\int_[^)]{1,90})\\\\\\)\\\\\\)\\s*([^,.;\\n]{1,220}?\\s*d[A-Za-z])/g,
+          (_, integral, body) => `\\\\(${normalizePlainMathSegment(`${integral} ${body}`)}\\\\)`
+        );
+    }
+
     function autoDelimitPlainMath(text) {
-      const value = String(text ?? '')
-        .replace(/\\be\\^\\(([^()]{1,60})\\)/g, 'e^{$1}');
+      const value = repairSegmentedMath(String(text ?? '')
+        .replace(/\\be\\^\\(([^()]{1,60})\\)/g, 'e^{$1}'));
       if (/\\\\\\(|\\\\\\[|\\$/.test(value)) return value;
+      const integralPatterns = [
+        /[A-Za-z]\\s*(?:\\([^)]{1,40}\\)|\\[[^\\]]{1,40}\\])\\s*=\\s*(?:∫|\\\\int|int)_[^,.;\\n]{1,240}?\\s*d[A-Za-z]/g,
+        /(?:∫|\\\\int|int)_[^,.;\\n]{1,220}?\\s*d[A-Za-z]/g,
+        /(?:∫|\\\\int)\\s*[^,.;\\n]{1,160}?\\s*d[A-Za-z]/g
+      ];
       const patterns = [
         /(?:[A-Za-z][A-Za-z0-9]*'{1,4}|[A-Za-z][A-Za-z0-9]*\\([^)]{1,24}\\)|[A-Za-z][A-Za-z0-9]*(?:_\\{[^{}]{1,40}\\})?|\\([^)]{1,24}\\)|e\\^\\{[^{}]{1,50}\\})[A-Za-z0-9_{}()[\\]'^+*/.,\\\\ \\-]{0,80}(?:=|<=|>=|<|>|≤|≥)[A-Za-z0-9_{}()[\\]'^+*/.,\\\\ \\-]{1,90}(?=[,.;:) ]|$)/g,
         /\\[[A-Za-z0-9_{}+\\-]+,\\s*[A-Za-z0-9_{}+\\-]+\\]/g,
@@ -1946,7 +2085,7 @@ def build_html(data):
         /\\b[A-Za-z][A-Za-z0-9]*'{1,2}\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,36}/g,
         /\\b[A-Za-z][A-Za-z0-9]*\\([^)]{1,24}\\)\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,36}/g,
         /\\b[A-Za-z]_\\{[^{}]{1,40}\\}\\s*=\\s*[A-Za-z0-9_{}()[\\]'^+\\-*/. ]{1,50}/g,
-        /\\b(?:int|sum|prod)_[A-Za-z0-9{}()'\\\\^+\\-]+(?:\\^[A-Za-z0-9{}()'\\\\^+\\-]+)?/g,
+        /\\b(?:int|sum|prod|lim)_[A-Za-z0-9{}()'\\\\^+\\-]+(?:\\^[A-Za-z0-9{}()'\\\\^+\\-]+)?/g,
         /\\b[A-Za-z][A-Za-z0-9]*_\\{[^{}]{1,40}\\}(?:\\^[A-Za-z0-9{}()+\\-]+)?/g,
         /\\b(?:e|E)\\^\\{[^{}]{1,50}\\}/g,
         /\\b[A-Za-z][A-Za-z0-9]*\\^\\{[^{}]{1,40}\\}/g,
@@ -1954,6 +2093,26 @@ def build_html(data):
         /\\b[A-Za-z]\\^[A-Za-z0-9{}()+\\-]+/g
       ];
       const ranges = [];
+      function addRange(start, end, display = false) {
+        const candidate = value.slice(start, end).trim();
+        if (candidate.length < 2 || /[А-Яа-яЁё]/.test(candidate)) return false;
+        if (!/[=_^'∫∑∏]|\\b(?:int|sum|prod|lim)\\b/.test(candidate)) return false;
+        if (ranges.some(range => start < range.end && end > range.start)) return false;
+        ranges.push({ start, end, display });
+        return true;
+      }
+      for (const pattern of integralPatterns) {
+        for (const match of value.matchAll(pattern)) {
+          const raw = match[0];
+          const trimmedStart = raw.search(/\\S/);
+          const trimmedEnd = raw.search(/\\s*$/);
+          const start = match.index + Math.max(trimmedStart, 0);
+          const end = match.index + (trimmedEnd >= 0 ? trimmedEnd : raw.length);
+          addRange(start, end, raw.length > 84);
+          if (ranges.length >= 80) break;
+        }
+        if (ranges.length >= 80) break;
+      }
       for (const pattern of patterns) {
         for (const match of value.matchAll(pattern)) {
           const raw = match[0];
@@ -1961,11 +2120,7 @@ def build_html(data):
           const trimmedEnd = raw.search(/\\s*$/);
           const start = match.index + Math.max(trimmedStart, 0);
           const end = match.index + (trimmedEnd >= 0 ? trimmedEnd : raw.length);
-          const candidate = value.slice(start, end);
-          if (candidate.length < 2 || /[А-Яа-яЁё]/.test(candidate)) continue;
-          if (!/[=_^']|\\b(?:int|sum|prod)\\b/.test(candidate)) continue;
-          if (ranges.some(range => start < range.end && end > range.start)) continue;
-          ranges.push({ start, end });
+          addRange(start, end);
           if (ranges.length >= 80) break;
         }
         if (ranges.length >= 80) break;
@@ -1976,7 +2131,8 @@ def build_html(data):
       for (const range of ranges) {
         if (range.start < pos) continue;
         out += value.slice(pos, range.start);
-        out += `\\\\(${value.slice(range.start, range.end)}\\\\)`;
+        const formula = normalizePlainMathSegment(value.slice(range.start, range.end));
+        out += range.display ? `\\\\[${formula}\\\\]` : `\\\\(${formula}\\\\)`;
         pos = range.end;
       }
       return out + value.slice(pos);
@@ -2119,6 +2275,7 @@ def build_html(data):
       if (key === 'reviewStatus') return reviewStatusLabels[value] || value;
       if (key === 'difficultyMain') return difficultyLabels[value] || value;
       if (key === 'kind') return kindLabels[value] || value;
+      if (key === 'tag') return tagLabels[value] || String(value).replace(/_/g, ' ');
       if (key === 'studyMode') return quickModes.find(mode => mode.id === value)?.label || value;
       if (key === 'scoreRange') return rangeLabels[value] || value;
       if (key === 'excludeOlympiad') return value === 'exclude' ? 'без олимпиадных' : String(value);
@@ -2863,6 +3020,7 @@ def build_html(data):
     }
 
     function renderFacets() {
+      const hideClusterFacet = state.studyMode === 'clusters' && selectedValues('cluster').length;
       byId('facets').innerHTML = [
         renderFacet('kind', 'Типы'),
         renderFacet('scoreRange', 'Уровни по баллам'),
@@ -2870,7 +3028,7 @@ def build_html(data):
         renderFacet('ideaScore', 'Идейная сложность'),
         renderFacet('technicalScore', 'Техническая сложность'),
         renderFacet('difficultyMain', 'Сложность'),
-        renderFacet('cluster', 'Кластеры', 10),
+        hideClusterFacet ? '' : renderFacet('cluster', 'Кластеры', 10),
         renderFacet('definition', 'Определения', 18),
         renderFacet('source', 'Источники', 10),
         renderFacet('standardIdea', 'Стандартные идеи', 10),
@@ -3260,7 +3418,7 @@ def build_html(data):
       const proofLabel = ['theorem', 'lemma', 'corollary', 'definition'].includes(card.kind) ? 'Доказательство' : 'Решение';
       const sourceBadges = (card.source_ids || []).slice(0, 3).map(id => renderFilterChip('source', id, labelFor('source', id))).join('');
       const clusterBadges = (card.cluster_ids || []).slice(0, 2).map(id => renderClusterLink(id)).join('');
-      const tagBadges = (card.tags || []).slice(0, 7).map(tag => renderFilterChip('tag', tag, tag)).join('');
+      const tagBadges = (card.tags || []).slice(0, 7).map(tag => renderFilterChip('tag', tag, labelFor('tag', tag))).join('');
       const ideaBadges = (card.standard_idea_ids || []).slice(0, 3).map(id => renderFilterChip('standardIdea', id, labelFor('standardIdea', id))).join('');
       const definitionBadges = (card.definition_ids || []).slice(0, 5).map((id, index) => renderFilterChip('definition', id, cardDefinitionLabel(card, id, index))).join('');
       const ideasHtml = renderIdeas(problem);
@@ -3543,7 +3701,7 @@ def build_html(data):
                 </div>
                 <div class="cluster-card-description">
                   ${(summary.fragment_ids || []).map(id => esc(fragmentLabels[id] || id)).join(', ')}
-                  ${[...(summary.tag_ids || []), ...(summary.any_tag_ids || [])].length ? esc([...(summary.tag_ids || []), ...(summary.any_tag_ids || [])].join(', ')) : ''}
+                  ${[...(summary.tag_ids || []), ...(summary.any_tag_ids || [])].length ? esc([...(summary.tag_ids || []), ...(summary.any_tag_ids || [])].map(id => labelFor('tag', id)).join(', ')) : ''}
                 </div>
                 <div class="cluster-card-foot">Открыть поиск по признакам</div>
               </a>
@@ -3679,7 +3837,7 @@ def build_html(data):
               : 'Каталог сгруппирован по методам курса. Откройте кластер, чтобы увидеть его теоретический блок и затем список задач.'}</p>
           </div>
           <div class="cluster-filter-grid">
-            ${renderClusterFilterBlock('cluster', 'Темы / кластеры', 12)}
+            ${selectedClusters.length ? '' : renderClusterFilterBlock('cluster', 'Темы / кластеры', 12)}
             ${renderClusterFilterBlock('standardIdea', 'Идеи', 12)}
             ${renderClusterFilterBlock('difficultyMain', 'Сложности', 8)}
             ${renderClusterFilterBlock('source', 'Источники', 12)}
@@ -3717,6 +3875,13 @@ def build_html(data):
         .map(cluster => ({ cluster, count: rawClusterTaskCards(cluster.id).length }))
         .filter(item => hasSelectedCluster || clusterMatchesQuery(item.cluster))
         .sort((a, b) => b.count - a.count || labelFor('cluster', a.cluster.id).localeCompare(labelFor('cluster', b.cluster.id), 'ru', { numeric: true }));
+      if (hasSelectedCluster) {
+        return `
+          <div class="cluster-dashboard cluster-dashboard-focused">
+            ${renderClusterFocus(items)}
+          </div>
+        `;
+      }
       return `
         <div class="cluster-dashboard">
           ${renderClusterFocus(items)}
@@ -3772,6 +3937,10 @@ def build_html(data):
     }
 
     function renderStudyHome(items) {
+      if (state.studyMode === 'clusters' && selectedValues('cluster').length) {
+        byId('study-home').innerHTML = renderStudyDirectory();
+        return;
+      }
       const imageCount = countBy(card => card.has_image);
       const theoryCount = countBy(card => matchesStudyMode(card, 'theory'));
       const problemCount = countBy(card => card.kind === 'problem');
@@ -4081,7 +4250,7 @@ def build_html(data):
       if (state.studyMode === 'clusters') {
         const selectedClusterCount = selectedValues('cluster').length;
         const matchingClusterCount = selectedClusterCount
-          ? (DB.task_clusters || []).length
+          ? selectedClusterCount
           : (DB.task_clusters || []).filter(clusterMatchesQuery).length;
         byId('summary').innerHTML = [
           renderPill('навигация по кластерам', 'code'),

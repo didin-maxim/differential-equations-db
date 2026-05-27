@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Пусть u(t) ≥ 0 и u(t) ≤ a + ∫_{t_0}^{t} b(s)u(s) ds, где a ≥ 0, b(s) ≥ 0 непрерывна. Тогда u(t) ≤ a \\(e^{∫_{t_0}^{t} b(s) ds}\\).",
+        "text": "Пусть u(t) ≥ 0 и u(t) ≤ a + \\(\\(\\int_{t_0}^{t}\\)\\) b(s)u(s) ds, где a ≥ 0, b(s) ≥ 0 непрерывна. Тогда u(t) ≤ a \\(e^{∫_{t_0}^{t} b(s) ds}\\).",
         "source_ids": [
           "src-mipt-ode-course"
         ],
@@ -41,7 +41,7 @@
     {
       "id": "proof-gronwall",
       "title": "Доказательство",
-      "text": "Обозначим v(t)=a+∫_{t_0}^{t} b(s)u(s)ds. Тогда u(t)≤v(t), v(t)≥0 и v'(t)=b(t)u(t)≤b(t)v(t). Если a>0, делим на v(t) и получаем (ln v)'≤b(t). После интегрирования v(t)≤a \\(e^{∫b}\\). Значит и u(t)≤a \\(e^{∫b}\\). Если a=0, применим доказанное к a=epsilon и затем устремим epsilon к нулю.",
+      "text": "Обозначим v(t)=a+\\(\\(\\int_{t_0}^{t}\\)\\) b(s)u(s)ds. Тогда u(t)≤v(t), v(t)≥0 и v'(t)=b(t)u(t)≤b(t)v(t). Если a>0, делим на v(t) и получаем (ln v)'≤b(t). После интегрирования v(t)≤a \\(e^{∫b}\\). Значит и u(t)≤a \\(e^{∫b}\\). Если a=0, применим доказанное к a=epsilon и затем устремим epsilon к нулю.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "gronwall_estimate"

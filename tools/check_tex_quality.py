@@ -91,12 +91,17 @@ RAW_PATTERNS = [
     ("raw-exp", re.compile(r"(?<![\\A-Za-z])exp\(")),
     ("raw-e-power-paren", re.compile(r"(?<!\\)e\^\(")),
     ("raw-e-power", re.compile(r"(?<!\\)e\^(?:\{[^}\n]{1,120}\}|[A-Za-z0-9_+\-*/()]{1,120})")),
+    ("raw-unicode-integral-limit", re.compile(r"∫_[A-Za-z0-9{}()'\\^+\-/]+")),
     ("raw-integral", re.compile(r"(?<!\\)\b(?:int|sum|prod|product|lim)_[A-Za-z0-9{}()'\\^+\-/]+")),
     ("raw-pi", re.compile(r"(?<![\\A-Za-z])\bpi\b")),
     ("raw-infty", re.compile(r"(?<![\\A-Za-z])\binfty\b")),
     ("raw-arrow", re.compile(r"->")),
     ("raw-comparison", re.compile(r"(?<![<>=!])(?:<=|>=|!=)(?![<>=])")),
     ("bare-tex-command", re.compile(r"\\(?:int|sum|prod|lim|pi|infty|le|ge|ne|to)\b")),
+]
+
+RAW_ANYWHERE_PATTERNS = [
+    ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|alpha|beta|gamma|le|ge|ne|to|infty|pi|cdot|times)\b")),
 ]
 
 
@@ -140,8 +145,14 @@ def iter_visible_strings(obj, path=(), force_visible=False):
 
 
 def find_hits(text):
-    visible = strip_math(text)
+    original = str(text or "")
     hits = []
+    for name, pattern in RAW_ANYWHERE_PATTERNS:
+        for match in pattern.finditer(original):
+            hits.append((name, match.group(0)))
+            if len(hits) >= 5:
+                return hits
+    visible = strip_math(text)
     for name, pattern in RAW_PATTERNS:
         for match in pattern.finditer(visible):
             hits.append((name, match.group(0)))
@@ -206,6 +217,40 @@ def transform_outside_math(text, transform):
 
 
 def fix_text(text):
+    double_escaped_commands = (
+        "int",
+        "sum",
+        "prod",
+        "lim",
+        "frac",
+        "left",
+        "right",
+        "ln",
+        "sin",
+        "cos",
+        "exp",
+        "operatorname",
+        "mathbb",
+        "Phi",
+        "Delta",
+        "lambda",
+        "mu",
+        "alpha",
+        "beta",
+        "gamma",
+        "le",
+        "ge",
+        "ne",
+        "to",
+        "infty",
+        "pi",
+        "cdot",
+        "times",
+    )
+    text = str(text)
+    for command in double_escaped_commands:
+        text = text.replace("\\\\" + command, "\\" + command)
+
     def transform(value):
         value = re.sub(r"\bR\s*x\s*R\^n\b", r"\\(\\mathbb R\\times \\mathbb R^n\\)", value)
         value = re.sub(r"\bR\s*x\s*R\b", r"\\(\\mathbb R\\times \\mathbb R\\)", value)
@@ -229,6 +274,11 @@ def fix_text(text):
                 return token
             return r"\(" + token + r"\)"
 
+        value = re.sub(
+            r"∫_[^\s,.;:!?]+",
+            lambda m: r"\(\int" + m.group(0)[1:] + r"\)",
+            value,
+        )
         value = re.sub(r"(?<!\\)\b(?:int|sum|prod|product|lim)_[^\s,.;:!?]+", lambda m: r"\(\\" + m.group(0) + r"\)", value)
         value = re.sub(r"\\(?:int|sum|prod|product|lim)_[^\s,.;:!?]+", wrap_operator, value)
         value = value.replace(r"\le", "≤").replace(r"\ge", "≥").replace(r"\ne", "≠").replace(r"\to", "→")
