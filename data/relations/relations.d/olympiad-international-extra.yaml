@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-convex-smmc-2018-a3",
+      "from": "convex-solution-two-zeros",
+      "to": "smmc-2018-a3-log-ratio-concavity",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют вогнутость/выпуклость как качественный контроль графика.",
+      "backward_text": "Simon Marais 2018 A3 добавляет фазовый анализ y/x и подсчет пересечений уровня для настоящего ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-second-order-identity-istcim-2022-c",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "istcim-2022-c-integral-identity-ode",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Линейное ОДУ второго порядка с постоянными коэффициентами задает пространство возможных разностей.",
+      "backward_text": "ISTCiM 2022 C использует то же уравнение y''+y=0, но как инструмент для доказательства интегрального тождества.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-functional-istcim-2023-e",
+      "from": "olympiad-level-involution-functional-differential",
+      "to": "istcim-2023-e-functional-ode-cosine",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Функционально-дифференциальный шаблон учит использовать симметрию/сдвиг до получения обычного ОДУ.",
+      "backward_text": "ISTCiM 2023 E является архивным представителем этого кластера: функциональное уравнение сводится к f''=-c^2 f.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-rolle-imc-2006-p6",
+      "from": "olympiad-level-rolle-after-homogeneous-factor",
+      "to": "imc-2006-p6-real-root-differential-operator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Ролль после умножения на экспоненту является базовым шагом для множителя D-c.",
+      "backward_text": "IMC 2006 P6 итеративно применяет этот шаг к факторизации A(D) по вещественным корням.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-imc-1994-imc-2006-operator",
+      "from": "imc-1994-p3-rolle-integrating-factor",
+      "to": "imc-2006-p6-real-root-differential-operator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе IMC-задачи распознают линейный дифференциальный оператор и превращают его в Ролля.",
+      "backward_text": "IMC 2006 P6 является более структурной версией: вместо одного телескопического оператора используется полная факторизация.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-high-inequality-bme-2023-p3",
+      "from": "putnam-modern-1999-b4",
+      "to": "bme-2023-p3-periodic-high-derivative-bound",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи извлекают оценку функции из ограничений на старшие производные.",
+      "backward_text": "BME 2023 P3 является более учебным периодическим вариантом: базовая оценка второго порядка повторяется для четных производных.",
+      "status": "ai_checked",
+      "confidence": 0.77
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "cluster-pde-characteristics-single-hit-criterion",
+  "title": "Когда начальная кривая пересекает каждую характеристику один раз",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для уравнения u_x+u_y=0 начальная кривая задана как Gamma: (x,y)=(s,phi(s)), s in I. Сформулируйте простой критерий, при котором Gamma пересекает каждую характеристику y-x=c не более одного раза. Проверьте его для phi(s)=s+s^3 на любом интервале I.",
+        "source_ids": [
+          "src-cluster-pde-characteristics-first-order-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Параметр характеристики должен быть однозначной координатой на кривой",
+      "text": "Характеристики нумеруются инвариантом c=y-x. На начальной кривой этот номер равен phi(s)-s; отсутствие повторных пересечений означает инъективность этой функции.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристика через точку (s,phi(s)) имеет номер c=phi(s)-s. Поэтому две разные точки начальной кривой лежат на одной характеристике тогда и только тогда, когда phi(s1)-s1=phi(s2)-s2. Следовательно, кривая пересекает каждую характеристику не более одного раза ровно тогда, когда функция psi(s)=phi(s)-s инъективна на I. Удобное достаточное условие: psi'(s)=phi'(s)-1 имеет один знак и не обращается в нуль. Для phi(s)=s+s^3 получаем psi(s)=s^3, она строго возрастает на любом интервале, значит каждая характеристика встречается не более одного раза; на образе psi(I) встречается ровно один раз.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "noncharacteristic_condition"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "noncharacteristic_curve",
+      "characteristic_foliation"
+    ],
+    "goal": [
+      "classify_well_posedness",
+      "check_unique_intersection"
+    ],
+    "keywords": [
+      "pde_characteristics",
+      "cauchy_problem",
+      "noncharacteristic_curve",
+      "domain_of_dependence"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Вычислений почти нет; требуется перевести геометрию фолиации в инъективность номера характеристики.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "self_authored",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "transport_equation",
+    "cauchy_problem",
+    "noncharacteristic_curve",
+    "domain_of_dependence",
+    "existence_uniqueness",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-pde-characteristics-first-order-audit",
+      "role": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторская компактная задача на критерий однократного пересечения характеристик."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-pde-characteristics-first-order",
+    "notes": [
+      "Карта между локальной нехарактеристичностью и глобальной однократностью пересечения начальной кривой."
+    ]
+  }
+}

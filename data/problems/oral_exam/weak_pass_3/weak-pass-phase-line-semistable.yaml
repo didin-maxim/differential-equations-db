@@ -1,0 +1,117 @@
+{
+  "id": "weak-pass-phase-line-semistable",
+  "title": "Фазовая прямая с полуустойчивым равновесием",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для автономного уравнения y'=(y-1)^2(y+1) найти равновесия и определить их устойчивость по фазовой прямой. Отдельно отметить, что происходит около y=1 слева и справа.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Кратный корень не меняет знак",
+      "text": "На фазовой прямой важно не только найти нули правой части, но и проверить знак на промежутках. Квадрат (y-1)^2 не меняет знак при переходе через y=1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесия: y=-1 и y=1. На интервале (-infty,-1) множитель y+1 отрицателен, а (y-1)^2 положителен, значит y'<0. На (-1,1) имеем y'>0. На (1,+infty) снова y'>0. Поэтому около y=-1 стрелки слева направлены влево, а справа вправо: траектории расходятся от -1, это неустойчивое равновесие. Около y=1 стрелки с обеих сторон направлены вправо: слева решения подходят к 1, а справа уходят от 1. Поэтому y=1 устойчиво только с одной стороны и не является устойчивым по Ляпунову равновесием.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative",
+      "first_order"
+    ],
+    "methods": [
+      "phase_line_signs"
+    ],
+    "objects": [
+      "autonomous_equation",
+      "phase_line",
+      "equilibrium",
+      "stability"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "phase_line",
+      "semistable"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: диагностируется ошибка автоматического чередования знаков у кратного корня; technical_score=2: только таблица знаков.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "phase_line",
+    "stability",
+    "sign_analysis",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: существующая фазовая прямая имеет простые равновесия; здесь проверяется кратный нуль и одностороннее поведение."
+    ]
+  }
+}

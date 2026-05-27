@@ -1,0 +1,116 @@
+{
+  "id": "cluster-linear-systems-jordan-geometric-two",
+  "title": "Тройное собственное значение с двумя собственными векторами",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Модельная задача аудита кластера",
+        "text": "Решить систему x'=Ax, где A=[[1,0,1],[0,1,1],[0,0,1]]. Явно указать два собственных вектора для единственного собственного значения и присоединенный вектор, который присоединен к нетривиальной линейной комбинации этих двух собственных векторов.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Жорданова цепочка может начинаться с линейной комбинации собственных векторов",
+      "text": "При алгебраической кратности 3 и геометрической кратности 2 нильпотентная часть имеет ранг 1. Присоединенный вектор w может удовлетворять (A-I)w=v1+v2, а не быть присоединенным к одному заранее выбранному собственному вектору.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пишем A=I+N, где N=[[0,0,1],[0,0,1],[0,0,0]] и N^2=0. Единственное собственное значение равно 1, так как A треугольна и на диагонали стоят единицы. Собственное подпространство задается Nz=0, то есть z3=0, поэтому можно взять два собственных вектора v1=(1,0,0)^T и v2=(0,1,0)^T. Вектор w=(0,0,1)^T является присоединенным, причем (A-I)w=Nw=(1,1,0)^T=v1+v2; это нетривиальная линейная комбинация двух собственных векторов. Так как exp(At)=e^t exp(Nt)=e^t(I+tN), для начального вектора C1 v1+C2 v2+C3 w получаем x(t)=e^t(C1 v1+C2 v2+C3(w+t(v1+v2))). В координатах это x1=e^t(C1+C3 t), x2=e^t(C2+C3 t), x3=e^t C3.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "jordan_form"
+    ],
+    "objects": [
+      "linear_systems",
+      "matrix_exponential",
+      "jordan_form",
+      "generalized_eigenvector"
+    ],
+    "goal": [
+      "solve",
+      "identify_jordan_structure"
+    ],
+    "keywords": [
+      "cluster_audit",
+      "triple_eigenvalue",
+      "geometric_multiplicity_two",
+      "generalized_eigenvector",
+      "constant_coefficients"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: акцент на геометрической кратности 2 и присоединенном векторе к сумме двух собственных; technical_score=3: матрица треугольная и N^2=0.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "jordan_form",
+    "constant_coefficients",
+    "standard_course_methods",
+    "self_authored",
+    "model_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_problem",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-systems-constant-coefficients",
+    "notes": [
+      "Добавлено по обязательному пункту аудита: в существующей базе не найдено однородной системы 3 порядка с одним собственным значением кратности 3, двумя собственными векторами и присоединенным вектором к нетривиальной комбинации этих двух векторов.",
+      "Матрица выбрана в удобном жордановом базисе с малыми целыми координатами."
+    ]
+  }
+}

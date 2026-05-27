@@ -1,0 +1,104 @@
+{
+  "id": "one-dimensional-autonomous-no-crossing",
+  "title": "Решения автономного уравнения не пересекают равновесие",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть y'=f(y), f непрерывно дифференцируема, f(a)=0. Доказать, что решение с y(x0)>a не может принять значение a.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Качественный инвариант или знак",
+      "text": "Решение извлекается из знаков, интеграла энергии, дивергенции или функции Ляпунова.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Постоянная функция y≡a является решением с начальными данными y(t)=a в любой точке t. Если другое решение в момент t1 приняло значение a, то оно и постоянное решение имели бы одни и те же начальные данные в t1. По единственности они совпали бы в окрестности t1, а затем на всем общем промежутке, что противоречит y(x0)>a.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "phase_line",
+      "existence_uniqueness",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "one-dimensional-autonomous-no-crossing",
+      "qualitative",
+      "phase_line",
+      "existence_uniqueness",
+      "complete_proof"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: применение единственности к запрету пересечения равновесия; technical_score=3: вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_line",
+    "existence_uniqueness",
+    "complete_proof",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

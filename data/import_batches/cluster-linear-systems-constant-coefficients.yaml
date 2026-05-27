@@ -1,0 +1,23 @@
+{
+  "id": "cluster-linear-systems-constant-coefficients",
+  "title": "Кластерный аудит: линейные системы с постоянными коэффициентами",
+  "created_at": "2026-05-26",
+  "scope": [
+    "cluster_audit",
+    "linear_systems",
+    "constant_coefficients",
+    "matrix_exponential",
+    "jordan_form"
+  ],
+  "problem_ids": [
+    "cluster-linear-systems-jordan-geometric-two",
+    "cluster-linear-systems-jordan-resonant-forcing",
+    "cluster-linear-systems-repeated-complex-four-dimensional"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавлена после аудита кластера constant-coefficient-linear-systems.",
+    "Все задачи самосоставленные модельные, с источником src-mipt-oral-exam-model-tasks.",
+    "Цель пачки - закрыть точечные структурные пробелы без массового импорта однотипных вычислительных задач."
+  ]
+}

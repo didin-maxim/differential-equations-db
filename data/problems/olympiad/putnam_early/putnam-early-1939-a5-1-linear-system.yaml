@@ -1,0 +1,108 @@
+{
+  "id": "putnam-early-1939-a5-1-linear-system",
+  "title": "Putnam 1939 A5(1): линейная система с постоянными коэффициентами",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть x(t) и y(t) удовлетворяют системе x'=x+y-3, y'=-2x+3y+1 и начальным условиям x(0)=0, y(0)=0. Найти x(t) и y(t).",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Исключить одну переменную",
+      "text": "Систему с постоянными коэффициентами можно решить матричной экспонентой или свести к одному линейному уравнению второго порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение через исключение y",
+      "text": "Из первого уравнения y=x'-x+3. Дифференцируя x'=x+y-3, получаем x''=x'+y'. Подставляя y'=-2x+3y+1 и выражение для y, имеем x''=x'-2x+3(x'-x+3)+1, то есть x''-4x'+5x=10. Общее решение: x=2+e^{2t}(A sin t+B cos t). Условие x(0)=0 дает B=-2. Далее y=x'-x+3. Для x'=e^{2t}((2A-B) sin t+(A+2B) cos t) получаем y=1+e^{2t}((A+2) sin t+(A-2) cos t). Условие y(0)=0 дает 1+A-2=0, значит A=1. Поэтому x(t)=2+e^{2t} sin t-2e^{2t} cos t, y(t)=1+3e^{2t} sin t-e^{2t} cos t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system"
+    ],
+    "methods": [
+      "elimination",
+      "constant_coefficients"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "linear_systems"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "Putnam 1939 A5",
+      "constant_coefficients",
+      "linear_systems"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 5,
+    "comment": "Идея стандартная: линейная система с постоянными коэффициентами. Техника умеренная: исключение переменной или матричная экспонента.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_systems",
+    "constant_coefficients",
+    "matrix_exponential",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol395.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Формулировка и ответ сверены с архивной страницей Kalva/Scholes."
+    ]
+  }
+}

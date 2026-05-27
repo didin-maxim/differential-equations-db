@@ -1,0 +1,105 @@
+{
+  "id": "oral-above-three-fundamental-matrix-change-basis",
+  "title": "Смысл замены фундаментальной матрицы",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть X(t) - фундаментальная матрица системы x'=A(t)x и X(t0)=I. Если Y(t) - другая фундаментальная матрица той же системы, выразить Y(t) через X(t) и Y(t0). Объяснить, что это значит для решения с начальным условием x(t0)=v.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-basis",
+      "title": "Фундаментальная матрица задает базис решений",
+      "text": "Две фундаментальные матрицы отличаются постоянной невырожденной матрицей, то есть выбором базиса в пространстве решений.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Каждый столбец Y является решением системы, а столбцы X образуют базис пространства решений. Поэтому Y(t)=X(t)C с постоянной матрицей C. Подставляя t=t0 и используя X(t0)=I, получаем C=Y(t0), значит Y(t)=X(t)Y(t0). Для задачи Коши x(t0)=v решение равно x(t)=X(t)v: нормированная фундаментальная матрица переносит начальный вектор из момента t0 в момент t. Если вместо X дана ненормированная матрица Y, то x(t)=Y(t)Y(t0)^{-1}v.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "linear_superposition"
+    ],
+    "objects": [
+      "linear_systems",
+      "fundamental_matrix"
+    ],
+    "goal": [
+      "explain",
+      "apply"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "fundamental-matrix",
+      "change-of-basis"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: проверяется смысл фундаментальной матрицы как оператора переноса и базиса решений; technical_score=3: вычислений нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_systems",
+    "matrix_exponential"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на концептуальное применение фундаментальной матрицы."
+    ]
+  }
+}

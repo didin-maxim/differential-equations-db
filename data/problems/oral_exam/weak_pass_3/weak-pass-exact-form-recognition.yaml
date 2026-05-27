@@ -1,0 +1,109 @@
+{
+  "id": "weak-pass-exact-form-recognition",
+  "title": "Распознавание полного дифференциала",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Проверить, является ли уравнение (2xy+cos x) dx + (x^2+e^y) dy = 0 уравнением в полных дифференциалах. Если да, найти потенциал и записать общий интеграл.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "exact_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить смешанные производные",
+      "text": "Для формы M dx + N dy сначала проверяют M_y=N_x, а затем восстанавливают потенциал интегрированием M по x с добавлением функции только от y.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Здесь M(x,y)=2xy+cos x, N(x,y)=x^2+e^y. Имеем M_y=2x и N_x=2x, значит на всей плоскости форма полная. Ищем F_x=M: интегрируя по x, получаем F=x^2y+sin x+phi(y). Тогда F_y=x^2+phi'(y) должно равняться x^2+e^y, откуда phi'(y)=e^y и phi(y)=e^y. Поэтому потенциал можно взять F=x^2y+sin x+e^y, а общий интеграл имеет вид x^2y+sin x+e^y=C.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "find_potential"
+    ],
+    "objects": [
+      "exact_equation"
+    ],
+    "goal": [
+      "recognize",
+      "solve"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "exact_equation",
+      "potential"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 3,
+    "comment": "idea_score=3: прямое распознавание полной формы; technical_score=3: одно восстановление потенциала с функцией от y.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "exact_equation",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: уже есть базовая карточка на потенциал, но эта формулировка явно проверяет распознавание полного дифференциала на устном экзамене."
+    ]
+  }
+}

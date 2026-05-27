@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Две касательные из точки A к графику решения</title>
+  <desc id="desc">Схема: линейное решение пересекает ось x в точке A; из A проведены две касательные ко второму решению, точки касания дают абсциссы корней a(x)=0.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2f3640"/>
+    </marker>
+    <style>
+      .axis { stroke: #2f3640; stroke-width: 2.2; marker-end: url(#arrow); }
+      .grid { stroke: #e6e8eb; stroke-width: 1; }
+      .curve { fill: none; stroke: #2457a6; stroke-width: 4; stroke-linecap: round; }
+      .line-solution { stroke: #2f8f5b; stroke-width: 3.5; }
+      .tangent { stroke: #c95b32; stroke-width: 3; stroke-dasharray: 9 7; }
+      .projection { stroke: #6d7680; stroke-width: 1.8; stroke-dasharray: 5 6; }
+      .point { fill: #ffffff; stroke: #20252b; stroke-width: 2.5; }
+      .root { fill: #f2bf4a; stroke: #20252b; stroke-width: 2; }
+      .label { font-family: Arial, sans-serif; font-size: 24px; fill: #20252b; }
+      .small { font-family: Arial, sans-serif; font-size: 18px; fill: #20252b; }
+      .caption { font-family: Arial, sans-serif; font-size: 20px; fill: #4d5660; }
+    </style>
+  </defs>
+
+  <rect width="900" height="560" fill="#ffffff"/>
+  <g>
+    <line class="grid" x1="95" y1="80" x2="95" y2="475"/>
+    <line class="grid" x1="215" y1="80" x2="215" y2="475"/>
+    <line class="grid" x1="335" y1="80" x2="335" y2="475"/>
+    <line class="grid" x1="455" y1="80" x2="455" y2="475"/>
+    <line class="grid" x1="575" y1="80" x2="575" y2="475"/>
+    <line class="grid" x1="695" y1="80" x2="695" y2="475"/>
+    <line class="grid" x1="815" y1="80" x2="815" y2="475"/>
+    <line class="grid" x1="80" y1="115" x2="835" y2="115"/>
+    <line class="grid" x1="80" y1="205" x2="835" y2="205"/>
+    <line class="grid" x1="80" y1="295" x2="835" y2="295"/>
+    <line class="grid" x1="80" y1="385" x2="835" y2="385"/>
+    <line class="grid" x1="80" y1="475" x2="835" y2="475"/>
+  </g>
+
+  <line class="axis" x1="70" y1="360" x2="845" y2="360"/>
+  <line class="axis" x1="120" y1="500" x2="120" y2="60"/>
+  <text class="label" x="850" y="369">x</text>
+  <text class="label" x="109" y="51">y</text>
+
+  <path class="curve" d="M120,245 C210,95 315,100 390,222 C447,315 508,346 575,285 C665,203 735,192 825,245"/>
+  <text class="caption" x="640" y="178">второе решение</text>
+
+  <line class="line-solution" x1="120" y1="500" x2="675" y2="70"/>
+  <text class="caption" x="600" y="98">линейное решение</text>
+
+  <line class="tangent" x1="80" y1="394" x2="466" y2="74"/>
+  <line class="tangent" x1="80" y1="394" x2="770" y2="218"/>
+
+  <line class="projection" x1="304" y1="209" x2="304" y2="360"/>
+  <line class="projection" x1="626" y1="255" x2="626" y2="360"/>
+
+  <circle class="point" cx="194" cy="360" r="6"/>
+  <text class="label" x="176" y="392">A</text>
+
+  <circle class="point" cx="304" cy="209" r="7"/>
+  <text class="label" x="276" y="194">T1</text>
+  <circle class="point" cx="626" cy="255" r="7"/>
+  <text class="label" x="639" y="252">T2</text>
+
+  <circle class="root" cx="304" cy="360" r="7"/>
+  <text class="small" x="264" y="392">x1</text>
+  <circle class="root" cx="626" cy="360" r="7"/>
+  <text class="small" x="608" y="392">x2</text>
+
+  <text class="small" x="343" y="104">касательная из A</text>
+  <text class="small" x="615" y="232">касательная из A</text>
+  <text class="caption" x="248" y="438">x1 и x2 - абсциссы точек касания, значит a(x1)=a(x2)=0</text>
+</svg>

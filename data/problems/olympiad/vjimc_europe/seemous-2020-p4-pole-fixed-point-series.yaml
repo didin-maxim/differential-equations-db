@@ -1,0 +1,116 @@
+{
+  "id": "seemous-2020-p4-pole-fixed-point-series",
+  "title": "SEEMOUS 2020 P4: фиксированные точки около полюса",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть 0<a<T, D=R\\{kT+a: k∈Z}, а f:D->R является T-периодической дифференцируемой функцией. Известно, что f'>1 на (0,a), f(0)=0, lim_{x->a-} f(x)=+∞ и lim_{x->a-} f'(x)/f(x)^2=1. Для каждого n>=1 пусть x_n - единственное решение f(x)=x в (nT,nT+a), y_n=nT+a-x_n, z_n=∫_0^{y_n} f(x)dx. Докажите, что y_n->0, и исследуйте сходимость рядов ∑ y_n и ∑ z_n.",
+        "source_ids": [
+          "src-seemous-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Перевернуть функцию около полюса",
+      "text": "Условие f'/f^2->1 означает, что (1/f)'->-1 около a слева. Поэтому f(a-y) ведет себя как 1/y, а уравнение f(a-y_n)=nT+a-y_n дает y_n порядка 1/n.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Существование x_n следует из f(nT)=0 и f(x)->+∞ при x->nT+a слева. Если бы было два корня f(x)=x на одном таком интервале, то по Роллю для g=f-x нашлась бы точка, где g'=f'-1=0, что противоречит f'>1. Положим x_n=nT+a-y_n. Так как f строго возрастает и f(x_n)=x_n->∞, получаем y_n->0. Далее (1/f)'=-f'/f^2 -> -1 при x->a-. Отсюда 1/f(a-y)~y при y->0+, то есть f(a-y)~1/y. По периодичности f(x_n)=f(a-y_n), а по определению f(x_n)=x_n=nT+a-y_n. Следовательно y_n(nT+a-y_n)->1, в частности y_n~1/(nT), и ряд ∑ y_n расходится. Наконец f дифференцируема в 0 и f(0)=0, значит f(x)=O(x) при x->0+. Поэтому z_n=∫_0^{y_n} f(x)dx=O(y_n^2)=O(1/n^2), и ряд ∑ z_n сходится.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "differential_inequality",
+      "asymptotic_ode"
+    ],
+    "methods": [
+      "rolle_theorem",
+      "asymptotic_from_derivative",
+      "comparison_argument"
+    ],
+    "objects": [
+      "fixed_points",
+      "pole_behavior",
+      "periodic_function"
+    ],
+    "goal": [
+      "prove",
+      "asymptotic",
+      "series_convergence"
+    ],
+    "keywords": [
+      "SEEMOUS 2020 Problem 4",
+      "отношение f'/f^2",
+      "неподвижная точка около полюса",
+      "differential inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 6,
+    "comment": "Идея 9: нужно извлечь из f'/f^2 асимптотику обратной величины у полюса и совместить ее с фиксированными точками. Техника 6: Ролль, эквивалентности и сравнение рядов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "asymptotic",
+    "comparison",
+    "boundedness",
+    "advanced_standard_course",
+    "source_solution_checked",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-seemous-archive",
+      "role": "official_statement_and_solution",
+      "status": "source_verified",
+      "url": "https://seemous2020.auth.gr/sites/default/files/2020-03/SEEMOUS2020Solutions.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad-vjimc-europe",
+    "notes": [
+      "Импортировано как дифференциально-асимптотический кандидат; рядовая часть оставлена только как финальное следствие после определения y_n."
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-exact-potential-to-resit-exact-form",
+      "from": "exact-equation-potential",
+      "to": "resit-pass-3-exact-equation-potential",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки проверяют один переносимый механизм: распознать точную форму M dx+N dy и восстановить потенциал U(x,y).",
+      "backward_text": "Пересдачная карточка является минимальной экзаменационной версией базового приема восстановления потенциала.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-exact-potential-to-weak-recognition",
+      "from": "exact-equation-potential",
+      "to": "weak-pass-exact-form-recognition",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Главная проверка в обеих задачах - не интегрирование, а узнавание полного дифференциала и функции потенциала.",
+      "backward_text": "Слабая устная карточка выделяет диагностический шаг той же exact-form техники.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-mu-x-above-three-to-middle-mu-x",
+      "from": "oral-above-three-integrating-factor-x-only",
+      "to": "oral-middle-integrating-factor-x",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют точный критерий для множителя mu(x): выражение (M_y-N_x)/N должно зависеть только от x.",
+      "backward_text": "Средняя устная задача повторяет тот же метод mu(x), но добавляет неэлементарную первообразную; это повышает технику, а не кластерную идею.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-total-derivative-cauchy-to-energy-chain-rule",
+      "from": "resit-pass-3-energy-oscillator-check",
+      "to": "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Сохранение энергии учит видеть полную производную через правило цепочки; письменная задача использует тот же ход для свертки yy''+(y')^2=(yy')'.",
+      "backward_text": "Свертка (yy')' является более специальной версией приема 'умножить/сгруппировать так, чтобы появилась полная производная'.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-total-derivative-cauchy-to-linear-first-order",
+      "from": "linear-first-order-formula",
+      "to": "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "После замены v=yy' письменная задача буквально сводится к линейному уравнению первого порядка xv'-v=0.",
+      "backward_text": "Нелинейная задача показывает, как линейное уравнение первого порядка возникает не сразу, а после удачного выбора вспомогательной полной производной.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-linear-reduction-y-xu-to-p-of-y",
+      "from": "local-du-written-2024-linear-y-xu-reduction",
+      "to": "local-du-written-2024-nonlinear-p-of-y",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В обеих задачах главный переносимый механизм - понижение порядка с последующим линейным уравнением первого порядка; различаются переменные замены: y=xu против p=p(y).",
+      "backward_text": "Замена p=p(y) является нелинейным аналогом понижения порядка: вместо u' как новой неизвестной появляется p(y), а затем линейное уравнение для функции от y.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-p-of-y-to-riccati-bernoulli-linearization",
+      "from": "riccati-known-solution",
+      "to": "local-du-written-2024-nonlinear-p-of-y",
+      "type": "contrast",
+      "distance": 3,
+      "forward_text": "Риккати с известным решением и задача p(y) роднятся не темой, а механизмом: нелинейная замена превращает задачу в линейное уравнение первого порядка.",
+      "backward_text": "p(y)-редукция показывает другой путь к линейному первому порядку: не сдвиг Риккати, а использование отсутствия x явно.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-linear-pde-characteristics-to-semilinear-blowup",
+      "from": "cluster-pde-characteristics-flow-geometry",
+      "to": "mipt-excellent-semilinear-characteristics-blowup",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Линейная транспортная задача учит читать поток характеристик; semilinear-задача сохраняет тот же поток, но вдоль характеристики решается нетривиальное ОДУ v'=v^2 и появляется граница взрыва.",
+      "backward_text": "Semilinear-задача является продвинутым расширением линейного метода характеристик: геометрия характеристик прежняя, но значение уже не сохраняется.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-characteristic-cauchy-data-to-semilinear-blowup",
+      "from": "local-du-deficit-first-order-pde-characteristics",
+      "to": "mipt-excellent-semilinear-characteristics-blowup",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Базовая карточка про данные на характеристиках учит параметризовать начальную прямую и отслеживать единственность; semilinear-пример добавляет к этому максимальную область существования вдоль тех же характеристик.",
+      "backward_text": "Перед semilinear-взрывом полезно уверенно владеть линейной задачей Коши для характеристик и понимать, какие характеристики проходят через начальные данные.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "cluster-linear-systems-jordan-resonant-forcing",
+  "title": "Резонансная правая часть на жордановой клетке",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Модельная задача аудита кластера",
+        "text": "Найти общее решение неоднородной системы x'=Ax+e^t b, где A=[[1,1],[0,1]] и b=(0,1)^T. Объяснить, почему в ответе появляется квадратичный множитель t^2.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Резонанс с присоединенным направлением жордановой клетки",
+      "text": "После вынесения множителя e^t правая часть становится постоянным вектором в нижнем звене жордановой цепочки. Интегрирование по цепочке сначала дает t, а затем t^2/2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть x(t)=e^t y(t). Тогда x'=e^t(y+y'), а Ax+e^t b=e^t((I+N)y+b), где N=[[0,1],[0,0]] и b=(0,1)^T. Поэтому y'=Ny+b, то есть y2'=1, y1'=y2. Отсюда y2=C2+t, y1=C1+C2 t+t^2/2. Значит общее решение равно x(t)=e^t(C1+C2 t+t^2/2, C2+t)^T. Квадратичный множитель возникает потому, что b направлен вдоль присоединенного звена: сначала правая часть интегрируется в y2, а затем y2 входит в уравнение для y1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "variation_of_constants",
+      "matrix_exponential",
+      "jordan_form"
+    ],
+    "objects": [
+      "linear_systems",
+      "variation_of_parameters",
+      "matrix_exponential",
+      "jordan_form",
+      "resonance"
+    ],
+    "goal": [
+      "solve",
+      "explain_resonance"
+    ],
+    "keywords": [
+      "cluster_audit",
+      "inhomogeneous_system",
+      "jordan_resonance",
+      "constant_coefficients"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: неоднородность резонирует с жордановой цепочкой и дает t^2; technical_score=3: после замены x=e^t y остается треугольная система.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "variation_of_parameters",
+    "matrix_exponential",
+    "jordan_form",
+    "constant_coefficients",
+    "resonance",
+    "standard_course_methods",
+    "self_authored",
+    "model_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_problem",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-systems-constant-coefficients",
+    "notes": [
+      "Добавлено как малый представитель неоднородной системы с резонансом на жордановой клетке; заменяет необходимость использовать шестимерную вычислительную задачу как основной учебный образец."
+    ]
+  }
+}

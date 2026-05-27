@@ -1,0 +1,32 @@
+{
+  "id": "local-du-written-2016-2021",
+  "title": "Локальные письменные работы МФТИ по ДУ, 2016-2021",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "variational_calculus",
+    "2016_2021"
+  ],
+  "source_ids": [
+    "src-local-du-written-exams"
+  ],
+  "problem_ids": [
+    "local-du-written-2016-global-first-integrals-source",
+    "local-du-written-2018-zero-count-quadratic-potential",
+    "local-du-written-2020-clairaut-shifted-envelope",
+    "local-du-written-2020-energy-monotonicity-exp-inverse",
+    "local-du-written-2020-parameter-limit-modes",
+    "local-du-written-2020-variational-log-cross-term",
+    "local-du-written-2021-free-endpoint-cubic-variation",
+    "local-du-written-2021-minimal-order-x-sinx"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Область пачки ограничена PDF пользователя: 2016_ex_work_de.pdf, 2018_v1_ex_work_de.pdf, ДУ_2020_весна.pdf, ДУ_2021_весна(2).pdf.",
+    "Извлечены и просмотрены задачи из назначенных вариантов; чистых кратных интегралов, рядов и интегральных неравенств вне механики ДУ в импорт не добавлялось.",
+    "Однотипные вычислительные задачи на постоянные коэффициенты, системы и простые вариационные функционалы не импортировались лавиной; оставлены представители с отдельным техническим узлом или переносимой идеей.",
+    "Перед добавлением выполнен локальный поиск по похожим формулам и темам: Clairaut/огибающая, вариационные экстремали, zero_location/oscillation, energy_method, characteristic roots, first integrals."
+  ]
+}

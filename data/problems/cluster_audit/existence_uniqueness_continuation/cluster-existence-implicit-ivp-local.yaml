@@ -1,0 +1,116 @@
+{
+  "id": "cluster-existence-implicit-ivp-local",
+  "title": "Локальная разрешимость неявной задачи Коши",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть F(t,y,p) имеет непрерывные частные производные в окрестности точки (t0,y0,p0), причем F(t0,y0,p0)=0 и F_p(t0,y0,p0) != 0. Докажите, что неявная задача F(t,y,y')=0, y(t0)=y0 имеет единственное локальное решение с y'(t0)=p0.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала разрешить уравнение относительно производной",
+      "text": "Условие F_p != 0 позволяет по теореме о неявной функции записать p=phi(t,y). После этого задача становится обычной задачей Коши y'=phi(t,y), y(t0)=y0, к которой применяется Пикар-Линделеф.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_iteration"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "По теореме о неявной функции из условий F(t0,y0,p0)=0 и F_p(t0,y0,p0) != 0 существуют окрестность точки (t0,y0) и единственная C^1-функция phi(t,y), такая что phi(t0,y0)=p0 и F(t,y,phi(t,y))=0. В этой окрестности уравнение F(t,y,y')=0 для решений с y' близкой к p0 эквивалентно нормальной форме y'=phi(t,y). Функция phi непрерывна и локально липшицева по y, так как она C^1. По теореме Пикара-Линделефа задача y'=phi(t,y), y(t0)=y0 имеет единственное локальное решение. Для него y'(t0)=phi(t0,y0)=p0, и оно удовлетворяет исходному неявному уравнению. Если другое локальное решение исходной задачи имеет производную около p0, то оно также удовлетворяет y'=phi(t,y), а значит совпадает с найденным решением по единственности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_iteration"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "implicit_ode",
+      "initial_value_problem"
+    ],
+    "methods": [
+      "implicit_function_theorem",
+      "picard_iteration",
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "local_solution",
+      "normal_form",
+      "initial_slope"
+    ],
+    "goal": [
+      "prove_local_existence_uniqueness"
+    ],
+    "keywords": [
+      "existence_uniqueness_continuation",
+      "implicit_ivp",
+      "picard_lindelof",
+      "implicit_function_theorem"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: нужно распознать, что теорема существования применяется после локального разрешения относительно y'; technical_score=3: вычислений нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "advanced_standard_course",
+    "existence_uniqueness",
+    "picard_iteration",
+    "implicit_ode_discriminant",
+    "complete_proof",
+    "low_technical",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_theory",
+      "status": "seed_reference",
+      "note": "Типовой локальный вывод для уравнений, не разрешенных относительно производной; добавлен как компактная лемма к кластеру."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-existence-uniqueness-continuation",
+    "notes": [
+      "Добавлено как точечное закрытие дефицита по неявной задаче Коши; не относится к кластеру дискриминанта, потому что рассматривается регулярная точка F_p != 0."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "msu-ode-2005-8-six-dimensional-resonance",
+  "title": "Шестимерная линейная система с резонансной правой частью",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2005, задача 8",
+        "text": "Найти решение системы x'=Ax+e^t sin(t) a_6 с начальным условием x(0)=a_6, x in R^6, где A имеет строки (1,-1,1,0,0,0), (1,1,0,1,0,0), (0,0,1,-1,1,0), (0,0,1,1,0,1), (0,0,0,0,1,-1), (0,0,0,0,1,1), а a_6=(0,0,0,0,0,1)^T.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Комплексная запись блоков",
+      "text": "Пары координат удобно считать комплексными переменными w_j=x_{2j-1}+i x_{2j}. Тогда диагональные блоки дают умножение на 1+i, а наддиагональные блоки дают цепочку уравнений, решаемую последовательным интегрированием.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Введем w_1=x_1+i x_2, w_2=x_3+i x_4, w_3=x_5+i x_6. Тогда система равносильна w_1'=(1+i)w_1+w_2, w_2'=(1+i)w_2+w_3, w_3'=(1+i)w_3+i e^t sin t, причем w_1(0)=0, w_2(0)=0, w_3(0)=i. Положим v_j=e^{-(1+i)t}w_j. Получаем v_3'=i e^{-it}sin t=(1-e^{-2it})/2, откуда v_3=t/2+5i/4-(i/4)e^{-2it}. Затем v_2'=v_3, v_2(0)=0, поэтому v_2=t^2/4+5it/4+(e^{-2it}-1)/8. Наконец v_1'=v_2, v_1(0)=0, поэтому v_1=t^3/12+5it^2/8-t/8-(i/16)(1-e^{-2it}). Ответ: w_j(t)=e^{(1+i)t}v_j(t), j=1,2,3, а искомый вещественный вектор восстанавливается по формулам x_1=Re w_1, x_2=Im w_1, x_3=Re w_2, x_4=Im w_2, x_5=Re w_3, x_6=Im w_3.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "variation_of_constants",
+      "complexification"
+    ],
+    "objects": [
+      "linear_systems",
+      "matrix_exponential",
+      "variation_of_parameters",
+      "jordan_form",
+      "complete_proof"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "msu-ode-2005-8",
+      "linear_systems",
+      "matrix_exponential",
+      "variation_of_parameters",
+      "complexification"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 6,
+    "local_score": 6,
+    "comment": "Идейно это стандартная вариация постоянных после распознавания комплексной блочной цепочки; технически требуется аккуратно выполнить несколько последовательных интегрирований.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "variation_of_parameters",
+    "jordan_form",
+    "complexification",
+    "olympiad_style",
+    "complete_proof",
+    "standard_course_methods",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_05.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка и матрица сверены с листком МГУ ОДУ 2005."
+    ]
+  }
+}

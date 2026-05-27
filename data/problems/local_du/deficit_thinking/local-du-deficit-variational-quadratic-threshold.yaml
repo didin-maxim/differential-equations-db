@@ -1,0 +1,109 @@
+{
+  "id": "local-du-deficit-variational-quadratic-threshold",
+  "title": "Порог экстремума для простейшего квадратичного функционала",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Исследовать на экстремум при всех вещественных a функционал J[y]=∫_0^{pi/2} ((y')^2-a y^2) dx при условиях y(0)=0, y(pi/2)=0.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить с первым собственным значением",
+      "text": "Функционал уже квадратичен. Его знак определяется не уравнением Эйлера-Лагранжа само по себе, а неравенством Пуанкаре и первым собственным значением задачи Дирихле на отрезке.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Функционал квадратичен, поэтому y=0 всегда стационарная функция. Для любой допустимой h с нулевыми концами имеем J[h]=∫((h')^2-a h^2)dx. На отрезке [0,pi/2] первое собственное значение задачи -h''=lambda h, h(0)=h(pi/2)=0 равно 4, и неравенство Пуанкаре дает ∫(h')^2 dx >= 4∫h^2 dx, причем равенство достигается только на h=C sin 2x. Если a<4, то J[h] >= (4-a)∫h^2 dx >0 для h не равной нулю, значит y=0 - строгий минимум. Если a=4, то J[h]>=0, а на h=C sin 2x значение равно нулю; значит минимум есть, но он нестрогий, и все функции C sin 2x дают то же минимальное значение. Если a>4, то на h=C sin 2x получаем J[h]=(4-a)C^2∫sin^2 2x dx, что стремится к -∞ при |C|->∞. При этом на достаточно высоких синусоидальных модах значение положительно, поэтому стационарные функции, возникающие при a=4n^2, n>=2, являются седловыми, а экстремума нет. Итак: при a<4 строгий минимум, при a=4 нестрогий минимум, при a>4 экстремума нет.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "boundary_value"
+    ],
+    "methods": [
+      "euler_lagrange",
+      "poincare_inequality",
+      "eigenvalue_threshold"
+    ],
+    "objects": [
+      "quadratic_functional",
+      "dirichlet_boundary_conditions",
+      "second_variation"
+    ],
+    "goal": [
+      "classify_extremum"
+    ],
+    "keywords": [
+      "local-du-deficit",
+      "variational-calculus",
+      "euler-lagrange",
+      "second-variation",
+      "program-deficit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "idea_score=7: важно не остановиться на Эйлере-Лагранже, а классифицировать знак второй вариации через первый спектральный порог; technical_score=4: вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "program_deficit",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "low_technical",
+    "variational_calculus",
+    "euler_lagrange",
+    "second_variation_test",
+    "quadratic_variational_threshold",
+    "boundary_value",
+    "eigenvalues"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program_assignment",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-deficit-thinking",
+    "notes": [
+      "Добавлено как один представитель вариационного дефицита. Не следует превращать простейшую задачу вариационного исчисления в массовый кластер однотипных функционалов."
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "local-du-written-2020-energy-monotonicity-exp-inverse",
+  "title": "Монотонная энергия для y''+e^(1/x)y=0",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что для любого решения уравнения y''+e^(1/x)y=0 при x>=1 выполнено |y(x)|<=sqrt((y'(1)^2+e y(1)^2)/e^(1/x)).",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подвижная энергия с коэффициентом",
+      "text": "Нужно взять энергию с тем же коэффициентом, что стоит при y, тогда члены с yy' сокращаются, а остаток имеет правильный знак.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим E(x)=y'(x)^2+e^(1/x)y(x)^2. Тогда E'=2y'y''+2e^(1/x)yy'-(e^(1/x)/x^2)y^2. Из уравнения y''=-e^(1/x)y первые два слагаемых сокращаются, и остается E'=-(e^(1/x)/x^2)y^2<=0. Значит E(x)<=E(1)=y'(1)^2+e y(1)^2 для всех x>=1. С другой стороны, e^(1/x)y(x)^2<=E(x). Поэтому e^(1/x)y(x)^2<=y'(1)^2+e y(1)^2. После извлечения корня получаем требуемую оценку для |y(x)|.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "qualitative"
+    ],
+    "methods": [
+      "energy_monotonicity",
+      "differential_inequality"
+    ],
+    "objects": [
+      "second_order_linear",
+      "a_priori_bound",
+      "monotone_energy"
+    ],
+    "goal": [
+      "prove_bound"
+    ],
+    "keywords": [
+      "2020 written exam",
+      "energy",
+      "e^(1/x)",
+      "a priori estimate"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: надо подобрать правильную энергию с переменным коэффициентом; technical_score=3: производная энергии короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "energy_method",
+    "differential_inequality",
+    "boundedness",
+    "standard_course_methods",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "ДУ_2020_весна.pdf, вариант 1, задача 6."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "linked",
+    "notes": [
+      "Включена как экзаменационный пример энергетической оценки; это не чистое интегральное неравенство, потому что ключевой механизм использует само ОДУ.",
+      "Формула сверена по рендеру PDF из-за нестабильного извлечения символов корня в текстовом слое."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "english-teschl-stanford-bridge",
+  "title": "Teschl + Stanford: теоретические bridge-карточки",
+  "created_at": "2026-05-26",
+  "scope": [
+    "english_sources",
+    "teschl_stanford_bridge",
+    "advanced_standard_course",
+    "src-teschl-ode-dynamical-systems",
+    "src-stanford-math63cm-ode"
+  ],
+  "problem_ids": [
+    "teschl-stanford-bridge-continuous-dependence-gronwall",
+    "teschl-stanford-bridge-flow-derivative-variational-equation",
+    "teschl-stanford-bridge-regular-perturbation-first-correction",
+    "teschl-stanford-bridge-monodromy-period-iterate",
+    "teschl-stanford-bridge-floquet-multiplier-stability",
+    "teschl-stanford-bridge-floquet-determinant-liouville",
+    "teschl-stanford-bridge-sturm-liouville-phase-eigenvalue",
+    "teschl-stanford-bridge-sturm-liouville-zero-count-phase"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка содержит ровно 8 карточек: theorem/lemma/problem, все с русской формулировкой и доказательством/решением.",
+    "Темы KAM, chaos, stable manifold theorem, Melnikov и тяжелая функциональная теория сознательно не импортировались.",
+    "Карточки помечены advanced_standard_course: выход за базовый курс состоит в языке потока, регулярных возмущений, монодромии/Floquet и фазового угла Штурма-Лиувилля, но доказательства оставлены элементарными.",
+    "Связи записаны только в data/relations/relations.d/english-teschl-stanford-bridge.yaml."
+  ]
+}

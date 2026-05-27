@@ -1,0 +1,114 @@
+{
+  "id": "olympiad-level-backward-positivity-derivative-lemma",
+  "title": "Положительность на всей прямой как оценка производных назад",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "standard_idea"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f>0, f'>0, f''>0 на всей R. Тогда для каждой точки x выполнено (f'(x))^2 <= 2 f(x) f''(x). Если дополнительно f'''<=f и f'''>0, то получается вторая оценка (f''(x))^2 < 2 f(x) f'(x).",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Смотреть в прошлое",
+      "text": "Если все значения функции положительны на всей прямой, то тейлоровская оценка назад не может дать отрицательный квадратичный барьер.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Зафиксируем x и t>0. Так как f'' возрастает, из формулы Тейлора с интегральным остатком следует f(x-t)<=f(x)-t f'(x)+t^2 f''(x)/2. Левая часть положительна для всех t>0, значит квадратный трехчлен справа не имеет положительного корня; отсюда (f')^2<=2ff''. Если f'''>0 и f'''<=f, то для 0<=s<=t имеем f''(x-s)>=f''(x)-s f(x). Интегрируя по s от 0 до t, получаем f'(x)>t f''(x)-t^2 f(x)/2. Максимум правой части по t достигается при t=f''(x)/f(x), поэтому (f'')^2<2ff'.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "differential_inequality",
+      "comparison_argument"
+    ],
+    "objects": [
+      "differential_inequality",
+      "linear_higher_order",
+      "sign_analysis"
+    ],
+    "goal": [
+      "prove_bound",
+      "recognize_template"
+    ],
+    "keywords": [
+      "Putnam 1999 B4",
+      "backward Taylor estimate",
+      "positive derivatives",
+      "differential inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 10,
+    "technical_score": 6,
+    "comment": "Это олимпиадный шаблон: после одной встречи прием узнаваем, но без него задача выглядит существенно сложнее обычного экзамена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "linear_higher_order",
+    "comparison",
+    "sign_analysis",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "abstracted_from_putnam_1999_b4_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_olympiad_level_links",
+    "notes": [
+      "Это не новая олимпиадная задача, а вынесенный переносимый ход из Putnam 1999 B4."
+    ]
+  }
+}

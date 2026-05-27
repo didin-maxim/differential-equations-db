@@ -1,0 +1,100 @@
+{
+  "id": "lyapunov-linearization-example",
+  "title": "Функция Ляпунова для устойчивости",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать устойчивость нулевого решения системы x'=-x+y^3, y'=-y.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Качественный инвариант или знак",
+      "text": "Решение извлекается из знаков, интеграла энергии, дивергенции или функции Ляпунова.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Возьмем V=x^2+y^2. Тогда V'=2x(-x+y^3)+2y(-y)=-2x^2-2y^2+2xy^3. При достаточно малых |y| имеем |2xy^3|<=x^2+y^2, например в малой окрестности нуля. Тогда V'<=-(x^2+y^2)<0 вне нуля. Поэтому нуль устойчив и даже асимптотически устойчив локально.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "lyapunov",
+      "stability"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "lyapunov-linearization-example",
+      "qualitative",
+      "lyapunov",
+      "stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартная функция Ляпунова с локальной оценкой; technical_score=4: несложная оценка смешанного члена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "lyapunov",
+    "stability",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

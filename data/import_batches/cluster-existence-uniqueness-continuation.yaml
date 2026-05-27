@@ -1,0 +1,23 @@
+{
+  "id": "cluster-existence-uniqueness-continuation",
+  "title": "Аудит кластера существования, единственности и продолжения",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "existence_uniqueness_continuation",
+    "existence_uniqueness",
+    "continuation"
+  ],
+  "problem_ids": [
+    "cluster-existence-linear-growth-global",
+    "cluster-existence-blow-up-alternative",
+    "cluster-existence-inward-barrier-interval",
+    "cluster-existence-implicit-ivp-local"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет только концептуальные представители дефицитов: линейный рост, blow-up alternative, барьерный первый выход и регулярную неявную задачу Коши.",
+    "Не добавлялись новые задачи, где все сводится к проверке непрерывности и частной производной по y.",
+    "Существующие карточки по Пикару, Пеано, неединственности, Гронуоллу, одностороннему Липшицу, глобальности и blow-up включены в representative_card_ids кластера."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "local-du-theory-8",
+  "title": "Теоретические задачи из локального файла 8.pdf",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "theory_assignment",
+    "mipt_core",
+    "src-local-du-8-program-or-exam"
+  ],
+  "problem_ids": [
+    "local-du-8-sturm-comparison-theorem",
+    "local-du-8-t1-bessel-bounded-wronskian",
+    "local-du-8-t2-exponential-coefficient-energy-bound",
+    "local-du-8-t3-nonpositive-q-bvp-sturm",
+    "local-du-8-t4-three-zeros-after-liouville-transform",
+    "local-du-8-t5-critical-point-by-sturm",
+    "local-du-8-t6a-bessel-infinite-zeros",
+    "local-du-8-t6b-bessel-zero-spacing-prufer"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка ограничена зоной ответственности C:\\Users\\Admin\\Desktop\\ДУ\\8.pdf. Карточки добавлены только в data/problems/local_du/theory_8/.",
+    "Второе задание PDF содержит в основном вычислительные задачи и не импортировалось в эту теоретическую пачку.",
+    "T3 соответствует первому заданию, раздел III, задача 3 PDF; в карточке решение дано через теорему сравнения Штурма.",
+    "Перед импортом выполнен локальный поиск по формулам Бесселя, Штурма, q(x)<=0, cos 3x, 2x^2 y' и энергетической оценке; прямых дублей не найдено.",
+    "Дополнительно добавлена карточка теоремы сравнения Штурма из программы, так как несколько решений используют ее как prerequisite."
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-mit-18034-resonance-limit-standard-resonance",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "mit-18034-pset03-resonance-limit",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Стандартная карточка показывает резонанс через анзац, а MIT-вариант показывает тот же множитель t как предел близких частот.",
+      "backward_text": "Предельный подход объясняет, почему в стандартном резонансном анзаце появляется дополнительный множитель t.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-mit-18034-one-sided-lipschitz-gronwall",
+      "from": "gronwall-inequality",
+      "to": "mit-18034-pset03-one-sided-lipschitz-gronwall",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла является основным инструментом оценки положительной части разности решений.",
+      "backward_text": "Односторонний Липшиц показывает одно из тонких применений Гронуолла к непрерывной зависимости решений.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-mit-18034-bvp-maximum-sturm-energy",
+      "from": "local-du-deficit-sturm-nonpositive-potential-bvp",
+      "to": "mit-18034-pset03-bvp-maximum-principle",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи доказывают качественное свойство краевой задачи без явного решения, используя знак уравнения.",
+      "backward_text": "Максимум-принцип является точечным вариантом той же философии, что и энергетическая единственность для краевых задач.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-mit-18034-picard-tail-after-picard-theorem",
+      "from": "picard-lindelof-theorem",
+      "to": "mit-18034-pset05-picard-tail-estimate",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Теорема Пикара-Линделёфа дает существование через итерации, а MIT-карточка добавляет количественную оценку хвоста.",
+      "backward_text": "Факториальная оценка хвоста уточняет стандартное доказательство Пикара-Линделёфа.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-mit-18034-second-order-picard-tail",
+      "from": "mit-18034-pset05-picard-tail-estimate",
+      "to": "mit-18034-pset05-second-order-picard-integral",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Сначала полезно увидеть факториальную оценку для обычной задачи Коши первого порядка.",
+      "backward_text": "Интегральная форма второго порядка переносит ту же идею Пикара на ядро t-s.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-mit-18034-euler-system-cauchy-euler",
+      "from": "euler-cauchy-equation",
+      "to": "mit-18034-pset07-euler-system-fundamental-matrix",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Скалярное уравнение Эйлера-Коши является моделью, к которой сводится переменно-коэффициентная система MIT.",
+      "backward_text": "Система показывает, как уравнение Эйлера-Коши появляется после исключения координаты.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-mit-18034-periodic-plane-monodromy",
+      "from": "oral-exam-excellent-monodromy-periodic-forcing",
+      "to": "mit-18034-pset07-periodic-initial-plane",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Общая монодромия исследует периодическое решение неоднородной системы, а MIT-задача ищет подпространство начальных данных для периодического однородного движения.",
+      "backward_text": "Подпространство периодических начальных данных является конкретной спектральной версией вопроса о монодромии.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-mit-18034-prufer-standard-oscillation-tests",
+      "from": "local-du-standard-oscillation-nonoscillation-tests",
+      "to": "mit-18034-pset08-prufer-oscillation-criteria",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Стандартные осцилляционные тесты через сравнение подготавливают к угловой формулировке Пруфера.",
+      "backward_text": "Угловая переменная дает более гибкий способ видеть нули и неосцилляцию.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-mit-18034-folium-lotka-first-integral",
+      "from": "lotka-volterra-first-integral",
+      "to": "mit-18034-pset09-hamiltonian-folium-first-integral",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки ищут первый интеграл двумерной автономной системы и затем читают траектории как уровни.",
+      "backward_text": "Фолии Декарта дают более геометрический пример того же приема первого интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-mit-18034-omega-limit-linearization-phase-plane",
+      "from": "lyapunov-linearization-example",
+      "to": "mit-18034-pset09-omega-limit-linearization",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Прежде чем применять линеаризацию в примерах устойчивости, полезно знать, почему поле локально приближается якобианом.",
+      "backward_text": "MIT-карточка дает теоретическое обоснование локальной матричной формы, используемой в задачах на устойчивость.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-mit-18034-nonlinear-stability-lyapunov-contrast",
+      "from": "lyapunov-linearization-example",
+      "to": "mit-18034-pset09-lyapunov-nonlinear-stable",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Обычный пример Ляпунова подтверждает устойчивость около хорошей линейной части; MIT-задача показывает, что нелинейная функция Ляпунова может победить неустойчивую линеаризацию.",
+      "backward_text": "Эта задача предупреждает, что при нулевых или вырожденных собственных значениях линейная классификация может быть недостаточной.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

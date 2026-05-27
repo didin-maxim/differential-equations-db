@@ -1,0 +1,81 @@
+{
+  "relations": [
+    {
+      "id": "rel-waterloo-circles-log-family",
+      "from": "waterloo-family-circles-recover-ode",
+      "to": "waterloo-log-family-qualitative-recover",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки восстанавливают ОДУ из однопараметрического семейства и затем проверяют результат по геометрии интегральных кривых.",
+      "backward_text": "Логарифмическое семейство добавляет к исключению параметра анализ областей определения, асимптот и выпуклости.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-waterloo-singular-linear-to-formula",
+      "from": "linear-first-order-formula",
+      "to": "waterloo-singular-linear-qualitative-sketch",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Общая формула линейного уравнения первого порядка дает решение на промежутках x>0 и x<0.",
+      "backward_text": "Waterloo-задача показывает, что после формулы нужно отдельно анализировать сингулярную точку и качественный эскиз.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-waterloo-pq-critical-damping",
+      "from": "waterloo-second-order-pq-stability",
+      "to": "waterloo-critical-damping-crossing-threshold",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Классификация корней второго порядка объясняет, почему критический режим имеет двойной корень и множитель t.",
+      "backward_text": "Порог пересечения равновесия является качественным применением критического случая из параметрической классификации.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-waterloo-oscillator-energy",
+      "from": "energy-integral-oscillator",
+      "to": "waterloo-oscillator-speed-before-crossing",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Энергетическая карточка описывает консервативный осциллятор, где скорость читается из уровня энергии.",
+      "backward_text": "В демпфированном Waterloo-осцилляторе максимум скорости лучше читать по фазовой изоклине v'=0, а не по сохраняющейся энергии.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-waterloo-phase-to-linear-saddle",
+      "from": "weak-pass-linear-system-saddle",
+      "to": "waterloo-spiral-phase-portrait-isoclines",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют спектр матрицы для качественной классификации фазового портрета.",
+      "backward_text": "Waterloo-фокус добавляет направление вращения и изоклины как инструменты реального эскиза.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-waterloo-fundamental-change-basis",
+      "from": "oral-above-three-fundamental-matrix-change-basis",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки требуют понимать фундаментальную матрицу как оператор перехода между состояниями.",
+      "backward_text": "Waterloo-карточка выделяет потоковое свойство Phi(t+s)=Phi(t)Phi(s) и обратимость через движение назад по времени.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-waterloo-phase-fundamental-flow",
+      "from": "waterloo-spiral-phase-portrait-isoclines",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Фазовый портрет помогает воспринимать решение x(t)=Phi(t)a как движение начального состояния по орбите.",
+      "backward_text": "Свойство Phi(-t)=Phi(t)^{-1} является алгебраическим выражением обратного движения по той же фазовой орбите.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    }
+  ]
+}

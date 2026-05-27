@@ -1,0 +1,114 @@
+{
+  "id": "cluster-pde-characteristics-characteristic-incompatible",
+  "title": "Несуществование при несовместимых данных на характеристике",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Существует ли C^1-решение уравнения u_x+u_y=0 в окрестности прямой y=x, если на этой прямой задано u(x,x)=x^2?",
+        "source_ids": [
+          "src-cluster-pde-characteristics-first-order-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "На характеристике значение должно быть постоянным",
+      "text": "Прямая y=x сама является характеристикой. Для однородного транспортного уравнения u не меняется вдоль характеристики, поэтому данные на одной характеристике не могут зависеть от параметра вдоль нее.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристики задаются прямыми y-x=c, и общее решение имеет вид u=F(y-x). На прямой y=x имеем c=0, поэтому вся прямая должна иметь одно и то же значение u=F(0). Условие u(x,x)=x^2 требует разных значений на одной и той же характеристике. Это невозможно, значит решения в окрестности всей такой начальной кривой не существует.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "compatibility_check"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_initial_curve",
+      "cauchy_data"
+    ],
+    "goal": [
+      "prove_nonexistence",
+      "classify_well_posedness"
+    ],
+    "keywords": [
+      "pde_characteristics",
+      "cauchy_problem",
+      "characteristic_data",
+      "existence_uniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 1,
+    "comment": "Техника минимальна; проверяется именно понимание, что характеристические данные должны быть совместимы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "self_authored",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "nonexistence",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "transport_equation",
+    "cauchy_problem",
+    "existence_uniqueness",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-pde-characteristics-first-order-audit",
+      "role": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторская компактная задача на несовместимые характеристические данные."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-pde-characteristics-first-order",
+    "notes": [
+      "Отличается от Lebl-карточки тем, что несовместимость видна как непостоянство данных на одной характеристике y=x."
+    ]
+  }
+}

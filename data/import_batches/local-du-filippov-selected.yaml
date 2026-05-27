@@ -1,0 +1,24 @@
+{
+  "id": "local-du-filippov-selected",
+  "title": "Избранные невычислительные задачи из сборника Филиппова",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "filippov",
+    "selected_nonduplicates"
+  ],
+  "problem_ids": [
+    "local-du-filippov-239-one-sided-global-existence",
+    "local-du-filippov-240-radial-global-system",
+    "local-du-filippov-763-dirichlet-resonance-no-solution",
+    "local-du-filippov-1166-intersection-first-integrals",
+    "local-du-filippov-127-monodromy-gronwall-bound",
+    "local-du-filippov-132-linear-stability-translation"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пакет намеренно малый: выбраны задачи с новым ходом решения, а не очередные вычислительные варианты из насыщенных кластеров.",
+    "Сборник Филиппова просмотрен обзорно по оглавлению и целевым параграфам стандартной программы: ОДУ первого порядка, существование/продолжение, краевые задачи, системы, первые интегралы, устойчивость.",
+    "Не импортировались задачи, совпадающие по плану с уже имеющимися кластерами: обычные интегрирующие множители, типовые линейные уравнения, стандартная фазовая прямая, прямой подбор функции Ляпунова и критерий периодического решения через отсутствие мультипликатора 1."
+  ]
+}

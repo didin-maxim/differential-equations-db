@@ -1,0 +1,110 @@
+{
+  "id": "oral-above-three-homogeneous-ratio-substitution",
+  "title": "Выбор однородной замены y=xv",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "На промежутке x>0 решить уравнение y'=(x^2+y^2)/(xy).",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-ratio",
+      "title": "Правая часть зависит от отношения y/x",
+      "text": "После переписывания y'=x/y+y/x естественна замена y=xv, которая оставляет уравнение с разделяющимися переменными.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пишем y=xv(x), тогда y'=v+xv'. Правая часть равна 1/v+v. Получаем v+xv'=v+1/v, значит xv'=1/v. Умножая на v и разделяя переменные, имеем v dv=dx/x. Поэтому v^2/2=ln x+C на x>0. Возвращаясь к y, получаем y^2/x^2=2 ln x+C1, то есть y=±x sqrt(C1+2 ln x) на тех промежутках, где выражение под корнем положительно; также знак фиксируется на каждом промежутке решения, потому что исходное уравнение не определено при y=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "homogeneous_first_order_substitution",
+      "separate_variables"
+    ],
+    "objects": [
+      "homogeneous_first_order",
+      "separable"
+    ],
+    "goal": [
+      "solve",
+      "choose_substitution"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "homogeneous-substitution",
+      "ratio"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: стандартная, но не подсказанная замена y=xv; technical_score=3: остается одно разделение переменных.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "homogeneous_first_order",
+    "separable"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на выбор стандартной однородной замены."
+    ]
+  }
+}

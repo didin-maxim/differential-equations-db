@@ -1,0 +1,48 @@
+{
+  "relations": [
+    {
+      "id": "rel-basic-mipt-variation-to-seed-variation",
+      "from": "basic-mipt-variation-constants-ypp-plus-y",
+      "to": "variation-of-parameters-sine",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовая карточка применяет ту же формулу вариации постоянных с элементарной правой частью и готовит к примеру с sec x.",
+      "backward_text": "Задача с sec x использует тот же метод, но добавляет более заметную тригонометрическую технику.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-basic-mipt-variation-to-formula",
+      "from": "cluster-linear-variable-variation-parameters-fundamental-system",
+      "to": "basic-mipt-variation-constants-ypp-plus-y",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула вариации постоянных через фундаментальную систему прямо применяется в минимальной вычислительной карточке.",
+      "backward_text": "Карточка y''+y=1 является коротким числовым применением общей формулы.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-basic-mipt-riccati-above-three",
+      "from": "riccati-known-solution",
+      "to": "oral-above-three-riccati-shift-known-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Сначала полезно решить Риккати с уже данным частным решением.",
+      "backward_text": "Устная карточка выше тройки добавляет поиск сдвинутого частного решения y=x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-basic-mipt-transport-to-local-pde",
+      "from": "lebl-diffyqs-transport-signal-shift",
+      "to": "local-du-deficit-first-order-pde-characteristics",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Транспортное уравнение дает минимальный образ характеристик как прямых переноса.",
+      "backward_text": "Локальная карточка добавляет различение характеристических и нехарактеристических начальных данных.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

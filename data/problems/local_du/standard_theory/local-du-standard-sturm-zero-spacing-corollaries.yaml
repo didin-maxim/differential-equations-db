@@ -1,0 +1,118 @@
+{
+  "id": "local-du-standard-sturm-zero-spacing-corollaries",
+  "title": "Следствия Штурма о расстоянии между нулями",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть q непрерывна и y - ненулевое решение y''+q(x)y=0. Если q(x)>=mu^2>0 на [a,a+pi/mu], то y имеет нуль на этом отрезке, если только не рассматривается специальный случай с нулем на границе. Если q(x)<=mu^2 на промежутке между двумя соседними нулями alpha<beta решения y, то beta-alpha>=pi/mu. В частности, при q<=0 ненулевое решение имеет на интервале не более одного нуля.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить с синусом или с единицей",
+      "text": "Уравнение z''+mu^2 z=0 задает эталонное расстояние pi/mu между соседними нулями, а уравнение z''=0 дает запрет двух нулей при q<=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Первое утверждение применяет сравнение Штурма к u=sin(mu(x-a)), у которого соседние нули a и a+pi/mu, и к уравнению с коэффициентом q>=mu^2: всякое ненулевое решение второго уравнения имеет нуль между этими нулями или на границе в предельном случае. Для второго утверждения рассуждаем от противного. Если у y есть соседние нули alpha<beta и beta-alpha<pi/mu, то можно выбрать решение z''+mu^2z=0 с нулями alpha и alpha+pi/mu; на [alpha,beta] это уравнение имеет больший или равный коэффициент, чем q. Сравнение Штурма в обратной форме говорит, что решение с большим коэффициентом должно иметь нуль между соседними нулями y; но синусоидальное z не имеет нулей на (alpha,beta), противоречие. При q<=0 наличие двух соседних нулей у y сравнивается с решением z=1 уравнения z''=0: из q<=0 следует 0>=q, и теорема сравнения заставила бы z иметь нуль между ними, что невозможно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "zero_spacing",
+      "comparison_with_sine"
+    ],
+    "objects": [
+      "zero_location",
+      "oscillation",
+      "nonoscillation"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "sturm_corollary",
+      "zero_spacing",
+      "nonpositive_potential"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "Стандартные программные следствия из сравнения Штурма; они закрывают типовые переходы к T3 и задачам на нули.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_theorem",
+    "comparison",
+    "zero_location",
+    "oscillation",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 4 программы: теорема Штурма и следствия."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "Карточка объединяет несколько близких следствий, чтобы не создавать массовый набор однотипных задач на сравнение с синусом."
+    ]
+  }
+}

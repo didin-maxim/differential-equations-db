@@ -1,0 +1,29 @@
+{
+  "id": "cluster-phase-stability",
+  "title": "Кластерный аудит: фазовая прямая, фазовая плоскость и устойчивость",
+  "created_at": "2026-05-26",
+  "scope": [
+    "cluster_audit",
+    "phase_line_stability",
+    "phase_plane",
+    "linear_equilibrium_classification",
+    "lyapunov_stability_visual"
+  ],
+  "problem_ids": [
+    "cluster-phase-stability-lyapunov-definitions",
+    "cluster-phase-stability-linear-plane-classification",
+    "cluster-phase-stability-linearization-hyperbolic",
+    "cluster-phase-stability-lyapunov-direct-method",
+    "cluster-phase-stability-first-integral-center",
+    "local-du-filippov-889-attractive-not-lyapunov-stable",
+    "cluster-phase-stability-visual-asymptotic-sink",
+    "cluster-phase-stability-visual-center-stable-not-asymptotic",
+    "cluster-phase-stability-visual-saddle-unstable"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавление точечное: не импортировались массовые однотипные фазовые портреты линейных систем.",
+    "Филиппов 889 добавлен с локальным изображением; источник и ограничение по DjVu/OCR зафиксированы в карточке и отчете.",
+    "Визуальные задачи self-authored/model tasks, потому что интернет-поиск дал надежные справочные разделы и примеры, но не готовый набор свободно переиспользуемых постановок ровно нужного формата."
+  ]
+}

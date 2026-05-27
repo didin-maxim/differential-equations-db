@@ -1,0 +1,120 @@
+{
+  "id": "cluster-implicit-discriminant-not-solution",
+  "title": "Дискриминант не обязан быть интегральной кривой",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для уравнения (y')^2=x найдите регулярные ветви и дискриминантное множество. Объясните геометрически, почему дискриминант x=0 не является решением уравнения для функции y(x), хотя все регулярные интегральные кривые касаются его границы.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Отделить дискриминант от особого решения",
+      "text": "Система F=0, F_p=0 может дать геометрическую границу области направлений, но такая граница не обязана быть графиком решения y(x).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть F(x,y,p)=p^2-x. Условие F_p=2p=0 вместе с F=0 дает p=0, x=0. Поэтому дискриминантное множество в плоскости (x,y) - вертикальная прямая x=0. При x>0 есть две регулярные ветви: y'=sqrt(x) и y'=-sqrt(x). Их интегрирование дает y=2x^{3/2}/3+C и y=-2x^{3/2}/3+C на полуплоскости x>=0. В точке x=0 эти кривые имеют горизонтальную касательную y'=0 и не продолжаются как действительные регулярные ветви в x<0. При этом сам дискриминант x=0 не является графиком функции y(x) на интервале, поэтому не является решением исходного ОДУ. Это пример, где дискриминант описывает границу поля направлений, а не особую интегральную кривую.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode"
+    ],
+    "methods": [
+      "discriminant_curve",
+      "branch_analysis",
+      "geometric_proof"
+    ],
+    "objects": [
+      "implicit_first_order",
+      "discriminant_set",
+      "direction_field"
+    ],
+    "goal": [
+      "classify",
+      "explain_geometry"
+    ],
+    "keywords": [
+      "implicit_ode_discriminant",
+      "discriminant_not_solution",
+      "regular_branches",
+      "geometry"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Главная трудность - не перепутать дискриминантное множество с решением; вычисления минимальны.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "implicit_ode_discriminant",
+    "standard_course_methods",
+    "low_technical",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "self_authored_model_task",
+      "status": "seed_reference",
+      "note": "Компактная модельная формулировка для аудита кластера; внешний источник не выдумывался."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-implicit-ode-discriminant",
+    "notes": [
+      "Добавлено как качественная геометрическая задача без тяжелого ответа.",
+      "Отсекает типичную ошибку: считать любое дискриминантное множество особым решением."
+    ]
+  }
+}

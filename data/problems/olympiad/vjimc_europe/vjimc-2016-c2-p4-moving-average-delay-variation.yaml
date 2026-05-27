@@ -1,0 +1,117 @@
+{
+  "id": "vjimc-2016-c2-p4-moving-average-delay-variation",
+  "title": "VJIMC 2016 CII P4: уравнение скользящего среднего и ограниченная вариация",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f:[0,∞)->R непрерывно дифференцируема и для всех x>=1 выполнено f(x)=∫_{x-1}^x f(t)dt. Докажите, что f имеет ограниченную вариацию на [1,∞), то есть ∫_1^∞ |f'(x)|dx<∞.",
+        "source_ids": [
+          "src-vjimc-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Отслеживать осцилляцию на единичных окнах",
+      "text": "Дифференцирование превращает условие в уравнение с запаздыванием f'(x)=f(x)-f(x-1). Если на каждом окне [n,n+1] взять максимум, минимум и размах, то уравнение среднего заставляет максимумы убывать, минимумы возрастать, а размах количественно затухать.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из условия получаем для x>1 равенство f'(x)=f(x)-f(x-1). Обозначим A_n=max_{[n,n+1]} f, B_n=min_{[n,n+1]} f и d_n=A_n-B_n. Если бы A_n>A_{n-1}, то в первой точке m∈[n,n+1], где f(m)=A_n, среднее ∫_{m-1}^m f(t)dt было бы строго меньше A_n, противореча f(m)=∫_{m-1}^m f. Значит A_n<=A_{n-1}; тот же довод для -f дает B_n>=B_{n-1}, поэтому d_n невозрастает. Кроме того, на [n+1,n+2] имеем |f'|<=d_n, так что достаточно доказать суммируемость d_n. Официальное решение делает это количественно. Так как график на [n,n+1] обязан соединить уровни A_n и B_n при наклоне не больше d_{n-1}, среднее на этом окне не превосходит A_n-d_n^2/(2d_{n-1}). Повторяя этот барьер на двух следующих окнах, получают A_{n+2}<=A_n-d_n^5/(128d_{n-1}^4), а применением той же оценки к -f получают B_{n+2}>=B_n+d_n^5/(128d_{n-1}^4). Поэтому d_{n+2}<=d_n-d_n^5/(64d_{n-1}^4). Деление на d_n и монотонность d_n дают d_{n+2}/d_{n-2}<=63/64 для каждой из четырех подпоследовательностей по модулю 4. Следовательно, sum d_n сходится. Наконец ∫_1^∞ |f'|<=sum_{n>=1} d_{n-1}<∞.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "delay_differential_equation",
+      "olympiad"
+    ],
+    "methods": [
+      "differentiate_integral_identity",
+      "oscillation_decay",
+      "comparison_argument"
+    ],
+    "objects": [
+      "moving_average",
+      "bounded_variation",
+      "window_oscillation"
+    ],
+    "goal": [
+      "prove",
+      "qualitative_property"
+    ],
+    "keywords": [
+      "VJIMC 2016 Category II Problem 4",
+      "скользящее среднее",
+      "уравнение с запаздыванием",
+      "bounded variation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 9,
+    "comment": "Идея 10: нужно заменить интегральное условие на затухание осцилляции для уравнения с запаздыванием. Техника 9: количественный барьер для d_n довольно длинный, но не является бессодержательным вычислительным монстром.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "integral_equation_to_ode",
+    "boundedness",
+    "comparison",
+    "global_solution",
+    "beyond_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-vjimc-archive",
+      "role": "official_statement_and_solution",
+      "status": "source_verified",
+      "url": "https://vjimc.osu.cz/storage/uploads/j26solutions2.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad-vjimc-europe",
+    "notes": [
+      "Импортировано как редкий VJIMC-кандидат, где дифференциальный механизм после скользящего среднего является центральным.",
+      "Проверено против запрета на чистые интегралы: здесь интеграл является исходной формой уравнения, а доказательство работает с f'=f-f(x-1) и затуханием осцилляции."
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "waterloo-spiral-phase-portrait-isoclines",
+  "title": "Фазовый портрет устойчивого фокуса через изоклины",
+  "fragment": "systems",
+  "kind": {"primary": "problem", "secondary": []},
+  "language": "ru",
+  "statements": {
+    "original": [{
+      "id": "stmt-original",
+      "title": "Фазовый портрет по матрице и изоклинам",
+      "text": "Для системы x'=Ax, A=[[-1,-4],[1,-1]], постройте качественный фазовый портрет без точного рисования траекторий: определите тип равновесия, направление вращения, убывание амплитуды и роль вертикальной и горизонтальной изоклин.",
+      "source_ids": ["src-waterloo-amath250-notes"],
+      "status": "ai_checked",
+      "self_contained": {"status": "ai_checked"},
+      "definition_ids": ["linear_system", "stability"]
+    }]
+  },
+  "ideas": [{
+    "id": "idea-main",
+    "title": "Спектр дает тип, изоклины - форму эскиза",
+    "text": "Собственные значения определяют устойчивый фокус. Изоклины x1'=0 и x2'=0 показывают, где касательные вертикальны и горизонтальны, а знак поля в одной точке задает направление вращения.",
+    "status": "ai_checked",
+    "standard_idea_ids": ["matrix_exponential"]
+  }],
+  "solutions": [{
+    "id": "sol-main",
+    "title": "Решение",
+    "text": "Характеристический многочлен равен (lambda+1)^2+4, поэтому lambda=-1 плюс-минус 2i. Значит начало координат - асимптотически устойчивый фокус: траектории спирально стремятся к нулю. В точке (1,0) поле равно (-1,1), то есть движение идет вверх и влево; вращение против часовой стрелки. Вертикальная касательная возникает там, где x1'=-x1-4x2=0, то есть x2=-x1/4. Горизонтальная касательная возникает там, где x2'=x1-x2=0, то есть x2=x1. Эти две прямые не являются траекториями, но они задают каркас рисунка: при пересечении первой траектория вертикальна, при пересечении второй горизонтальна, а между ними наклон меняет знак. Амплитуда убывает из-за отрицательной вещественной части собственных значений.",
+    "status": "ai_checked",
+    "standard_idea_ids": ["matrix_exponential"]
+  }],
+  "differential_equations_profile": {
+    "equation_type": ["linear_system", "qualitative"],
+    "methods": ["eigenvalue_classification", "phase_portrait", "isocline_analysis"],
+    "objects": ["stable_focus", "phase_portrait", "isocline"],
+    "goal": ["sketch", "classify"],
+    "keywords": ["Waterloo", "phase_portrait", "isoclines"],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Качественный фазовый портрет требует связать спектр, направление вращения и изоклины.",
+    "status": "ai_checked"
+  },
+  "tags": ["linear_systems", "phase_plane", "stability", "eigenvalues", "isocline_analysis", "graphical_construction", "standard_course_methods", "complete_proof", "source_solution_checked"],
+  "sources": [{
+    "source_id": "src-waterloo-amath250-notes",
+    "role": "problem_style_source",
+    "status": "source_verified",
+    "note": "AMath 250 Course Notes, ed. 2.0, Section 5.4 phase portraits and Problem Set 5 questions 2-3."
+  }],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": ["Карточка ориентирована на qualitative sketch, а не на полный расчет матричной экспоненты."]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "local-du-written-2024-nonlinear-p-of-y",
+  "title": "Нелинейная задача Коши через p(y)",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_24, задача 5",
+        "text": "Решите задачу Коши 2yy''+2y(y')^4=(y')^2, y(1)=y'(1)=1.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Считать p функцией от y",
+      "text": "Уравнение не содержит x явно. Поэтому y''=p dp/dy, а после замены w=p^{-2} получается линейное уравнение по y.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В окрестности начальной точки p=y' не равен нулю, и можно считать p=p(y). Тогда y''=p dp/dy. Уравнение становится 2yp dp/dy+2yp^4=p^2. Делим на p^4 и кладем w=p^{-2}. Так как w_y=-2p^{-3}p_y, получаем -y w_y+2y=w, то есть w_y+w/y=2. Следовательно, (yw)'=2y и yw=y^2+C. При y=1, p=1 имеем w=1, значит C=0. Поэтому p^{-2}=y и, с учетом p(1)=1, y'=1/sqrt(y). Интегрируя, получаем (2/3)y^{3/2}=x+C. Из y(1)=1 следует C=-1/3, значит y^{3/2}=(3x-1)/2. Ответ: y(x)=((3x-1)/2)^{2/3} на правой ветви, содержащей x=1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order",
+      "autonomous_in_x"
+    ],
+    "methods": [
+      "p_as_function_of_y",
+      "order_reduction",
+      "linear_first_order"
+    ],
+    "objects": [
+      "nonlinear_second_order",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "ДУ_В_24",
+      "p_of_y",
+      "order_reduction"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 5,
+    "local_score": 6,
+    "comment": "Ключевой ход - p=p(y); затем удачная замена p^{-2} делает уравнение линейным.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_transform",
+    "linear_first_order",
+    "order_reduction_substitution",
+    "p_of_y_reduction",
+    "standard_course_methods",
+    "complete_proof",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_24.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Оставлена несмотря на близость к ДУ_В_22 задаче 2: здесь другой технический узел - автономность по x и замена p=p(y), p^{-2}.",
+      "ДУ_В_23 задача 5 не импортирована как близкий понижаемый нелинейный второй порядок без нового метода."
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "local-du-written-2014-51-equilibrium-linearization",
+  "title": "Два равновесия нелинейной системы и их линеаризация",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2014-2015, вариант 51, задача 4",
+        "text": "Найти положения равновесия системы x'=ln(1+2x+y), y'=arcsin(4x-y+y^2). Определить характер положений равновесия и нарисовать фазовые траектории в окрестности для линеаризованных систем.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала равновесия, затем матрицы Якоби",
+      "text": "В равновесии аргументы ln и arcsin дают нули: y=-2x и 4x-y+y^2=0. Характер определяется собственными значениями матрицы линеаризации.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из ln(1+2x+y)=0 получаем y=-2x. Второе условие дает 4x-y+y^2=0, то есть после подстановки 6x+4x^2=0. Поэтому равновесия: (0,0) и (-3/2,3). Якобиан равен [[2/(1+2x+y), 1/(1+2x+y)], [4/sqrt(1-s^2), (-1+2y)/sqrt(1-s^2)]], где s=4x-y+y^2. В обоих равновесиях 1+2x+y=1 и s=0. В точке (0,0) получаем A0=[[2,1],[4,-1]], det A0=-6, собственные значения 3 и -2: это седло. Его направления: для lambda=3 имеем y=x, для lambda=-2 имеем y=-4x. В точке (-3/2,3) матрица A1=[[2,1],[4,5]], ее собственные значения 1 и 6 положительны: это неустойчивый узел. В локальных координатах X=x+3/2, Y=y-3 направления задаются Y=-X для lambda=1 и Y=4X для lambda=6.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous"
+    ],
+    "methods": [
+      "linearization",
+      "eigenvalue_classification"
+    ],
+    "objects": [
+      "equilibrium",
+      "phase_plane",
+      "stability"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2014-15",
+      "variant_51",
+      "saddle_node"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 4,
+    "technical_score": 5,
+    "local_score": 5,
+    "comment": "Метод стандартный, но нужно найти оба равновесия и не ошибиться в производных arcsin и ln.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "equilibrium_linearization",
+    "lyapunov",
+    "mipt_core",
+    "standard_course_methods",
+    "cluster_representative",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2014-15.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Формула этой системы также встречается в DE2007-08; карточка не дублируется.",
+      "Остальные задачи на равновесия и линеаризацию из выбранных PDF отфильтрованы как тот же экзаменационный шаблон."
+    ]
+  }
+}

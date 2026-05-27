@@ -1,0 +1,360 @@
+{
+  "sources": [
+    {
+      "id": "src-mipt-ode-course",
+      "title": "Стандартный курс дифференциальных уравнений МФТИ",
+      "short_name": "МФТИ: ДУ",
+      "language": "ru",
+      "type": "course",
+      "status": "seed_reference",
+      "note": "Обобщенная ссылка на типовой материал курса; в следующих проходах заменить на конкретные листки и пособия."
+    },
+    {
+      "id": "src-local-du-written-exams",
+      "title": "МФТИ, письменные экзаменационные работы по дифференциальным уравнениям",
+      "short_name": "МФТИ ДУ письменные",
+      "language": "ru",
+      "type": "exam_archive",
+      "status": "source_verified",
+      "note": "Локальные PDF из C:\\Users\\Admin\\Desktop\\ДУ, включая DE2007-08.pdf, DE2011-2012.pdf, DE2014-15.pdf, 2016_ex_work_de.pdf, 2018_v1_ex_work_de.pdf, ДУ_2020_весна.pdf, ДУ_2021_весна(2).pdf, ДУ_В_22.pdf, ДУ_В_23.pdf, ДУ_В_24.pdf."
+    },
+    {
+      "id": "src-arnold-ode",
+      "title": "В. И. Арнольд, Обыкновенные дифференциальные уравнения",
+      "short_name": "Арнольд, ОДУ",
+      "language": "ru",
+      "type": "book",
+      "status": "seed_reference"
+    },
+    {
+      "id": "src-coddington-levinson",
+      "title": "Coddington and Levinson, Theory of Ordinary Differential Equations",
+      "short_name": "Coddington-Levinson",
+      "language": "en",
+      "type": "book",
+      "status": "seed_reference"
+    },
+    {
+      "id": "src-student-olympiad-folklore",
+      "title": "Фольклор студенческих олимпиад по дифференциальным уравнениям",
+      "short_name": "Олимпиадный фольклор",
+      "language": "ru",
+      "type": "folklore",
+      "status": "needs_human_review"
+    },
+    {
+      "id": "src-putnam-archive",
+      "title": "Putnam Competition archives and solution collections",
+      "short_name": "Putnam",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://kskedlaya.org/putnam-archive/"
+    },
+    {
+      "id": "src-imc-official",
+      "title": "International Mathematics Competition for University Students official archive",
+      "short_name": "IMC",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://www.imc-math.org.uk/"
+    },
+    {
+      "id": "src-simon-marais-official",
+      "title": "Simon Marais Mathematics Competition official archive",
+      "short_name": "Simon Marais",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://www.simonmarais.org/"
+    },
+    {
+      "id": "src-istcim-official",
+      "title": "International Student Team Competition in Mathematics official archive",
+      "short_name": "ISTCiM",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://istcim.math.us.edu.pl/"
+    },
+    {
+      "id": "src-bme-math-contest",
+      "title": "BME Mathematics Contest archive",
+      "short_name": "BME contest",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://math.bme.hu/~mweiner/contest.html"
+    },
+    {
+      "id": "src-msu-ode-olympiad",
+      "title": "МГУ, студенческая олимпиада по обыкновенным дифференциальным уравнениям",
+      "short_name": "МГУ ОДУ",
+      "language": "ru",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/olympR.htm"
+    },
+    {
+      "id": "src-kfu-lobachevsky-olympiad",
+      "title": "КФУ, задачи студенческих олимпиад памяти Н. И. Лобачевского",
+      "short_name": "КФУ Лобачевский",
+      "language": "ru",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://kpfu.ru/staff_files/F_321052128/Lob_olymp_1999_2019.pdf"
+    },
+    {
+      "id": "src-nure-student-olympiad-book",
+      "title": "Задачи студенческих математических олимпиад, ХНУРЭ",
+      "short_name": "ХНУРЭ сборник",
+      "language": "ru",
+      "type": "problem_book",
+      "status": "source_verified",
+      "url": "https://openarchive.nure.ua/entities/publication/f92be81a-b1ac-4ac7-ab2d-f670e31b4fdf"
+    },
+    {
+      "id": "src-spb-student-olympiad-itmo",
+      "title": "Региональная студенческая олимпиада Санкт-Петербурга, архив ИТМО",
+      "short_name": "СПб студ. олимпиада",
+      "language": "ru",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://im.itmo.ru/ru/events/olymp_spb"
+    },
+    {
+      "id": "src-mipt-oral-exam-model-tasks",
+      "title": "Модельные задачи устного экзамена МФТИ по дифференциальным уравнениям",
+      "short_name": "МФТИ устный экзамен",
+      "language": "ru",
+      "type": "model_exam_tasks",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Задачи составляются как типовые устные экзаменационные проверки по стандартной программе ДУ; при использовании конкретного задачника источник нужно уточнять отдельно."
+    },
+    {
+      "id": "src-local-du-8-program-or-exam",
+      "title": "Локальный файл 8.pdf: программа и задания по дифференциальным уравнениям",
+      "short_name": "8.pdf: программа ДУ",
+      "language": "ru",
+      "type": "local_course_material",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\8.pdf"
+    },
+    {
+      "id": "src-romanko-problem-book",
+      "title": "В. К. Романко, Н. Х. Агаханов, В. В. Власов, Л. И. Коваленко. Сборник задач по дифференциальным уравнениям и вариационному исчислению",
+      "short_name": "Романко: задачник ДУ и ВИ",
+      "language": "ru",
+      "type": "problem_book",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\Romanko-VK-Sbornik-zadach-po-differentsialnym-uravneniyam-i-variatsionnomu-ischisleniyu.djvu",
+      "url": "https://djvu.online/file/RjNxlDYQIafNC",
+      "note": "Локальный DjVu сверялся с доступным OCR-представлением издания 2002 года на djvu.online; импорт сделан выборочно по §§10, 16, 17, 20-22."
+    },
+    {
+      "id": "src-filippov-problem-book",
+      "title": "А. Ф. Филиппов, Сборник задач по дифференциальным уравнениям",
+      "short_name": "Филиппов, сборник ДУ",
+      "language": "ru",
+      "type": "problem_book",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\Filippov-AF-Sbornik-zadach-po-differentsialnym-uravneniyam.djvu",
+      "note": "Локальный DJVU; для обзорного чтения структуры дополнительно использовался открытый PDF того же издания: НИЦ \"Регулярная и хаотическая динамика\", Ижевск, 2000."
+    },
+    {
+      "id": "src-lebl-diffyqs",
+      "title": "Jiří Lebl, Notes on Diffy Qs: Differential Equations for Engineers",
+      "short_name": "Lebl, Notes on Diffy Qs",
+      "language": "en",
+      "type": "open_textbook",
+      "status": "source_verified",
+      "url": "https://www.jirka.org/diffyqs/",
+      "note": "Использована web/PDF-версия 6.11 от 18 мая 2026 года; импорт выборочный по разделам 1.9, 5.1 и 8.1-8.3, без WebWork-шаблонов."
+    },
+    {
+      "id": "src-teschl-ode-dynamical-systems",
+      "title": "Gerald Teschl, Ordinary Differential Equations and Dynamical Systems",
+      "short_name": "Teschl ODE/DS",
+      "language": "en",
+      "type": "book",
+      "status": "source_verified",
+      "url": "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf",
+      "note": "Официальная предварительная онлайн-версия книги, доступная на странице автора с разрешения AMS; использованы §§2.4-2.5, §3.6 и отдельные упражнения как мосты к теории за пределами базового курса."
+    },
+    {
+      "id": "src-stanford-math63cm-ode",
+      "title": "Stanford Math 63CM, Ordinary Differential Equations notes",
+      "short_name": "Stanford Math 63CM ODE",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://web.stanford.edu/class/math63cm/63cm-solutions/ode.pdf",
+      "note": "Конспект курса Math 63CM; использован раздел 7 по Sturm-Liouville theory, особенно фазовый угол, монотонность по параметру и счет нулей собственных функций."
+    },
+    {
+      "id": "src-mit-18034-honors-ode",
+      "title": "MIT OpenCourseWare 18.034 Honors Differential Equations, Spring 2009: Assignments",
+      "short_name": "MIT 18.034 Honors ODE",
+      "language": "en",
+      "type": "course_assignments",
+      "status": "source_verified",
+      "url": "https://ocw.mit.edu/courses/18-034-honors-differential-equations-spring-2009/resources/assignments/",
+      "note": "Использованы problem sets и solution keys 1-9; условия переписаны по-русски и решения даны в стиле базы, с локатором problem set/problem внутри карточек."
+    },
+    {
+      "id": "src-trench-ode-bvp",
+      "title": "William F. Trench, Elementary Differential Equations with Boundary Value Problems",
+      "short_name": "Trench ODE BVP",
+      "language": "en",
+      "type": "open_textbook",
+      "status": "source_verified",
+      "url": "https://textbooks.aimath.org/textbooks/approved-textbooks/trench-de/",
+      "note": "Использованы открытая версия Trinity/Digital Commons и LibreTexts-страницы книги: глава 13, разделы 13.1 Boundary Value Problems и 13.2 Sturm-Liouville Problems, упражнения 13.1E и 13.2E."
+    },
+    {
+      "id": "src-waterloo-amath250-notes",
+      "title": "J. Wainwright and J. West, Introduction to Differential Equations: Course Notes for AMath 250",
+      "short_name": "Waterloo AMATH 250 notes",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://www.math.uwaterloo.ca/~jjwest/course_notes/AMath250_Course_Notes.pdf",
+      "note": "Использована версия 2.0, July 2023, как источник текстовых и качественных задач стандартного курса: qualitative sketches, mechanical oscillators, phase portraits, fundamental matrix."
+    },
+    {
+      "id": "src-calder-calculus-variations-notes",
+      "title": "J.W. Calder, The Calculus of Variations",
+      "short_name": "Calder, Calculus of Variations",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://www-users.cse.umn.edu/~jwcalder/CalculusOfVariations.pdf",
+      "note": "Открытый конспект University of Minnesota; для кластерного аудита использованы Chapter 4.4, Theorems 4.25-4.26 и Remark 4.27 о прямом методе, коэрцитивности, выпуклости и единственности минимизатора."
+    },
+    {
+      "id": "src-didin-variational-cluster-audit",
+      "title": "М. Дидин, модельные задачи для аудита вариационного кластера",
+      "short_name": "Дидин: вариационный аудит",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторские компактные постановки, добавленные при кластерном аудите 2026-05-26; внешний источник не выдумывался, если точного аналога не найдено."
+    },
+    {
+      "id": "src-mit-es1803-topic7",
+      "title": "MIT OpenCourseWare ES.1803 Differential Equations, Topic 7 Notes",
+      "short_name": "MIT ES.1803 Topic 7",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://ocw.mit.edu/courses/es-1803-differential-equations-spring-2024/mites_1803_s24_topic7.pdf",
+      "note": "Использована заметка о единственности для линейных уравнений второго порядка: разные решения могут пересекаться трансверсально, но не могут касаться касательно при непрерывных коэффициентах."
+    },
+    {
+      "id": "src-classical-orthogonal-trajectories",
+      "title": "Classical references on orthogonal trajectories, coaxal circles, and confocal conics",
+      "short_name": "Classical orthogonal trajectories",
+      "language": "en",
+      "type": "reference_collection",
+      "status": "source_verified",
+      "url": "https://mathworld.wolfram.com/CoaxalCircles.html",
+      "note": "Справочная запись MathWorld о coaxal circles фиксирует коаксиальные пучки, limiting points и ортогональные сопряженные пучки; дополнительно сверялись MathWorld Confocal Conics https://mathworld.wolfram.com/ConfocalConics.html, Confocal Ellipses https://mathworld.wolfram.com/ConfocalEllipses.html, NPTEL Orthogonal Trajectories https://archive.nptel.ac.in/content/storage2/courses/122104018/node67.html и Euler Archive E390 https://scholarlycommons.pacific.edu/euler-works/390/. Точные формулировки карточек являются классическим фольклором/авторским изложением для аудита, а не перепечаткой конкретного источника."
+    },
+    {
+      "id": "src-didin-linear-variable-coefficients-audit",
+      "title": "М. Дидин, модельные задачи для аудита линейных уравнений с переменными коэффициентами",
+      "short_name": "Дидин: линейные переменные коэффициенты",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторские компактные постановки, добавленные при кластерном аудите 2026-05-27; внешний источник не выдумывался, если точного аналога не найдено."
+    },
+    {
+      "id": "src-cluster-integrating-factor-exact-forms-audit",
+      "title": "Модельные задачи для аудита кластера интегрирующих множителей и точных форм",
+      "short_name": "Аудит: интегрирующие множители",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Компактные постановки, добавленные при кластерном аудите 2026-05-27 для закрытия вариантов mu(y), x^a y^b и mu(xy); внешний источник не выдумывался."
+    },
+    {
+      "id": "src-cluster-matrix-exponential-methods-audit",
+      "title": "Модельные задачи для аудита кластера методов матричной экспоненты",
+      "short_name": "Аудит: матричная экспонента",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Компактные авторские постановки, добавленные при кластерном аудите 2026-05-27: свойства e^{At}, восстановление A, след/детерминант, чтение спектра и дискретный аналог. Внешний источник не выдумывался."
+    },
+    {
+      "id": "src-cluster-pde-characteristics-first-order-audit",
+      "title": "Модельные задачи для аудита кластера характеристик линейных ЧП первого порядка",
+      "short_name": "Аудит: PDE характеристики",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Компактные постановки, добавленные при кластерном аудите 2026-05-27: область продолжения данных Коши, характеристические данные, неединственность, пересечение характеристик и геометрия транспортного потока. Внешний источник не выдумывался."
+    },
+    {
+      "id": "src-didin-sturm-oscillation-comparison-audit",
+      "title": "М. Дидин, модельные задачи для аудита кластера Штурма",
+      "short_name": "Дидин: Sturm-аудит",
+      "language": "ru",
+      "type": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторские компактные постановки, добавленные при кластерном аудите 2026-05-27: дисконъюгированность, нерезонанс Дирихле и порог C для y''+f(x)y=0 с концами 1,1. Внешний источник не выдумывался."
+    },
+    {
+      "id": "src-yagtu-student-olympiad-collection",
+      "title": "Задачи студенческих математических олимпиад ЯГТУ / международных и всероссийских олимпиад",
+      "short_name": "ЯГТУ студ. олимпиады",
+      "language": "ru",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://baumo.narod.ru/Yar01.pdf",
+      "note": "Открытый PDF с подборкой задач международных и всероссийских студенческих олимпиад 2001-2014 гг.; условия для импорта сверялись визуально по страницам PDF, потому что текстовый слой частично портит формулы."
+    },
+    {
+      "id": "src-spbgeu-student-olympiad-materials",
+      "title": "СПбГЭУ, сборник материалов открытых международных студенческих олимпиад 2023 года",
+      "short_name": "СПбГЭУ олимпиады 2023",
+      "language": "ru",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://unecon.ru/wp-content/uploads/2023/12/sbornik-materialov.pdf",
+      "note": "Официальный сборник СПбГЭУ; использован пример олимпиадного задания 2023 года по математике, размещенный в разделе региональной студенческой олимпиады Санкт-Петербурга."
+    },
+    {
+      "id": "src-vjimc-archive",
+      "title": "Vojtech Jarnik International Mathematical Competition official archive",
+      "short_name": "VJIMC",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://vjimc.osu.cz/problems",
+      "note": "Официальный архив VJIMC; для импорта 2026-05-27 проверялись PDF задач и решений j01-j32, карточка добавлена по 2016 Category II Problem 4."
+    },
+    {
+      "id": "src-seemous-archive",
+      "title": "SEEMOUS public problem and solution archives",
+      "short_name": "SEEMOUS",
+      "language": "en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://seemous2020.auth.gr/",
+      "note": "Использованы официальные PDF SEEMOUS 2020 и публичный архивный mirror старых SEEMOUS PDF, когда старый официальный хост был недоступен. Конкретные URL указаны в карточках."
+    },
+    {
+      "id": "src-innopolis-math-olympiad",
+      "title": "Innopolis Olympiad in Mathematics for University Students",
+      "short_name": "Innopolis university olympiad",
+      "language": "ru/en",
+      "type": "olympiad_archive",
+      "status": "source_verified",
+      "url": "https://innopolis.university/filespublic/TasksSols2024.pdf",
+      "note": "Официальный PDF задач и решений 2024 года; импортирована постановка Task 6, но решение в карточке исправляет склейку ветвей в официальном примере."
+    }
+  ]
+}

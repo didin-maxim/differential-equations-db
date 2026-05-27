@@ -1,0 +1,106 @@
+{
+  "id": "local-du-written-2022-inverse-square-change",
+  "title": "Линейное уравнение после замены t=1/x^2",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_22, задача 4",
+        "text": "Найдите общее решение уравнения x^6 y''+3x^5 y'-4y=4, x>0, если известны два его решения y1=e^(1/x^2)-1, y2=-1.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сменить независимую переменную",
+      "text": "Комбинация x^6 y''+3x^5 y' устроена так, что при t=1/x^2 первые производные по t сокращаются.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим t=1/x^2 и y(x)=Y(t). Тогда y'=-2x^{-3}Y_t, y''=6x^{-4}Y_t+4x^{-6}Y_{tt}. Поэтому x^6y''+3x^5y'=4Y_{tt}. Уравнение превращается в 4Y_{tt}-4Y=4, то есть Y_{tt}-Y=1. Его общее решение Y=C1 e^t+C2 e^{-t}-1. Возвращаясь к x, получаем y(x)=C1 e^(1/x^2)+C2 e^(-1/x^2)-1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "change_of_independent_variable",
+      "constant_coefficients"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "known_solutions"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "ДУ_В_22",
+      "inverse_square_substitution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 4,
+    "local_score": 4,
+    "comment": "Идея в распознавании замены t=1/x^2; после нее задача становится уравнением с постоянными коэффициентами.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "change_independent_variable",
+    "constant_coefficients",
+    "standard_course_methods",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_22.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Проверены существующие карточки про Эйлера-Коши, Фробениуса и редукцию порядка; точного уравнения нет.",
+      "ДУ_В_23 задача 7 и ДУ_В_24 задача 3 также являются линейными уравнениями с подобранной структурой; для ДУ_В_24 оставлена отдельная карточка из-за другого хода y=xu."
+    ]
+  }
+}

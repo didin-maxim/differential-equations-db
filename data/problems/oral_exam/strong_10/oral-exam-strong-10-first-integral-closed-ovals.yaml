@@ -1,0 +1,126 @@
+{
+  "id": "oral-exam-strong-10-first-integral-closed-ovals",
+  "title": "Первый интеграл и замкнутые овалы фазовой плоскости",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Для системы x'=y(1+x^2), y'=-x(1+y^2) найти первый интеграл. Доказать, что всякое ненулевое решение определено при всех t и является периодическим движением по замкнутой кривой уровня.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "first_integral",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сохранить произведение 1+x^2 и 1+y^2",
+      "text": "Логарифмическая производная выражения (1+x^2)(1+y^2) сокращается. Уровни этого интеграла компактны, а поле на ненулевом уровне нигде не обращается в нуль, поэтому движение по каждой компоненте уровня замыкается.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Вычислим производную H=(1+x^2)(1+y^2) вдоль решений. Удобнее взять логарифм: d/dt ln H = 2x x'/(1+x^2)+2y y'/(1+y^2)=2xy-2xy=0. Значит H является первым интегралом. Если начальная точка не равна нулю, то C=H>1, и траектория лежит на множестве (1+x^2)(1+y^2)=C. Это множество ограничено и замкнуто, а значит компактно; поэтому решение не может уйти на бесконечность и по стандартной теореме продолжения определено для всех t. На уровне C>1 градиент H не равен нулю одновременно с полем: равновесие системы только (0,0), но оно лежит на уровне C=1. Следовательно уровень C>1 является гладкой замкнутой кривой, а векторное поле нигде на ней не зануляется и всюду направлено по касательной. Выбрав точку на этой кривой, решение движется по ней с непрерывной ненулевой скоростью. Время одного обхода конечно, потому что скорость на компактной кривой имеет положительный минимум. После одного обхода решение возвращается в начальную точку, и по единственности дальнейшее движение периодически повторяется.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "qualitative"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane",
+      "compact_level_set"
+    ],
+    "objects": [
+      "first_integral",
+      "phase_plane",
+      "periodic_solution",
+      "global_solution"
+    ],
+    "goal": [
+      "find",
+      "prove"
+    ],
+    "keywords": [
+      "first_integral",
+      "closed_ovals",
+      "periodic_motion",
+      "oral_exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 5,
+    "comment": "Идейная сложность 9: надо не только найти интеграл, но и корректно перевести компактную кривую уровня в периодическое решение. Техническая сложность 5: счет интеграла короткий, качественная часть требует аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_system",
+    "first_integral",
+    "phase_plane",
+    "periodic_solution",
+    "global_solution",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по первому интегралу и замкнутым уровням; точная система не найдена."
+    ]
+  }
+}

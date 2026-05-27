@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-var-fixed-el-to-euler-poisson-fixed",
+      "from": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "to": "cluster-variational-euler-poisson-fixed",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Эйлер-Пуассон получается из того же расчета первой вариации, но с дополнительным интегрированием по частям для y''.",
+      "backward_text": "При отсутствии y'' формула Эйлера-Пуассона возвращается к обычному уравнению Эйлера-Лагранжа.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-var-euler-poisson-fixed-to-free-end",
+      "from": "cluster-variational-euler-poisson-fixed",
+      "to": "cluster-variational-euler-poisson-free-end",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "После вывода уравнения Эйлера-Пуассона нужно оставить граничные члены, если правый конец свободен.",
+      "backward_text": "Свободный правый конец показывает, какие натуральные условия скрываются за закреплением y и y' на границе.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-var-euler-poisson-fixed-to-general-order",
+      "from": "cluster-variational-euler-poisson-fixed",
+      "to": "cluster-variational-euler-poisson-general-order",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Случай y'' является первым нетривиальным примером общей знакопеременной суммы по производным.",
+      "backward_text": "Общая формула объясняет, почему для y'' появляется знак плюс у второй полной производной.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-var-euler-poisson-to-romanko-higher",
+      "from": "cluster-variational-euler-poisson-fixed",
+      "to": "local-du-romanko-variational-higher-derivative",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теоретическая формула Эйлера-Пуассона сразу дает четвертый порядок в задаче Романко.",
+      "backward_text": "Задача Романко является вычислительным представителем формулы Эйлера-Пуассона с закрепленными y и y'.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-var-natural-to-euler-poisson-free-end",
+      "from": "local-du-standard-natural-boundary-conditions",
+      "to": "cluster-variational-euler-poisson-free-end",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Идея натурального граничного условия переносится на функционалы с y'', где свободный конец дает два условия.",
+      "backward_text": "Два условия на свободном конце являются higher-derivative аналогом одного натурального условия F_{y'}=0.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-var-natural-to-transversality-moving-endpoint",
+      "from": "local-du-standard-natural-boundary-conditions",
+      "to": "cluster-variational-transversality-moving-endpoint",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Свободный конец с фиксированной абсциссой является частным граничным случаем; подвижная точка требует полной трансверсальности.",
+      "backward_text": "Модельная задача с движущимся правым концом отделяет трансверсальность от обычного натурального условия.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-var-fixed-el-to-quadratic-coercive",
+      "from": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "to": "cluster-variational-quadratic-coercive-minimizer",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Уравнение Эйлера-Лагранжа дает линейную краевую задачу для квадратичного функционала.",
+      "backward_text": "Квадратичная теорема добавляет к формальному уравнению существование, единственность и глобальность минимума.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-var-log-cross-term-to-quadratic-coercive",
+      "from": "local-du-written-2020-variational-log-cross-term",
+      "to": "cluster-variational-quadratic-coercive-minimizer",
+      "type": "special_case",
+      "distance": 2,
+      "forward_text": "Письменная задача является конкретным положительно-квадратичным расчетом Эйлера-Лагранжа со смешанным членом.",
+      "backward_text": "Теорема объясняет, почему такие положительно-квадратичные функционалы дают единственный глобальный минимум, а не только стационарную экстремаль.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-var-threshold-to-quadratic-coercive",
+      "from": "local-du-deficit-variational-quadratic-threshold",
+      "to": "cluster-variational-quadratic-coercive-minimizer",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Пороговая задача показывает, как знак квадратичной формы может разрушить глобальный минимум.",
+      "backward_text": "Коэрцитивная теорема фиксирует противоположный случай: положительный q и y'^2 дают строгую выпуклость и единственность.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-var-legendre-jacobi-to-romanko-jacobi",
+      "from": "local-du-standard-legendre-jacobi-conditions",
+      "to": "local-du-romanko-jacobi-strict-maximum",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Стандартные условия Лежандра-Якоби являются теоретической основой достаточной проверки строгого максимума.",
+      "backward_text": "Задача Романко показывает работу условий Лежандра-Якоби на конкретной второй вариации.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-cluster-var-isoperimetric-linear-to-two-functions",
+      "from": "local-du-romanko-isoperimetric-linear-constraint",
+      "to": "local-du-romanko-variational-two-functions",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Интегральная связь вводит один множитель Лагранжа при одной функции.",
+      "backward_text": "Несколько неизвестных функций дают систему уравнений Эйлера без изопериметрического множителя.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    }
+  ]
+}

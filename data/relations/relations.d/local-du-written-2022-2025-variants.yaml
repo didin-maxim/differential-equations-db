@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-du-written-2022-linearization",
+      "from": "lyapunov-linearization-example",
+      "to": "local-du-written-2022-nonlinear-equilibria-linearization",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Модельная карточка про линеаризацию подготавливает чтение типа равновесия по спектру Якоби.",
+      "backward_text": "Письменная задача закрепляет тот же метод на системе с двумя равновесиями и явным фазовым типом.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-local-du-written-2022-inverse-square",
+      "from": "euler-cauchy-equation",
+      "to": "local-du-written-2022-inverse-square-change",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Уравнение Эйлера-Коши учит искать замену независимой переменной, превращающую переменные коэффициенты в постоянные.",
+      "backward_text": "В письменной задаче тот же принцип реализуется не степенной заменой, а заменой t=1/x^2.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-local-du-written-2022-discriminant",
+      "from": "clairaut-envelope",
+      "to": "local-du-written-2022-implicit-discriminant",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Клеро и огибающая являются базовой моделью для поиска особых решений через дискриминант.",
+      "backward_text": "Параметрическое уравнение из письменного варианта использует тот же критерий F=F_p=0.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-local-du-written-2022-global-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "local-du-written-2022-global-arctan-continuation",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Теорема о максимальном продолжении прямо объясняет, почему ограниченность решения на конечных отрезках запрещает конечный правый конец.",
+      "backward_text": "Задача с arctg является коротким применением критерия продолжения через априорную оценку |y'|.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-du-written-2023-characteristics",
+      "from": "lotka-volterra-first-integral",
+      "to": "local-du-written-2023-characteristics-plane-data",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Поиск первых интегралов системы характеристик родственен поиску сохраняющейся величины в автономной системе.",
+      "backward_text": "PDE-задача показывает тот же язык первых интегралов в методе характеристик.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-local-du-written-2023-parameter",
+      "from": "linear-first-order-formula",
+      "to": "local-du-written-2023-parameter-sensitivity",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула для линейного уравнения первого порядка нужна дважды: для базового решения и для вариационного уравнения по параметру.",
+      "backward_text": "Параметрическая задача тренирует применение линейного уравнения к чувствительности решения.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-local-du-written-2024-y-xu",
+      "from": "oral-above-three-reduction-order-known-solution",
+      "to": "local-du-written-2024-linear-y-xu-reduction",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Редукция порядка через известный множитель решения подсказывает замену y=xu.",
+      "backward_text": "Письменная задача использует ту же идею, но приводит ее к уравнению первого порядка для u'.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-local-du-written-2024-p-of-y",
+      "from": "bernoulli-standard",
+      "to": "local-du-written-2024-nonlinear-p-of-y",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "После понижения порядка задача приводит к линейному уравнению заменой, аналогичной стандартной линеаризации Бернулли.",
+      "backward_text": "Нелинейная задача второго порядка показывает, как замена p=p(y) рождает линейное уравнение для p^{-2}.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-local-du-written-2024-variational",
+      "from": "shooting-linear-bvp",
+      "to": "local-du-written-2024-variational-free-endpoint",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Линейная краевая задача является базовой техникой для уравнения Эйлера после учета граничных условий.",
+      "backward_text": "Вариационная задача добавляет естественное условие на свободном конце и проверку второй вариации.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-local-du-written-2024-affine-space",
+      "from": "liouville-wronskian-formula",
+      "to": "local-du-written-2024-affine-linear-solution-space",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля и критерий вронскиана объясняют, почему два однородных решения с нулевым вронскианом зависимы.",
+      "backward_text": "Задача про два известных частных решения применяет вронскиан к аффинному пространству решений.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

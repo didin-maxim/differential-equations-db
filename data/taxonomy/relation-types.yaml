@@ -1,0 +1,28 @@
+{
+  "relation_types": [
+    {
+      "id": "prerequisite",
+      "title": "Нужна как предварительный результат"
+    },
+    {
+      "id": "same_method",
+      "title": "Тот же метод"
+    },
+    {
+      "id": "generalization",
+      "title": "Обобщение"
+    },
+    {
+      "id": "special_case",
+      "title": "Частный случай"
+    },
+    {
+      "id": "contrast",
+      "title": "Полезное сравнение"
+    },
+    {
+      "id": "teaches_before",
+      "title": "Стоит изучить раньше"
+    }
+  ]
+}

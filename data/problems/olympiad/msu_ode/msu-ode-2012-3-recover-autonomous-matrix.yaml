@@ -1,0 +1,109 @@
+{
+  "id": "msu-ode-2012-3-recover-autonomous-matrix",
+  "title": "Восстановление матрицы автономной системы по одной траектории",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2012, задача 3",
+        "text": "Найдите матрицу A системы x'=Ax, x in R^2, если некоторое ее решение x(.) удовлетворяет условиям x(0)=(1,0)^T, x'(0)=(0,1)^T, x(1)=(-2,0)^T.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Экспонента на базисе",
+      "text": "Из x(0)=e_1 и x'(0)=Ae_1=e_2 известен первый столбец A. Условие e^A e_1=-2e_1 вместе с коммутированием A и e^A заставляет e^A=-2I.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим e_1=(1,0)^T, e_2=(0,1)^T. Из x(0)=e_1 и x'(0)=Ae_1=e_2 следует, что первый столбец A равен e_2, то есть A=[[0,a],[1,b]]. Далее x(1)=e^A e_1=-2e_1. Так как A коммутирует с e^A, получаем e^A e_2=e^A A e_1=A e^A e_1=-2Ae_1=-2e_2. Значит e^A=-2I. Собственные значения вещественной матрицы A должны быть ln 2 +/- i(2k+1)pi. Поэтому b=tr A=2 ln 2, а det A=(ln 2)^2+(2k+1)^2 pi^2. Но det A=-a, значит a=-((ln 2)^2+(2k+1)^2 pi^2). Итак, все решения задачи задаются матрицами A_k=[[0,-((ln 2)^2+(2k+1)^2 pi^2)],[1,2 ln 2]], k=0,1,2,... . Для такой матрицы A_k-ln2 I имеет квадрат -((2k+1)^2 pi^2)I, поэтому e^{A_k}=2(cos((2k+1)pi)I+sin((2k+1)pi)((A_k-ln2 I)/((2k+1)pi)))=-2I, и условия действительно выполнены.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "spectral_analysis"
+    ],
+    "objects": [
+      "linear_systems",
+      "matrix_exponential",
+      "complete_proof"
+    ],
+    "goal": [
+      "solve",
+      "classify"
+    ],
+    "keywords": [
+      "msu-ode-2012-3",
+      "matrix_exponential",
+      "linear_systems",
+      "real_matrix_logarithm"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 6,
+    "local_score": 8,
+    "comment": "Идейно нужно перейти от одной траектории к условию e^A=-2I и учесть все вещественные логарифмы; технически требуется умеренный спектральный счет с параметром k.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_12.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с листком МГУ ОДУ 2012."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "putnam-early-1963-a3-euler-operator-kernel",
+  "title": "Putnam 1963 A3: интегральная формула для оператора xD(xD-1)...(xD-n)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть D=d/dx и E=xD(xD-1)(xD-2)...(xD-n). Найти представление решения уравнения Ey=f(x) с условиями y(1)=y'(1)=...=y^{(n)}(1)=0 в виде интеграла от f, где f непрерывна.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Свернуть оператор Эйлера",
+      "text": "Тождество xD(xD-1)...(xD-n)y=x^{n+1}y^{(n+1)} сводит задачу к формуле Тейлора с интегральным остатком.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Докажем по индукции тождество (xD-m)(x^m y^{(m)})=x^{m+1}y^{(m+1)}. Действительно, xD(x^m y^{(m)})-m x^m y^{(m)}=m x^m y^{(m)}+x^{m+1}y^{(m+1)}-m x^m y^{(m)}. Последовательное применение при m=0,1,...,n дает Ey=x^{n+1}y^{(n+1)}. Поэтому y^{(n+1)}(t)=f(t)/t^{n+1} на промежутке, не проходящем через 0. Условия в точке 1 зануляют полиномиальную часть формулы Тейлора, и остается интегральный остаток: y(x)=1/n! int_1^x (x-t)^n f(t)/t^{n+1} dt. Дифференцирование этого выражения n+1 раз возвращает f(x)/x^{n+1}, а первые n производных в x=1 равны нулю, так что формула удовлетворяет всем условиям.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order"
+    ],
+    "methods": [
+      "differential_operator",
+      "green_kernel",
+      "taylor_remainder"
+    ],
+    "objects": [
+      "euler_operator",
+      "integral_representation"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "Putnam 1963 A3",
+      "differential_operator",
+      "green_kernel"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 7,
+    "comment": "Идея уровня отличника: распознать оператор Эйлера как x^{n+1}D^{n+1}. Техника заметная: индукция и интегральный остаток Тейлора.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "differential_operator",
+    "green_kernel",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol633.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Формула корректна на промежутке с базовой точкой 1, не пересекающем особую точку x=0."
+    ]
+  }
+}

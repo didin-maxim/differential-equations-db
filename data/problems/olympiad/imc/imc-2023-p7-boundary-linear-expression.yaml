@@ -1,0 +1,118 @@
+{
+  "id": "imc-2023-p7-boundary-linear-expression",
+  "title": "IMC 2023, P7: значение f'-f при краевых условиях",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть V - множество всех непрерывных функций f:[0,1]->R, дифференцируемых на (0,1), таких что f(0)=0 и f(1)=1. Найдите все α∈R, для которых для каждой f∈V существует ξ∈(0,1), такое что f(ξ)+α=f'(ξ).",
+        "source_ids": [
+          "src-imc-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "linear_first_order_equation",
+          "boundary_value_problem",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить с модельным решением линейного уравнения",
+      "text": "Модель h(x)=(e^x-1)/(e-1) удовлетворяет тем же краевым условиям и имеет постоянное h'-h. Для произвольной f разность f-h умножается на e^(-x), после чего Ролль дает точку, где f'-f=h'-h.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "rolle_on_transformed_expression"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим h(x)=(e^x-1)/(e-1). Тогда h(0)=0, h(1)=1 и h'(x)-h(x)=1/(e-1) для всех x. Поэтому если требуемое свойство верно для всех f∈V, то оно верно и для f=h; из h(ξ)+α=h'(ξ) следует α=h'(ξ)-h(ξ)=1/(e-1). Осталось доказать, что это значение действительно подходит. Возьмем произвольную f∈V и положим q(x)=e^(-x)(f(x)-h(x)). Функция q непрерывна на [0,1], дифференцируема на (0,1), а q(0)=q(1)=0. По теореме Ролля существует ξ∈(0,1), для которого q'(ξ)=0. Но q'(x)=e^(-x)((f'(x)-f(x))-(h'(x)-h(x))). Значит f'(ξ)-f(ξ)=h'(ξ)-h(ξ)=1/(e-1), то есть f'(ξ)=f(ξ)+1/(e-1). Следовательно единственное подходящее значение α равно 1/(e-1).",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_first_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "integrating_factor_linear",
+      "rolle_on_transformed_expression"
+    ],
+    "objects": [
+      "olympiad_style",
+      "linear_first_order",
+      "boundary_value",
+      "integrating_factor"
+    ],
+    "goal": [
+      "find_parameter",
+      "prove"
+    ],
+    "keywords": [
+      "IMC 2023 P7",
+      "краевое условие",
+      "linear first order",
+      "integrating factor",
+      "теорема Ролля",
+      "f prime minus f"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: нужно подобрать модельное решение и применить Ролля к разности после интегрирующего множителя. Техническая сложность 4: вычисления в линейном уравнении короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_first_order",
+    "boundary_value",
+    "integrating_factor",
+    "rolle_theorem",
+    "advanced_standard_course",
+    "complete_proof",
+    "source_solution_checked",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-imc-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Источник: IMC 2023 Day 2 Solutions, Problem 7, https://www.imc-math.org.uk/imc2023/imc2023-day2-solutions.pdf."
+    ]
+  }
+}

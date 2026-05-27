@@ -1,0 +1,125 @@
+{
+  "id": "cluster-phase-stability-visual-saddle-unstable",
+  "title": "По фазовому портрету седла распознать неустойчивость",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Визуальная модельная задача",
+        "text": "На рисунке у начала координат есть входящие и выходящие сепаратрисы; вне входящей сепаратрисы близкие траектории уходят от нуля. Определить, устойчиво ли нулевое равновесие по Ляпунову, асимптотически устойчиво ли оно или неустойчиво.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fig-visual-saddle-unstable",
+      "type": "image",
+      "path": "data/assets/images/phase_stability/visual-saddle-unstable.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Одного выходящего направления достаточно для неустойчивости",
+      "text": "Устойчивость требует, чтобы все достаточно близкие начальные точки оставались близко. Седло нарушает это из-за неустойчивого направления.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нулевое равновесие неустойчиво по Ляпунову. Какой бы малой ни была начальная окрестность, в ней есть точки на выходящей сепаратрисе или рядом с ней; соответствующие траектории со временем выходят из фиксированной окрестности нуля. Поэтому условие epsilon-delta устойчивости нарушается. Асимптотической устойчивости тоже нет, поскольку она обязательно включает устойчивость по Ляпунову. Входящие сепаратрисы не спасают ситуацию: они показывают только существование отдельных траекторий, стремящихся к нулю, а устойчивость требует контроля всех достаточно близких траекторий.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_portrait_reading",
+      "eigenvalue_classification"
+    ],
+    "objects": [
+      "saddle",
+      "unstable_equilibrium",
+      "separatrix",
+      "phase_portrait"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "visual stability",
+      "saddle",
+      "instability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 1,
+    "comment": "Визуальная проверка неустойчивости седла по определению.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "linear_systems",
+    "graphical_construction",
+    "standard_course_methods",
+    "model_exam_task",
+    "self_authored",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Self-authored schematic task after web search for analogous visual stability examples; no exact external problem statement was copied."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Схематический SVG создан локально как минимальная visual card для неустойчивости по фазовому портрету."
+    ]
+  }
+}

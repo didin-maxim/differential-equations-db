@@ -1,0 +1,110 @@
+{
+  "id": "mit-18034-pset03-resonance-limit",
+  "title": "Резонанс как предел близких частот",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "mini_theorem"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть omega>0, omega0 != omega и omega0 близко к omega. Для уравнения y''+omega^2 y=sin(omega0 t) рассмотрим частное решение y2(t)=(sin(omega0 t)-sin(omega t))/(omega^2-omega0^2), у которого начальные данные остаются конечными при omega0 -> omega. Найти предел y2 и проверить, что он дает частное решение резонансного уравнения y''+omega^2 y=sin(omega t).",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Убрать сингулярную часть перед предельным переходом",
+      "text": "Обычное частное решение имеет знаменатель omega^2-omega0^2 и взрывающуюся производную в нуле. Вычитание однородного решения sin(omega t)/(omega^2-omega0^2) оставляет семейство с конечными начальными данными, а резонансный множитель t появляется как производная по параметру.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для omega0 != omega функция y2 является частным решением, потому что sin(omega0 t)/(omega^2-omega0^2) дает правую часть sin(omega0 t), а sin(omega t)/(omega^2-omega0^2) является решением однородного уравнения. При omega0 -> omega числитель и знаменатель стремятся к нулю. По правилу Лопиталя по параметру omega0 получаем lim y2(t)=lim (t cos(omega0 t))/(-2 omega0)=-t cos(omega t)/(2 omega). Проверка прямая: если yp=-t cos(omega t)/(2 omega), то yp''+omega^2 yp=sin(omega t). Значит резонансное частное решение возникает как предел правильно нормированных нерезонансных частных решений.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "resonance_limit",
+      "parameter_limit"
+    ],
+    "objects": [
+      "resonance",
+      "forcing_frequency",
+      "particular_solution"
+    ],
+    "goal": [
+      "solve",
+      "explain_resonance"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 3",
+      "resonance",
+      "near-resonance",
+      "parameter-limit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: нужно увидеть резонанс как предельный переход после вычитания однородной сингулярной части; technical_score=3: вычисление сводится к правилу Лопиталя и короткой проверке.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "constant_coefficients",
+    "resonance",
+    "parameter_sensitivity_ivp",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #3, Problem 1; Solutions to Problemset 3, Problem 1"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: найден насыщенный кластер constant coefficients/resonance, но эта карточка оставлена как новая идея - резонанс получается не подбором анзаца, а предельным переходом по частоте с контролем начальных данных.",
+      "Метка standard_course_methods: используются только линейное уравнение с постоянными коэффициентами, однородная добавка и правило Лопиталя."
+    ]
+  }
+}

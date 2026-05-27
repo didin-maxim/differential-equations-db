@@ -1,0 +1,120 @@
+{
+  "id": "cluster-implicit-branch-switch-square-root",
+  "title": "Ветвление решений на дискриминанте уравнения (y')^2=y",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для неразрешенного уравнения (y')^2=y найдите дискриминантное множество. Покажите, что через точку (0,0) проходит несколько интегральных кривых, и объясните это как переключение ветвей p=+sqrt(y) и p=-sqrt(y).",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дискриминант как место склейки ветвей",
+      "text": "Для F=y-p^2 условия F=0 и F_p=0 дают y=0, p=0. На этой кривой две регулярные ветви наклона сходятся, поэтому возможны разные продолжения из одной и той же начальной точки.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Запишем F(x,y,p)=p^2-y. Дискриминант задается системой F=0, F_p=2p=0, откуда p=0 и y=0. Значит дискриминантное множество в плоскости (x,y) - ось y=0. В области y>0 есть две регулярные ветви p=+sqrt(y) и p=-sqrt(y). Например, y=x^2/4 является решением на всей прямой: y'=x/2 и (y')^2=x^2/4=y; при x<0 оно идет по ветви p=-sqrt(y), при x>0 - по ветви p=+sqrt(y), а в точке x=0 ветви склеиваются на дискриминанте. Через (0,0) проходят также y=0 и решение y=0 при x<=0, y=x^2/4 при x>=0. Поэтому дискриминант здесь является не просто особой кривой, а местом потери единственности и допустимого переключения ветвей.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode"
+    ],
+    "methods": [
+      "discriminant_curve",
+      "branch_switching",
+      "singular_solution"
+    ],
+    "objects": [
+      "implicit_first_order",
+      "nonunique_solution",
+      "discriminant_set"
+    ],
+    "goal": [
+      "classify",
+      "explain_geometry"
+    ],
+    "keywords": [
+      "implicit_ode_discriminant",
+      "branch_switching",
+      "singular_solution",
+      "nonuniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Технически уравнение простое, но важно увидеть дискриминант как место склейки ветвей и потери единственности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "implicit_ode_discriminant",
+    "standard_course_methods",
+    "low_technical",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "self_authored_model_task",
+      "status": "seed_reference",
+      "note": "Компактная модельная формулировка для аудита кластера; внешний источник не выдумывался."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-implicit-ode-discriminant",
+    "notes": [
+      "Добавлено как минимальный представитель branch switching без длинного исключения параметра.",
+      "Не дублирует Клеро/Лагранжа: главный объект - потеря единственности на дискриминанте y=0."
+    ]
+  }
+}

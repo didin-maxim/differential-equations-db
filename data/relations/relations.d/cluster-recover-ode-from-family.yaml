@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-waterloo-circles-to-recover-exp-shift",
+      "from": "waterloo-family-circles-recover-ode",
+      "to": "cluster-recover-exponential-particular-family",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Waterloo-карточка показывает базовое исключение параметра из неявного семейства окружностей; экспоненциальная карточка показывает тот же recover-шаг в явном линейном семействе с фиксированной частной частью.",
+      "backward_text": "Сдвинутое экспоненциальное семейство полезно сравнить с окружностями Waterloo: в обоих случаях параметр удаляется дифференцированием, но геометрическая проверка и линейная структура разные.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-recover-exp-shift-to-two-parameter-parabolas",
+      "from": "cluster-recover-exponential-particular-family",
+      "to": "cluster-recover-two-parameter-parabolas-second-order",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Однопараметрическое восстановление первого порядка готовит к двухпараметрическому случаю, где нужно дифференцировать дважды и ожидать ОДУ второго порядка.",
+      "backward_text": "Двухпараметрическое семейство парабол является следующим уровнем после одного параметра: появляется вопрос о минимальном порядке ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-two-parameter-parabolas-to-order-diagnostic",
+      "from": "cluster-recover-two-parameter-parabolas-second-order",
+      "to": "cluster-recover-parameter-count-order-diagnostic",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Параболы через начало дают конкретный двухпараметрический пример; диагностическая карточка обобщает его до правила подсчета независимых постоянных.",
+      "backward_text": "Правило числа независимых параметров объясняет, почему семейство ax^2+bx естественно приводит к ОДУ второго порядка.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-recover-parabola-envelope-to-clairaut-envelope",
+      "from": "cluster-recover-translated-parabolas-envelope",
+      "to": "clairaut-envelope",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В сдвинутых параболах огибающая появляется после восстановления ОДУ из заданного семейства; в Клеро, наоборот, сначала дано ОДУ, а семейство прямых и огибающая находятся при решении.",
+      "backward_text": "Клеро-задача является соседней, но не дублем: там огибающая возникает из уравнения y=xy'+(y')^2, а не из исходно заданного семейства кривых.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-recover-parabola-envelope-to-implicit-discriminant",
+      "from": "cluster-recover-translated-parabolas-envelope",
+      "to": "local-du-written-2022-implicit-discriminant",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Огибающая y=0 для (y')^2=4y является мягким входом в идею дискриминантной кривой F=0, F_p=0 без тяжелой алгебры.",
+      "backward_text": "Письменная задача на дискриминантное множество развивает тот же вопрос об особой кривой уже как самостоятельный implicit-ODE механизм.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-recover-family-to-orthogonal-basic-boundary",
+      "from": "waterloo-family-circles-recover-ode",
+      "to": "orthogonal-trajectories-circles",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Восстановление наклона исходного семейства является подготовительным шагом к ортогональным траекториям, но Waterloo-карточка не требует замены наклона на отрицательно обратный.",
+      "backward_text": "Ортогональные траектории используют recover-ODE из семейства только как первый шаг; главная задача там другая - построить семейство, пересекающее исходное под прямым углом.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    }
+  ]
+}

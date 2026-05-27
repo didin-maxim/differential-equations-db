@@ -1,0 +1,107 @@
+{
+  "id": "local-du-written-2024-linear-y-xu-reduction",
+  "title": "Линейное уравнение с сокращением при y=xu",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_24, задача 3",
+        "text": "Найдите общее решение уравнения x^2y''-x(x^2+3)y'+(x^2+3)y=x^5, x>0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вынести очевидный множитель x",
+      "text": "При y=xu слагаемые без u' сокращаются, и задача понижается до линейного уравнения первого порядка для u'.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим y=xu. Тогда y'=u+xu', y''=2u'+xu''. После подстановки члены с u сокращаются, и остается x^3u''-x^2(x^2+1)u'=x^5, то есть x u''-(x^2+1)u'=x^3. Для v=u' получаем v'-(x+1/x)v=x^2. Интегрирующий множитель равен e^{-x^2/2}/x, поэтому (v e^{-x^2/2}/x)'=x e^{-x^2/2}. Интегрируя, имеем v=-x+C x e^{x^2/2}. Значит u=-x^2/2+C e^{x^2/2}+D. Поэтому общее решение: y(x)=C x e^{x^2/2}+D x-x^3/2, x>0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "order_reduction",
+      "integrating_factor"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "nonconstant_coefficients"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "ДУ_В_24",
+      "y=xu",
+      "linear_second_order"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 5,
+    "local_score": 5,
+    "comment": "Нужно угадать замену y=xu и аккуратно довести линейное уравнение для u'.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "linear_first_order",
+    "order_reduction_substitution",
+    "standard_course_methods",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_24.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Оставлена как технически отличающаяся от ДУ_В_22 задачи 4: здесь ключевой узел - y=xu и интегрирующий множитель для u'.",
+      "ДУ_В_23 задача 1 не импортирована как слишком базовое уравнение с постоянными коэффициентами y''+2y'+5y=50x."
+    ]
+  }
+}

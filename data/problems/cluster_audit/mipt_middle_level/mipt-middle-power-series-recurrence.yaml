@@ -1,0 +1,118 @@
+{
+  "id": "mipt-middle-power-series-recurrence",
+  "title": "Рекуррентная формула для степенного решения",
+  "fragment": "series_methods",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit",
+      "mipt_middle_level"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Условие",
+        "text": "Найти рекуррентную формулу для коэффициентов степенного решения уравнения y''+x y=0 около x=0. Показать, что коэффициенты a0=y(0) и a1=y'(0) задаются свободно, и выписать первые ненулевые члены двух решений с начальными данными (a0,a1)=(1,0) и (0,1).",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сдвинуть индексы и сравнить коэффициенты",
+      "text": "Подстановка y=sum a_n x^n дает y''=sum (n+2)(n+1)a_{n+2}x^n, а xy=sum a_{n-1}x^n для n>=1. Поэтому после a0,a1 все коэффициенты находятся рекурсивно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть y=sum_{n=0}^infty a_n x^n. Тогда y''=sum_{n=0}^infty (n+2)(n+1)a_{n+2}x^n. Кроме того, xy=sum_{n=1}^infty a_{n-1}x^n. Сравнение коэффициентов в y''+xy=0 дает при n=0: 2a2=0, то есть a2=0. При n>=1 получаем (n+2)(n+1)a_{n+2}+a_{n-1}=0, то есть a_{n+2}=-a_{n-1}/((n+2)(n+1)). Поэтому a0 и a1 свободны, а дальше все коэффициенты определены. Для (a0,a1)=(1,0): a2=0, a3=-a0/(3*2)=-1/6, a4=-a1/(4*3)=0, a5=-a2/(5*4)=0, a6=-a3/(6*5)=1/180, значит y1=1-x^3/6+x^6/180+... . Для (0,1): a2=0, a3=0, a4=-1/12, a7=1/(12*7*6)=1/504, значит y2=x-x^4/12+x^7/504+... .",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "series_solution",
+      "linear_second_order"
+    ],
+    "methods": [
+      "power_series",
+      "series_recursion",
+      "coefficient_comparison"
+    ],
+    "objects": [
+      "ordinary_point",
+      "fundamental_system",
+      "initial_data"
+    ],
+    "goal": [
+      "derive_recurrence",
+      "compute"
+    ],
+    "keywords": [
+      "mipt_middle_level",
+      "power_series",
+      "recurrence",
+      "ordinary_point"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартный метод степенных рядов около обыкновенной точки; technical_score=4: нужно аккуратно сдвинуть индексы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "middle_student_check",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "series_solution",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_problem",
+      "status": "seed_reference",
+      "note": "Типовая проверочная задача на степенные ряды около обыкновенной точки."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-mipt-middle-level",
+    "notes": [
+      "Добавлено для среднего уровня как представитель метода рядов без усложнения особыми функциями."
+    ]
+  }
+}

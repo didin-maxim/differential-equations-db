@@ -1,0 +1,48 @@
+{
+  "relations": [
+    {
+      "id": "rel-quality-audit-series-half-argument",
+      "from": "mipt-middle-power-series-recurrence",
+      "to": "ru-cis-extra-yagtu-2001-half-argument-ode",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки строят решение через рекурсию коэффициентов степенного ряда.",
+      "backward_text": "В задаче ЯГТУ рекурсия возникает не из аналитических коэффициентов обычного ОДУ, а из сжатого аргумента y(x/2), поэтому это олимпиадное усиление стандартной техники рядов.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-quality-audit-bme2024-blow-up-comparison",
+      "from": "blow-up-comparison-y-square",
+      "to": "bme-2024-p2-composition-ode-nonexistence",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Сравнение с уравнением конечного взрыва является последним шагом в композиционной задаче.",
+      "backward_text": "BME 2024 сначала доказывает быстрый рост через обратную функцию, а затем применяет тот же механизм конечного взрыва к оценке f'(x)>=c exp(f(x)).",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-quality-audit-putnam1990-seemous2010",
+      "from": "putnam-modern-1990-b1",
+      "to": "seemous-2010-p1-iterated-integrals-linear-ode",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи превращают интегральную конструкцию в линейное дифференциальное уравнение для вспомогательной функции.",
+      "backward_text": "SEEMOUS 2010 делает тот же ход после суммирования ряда повторных интегралов; главное ОДУ F'=F+f0 появляется до вычисления интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-quality-audit-periodic-high-derivative-bound",
+      "from": "periodic-solution-monotone-derivative",
+      "to": "bme-2023-p3-periodic-high-derivative-bound",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Периодичность заставляет производные иметь нули и запрещает одностороннюю монотонность на всем периоде.",
+      "backward_text": "BME 2023 использует этот простой периодический факт как основу для итерации оценки через четные производные.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "putnam-early-1969-a5-controlled-linear-system",
+  "title": "Putnam 1969 A5: управляемая линейная система",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть u(t) непрерывна, а x(t), y(t) решают x'=-2y+u(t), y'=-2x+u(t), x(0)=x0, y(0)=y0. Доказать, что при x0!=y0 решение никогда не проходит через (0,0). Если x0=y0, то для любого T>0 можно выбрать u(t), чтобы x(T)=y(T)=0.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вычесть координаты",
+      "text": "Разность x-y не зависит от управления и удовлетворяет простому уравнению z'=2z; при равных координатах остается одно управляемое линейное уравнение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим z=x-y. Тогда z'=x'-y'=2x-2y=2z, значит z(t)=(x0-y0)e^{2t}. Если x0!=y0, то z(t) никогда не равно нулю, а в точке (0,0) было бы z=0; поэтому попадание в начало невозможно при любом управлении. Пусть теперь x0=y0=k. Тогда z(0)=0 и z(t)=0 для всех t, то есть x=y. Система сводится к x'+2x=u(t), x(0)=k. Для заданного T>0 возьмем u(t)=-(k/T)e^{-2t}. Тогда (e^{2t}x)'=e^{2t}u=-k/T, откуда e^{2t}x(t)=k-kt/T и x(t)=k(1-t/T)e^{-2t}. При t=T получаем x(T)=0, а так как y=x, также y(T)=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "control"
+    ],
+    "methods": [
+      "invariant",
+      "integrating_factor"
+    ],
+    "objects": [
+      "controlled_system",
+      "coordinate_difference"
+    ],
+    "goal": [
+      "prove",
+      "construct"
+    ],
+    "keywords": [
+      "Putnam 1969 A5",
+      "control",
+      "invariant"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Идея стандартная с олимпиадным поворотом: найти инвариантную разность координат. Техника умеренная: остается одно линейное уравнение.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_systems",
+    "control",
+    "invariant",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol695.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Конструкция управления взята в явном виде из архивного решения."
+    ]
+  }
+}

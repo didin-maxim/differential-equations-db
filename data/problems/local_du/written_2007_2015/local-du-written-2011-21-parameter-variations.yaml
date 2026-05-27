@@ -1,0 +1,116 @@
+{
+  "id": "local-du-written-2011-21-parameter-variations",
+  "title": "Производные решения по параметру в задаче Коши",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2011-2012, вариант 21, задача 9",
+        "text": "Пусть y(x,alpha) - решение задачи Коши y'=alpha(1-x)+y-y^2, y(0)=0. Найти partial y/partial alpha при alpha=0 и partial^2 y/partial alpha^2 при alpha=0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать уравнение по параметру",
+      "text": "При alpha=0 базовое решение равно нулю. Первая и вторая производные по параметру удовлетворяют последовательным неоднородным линейным задачам Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "При alpha=0 задача y'=y-y^2, y(0)=0 имеет решение y0=0. Обозначим z=partial y/partial alpha при alpha=0. Дифференцируя уравнение по alpha, получаем z'=(1-x)+(1-2y0)z=1-x+z, z(0)=0. Тогда z'-z=1-x, и после умножения на e^{-x}: (e^{-x}z)'=e^{-x}(1-x). Интеграл от 0 до x равен xe^{-x}, поэтому z=x. Теперь w=partial^2 y/partial alpha^2 при alpha=0. Второе дифференцирование дает w'=w-2z^2, w(0)=0, то есть w'-w=-2x^2. Следовательно, (e^{-x}w)'=-2x^2e^{-x}. Интегрируя от 0 до x, получаем e^{-x}w=2(x^2+2x+2)e^{-x}-4. Значит w=2x^2+4x+4-4e^x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "parameter_dependence"
+    ],
+    "methods": [
+      "variational_equation",
+      "linear_first_order",
+      "variation_of_constants"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "complete_proof",
+      "mipt_core"
+    ],
+    "goal": [
+      "compute_parameter_derivatives"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2011-2012",
+      "variant_21",
+      "sensitivity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 6,
+    "technical_score": 5,
+    "local_score": 6,
+    "comment": "idea_score=6: нужно составить цепочку вариационных уравнений по параметру; technical_score=5: вторая производная добавляет счет, но не новую идею.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_first_order",
+    "parameter_sensitivity_ivp",
+    "variation_of_parameters",
+    "advanced_standard_course",
+    "complete_proof",
+    "cluster_representative",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2011-2012.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Задача включена как представитель повышенного уровня DE2011-2012 на вариационные уравнения по параметрам.",
+      "Похожие задачи 2011-2012 на производные по alpha,beta отфильтрованы как один и тот же план решения."
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "imc-2025-p6-derivative-of-f-over-x",
+  "title": "IMC 2025, P6: производная отношения (f-k)/x",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f:(0,∞)->R непрерывно дифференцируема, а b>a>0 и f(a)=f(b)=k. Докажите, что существует точка ξ∈(a,b), такая что f(ξ)-ξ f'(ξ)=k.",
+        "source_ids": [
+          "src-imc-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "linear_first_order_equation",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Выразить левую часть через производную отношения",
+      "text": "Равенство f-xf'=k эквивалентно нулю производной функции (f-k)/x. На концах эта функция равна нулю, поэтому теорема Ролля сразу дает нужную точку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "rolle_on_transformed_expression"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим функцию h(x)=(f(x)-k)/x на отрезке [a,b]. Она непрерывна на [a,b] и дифференцируема на (a,b), поскольку a>0 и f непрерывно дифференцируема. Кроме того, h(a)=h(b)=0, так как f(a)=f(b)=k. По теореме Ролля существует ξ∈(a,b), для которого h'(ξ)=0. Вычислим h'(x)=(x f'(x)-f(x)+k)/x^2. Значит x f'(ξ)-f(ξ)+k=0, откуда f(ξ)-ξ f'(ξ)=k. В терминах линейных уравнений это тот же интегрирующий множитель 1/x для уравнения f'-(1/x)f=-k/x.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_first_order"
+    ],
+    "methods": [
+      "integrating_factor_linear",
+      "rolle_on_transformed_expression"
+    ],
+    "objects": [
+      "olympiad_style",
+      "linear_first_order",
+      "integrating_factor"
+    ],
+    "goal": [
+      "prove",
+      "existence"
+    ],
+    "keywords": [
+      "IMC 2025 P6",
+      "derivative identity",
+      "f over x",
+      "linear first order",
+      "integrating factor",
+      "теорема Ролля"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Идейная сложность 5: нужно увидеть Ролля для (f-k)/x, то есть простой интегрирующий множитель. Техническая сложность 3: одно дифференцирование и короткая алгебра.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_first_order",
+    "integrating_factor",
+    "rolle_theorem",
+    "standard_course_methods",
+    "complete_proof",
+    "source_solution_checked",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-imc-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Источник: IMC 2025 Day 2 Solutions, Problem 6, https://www.imc-math.org.uk/imc2025/imc2025-day2-solutions.pdf.",
+      "Официальное решение использует теорему Коши о среднем для f/x и 1/x; карточка дает эквивалентный ход через Ролля для (f-k)/x."
+    ]
+  }
+}

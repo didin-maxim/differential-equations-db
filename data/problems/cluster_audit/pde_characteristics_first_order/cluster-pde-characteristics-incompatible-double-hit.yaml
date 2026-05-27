@@ -1,0 +1,114 @@
+{
+  "id": "cluster-pde-characteristics-incompatible-double-hit",
+  "title": "Пересечение одной характеристики с несовместимыми начальными данными",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для уравнения u_x=0 на параболе Gamma: (x,y)=(s,s^2) заданы данные u(s,s^2)=s. Может ли существовать решение в области, содержащей обе ветви параболы при s около 1 и s около -1? Схема: data/assets/images/pde_characteristics/parabola-double-hit.svg.",
+        "source_ids": [
+          "src-cluster-pde-characteristics-first-order-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Одна характеристика не может нести два разных значения",
+      "text": "Для u_x=0 характеристики горизонтальны. Горизонтальная прямая y=a^2 пересекает параболу в двух точках с параметрами a и -a, а данные там противоположны.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из u_x=0 следует, что u постоянно вдоль горизонтальных характеристик y=const. При 0<a<1 характеристика y=a^2 пересекает начальную кривую в точках (a,a^2) и (-a,a^2). Начальные данные требуют u(a,a^2)=a и u(-a,a^2)=-a. Эти две точки лежат на одной характеристике, значит значение u должно быть одинаковым, но a != -a. Поэтому решения на области, содержащей обе ветви и горизонтальные отрезки между ними, не существует. На одной отдельной ветви такой локальный конфликт исчезает.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "compatibility_check"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_curve",
+      "intersecting_initial_curve"
+    ],
+    "goal": [
+      "prove_nonexistence",
+      "classify_well_posedness"
+    ],
+    "keywords": [
+      "pde_characteristics",
+      "cauchy_problem",
+      "characteristic_intersection",
+      "existence_uniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Идея чуть тоньше базовой характеристики: начальная кривая не характеристическая в каждой точке, но глобально пересекает одну характеристику дважды.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "self_authored",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "nonexistence",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem",
+    "domain_of_dependence",
+    "existence_uniqueness",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-pde-characteristics-first-order-audit",
+      "role": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторская компактная задача на глобальную неоднозначность пересечения начальной кривой с характеристиками."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-pde-characteristics-first-order",
+    "notes": [
+      "Добавлено как диагностический представитель obstruction/intersection, которого не хватало в существующих карточках."
+    ]
+  }
+}

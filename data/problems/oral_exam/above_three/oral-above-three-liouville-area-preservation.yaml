@@ -1,0 +1,114 @@
+{
+  "id": "oral-above-three-liouville-area-preservation",
+  "title": "Площадь параллелограмма решений при нулевом следе",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для системы x'=A(t)x в R^2 известно, что tr A(t)=0. Два решения в момент t0 образуют параллелограмм площади S0. Что можно сказать о площади соответствующего параллелограмма в момент t?",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-liouville-area",
+      "title": "Площадь равна модулю определителя",
+      "text": "Формула Лиувилля говорит, что определитель фундаментальной матрицы умножается на exp integral tr A.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Поместим два решения в столбцы матрицы Z(t). Тогда Z'=A(t)Z, а площадь соответствующего ориентированного параллелограмма равна det Z(t), с точностью до знака для обычной площади. По формуле Лиувилля (det Z)'=tr A(t) det Z. Так как tr A(t)=0, получаем det Z(t)=det Z(t0). Следовательно обычная площадь сохраняется: S(t)=S0. Если начальные решения зависимы, то S0=0 и утверждение также означает, что зависимость сохраняется.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems"
+    ],
+    "methods": [
+      "wronskian_liouville",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "linear_systems",
+      "wronskian",
+      "phase_plane"
+    ],
+    "goal": [
+      "qualitative_conclusion",
+      "interpret"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "liouville",
+      "area-preservation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: нужно перевести геометрический вопрос в определитель фундаментальной матрицы; technical_score=3: вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_systems",
+    "wronskian",
+    "phase_plane"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на геометрический смысл формулы Лиувилля."
+    ]
+  }
+}

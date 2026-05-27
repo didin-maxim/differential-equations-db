@@ -1,0 +1,120 @@
+{
+  "id": "cluster-matrix-exp-spectrum-from-modes",
+  "title": "Спектр A по ростам и осцилляциям e^{At}",
+  "fragment": "systems",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Сформулируйте базовое спектральное правило для матричной экспоненты. Затем восстановите спектр вещественной матрицы A, если в e^{At} встречаются ровно режимы e^{3t}, t e^{3t}, e^{-t}cos 2t, e^{-t}sin 2t, причем все они действительно присутствуют.",
+        "source_ids": [
+          "src-cluster-matrix-exponential-methods-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Рост дает вещественную часть, колебание - мнимую",
+      "text": "Блок с собственным значением alpha+i beta дает множители e^{alpha t}cos beta t и e^{alpha t}sin beta t; дополнительный множитель t указывает на нетривиальную жорданову клетку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Если Av=lambda v, то e^{At}v=e^{lambda t}v; в жордановой клетке размера больше 1 появляются дополнительные множители t, t^2, ... перед тем же e^{lambda t}. Для вещественной матрицы пара lambda=alpha +/- i beta проявляется как e^{alpha t}cos beta t и e^{alpha t}sin beta t. Поэтому режим e^{3t} вместе с t e^{3t} означает собственное значение 3 с жордановой клеткой размера 2, то есть с алгебраической кратностью как минимум 2. Режимы e^{-t}cos 2t и e^{-t}sin 2t дают комплексную пару -1+2i и -1-2i. Так как других режимов нет, спектр над C равен {3,3,-1+2i,-1-2i}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "spectral_mapping",
+      "jordan_form"
+    ],
+    "objects": [
+      "matrix_exponential",
+      "spectrum",
+      "growth_modes",
+      "oscillation_modes"
+    ],
+    "goal": [
+      "identify_spectrum",
+      "interpret"
+    ],
+    "keywords": [
+      "matrix_exponential_methods",
+      "spectrum_mapping",
+      "growth_oscillation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: нужно читать спектр по функциональным режимам, включая жорданов множитель t; technical_score=2: счета почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "jordan_form",
+    "eigenvalues",
+    "standard_course_methods",
+    "low_technical",
+    "self_authored",
+    "theoretical_exam_task",
+    "task_cluster",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-matrix-exponential-methods-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Компактная авторская lemma-card для кластера свойств матричной экспоненты; внешний источник не использовался."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-matrix-exponential-methods",
+    "notes": [
+      "Закрывает базовое spectral mapping чтение exp(At) через рост, осцилляции и жордановы множители."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "local-du-standard-theory",
+  "title": "Стандартные теоремы и леммы локальной программы ДУ",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "standard_theory",
+    "mipt_core",
+    "src-local-du-8-program-or-exam"
+  ],
+  "problem_ids": [
+    "local-du-standard-abel-wronskian-zero-lemma",
+    "local-du-standard-sturm-separation-zeros",
+    "local-du-standard-sturm-zero-spacing-corollaries",
+    "local-du-standard-oscillation-nonoscillation-tests",
+    "local-du-standard-kneser-criterion",
+    "local-du-standard-resonant-linear-bvp-solvability",
+    "local-du-standard-euler-lagrange-fixed-endpoints",
+    "local-du-standard-natural-boundary-conditions",
+    "local-du-standard-legendre-jacobi-conditions"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка содержит только теоретические карточки theorem/lemma и связи к уже существующим задачам.",
+    "Критерий Кнезера и условия Якоби помечены advanced_standard_course: они стандартны для расширенного курса, но не названы явно как обязательные пункты 8.pdf.",
+    "Формула Лиувилля для систем уже была в базе; добавлена только скалярная лемма Абеля с выводами о нулях, чтобы не дублировать существующую карточку.",
+    "Связи записаны только в data/relations/relations.d/local-du-standard-theory.yaml."
+  ]
+}

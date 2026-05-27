@@ -1,0 +1,116 @@
+{
+  "id": "oral-middle-wronskian-liouville-check",
+  "title": "Вронскиан по формуле Лиувилля без решения уравнения",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Две функции y1,y2 являются решениями уравнения y''+2x y'+q(x)y=0 на всей прямой, причем их вронскиан W(0)=2. Найти W(x) и решить, могут ли эти решения стать линейно зависимыми при x=1.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Формула Лиувилля следит только за коэффициентом при y'",
+      "text": "Для уравнения y''+p(x)y'+q(x)y=0 вронскиан удовлетворяет W'=-p(x)W. Поэтому конкретный вид q(x) не нужен.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Здесь p(x)=2x, поэтому по формуле Лиувилля W'=-2xW. Отсюда (ln |W|)'=-2x на промежутках, где W не обращается в нуль, и с учетом W(0)=2 получаем W(x)=2e^(-x^2). В частности W(1)=2/e, это не нуль. Значит при x=1 значения и производные решений не дают нулевого вронскиана, и сами решения не могут стать линейно зависимыми.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "homogeneous_linear"
+    ],
+    "methods": [
+      "wronskian_liouville"
+    ],
+    "objects": [
+      "wronskian",
+      "linear_independence"
+    ],
+    "goal": [
+      "compute",
+      "decide_independence"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "wronskian",
+      "liouville_formula"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: нужно вспомнить формулу Лиувилля и не решать само уравнение; technical_score=4: одно скалярное линейное уравнение для W.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_higher_order",
+    "wronskian",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск по базе показал только общую карточку формулы Лиувилля, не эту проверочную формулировку."
+    ]
+  }
+}

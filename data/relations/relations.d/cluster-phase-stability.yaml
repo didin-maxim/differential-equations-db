@@ -1,0 +1,169 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-phase-stability-definitions-to-filippov-889",
+      "from": "cluster-phase-stability-lyapunov-definitions",
+      "to": "local-du-filippov-889-attractive-not-lyapunov-stable",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Определения устойчивости и асимптотической устойчивости нужны, чтобы увидеть в задаче Филиппова различие между притяжением к нулю и устойчивостью по Ляпунову.",
+      "backward_text": "Филиппов 889 является наглядным тестом к определениям: все траектории могут стремиться к нулю, но равновесие все равно неустойчиво.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-phase-stability-definitions-to-visual-sink",
+      "from": "cluster-phase-stability-lyapunov-definitions",
+      "to": "cluster-phase-stability-visual-asymptotic-sink",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После epsilon-delta определения визуальная карточка просит распознать случай, где выполнены и удержание, и сходимость.",
+      "backward_text": "Спиральный сток иллюстрирует положительный пример асимптотической устойчивости из определения.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-phase-stability-definitions-to-visual-center",
+      "from": "cluster-phase-stability-lyapunov-definitions",
+      "to": "cluster-phase-stability-visual-center-stable-not-asymptotic",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Определения позволяют отделить устойчивость по Ляпунову от предельного притяжения на портрете центра.",
+      "backward_text": "Замкнутые орбиты дают базовый визуальный контрпример к импликации 'устойчиво значит асимптотически устойчиво'.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-phase-stability-definitions-to-visual-saddle",
+      "from": "cluster-phase-stability-lyapunov-definitions",
+      "to": "cluster-phase-stability-visual-saddle-unstable",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Определение неустойчивости применяется к выходящему направлению седла.",
+      "backward_text": "Седло показывает, что наличие отдельных входящих траекторий не означает устойчивость равновесия.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-phase-stability-linear-classification-to-saddle",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "weak-pass-linear-system-saddle",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Классификация объясняет, почему система с собственными значениями разных знаков является седлом и неустойчива.",
+      "backward_text": "Устная задача является минимальным вычислительным примером строки 'седло' в классификации.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-phase-stability-linear-classification-to-waterloo-focus",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "waterloo-spiral-phase-portrait-isoclines",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Строка о комплексных собственных значениях с отрицательной вещественной частью дает устойчивый фокус; Waterloo добавляет изоклины для рисунка.",
+      "backward_text": "Waterloo-карточка конкретизирует классификацию фокуса качественным построением фазового портрета.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-phase-stability-linear-classification-to-visual-center",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "cluster-phase-stability-visual-center-stable-not-asymptotic",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Чисто мнимые собственные значения в линейной системе дают центр, который устойчив, но не асимптотически устойчив.",
+      "backward_text": "Визуальный центр является картинкой к строке 'center' в линейной классификации.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-phase-stability-linear-classification-to-visual-sink",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "cluster-phase-stability-visual-asymptotic-sink",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Устойчивый фокус в классификации дает визуальный портрет спирального стока.",
+      "backward_text": "Визуальная карточка является задачей на чтение одной стандартной строки классификации.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-phase-stability-linearization-to-local-du-2022",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "local-du-written-2022-nonlinear-equilibria-linearization",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема линеаризации объясняет, почему типы найденных равновесий читаются по матрицам Якоби.",
+      "backward_text": "Экзаменационная задача является конкретным применением гиперболической линеаризации к двум равновесиям.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-phase-stability-linearization-to-local-du-2014",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "local-du-written-2014-51-equilibrium-linearization",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Перед вычислением равновесий и Якоби полезно иметь теорему первого приближения как правило интерпретации спектра.",
+      "backward_text": "Карточка 2014-51 показывает стандартный экзаменационный сценарий применения теоремы линеаризации.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-cluster-phase-stability-linearization-degenerate-contrast",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "lebl-diffyqs-degenerate-linearization-critical-point",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Теорема покрывает гиперболические равновесия; Lebl показывает случай, где линейная часть вырождена и не решает задачу.",
+      "backward_text": "Вырожденная задача Lebl отмечает границу применимости теоремы первого приближения.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-phase-stability-lyapunov-direct-to-example",
+      "from": "cluster-phase-stability-lyapunov-direct-method",
+      "to": "lyapunov-linearization-example",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Прямой метод формулирует критерий; базовая карточка показывает его на конкретной функции Ляпунова.",
+      "backward_text": "Пример с функцией Ляпунова является первым вычислительным применением общей теоремы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-phase-stability-lyapunov-direct-to-oral-middle",
+      "from": "cluster-phase-stability-lyapunov-direct-method",
+      "to": "oral-middle-nonlinear-system-lyapunov",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После общей формулировки можно решать устную задачу на квадратичную энергию.",
+      "backward_text": "Устная задача является короткой проверкой прямого метода на нелинейной системе.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-phase-stability-first-integral-center-to-romanko",
+      "from": "cluster-phase-stability-first-integral-center",
+      "to": "local-du-romanko-first-integral-center",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Лемма о замкнутых уровнях первого интеграла дает теоретический язык для карточки Романко о центре.",
+      "backward_text": "Романко-карточка является содержательным примером общего мотива 'первый интеграл и центр'.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-phase-stability-first-integral-center-to-visual-center",
+      "from": "cluster-phase-stability-first-integral-center",
+      "to": "cluster-phase-stability-visual-center-stable-not-asymptotic",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Замкнутые уровни первого интеграла дают именно визуальную картину центра на схематической карточке.",
+      "backward_text": "Визуальный центр можно понимать как фазовый портрет системы с первым интегралом и строгим экстремумом.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

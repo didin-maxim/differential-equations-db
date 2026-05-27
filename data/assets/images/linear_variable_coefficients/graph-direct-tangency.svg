@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title>Direct tangency obstruction</title>
+  <desc>Two different drawn curves share the same point and tangent.</desc>
+  <rect width="640" height="420" fill="#fbfaf7"/>
+  <line x1="60" y1="330" x2="590" y2="330" stroke="#454545" stroke-width="2"/>
+  <line x1="90" y1="370" x2="90" y2="45" stroke="#454545" stroke-width="2"/>
+  <path d="M590 330 l-12 -6 l0 12 z" fill="#454545"/>
+  <path d="M90 45 l-6 12 l12 0 z" fill="#454545"/>
+  
+  <path class="u" d="M90 250 C190 248, 265 220, 320 210 C395 196, 470 226, 560 185"/>
+  <path class="v" d="M90 315 C180 300, 260 235, 320 210 C390 180, 455 170, 560 95"/>
+  <line class="guide" x1="244" y1="226" x2="398" y2="194"/>
+  <circle class="mark" cx="320" cy="210" r="6"/>
+  <text x="492" y="184">u</text>
+  <text x="505" y="100">v</text>
+  <text x="332" y="236">x0</text>
+
+  <style>
+    .u { fill: none; stroke: #1f78b4; stroke-width: 5; stroke-linecap: round; }
+    .v { fill: none; stroke: #d95f02; stroke-width: 5; stroke-linecap: round; }
+    .w { fill: none; stroke: #1f78b4; stroke-width: 3; stroke-dasharray: 10 8; stroke-linecap: round; }
+    .mark { fill: #222; }
+    .guide { stroke: #777; stroke-width: 2; stroke-dasharray: 6 7; fill: none; }
+    text { font-family: Arial, sans-serif; font-size: 22px; fill: #222; }
+  </style>
+</svg>

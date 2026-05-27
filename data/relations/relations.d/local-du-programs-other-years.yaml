@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-du-other-years-resonance-to-bounded-periodic",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "local-du-programs-other-years-bounded-periodic-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовая карточка объясняет резонансный анзац, который нужен для исключительного значения a=1.",
+      "backward_text": "Параметрическая задача добавляет к резонансу классификацию ограниченных и периодических решений.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-du-other-years-periodic-linear-contrast",
+      "from": "periodic-linear-equation-zero-mean",
+      "to": "local-du-programs-other-years-bounded-periodic-oscillator",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В линейном уравнении первого порядка периодичность задается условием на интеграл по периоду.",
+      "backward_text": "Во втором порядке с постоянными коэффициентами периодичность дополнительно зависит от соизмеримости частот однородной части.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-local-du-other-years-picard-to-riccati-continuation",
+      "from": "picard-lindelof-theorem",
+      "to": "local-du-programs-other-years-riccati-global-continuation",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Локальная единственность и критерий продолжения используются для перехода от априорной оценки к глобальному продолжению.",
+      "backward_text": "Задача y'=x-y^2 является конкретным применением теоремы существования и единственности с барьерной оценкой.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-du-other-years-strip-continuation-to-riccati",
+      "from": "oral-above-three-global-continuation-bounded-on-strips",
+      "to": "local-du-programs-other-years-riccati-global-continuation",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи доказывают глобальное продолжение без явного решения через ограниченность на конечных отрезках.",
+      "backward_text": "В локальной задаче y'=x-y^2 ограниченность получается не напрямую из |f|, а через барьер y=0 и оценку y'<=x.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-local-du-other-years-energy-to-pendulum",
+      "from": "energy-integral-oscillator",
+      "to": "local-du-programs-other-years-pendulum-sin-phase-portrait",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Сохранение энергии для x''+V'(x)=0 является основным инструментом для описания уровней H.",
+      "backward_text": "Портрет x'=y, y'=sin x применяет энергетический интеграл к полной классификации седел, центров и сепаратрис.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-local-du-other-years-lotka-to-pendulum",
+      "from": "lotka-volterra-first-integral",
+      "to": "local-du-programs-other-years-pendulum-sin-phase-portrait",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих задачах первый интеграл используется не только для проверки сохранения, но и для чтения фазовых траекторий.",
+      "backward_text": "Маятниковый портрет дает другой тип глобальной геометрии: центры, седла, сепаратрисы и вращательные траектории.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    }
+  ]
+}

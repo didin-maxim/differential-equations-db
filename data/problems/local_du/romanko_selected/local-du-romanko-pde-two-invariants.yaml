@@ -1,0 +1,111 @@
+{
+  "id": "local-du-romanko-pde-two-invariants",
+  "title": "Линейное ЧП первого порядка с двумя характеристическими инвариантами",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить задачу Коши для линейного однородного уравнения xy v_x+(2x^2y+y^2)v_y-(x+2x^2z+yz)v_z=0 при x<0, z>0, если v=y/x на поверхности 2x+yz=0.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала найти два инварианта характеристической системы",
+      "text": "Для уравнения в трех переменных общее решение зависит от двух первых интегралов характеристик. Начальная поверхность затем определяет произвольную функцию двух переменных.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристическая система имеет вид dx/(xy)=dy/(2x^2y+y^2)=dz/[-x-2x^2z-yz]. Из первых двух уравнений получаем dy/dx=2x+y/x, то есть для w=y/x имеем y=xw, y'=w+xw'=2x+w, поэтому w'=2 и w-2x постоянно. В удобной нормировке первый инвариант можно взять I1=y/x-x. Прямой проверкой по характеристическому полю также получаем I2=x+yz: его производная равна xy+y[-x-2x^2z-yz]+z(2x^2y+y^2)=0. Поэтому общее решение v=F(I1,I2). На начальной поверхности 2x+yz=0 имеем I2=x+yz=-x, значит x=-I2. Кроме того I1=y/x-x, откуда y/x=I1+x=I1-I2. Начальное условие v=y/x задает F(I1,I2)=I1-I2. Следовательно v=I1-I2=y/x-x-(x+yz)=y/x-2x-yz.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "first_integrals"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_system",
+      "noncharacteristic_surface"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "first-order-pde",
+      "characteristics",
+      "two-invariants",
+      "cauchy-surface"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "idea_score=7: нужно увидеть структуру двух инвариантов и правильно перенести данные с поверхности; technical_score=5: есть несколько алгебраических проверок.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "differential_operator",
+    "first_integral",
+    "invariant",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§17, пример 2: линейные однородные уравнения в частных производных первого порядка."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Карточка закрывает дефицитный механизм: две независимые характеристики плюс восстановление функции по поверхности Коши.",
+      "При аудите PDE-characteristics добавлена в представители кластера как точное попадание Романко по линейным однородным ЧП первого порядка."
+    ]
+  }
+}

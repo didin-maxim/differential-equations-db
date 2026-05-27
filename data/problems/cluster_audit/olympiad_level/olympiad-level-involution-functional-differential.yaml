@@ -1,0 +1,116 @@
+{
+  "id": "olympiad-level-involution-functional-differential",
+  "title": "Функционально-дифференциальный шаблон: использовать инволюцию дважды",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "standard_idea"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "В функционально-дифференциальных уравнениях, где аргумент заменяется инволюцией T(T(x))=x, полезно сначала записать условие в точках x и T(x), а затем дифференцировать полученное тождество. В типичном случае T(x)=a/x после перехода к u=ln x функциональная симметрия превращается в обычное ОДУ с постоянными коэффициентами или постоянным логарифмическим наклоном.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Симметрия аргумента до ОДУ",
+      "text": "Не пытаться угадывать функцию сразу: сначала использовать T дважды, чтобы избавиться от сдвинутого аргумента или выразить его через f и f'.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-sketch",
+      "title": "Доказательство-схема",
+      "text": "Пусть условие связывает f'(T(x)) с x и f(x). Подстановка x -> T(x) дает вторую формулу, где f'(x) выражается через f(T(x)). Если из нее можно выразить f(T(x)) через f'(x), то дифференцирование убирает функциональный аргумент: производная левой части содержит f'(T(x))T'(x), а f'(T(x)) уже известна из исходного условия. Для T(x)=a/x после этого часто получается уравнение вида x(f')^2=f(f'+xf''). Замена x=e^u и F(u)=ln f(e^u) превращает его в F''=0, то есть в степенной ответ.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "logarithmic_derivative",
+      "functional_differential",
+      "change_independent_variable"
+    ],
+    "objects": [
+      "functional_differential",
+      "nonlinear_transform",
+      "global_solution"
+    ],
+    "goal": [
+      "classify",
+      "recognize_template"
+    ],
+    "keywords": [
+      "functional differential",
+      "involution",
+      "x -> a/x",
+      "logarithmic variable",
+      "Putnam 2005 B3"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 11,
+    "technical_score": 6,
+    "comment": "Идея выше экзамена: нужно увидеть симметрию аргумента как способ получить обычное ОДУ. После этого техника контролируемая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "nonlinear_transform",
+    "change_independent_variable",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "standard_olympiad_pattern",
+      "status": "needs_human_review"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_olympiad_level_links",
+    "notes": [
+      "Карточка добавлена, чтобы связать Putnam 2005 B3 с соседними функционально-дифференциальными олимпиадными задачами, не плодя однотипные частные случаи."
+    ]
+  }
+}

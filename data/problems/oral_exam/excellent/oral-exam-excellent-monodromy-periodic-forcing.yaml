@@ -1,0 +1,114 @@
+{
+  "id": "oral-exam-excellent-monodromy-periodic-forcing",
+  "title": "Периодическое решение через монодромию",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть A(t) и f(t) непрерывны и T-периодичны, X' = A(t)X, X(0)=I, а 1 не является собственным значением матрицы X(T). Докажите, что система x'=A(t)x+f(t) имеет ровно одно T-периодическое решение.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Периодичность стала условием на начальную точку",
+      "text": "Формула вариации постоянных выражает x(T) через x(0). Условие x(T)=x(0) дает линейную систему с матрицей I-X(T), обратимой из-за отсутствия мультипликатора 1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "По формуле вариации постоянных решение с начальным значением x0 имеет вид x(t)=X(t)x0+X(t) int_0^t X(s)^(-1)f(s) ds. Условие T-периодичности сначала требует x(T)=x0, то есть (I-X(T))x0=X(T) int_0^T X(s)^(-1)f(s) ds. Поскольку 1 не является собственным значением X(T), матрица I-X(T) обратима, и начальное значение x0 определяется единственно. Полученное решение удовлетворяет x(T)=x(0). Из T-периодичности A и f следует, что функции x(t+T) и x(t) решают одну и ту же задачу Коши в момент 0: обе имеют значение x0. По единственности они совпадают, значит решение действительно T-периодично на всей прямой. Единственность периодического решения также следует из единственности найденного x0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous"
+    ],
+    "methods": [
+      "variation_of_constants",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "linear_system",
+      "periodic_solution"
+    ],
+    "goal": [
+      "prove",
+      "criterion"
+    ],
+    "keywords": [
+      "monodromy",
+      "periodic_forcing",
+      "periodic_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "Идея стандартная для сильного студента: свести периодичность к неподвижной точке монодромии; технически нужна аккуратная формула вариации постоянных.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "linear_systems",
+    "variation_of_parameters",
+    "periodic_solution"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как устная задача на применение фундаментальной матрицы к периодическому неоднородному уравнению."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Проверена существующая карточка про скалярное периодическое линейное уравнение при нулевом среднем; эта задача является системным критерием через монодромию, не дубликатом."
+    ]
+  }
+}

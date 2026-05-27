@@ -1,0 +1,118 @@
+{
+  "id": "trench-bvp-resonance-solvability-alternative",
+  "title": "Альтернатива разрешимости краевой задачи в резонансе",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть однородная задача L[y]=0, B1(y)=B2(y)=0 имеет ненулевое решение y1, а y2 - независимое с ним решение L[y]=0. Тогда для задачи L[y]=F, B1(y)=B2(y)=0 возникает единственное условие совместности int_a^b F(t)y1(t)/(P0(t)W(t)) dt=0. Если оно выполнено, решений бесконечно много и они отличаются добавлением C y1; если не выполнено, решений нет.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Резонанс превращает одно краевое условие в условие на правую часть",
+      "text": "Когда ядро однородной краевой задачи ненулевое, параметр при втором фундаментальном решении убивается одним краевым условием, а другое дает ортогональность правой части.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Та же вариация постоянных строит частное выражение yp. Общее решение неоднородного уравнения имеет вид yp+c1 y1+c2 y2. Так как y1 удовлетворяет обоим краевым условиям, первое краевое условие после подстановки зануляет c2: иначе y2 тоже удовлетворяло бы этому условию вместе с y1, что противоречит независимости в нужной краевой постановке. После этого второе краевое условие уже не может быть исправлено добавлением c1 y1 и превращается ровно в интегральное условие int_a^b F y1/(P0 W)=0. При выполнении условия c1 свободен, поэтому решений бесконечно много; при нарушении условия их нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "fredholm_alternative",
+      "resonance_condition",
+      "variation_of_parameters"
+    ],
+    "objects": [
+      "solvability_condition",
+      "kernel",
+      "boundary_value_problem"
+    ],
+    "goal": [
+      "prove_existence",
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "resonance",
+      "solvability_alternative"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Элементарная версия Fredholm alternative для одномерного резонанса.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "resonance",
+    "fredholm_alternative",
+    "green_kernel",
+    "variation_of_parameters",
+    "linear_higher_order",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_theorem",
+      "status": "source_verified",
+      "note": "Trench, Section 13.1, Theorem 13.1.4."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Сохраняет мост к уже имеющейся самосопряженной резонансной карточке, но дает более конструктивную формулу через фундаментальные решения."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "local-du-written-2021-minimal-order-x-sinx",
+  "title": "Минимальный порядок уравнения с решениями x и sin x",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Какой наименьший возможный порядок может иметь уравнение y^(n)=f(x,y,y',...,y^(n-1)) с непрерывно дифференцируемой всюду функцией f, имеющее решения y1=x и y2=sin x? Составить такое уравнение.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить струи двух решений",
+      "text": "Низкие порядки запрещены не только совпадением начальных данных, но и тем, что C1-правая часть локально липшицева по фазовым переменным.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для n=1 нужно было бы иметь f(x,x)=1 и f(x,sin x)=cos x. При x->0 расстояние между точками (x,x) и (x,sin x) равно |x-sin x|~|x|^3/6, а разность предписанных значений равна 1-cos x~x^2/2. C1-функция локально липшицева, поэтому такая разность не может быть больше константы, умноженной на расстояние; противоречие. Для n=2 надо иметь f(x,x,1)=0 и f(x,sin x,cos x)=-sin x. Расстояние между фазовыми точками имеет порядок x^2 из-за координаты 1-cos x, а разность значений имеет порядок x; отношение этих величин неограниченно при x->0, что снова противоречит локальной липшицевости C1-функции. Для n=3 в точке x=0 совпадают начальные данные y=0, y'=1, y''=0, но третьи производные равны 0 для y=x и -1 для y=sin x; однозначная правая часть f(0,0,1,0) не может принять два значения. Порядок 4 уже возможен: уравнение y^(4)=-y'' имеет C1, даже линейную, правую часть. Для y=x обе части равны 0, а для y=sin x имеем y^(4)=sin x и -y''=sin x. Следовательно минимальный порядок равен 4.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "foundations",
+      "higher_order"
+    ],
+    "methods": [
+      "jet_comparison",
+      "local_lipschitz_obstruction",
+      "state_vector_uniqueness"
+    ],
+    "objects": [
+      "higher_order_ode",
+      "cauchy_data",
+      "smooth_right_hand_side"
+    ],
+    "goal": [
+      "find_minimal_order",
+      "construct_example"
+    ],
+    "keywords": [
+      "2021 written exam",
+      "minimal order",
+      "x and sin x",
+      "C1 right hand side"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "idea_score=8: требуется неформальное, но точное сравнение струй и липшицевости для низких порядков; technical_score=5: асимптотики около нуля короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "counterexample",
+    "advanced_standard_course",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "ДУ_2021_весна(2).pdf, задача 9."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "linked",
+    "notes": [
+      "Задача включена как нестандартный письменный тест на теорему единственности и гладкость правой части, а не как очередной расчет линейного уравнения.",
+      "Формулировка не сводится к чистой алгебре: запрет порядков 1 и 2 использует C1-регулярность функции f."
+    ]
+  }
+}

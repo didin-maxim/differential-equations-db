@@ -1,0 +1,103 @@
+{
+  "id": "energy-no-nonconstant-decay-periodic",
+  "title": "Убывающая энергия запрещает цикл",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть вдоль решений автономной системы существует C^1-функция V, для которой dV/dt<0 вне равновесий. Доказать, что нет непостоянной периодической траектории.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сильное ограничение на траекторию",
+      "text": "Используется единственность, монотонность, энергия или дифференциальное неравенство.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Если траектория периодична с периодом T, то точка через время T возвращается в исходное положение, значит V принимает то же значение. Но вдоль непостоянной траектории V строго убывает, поэтому V(t+T)<V(t). Противоречие.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "olympiad_style",
+      "lyapunov",
+      "periodic_solution"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "energy-no-nonconstant-decay-periodic",
+      "olympiad",
+      "olympiad_style",
+      "lyapunov",
+      "periodic_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: стандартный ляпуновский запрет цикла, требующий увидеть противоречие с периодичностью; technical_score=2: счета нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "lyapunov",
+    "periodic_solution",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

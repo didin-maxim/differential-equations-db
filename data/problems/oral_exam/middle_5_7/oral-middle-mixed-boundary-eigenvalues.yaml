@@ -1,0 +1,119 @@
+{
+  "id": "oral-middle-mixed-boundary-eigenvalues",
+  "title": "Резонанс смешанной краевой задачи",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Докажите, что краевая задача y''+y=1, y'(0)=0, y(π/2)=0 не имеет решения. Объясните, какую роль играет соответствующая однородная задача.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Увидеть резонанс и проверить условие разрешимости",
+      "text": "Однородная задача y''+y=0 с теми же краевыми условиями имеет ненулевое решение cos x. Для самосопряженного оператора правая часть должна быть ортогональна ядру; здесь интеграл от cos x на [0,π/2] не равен нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что решение y существует. Умножим уравнение y''+y=1 на cos x и проинтегрируем по [0,π/2]. Слева интегрированием по частям получаем ∫(y''+y)cos x dx = [y' cos x + y sin x]_0^{π/2}. При краевых условиях y'(0)=0 и y(π/2)=0 эта граничная часть равна 0. Справа же ∫_0^{π/2} cos x dx = 1. Противоречие. Однородная задача имеет решение cos x, поэтому это ровно резонанс: правая часть не ортогональна собственному решению.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "constant_coefficients",
+      "spectral_parameter_case_split"
+    ],
+    "objects": [
+      "eigenvalues",
+      "mixed_boundary_conditions",
+      "sturm_liouville"
+    ],
+    "goal": [
+      "prove_nonexistence",
+      "check_solvability"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "boundary_value",
+      "resonance",
+      "mixed_conditions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: нужно распознать резонанс и применить интегрирование по частям как условие разрешимости; technical_score=3: один короткий интеграл.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "boundary_value",
+    "resonance",
+    "sturm_liouville",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск показал существующую задачу Дирихле, но не эту смешанную краевую задачу."
+    ]
+  }
+}

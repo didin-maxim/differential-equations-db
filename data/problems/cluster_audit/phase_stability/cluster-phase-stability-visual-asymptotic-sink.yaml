@@ -1,0 +1,117 @@
+{
+  "id": "cluster-phase-stability-visual-asymptotic-sink",
+  "title": "По фазовому портрету распознать асимптотически устойчивый фокус",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Визуальная модельная задача",
+        "text": "На рисунке все близкие траектории спирально входят в начало координат и, начиная достаточно близко, не выходят из малой окрестности. Определить, устойчиво ли нулевое равновесие по Ляпунову, асимптотически устойчиво ли оно или неустойчиво.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fig-visual-asymptotic-sink",
+      "type": "image",
+      "path": "data/assets/images/phase_stability/visual-asymptotic-sink.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Спирали внутрь дают оба требования",
+      "text": "Из рисунка нужно прочитать и удержание в малой окрестности, и предельную сходимость к равновесию.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нулевое равновесие устойчиво по Ляпунову: если взять достаточно маленькую начальную точку, вся ее дальнейшая траектория остается внутри заранее выбранной окрестности нуля, потому что спирали идут внутрь. Оно также асимптотически устойчиво: близкие траектории не просто остаются рядом, а стремятся к началу координат при t->+infty. Такой фазовый портрет соответствует устойчивому фокусу, или спиральному стоку, в линейной классификации.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_portrait_reading",
+      "lyapunov_definition"
+    ],
+    "objects": [
+      "stable_focus",
+      "asymptotic_stability",
+      "phase_portrait"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "visual stability",
+      "stable focus",
+      "asymptotic stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 1,
+    "comment": "Визуальная проверка определения асимптотической устойчивости без вычислений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "graphical_construction",
+    "standard_course_methods",
+    "model_exam_task",
+    "self_authored",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Self-authored schematic task after web search for analogous visual stability examples; no exact external problem statement was copied."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Схематический SVG создан локально для визуальной проверки определения асимптотической устойчивости."
+    ]
+  }
+}

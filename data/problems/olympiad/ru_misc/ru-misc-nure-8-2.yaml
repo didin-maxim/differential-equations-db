@@ -1,0 +1,109 @@
+{
+  "id": "ru-misc-nure-8-2",
+  "title": "Ограниченность решений y' = 1/(1+x^2+y^2)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что все решения уравнения y' = 1/(1 + x^2 + y^2), определенные на всей вещественной оси, ограничены.",
+        "source_ids": [
+          "src-nure-student-olympiad-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Оценить полный прирост интегрируемой функцией",
+      "text": "Правая часть положительна, но не превосходит 1/(1+x^2). Поэтому решение монотонно, а его полный возможный прирост на всей прямой ограничен сходящимся интегралом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Пусть y - решение на R. Так как y' = 1/(1 + x^2 + y^2) > 0, функция y монотонно возрастает. Кроме того, для всех x выполнено 0 < y'(x) <= 1/(1 + x^2). Если x >= 0, то 0 <= y(x) - y(0) = int_0^x y'(t) dt <= int_0^x dt/(1 + t^2) <= pi/2. Если x <= 0, то 0 <= y(0) - y(x) = int_x^0 y'(t) dt <= int_x^0 dt/(1 + t^2) <= pi/2. Значит y(0) - pi/2 <= y(x) <= y(0) + pi/2 для всех x, и решение ограничено.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "qualitative",
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "boundedness",
+      "global_solution",
+      "differential_inequality"
+    ],
+    "goal": [
+      "prove",
+      "boundedness"
+    ],
+    "keywords": [
+      "ХНУРЭ 8.2",
+      "интегральная оценка",
+      "ограниченность решения"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Идейная сложность 6: нужно увидеть, что интегрируемая оценка производной ограничивает полный прирост на всей оси. Техническая сложность 3: вычисления сводятся к сравнению с 1/(1+x^2).",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "comparison",
+    "global_solution",
+    "boundedness",
+    "differential_inequality",
+    "standard_course_methods",
+    "source_solution_checked",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "original_problem_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Сверено с решением ХНУРЭ; общий факт об интегрируемой оценке производной доказан внутри карточки."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "putnam-modern-1995-a5",
+  "title": "Putnam 1995 A5: затухающая положительная линейная система",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть x_1(t),...,x_n(t) - дифференцируемые действительнозначные функции, удовлетворяющие системе x_i' = a_i1 x_1 + ... + a_in x_n с постоянными a_ij>0. Предположим, что x_i(t)->0 при t->infty для всех i. Обязательно ли функции x_1,...,x_n линейно зависимы?",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Взять левый собственный функционал",
+      "text": "У матрицы с положительным следом есть собственное значение с положительной действительной частью; соответствующая линейная комбинация координат не может одновременно затухать и быть ненулевым решением y'=lambda y.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим X=(x_1,...,x_n)^T и A=(a_ij). Так как все диагональные элементы положительны, tr A>0. Сумма действительных частей всех комплексных собственных значений A равна tr A, поэтому у A, а значит и у A^T, есть собственное значение lambda с Re lambda>0. Пусть v - соответствующий ненулевой левый собственный вектор: A^T v=lambda v. Тогда y(t)=v^T X(t) удовлетворяет y'=v^T AX=(A^T v)^T X=lambda y, откуда y(t)=C e^(lambda t). С другой стороны, все координаты X(t) стремятся к нулю, значит y(t)->0. При Re lambda>0 это возможно только при C=0, то есть v^T X(t)=0 для всех t. Если v комплексный, берем ненулевую действительную или мнимую часть этого тождества. Получается нетривиальная действительная линейная комбинация функций x_i, равная нулю тождественно. Следовательно, функции x_1,...,x_n обязательно линейно зависимы.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "matrix_exponential"
+    ],
+    "objects": [
+      "linear_systems",
+      "eigenvalues",
+      "asymptotic",
+      "invariant"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "putnam-modern-1995-a5",
+      "Putnam",
+      "linear_systems",
+      "eigenvalues",
+      "asymptotic"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 6,
+    "comment": "Идея сильная: нужен спектральный взгляд на положительный след и затухание решений. Техника средняя: после выбора собственного направления счет короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_systems",
+    "matrix_exponential",
+    "eigenvalues",
+    "asymptotic",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 1995 год."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "english-waterloo-textual",
+  "title": "Waterloo AMATH 250: текстовые и качественные задачи стандартного курса",
+  "created_at": "2026-05-26",
+  "scope": ["english_sources", "waterloo_amath250", "textual_qualitative"],
+  "source_ids": ["src-waterloo-amath250-notes"],
+  "problem_ids": [
+    "waterloo-family-circles-recover-ode",
+    "waterloo-log-family-qualitative-recover",
+    "waterloo-singular-linear-qualitative-sketch",
+    "waterloo-second-order-pq-stability",
+    "waterloo-critical-damping-crossing-threshold",
+    "waterloo-oscillator-speed-before-crossing",
+    "waterloo-spiral-phase-portrait-isoclines",
+    "waterloo-fundamental-matrix-flow-inverse"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Источник: AMath250_Course_Notes.pdf, Waterloo, J. Wainwright and J. West, edition 2.0, July 2023.",
+    "Импорт намеренно ограничен qualitative sketches, восстановлением ОДУ по семействам, conceptual oscillator questions, phase portraits, fundamental matrix and parameter dependence.",
+    "Не импортировались длинные списки линейных/разделяющихся задач и материал Laplace/Fourier."
+  ]
+}

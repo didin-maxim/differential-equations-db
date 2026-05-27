@@ -1,0 +1,114 @@
+{
+  "id": "oral-exam-excellent-nonautonomous-sign-barrier",
+  "title": "Знаковый барьер из локальной единственности вне оси",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,y) непрерывна в полосе I x R, локально липшицева по y отдельно в областях y>0 и y<0, и f(t,0)=0 для всех t из I. Докажите, что решение уравнения y'=f(t,y), не равное тождественно нулю, не может менять знак на своем интервале существования.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Применить единственность только там, где она действительно есть",
+      "text": "Если решение с положительной стороны впервые попало в y=0, то в малой полуокрестности перед этим оно лежит в области y>0, где задача Коши единственна. Нулевое решение имеет те же данные в момент попадания, значит возникает противоречие с положительностью перед ним.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть для определенности y(t0)>0. Рассмотрим множество тех t справа от t0, до которых решение остается положительным. Если оно когда-нибудь впервые достигнет нуля в момент tau, то y(t)>0 на интервале (tau-epsilon,tau) при достаточно малом epsilon. В области y>0 правая часть локально липшицева, поэтому задача Коши с начальными данными y(tau)=0 имеет не более одного решения при движении назад из tau до tau-epsilon. Но y≡0 тоже является решением, так как f(t,0)=0. Следовательно наше решение должно совпадать с нулевым около tau слева, что противоречит y(t)>0. Значит справа от t0 знак не меняется; тот же аргумент назад по времени и для отрицательного начального значения завершает доказательство. Если решение где-то имеет ненулевое значение, оно сохраняет соответствующий знак на всей связной области существования.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonautonomous"
+    ],
+    "methods": [
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "lipschitz_condition",
+      "solution"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "sign_barrier",
+      "local_uniqueness",
+      "nonautonomous_first_order"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "Тонкость в том, что единственность нужна только в проколотых полуплоскостях и применяется назад от первого касания оси; вычислений нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "low_technical",
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "sign_analysis"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как модельная устная задача на аккуратное применение локальной единственности."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Перед добавлением проверены существующие карточки по Пикару-Линделефу, Пеано и непересечению решений; прямого неавтономного знакового барьера с раздельной липшицевостью не было."
+    ]
+  }
+}

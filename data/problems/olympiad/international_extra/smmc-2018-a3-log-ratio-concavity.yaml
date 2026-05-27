@@ -1,0 +1,111 @@
+{
+  "id": "smmc-2018-a3-log-ratio-concavity",
+  "title": "Simon Marais 2018 A3: логарифмическое ОДУ и единственное пересечение уровня",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть y(x) - решение задачи Коши y'=ln(y/x) при x>0, y>0, y(1)=2018, рассматриваемое на своем максимальном положительном интервале существования. Сколько положительных x удовлетворяют y(x)=2000?",
+        "source_ids": [
+          "src-simon-marais-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Использовать знак y' и строгую вогнутость",
+      "text": "Замена u=y/x и s=ln x превращает задачу в автономное уравнение u_s=ln u-u. Отсюда u монотонно проходит через 1, значит y сначала растет, потом убывает; левый хвост отделяется от уровня 2000 интегральной оценкой.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим s=ln x и u(s)=y(e^s)/e^s. Тогда y=xu, y'=u+u_s, поэтому уравнение становится u_s=ln u-u. Для всех u>0 выполнено ln u-u<0, значит u строго убывает по s. При s=0 имеем u=2018. При движении вправо u убывает и единственный раз проходит через 1; после этого за конечное время достигает 0, потому что int_0^1 du/(u-ln u)<infty. Следовательно, y'=ln u положительна до единственной точки m, где u=1, и отрицательна после нее; функция y сначала растет от y(1)=2018 до значения больше 2018, затем убывает к 0 на правом конце максимального интервала. Поэтому справа от m уровень 2000 пересекается ровно один раз. Осталось исключить левое пересечение. Если 0<x<1, то s<0, u(s)>2018, значит y'=ln u>0, и потому y(x)<2018. Тогда y'(x)=ln(y/x)<ln 2018-ln x. Отсюда y(x)=2018-int_x^1 y'(t)dt > 2018-int_0^1 (ln 2018-ln t)dt = 2017-ln 2018 > 2000. Значит на (0,1) решений y=2000 нет. Ответ: одно положительное x.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "first_order_nonlinear"
+    ],
+    "methods": [
+      "phase_line_signs",
+      "comparison_argument"
+    ],
+    "objects": [
+      "qualitative_ode",
+      "concavity",
+      "level_crossing"
+    ],
+    "goal": [
+      "count_solutions",
+      "prove"
+    ],
+    "keywords": [
+      "Simon Marais 2018 A3",
+      "logarithmic differential equation",
+      "concavity",
+      "level crossing"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 9,
+    "idea_score": 8,
+    "technical_score": 7,
+    "comment": "Идея 8: нужно совместить фазовое рассуждение по y/x, строгую вогнутость и оценку левого конца. Техника 7: доказательство существования вершины и интегральная оценка требуют аккуратных неравенств.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "phase_line",
+    "global_solution",
+    "convexity",
+    "comparison",
+    "zero_location",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-simon-marais-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Источник: Simon Marais Mathematics Competition 2018 Solutions, Problem A3, https://www.simonmarais.org/uploads/8/2/3/5/82358688/smmc-2018-solutions.pdf.",
+      "Условие пересказано кратко; решение сверено с официальной идеей через вогнутость и оценку при x->0+."
+    ]
+  }
+}

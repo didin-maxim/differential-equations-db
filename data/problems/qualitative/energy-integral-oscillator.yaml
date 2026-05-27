@@ -1,0 +1,103 @@
+{
+  "id": "energy-integral-oscillator",
+  "title": "Энергия нелинейного осциллятора",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "lemma",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для x''+V'(x)=0 доказать сохранение E=(x')^2/2+V(x).",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Качественный инвариант или знак",
+      "text": "Решение извлекается из знаков, интеграла энергии, дивергенции или функции Ляпунова.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Дифференцируем E вдоль решения: E'=x'x''+V'(x)x'=x'(x''+V'(x))=0. Значит E постоянна на каждом интервале существования решения.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative"
+    ],
+    "methods": [
+      "energy_first_integral"
+    ],
+    "objects": [
+      "first_integral",
+      "lyapunov",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "energy-integral-oscillator",
+      "qualitative",
+      "first_integral",
+      "lyapunov",
+      "complete_proof"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: стандартный первый интеграл энергии; technical_score=2: дифференцирование сразу сокращается.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "first_integral",
+    "lyapunov",
+    "complete_proof",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "teschl-stanford-bridge-monodromy-period-iterate",
+  "title": "Монодромия: фундаментальная матрица после нескольких периодов",
+  "fragment": "systems",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Лемма",
+        "text": "Пусть A(t+T)=A(t), а X(t) - фундаментальная матрица системы x'=A(t)x с X(0)=I. Тогда X(t+T)=X(t)X(T) для всех t, и, в частности, X(nT)=X(T)^n для всех целых n>=0. Матрица M=X(T) называется матрицей монодромии.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сдвиг на период дает ту же систему",
+      "text": "И X(t+T), и X(t)X(T) решают одну и ту же матричную задачу Коши на языке начального значения в момент t=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Рассмотрим Y(t)=X(t+T). Тогда Y'(t)=A(t+T)X(t+T)=A(t)Y(t), то есть Y является фундаментальной матрицей той же системы. Ее значение при t=0 равно Y(0)=X(T). Матрица Z(t)=X(t)X(T) также удовлетворяет Z'=A(t)Z и Z(0)=X(T). По единственности матричной задачи Коши Y(t)=Z(t), то есть X(t+T)=X(t)X(T). Подставляя t=(n-1)T и применяя индукцию, получаем X(nT)=X(T)^n. Эта лемма сама по себе элементарна, но она является входом в теорию Флоке, поэтому помечена как advanced_standard_course.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "monodromy",
+      "periodic_coefficients"
+    ],
+    "objects": [
+      "monodromy_matrix",
+      "fundamental_matrix",
+      "floquet_multiplier"
+    ],
+    "goal": [
+      "prove",
+      "derive"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "monodromy",
+      "periodic_linear_system",
+      "floquet"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Технически простая лемма, но находится на входе в теорию Флоке и поэтому отмечена как advanced_standard_course.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "periodic_solution",
+    "floquet_theory",
+    "matrix_exponential",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Teschl, §3.6 Periodic linear systems; definition and basic identities for the monodromy matrix."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Карточка оставлена короткой: это мост к мультипликаторам, не полная теорема Флоке."
+    ]
+  }
+}

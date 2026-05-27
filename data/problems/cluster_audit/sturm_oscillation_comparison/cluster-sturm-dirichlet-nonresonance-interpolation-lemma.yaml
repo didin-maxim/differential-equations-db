@@ -1,0 +1,127 @@
+{
+  "id": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+  "title": "Нерезонанс Дирихле и единственность двухточечной интерполяции",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть q,r непрерывны на [a,b]. Если однородная задача Дирихле u''+q(x)u=0, u(a)=u(b)=0 имеет только нулевое решение, то для любых A,B краевая задача y''+q(x)y=r(x), y(a)=A, y(b)=B имеет единственное решение. В частности, это применимо к задаче y''+q(x)y=0 с ненулевыми заданными концами после вычитания линейной функции, соединяющей A и B.",
+        "source_ids": [
+          "src-didin-sturm-oscillation-comparison-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ядро краевого оператора отвечает за единственность",
+      "text": "Разность двух решений решает однородную задачу с нулевыми концами. Существование удобно получить стрельбой: параметр начального наклона попадает в правый конец тогда и только тогда, когда соответствующее базисное решение не зануляется в b.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Единственность немедленна: если y1 и y2 решают одну и ту же краевую задачу, то w=y1-y2 удовлетворяет w''+q w=0 и w(a)=w(b)=0, значит w=0. Для существования решим две задачи Коши: y0''+q y0=r, y0(a)=A, y0'(a)=0, и v''+q v=0, v(a)=0, v'(a)=1. Все решения с левым условием y(a)=A имеют вид y=y0+c v. Если v(b)=0, то v было бы ненулевым решением однородной задачи Дирихле, что запрещено; значит v(b)!=0. Поэтому единственное c=(B-y0(b))/v(b) дает y(b)=B.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "shooting_parameter",
+      "nonresonance",
+      "dirichlet_kernel"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "dirichlet_problem",
+      "kernel",
+      "disconjugacy"
+    ],
+    "goal": [
+      "prove_existence_uniqueness"
+    ],
+    "keywords": [
+      "sturm_oscillation_comparison_audit",
+      "dirichlet_nonresonance",
+      "two_point_interpolation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "Стандартный мост от отсутствия ядра Дирихле к существованию и единственности краевой задачи.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "linear_higher_order",
+    "shooting_parameter",
+    "resonance",
+    "standard_course_methods",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "self_authored",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-didin-sturm-oscillation-comparison-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная лемма М. Дидина для аудита кластера Sturm/oscillation; точный внешний источник для этой формулировки не использовался."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-sturm-oscillation-comparison",
+    "notes": [
+      "Добавлена как связующая лемма: сама по себе не является Green-function construction и не заменяет резонансную альтернативу."
+    ]
+  },
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ]
+}

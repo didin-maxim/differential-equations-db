@@ -1,0 +1,113 @@
+{
+  "id": "cluster-pde-characteristics-flow-geometry",
+  "title": "Геометрия транспортного потока с растяжением",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть u_t+xu_x=0, u(0,x)=f(x). Найдите решение и опишите, куда к моменту t переедет носитель начального профиля, если f(x)=0 вне отрезка [1,2].",
+        "source_ids": [
+          "src-cluster-pde-characteristics-first-order-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Поток характеристик растягивает координату x",
+      "text": "Характеристическое ОДУ dx/dt=x имеет поток x(t)=xi e^t. Значение u сохраняется, а начальная точка характеристики равна xi=x e^{-t}.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Вдоль характеристики dx/dt=x и du/dt=0. Отсюда x(t)=xi e^t и xi=x e^{-t}. Значит u(t,x)=f(x e^{-t}). Если начальный профиль отличен от нуля только при xi in [1,2], то в момент t он может быть отличен от нуля только при x e^{-t} in [1,2], то есть x in [e^t,2e^t]. Профиль не просто сдвигается, а растягивается потоком x -> x e^t.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "flow_map"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "transport_equation",
+      "solution_flow"
+    ],
+    "goal": [
+      "solve",
+      "describe_support_transport"
+    ],
+    "keywords": [
+      "pde_characteristics",
+      "transport_equation",
+      "domain_of_dependence",
+      "flow_geometry"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "Простая характеристика, но учебный акцент на геометрию потока и перенос носителя.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "self_authored",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "transport_equation",
+    "domain_of_dependence",
+    "existence_uniqueness",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-pde-characteristics-first-order-audit",
+      "role": "model_problem",
+      "status": "ai_generated_from_user_request",
+      "note": "Авторская компактная задача на геометрию потока для линейного транспортного уравнения."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-pde-characteristics-first-order",
+    "notes": [
+      "Близко к стандартным транспортным примерам Lebl, но добавляет явный вопрос о движении носителя."
+    ]
+  }
+}

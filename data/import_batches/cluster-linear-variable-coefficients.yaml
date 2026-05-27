@@ -1,0 +1,24 @@
+{
+  "id": "cluster-linear-variable-coefficients",
+  "title": "Кластерный аудит линейных уравнений с переменными коэффициентами",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "linear_equations",
+    "linear-equations-variable-coefficients"
+  ],
+  "problem_ids": [
+    "cluster-linear-variable-graph-direct-tangency",
+    "cluster-linear-variable-graph-scaled-tangency",
+    "cluster-linear-variable-graph-ratio-maximum",
+    "cluster-linear-variable-graph-common-zero",
+    "cluster-linear-variable-variation-parameters-fundamental-system",
+    "cluster-linear-variable-inhomogeneous-three-solutions"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка закрывает точечные дефициты кластера: графические запреты касания/масштабирования, вариация параметров для переменных коэффициентов и общее решение неоднородного уравнения по трем частным решениям.",
+    "Вычислительные однотипные задачи с тяжелыми первообразными не добавлялись.",
+    "Связи этого аудита вынесены только в data/relations/relations.d/cluster-linear-variable-coefficients.yaml."
+  ]
+}

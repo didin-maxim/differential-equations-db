@@ -1,0 +1,30 @@
+{
+  "id": "cluster-implicit-ode-discriminant",
+  "title": "Кластерный аудит: неразрешенные ОДУ и дискриминантное множество",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "implicit_ode_discriminant",
+    "singular_solution",
+    "envelope",
+    "clairaut",
+    "lagrange_clairaut",
+    "branch_switching"
+  ],
+  "problem_ids": [
+    "cluster-implicit-branch-switch-square-root",
+    "cluster-implicit-discriminant-not-solution"
+  ],
+  "audited_existing_problem_ids": [
+    "local-du-written-2022-implicit-discriminant",
+    "local-du-written-2014-51-lagrange-singular-curves",
+    "local-du-written-2020-clairaut-shifted-envelope",
+    "clairaut-envelope"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Сначала подтянуты существующие точные попадания: письменный дискриминант 2022, Лагранж 2014, Клеро 2020 и seed clairaut-envelope как дедупликационный якорь.",
+    "Новые карточки добавлены только для отсутствующих механизмов: branch switching и дискриминант как геометрическая граница, не являющаяся решением.",
+    "Романко/Филиппов не использовались для нового импорта: отчеты уже фиксируют близкие номера Филиппова 287 и (y')^2=4y^3(1-y) как отфильтрованные около существующих Клеро/Лагранжа/огибающих."
+  ]
+}

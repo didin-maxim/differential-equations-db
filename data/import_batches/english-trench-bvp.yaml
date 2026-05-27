@@ -1,0 +1,31 @@
+{
+  "id": "english-trench-bvp",
+  "title": "Trench BVP, Green functions and Sturm-Liouville bridge cards",
+  "created_at": "2026-05-26",
+  "scope": [
+    "english_sources",
+    "trench_bvp",
+    "src-trench-ode-bvp",
+    "boundary_value",
+    "sturm_liouville",
+    "green_kernel",
+    "resonance"
+  ],
+  "problem_ids": [
+    "trench-bvp-green-function-formula",
+    "trench-bvp-robin-green-kernel-example",
+    "trench-bvp-resonance-solvability-alternative",
+    "trench-bvp-dirichlet-resonance-sine-condition",
+    "trench-bvp-sturm-liouville-integrating-factor",
+    "trench-bvp-green-identity-self-adjoint-boundary",
+    "trench-bvp-real-eigenvalues",
+    "trench-bvp-weighted-orthogonality",
+    "trench-bvp-euler-log-spectrum",
+    "trench-bvp-energy-no-negative-eigenvalues"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка выборочная: 10 карточек вместо массового импорта упражнений, с приоритетом Green functions, resonance solvability, Sturm-Liouville bridge lemmas и двух задач с новой идеей.",
+    "Связи записаны только в data/relations/relations.d/english-trench-bvp.yaml."
+  ]
+}

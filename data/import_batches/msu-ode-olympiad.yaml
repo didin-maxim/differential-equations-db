@@ -1,0 +1,30 @@
+{
+  "id": "msu-ode-olympiad",
+  "title": "МГУ, студенческая олимпиада по ОДУ: русскоязычные include-кандидаты",
+  "created_at": "2026-05-26",
+  "scope": [
+    "student_olympiad",
+    "msu_ode",
+    "ru"
+  ],
+  "problem_ids": [
+    "msu-ode-2003-3-bounded-exp-oscillator",
+    "msu-ode-2005-8-six-dimensional-resonance",
+    "msu-ode-2006-2-det-integral-matrix-exp",
+    "msu-ode-2008-11-integrating-factor-family",
+    "msu-ode-2011-12-orthogonal-fundamental-matrix",
+    "msu-ode-2012-3-recover-autonomous-matrix",
+    "msu-ode-2012-9-negative-instant-spectrum",
+    "msu-ode-2013-9-riccati-inverse-square",
+    "msu-ode-2023-2-infinite-zeros-linear-ode",
+    "msu-ode-2023-8-fourth-order-zero-count-review"
+  ],
+  "status": "needs_human_review",
+  "notes": [
+    "Пачка основана на docs/reviews/olympiad-scan-ru-student.md и сверке с PDF-листками МГУ.",
+    "Источник карточек: src-msu-ode-olympiad.",
+    "Borderline 2008/1 не добавлялась: задача про exp(A) для матрицы из единиц почти не содержит ОДУ-содержания.",
+    "Карточка msu-ode-2023-8-fourth-order-zero-count-review добавлена без solutions и с needs_human_review: полное решение задачи о нулях четвертого порядка не восстановлено достаточно надежно.",
+    "В задаче 2023/2 пункт б) записан с положительным ответом через контрпример для y': это исправляет возможную неоднозначность краткого scan-note."
+  ]
+}

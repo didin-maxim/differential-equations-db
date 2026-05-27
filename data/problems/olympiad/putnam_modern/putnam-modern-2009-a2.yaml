@@ -1,0 +1,107 @@
+{
+  "id": "putnam-modern-2009-a2",
+  "title": "Putnam 2009 A2: явная формула из произведения fgh",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Функции f,g,h дифференцируемы в некотором открытом интервале вокруг 0 и удовлетворяют f'=2f^2gh+1/(gh), f(0)=1; g'=fg^2h+4/(fh), g(0)=1; h'=3fgh^2+1/(fg), h(0)=1. Найти явную формулу для f(x), верную в некотором открытом интервале вокруг 0.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Свернуть систему в одно произведение",
+      "text": "Для k=fgh сумма логарифмических производных дает автономное уравнение k'=6k^2+6, после чего f находится интегрированием f'/f.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference",
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим k=fgh. Умножая первое уравнение на gh, второе на fh, третье на fg и складывая, получаем k'=6k^2+6, причем k(0)=1. Следовательно, arctan k=6x+pi/4 и k(x)=tan(6x+pi/4) в достаточно малой окрестности нуля. Из первого уравнения после деления на f получаем f'/f=2k+1/k=2tan(6x+pi/4)+cot(6x+pi/4). Интегрируя, имеем ln f = (1/6)(-2 ln cos(6x+pi/4)+ln sin(6x+pi/4))+C. Условие f(0)=1 дает e^C=2^(-1/12). Поэтому f(x)=2^(-1/12)(sin(6x+pi/4)/cos^2(6x+pi/4))^(1/6), где берется окрестность нуля, на которой синус и косинус положительны.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "first_integral_difference",
+      "separate_variables"
+    ],
+    "objects": [
+      "nonlinear_system",
+      "first_integral",
+      "global_solution"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "putnam-modern-2009-a2",
+      "Putnam",
+      "nonlinear_system",
+      "first_integral",
+      "explicit_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 8,
+    "technical_score": 8,
+    "comment": "Идея сильная: произведение fgh замыкает систему в одно автономное уравнение. Техника высокая: разделение переменных и восстановление функций дают заметный счет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "nonlinear_system",
+    "first_integral",
+    "separable",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка и явная формула сверены с TeX-файлами Putnam archive за 2009 год."
+    ]
+  }
+}

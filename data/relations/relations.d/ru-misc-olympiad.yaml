@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-ru-misc-kfu-2013-constant-coeff",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "ru-misc-kfu-2013-13-1",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют линейное уравнение с постоянными коэффициентами и резонансный подбор частного решения.",
+      "backward_text": "КФУ 2013/13-1 добавляет к тому же механизму условие ограниченности на полуосях и сшивку в точке излома правой части.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-ru-misc-kfu-2019-functional",
+      "from": "solve-functional-ode-composition",
+      "to": "ru-misc-kfu-2019-19-3",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи превращают функциональное условие на f в обычное дифференциальное уравнение.",
+      "backward_text": "В задаче КФУ отражение аргумента дает линейное уравнение f'' + f = 0 и дополнительное фазовое условие.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-ru-misc-nure-8-2-8-8",
+      "from": "ru-misc-nure-8-2",
+      "to": "ru-misc-nure-8-8",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах ограниченность следует из оценки производной сходящейся функцией независимой переменной.",
+      "backward_text": "ХНУРЭ 8.8 является тем же интегральным контролем полного разброса решения, но с переменной t и знаменателем 4 + t^4 + cos x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-ru-misc-nure-8-4-linear-first-order",
+      "from": "linear-first-order-formula",
+      "to": "ru-misc-nure-8-4",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "После понижения порядка уравнение ХНУРЭ 8.4 сводится к линейному уравнению первого порядка y' - xy = C.",
+      "backward_text": "ХНУРЭ 8.4 показывает, как формула линейного уравнения первого порядка возникает после распознавания полной производной.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-ru-misc-nure-8-5-blowup",
+      "from": "blow-up-comparison-y-square",
+      "to": "ru-misc-nure-8-5",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи доказывают невозможность глобального продолжения через дифференциальное неравенство и конечный рост.",
+      "backward_text": "ХНУРЭ 8.5 использует замену arctan y, чтобы получить ограниченный угол с производной не меньше единицы.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-ru-misc-spb-2018-energy",
+      "from": "energy-no-nonconstant-decay-periodic",
+      "to": "ru-misc-spb-itmo-2018-6",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют монотонность энергетической функции вдоль решений.",
+      "backward_text": "В задаче СПб/ИТМО энергия y^2 + (y')^2 контролируется отдельно на правом и левом бесконечных хвостах.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    }
+  ]
+}

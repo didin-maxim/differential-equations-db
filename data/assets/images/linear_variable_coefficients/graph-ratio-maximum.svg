@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title>Interior maximum of a quotient</title>
+  <desc>Two positive curves have a quotient with an interior maximum, so a scaled copy is tangent.</desc>
+  <rect width="640" height="420" fill="#fbfaf7"/>
+  <line x1="60" y1="330" x2="590" y2="330" stroke="#454545" stroke-width="2"/>
+  <line x1="90" y1="370" x2="90" y2="45" stroke="#454545" stroke-width="2"/>
+  <path d="M590 330 l-12 -6 l0 12 z" fill="#454545"/>
+  <path d="M90 45 l-6 12 l12 0 z" fill="#454545"/>
+  
+  <path class="v" d="M95 240 C180 225, 255 215, 330 218 C420 222, 500 238, 570 255"/>
+  <path class="u" d="M95 285 C175 245, 250 165, 330 145 C415 170, 500 235, 570 285"/>
+  <path class="w" d="M95 337 C175 285, 250 180, 330 145 C415 176, 500 270, 570 338"/>
+  <line class="guide" x1="250" y1="161" x2="410" y2="151"/>
+  <circle class="mark" cx="330" cy="145" r="6"/>
+  <text x="525" y="247">v</text>
+  <text x="515" y="287">u</text>
+  <text x="338" y="127">max u/v</text>
+
+  <style>
+    .u { fill: none; stroke: #1f78b4; stroke-width: 5; stroke-linecap: round; }
+    .v { fill: none; stroke: #d95f02; stroke-width: 5; stroke-linecap: round; }
+    .w { fill: none; stroke: #1f78b4; stroke-width: 3; stroke-dasharray: 10 8; stroke-linecap: round; }
+    .mark { fill: #222; }
+    .guide { stroke: #777; stroke-width: 2; stroke-dasharray: 6 7; fill: none; }
+    text { font-family: Arial, sans-serif; font-size: 22px; fill: #222; }
+  </style>
+</svg>

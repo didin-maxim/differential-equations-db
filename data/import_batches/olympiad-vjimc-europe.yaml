@@ -1,0 +1,28 @@
+{
+  "id": "olympiad-vjimc-europe",
+  "title": "VJIMC and nearby European student olympiad DE import",
+  "created_at": "2026-05-27",
+  "scope": [
+    "student_olympiad",
+    "vjimc",
+    "seemous",
+    "bme",
+    "innopolis",
+    "public_archives"
+  ],
+  "problem_ids": [
+    "vjimc-2016-c2-p4-moving-average-delay-variation",
+    "seemous-2010-p1-iterated-integrals-linear-ode",
+    "seemous-2020-p4-pole-fixed-point-series",
+    "bme-2024-p2-composition-ode-nonexistence",
+    "innopolis-2024-t6-million-cauchy-branches"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Отбор сделан по docs/reviews/olympiad-scan-vjimc-europe.md.",
+    "VJIMC оказался беден на честные DE-кандидаты; импортирован один сильный кандидат 2016 CII P4, а кратные интегралы и derivative-only задачи оставлены в scan report как exclude-near-miss.",
+    "SEEMOUS 2010 использует публичный архивный mirror PDF, потому что официальный старый хост не был стабильно доступен; source_id src-seemous-archive помечает это явно.",
+    "Innopolis 2024 Task 6 импортирован с исправленным примером: официальный пример с y'-ky склеивает ветви при y0=0, поэтому карточка сохраняет постановку, но дает корректное решение через постоянные наклоны.",
+    "Новые связи размещены только в data/relations/relations.d/olympiad-vjimc-europe.yaml."
+  ]
+}

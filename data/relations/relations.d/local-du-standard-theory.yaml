@@ -1,0 +1,180 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-du-standard-liouville-to-abel-zero-lemma",
+      "from": "liouville-wronskian-formula",
+      "to": "local-du-standard-abel-wronskian-zero-lemma",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Общая формула Лиувилля для фундаментальной матрицы специализируется к скалярной формуле Абеля для вронскиана второго порядка.",
+      "backward_text": "Скалярная лемма использует ту же идею Лиувилля, но добавляет выводы о простоте и изолированности нулей.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-local-du-standard-abel-to-sturm-separation",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "local-du-standard-sturm-separation-zeros",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Простота нулей и постоянный ненулевой вронскиан нужны для монотонности отношения двух решений.",
+      "backward_text": "Разделение нулей является прямым качественным применением скалярного вронскиана.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-local-du-standard-sturm-comparison-to-spacing",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-standard-sturm-zero-spacing-corollaries",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Следствия о расстоянии между нулями получаются сравнением с синусом и с уравнением z''=0.",
+      "backward_text": "Карточка следствий разворачивает программную теорему сравнения Штурма в часто используемые критерии.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-local-du-standard-separation-before-spacing",
+      "from": "local-du-standard-sturm-separation-zeros",
+      "to": "local-du-standard-sturm-zero-spacing-corollaries",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Разделение нулей полезно изучить перед количественными следствиями сравнения.",
+      "backward_text": "Оценки расстояний между нулями являются следующим штурмовским шагом после разделения.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-local-du-standard-spacing-to-oscillation-tests",
+      "from": "local-du-standard-sturm-zero-spacing-corollaries",
+      "to": "local-du-standard-oscillation-nonoscillation-tests",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Локальные следствия о нулях превращаются на бесконечном хвосте в критерии осцилляции и неосцилляции.",
+      "backward_text": "Осцилляционные тесты используют следствия Штурма как локальный строительный блок.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-local-du-standard-oscillation-to-kneser",
+      "from": "local-du-standard-oscillation-nonoscillation-tests",
+      "to": "local-du-standard-kneser-criterion",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Критерий Кнезера уточняет осцилляцию через предельное сравнение с обратноквадратичным коэффициентом.",
+      "backward_text": "Кнезер использует базовые понятия осцилляции и неосцилляции для уравнения y''+q(x)y=0.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-local-du-standard-sturm-comparison-to-kneser",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-standard-kneser-criterion",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Доказательство критерия Кнезера переносит свойства модельного уравнения Эйлера через сравнение Штурма.",
+      "backward_text": "Критерий Кнезера является продвинутым стандартным следствием штурмовского сравнения.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-local-du-standard-spacing-to-t3",
+      "from": "local-du-standard-sturm-zero-spacing-corollaries",
+      "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Следствие при q<=0 прямо дает запрет двух нулей у ненулевого решения, используемый в T3.",
+      "backward_text": "T3 является краевым применением неосцилляционного следствия из теоремы Штурма.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-local-du-standard-spacing-to-written-2007-sturm",
+      "from": "local-du-standard-sturm-zero-spacing-corollaries",
+      "to": "local-du-written-2007-81-sturm-zero",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Задача 2007 года является прямым применением следствия q>=1 на отрезке длины pi.",
+      "backward_text": "Письменная задача конкретизирует стандартное следствие Штурма сравнением с sin x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-du-standard-resonant-bvp-to-dirichlet-eigenvalues",
+      "from": "local-du-standard-resonant-linear-bvp-solvability",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Резонансная альтернатива объясняет, почему собственные значения краевой задачи являются точками неединственности или несовместности для неоднородной задачи.",
+      "backward_text": "Задача Дирихле на отрезке дает простую модель ядра, к которому применяются условия ортогональности.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-local-du-standard-euler-to-natural-boundary",
+      "from": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "to": "local-du-standard-natural-boundary-conditions",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Естественные граничные условия получаются из той же первой вариации, что и уравнение Эйлера-Лагранжа.",
+      "backward_text": "Свободные концы расширяют базовую теорему Эйлера-Лагранжа сохранением граничного члена.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-local-du-standard-euler-to-legendre-jacobi",
+      "from": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "to": "local-du-standard-legendre-jacobi-conditions",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Условия Лежандра и Якоби изучают вторую вариацию уже найденной экстремали Эйлера-Лагранжа.",
+      "backward_text": "Критерии второй вариации дополняют уравнение Эйлера-Лагранжа проверкой характера экстремума.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-local-du-standard-natural-to-written-2024-free-endpoint",
+      "from": "local-du-standard-natural-boundary-conditions",
+      "to": "local-du-written-2024-variational-free-endpoint",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Письменная задача 2024 года использует естественное условие F_{y'}(pi/2)=0 на свободном правом конце.",
+      "backward_text": "Задача 2024 года является вычислительным приложением общей леммы о свободном конце.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-local-du-standard-natural-to-written-2021-free-endpoint",
+      "from": "local-du-standard-natural-boundary-conditions",
+      "to": "local-du-written-2021-free-endpoint-cubic-variation",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Кубическая вариационная задача 2021 года определяется натуральным условием на свободном правом конце.",
+      "backward_text": "Задача 2021 года показывает, как естественное граничное условие может занулить параметр экстремали.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-local-du-standard-euler-to-written-2020-variation",
+      "from": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "to": "local-du-written-2020-variational-log-cross-term",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Задача со смешанным членом начинается с вывода и решения уравнения Эйлера-Лагранжа.",
+      "backward_text": "Письменная задача 2020 года является типовым применением Эйлера-Лагранжа с закрепленными концами.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-du-standard-legendre-jacobi-to-variational-threshold",
+      "from": "local-du-standard-legendre-jacobi-conditions",
+      "to": "local-du-deficit-variational-quadratic-threshold",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки проверяют характер экстремума через вторую вариацию и спектральный порог.",
+      "backward_text": "Квадратичный функционал является конкретной моделью общей идеи Лежандра-Якоби о знаке второй вариации.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

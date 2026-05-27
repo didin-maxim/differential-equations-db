@@ -1,0 +1,115 @@
+{
+  "id": "local-du-filippov-239-one-sided-global-existence",
+  "title": "Глобальное существование из односторонней оценки производной по y",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 239*",
+        "text": "Пусть на всей плоскости x,y функции f(x,y) и f_y'(x,y) непрерывны и f_y'(x,y)<=k(x), где k(x) непрерывна. Доказать, что решение уравнения y'=f(x,y) с любым начальным условием y(x0)=y0 существует при x0<=x<+infty.",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить решение с нулевой линией",
+      "text": "Односторонняя оценка f_y<=k дает f(x,y)<=f(x,0)+k(x)y при y>0 и f(x,y)>=f(x,0)+k(x)y при y<0. Поэтому положительная и отрицательная части решения на каждом конечном отрезке контролируются линейным неравенством Гронуолла.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Локальное решение существует и единственно, так как f и f_y непрерывны. Достаточно показать, что на любом конечном отрезке [x0,b] оно не может уйти на бесконечность. Зафиксируем b и положим K=max_{[x0,b]} |k(x)|, M=max_{[x0,b]} |f(x,0)|. По формуле Лагранжа по переменной y имеем |f(x,y)|<=M+K|y| для x in [x0,b]. Пока решение определено на [x0,t], из интегральной формы следует |y(t)|<=|y0|+M(t-x0)+K int_{x0}^t |y(s)| ds. По неравенству Гронуолла |y(t)|<=(|y0|+M(b-x0)) exp(K(b-x0)) на всем существующем куске внутри [x0,b]. Значит граф решения на конечном отрезке остается в компакте и по теореме о продолжении не может иметь конечный правый конец. Так как b произволен, решение существует при всех x>=x0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "cauchy_problem"
+    ],
+    "methods": [
+      "gronwall_estimate",
+      "continuation_criterion"
+    ],
+    "objects": [
+      "maximal_solution",
+      "one_sided_lipschitz_bound"
+    ],
+    "goal": [
+      "prove_global_existence"
+    ],
+    "keywords": [
+      "filippov-239",
+      "global-continuation",
+      "one-sided-bound",
+      "gronwall"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "idea_score=7: нужно заменить поиск решения априорной оценкой на конечном отрезке; technical_score=4: оценка через Гронуолла короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "existence_uniqueness",
+    "continuation",
+    "gronwall",
+    "global_solution",
+    "advanced_standard_course",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §7, задача 239*."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Отобрано как невычислительная задача на глобальное продолжение: план отличается от уже имеющихся примеров с ограниченной правой частью и blow-up сравнением."
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "teschl-stanford-bridge-floquet-determinant-liouville",
+  "title": "Произведение мультипликаторов Флоке по формуле Лиувилля",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача",
+        "text": "Пусть A(t) непрерывна и T-периодична, X'=A(t)X, X(0)=I, M=X(T). Докажите, что произведение всех мультипликаторов Флоке, считая алгебраические кратности, равно det M=exp(int_0^T tr A(s) ds). В частности, для системы с tr A(t)=0 произведение мультипликаторов равно 1.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Определитель фундаментальной матрицы удовлетворяет скалярному уравнению",
+      "text": "Формула Лиувилля превращает det X(T) в экспоненту интеграла tr A; det M равен произведению собственных значений M.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "По формуле Лиувилля для матричного уравнения X'=A(t)X имеем (det X)'=tr A(t) det X. Так как X(0)=I, то det X(0)=1, и решение этого скалярного уравнения равно det X(t)=exp(int_0^t tr A(s) ds). При t=T получаем det M=det X(T)=exp(int_0^T tr A(s) ds). С другой стороны, мультипликаторы Флоке по определению являются собственными значениями M, а произведение собственных значений матрицы с учетом алгебраических кратностей равно ее определителю. Если tr A(t)=0 на всем периоде, интеграл равен нулю, значит det M=1. Это задача-мост: она использует стандартную формулу Лиувилля, но интерпретирует ее в языке теории Флоке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous"
+    ],
+    "methods": [
+      "liouville_formula",
+      "floquet_multipliers",
+      "monodromy"
+    ],
+    "objects": [
+      "monodromy_matrix",
+      "floquet_multiplier",
+      "определитель",
+      "trace"
+    ],
+    "goal": [
+      "prove",
+      "compute_invariant"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "floquet_multiplier_product",
+      "liouville_formula",
+      "trace"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Технически это формула Лиувилля из стандартного курса; advanced_standard_course относится только к языку мультипликаторов Флоке.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "wronskian",
+    "periodic_solution",
+    "floquet_theory",
+    "advanced_standard_course",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "problem_source",
+      "status": "source_verified",
+      "note": "Teschl, §3.6 Periodic linear systems, Problem 3.43 on Floquet multipliers; uses Liouville's formula from the linear systems chapter."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Карточка связана с уже существующей формулой Лиувилля, но не дублирует ее: добавлена Floquet-интерпретация."
+    ]
+  }
+}

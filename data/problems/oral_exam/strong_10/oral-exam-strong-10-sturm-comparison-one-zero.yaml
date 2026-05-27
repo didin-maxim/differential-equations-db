@@ -1,0 +1,122 @@
+{
+  "id": "oral-exam-strong-10-sturm-comparison-one-zero",
+  "title": "Один нуль через сравнение с синусом",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Пусть q непрерывна на [a,a+pi], q(x)>=1, а y - решение y''+q(x)y=0 с y(a)=0, y'(a)>0. Доказать, что у y есть нуль на интервале (a,a+pi]. Нельзя ссылаться на теорему Штурма без доказательства; нужно провести сравнение напрямую.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Интегральное тождество для вронскиана с sin(x-a)",
+      "text": "Если y не зануляется до a+pi, то y положительно. Сравнение с z=sin(x-a) превращает q>=1 в знак производной смешанного вронскиана и дает противоречие на правом конце.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison",
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим z(x)=sin(x-a). Тогда z''+z=0, z(a)=0, z'(a)=1, z>0 на (a,a+pi). Предположим, что y не имеет нулей на (a,a+pi]. Так как y'(a)>0, вблизи a функция y положительна; значит y>0 на всем (a,a+pi]. Рассмотрим F=y'z-yz'. Тогда F'=y''z-yz''=(-q y)z-y(-z)=(1-q)yz<=0. При x=a имеем F(a)=0. Следовательно F(a+pi)<=0. Но z(a+pi)=0 и z'(a+pi)=-1, поэтому F(a+pi)=y(a+pi)>0. Получили противоречие. Значит первый нуль y действительно появляется не позже точки a+pi.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison",
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "comparison",
+      "wronskian_identity"
+    ],
+    "objects": [
+      "zero_location",
+      "oscillation",
+      "linear_higher_order"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "sturm_comparison",
+      "zero_location",
+      "sine_comparison",
+      "oral_exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 5,
+    "comment": "Идейная сложность 9: это мини-версия сравнения Штурма без ссылки на внешнюю теорию. Техническая сложность 5: требуется аккуратно удержать знак тождества на концах.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "comparison",
+    "wronskian",
+    "zero_location",
+    "oscillation",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по сравнению, sin и нулям; найденные задачи используют тот же механизм как олимпиадное применение, но эта карточка является отдельной модельной мини-теоремой."
+    ]
+  }
+}

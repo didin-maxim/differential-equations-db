@@ -1,0 +1,109 @@
+{
+  "id": "putnam-early-1960-b3-fluid-flow",
+  "title": "Putnam 1960 II-3/B3: фазовый портрет потока в плоскости",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Поток жидкости в плоскости задан системой x'=y+2x(1-x^2-y^2), y'=-x. Нарисовать форму траекторий около начала координат и описать поведение отдельной частицы при t -> +infty.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Следить за радиусом",
+      "text": "Производная r^2=x^2+y^2 показывает притяжение к единичной окружности, а линейная часть около нуля дает локальную форму траекторий.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть r^2=x^2+y^2. Тогда (r^2)'=2xx'+2yy'=2x(y+2x(1-r^2))+2y(-x)=4x^2(1-r^2). Поэтому окружность r=1 инвариантна; внутри нее r не убывает, а вне ее r не возрастает, причем изменение радиуса прекращается только при x=0 или r=1. На самой окружности поле равно (y,-x), то есть движение идет по окружности. Для любой траектории с r<1 радиус стремится к 1, иначе при r<=1-epsilon за каждое прохождение через области с |x| отделенным от нуля радиус увеличивался бы на фиксированную величину; снаружи получается такое же стремление к r=1. Около начала отбросим кубические члены: x'=y+2x, y'=-x. Характеристическое уравнение для матрицы [[2,1],[-1,0]] равно (lambda-1)^2=0, а собственное направление задается y=-x. Поэтому локально траектории имеют вид, соответствующий решению x=(at+b)e^t, y=(-at+a-b)e^t: они касаются направления y=-x и выглядят как S-образные кривые около неустойчивого вырожденного узла. При t -> +infty все ненулевые частицы, не лежащие в начале, приближаются к единичной окружности и затем асимптотически вращаются вдоль предельного цикла.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system"
+    ],
+    "methods": [
+      "phase_plane",
+      "radial_dynamics",
+      "linearization"
+    ],
+    "objects": [
+      "limit_cycle",
+      "phase_portrait"
+    ],
+    "goal": [
+      "analyze"
+    ],
+    "keywords": [
+      "Putnam 1960 B3",
+      "phase_plane",
+      "polar_coordinates"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 9,
+    "idea_score": 8,
+    "technical_score": 7,
+    "comment": "Идея продвинутая, но курсовая: радиальная динамика и фазовый портрет. Техника заметная: нужно совместить оценку r^2 и локальную линеаризацию.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "phase_plane",
+    "stability",
+    "polar_coordinates",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol6010.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Архивная формулировка также соответствует Barbeau 1960-II-3."
+    ]
+  }
+}

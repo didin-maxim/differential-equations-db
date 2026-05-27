@@ -1,0 +1,103 @@
+{
+  "id": "ru-misc-kfu-2015-15-4",
+  "title": "Интегрально заданное уравнение для y'",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти функцию y(x), если int_0^{y'(x)} e^t/(1 + 2e^t) dt = (1/2) ln x и y(1) = -2/3.",
+        "source_ids": [
+          "src-kfu-lobachevsky-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала выразить производную",
+      "text": "Внутренний интеграл зависит только от y'. Его нужно вычислить явно, после чего задача превращается в одно обычное интегрирование по x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Вычислим интеграл по переменной t. При u = e^t получаем du = e^t dt и integral e^t/(1 + 2e^t) dt = (1/2) ln(1 + 2e^t). Поэтому (1/2) ln((1 + 2e^{y'(x)})/3) = (1/2) ln x. Так как рассматривается решение около x = 1, имеем x > 0, и отсюда 1 + 2e^{y'} = 3x. Следовательно e^{y'} = (3x - 1)/2 и y'(x) = ln((3x - 1)/2), где x > 1/3 на интервале решения, содержащем точку 1. Интегрируя, получаем y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) + C. При x = 1 первое слагаемое равно -2/3, поэтому из условия y(1) = -2/3 следует C = 0. Ответ: y(x) = ((3x - 1)/3)(ln((3x - 1)/2) - 1) на x > 1/3.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "olympiad"
+    ],
+    "methods": [
+      "separate_variables"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "nonlinear_transform"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "КФУ 2015 15-4",
+      "уравнение через производную",
+      "явное интегрирование"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 6,
+    "idea_score": 4,
+    "technical_score": 5,
+    "comment": "Идейная сложность 4: нужно заметить, что интегральное условие явно выражает y'. Техническая сложность 5: требуется аккуратно вычислить два стандартных интеграла и учесть область x>1/3.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "separable",
+    "nonlinear_transform",
+    "standard_course_methods",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-kfu-lobachevsky-olympiad",
+      "role": "original_problem",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Решение самодостаточно; новая карточка-теорема не нужна."
+    ]
+  }
+}

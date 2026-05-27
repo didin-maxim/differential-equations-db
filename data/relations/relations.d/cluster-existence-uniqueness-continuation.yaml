@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-existence-linear-growth-from-gronwall",
+      "from": "gronwall-inequality",
+      "to": "cluster-existence-linear-growth-global",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла дает априорную оценку нормы решения при линейном росте правой части.",
+      "backward_text": "Лемма о линейном росте является прямым применением Гронуолла к норме решения.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-existence-linear-growth-continuation",
+      "from": "cluster-existence-linear-growth-global",
+      "to": "maximal-continuation-theorem",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После оценки на конечном отрезке глобальность следует из критерия продолжения максимального решения.",
+      "backward_text": "Теорема продолжения объясняет, почему априорная ограниченность запрещает конечный конец интервала.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-existence-blowup-alt-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "cluster-existence-blow-up-alternative",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Критерий продолжения в компактной форме является положительной версией альтернативы: если продолжить нельзя, график выходит из компакта.",
+      "backward_text": "Blow-up alternative переформулирует теорему продолжения как диагностический критерий конечного конца максимального интервала.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-existence-blowup-alt-y-square",
+      "from": "cluster-existence-blow-up-alternative",
+      "to": "blow-up-comparison-y-square",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Общая альтернатива говорит, что конечная непродолжимость в R^n должна проявляться как уход нормы на бесконечность.",
+      "backward_text": "Сравнение с y'=y^2 является конкретным способом доказать уход на бесконечность и тем самым конечный конец решения.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-existence-barrier-no-crossing",
+      "from": "one-dimensional-autonomous-no-crossing",
+      "to": "cluster-existence-inward-barrier-interval",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Непересечение равновесия является частным случаем барьера, когда граница отрезка сама является решением.",
+      "backward_text": "Барьерная лемма допускает границы, которые не являются решениями, но поле направлено внутрь отрезка.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-existence-barrier-continuation",
+      "from": "cluster-existence-inward-barrier-interval",
+      "to": "cluster-existence-blow-up-alternative",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Инвариантный отрезок дает компактную априорную границу, а альтернатива продолжения превращает ее в глобальность.",
+      "backward_text": "Blow-up alternative показывает, почему барьер на конечном отрезке времени исключает конечную непродолжимость.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-existence-implicit-picard",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-existence-implicit-ivp-local",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После разрешения неявного уравнения относительно производной локальная разрешимость сводится к Пикару-Линделефу.",
+      "backward_text": "Неявная задача показывает типичный случай, где теорема Пикара применяется не сразу, а после перехода к нормальной форме.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-existence-implicit-discriminant-contrast",
+      "from": "cluster-existence-implicit-ivp-local",
+      "to": "cluster-implicit-branch-switch-square-root",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В регулярной точке F_p != 0 неявное уравнение локально разрешается относительно y' и ведет себя как обычная задача Коши.",
+      "backward_text": "Дискриминантная карточка рассматривает вырожденные точки F_p=0, где регулярная редукция к y'=phi(t,y) уже не работает.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-existence-one-sided-mit-filippov",
+      "from": "mit-18034-pset03-one-sided-lipschitz-gronwall",
+      "to": "local-du-filippov-239-one-sided-global-existence",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют односторонний контроль роста и Гронуолла вместо симметричного условия Липшица.",
+      "backward_text": "Филипповская задача переносит одностороннюю идею с оценки расстояния между решениями на глобальное продолжение одного решения.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-existence-peano-nonunique-delayed",
+      "from": "peano-existence-theorem",
+      "to": "oral-above-three-nonunique-nonlipschitz-delayed",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Пеано гарантирует существование при непрерывной правой части, но не запрещает отложенные решения.",
+      "backward_text": "Отложенные решения демонстрируют потерю единственности в ситуации, где существование по Пеано остается верным.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    }
+  ]
+}

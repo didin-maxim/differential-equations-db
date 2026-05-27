@@ -1,0 +1,110 @@
+{
+  "id": "oral-above-three-riccati-shift-known-solution",
+  "title": "Риккати после сдвига известного решения",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить уравнение y'=(y-x)^2+1, заметив одно простое частное решение.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "riccati_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-shift-riccati",
+      "title": "Сначала увидеть частное решение",
+      "text": "Решение y0=x превращает уравнение Риккати в стандартный случай с заменой y=y0+1/u.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Функция y0=x действительно является решением, потому что y0'=1 и (y0-x)^2+1=1. Положим y=x+1/u. Тогда y'=1-u'/u^2, а правая часть равна 1+1/u^2. После сокращения единиц получаем -u'=1, то есть u=C-x. Поэтому все решения, отличные от y=x на рассматриваемом промежутке, имеют вид y=x+1/(C-x). Отдельно сохраняется частное решение y=x, которое не получается при конечном u.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "known_riccati_solution",
+      "substitution"
+    ],
+    "objects": [
+      "riccati",
+      "particular_solution"
+    ],
+    "goal": [
+      "solve",
+      "choose_method"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "riccati",
+      "known-solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: нужно не просто узнать Риккати, а заметить сдвинутое частное решение y=x; technical_score=3: после замены счет линейный.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "riccati",
+    "linear_first_order"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на проверку распознавания Риккати с известным частным решением."
+    ]
+  }
+}

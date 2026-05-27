@@ -1,0 +1,108 @@
+{
+  "id": "putnam-modern-2010-b5",
+  "title": "Putnam 2010 B5: несуществование f'=f(f)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Существует ли строго возрастающая функция f:R->R, такая что f'(x)=f(f(x)) для всех x?",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ускорение слишком быстро растет",
+      "text": "Монотонность делает f' и f'' положительными; затем получается квадратичная нижняя оценка и дифференциальное неравенство, приводящее к конечному взрыву.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Ответ: не существует. Предположим обратное. Так как f строго возрастает, f'(x)>=0, а из f'(x)=f(f(x)) следует, что f' тоже строго возрастает: при y>x имеем f(y)>f(x), значит f'(y)=f(f(y))>f(f(x))=f'(x). На самом деле f'>0 всюду, иначе возрастающая функция f' имела бы нуль и не могла бы быть строго возрастающей и неотрицательной на всей прямой. Дифференцируя f'=f(f(x)), получаем f''(x)=f'(f(x))f'(x)>0. Кроме того, f'' возрастает как произведение положительных возрастающих функций. Выберем M и alpha>0 так, что f''(x)>4alpha при x>=M. Тогда для больших x получаем f(x)>=f(M)+f'(M)(x-M)+2alpha(x-M)^2, в частности существует M'>M такое, что f(x)>=alpha x^2 при x>=M'. Выберем T настолько большим, что T>=M' и alpha T^2>=M'. Тогда при x>=T имеем f(x)>=M' и потому f'(x)=f(f(x))>=alpha f(x)^2. Интегрируя на [T,2T], получаем 1/f(T)-1/f(2T)=int_T^{2T} f'(t)/f(t)^2 dt >= alpha T. Левая часть не превосходит 1/f(T) и стремится к 0 при T->infty, а правая часть стремится к бесконечности. Противоречие.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "functional_differential",
+      "monotonicity",
+      "nonexistence",
+      "blow_up"
+    ],
+    "goal": [
+      "disprove"
+    ],
+    "keywords": [
+      "putnam-modern-2010-b5",
+      "Putnam",
+      "functional_differential",
+      "nonexistence",
+      "monotonicity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 13,
+    "idea_score": 12,
+    "technical_score": 7,
+    "comment": "Идея олимпиадная и вне обычного курса: композиция f(f(x)) ведет к глобальному противоречию через ускорение роста. Техника заметная: нужны монотонность, квадратичная нижняя оценка и интегральное неравенство.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "nonexistence",
+    "blow_up",
+    "beyond_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 2010 год.",
+      "Аудит верхнего слоя 2026-05-27: beyond_standard_course оставлен явно, потому что композиционное уравнение f'(x)=f(f(x)) и глобальный blow-up argument являются олимпиадной техникой выше стандартного экзаменационного курса."
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "oral-exam-strong-10-wronskian-ratio-zeros",
+  "title": "Отношение решений и запрет двух нулей",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Пусть p(x) непрерывна на интервале I, u - ненулевое решение уравнения y''+p(x)y=0, причем u не обращается в нуль на I. Доказать, что любое решение v, линейно независимое с u, имеет на I не более одного нуля.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Отношение v/u монотонно",
+      "text": "У уравнения без первой производной вронскиан постоянен. Поэтому (v/u)'=W(u,v)/u^2 имеет постоянный ненулевой знак, и отношение не может иметь два нуля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как u и v решают одно и то же уравнение y''+p(x)y=0, их вронскиан W=u v'-u' v удовлетворяет W'=u v''-u'' v=u(-p v)-(-p u)v=0. Значит W постоянен. Линейная независимость u и v дает W != 0. Поскольку u не обращается в нуль, функция r=v/u корректно определена на I, и r'=(v'u-vu')/u^2=W/u^2. Знаменатель положителен, а W имеет постоянный ненулевой знак, следовательно r строго монотонна. Нули v совпадают с нулями r, потому что u нигде не равна нулю. Строго монотонная функция не может иметь два различных нуля, поэтому у v на I не более одного нуля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "wronskian_invariant",
+      "logarithmic_derivative"
+    ],
+    "objects": [
+      "wronskian",
+      "zero_location",
+      "linear_higher_order"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "ratio_of_solutions",
+      "wronskian",
+      "zeros",
+      "oral_exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: нужно перейти от самих решений к монотонности отношения. Техническая сложность 4: вронскиан дифференцируется в одну строку.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "wronskian",
+    "zero_location",
+    "sign_analysis",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по отношению решений и вронскиану; точная карточка не найдена."
+    ]
+  }
+}

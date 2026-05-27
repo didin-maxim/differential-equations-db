@@ -1,0 +1,119 @@
+{
+  "id": "teschl-stanford-bridge-flow-derivative-variational-equation",
+  "title": "Производная потока по начальной точке и вариационное уравнение",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Теорема",
+        "text": "Пусть f(t,x) непрерывна по t и непрерывно дифференцируема по x. Обозначим через phi(t,t0,x0) решение задачи x'=f(t,x), x(t0)=x0. Если решение существует на фиксированном отрезке, то производная U(t)=D_{x0}phi(t,t0,x0) удовлетворяет линейной матричной задаче Коши U'=D_x f(t,phi(t,t0,x0))U, U(t0)=I.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать интегральное уравнение",
+      "text": "Зависимость решения от начальной точки наследует дифференцируемость правой части; производная проходит через интеграл и дает линейное уравнение вдоль базовой траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Для базового решения phi интегральная форма имеет вид phi(t)=x0+int_{t0}^t f(s,phi(s)) ds. Формально дифференцируя по x0, получаем U(t)=I+int_{t0}^t D_x f(s,phi(s))U(s) ds. Это интегральная форма линейной задачи U'=D_x f(s,phi(s))U, U(t0)=I. Строгость оправдывается стандартной теоремой о дифференцируемости решений по параметру: остаток в формуле Тейлора для f оценивается через непрерывность D_x f, а затем применяется Гронуолл. В результате U(t) является фундаментальной матрицей уравнения в вариациях вдоль выбранной траектории. Мостовой факт выходит за вычислительный курс тем, что говорит не об одном решении, а о дифференцируемости всего локального потока.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "linear_systems",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "variational_equation",
+      "differentiation_with_respect_to_initial_data",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "solution_flow",
+      "jacobian_matrix",
+      "linearization_along_solution"
+    ],
+    "goal": [
+      "derive",
+      "prove"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "variational_equation",
+      "flow_derivative",
+      "sensitivity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Главная сложность концептуальная: нужно увидеть производную отображения потока как фундаментальную матрицу. Это advanced_standard_course, но без тяжелой теории.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "linear_systems",
+    "parameter_sensitivity_ivp",
+    "variation_of_parameters",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Teschl, §2.4 Dependence on the initial condition; variational equation for the derivative of the flow with respect to initial data."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Не добавляет теорему об устойчивом многообразии: только линейное уравнение в вариациях, нужное как мост к устойчивости и чувствительности."
+    ]
+  }
+}

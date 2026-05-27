@@ -1,0 +1,31 @@
+{
+  "id": "putnam-early",
+  "title": "Ранние Putnam-кандидаты по дифференциальным уравнениям",
+  "created_at": "2026-05-26",
+  "scope": [
+    "putnam_early",
+    "olympiad_differential_equations",
+    "source_solution_checked"
+  ],
+  "problem_ids": [
+    "putnam-early-1939-a5-1-linear-system",
+    "putnam-early-1954-i3-concurrent-tangents",
+    "putnam-early-1955-a7-zero-bounds",
+    "putnam-early-1956-b1-homogeneous-exact-first-integral",
+    "putnam-early-1957-ii6-zero-location",
+    "putnam-early-1958-i3-integral-constraint",
+    "putnam-early-1959-a5-pursuit-curve",
+    "putnam-early-1960-b3-fluid-flow",
+    "putnam-early-1960-b7-riccati-variational",
+    "putnam-early-1963-a3-euler-operator-kernel",
+    "putnam-early-1969-a5-controlled-linear-system",
+    "putnam-early-1971-b5-hypocycloid-system",
+    "putnam-early-1973-a5-nonlinear-system-blowup",
+    "putnam-early-1975-a5-wronskian-nonlinear-transform"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка соответствует include-кандидатам из docs/reviews/olympiad-scan-putnam.md за 1939-1975 годы.",
+    "Основной source_id во всех карточках: src-putnam-archive."
+  ]
+}

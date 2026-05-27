@@ -1,0 +1,28 @@
+{
+  "id": "local-du-romanko-selected",
+  "title": "Выборочные идейные задачи из задачника Романко для стандартной программы ДУ",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "romanko",
+    "standard_program",
+    "deficit_topics"
+  ],
+  "problem_ids": [
+    "local-du-romanko-sturm-short-interval-bvp",
+    "local-du-romanko-first-integral-center",
+    "local-du-romanko-pde-two-invariants",
+    "local-du-romanko-variational-higher-derivative",
+    "local-du-romanko-variational-two-functions",
+    "local-du-romanko-isoperimetric-linear-constraint",
+    "local-du-romanko-isoperimetric-energy-normalization",
+    "local-du-romanko-jacobi-strict-maximum"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка намеренно небольшая: выбраны 8 представителей разных механизмов из §§10, 16, 17, 20-22 задачника Романко.",
+    "Кластер простейшей вариационной задачи не расширялся массовыми однотипными задачами; добавлены только высшие производные, несколько функций, изопериметрия и достаточное условие Якоби.",
+    "Связи для пачки вынесены только в data/relations/relations.d/local-du-romanko-selected.yaml.",
+    "Локальный DjVu не удалось прочитать штатными утилитами djvulibre в окружении; сверка структуры и номеров сделана по OCR-представлению того же издания на djvu.online и по локальным отчетам программы 8.pdf."
+  ]
+}

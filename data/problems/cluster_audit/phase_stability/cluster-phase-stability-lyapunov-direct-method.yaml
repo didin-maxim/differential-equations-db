@@ -1,0 +1,113 @@
+{
+  "id": "cluster-phase-stability-lyapunov-direct-method",
+  "title": "Прямой метод Ляпунова для равновесия",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Критерий через функцию Ляпунова",
+        "text": "Сформулировать стандартный прямой метод Ляпунова для системы z'=f(z) около равновесия z=0: какие условия на V(z) и производную V вдоль траекторий дают устойчивость и асимптотическую устойчивость.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability",
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Заменить геометрию траекторий убывающей энергией",
+      "text": "Положительно определенная V задает вложенные окрестности равновесия. Если траектории не увеличивают V, они не могут пересечь наружный уровень.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Формулировка",
+      "text": "Пусть V непрерывно дифференцируема в окрестности нуля, V(0)=0 и V(z)>0 при z != 0. Если производная вдоль поля Vdot(z)=grad V(z)·f(z) неположительна в достаточно малой окрестности, то нулевое равновесие устойчиво по Ляпунову: малый уровень V остается инвариантным вперед по времени и помещается в заданную epsilon-окрестность. Если дополнительно Vdot(z)<0 при z != 0 в проколотой окрестности, то равновесие асимптотически устойчиво. В стандартных задачах V часто является квадратичной формой, энергией осциллятора или первым интегралом; в последнем случае Vdot=0 обычно дает устойчивость центра, но не асимптотическую устойчивость.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "lyapunov_function",
+      "energy_monotonicity"
+    ],
+    "objects": [
+      "equilibrium",
+      "lyapunov_stability",
+      "asymptotic_stability"
+    ],
+    "goal": [
+      "prove_stability"
+    ],
+    "keywords": [
+      "Lyapunov direct method",
+      "energy method",
+      "stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Стандартная теорема; основная идея в выборе уровней функции Ляпунова и знаке производной.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "lyapunov",
+    "stability",
+    "nonlinear_system",
+    "energy_method",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_fact",
+      "status": "seed_reference"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Добавлено потому, что в базе были задачи, использующие функции Ляпунова, но не было компактной карточки самого критерия."
+    ]
+  }
+}

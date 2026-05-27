@@ -1,0 +1,114 @@
+{
+  "id": "trench-bvp-euler-log-spectrum",
+  "title": "Логарифмический спектр эйлерова уравнения на [1,2]",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "english_source"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача",
+        "text": "Найти собственные значения и собственные функции задачи x^2 y''+x y'+lambda y=0, y(1)=0, y(2)=0.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Эйлерово уравнение колеблется по log x",
+      "text": "При положительном lambda решения имеют вид cos(k log x), sin(k log x); краевые условия измеряют длину интервала в логарифмической переменной.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "При lambda=0 получаем y=c1 log x+c2, и условия y(1)=y(2)=0 дают c1=c2=0. При lambda=-k^2<0 решения имеют вид c1 x^k+c2 x^{-k}; из условий в 1 и 2 получается невырожденная система, поэтому нет ненулевого решения. При lambda=k^2>0 решения имеют вид c1 cos(k log x)+c2 sin(k log x). Условие y(1)=0 дает c1=0, потому что log 1=0. Условие y(2)=0 требует sin(k log 2)=0, то есть k log 2=n pi, n=1,2,... Поэтому lambda_n=(n pi/log 2)^2, а собственные функции можно взять y_n(x)=sin(n pi log x/log 2).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "euler_equation",
+      "change_of_variables",
+      "spectral_parameter"
+    ],
+    "objects": [
+      "eigenvalues",
+      "собственные функции",
+      "sturm_liouville"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "euler_equation",
+      "logarithmic_spectrum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "Вычислительная задача сохранена из-за новой идеи: спектр обычного синуса появляется в переменной log x.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "sturm_liouville",
+    "eigenvalues",
+    "linear_higher_order",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_example",
+      "status": "source_verified",
+      "note": "Trench, Section 13.2, Example 13.2.2."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Не является очередным Dirichlet template: новая переносимая идея - логарифмическая шкала в уравнении Эйлера."
+    ]
+  }
+}

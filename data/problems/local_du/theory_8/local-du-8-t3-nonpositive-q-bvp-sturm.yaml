@@ -1,0 +1,122 @@
+{
+  "id": "local-du-8-t3-nonpositive-q-bvp-sturm",
+  "title": "Краевая задача при q(x)<=0 через теорему Штурма",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача 3 из первого задания",
+        "text": "Пусть функция q(x) непрерывна на всей действительной оси и q(x)<=0. Доказать, что краевая задача y''+q(x)y=0, y(x1)=a, y(x2)=b, при любых a,b и x1!=x2 имеет решение и это решение единственно.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Штурм запрещает два нуля у ненулевого решения",
+      "text": "Так как q<=0, уравнение z''=0 имеет больший коэффициент, чем y''+q y=0. Если бы решение первого уравнения имело два нуля, теорема сравнения Штурма заставила бы любую ненулевую аффинную функцию иметь нуль между ними, что невозможно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение через сравнение Штурма",
+      "text": "Сначала докажем ключевой факт: всякое ненулевое решение однородного уравнения y''+q(x)y=0 имеет не более одного нуля. Это прямое применение теоремы сравнения Штурма в форме: если Q2>=Q1 на [alpha,beta] и u - ненулевое решение u''+Q1 u=0 с двумя соседними нулями alpha и beta, то всякое ненулевое решение v''+Q2 v=0 имеет нуль на (alpha,beta). Здесь Q1=q и Q2=0. Если бы u имело два соседних нуля alpha<beta, то решение v(x)=1 уравнения v''+0·v=0 должно было бы иметь нуль между alpha и beta, что невозможно. Значит второй нуль у ненулевого решения невозможен. Теперь докажем единственность краевой задачи. Если y1 и y2 имеют одинаковые значения в x1 и x2, то w=y1-y2 решает w''+q w=0 и w(x1)=w(x2)=0. При x1!=x2 это два нуля, поэтому w тождественно равно нулю; решения совпадают. Для существования пусть, для определенности, x1<x2. Возьмем решения v,u задач Коши v(x1)=1, v'(x1)=0 и u(x1)=0, u'(x1)=1. Они существуют на всей прямой, потому что уравнение линейное с непрерывным коэффициентом. По ключевому факту u не может иметь второго нуля, значит u(x2)!=0. Тогда функция y(x)=a v(x)+B u(x), где B=(b-a v(x2))/u(x2), удовлетворяет уравнению и условиям y(x1)=a, y(x2)=b. Существование и единственность доказаны.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "shooting_parameter",
+      "cauchy_problem"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "zero_location",
+      "nonoscillation"
+    ],
+    "goal": [
+      "prove_existence",
+      "prove_uniqueness"
+    ],
+    "keywords": [
+      "sturm_theorem",
+      "nonpositive_potential",
+      "two_point_boundary_value_problem",
+      "local_du_8",
+      "T3"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Главная идея - увидеть в краевой разрешимости следствие неосцилляции по Штурму; технически решение короткое.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_comparison",
+    "comparison",
+    "boundary_value",
+    "zero_location",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "8.pdf, первое задание, раздел III \"Теорема сравнения Штурма\", задача 3. Это и есть пользовательская T3; другой кодировки в PDF не обнаружено."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_theory_8_links",
+    "notes": [
+      "По просьбе пользователя T3 решена именно через теорему сравнения Штурма. В заметке источника указано соответствие PDF: первое задание, раздел III, задача 3."
+    ]
+  }
+}

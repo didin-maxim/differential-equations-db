@@ -1,0 +1,117 @@
+{
+  "id": "basic-mipt-variation-constants-ypp-plus-y",
+  "title": "Вариация постоянных для y''+y=1",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Методом вариации постоянных найти общее решение уравнения y''+y=1.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "wronskian",
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подставить простую ФСР в формулу вариации постоянных",
+      "text": "Для однородного уравнения y''+y=0 взять y1=cos x, y2=sin x, W=1 и применить стандартную формулу частного решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Однородное уравнение y''+y=0 имеет фундаментальную систему cos x, sin x, причем W=cos^2 x+sin^2 x=1. По формуле вариации постоянных для правой части f(x)=1 можно взять yp=-cos x int sin x dx+sin x int cos x dx. Получаем yp=-cos x(-cos x)+sin x sin x=1. Значит общее решение исходного уравнения равно y=C1 cos x+C2 sin x+1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "linear_inhomogeneous_equation"
+    ],
+    "methods": [
+      "variation_of_parameters",
+      "fundamental_system"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "variation_of_parameters",
+      "wronskian",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "basic-mipt-minimum",
+      "variation-of-constants",
+      "oral_exam",
+      "linear_second_order"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: нужно применить формулу вариации постоянных к уже известной ФСР; technical_score=2: интегралы элементарны и сокращаются до постоянного частного решения.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_4",
+    "linear_higher_order",
+    "variation_of_parameters",
+    "wronskian"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_basic_mipt_minimum",
+    "notes": [
+      "Добавлено в аудите базового минимума МФТИ: существующие задачи на вариацию постоянных были либо формульными, либо технически тяжелее минимального порога."
+    ]
+  }
+}

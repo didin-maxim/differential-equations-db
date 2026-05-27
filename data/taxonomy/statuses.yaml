@@ -1,0 +1,19 @@
+{
+  "statuses": [
+    {
+      "id": "ai_checked"
+    },
+    {
+      "id": "needs_human_review"
+    },
+    {
+      "id": "source_verified"
+    },
+    {
+      "id": "draft"
+    },
+    {
+      "id": "seed_links"
+    }
+  ]
+}

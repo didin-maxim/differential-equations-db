@@ -1,0 +1,109 @@
+{
+  "id": "mit-18034-pset03-one-sided-lipschitz-gronwall",
+  "title": "Одностороннее условие Липшица и оценка расстояния между решениями",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "mini_theorem"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(x) и g(x) - решения уравнения y'=F(x,y) в области, где для y1<y2 выполнено одностороннее условие Липшица F(x,y2)-F(x,y1)<=L(y2-y1). Доказать, что при x>a выполняется |f(x)-g(x)|<=exp(L(x-a)) |f(a)-g(a)|.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Применить Гронуолла к положительной части разности",
+      "text": "Полного двустороннего условия Липшица не требуется: когда f-g положительна, односторонняя оценка дает (f-g)'<=L(f-g). То же верно для положительной части g-f.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим h=f-g. В тех точках, где h>0, имеем h'=F(x,f)-F(x,g)<=L(f-g)=Lh. Значит верхняя правая производная положительной части h_+=max(h,0) удовлетворяет D^+ h_+<=L h_+. По неравенству Гронуолла h_+(x)<=e^{L(x-a)}h_+(a). Применяя тот же аргумент к g-f, получаем (-h)_+(x)<=e^{L(x-a)}(-h)_+(a). Так как |h|=h_++(-h)_+, отсюда следует |f(x)-g(x)|<=e^{L(x-a)}|f(a)-g(a)|. В частности, одинаковые начальные данные дают совпадение решений вправо от a.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "initial_value"
+    ],
+    "methods": [
+      "gronwall_estimate",
+      "one_sided_lipschitz"
+    ],
+    "objects": [
+      "continuous_dependence",
+      "uniqueness",
+      "differential_inequality"
+    ],
+    "goal": [
+      "prove_estimate"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 3",
+      "one-sided Lipschitz",
+      "Gronwall",
+      "continuous dependence"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: условие слабее обычного Липшица, надо перейти к положительной части разности; technical_score=3: после идеи остается стандартный Гронуолл.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "gronwall",
+    "differential_inequality",
+    "parameter_sensitivity_ivp",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #3, Problem 2; Solutions to Problemset 3, Problem 2"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: в базе есть Гронуолл и задачи на глобальное существование с односторонней оценкой, но нет отдельной карточки про односторонний Липшиц как замену симметричного условия для расстояния между двумя решениями.",
+      "Метка advanced_standard_course: это аккуратный мост за базовую формулировку Пикара-Линделёфа; используется стандартный аппарат курса, но условие тоньше обычного."
+    ]
+  }
+}

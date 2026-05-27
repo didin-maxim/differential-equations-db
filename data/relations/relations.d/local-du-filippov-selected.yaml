@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-filippov-239-gronwall",
+      "from": "gronwall-inequality",
+      "to": "local-du-filippov-239-one-sided-global-existence",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла превращает линейную оценку роста |y| на конечном отрезке в априорную ограниченность.",
+      "backward_text": "Задача Филиппова 239* показывает, как Гронуолл используется не для единственности, а для глобального продолжения решения.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-filippov-239-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "local-du-filippov-239-one-sided-global-existence",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Критерий продолжения объясняет, почему априорная ограниченность на каждом конечном отрезке исключает конечный правый конец максимального решения.",
+      "backward_text": "Филиппов 239* является содержательным применением критерия продолжения после оценки правой части через f(x,0) и f_y.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-filippov-240-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "local-du-filippov-240-radial-global-system",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "После радиальной оценки остается применить стандартный критерий продолжения до границы области.",
+      "backward_text": "Системная задача Филиппова 240* показывает, как критерий продолжения работает через функцию радиуса, а не через покоординатные формулы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-filippov-240-strong-stability-energy",
+      "from": "oral-exam-strong-10-symmetric-part-stability",
+      "to": "local-du-filippov-240-radial-global-system",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи начинают с производной квадрата нормы и превращают векторное поле в скалярную оценку.",
+      "backward_text": "В задаче Филиппова 240* та же радиальная энергия используется для продолжения решения, а не для экспоненциальной устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-filippov-763-dirichlet-spectrum",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "local-du-filippov-763-dirichlet-resonance-no-solution",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Собственные значения задачи Дирихле указывают, при каких параметрах однородная краевая задача имеет ненулевое решение.",
+      "backward_text": "Задача Филиппова 763* добавляет к спектру проверку совместимости неоднородной правой части в резонансном случае.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-filippov-763-periodic-linear-contrast",
+      "from": "periodic-linear-equation-zero-mean",
+      "to": "local-du-filippov-763-dirichlet-resonance-no-solution",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В скалярной периодической задаче совместимость выражается интегральным условием при нулевом среднем коэффициента.",
+      "backward_text": "В краевой задаче Филиппова 763* несовместимость проявляется как резонанс правой части с нечетной собственной модой Дирихле.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-filippov-1166-lotka-first-integral",
+      "from": "lotka-volterra-first-integral",
+      "to": "local-du-filippov-1166-intersection-first-integrals",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Пример Лотки-Вольтерры учит проверять, что величина сохраняется вдоль траектории.",
+      "backward_text": "Филиппов 1166 переносит эту идею на геометрию: пересечение двух сохраняющихся уровней становится инвариантной линией.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-filippov-1166-first-integral-ovals",
+      "from": "oral-exam-strong-10-first-integral-closed-ovals",
+      "to": "local-du-filippov-1166-intersection-first-integrals",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют уровень первого интеграла как инвариантное множество для траектории.",
+      "backward_text": "В задаче Филиппова 1166 инвариантность получается из двух первых интегралов и единственности общей линии уровней.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-filippov-127-gronwall",
+      "from": "gronwall-inequality",
+      "to": "local-du-filippov-127-monodromy-gronwall-bound",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Гронуолл дает оценку нормы решения линейной системы через интеграл нормы матрицы коэффициентов.",
+      "backward_text": "Оценка мультипликаторов в задаче Филиппова 127* является прямым операторным применением Гронуолла за один период.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-filippov-127-monodromy-periodic",
+      "from": "oral-exam-excellent-monodromy-periodic-forcing",
+      "to": "local-du-filippov-127-monodromy-gronwall-bound",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Критерий периодического решения использует спектр монодромии качественно: важен запрет мультипликатора 1.",
+      "backward_text": "Филиппов 127* использует ту же монодромию количественно, оценивая все мультипликаторы через норму коэффициента.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-filippov-132-strong-stability",
+      "from": "oral-exam-strong-10-symmetric-part-stability",
+      "to": "local-du-filippov-132-linear-stability-translation",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Критерий через симметрическую часть является примером устойчивости нулевого решения однородной линейной системы.",
+      "backward_text": "Филиппов 132 объясняет, почему для линейной системы устойчивость любого частного решения сводится к той же однородной системе отклонений.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-filippov-132-lyapunov-basic",
+      "from": "lyapunov-linearization-example",
+      "to": "local-du-filippov-132-linear-stability-translation",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Базовая задача с функцией Ляпунова проверяет устойчивость конкретного равновесия.",
+      "backward_text": "Филиппов 132 показывает другое явление: в линейной системе устойчивость переносится между всеми траекториями через уравнение для разности.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    }
+  ]
+}

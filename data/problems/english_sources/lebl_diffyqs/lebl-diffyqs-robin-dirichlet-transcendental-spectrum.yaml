@@ -1,0 +1,110 @@
+{
+  "id": "lebl-diffyqs-robin-dirichlet-transcendental-spectrum",
+  "title": "Спектр смешанной задачи с трансцендентным условием",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 5.1, упражнение 5.1.4",
+        "text": "Найти собственные значения и собственные функции задачи y''+lambda y=0, y(0)-y'(0)=0, y(1)=0.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Смешанное условие дает не целые частоты, а уравнение на частоту",
+      "text": "Для lambda=mu^2 положительная частота mu должна удовлетворять sin mu+mu cos mu=0. Нулевой и отрицательный случаи исключаются отдельно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть lambda=mu^2>0. Тогда y=A cos(mu x)+B sin(mu x). Условие y(0)-y'(0)=0 дает A-mu B=0, то есть A=mu B. Условие y(1)=0 дает B(mu cos mu+sin mu)=0. Для нетривиального решения нужно sin mu+mu cos mu=0; тогда собственная функция пропорциональна mu cos(mu x)+sin(mu x). При lambda=0 имеем y=Ax+B, условия дают B-A=0 и A+B=0, откуда A=B=0. При lambda=-nu^2<0 имеем y=A cosh(nu x)+B sinh(nu x), первое условие дает A=nu B, а второе B(nu cosh nu+sinh nu)=0; выражение в скобках положительно при nu>0. Значит отрицательных собственных значений нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value"
+    ],
+    "methods": [
+      "eigenvalue_condition",
+      "case_split_by_parameter_sign"
+    ],
+    "objects": [
+      "sturm_liouville",
+      "robin_boundary_condition",
+      "dirichlet_boundary_condition"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-5.1",
+      "mixed-boundary",
+      "transcendental-spectrum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: в отличие от чистой Дирихле-задачи спектр задается уравнением на частоту; technical_score=4: стандартный разбор трех знаков lambda.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "boundary_value",
+    "eigenvalues",
+    "sturm_liouville",
+    "shooting_parameter"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "exercise_adapted",
+      "status": "source_verified",
+      "note": "Раздел 5.1 Sturm-Liouville problems, Exercise 5.1.4; web: https://www.jirka.org/diffyqs/html/slproblems_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Добавлено как умеренное расширение базовой карточки Дирихле: собственные значения не выписываются целыми квадратами, а задаются простым уравнением."
+    ]
+  }
+}

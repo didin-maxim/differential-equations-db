@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-written-2014-system-jordan-seed",
+      "from": "linear-system-jordan-block",
+      "to": "local-du-written-2014-51-system-jordan-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовая карточка про жорданову клетку готовит к письменной задаче, где клетка возникает при нулевом собственном значении.",
+      "backward_text": "Экзаменационная система закрепляет тот же механизм на трехмерной матрице с присоединенным вектором.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-written-2014-functional-bvp",
+      "from": "shooting-linear-bvp",
+      "to": "local-du-written-2014-51-free-endpoint-functional",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Опыт с линейными краевыми задачами полезен после вывода уравнения Эйлера-Лагранжа и естественного краевого условия.",
+      "backward_text": "Вариационная задача показывает, как краевая задача появляется из функционала, причем один конец свободен.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-local-written-2014-constant-coeff-resonance",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "local-du-written-2014-51-constant-coeff-third-order",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Подбор частного решения для постоянных коэффициентов является базовой техникой перед третьим порядком и правой частью cos^2 x.",
+      "backward_text": "Письменная задача добавляет кратный корень характеристического многочлена и разложение cos^2 x.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-local-written-2014-equilibrium-linearization",
+      "from": "lyapunov-linearization-example",
+      "to": "local-du-written-2014-51-equilibrium-linearization",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют линеаризацию около равновесия и чтение характера по собственным значениям.",
+      "backward_text": "Экзаменационный пример требует сначала найти несколько равновесий из нелинейных функций ln и arcsin.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-local-written-2014-variable-coeff-euler",
+      "from": "euler-cauchy-equation",
+      "to": "local-du-written-2014-51-factorized-variable-coeff",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Степенная подстановка в уравнении Эйлера-Коши помогает распознавать степенной множитель x^3 в более сложном линейном уравнении.",
+      "backward_text": "Письменная задача показывает вариант, где после вынесения x^3 остается простое уравнение для новой функции.",
+      "status": "ai_checked",
+      "confidence": 0.76
+    },
+    {
+      "id": "rel-local-written-2014-characteristics-first-integral",
+      "from": "lotka-volterra-first-integral",
+      "to": "local-du-written-2014-51-characteristics-pde",
+      "type": "teaches_before",
+      "distance": 3,
+      "forward_text": "Поиск сохраняющихся комбинаций вдоль траекторий подготавливает к методу характеристик для уравнения первого порядка.",
+      "backward_text": "Задача на характеристики использует тот же язык первых интегралов, но для вспомогательной системы ОДУ в пространстве (x,y,z).",
+      "status": "ai_checked",
+      "confidence": 0.68
+    },
+    {
+      "id": "rel-local-written-2014-nonlinear-total-derivative",
+      "from": "exact-equation-potential",
+      "to": "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навык узнавать полную производную в дифференциальной форме помогает увидеть (yy')' в нелинейной задаче Коши.",
+      "backward_text": "Экзаменационная задача применяет похожее распознавание, но к выражению второго порядка.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-local-written-2014-lagrange-clairaut",
+      "from": "clairaut-envelope",
+      "to": "local-du-written-2014-51-lagrange-singular-curves",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Классическая огибающая Клеро является ближайшей подготовкой к поиску особых решений через p=y'.",
+      "backward_text": "Письменная задача является более вычислительным вариантом: регулярное семейство парабол имеет две огибающие.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-written-2007-sturm-comparison",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "local-du-written-2007-81-sturm-zero",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Сравнение Штурма и лагранжево тождество напрямую используются для гарантии нуля решения.",
+      "backward_text": "Задача 2007-2008 дает письменный экзаменационный вариант той же идеи на конкретном отрезке.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-written-2011-parameter-variation",
+      "from": "linear-first-order-formula",
+      "to": "local-du-written-2011-21-parameter-variations",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Формула для линейного уравнения первого порядка нужна после дифференцирования задачи Коши по параметру.",
+      "backward_text": "Параметрическая задача показывает, как дважды возникают неоднородные линейные уравнения первого порядка.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

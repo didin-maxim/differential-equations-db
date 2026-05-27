@@ -1,0 +1,115 @@
+{
+  "id": "oral-above-three-phase-line-semistable",
+  "title": "Полуустойчивость на фазовой прямой",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для автономного уравнения y'=y^2(1-y) найти равновесия и определить их устойчивость по фазовой прямой.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-semistable-signs",
+      "title": "Кратный корень может дать полуустойчивость",
+      "text": "Нужно прочитать знаки y^2(1-y) на интервалах и не спутать двойное равновесие y=0 с обычной сменой знака.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесия задаются y^2(1-y)=0, то есть y=0 и y=1. При y<0 правая часть положительна, при 0<y<1 тоже положительна, а при y>1 отрицательна. Значит слева от 0 стрелки направлены к 0, а справа от 0 - от 0 к 1. Поэтому y=0 устойчиво только с левой стороны и не является устойчивым по Ляпунову в обычном двухстороннем смысле. В точке y=1 стрелки направлены к равновесию с обеих сторон, значит это асимптотически устойчивое равновесие.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative"
+    ],
+    "methods": [
+      "phase_line_signs",
+      "sign_analysis"
+    ],
+    "objects": [
+      "autonomous_equation",
+      "equilibrium",
+      "stability"
+    ],
+    "goal": [
+      "classify",
+      "qualitative_conclusion"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "phase-line",
+      "semistability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: стандартная фазовая прямая с ловушкой двойного корня; technical_score=3: только анализ знаков.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "phase_line",
+    "stability",
+    "sign_analysis"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на фазовую прямую и полуустойчивое равновесие."
+    ]
+  }
+}

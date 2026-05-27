@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-romanko-sturm-theorem-short-interval-bvp",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-romanko-sturm-short-interval-bvp",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема сравнения Штурма используется, чтобы запретить два нуля решения на коротком отрезке.",
+      "backward_text": "Короткая краевая задача показывает, как сравнение Штурма превращается в критерий обратимости двухточечной задачи.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-romanko-shooting-short-interval-bvp",
+      "from": "shooting-linear-bvp",
+      "to": "local-du-romanko-sturm-short-interval-bvp",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих задачах правое краевое условие достигается выбором начального наклона.",
+      "backward_text": "Сравнение Штурма объясняет, почему функция попадания в этой краевой задаче не вырождается.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-romanko-energy-oscillator-first-integral-center",
+      "from": "energy-integral-oscillator",
+      "to": "local-du-romanko-first-integral-center",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют сохраняющуюся величину для описания фазовых траекторий.",
+      "backward_text": "Здесь первый интеграл не только сохраняется, но и доказывает центр через замкнутые уровни около равновесия.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-romanko-basic-pde-two-invariants",
+      "from": "local-du-deficit-first-order-pde-characteristics",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Базовая задача объясняет характеристики и характер начальных данных для линейного ЧП первого порядка.",
+      "backward_text": "Здесь тот же метод требует двух независимых инвариантов характеристической системы в трех переменных.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-romanko-variational-higher-vs-two-functions",
+      "from": "local-du-romanko-variational-higher-derivative",
+      "to": "local-du-romanko-variational-two-functions",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Производные высшего порядка повышают порядок уравнения Эйлера-Пуассона.",
+      "backward_text": "Несколько неизвестных функций дают систему уравнений Эйлера без повышения порядка каждой компоненты.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-romanko-isoperimetric-linear-to-normalized-energy",
+      "from": "local-du-romanko-isoperimetric-linear-constraint",
+      "to": "local-du-romanko-isoperimetric-energy-normalization",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах интегральная связь вводится через множитель Лагранжа.",
+      "backward_text": "Нормировка L2 превращает тот же лагранжев подход в спектральную задачу Штурма-Лиувилля.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-romanko-dirichlet-spectrum-isoperimetric-energy",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "local-du-romanko-isoperimetric-energy-normalization",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Первое собственное значение задачи Дирихле задает минимум отношения Рэлея.",
+      "backward_text": "Изопериметрическая задача показывает вариационный смысл первого собственного значения.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-romanko-variational-threshold-jacobi-maximum",
+      "from": "local-du-deficit-variational-quadratic-threshold",
+      "to": "local-du-romanko-jacobi-strict-maximum",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Квадратичная форма второй вариации и спектральный порог решают вопрос о характере экстремума.",
+      "backward_text": "Условие Якоби является локальной формой той же спектральной проверки знака второй вариации.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-romanko-isoperimetric-energy-jacobi",
+      "from": "local-du-romanko-isoperimetric-energy-normalization",
+      "to": "local-du-romanko-jacobi-strict-maximum",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Минимум энергии опирается на положительный первый спектральный порог Дирихле.",
+      "backward_text": "Строгий максимум возникает при отрицательной второй вариации и отсутствии сопряженной точки до правого конца.",
+      "status": "ai_checked",
+      "confidence": 0.79
+    }
+  ]
+}

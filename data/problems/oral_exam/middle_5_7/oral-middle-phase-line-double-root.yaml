@@ -1,0 +1,120 @@
+{
+  "id": "oral-middle-phase-line-double-root",
+  "title": "Фазовая прямая с полуустойчивым кратным равновесием",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Для автономного уравнения y'=y(y-1)^2 найти положения равновесия и определить их устойчивость по фазовой прямой.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Кратный корень не меняет знак правой части",
+      "text": "Знак y(y-1)^2 совпадает со знаком y вне точки y=1. Поэтому около y=1 стрелки направлены в одну сторону, а не к равновесию с двух сторон.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесия задаются нулями правой части: y=0 и y=1. На интервале (-infty,0) имеем y'<0, на (0,1) имеем y'>0, на (1,infty) снова y'>0. Значит около y=0 стрелки слева уходят от нуля, а справа уходят вправо от нуля; равновесие y=0 неустойчиво. Около y=1 слева стрелки направлены к 1, а справа направлены от 1. Поэтому y=1 устойчиво только с левой стороны и не является устойчивым по Ляпунову: начальное значение чуть больше 1 сразу уходит вправо от равновесия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "autonomous"
+    ],
+    "methods": [
+      "phase_line_signs",
+      "sign_analysis"
+    ],
+    "objects": [
+      "equilibria",
+      "semistability",
+      "multiple_root"
+    ],
+    "goal": [
+      "classify_stability"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "phase_line",
+      "stability",
+      "double_root"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: стандартная фазовая прямая с ловушкой кратного корня и односторонней устойчивости; technical_score=4: только знаки многочлена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "phase_line",
+    "stability",
+    "sign_analysis",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; проверена поиском против существующей задачи на фазовую прямую с простыми корнями."
+    ]
+  }
+}

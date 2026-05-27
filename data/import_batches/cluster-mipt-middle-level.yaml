@@ -1,0 +1,23 @@
+{
+  "id": "cluster-mipt-middle-level",
+  "title": "Аудит и точечное пополнение среднего уровня МФТИ",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "mipt_middle_level",
+    "exam_score_5_7"
+  ],
+  "problem_ids": [
+    "mipt-middle-maximal-solution-continuation",
+    "mipt-middle-cauchy-formula-variable-system",
+    "mipt-middle-liouville-phase-volume",
+    "mipt-middle-first-integral-criterion",
+    "mipt-middle-power-series-recurrence"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка закрывает не вычислительные шаблоны, а стандартные понимательные узлы уровня хор(5)-хор(7): продолжение, формула Коши для переменных систем, фазовый объем, критерий первого интеграла и степенные ряды.",
+    "Не добавлялись новые Бернулли/Риккати/постоянные коэффициенты, потому что эти блоки уже насыщены и имеют высокий риск дублей.",
+    "Все карточки имеют idea_score 5..6, невысокий technical_score и теги middle_student_check, mipt_core, standard_course_methods, exam_score_5 или exam_score_6."
+  ]
+}

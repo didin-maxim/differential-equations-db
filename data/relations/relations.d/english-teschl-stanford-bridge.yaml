@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-english-bridge-gronwall-to-continuous-dependence",
+      "from": "gronwall-inequality",
+      "to": "teschl-stanford-bridge-continuous-dependence-gronwall",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Непрерывная зависимость решений получается прямым применением интегрального неравенства Гронуолла.",
+      "backward_text": "Карточка зависимости показывает одно из главных применений Гронуолла в теории задачи Коши.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-english-bridge-continuous-to-flow-variational",
+      "from": "teschl-stanford-bridge-continuous-dependence-gronwall",
+      "to": "teschl-stanford-bridge-flow-derivative-variational-equation",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Дифференцируемость потока по начальным данным усиливает непрерывную зависимость и использует тот же контроль остатков через Гронуолла.",
+      "backward_text": "Вариационное уравнение является следующим шагом после непрерывной зависимости: оно описывает первую производную зависимости.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-english-bridge-flow-to-regular-perturbation",
+      "from": "teschl-stanford-bridge-flow-derivative-variational-equation",
+      "to": "teschl-stanford-bridge-regular-perturbation-first-correction",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки получают линейное уравнение дифференцированием решения по параметру: начальной точке или малому параметру поля.",
+      "backward_text": "Регулярное возмущение является неоднородной версией вариационного уравнения вдоль базовой траектории.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-english-bridge-written-parameter-to-regular-perturbation",
+      "from": "local-du-written-2011-21-parameter-variations",
+      "to": "teschl-stanford-bridge-regular-perturbation-first-correction",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Письменная задача является вычислительным частным случаем дифференцирования задачи Коши по параметру.",
+      "backward_text": "Общая карточка объясняет, почему последовательные производные по параметру в экзаменационной задаче удовлетворяют линейным уравнениям.",
+      "status": "ai_checked",
+      "confidence": 0.87
+    },
+    {
+      "id": "rel-english-bridge-monodromy-to-floquet-stability",
+      "from": "teschl-stanford-bridge-monodromy-period-iterate",
+      "to": "teschl-stanford-bridge-floquet-multiplier-stability",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Критерий устойчивости использует равенство x(nT)=M^n x0, то есть итерацию матрицы монодромии.",
+      "backward_text": "Устойчивость по мультипликаторам является главным качественным применением базовой монодромии.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-english-bridge-liouville-to-floquet-determinant",
+      "from": "liouville-wronskian-formula",
+      "to": "teschl-stanford-bridge-floquet-determinant-liouville",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля для определителя фундаментальной матрицы сразу дает произведение мультипликаторов Флоке.",
+      "backward_text": "Floquet-детерминантная карточка интерпретирует стандартную формулу Лиувилля для периодической системы.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-english-bridge-monodromy-to-floquet-determinant",
+      "from": "teschl-stanford-bridge-monodromy-period-iterate",
+      "to": "teschl-stanford-bridge-floquet-determinant-liouville",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Перед произведением мультипликаторов нужно ввести матрицу монодромии как X(T).",
+      "backward_text": "Детерминантная формула является первым численным инвариантом матрицы монодромии.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-english-bridge-monodromy-to-periodic-forcing-existing",
+      "from": "teschl-stanford-bridge-monodromy-period-iterate",
+      "to": "oral-exam-excellent-monodromy-periodic-forcing",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Периодическое неоднородное решение строится как неподвижная точка отображения за период, заданного монодромией.",
+      "backward_text": "Устная задача применяет базовую монодромию к неоднородной периодической системе.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-english-bridge-dirichlet-eigen-to-phase",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "teschl-stanford-bridge-sturm-liouville-phase-eigenvalue",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Простая задача Дирихле на отрезке готовит язык собственных значений перед фазовым критерием.",
+      "backward_text": "Фазовый критерий обобщает shooting-подход к регулярной задаче Штурма-Лиувилля.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-english-bridge-phase-to-zero-count",
+      "from": "teschl-stanford-bridge-sturm-liouville-phase-eigenvalue",
+      "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Счет нулей использует критерий theta(b,lambda)=n pi и перевод нулей решения в кратные значения фазового угла.",
+      "backward_text": "Теорема о n-1 нулях является спектральным применением фазового критерия собственных значений.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-english-bridge-sturm-separation-to-zero-count",
+      "from": "local-du-standard-sturm-separation-zeros",
+      "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Разделение нулей является базовой штурмовской интуицией перед полным счетом нулей собственных функций.",
+      "backward_text": "Фазовый счет нулей уточняет штурмовскую картину для всей спектральной последовательности.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-english-bridge-prufer-bessel-to-sturm-phase",
+      "from": "local-du-8-t6b-bessel-zero-spacing-prufer",
+      "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют угол Прюфера для контроля нулей линейного уравнения второго порядка.",
+      "backward_text": "Счет нулей в задаче Штурма-Лиувилля показывает спектральную версию той же угловой техники.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

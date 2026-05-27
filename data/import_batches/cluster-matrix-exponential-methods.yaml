@@ -1,0 +1,25 @@
+{
+  "id": "cluster-matrix-exponential-methods",
+  "title": "Кластерный аудит: матричная экспонента как метод",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "matrix_exponential",
+    "linear_systems",
+    "trace_determinant",
+    "linear_recurrence"
+  ],
+  "problem_ids": [
+    "cluster-matrix-exp-inverse-by-negative-time",
+    "cluster-matrix-exp-recover-a-derivative-zero",
+    "cluster-matrix-exp-spectrum-from-modes",
+    "cluster-matrix-exp-det-trace-shortcut",
+    "cluster-matrix-exp-discrete-rotation-recurrence"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавлена после аудита кластера matrix-exponential-methods.",
+    "Все новые карточки являются self-authored/model и ссылаются на src-cluster-matrix-exponential-methods-audit.",
+    "Цель пачки - закрыть свойства e^{At}: обратный ход времени, производная в нуле, спектральное чтение, det через trace и дискретный аналог через A^n."
+  ]
+}

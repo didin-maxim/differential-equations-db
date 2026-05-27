@@ -1,0 +1,117 @@
+{
+  "id": "oral-middle-bernoulli-log-term",
+  "title": "Уравнение Бернулли с логарифмом после замены",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Решить на промежутках x>0 уравнение y' + y/x = x y^3. Не забыть указать особое решение.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "bernoulli_equation",
+          "linear_first_order_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Замена Бернулли z=y^(-2)",
+      "text": "При n=3 деление на y^3 и замена z=y^(-2) сводят уравнение к линейному. Нулевое решение нужно вынести отдельно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Решение y=0 подходит. На промежутке, где y не обращается в нуль, положим z=y^(-2). Делим уравнение на y^3: y'/y^3 + (1/x)y^(-2)=x. Так как z'=-2y'/y^3, получаем z' - (2/x)z = -2x. Интегрирующий множитель равен x^(-2), поэтому (z x^(-2))'=-2/x. Значит z/x^2=C-2 ln x, то есть z=x^2(C-2 ln x). Возвращаясь к y, получаем y=±1/(x sqrt(C-2 ln x)) на тех промежутках, где выражение под корнем положительно, а также отдельное решение y=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "bernoulli"
+    ],
+    "methods": [
+      "bernoulli_substitution",
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "linear_first_order",
+      "singular_solution",
+      "logarithmic_term"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "bernoulli",
+      "linearization",
+      "logarithm"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "idea_score=6: стандартная замена Бернулли с обязательным учетом нулевого решения и области x>0; technical_score=5: линейное уравнение дает логарифм.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "bernoulli",
+    "linear_first_order",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; отличается от существующей seed-задачи Бернулли коэффициентом, областью x>0 и учетом логарифма."
+    ]
+  }
+}

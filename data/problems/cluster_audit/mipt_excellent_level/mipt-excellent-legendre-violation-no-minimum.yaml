@@ -1,0 +1,121 @@
+{
+  "id": "mipt-excellent-legendre-violation-no-minimum",
+  "title": "Нарушение условия Лежандра без громоздкого счета",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam",
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Модельная задача уровня отличника",
+        "text": "Для функционала J[y]=int_0^pi (y^2-(y')^2) dx на классе C^1-функций с y(0)=y(pi)=0 покажите, что y=0 является экстремалью, но не является слабым локальным минимумом. Объясните связь с условием Лежандра.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Достаточно одной допустимой малой вариации",
+      "text": "Нулевая функция зануляет первую вариацию, но коэффициент при (h')^2 во второй вариации отрицателен. Высокочастотная синусоида делает вторую вариацию отрицательной при сколь угодно малой норме.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Уравнение Эйлера-Лагранжа для F=y^2-(y')^2 имеет вид F_y-d/dx F_{y'}=2y+2y''=0, и y=0 с закрепленными концами ему удовлетворяет. Теперь возьмем допустимую вариацию h(x)=sin 2x. Для y_epsilon=epsilon h имеем y_epsilon(0)=y_epsilon(pi)=0 и y_epsilon -> 0 при epsilon -> 0 в C^1. Но J[y_epsilon]=epsilon^2 int_0^pi (sin^2 2x-4 cos^2 2x) dx=epsilon^2(pi/2-2pi)=-3pi epsilon^2/2<0, тогда как J[0]=0. Следовательно, в любой малой окрестности нуля есть допустимая функция с меньшим значением J, поэтому слабого локального минимума нет. Условие Лежандра тоже предупреждает об этом: F_{y'y'}=-2<0, а для слабого минимума необходимо F_{y'y'}>=0 вдоль экстремали.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "boundary_value"
+    ],
+    "methods": [
+      "euler_lagrange",
+      "second_variation",
+      "legendre_condition"
+    ],
+    "objects": [
+      "weak_local_extremum",
+      "quadratic_form",
+      "admissible_variation"
+    ],
+    "goal": [
+      "disprove_minimum",
+      "classify_extremum"
+    ],
+    "keywords": [
+      "mipt_excellent_level",
+      "legendre_condition",
+      "second_variation",
+      "no_minimum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "Идея 8: задача проверяет не вычисление уравнения Эйлера, а смысл необходимого условия Лежандра и умение опровергнуть минимум одной пробной вариацией. Техника короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "advanced_standard_course",
+    "complete_proof",
+    "variational_calculus",
+    "euler_lagrange",
+    "second_variation",
+    "legendre_condition",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как модельная проверка условия Лежандра и второй вариации без тяжелого интегрирования."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_mipt_excellent_level_links",
+    "notes": [
+      "Не дублирует теоретическую карточку Лежандра-Якоби: это короткое экзаменационное применение с явной отрицательной вариацией.",
+      "Верхняя граница курса не нарушена: используется только первая и вторая вариация в простейшей задаче."
+    ]
+  }
+}

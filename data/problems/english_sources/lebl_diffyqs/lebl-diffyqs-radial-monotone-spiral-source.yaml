@@ -1,0 +1,116 @@
+{
+  "id": "lebl-diffyqs-radial-monotone-spiral-source",
+  "title": "Нелинейный член превращает линейный центр в источник",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 8.2, упражнение 8.2.5",
+        "text": "Для системы x'=y, y'=y^3-x показать, что вдоль любой ненулевой траектории расстояние от начала координат не убывает. Сделать вывод о поведении около нуля.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "stability",
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Проверить радиальную монотонность вместо доверия линеаризации",
+      "text": "Линейная часть дает центр, но производная V=x^2+y^2 равна 2y^4. Это запрещает приближение к нулю и показывает источник спирального типа.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим V=x^2+y^2. Тогда V'=2xx'+2yy'=2xy+2y(y^3-x)=2y^4>=0. Если траектория не является равновесием, V не может убывать. Более того, при y=0 и x != 0 имеем y'=-x, так что траектория сразу уходит в область y != 0, где V начинает расти. Линеаризация в нуле равна x'=y, y'=-x и дает центр, но нелинейный член y^3 создает радиальный отток. Поэтому нуль ведет себя как неустойчивый спиральный источник, хотя это не следует из одной линейной части.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "lyapunov_function",
+      "energy_monotonicity",
+      "linearization"
+    ],
+    "objects": [
+      "nonhyperbolic_equilibrium",
+      "center_linearization",
+      "spiral_source"
+    ],
+    "goal": [
+      "prove_instability",
+      "interpret"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-8.2",
+      "center-problem",
+      "radial-monotonicity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: карточка показывает опасность линейного центра и роль функции Ляпунова с обратным знаком; technical_score=3: производная V короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "energy_method",
+    "equilibrium_linearization",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "exercise_adapted",
+      "status": "source_verified",
+      "note": "Раздел 8.2, Exercise 8.2.5; web: https://www.jirka.org/diffyqs/html/nlinstability_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Карточка закрывает качественную идею 'центр в линеаризации требует нелинейной проверки'."
+    ]
+  }
+}

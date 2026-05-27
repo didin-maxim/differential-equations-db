@@ -1,0 +1,111 @@
+{
+  "id": "resit-pass-3-separable-exponential-growth",
+  "title": "Простая задача Коши с разделяющимися переменными",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить задачу Коши y'=xy, y(0)=2.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "separable_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разделить переменные",
+      "text": "Нужно распознать вид g(y)dy=f(x)dx и не потерять начальное условие.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как y(0)=2, искомое решение не равно нулю около 0. Делим на y: y'/y=x. Интегрируя, получаем ln|y|=x^2/2+C. Значит y=Ce^{x^2/2}. Из y(0)=2 следует C=2. Ответ: y=2e^{x^2/2}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "separate_variables"
+    ],
+    "objects": [
+      "separable",
+      "initial_value_problem",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "resit-pass-3",
+      "oral_exam",
+      "separable",
+      "initial_value_problem"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 2,
+    "idea_score": 2,
+    "technical_score": 2,
+    "comment": "idea_score=2: прямое распознавание разделяющегося уравнения; technical_score=2: один интеграл и подстановка начального условия.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "resit_exam",
+    "exam_score_3",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "separable"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_resit_pass_3_links",
+    "notes": [
+      "Проверка по базе перед добавлением: точной карточки y'=xy, y(0)=2 не найдено; связана с существующей карточкой на разделение переменных."
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "id": "lebl-diffyqs-transport-signal-shift",
+  "title": "Перенос начального профиля вдоль характеристик",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 1.9, пример 1.9.1",
+        "text": "Пусть alpha - постоянная. Решить линейное однородное уравнение alpha u_x+u_t=0 с начальным условием u(x,0)=f(x). Объяснить геометрически, куда движется профиль f.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Характеристика несет значение u без изменения",
+      "text": "В координатах xi=x-alpha t, s=t производная по s равна нулю. Значит начальный профиль не искажается, а только сдвигается вдоль прямых x-alpha t=const.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Введем xi=x-alpha t и s=t. Тогда u_x=u_xi, а u_t=-alpha u_xi+u_s. Уравнение alpha u_x+u_t=0 превращается в u_s=0. Поэтому u=A(xi)=A(x-alpha t). Начальное условие дает A(x)=f(x), следовательно u(x,t)=f(x-alpha t). Если alpha>0, один и тот же уровень профиля находится при x=xi+alpha t, то есть профиль движется вправо со скоростью alpha; при alpha<0 он движется влево.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "transport_equation",
+      "noncharacteristic_data"
+    ],
+    "goal": [
+      "solve",
+      "interpret"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-1.9",
+      "transport-equation",
+      "characteristics",
+      "profile-shift"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: минимальная геометрия характеристик как переноса начального профиля; technical_score=2: вычисления сводятся к одной замене.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "mipt_core",
+    "exam_score_4",
+    "complete_proof",
+    "low_technical",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "transport_equation",
+    "noncharacteristic_curve",
+    "characteristic_cauchy_data",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "textbook_example",
+      "status": "source_verified",
+      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.1; web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Добавлено как минимальный представитель транспортной геометрии перед более тонкими задачами Коши на характеристиках."
+    ]
+  }
+}

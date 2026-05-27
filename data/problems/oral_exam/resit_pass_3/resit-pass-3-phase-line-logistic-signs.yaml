@@ -1,0 +1,117 @@
+{
+  "id": "resit-pass-3-phase-line-logistic-signs",
+  "title": "Фазовая прямая для автономного уравнения",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для уравнения y'=y(1-y) найти равновесия, определить их устойчивость по фазовой прямой и указать, куда стремится решение при y(0)=2.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Прочитать знаки на интервалах",
+      "text": "Нули правой части делят фазовую прямую, а знак f(y) показывает направление движения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесия задаются y(1-y)=0, то есть y=0 и y=1. При y<0 правая часть отрицательна, на (0,1) положительна, при y>1 отрицательна. Поэтому стрелки направлены от 0 и к 1: равновесие y=0 неустойчиво, а y=1 устойчиво. Если y(0)=2, решение убывает и, не пересекая равновесие y=1, стремится к 1 при t -> +∞.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "phase_line_signs"
+    ],
+    "objects": [
+      "autonomous_equation",
+      "phase_line",
+      "equilibrium",
+      "stability",
+      "mipt_core"
+    ],
+    "goal": [
+      "analyze"
+    ],
+    "keywords": [
+      "resit-pass-3",
+      "oral_exam",
+      "phase_line",
+      "stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 2,
+    "comment": "idea_score=3: стандартная фазовая прямая; technical_score=2: только знаки квадратного многочлена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "resit_exam",
+    "exam_score_3",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "phase_line",
+    "stability",
+    "sign_analysis"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_resit_pass_3_links",
+    "notes": [
+      "Проверка по базе перед добавлением: точной карточки на фазовую прямую y'=y(1-y) не найдено; существующая фазовая задача использует кубическую правую часть."
+    ]
+  }
+}

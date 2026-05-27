@@ -1,0 +1,116 @@
+{
+  "id": "trench-bvp-dirichlet-resonance-sine-condition",
+  "title": "Резонанс задачи Дирихле для y''+y=F",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "english_source"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача",
+        "text": "Для краевой задачи y''+y=F(x), y(0)=y(pi)=0 найти необходимое и достаточное условие разрешимости. Объяснить, почему при F=1 решений нет, а при F=sin 2x решений бесконечно много.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Правая часть должна быть ортогональна резонансной моде",
+      "text": "Однородная задача имеет собственную функцию sin x, поэтому совместность неоднородной задачи проверяется одним интегралом против sin x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Однородное уравнение y''+y=0 имеет решения sin x и cos x, но краевые условия Дирихле выполняет только ненулевая мода sin x. По резонансной альтернативе условие совместности имеет вид int_0^pi F(x) sin x dx=0. Если F=1, интеграл равен 2, значит решений нет. Если F=sin 2x, то int_0^pi sin 2x sin x dx=2 int_0^pi sin^2 x cos x dx=0, поэтому решения существуют. Так как sin x лежит в ядре однородной краевой задачи, вместе с одним решением y0 все функции y0+C sin x тоже являются решениями; следовательно, решений бесконечно много.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "resonance_condition",
+      "fredholm_alternative",
+      "orthogonality"
+    ],
+    "objects": [
+      "eigenfunction",
+      "kernel",
+      "solvability_condition"
+    ],
+    "goal": [
+      "prove_existence",
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "dirichlet_resonance",
+      "orthogonality_condition"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Главная ценность - не вычисление спектра, а диагностика совместности в резонансе.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "resonance",
+    "fredholm_alternative",
+    "eigenvalues",
+    "sturm_liouville",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_example",
+      "status": "source_verified",
+      "note": "Trench, Section 13.1, Example 13.1.7, referring back to Examples 13.1.2 and 13.1.3."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Оставлена как минимальная конкретизация резонансной альтернативы; это не новый шаблон поиска собственных значений."
+    ]
+  }
+}

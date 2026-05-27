@@ -1,0 +1,112 @@
+{
+  "id": "ru-misc-spb-itmo-2018-6",
+  "title": "Энергия для y'' + (2x + cos x)y' + y = 0",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что каждое решение уравнения y'' + (2x + cos x)y' + y = 0, определенное на всей вещественной оси, ограничено.",
+        "source_ids": [
+          "src-spb-student-olympiad-itmo"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Построить энергию y^2 + (y')^2",
+      "text": "Умножение на 2y' дает производную энергии. Коэффициент при (y')^2 имеет нужный знак на правом хвосте и противоположный знак на левом хвосте, поэтому энергия не может расти к бесконечностям.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Обозначим E(x) = y(x)^2 + y'(x)^2. Умножая уравнение на 2y', получаем 2y'y'' + 2(2x + cos x)y'^2 + 2yy' = 0, то есть E'(x) = -2(2x + cos x)y'(x)^2. Для x >= 0 коэффициент 2x + cos x положителен: функция 2x + cos x возрастает на [0,+∞), потому что ее производная 2 - sin x >= 1, и в нуле равна 1. Следовательно E'(x) <= 0 при x >= 0, и E(x) <= E(0) на правой полуоси. Для x <= -1 имеем 2x + cos x <= 2x + 1 <= -1, значит E'(x) >= 0. Поэтому при движении слева направо энергия возрастает на (-∞,-1], а значит для x <= -1 выполнено E(x) <= E(-1). На компактном отрезке [-1,0] функция E непрерывна и потому ограничена. Итак, E ограничена на всей прямой. Отсюда |y(x)| <= sqrt(E(x)), значит y ограничена.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "qualitative",
+      "olympiad"
+    ],
+    "methods": [
+      "energy_monotonicity"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "energy_method",
+      "lyapunov",
+      "boundedness",
+      "global_solution"
+    ],
+    "goal": [
+      "prove",
+      "boundedness"
+    ],
+    "keywords": [
+      "СПб ИТМО 2018 6",
+      "энергетический метод",
+      "линейное уравнение второго порядка",
+      "ограниченность"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "Идейная сложность 8: энергия стандартна, но нужно использовать ее монотонность отдельно на двух бесконечных хвостах. Техническая сложность 5: счет короткий, с аккуратным анализом знака коэффициента.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "energy_method",
+    "lyapunov",
+    "boundedness",
+    "global_solution",
+    "advanced_standard_course",
+    "olympiad_above_exam"
+  ],
+  "sources": [
+    {
+      "source_id": "src-spb-student-olympiad-itmo",
+      "role": "original_problem",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Решение самодостаточно; существующие карточки по энергетическому методу использованы только как навигационные связи."
+    ]
+  }
+}

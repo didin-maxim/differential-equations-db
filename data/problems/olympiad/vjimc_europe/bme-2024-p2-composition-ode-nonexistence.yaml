@@ -1,0 +1,113 @@
+{
+  "id": "bme-2024-p2-composition-ode-nonexistence",
+  "title": "BME 2024 P2: невозможность положительного решения f'=f∘f",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f:R_+->R_+ дифференцируема. Может ли выполняться равенство f'=f∘f? Сначала покажите, что в таком случае существовала бы точка x0>0, для которой f(x0)-x0>1, а затем докажите невозможность такого уравнения.",
+        "source_ids": [
+          "src-bme-math-contest"
+        ],
+        "status": "source_statement_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "После выхода за диагональ использовать обратную функцию",
+      "text": "Из f'=f(f)>0 следует монотонность. Как только f(x)>x+1, обратная функция h=f^{-1} удовлетворяет h'=1/f и растет не быстрее логарифма; это заставляет f расти не медленнее экспоненты, а затем уравнение f'=f(f) дает конечный взрыв.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что такая f существует. Тогда f'(x)=f(f(x))>0, так что f строго возрастает. Сначала покажем, что f(x)-x становится больше 1. Если бы f была ограничена, то она имела бы конечный предел L>0, а тогда f'(x)=f(f(x)) стремилась бы к f(L)>0, что противоречит сходимости f. Значит f неограничена. Если на некотором хвосте было бы f'(x)<=1, то для неограниченного множества y=f(x) выполнялось бы f(y)=f'(x)<=1; но при больших y по возрастанию f(y)>1. Противоречие. Поэтому найдется x1 с f'(x1)>1. Так как f' возрастает на [x1,∞), получаем f(x)-x->∞; в частности, есть X, после которого f(x)>x+1. Рассмотрим обратную функцию h=f^{-1} на хвосте области значений. Для y достаточно большого h'(y)=1/f(y)<1/(y+1), поскольку y также лежит на хвосте и f(y)>y+1. Интегрируя, получаем h(y)<=C+ln(y+1). Подставляя y=f(x), имеем x=h(f(x))<=C+ln(f(x)+1), то есть f(x)>=c e^x на некотором хвосте. Тогда f'(x)=f(f(x))>=c exp(f(x)) для всех достаточно больших x. Но из y'=c exp(y) следует конечный взрыв: производная exp(-f(x)) равна -f'(x)exp(-f(x)) и на хвосте не превосходит отрицательной постоянной. Это невозможно для функции, заданной на всем R_+. Следовательно, такой f не существует.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "functional_differential_equation",
+      "first_order"
+    ],
+    "methods": [
+      "monotonicity",
+      "inverse_function",
+      "blow_up_comparison"
+    ],
+    "objects": [
+      "composition",
+      "positive_solution",
+      "global_nonexistence"
+    ],
+    "goal": [
+      "disprove",
+      "qualitative_property"
+    ],
+    "keywords": [
+      "BME Mathematical Contest 2024 Problem 2",
+      "f'=f o f",
+      "functional differential equation",
+      "finite blow-up"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 11,
+    "technical_score": 7,
+    "comment": "Идея 11: композиционное уравнение нужно превратить в глобальный рост через обратную функцию. Техника 7: несколько монотонных сравнений и финальный blow-up аргумент.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "blow_up",
+    "sign_analysis",
+    "beyond_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-bme-math-contest",
+      "role": "official_statement",
+      "status": "source_verified",
+      "url": "https://math.bme.hu/~mweiner/contest2024.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad-vjimc-europe",
+    "notes": [
+      "Родственно Putnam 2010 B5, но область R_+->R_+ и подсказка про f(x)-x>1 ведут к другому доказательству через обратную функцию и конечный взрыв."
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title>Tangency after vertical scaling</title>
+  <desc>A dashed scaled copy of one graph touches the other graph at a marked point.</desc>
+  <rect width="640" height="420" fill="#fbfaf7"/>
+  <line x1="60" y1="330" x2="590" y2="330" stroke="#454545" stroke-width="2"/>
+  <line x1="90" y1="370" x2="90" y2="45" stroke="#454545" stroke-width="2"/>
+  <path d="M590 330 l-12 -6 l0 12 z" fill="#454545"/>
+  <path d="M90 45 l-6 12 l12 0 z" fill="#454545"/>
+  
+  <path class="u" d="M95 285 C190 260, 260 235, 330 210 C420 178, 500 150, 570 115"/>
+  <path class="v" d="M95 330 C180 304, 260 264, 330 250 C420 232, 500 205, 570 170"/>
+  <path class="w" d="M95 310 C180 281, 260 238, 330 210 C420 174, 500 145, 570 108"/>
+  <line class="guide" x1="262" y1="229" x2="402" y2="192"/>
+  <circle class="mark" cx="330" cy="210" r="6"/>
+  <text x="480" y="128">v</text>
+  <text x="462" y="177">u</text>
+  <text x="374" y="232">c u</text>
+
+  <style>
+    .u { fill: none; stroke: #1f78b4; stroke-width: 5; stroke-linecap: round; }
+    .v { fill: none; stroke: #d95f02; stroke-width: 5; stroke-linecap: round; }
+    .w { fill: none; stroke: #1f78b4; stroke-width: 3; stroke-dasharray: 10 8; stroke-linecap: round; }
+    .mark { fill: #222; }
+    .guide { stroke: #777; stroke-width: 2; stroke-dasharray: 6 7; fill: none; }
+    text { font-family: Arial, sans-serif; font-size: 22px; fill: #222; }
+  </style>
+</svg>

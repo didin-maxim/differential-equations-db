@@ -1,0 +1,119 @@
+{
+  "id": "local-du-8-sturm-comparison-theorem",
+  "title": "Теорема сравнения Штурма в форме для нулей",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть Q1,Q2 непрерывны на [a,b] и Q2(x)>=Q1(x). Если u - ненулевое решение u''+Q1(x)u=0 с соседними нулями a и b, то всякое ненулевое решение v''+Q2(x)v=0 имеет нуль на (a,b), кроме вырожденного случая совпадающих коэффициентов и пропорциональных решений.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Смешанный вронскиан меняется монотонно",
+      "text": "Если u и v не имеют нулей внутри промежутка, знак производной W=u'v-uv' определяется разностью Q2-Q1, а значения W на концах имеют противоположный порядок.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Так как a и b - соседние нули u, внутри (a,b) функция u имеет постоянный знак. Умножив u на -1 при необходимости, считаем u>0 на (a,b); тогда u'(a)>0 и u'(b)<0. Предположим, что некоторое ненулевое решение v уравнения v''+Q2 v=0 не имеет нулей на (a,b). Умножив v на -1 при необходимости, считаем v>0 на (a,b). Если v обращается в нуль в a или b, чуть сдвигаем конец рассуждения внутрь и затем переходим к пределу; для простоты сначала считаем v(a),v(b)>0. Рассмотрим W=u'v-uv'. Тогда W'=u''v-u v''=(-Q1 u)v-u(-Q2 v)=(Q2-Q1)uv>=0, то есть W неубывает. Но W(a)=u'(a)v(a)>0, а W(b)=u'(b)v(b)<0. Неубывающая функция не может перейти от положительного значения к отрицательному; противоречие. Если нуль v был на одном из концов, предельный вариант дает W(a)>=0 и W(b)<=0, причем при отсутствии внутреннего нуля равенство во всех шагах возможно только когда Q1=Q2 на промежутке и v пропорционально u. Значит во всех невырожденных случаях v имеет нуль внутри (a,b).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "wronskian_identity"
+    ],
+    "objects": [
+      "zero_location",
+      "oscillation"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "sturm_theorem",
+      "comparison",
+      "zero_location",
+      "local_du_8"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Стандартная теорема курса; доказательство через смешанный вронскиан короткое, но требует аккуратных знаков на концах.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_comparison",
+    "comparison",
+    "wronskian",
+    "zero_location",
+    "oscillation",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, программа курса, раздел 4: \"Теорема Штурма и следствия из нее\"."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_theory_8_links",
+    "notes": [
+      "Добавлена как локальный prerequisite для задач T3-T6a из 8.pdf, чтобы решения, ссылающиеся на сравнение Штурма, имели явный узел с доказательством."
+    ]
+  }
+}

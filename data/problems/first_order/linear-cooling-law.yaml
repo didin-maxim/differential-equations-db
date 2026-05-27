@@ -1,0 +1,106 @@
+{
+  "id": "linear-cooling-law",
+  "title": "Закон охлаждения Ньютона",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Температура тела T удовлетворяет T'=-k(T-T0), T(0)=T1. Найти T(t) и предел при t -> +∞.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Стандартная замена или множитель",
+      "text": "Задача сводится к одному из базовых алгоритмов первого порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Уравнение для u=T-T0 имеет вид u'=-ku. Значит u(t)=u(0)e^{-kt}. Поэтому T(t)=T0+(T1-T0)e^{-kt}, а предел при k>0 равен T0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "linear_first_order",
+      "separable",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "linear-cooling-law",
+      "first_order",
+      "linear_first_order",
+      "separable",
+      "mipt_core"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 2,
+    "comment": "idea_score=3: сведение к простейшему линейному уравнению; technical_score=2: минимальные вычисления.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_first_order",
+    "separable",
+    "mipt_core",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

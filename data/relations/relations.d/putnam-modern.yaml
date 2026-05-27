@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-resonance-putnam-1987-a3",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "putnam-modern-1987-a3",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют резонанс оператора с корнем характеристического многочлена и множитель e^x.",
+      "backward_text": "Putnam 1987 A3 превращает резонансное уравнение в анализ знаков квадратных трехчленов.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-linear-factor-putnam-1988-a2",
+      "from": "linear-first-order-formula",
+      "to": "putnam-modern-1988-a2",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Формула линейного уравнения первого порядка объясняет найденную функцию g.",
+      "backward_text": "Putnam 1988 A2 маскирует линейное уравнение первого порядка под ошибочное правило произведения.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-integral-to-ode-putnam-1990-b1",
+      "from": "linear-first-order-formula",
+      "to": "putnam-modern-1990-b1",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "После дифференцирования интегрального тождества остается простейшее линейное уравнение f'=f.",
+      "backward_text": "Putnam 1990 B1 показывает, как интегральная энергия может скрывать линейное уравнение первого порядка.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-matrix-system-putnam-1995-a5",
+      "from": "linear-system-jordan-block",
+      "to": "putnam-modern-1995-a5",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют спектральную структуру постоянной линейной системы.",
+      "backward_text": "Putnam 1995 A5 применяет левый собственный функционал к вопросу о линейной зависимости координат.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-energy-putnam-1997-b2",
+      "from": "energy-integral-oscillator",
+      "to": "putnam-modern-1997-b2",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Энергия f^2+(f')^2 является той же квадратичной энергией осциллятора.",
+      "backward_text": "Putnam 1997 B2 добавляет знак демпфирования и получает глобальную ограниченность.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-comparison-putnam-1994-2009",
+      "from": "putnam-modern-1994-b3",
+      "to": "putnam-modern-2009-b5",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи извлекают асимптотику из монотонных барьерных комбинаций.",
+      "backward_text": "Putnam 2009 B5 является более сложной барьерной версией роста из дифференциального неравенства.",
+      "status": "ai_checked",
+      "confidence": 0.75
+    },
+    {
+      "id": "rel-functional-putnam-2005-2010",
+      "from": "putnam-modern-2005-b3",
+      "to": "putnam-modern-2010-b5",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи требуют превратить композиционное дифференциальное условие в обычное неравенство или ОДУ.",
+      "backward_text": "Putnam 2010 B5 использует функционально-дифференциальную структуру уже для доказательства несуществования.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-folklore-composition-putnam-2010-b5",
+      "from": "solve-functional-ode-composition",
+      "to": "putnam-modern-2010-b5",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки содержат уравнение f'=f(f), но в фольклорной задаче нуль и ограниченность дают единственность.",
+      "backward_text": "Putnam 2010 B5 показывает, что строгая монотонность вместо начального нуля ведет к глобальному противоречию.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-gronwall-putnam-2023-a3",
+      "from": "gronwall-inequality",
+      "to": "putnam-modern-2023-a3",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Гронуолл исключает одновременное зануление f и g в первой точке f=0.",
+      "backward_text": "Putnam 2023 A3 использует Гронуолла как вспомогательный шаг перед угловым сравнением.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "oral-above-three-global-continuation-bounded-on-strips",
+  "title": "Глобальное продолжение без явного решения",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Докажите, что любое решение задачи Коши y'=sin y+t^2, y(t0)=y0 продолжается на всю числовую прямую.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-strip-bound",
+      "title": "Оценить рост на каждом конечном отрезке времени",
+      "text": "Для продолжения не нужно решать уравнение: достаточно показать, что на конечном отрезке решение не может уйти на бесконечность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Правая часть гладкая по y и непрерывна по t, поэтому локальное решение единственно. Рассмотрим любой конечный отрезок [a,b]. На нем |y'|<=1+b_*^2, где b_*=max(|a|,|b|), потому что |sin y|<=1. Значит пока решение существует внутри [a,b], его значения удовлетворяют |y(t)-y(t0)|<=(1+b_*^2)|t-t0|. Поэтому граф решения на любом конечном подотрезке остается в ограниченной полосе и не может покинуть все компакты за конечное время. По критерию продолжения максимальное решение не имеет конечного правого или левого конца. Следовательно оно определено на всей R.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "foundations"
+    ],
+    "methods": [
+      "continuation",
+      "comparison_argument"
+    ],
+    "objects": [
+      "global_solution",
+      "continuation",
+      "existence_uniqueness"
+    ],
+    "goal": [
+      "prove",
+      "qualitative_conclusion"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "global-continuation",
+      "bounded-strips"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: нужно применить критерий продолжения через априорную оценку, а не искать явное решение; technical_score=4: оценка короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "low_technical",
+    "continuation",
+    "global_solution",
+    "existence_uniqueness",
+    "comparison"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на проверку понимания критерия продолжения."
+    ]
+  }
+}

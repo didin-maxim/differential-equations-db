@@ -1,0 +1,103 @@
+{
+  "id": "linear-system-jordan-block",
+  "title": "Система с жордановой клеткой",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить x'=Ax при A=[[2,1],[0,2]].",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Линейная структура",
+      "text": "Используется фундаментальная система решений, вронскиан или экспонента оператора.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пишем A=2I+N, где N^2=0 и N=[[0,1],[0,0]]. Тогда exp(At)=e^{2t}exp(Nt)=e^{2t}(I+tN). Поэтому для x(0)=(a,b) получаем x(t)=e^{2t}(a+tb,b).",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems"
+    ],
+    "methods": [
+      "matrix_exponential"
+    ],
+    "objects": [
+      "linear_systems",
+      "matrix_exponential",
+      "jordan_form"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "linear-system-jordan-block",
+      "systems",
+      "linear_systems",
+      "matrix_exponential",
+      "jordan_form"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартная экспонента жордановой клетки; technical_score=4: короткий счет с нильпотентной частью.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "jordan_form",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

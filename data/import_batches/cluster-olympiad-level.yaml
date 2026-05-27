@@ -1,0 +1,23 @@
+{
+  "id": "cluster-olympiad-level",
+  "title": "Аудит олимпиадного слоя: повторяющиеся мотивы выше экзамена",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "olympiad",
+    "olympiad_above_exam"
+  ],
+  "problem_ids": [
+    "olympiad-level-rolle-after-homogeneous-factor",
+    "olympiad-level-angle-speed-comparison",
+    "olympiad-level-backward-positivity-derivative-lemma",
+    "olympiad-level-involution-functional-differential",
+    "olympiad-level-power-solution-linear-ode-criterion"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка не импортирует новые архивные задачи; это компактные theorem/lemma/standard-idea cards для повторяющихся олимпиадных мотивов.",
+    "Связи вынесены только в data/relations/relations.d/cluster-olympiad-level.yaml.",
+    "Задачи с неполным решением не удалялись: спорные оценки и одиночность описаны в docs/reviews/olympiad-level-audit.md."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "cluster-recover-ode-from-family",
+  "title": "Кластерный аудит: восстановление ОДУ по семейству решений или кривых",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "recover_ode_from_family",
+    "parameter_elimination",
+    "geometric_family",
+    "minimal_order"
+  ],
+  "problem_ids": [
+    "cluster-recover-exponential-particular-family",
+    "cluster-recover-two-parameter-parabolas-second-order",
+    "cluster-recover-parameter-count-order-diagnostic",
+    "cluster-recover-translated-parabolas-envelope"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Точечное пополнение после проверки существующих Waterloo representatives и соседнего кластера orthogonal-trajectories.",
+    "Письменные local_du дали близкие задачи на Клеро/Лагранжа и дискриминанты, но прямых recover-family задач в извлеченном тексте не найдено.",
+    "Карточки составлены как модельные представители разных механизмов; массовые варианты с заменой формы кривой считаются дублями."
+  ]
+}

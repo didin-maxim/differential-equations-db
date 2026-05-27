@@ -1,0 +1,119 @@
+{
+  "id": "teschl-stanford-bridge-floquet-multiplier-stability",
+  "title": "Устойчивость нулевого решения по мультипликаторам Флоке",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Теорема",
+        "text": "Для T-периодической линейной системы x'=A(t)x пусть M=X(T) - матрица монодромии, где X(0)=I. Если все собственные значения M по модулю меньше 1, то нулевое решение асимптотически устойчиво. Если хотя бы одно собственное значение M имеет модуль больше 1, то нулевое решение неустойчиво.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Смотреть на решение в моменты nT",
+      "text": "Через каждый период действует одна и та же матрица M; задача устойчивости сводится к степеням M и обычной линейной алгебре.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Для решения x(t)=X(t)x0 в моменты nT имеем x(nT)=M^n x0. Если все собственные значения M лежат внутри единичного круга, то по жордановой форме M^n -> 0. На каждом промежутке [nT,(n+1)T] решение равно X(s)M^n x0, где s in [0,T], а X(s) ограничена на компактном отрезке. Поэтому x(t)->0 и малость начального значения сохраняется равномерно: нулевое решение асимптотически устойчиво. Если у M есть собственное значение lambda с |lambda|>1 и собственный или обобщенный собственный вектор v, то последовательность M^n v растет по норме. Следовательно, при сколь угодно малом начальном значении вдоль этого направления решение в моменты nT выходит из любой фиксированной окрестности нуля. Это дает неустойчивость. Случай |lambda|=1 требует дополнительных условий на жордановы клетки и здесь намеренно не включен, чтобы не утяжелять карточку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous"
+    ],
+    "methods": [
+      "floquet_multipliers",
+      "monodromy",
+      "jordan_form",
+      "stability_analysis"
+    ],
+    "objects": [
+      "floquet_multiplier",
+      "monodromy_matrix",
+      "zero_solution"
+    ],
+    "goal": [
+      "classify",
+      "prove"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "floquet_multiplier",
+      "monodromy",
+      "linear_stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "Floquet multipliers обычно выходят за базовый курс, но доказательство этой версии использует только фундаментальную матрицу и степени матрицы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "stability",
+    "periodic_solution",
+    "floquet_theory",
+    "jordan_form",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Teschl, §3.6 Periodic linear systems; Floquet multipliers and stability consequences of the monodromy matrix."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Не используется полная тяжелая теория Floquet normal form; оставлен только критерий через спектр монодромии."
+    ]
+  }
+}

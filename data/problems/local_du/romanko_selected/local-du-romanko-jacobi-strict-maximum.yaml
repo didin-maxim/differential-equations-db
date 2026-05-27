@@ -1,0 +1,113 @@
+{
+  "id": "local-du-romanko-jacobi-strict-maximum",
+  "title": "Достаточное условие Якоби для строгого слабого максимума",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Исследовать на слабый экстремум функционал J(y)=∫_0^(pi/2)[y^2-(y')^2]dx при y(0)=0, y(pi/2)=1.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Проверить Лежандра и отсутствие сопряженной точки",
+      "text": "Уравнение Якоби совпадает с h''+h=0. До pi/2 нет второго нуля решения с h(0)=0, поэтому отрицательный знак при (y')^2 дает строгий слабый максимум.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Уравнение Эйлера для F=y^2-(y')^2 имеет вид 2y-d/dx(-2y')=0, то есть y''+y=0. С краевыми условиями получаем единственную допустимую экстремаль y=sin x. Усиленное условие Лежандра имеет отрицательный знак: F_{y'y'}=-2<0. Уравнение Якоби для второй вариации здесь то же самое: h''+h=0, h(0)=0. Его нетривиальные решения имеют вид C sin x и не имеют нулей на (0,pi/2]. Значит до правого конца нет сопряженной точки. По достаточному условию Лежандра-Якоби при F_{y'y'}<0 экстремаль дает строгий слабый локальный максимум. Это также видно напрямую: для допустимой вариации h с h(0)=h(pi/2)=0 приращение квадратично и равно ∫_0^(pi/2)(h^2-(h')^2)dx. Неравенство Виртингера на отрезке длины pi/2 дает ∫h^2dx <= (1/4)∫(h')^2dx < ∫(h')^2dx для h не равной нулю, так что приращение отрицательно.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_problem",
+      "sturm_liouville"
+    ],
+    "methods": [
+      "jacobi_condition",
+      "legendre_condition",
+      "wirtinger_inequality"
+    ],
+    "objects": [
+      "weak_local_extremum",
+      "conjugate_point",
+      "strict_maximum"
+    ],
+    "goal": [
+      "classify_extremum"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "jacobi-condition",
+      "legendre-condition",
+      "strict-maximum",
+      "sufficient-condition"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "idea_score=8: задача проверяет достаточное условие, а не только уравнение Эйлера; technical_score=4: формулы простые.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "variational_calculus",
+    "euler_lagrange",
+    "second_variation",
+    "legendre_condition",
+    "jacobi_condition",
+    "sturm_liouville",
+    "comparison",
+    "boundary_value"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§22, пример: достаточные условия строгого слабого локального экстремума."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Добавлено как дефицитный механизм достаточного условия Якоби; не является еще одним однотипным расчетом уравнения Эйлера."
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "lebl-diffyqs-weighted-sturm-exponential",
+  "title": "Весовая задача Штурма-Лиувилля и устранение первой производной",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 5.1, упражнение 5.1.8",
+        "text": "Найти собственные значения и собственные функции задачи (e^x y')'+lambda e^x y=0, y(0)=0, y(1)=0.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Снять первую производную заменой y=e^{-x/2}z",
+      "text": "После деления на e^x получается y''+y'+lambda y=0. Экспоненциальная замена переводит это в z''+(lambda-1/4)z=0 с условиями Дирихле.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Разделив уравнение на e^x, получаем y''+y'+lambda y=0. Положим y=e^{-x/2}z. Тогда y''+y'=e^{-x/2}(z''-z/4), и уравнение становится z''+(lambda-1/4)z=0. Поскольку множитель e^{-x/2} не обращается в нуль, условия y(0)=y(1)=0 эквивалентны z(0)=z(1)=0. Для задачи Дирихле нетривиальные решения существуют при lambda-1/4=(n pi)^2, n=1,2,.... Следовательно lambda_n=1/4+n^2 pi^2, а собственные функции можно взять y_n(x)=e^{-x/2} sin(n pi x).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value"
+    ],
+    "methods": [
+      "liouville_transform",
+      "eigenvalue_condition"
+    ],
+    "objects": [
+      "sturm_liouville",
+      "weighted_eigenvalue_problem",
+      "dirichlet_boundary_condition"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-5.1",
+      "weighted-sturm-liouville",
+      "exponential-weight"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "idea_score=7: весовая задача сводится к базовому спектру через устраняющую замену; technical_score=4: короткая, но аккуратная подстановка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "boundary_value",
+    "eigenvalues",
+    "sturm_liouville",
+    "liouville_transform",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "exercise_adapted",
+      "status": "source_verified",
+      "note": "Раздел 5.1 Sturm-Liouville problems, Exercise 5.1.8; web: https://www.jirka.org/diffyqs/html/slproblems_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Выбрано вместо длинных eigenfunction-series задач: идея короткая и переносимая, вычисления ограничены одной заменой."
+    ]
+  }
+}

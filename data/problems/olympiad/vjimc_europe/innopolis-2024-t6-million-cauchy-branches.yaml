@@ -1,0 +1,110 @@
+{
+  "id": "innopolis-2024-t6-million-cauchy-branches",
+  "title": "Innopolis 2024 T6: миллион ветвей через каждую точку",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Существует ли такое дифференциальное уравнение первого порядка F(x,y,y')=0, что для любой точки (x0,y0)∈R^2 задача Коши F(x,y,y')=0, y(x0)=y0 имеет ровно один миллион решений? Обоснуйте ответ.",
+        "source_ids": [
+          "src-innopolis-math-olympiad"
+        ],
+        "status": "source_statement_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сделать миллион регулярных наклонов",
+      "text": "Неявное уравнение может быть произведением независимых регулярных ветвей по y'. Если ветви y'=k имеют разные постоянные наклоны, то через каждую точку проходит ровно по одной прямой каждого наклона, и они никогда не склеиваются.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Да, существует. Возьмем F(x,y,p)=∏_{k=1}^{10^6}(p-k), то есть уравнение ∏_{k=1}^{10^6}(y'-k)=0. Любое его C^1-решение на интервале должно в каждой точке иметь производную из множества {1,2,...,10^6}. Так как производная непрерывна, а это множество дискретно, на любом связном интервале выбран один и тот же k; значит решение имеет вид y=kx+C. Через точку (x0,y0) для каждого k проходит ровно одна такая прямая: y=y0+k(x-x0). Эти 10^6 прямых попарно различны, потому что их наклоны различны. Следовательно, задача Коши имеет ровно один миллион решений.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "implicit_first_order",
+      "autonomous_first_order"
+    ],
+    "methods": [
+      "branch_analysis",
+      "cauchy_problem",
+      "constant_slope_solutions"
+    ],
+    "objects": [
+      "multiple_branches",
+      "implicit_ode",
+      "initial_condition"
+    ],
+    "goal": [
+      "construct",
+      "count_solutions"
+    ],
+    "keywords": [
+      "Innopolis 2024 T6",
+      "неявное ОДУ",
+      "миллион решений",
+      "задача Коши",
+      "подсчет ветвей"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Идея 6: надо понять неявное ОДУ как набор регулярных ветвей и не допустить склейки. Техника 4: проверка непрерывности производной и счет прямых.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "implicit_ode_discriminant",
+    "cauchy_problem",
+    "existence_uniqueness",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-innopolis-math-olympiad",
+      "role": "official_statement",
+      "status": "source_verified",
+      "url": "https://innopolis.university/filespublic/TasksSols2024.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad-vjimc-europe",
+    "notes": [
+      "Официальный PDF предлагает пример с множителями y'-ky, но при y0=0 все ветви дают одно и то же нулевое решение. В карточке сохранена исходная постановка и дан исправленный пример с постоянными наклонами.",
+      "Добавлено как компактный представитель идеи подсчета регулярных ветвей неявного ОДУ, а не как сложная вычислительная задача."
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "peano-existence-theorem",
+  "title": "Теорема Пеано о существовании без единственности",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Если f(x,y) непрерывна около (x0,y0), то задача Коши y'=f(x,y), y(x0)=y0 имеет хотя бы одно локальное решение. Единственность при одной лишь непрерывности может нарушаться.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-euler-polygons",
+      "title": "Приблизить решения ломаными Эйлера",
+      "text": "Равномерно ограниченные и равностепенно непрерывные ломаные имеют сходящуюся подпоследовательность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-peano-sketch-complete",
+      "title": "Доказательство через ломаные Эйлера",
+      "text": "На малом прямоугольнике функция f ограничена числом M. Строим ломаные Эйлера с шагом h: на каждом отрезке наклон равен f в левом конце. Все ломаные проходят через (x0,y0), имеют модуль наклона не больше M и потому равностепенно непрерывны и равномерно ограничены на достаточно малом отрезке. По теореме Арцела-Асколи из любой последовательности шагов h_n -> 0 выбирается равномерно сходящаяся подпоследовательность y_n -> y. Для каждой ломаной выполняется интегральное тождество с ошибкой, стремящейся к нулю: y_n(x)=y0+∫_{x0}^{x} f(t,y_n(t))dt + r_n(x). Непрерывность f и равномерная сходимость дают переход к пределу под интегралом. Получаем y(x)=y0+∫_{x0}^{x} f(t,y(t))dt, значит y - решение. Пример y'=sqrt(|y|), y(0)=0 показывает неединственность: кроме нулевого решения есть решения, которые некоторое время равны нулю, а затем идут как (x-a)^2/4.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "foundations"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "peano",
+      "existence_uniqueness",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "peano-existence-theorem",
+      "foundations",
+      "peano",
+      "existence_uniqueness",
+      "complete_proof"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 5,
+    "idea_score": 7,
+    "technical_score": 6,
+    "comment": "idea_score=7: ломаные Эйлера и компактность требуют тонкой идеи; technical_score=6: нужно контролировать сходимость и предельный переход.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "peano",
+    "existence_uniqueness",
+    "complete_proof",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

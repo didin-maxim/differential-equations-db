@@ -1,0 +1,111 @@
+{
+  "id": "weak-pass-resonance-double-root",
+  "title": "Резонанс при кратном корне характеристического уравнения",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить уравнение y'' - 2y' + y = e^x. Перед подбором частного решения объяснить, почему пробный вид Ae^x не работает и на какую степень x его нужно умножить.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Учесть кратность резонанса",
+      "text": "Оператор равен (D-1)^2, а e^x уже входит в однородное решение с кратностью два. Поэтому частное решение ищут в виде A x^2 e^x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристический многочлен r^2-2r+1=(r-1)^2, поэтому y_h=(C1+C2x)e^x. Правая часть e^x совпадает с однородным решением, причем корень r=1 имеет кратность 2, значит пробный вид нужно умножить на x^2: y_p=A x^2 e^x. Удобно писать y=e^x u. Тогда (D-1)y=e^x u', а (D-1)^2y=e^x u''. Для u=A x^2 получаем u''=2A, значит левая часть равна 2A e^x. Приравнивая к e^x, получаем A=1/2. Ответ: y=(C1+C2x)e^x + (x^2/2)e^x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "constant_coefficients",
+      "resonance_ansatz"
+    ],
+    "objects": [
+      "linear_higher_order"
+    ],
+    "goal": [
+      "solve",
+      "choose_method"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "constant_coefficients",
+      "resonance"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: нужно заметить кратный резонанс, а не только совпадение экспоненты; technical_score=3: вычисление сводится к оператору (D-1)^2.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_higher_order",
+    "constant_coefficients",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: существующая резонансная карточка имеет простой корень, здесь проверяется кратный резонанс."
+    ]
+  }
+}

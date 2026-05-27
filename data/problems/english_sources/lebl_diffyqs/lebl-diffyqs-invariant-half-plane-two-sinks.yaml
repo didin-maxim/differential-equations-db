@@ -1,0 +1,114 @@
+{
+  "id": "lebl-diffyqs-invariant-half-plane-two-sinks",
+  "title": "Инвариантная полуось запрещает переход к другому фокусу",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 8.2, упражнение 8.2.4",
+        "text": "Для системы x'=-xy, y'=x^2-1-y показать, что точки (-1,0) и (1,0) являются спиральными стоками. Найти траекторию при начальных данных x(0)=0, y(0)=y0. Может ли траектория, стартующая при x0>0, спирально стремиться к (-1,0)?",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Локальная классификация не отменяет глобальный барьер",
+      "text": "Оба равновесия локально выглядят как спиральные стоки, но прямая x=0 инвариантна. Поэтому знак x сохраняется, и правая полуплоскость не может попасть к левому стоку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Якобиан равен [[-y,-x],[2x,-1]]. В точке (1,0) получаем матрицу [[0,-1],[2,-1]] со следом -1 и определителем 2; дискриминант равен (-1)^2-4·2=-7<0, поэтому это спиральный сток. В точке (-1,0) матрица [[0,1],[-2,-1]] имеет те же след и определитель, значит это тоже спиральный сток. Если x=0, то x'=0, а y'=-1-y; поэтому траектория остается на оси x=0 и имеет вид y(t)=-1+(y0+1)e^{-t}. Если x0>0, то из x'=-xy следует x(t)=x0 exp(-int_0^t y(s) ds), пока решение существует; знак x не меняется. Значит такая траектория не пересекает инвариантную прямую x=0 и не может стремиться к равновесию (-1,0) в левой полуплоскости.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "linearization",
+      "invariant_region",
+      "phase_plane_analysis"
+    ],
+    "objects": [
+      "equilibrium",
+      "spiral_sink",
+      "invariant_line"
+    ],
+    "goal": [
+      "classify",
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-8.2",
+      "two-sinks",
+      "invariant-half-plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "idea_score=7: локальная классификация сочетается с глобальным инвариантным барьером; technical_score=4: две матрицы и короткая формула для знака x.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "equilibrium_linearization",
+    "invariant"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "exercise_adapted",
+      "status": "source_verified",
+      "note": "Раздел 8.2 Stability and classification of isolated critical points, Exercise 8.2.4; web: https://www.jirka.org/diffyqs/html/nlinstability_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Новая идея относительно базы: не просто классификация равновесий, а запрет перехода между бассейнами через инвариантную прямую."
+    ]
+  }
+}

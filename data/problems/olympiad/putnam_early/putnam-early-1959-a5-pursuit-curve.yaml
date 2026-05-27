@@ -1,0 +1,109 @@
+{
+  "id": "putnam-early-1959-a5-pursuit-curve",
+  "title": "Putnam 1959 A5: кривая преследования и скорости",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "В некоторый момент точки A, T, B лежат на одной вертикали: A на 50 футов выше T, а T на 100 футов выше B. T летит горизонтально с постоянной скоростью. A летит с постоянной скоростью прямо к B, а B летит с удвоенной скоростью T прямо к T. Точки A и B достигают T одновременно. Найти расстояния, пройденные A, B, T, и скорость A.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вывести уравнение кривой преследования",
+      "text": "Для преследователя с отношением скоростей k получается k x y''=sqrt(1+(y')^2); два интегрирования дают горизонтальное смещение до встречи.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим общую задачу: цель движется горизонтально со скоростью v, преследователь стартует на вертикальном расстоянии a и имеет скорость kv, k>1. Пусть x - вертикальное расстояние до цели, y - горизонтальное смещение цели от начального положения, причем в момент старта x=a, y=0. Направление движения преследователя указывает на цель, поэтому y'=(y-vt)/x, где штрих означает производную по x вдоль траектории. Кроме того, из скорости преследователя и dx/dt<0 имеем kv/(-dx/dt)=sqrt(1+(y')^2). Дифференцируя y'=(y-vt)/x по x, получаем xy''=-v/(dx/dt). Следовательно kxy''=sqrt(1+(y')^2). Интегрирование дает ln(y'+sqrt(1+(y')^2))=(1/k)ln(x/a), потому что при x=a имеем y'=0. Значит 2y'=(x/a)^{1/k}-(x/a)^{-1/k}. Еще одно интегрирование с y(a)=0 дает при x=0 горизонтальный путь цели y=ak/(k^2-1). Для B имеем a=100 и k=2, значит T проходит 200/3 фута, а B - 400/3 фута. Для A имеем a=50 и тот же путь цели 200/3, поэтому 200/3=50k/(k^2-1), откуда 4k^2-3k-4=0 и k=(3+sqrt(73))/8. Поэтому A проходит k*(200/3)=25(3+sqrt(73))/3 фута, а его скорость равна (3+sqrt(73))/8 скоростей T.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_ode"
+    ],
+    "methods": [
+      "pursuit_curve",
+      "separation"
+    ],
+    "objects": [
+      "trajectory",
+      "mechanics"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "Putnam 1959 A5",
+      "pursuit_curve",
+      "nonlinear_ode"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 8,
+    "comment": "Идея олимпиадная: из геометрии преследования нужно вывести ОДУ траектории. Техника высокая: разделение переменных и два интегрирования требуют аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "pursuit_curve",
+    "separable",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol595.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Решение следует архивному выводу кривой преследования, с явной размерной записью скорости."
+    ]
+  }
+}

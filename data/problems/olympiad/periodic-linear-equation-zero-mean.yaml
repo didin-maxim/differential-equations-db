@@ -1,0 +1,103 @@
+{
+  "id": "periodic-linear-equation-zero-mean",
+  "title": "Периодическое решение линейного уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p(t) непрерывна и T-периодична, а ∫_0^T p(t)dt=0. Найти условие на q(t), при котором y'+p(t)y=q(t) имеет T-периодическое решение.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сильное ограничение на траекторию",
+      "text": "Используется единственность, монотонность, энергия или дифференциальное неравенство.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть μ(t)=exp(∫_0^t p). Из условия μ(T)=1. Тогда (μy)'=μq. Для T-периодического y необходимо μ(T)y(T)-μ(0)y(0)=∫_0^T μq dt, левая часть равна нулю. Значит необходимо ∫_0^T μ(t)q(t)dt=0. Если это выполнено, выбираем произвольное y(0); формула на один период дает y(T)=y(0), а затем решение продолжается периодически.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "olympiad_style",
+      "linear_first_order",
+      "periodic_solution"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "periodic-linear-equation-zero-mean",
+      "olympiad",
+      "olympiad_style",
+      "linear_first_order",
+      "periodic_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: стандартная идея интегрирующего множителя плюс условие периодичности; technical_score=4: аккуратная работа с интегралом по периоду.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_first_order",
+    "periodic_solution",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

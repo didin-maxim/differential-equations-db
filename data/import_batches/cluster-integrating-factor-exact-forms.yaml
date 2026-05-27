@@ -1,0 +1,23 @@
+{
+  "id": "cluster-integrating-factor-exact-forms",
+  "title": "Кластерный аудит: интегрирующие множители и точные формы",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "integrating_factor",
+    "exact_equation",
+    "differential_form",
+    "first_integral"
+  ],
+  "problem_ids": [
+    "cluster-integrating-factor-mu-y-short",
+    "cluster-integrating-factor-power-monomial",
+    "cluster-integrating-factor-mu-xy"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Точечное пополнение после поиска по existing cards: добавлены только отсутствующие компактные представители mu(y), x^a y^b и mu(xy).",
+    "Обычные линейные уравнения первого порядка с интегрирующим множителем не включались в batch, если объектом не была форма M dx+N dy.",
+    "Длинные первообразные сознательно избегались; идея множителя отделена от техники восстановления потенциала."
+  ]
+}

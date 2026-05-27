@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+  <rect width="720" height="520" fill="#ffffff"/>
+  <line x1="70" y1="260" x2="650" y2="260" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="360" y1="470" x2="360" y2="50" stroke="#9ca3af" stroke-width="2"/>
+  <path d="M635,260 L617,252 L617,268 z" fill="#9ca3af"/>
+  <path d="M360,55 L352,73 L368,73 z" fill="#9ca3af"/>
+  <text x="655" y="275" font-family="Arial, sans-serif" font-size="22" fill="#374151">x</text>
+  <text x="372" y="48" font-family="Arial, sans-serif" font-size="22" fill="#374151">y</text>
+  <circle cx="360" cy="260" r="5" fill="#111827"/>
+  <line x1="110" y1="85" x2="610" y2="435" stroke="#111827" stroke-width="4"/>
+  <line x1="110" y1="435" x2="610" y2="85" stroke="#111827" stroke-width="4"/>
+  <path d="M360,260 L245,179" stroke="#2563eb" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M360,260 L475,341" stroke="#2563eb" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M215,361 L360,260" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M505,159 L360,260" stroke="#0f766e" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M372,275 C430,335 485,365 610,380" fill="none" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M348,245 C290,185 235,155 110,140" fill="none" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M372,245 C430,185 485,155 610,140" fill="none" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M348,275 C290,335 235,365 110,380" fill="none" stroke="#111827" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="120" y="82" font-family="Arial, sans-serif" font-size="24" fill="#111827">one direction leaves every small neighborhood</text>
+</svg>

@@ -1,0 +1,109 @@
+{
+  "id": "putnam-early-1956-b1-homogeneous-exact-first-integral",
+  "title": "Putnam 1956 B1: первый интеграл точного однородного уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Дифференциальное уравнение a(x,y) dx+b(x,y) dy=0 является точным и однородным: a и b - однородные многочлены одной степени, причем a_y=b_x. Доказать, что вдоль любого решения y=y(x) выполнено xa(x,y)+yb(x,y)=c для некоторой константы c.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "exact_equation",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать xa+yb",
+      "text": "Точность позволяет переставить смешанные производные, а однородность по Эйлеру превращает оставшиеся члены в кратное исходной формы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть степень однородных многочленов a и b равна m. Рассмотрим F=xa+yb. Тогда dF=a dx+b dy+x(a_x dx+a_y dy)+y(b_x dx+b_y dy). Из точности a_y=b_x, поэтому коэффициент при dx в добавке равен xa_x+ya_y, а коэффициент при dy равен xb_x+yb_y. По формуле Эйлера для однородных функций xa_x+ya_y=ma и xb_x+yb_y=mb. Следовательно dF=(m+1)(a dx+b dy). Вдоль решения исходная форма a dx+b dy обращается в нуль, значит dF=0 вдоль этой кривой. Поэтому xa(x,y)+yb(x,y)=F=c на каждом связном куске решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "exact_equation",
+      "first_order"
+    ],
+    "methods": [
+      "homogeneity",
+      "first_integral"
+    ],
+    "objects": [
+      "exact_form",
+      "homogeneous_polynomials"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "Putnam 1956 B1",
+      "exact_equation",
+      "homogeneous"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "Идея стандартная с небольшой вариацией: точность плюс формула Эйлера для однородности. Техника умеренная: смешанные производные и сборка первого интеграла.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "exact_equation",
+    "homogeneous_first_order",
+    "first_integral",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol568.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Полное доказательство использует только точность и формулу Эйлера для однородных многочленов."
+    ]
+  }
+}

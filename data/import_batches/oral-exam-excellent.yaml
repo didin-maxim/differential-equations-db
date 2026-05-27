@@ -1,0 +1,29 @@
+{
+  "id": "oral-exam-excellent",
+  "title": "Устный экзамен: задачи для проверки отличника",
+  "created_at": "2026-05-26",
+  "scope": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "mipt_core"
+  ],
+  "problem_ids": [
+    "oral-exam-excellent-nonautonomous-sign-barrier",
+    "oral-exam-excellent-trace-zero-no-total-decay",
+    "oral-exam-excellent-two-point-fundamental-matrix",
+    "oral-exam-excellent-monodromy-periodic-forcing",
+    "oral-exam-excellent-endpoint-combination-no-two-zeros",
+    "oral-exam-excellent-duffing-energy-periodic",
+    "oral-exam-excellent-compact-first-integral-periodic",
+    "oral-exam-excellent-damped-periodic-zero",
+    "oral-exam-excellent-gronwall-perturbed-solution",
+    "oral-exam-excellent-reduction-of-order-nonzero-solution"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка составлена как модельные устные задачи низкой или умеренной технической сложности для проверки уровня 'отлично'.",
+    "Перед добавлением выполнен поиск по базе по механизмам: единственность, фундаментальная матрица, Лиувилль, энергия, периодические решения, Вронскиан, Гронуолл.",
+    "Источник всех карточек: src-mipt-oral-exam-model-tasks."
+  ]
+}

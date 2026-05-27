@@ -1,0 +1,108 @@
+{
+  "id": "mit-18034-pset07-euler-system-fundamental-matrix",
+  "title": "Фундаментальная матрица переменно-коэффициентной системы через уравнение Эйлера",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для t>0 рассмотрим систему y1'=(-2/t)y1+(4/t^2)y2, y2'=-2y1+(5/t)y2. Показать, что каждая компонента решения удовлетворяет уравнению (t^2 phi'+2t phi)'=-8phi+5(t phi'+2phi), и найти фундаментальную матрицу системы.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Исключить одну координату",
+      "text": "Первое уравнение выражает y2 через y1 и y1'. Подстановка во второе уравнение дает скалярное уравнение Эйлера, после чего вторая координата восстанавливается алгебраически.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из первого уравнения получаем 4y2=t^2 y1'+2t y1. Дифференцируем это равенство и используем второе уравнение: (t^2 y1'+2t y1)'=4y2'= -8y1+(20/t)y2 = -8y1+5(t y1'+2y1). Значит y1 удовлетворяет указанному уравнению. После раскрытия скобок оно упрощается до t^2 phi''-t phi'=0, поэтому phi=A+B t^2. Для phi=y1 вторая координата равна y2=(t^2 phi'+2t phi)/4=A t/2+B t^3. Берем две независимые пары: при A=2,B=0 получаем (y1,y2)=(2,t), а при A=0,B=1 получаем (t^2,t^3). Следовательно фундаментальная матрица может быть выбрана как X(t)=[[2,t^2],[t,t^3]], ее определитель равен t^3 и не обращается в нуль при t>0. Для y2 аналогичный скалярный вывод получается тем же исключением y1.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "variable_coefficients"
+    ],
+    "methods": [
+      "component_elimination",
+      "euler_equation",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "linear_system",
+      "euler_cauchy_equation"
+    ],
+    "goal": [
+      "construct_fundamental_matrix"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 7",
+      "variable-coefficient system",
+      "fundamental matrix",
+      "Euler equation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "idea_score=6: нужно увидеть скалярное уравнение за системой; technical_score=5: исключение координаты требует аккуратного дифференцирования.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "change_independent_variable",
+    "linear_higher_order",
+    "wronskian",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #7, Problem 4(a,b); Problem set 7, Solution keys, Problem 4"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: не является очередной системой с постоянными коэффициентами; ключевой прием - исключение координаты в переменно-коэффициентной системе.",
+      "Метка advanced_standard_course: фундаментальная матрица стандартна, но переменные коэффициенты и связь с уравнением Эйлера делают задачу мостовой."
+    ]
+  }
+}

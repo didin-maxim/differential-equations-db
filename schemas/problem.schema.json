@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Differential Equations Card",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "fragment",
+    "kind",
+    "language",
+    "statements",
+    "ideas",
+    "solutions",
+    "differential_equations_profile",
+    "difficulty",
+    "tags",
+    "sources",
+    "editorial"
+  ]
+}

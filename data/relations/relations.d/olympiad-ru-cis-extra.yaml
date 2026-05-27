@@ -1,0 +1,59 @@
+{
+  "relations": [
+    {
+      "id": "rel-ru-cis-extra-half-argument-functional",
+      "from": "olympiad-level-involution-functional-differential",
+      "to": "ru-cis-extra-yagtu-2001-half-argument-ode",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки относятся к функционально-дифференциальным условиям, но здесь аргумент сжимается как x/2 и решение строится через ряд, а не через инволюцию аргумента.",
+      "backward_text": "Уравнение y'(x)=y(x/2) полезно сравнить с инволютивными задачами: оно показывает другой механизм, когда начальное значение в нуле рекурсивно задает все производные.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-ru-cis-extra-sine-barrier-angle",
+      "from": "olympiad-level-angle-speed-comparison",
+      "to": "ru-cis-extra-yagtu-2001-sine-barrier",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют замену переменной, после которой производная нужной величины получает простую нижнюю оценку и интегрируется.",
+      "backward_text": "В задаче ЯГТУ роль угла играет сумма x+y: оценка 1-sin(x+y)>=0 превращает исходное уравнение в параболический барьер.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-ru-cis-extra-max-switch-linear",
+      "from": "linear-first-order-formula",
+      "to": "ru-cis-extra-yagtu-2007-max-switch",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Первая ветвь задачи с максимумом сводится к линейному уравнению y'=y/(x+1), после чего остается проверить точку переключения.",
+      "backward_text": "Кусочная олимпиадная задача показывает, как стандартная формула линейного уравнения используется только на активной ветви негладкой правой части.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-ru-cis-extra-exp-xy-comparison",
+      "from": "ru-misc-nure-8-8",
+      "to": "ru-cis-extra-yagtu-2014-exp-minus-xy-limit",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи получают глобальный контроль из интегрируемой оценки производной, зависящей от независимой переменной.",
+      "backward_text": "В задаче y'=e^{-xy} сначала надо добиться положительной нижней оценки для y, после чего производная мажорируется экспоненциальным хвостом.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-ru-cis-extra-operator-rolle",
+      "from": "olympiad-level-rolle-after-homogeneous-factor",
+      "to": "ru-cis-extra-spbgeu-2023-rolle-cubic-operator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки применяют теорему Ролля после умножения на экспоненциальный множитель, который превращает линейный дифференциальный оператор в обычную производную.",
+      "backward_text": "Задача СПбГЭУ является кубическим вариантом того же приема: пять нулей после трех применений Ролля дают два нуля выражения f-9f'+27f''-27f'''.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

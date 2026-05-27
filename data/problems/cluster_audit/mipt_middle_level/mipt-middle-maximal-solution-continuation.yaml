@@ -1,0 +1,114 @@
+{
+  "id": "mipt-middle-maximal-solution-continuation",
+  "title": "Продолжение максимального решения через компактность",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit",
+      "mipt_middle_level"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,x) непрерывна и локально липшицева по x в области D. Если решение x(t) задачи x'=f(t,x) задано на максимальном правом полуинтервале [t0,b) и его график при t<b остается в компактном множестве K, лежащем внутри D, то b не может быть конечным. Иными словами, если максимальное решение нельзя продолжить за конечный правый конец, то график при t->b выходит из любого компакта области D.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Компакт дает общий локальный шаг продолжения",
+      "text": "На компактной окрестности правой части ограничены и локально липшицевы с едиными константами, поэтому из любой точки графика около b можно продолжить решение на один и тот же малый промежуток.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Предположим, что b<+infty и график решения при t из [t0,b) лежит в компактном K внутри D. Возьмем небольшой открытый слой U, компактно содержащий K. На замыкании U функция f ограничена: |f|<=M, и локальная теорема существования дает один и тот же радиус продолжения delta>0 для задач Коши с начальными точками из K. Кроме того, x(t) имеет предел при t->b-: для s<t близких к b имеем |x(t)-x(s)|<=int_s^t |f(tau,x(tau))|d tau <= M|t-s|, значит x(t) является фундаментальной и стремится к некоторому x_b из K. По непрерывности можно положить x(b)=x_b. Теперь задача Коши с данными x(b)=x_b имеет решение на [b,b+delta), и склеивание с прежним решением дает продолжение за b. Это противоречит максимальности. Следовательно, при конечном правом конце максимального интервала график обязан выходить из любого компакта D.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "continuation_theorem",
+      "compactness_argument",
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "maximal_solution",
+      "compact_subset",
+      "continuation"
+    ],
+    "goal": [
+      "prove",
+      "understand_definition"
+    ],
+    "keywords": [
+      "mipt_middle_level",
+      "continuation",
+      "maximal_solution",
+      "compactness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: стандартная теорема продолжения, но нужно понимать максимальность и роль компакта; technical_score=3: доказательство короткое и без вычислений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "middle_student_check",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "existence_uniqueness",
+    "continuation",
+    "complete_proof",
+    "low_technical",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_theory",
+      "status": "seed_reference",
+      "note": "Типовая формулировка теоремы продолжения максимального решения в курсе ОДУ."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-mipt-middle-level",
+    "notes": [
+      "Добавлено при аудите среднего уровня как проверка понимания продолжения, а не очередная вычислительная задача Коши."
+    ]
+  }
+}

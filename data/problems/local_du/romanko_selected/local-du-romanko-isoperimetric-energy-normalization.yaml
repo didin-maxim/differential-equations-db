@@ -1,0 +1,111 @@
+{
+  "id": "local-du-romanko-isoperimetric-energy-normalization",
+  "title": "Минимум энергии при нормировке L2",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти минимум J(y)=∫_0^pi (y')^2 dx при y(0)=y(pi)=0 и условии ∫_0^pi y^2 dx=1.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Увидеть первую собственную функцию Дирихле",
+      "text": "Нормировка превращает задачу в минимизацию отношения Рэлея. Минимум достигается на первой собственной функции -sin''=sin.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Введем множитель Лагранжа для связи ∫y^2dx=1 и рассмотрим ∫[(y')^2+lambda y^2]dx. Уравнение Эйлера дает -2y''+2lambda y=0, то есть -y''=-lambda y. С условиями Дирихле ненулевые решения на [0,pi] имеют вид sin nx, а соответствующие значения -lambda равны n^2. Минимум энергии должен соответствовать наименьшему собственному значению n^2=1. Нормировка дает y=±sqrt(2/pi) sin x, потому что ∫_0^pi sin^2 x dx=pi/2. Для любой допустимой y с рядом Фурье y=Σ a_n sin nx имеем ∫y^2dx=(pi/2)Σa_n^2=1, а ∫(y')^2dx=(pi/2)Σn^2a_n^2 >= (pi/2)Σa_n^2=1. Равенство возможно только при одной первой гармонике. Значит минимум равен 1 и достигается на указанных двух функциях.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "sturm_liouville",
+      "isoperimetric_variational_problem"
+    ],
+    "methods": [
+      "rayleigh_quotient",
+      "lagrange_multiplier",
+      "dirichlet_spectrum"
+    ],
+    "objects": [
+      "l2_normalization",
+      "first_eigenfunction",
+      "energy_minimum"
+    ],
+    "goal": [
+      "minimize",
+      "find_best_constant"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "isoperimetric",
+      "rayleigh-quotient",
+      "dirichlet-eigenvalue",
+      "poincare"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "idea_score=8: задача связывает изопериметрию, спектр Дирихле и неравенство Пуанкаре; technical_score=4: вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "variational_calculus",
+    "isoperimetric_problem",
+    "sturm_liouville",
+    "eigenvalues",
+    "boundary_value"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§21, задача 15: минимум энергии при L2-нормировке."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Идейный представитель изопериметрии: работает как мост к Штурму-Лиувиллю и неравенству Пуанкаре."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "trench-bvp-robin-green-kernel-example",
+  "title": "Функция Грина для смешанных условий Робина у уравнения y''+y=F",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "english_source"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача",
+        "text": "Для задачи y''+y=F(x), y(0)+y'(0)=0, y(pi)-y'(pi)=0 найти функцию Грина и записать решение через интеграл от F.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подобрать по одному решению на каждый конец",
+      "text": "Фундаментальные решения cos x и sin x надо линейно скомбинировать так, чтобы y1 удовлетворяло левому условию, а y2 - правому.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для однородного уравнения берем cos x и sin x. Левому условию удовлетворяет y1=cos x-sin x, потому что y1(0)+y1'(0)=1-1=0. Правому условию удовлетворяет y2=cos x+sin x, потому что y2(pi)-y2'(pi)=-1-(-1)=0. Их вронскиан W=2. Поэтому по формуле Грина y(x)=(cos x-sin x)/2 int_x^pi F(t)(cos t+sin t)dt +(cos x+sin x)/2 int_0^x F(t)(cos t-sin t)dt. Значит G(x,t)=((cos t-sin t)(cos x+sin x))/2 при 0<=t<=x и G(x,t)=((cos x-sin x)(cos t+sin t))/2 при x<=t<=pi.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "green_function",
+      "variation_of_parameters"
+    ],
+    "objects": [
+      "green_kernel",
+      "robin_boundary_condition"
+    ],
+    "goal": [
+      "solve",
+      "derive_formula"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "green_kernel",
+      "robin_conditions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "Не шаблон Дирихле: основной шаг - выбрать правильные краевые фундаментальные решения.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "green_kernel",
+    "variation_of_parameters",
+    "linear_higher_order",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_example",
+      "status": "source_verified",
+      "note": "Trench, Section 13.1, Example 13.1.6."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Оставлена как компактная вычислительная иллюстрация Green function с условиями Робина; не добавляет очередной Dirichlet eigenvalue template."
+    ]
+  }
+}

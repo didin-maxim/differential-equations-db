@@ -1,0 +1,125 @@
+{
+  "id": "local-du-programs-other-years-pendulum-sin-phase-portrait",
+  "title": "Глобальный фазовый портрет системы x'=y, y'=sin x",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача T5 из программ Элементы ДУ",
+        "text": "Для векторного поля на плоскости x'=y, y'=sin x найти все особые точки и схематично изобразить глобальный фазовый портрет.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "equilibrium",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Энергия раскладывает всю фазовую плоскость",
+      "text": "Система является уравнением второго порядка x''=sin x. Первый интеграл H=y^2/2+cos x задает уровни: центры, седла, сепаратрисы и вращательные траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение и описание портрета",
+      "text": "Особые точки задаются условиями y=0 и sin x=0, то есть это (k pi,0), k in Z. Линеаризация имеет матрицу [[0,1],[cos x,0]]. В точках (2m pi,0) получаем собственные значения 1 и -1, значит это седла. В точках ((2m+1)pi,0) получаем собственные значения +/- i; тип уточняется первым интегралом. Проверим энергию H(x,y)=y^2/2+cos x: вдоль решений H'=y y'-sin x x'=y sin x-sin x y=0. Поэтому траектории лежат на уровнях H=c. Минимумы H находятся в точках ((2m+1)pi,0), где H=-1; в окрестности таких точек уровни -1<c<1 являются замкнутыми овалами, значит это центры. Уровень c=1 проходит через седла (2m pi,0) и образует сепаратрисы: y=+/-sqrt(2(1-cos x))=+/-2|sin(x/2)|, которые соединяют соседние седла. При c>1 имеем y^2=2(c-cos x)>0 для всех x, поэтому на каждом таком уровне есть две незамкнутые ветви: верхняя с y>0 и нижняя с y<0; они соответствуют вращательному движению вправо и влево. Итак, глобальный портрет 2pi-периодичен по x: седла в четных кратных pi, центры в нечетных кратных pi, вокруг центров замкнутые овалы, между ними сепаратрисные петли уровня H=1, а вне сепаратрис идут две семьи проходящих траекторий с постоянным знаком y.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "second_order_autonomous"
+    ],
+    "methods": [
+      "energy_first_integral",
+      "linearization",
+      "phase_portrait"
+    ],
+    "objects": [
+      "equilibrium",
+      "saddle",
+      "center",
+      "separatrix",
+      "global_phase_portrait"
+    ],
+    "goal": [
+      "classify_equilibria",
+      "draw_phase_portrait"
+    ],
+    "keywords": [
+      "local_du_other_years",
+      "pendulum",
+      "phase_plane",
+      "first_integral",
+      "separatrix"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Нужно соединить локальную линеаризацию с глобальным описанием уровней энергии; вычисления умеренные.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "first_integral",
+    "stability",
+    "linear_systems",
+    "energy_method",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "local_du",
+    "program_deficit"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "5 (1).pdf и 5 (2).pdf, второе задание, задача T5*."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_programs_other_years_links",
+    "notes": [
+      "Добавлена как представитель программной задачи на полный фазовый портрет через первый интеграл, а не как очередная локальная классификация линейной системы.",
+      "Система имеет знак x''=sin x, поэтому устойчивые центры расположены в нечетных кратных pi, а четные кратные pi дают седла."
+    ]
+  }
+}

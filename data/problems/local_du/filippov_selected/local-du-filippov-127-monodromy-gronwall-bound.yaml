@@ -1,0 +1,118 @@
+{
+  "id": "local-du-filippov-127-monodromy-gronwall-bound",
+  "title": "Оценка мультипликаторов периодической линейной системы",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 127* из раздела теоретических вопросов",
+        "text": "Пусть матрица A(t) имеет период T и ||A(t)||<=a при всех t. Доказать, что для системы x'=A(t)x модули мультипликаторов не превосходят e^{aT}.",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Оценить оператор монодромии по росту решений",
+      "text": "Если решение стартует с единичного вектора, то его норма удовлетворяет интегральному неравенству |x(t)|<=1+int ||A(s)|| |x(s)| ds. Гронуолл дает норму оператора за период, а собственные значения не больше операторной нормы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть X(t) - фундаментальная матрица с X(0)=I. Для решения x(t)=X(t)x0 имеем x(t)=x0+int_0^t A(s)x(s) ds, поэтому |x(t)|<=|x0|+int_0^t a |x(s)| ds. По неравенству Гронуолла |x(t)|<=e^{at}|x0| при 0<=t<=T. Следовательно операторная норма монодромии X(T) не превосходит e^{aT}. Мультипликаторы - это собственные значения X(T), а модуль любого собственного значения не превосходит операторной нормы матрицы. Значит все их модули не превосходят e^{aT}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "periodic_coefficients"
+    ],
+    "methods": [
+      "gronwall_estimate",
+      "fundamental_matrix",
+      "monodromy"
+    ],
+    "objects": [
+      "multiplier",
+      "fundamental_matrix",
+      "periodic_linear_system"
+    ],
+    "goal": [
+      "estimate",
+      "prove"
+    ],
+    "keywords": [
+      "filippov-127",
+      "multipliers",
+      "monodromy",
+      "gronwall"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: надо перейти от периодической системы к оператору монодромии и оценке нормы; technical_score=3: расчет минимален.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "linear_systems",
+    "periodic_solution",
+    "gronwall",
+    "boundedness",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §24, задача 127*."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Добавлено как короткая задача о мультипликаторах, отличная от уже имеющегося критерия периодического решения через отсутствие мультипликатора 1."
+    ]
+  }
+}

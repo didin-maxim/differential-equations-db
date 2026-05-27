@@ -1,0 +1,120 @@
+{
+  "id": "oral-exam-strong-10-bounded-solutions-wronskian-obstruction",
+  "title": "Ограниченные решения и ненулевой Вронскиан",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Пусть q непрерывна на [0,+infty), а u и v - линейно независимые решения уравнения y''+q(t)y=0. Может ли одновременно выполняться: u и v ограничены на [0,+infty), u'(t)->0 и v'(t)->0 при t->+infty? Дать доказательный ответ.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Предельное поведение конфликтует с постоянным вронскианом",
+      "text": "Уравнение без y' сохраняет вронскиан. Если решения ограничены, а их производные стремятся к нулю, то выражение u v'-u' v стремится к нулю, хотя для независимой пары оно постоянно и ненулево.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нет, такое невозможно. Для двух решений уравнения y''+q(t)y=0 вронскиан W=u v'-u'v постоянен, потому что W'=u v''-u''v=u(-qv)-(-qu)v=0. Линейная независимость u и v означает W != 0. С другой стороны, из ограниченности u и v существуют числа M_u,M_v такие, что |u(t)|<=M_u и |v(t)|<=M_v. Тогда |W|<=M_u|v'(t)|+M_v|u'(t)|. По условию правая часть стремится к нулю при t->+infty, значит W=0. Это противоречит линейной независимости. Следовательно, хотя отдельные ограниченные решения с малой производной возможны, фундаментальная пара не может вести себя так одновременно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "wronskian_invariant",
+      "asymptotic"
+    ],
+    "objects": [
+      "wronskian",
+      "boundedness",
+      "linear_higher_order"
+    ],
+    "goal": [
+      "disprove"
+    ],
+    "keywords": [
+      "bounded_solutions",
+      "wronskian",
+      "asymptotic_obstruction",
+      "oral_exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: асимптотическое утверждение надо проверить инвариантом, а не решать уравнение. Техническая сложность 4: оценка вронскиана элементарна.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "wronskian",
+    "boundedness",
+    "asymptotic",
+    "nonexistence",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по ограниченным решениям, производным и вронскиану; точная карточка не найдена."
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "imc-olympiad",
+  "title": "IMC: олимпиадные кандидаты по дифференциальным уравнениям",
+  "created_at": "2026-05-26",
+  "scope": [
+    "student_olympiad",
+    "imc",
+    "official_archive",
+    "include_candidates_from_olympiad_scan_imc"
+  ],
+  "problem_ids": [
+    "imc-1994-p3-rolle-integrating-factor",
+    "imc-2019-p3-convex-differential-inequality",
+    "imc-2023-p7-boundary-linear-expression",
+    "imc-2025-p6-derivative-of-f-over-x"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Импортированы include-кандидаты из docs/reviews/olympiad-scan-imc.md: 1994/P3, 2019/P3, 2023/P7, 2025/P6.",
+    "Все карточки используют источник src-imc-official; формулировки и механизмы сверены с официальными PDF IMC.",
+    "Borderline 2025/P2 не импортирован: основной механизм - интегральное неравенство Коши-Буняковского и интегрирование по частям; равенство задает f''=lambda(1-x^2), но по docs/reviews/olympiad-selection-criteria.md это ближе к вариационному/интегральному неравенству, чем к задаче, где ОДУ является предметом или существенным механизмом.",
+    "Отдельные карточки-теоремы не добавлялись: нужные общие механизмы уже представлены существующими карточками linear-first-order-formula и convex-solution-two-zeros, а теорема Ролля используется как стандартный факт анализа внутри полных решений."
+  ]
+}

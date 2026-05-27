@@ -1,0 +1,24 @@
+{
+  "id": "cluster-variational-calculus",
+  "title": "Кластерный аудит вариационного исчисления",
+  "created_at": "2026-05-26",
+  "scope": [
+    "cluster_audit",
+    "variational_calculus",
+    "simple-variational-calculus"
+  ],
+  "problem_ids": [
+    "cluster-variational-euler-poisson-fixed",
+    "cluster-variational-euler-poisson-free-end",
+    "cluster-variational-euler-poisson-general-order",
+    "cluster-variational-transversality-moving-endpoint",
+    "cluster-variational-quadratic-coercive-minimizer"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка намеренно компактная: добавлены только теоретические и модельные карточки, закрывающие реальные дыры кластера.",
+    "Массовые однотипные задачи на вычисление уравнения Эйлера-Лагранжа не добавлялись.",
+    "Связи для этого аудита вынесены только в data/relations/relations.d/cluster-variational-calculus.yaml.",
+    "Для квадратичной теоремы точная постановка помечена как авторская М. Дидина; внешняя ссылка используется только как надежная общая теория прямого метода и строгой выпуклости."
+  ]
+}

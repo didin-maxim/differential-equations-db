@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-weak-pass-linear-method-linear-formula",
+      "from": "linear-first-order-formula",
+      "to": "weak-pass-linear-method-choice",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Формула линейного уравнения первого порядка реализуется в устной задаче через интегрирующий множитель.",
+      "backward_text": "Устная задача проверяет, узнает ли студент базовый метод интегрирующего множителя в конкретном примере.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-weak-pass-singular-coeff-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "weak-pass-existence-interval-singular-coeff",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема о максимальном продолжении объясняет, почему граница области определения коэффициента ограничивает интервал решения.",
+      "backward_text": "Устная задача является простым примером того, что максимальное решение нельзя продолжать через точку, где исходное уравнение не определено.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-weak-pass-nonunique-peano",
+      "from": "peano-existence-theorem",
+      "to": "weak-pass-nonunique-continuous-counterexample",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Теорема Пеано подчеркивает существование без единственности; устная задача просит явно предъявить такой контрпример.",
+      "backward_text": "Контрпример показывает, почему одной непрерывности из теоремы Пеано недостаточно для единственности.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-weak-pass-exact-form-potential",
+      "from": "exact-equation-potential",
+      "to": "weak-pass-exact-form-recognition",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют проверку M_y=N_x и восстановление потенциала полной формы.",
+      "backward_text": "Устная задача делает акцент на распознавании полной формы перед восстановлением потенциала.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-weak-pass-bernoulli-standard",
+      "from": "bernoulli-standard",
+      "to": "weak-pass-bernoulli-substitution",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи линеаризуют уравнение Бернулли заменой z=1/y.",
+      "backward_text": "Устная задача проверяет тот же механизм на задаче Коши и дополнительно выявляет ошибку применения линейной формулы до замены.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-weak-pass-resonance-basic",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "weak-pass-resonance-double-root",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Базовая резонансная задача учит умножать пробный вид на x; новая задача использует тот же принцип с кратностью два.",
+      "backward_text": "Кратный резонанс является ближайшим диагностическим вариантом стандартного резонансного подбора.",
+      "status": "ai_checked",
+      "confidence": 0.87
+    },
+    {
+      "id": "rel-weak-pass-wronskian-liouville",
+      "from": "liouville-wronskian-formula",
+      "to": "weak-pass-wronskian-zero-dependence",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля сразу дает, что нуль вронскиана в одной точке сохраняется на всем интервале.",
+      "backward_text": "Устная задача является коротким применением формулы Лиувилля к линейной зависимости решений.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-weak-pass-system-jordan-saddle",
+      "from": "linear-system-jordan-block",
+      "to": "weak-pass-linear-system-saddle",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки решают линейную систему через экспоненты матрицы; в устной задаче матрица уже диагональна.",
+      "backward_text": "Седловая система является самым простым случаем линейной системы с явными экспонентами по координатам.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-weak-pass-phase-line-basic",
+      "from": "autonomous-phase-line-stability",
+      "to": "weak-pass-phase-line-semistable",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи классифицируют равновесия по знакам правой части на фазовой прямой.",
+      "backward_text": "Устная задача добавляет кратный корень, где знак не меняется и появляется одностороннее поведение.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-weak-pass-mixed-bvp-dirichlet",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "weak-pass-mixed-bvp-eigenvalues",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе спектральные задачи решаются разбором знака lambda и наложением краевых условий на явное решение.",
+      "backward_text": "Смешанные условия дают другой спектр, но используют тот же механизм, что и задача Дирихле.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-weak-pass-series-airy",
+      "from": "power-series-airy-at-zero",
+      "to": "weak-pass-series-first-coefficients",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки получают рекурсию коэффициентов после подстановки степенного ряда в уравнение типа Эйри.",
+      "backward_text": "Устная задача ограничивается первыми коэффициентами и потому проверяет саму технику сдвига индексов.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

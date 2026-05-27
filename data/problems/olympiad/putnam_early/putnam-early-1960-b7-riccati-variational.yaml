@@ -1,0 +1,116 @@
+{
+  "id": "putnam-early-1960-b7-riccati-variational",
+  "title": "Putnam 1960 B7: сравнение и вариационная формула для Риккати",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f,g непрерывны на [0,infty), a решает a'+fa=g, a(0)=c, а b удовлетворяет b'+fb>=g и b(0)=c. Доказать, что b(x)>=a(x). Затем вывести для малых x представление решения y'+fy=y^2, y(0)=d, через максимум по непрерывным u(t): y(x)=max [d e^{-h(x)}-int_0^x e^{-(h(x)-h(t))}u(t)^2 dt], где h(t)=int_0^t(f(s)-2u(s))ds.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_first_order_equation",
+          "riccati_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Интегрирующий множитель и квадрат",
+      "text": "Первая часть следует после умножения на exp(int f); во второй часть квадрат (y-u)^2>=0 превращает Риккати в семейство линейных нижних оценок.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим F(x)=int_0^x f(t)dt. Тогда (ae^F)'=ge^F, а (be^F)'=(b'+fb)e^F>=ge^F. Так как ae^F и be^F равны при x=0, интегрирование дает be^F>=ae^F, следовательно b>=a. Для второй части зафиксируем непрерывную u и положим h(x)=int_0^x(f(t)-2u(t))dt, z=ye^h. Из (y-u)^2>=0 следует y^2-2uy>=-u^2. Поэтому z'=(y'+(f-2u)y)e^h=(y^2-2uy)e^h>=-u^2e^h. Интегрируя от 0 до x, получаем y(x)>=d e^{-h(x)}-int_0^x e^{-(h(x)-h(t))}u(t)^2dt. Это верно для каждого u. Если же взять u(t)=y(t) на промежутке существования решения, то (y-u)^2=0 и все неравенства становятся равенствами. Значит y(x) равен максимуму указанных выражений по всем непрерывным u.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order",
+      "riccati"
+    ],
+    "methods": [
+      "integrating_factor",
+      "differential_inequality",
+      "variational_formula"
+    ],
+    "objects": [
+      "comparison",
+      "riccati_equation"
+    ],
+    "goal": [
+      "prove",
+      "represent"
+    ],
+    "keywords": [
+      "Putnam 1960 B7",
+      "riccati",
+      "differential_inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 8,
+    "comment": "Идея сильная: квадрат разности превращает Риккати в семейство линейных оценок. Техника высокая: интегрирующие множители и вариационная формула требуют аккуратного счета.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_first_order",
+    "integrating_factor",
+    "riccati",
+    "differential_inequality",
+    "comparison",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol6014.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Архивная страница отмечает опечатку в оригинале; карточка использует согласованную формулу из решения."
+    ]
+  }
+}

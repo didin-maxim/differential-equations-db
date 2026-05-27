@@ -1,0 +1,114 @@
+{
+  "id": "local-du-written-2014-51-constant-coeff-third-order",
+  "title": "Третье линейное уравнение с постоянными коэффициентами и правой частью cos^2 x",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2014-2015, вариант 51, задача 3",
+        "text": "Найти все действительные решения уравнения y'''+4y''+4y'=2x+cos^2 x.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Характеристический многочлен и подбор частного решения",
+      "text": "Оператор равен D(D+2)^2. Для правой части cos^2 x сначала раскрываем cos^2 x=(1+cos 2x)/2, затем подбираем полиномиальный и тригонометрический частные ответы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Однородное уравнение имеет характеристический многочлен r(r+2)^2, поэтому y_h=C1+(C2+C3x)e^{-2x}. Так как cos^2 x=(1+cos 2x)/2, для полиномиальной части 2x+1/2 ищем y_p=ax^2+bx. Тогда y'=2ax+b, y''=2a, y'''=0 и y'''+4y''+4y'=8ax+8a+4b. Отсюда a=1/4, b=-3/8. Для (1/2)cos 2x оператор D(D+2)^2 на e^{2ix} умножает на (2i)(2+2i)^2=-16, значит частное решение равно -(1/32)cos 2x. Итак, все решения: y=C1+(C2+C3x)e^{-2x}+x^2/4-3x/8-(1/32)cos 2x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "characteristic_polynomial",
+      "undetermined_coefficients"
+    ],
+    "objects": [
+      "ordinary_differential_equation",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2014-15",
+      "DE2007-08",
+      "cos_squared"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 3,
+    "technical_score": 4,
+    "local_score": 4,
+    "comment": "Идея базовая; техническая часть состоит в аккуратном разложении cos^2 x и подборе коэффициентов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_higher_order",
+    "constant_coefficients",
+    "resonance",
+    "mipt_core",
+    "standard_course_methods",
+    "cluster_representative",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2014-15.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Та же формула встречается в DE2007-08, круг 2, билет 81; карточка заведена один раз как представитель кластера.",
+      "Однотипные линейные уравнения с постоянными коэффициентами из DE2011-2012 и соседних вариантов DE2014-15 отфильтрованы."
+    ]
+  }
+}

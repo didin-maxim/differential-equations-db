@@ -1,0 +1,104 @@
+{
+  "id": "putnam-modern-1997-b2",
+  "title": "Putnam 1997 B2: ограниченность через убывающую энергию",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f - дважды дифференцируемая действительнозначная функция, удовлетворяющая f(x)+f''(x)=-x g(x) f'(x), где g(x)>=0 для всех действительных x. Доказать, что |f(x)| ограничена.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Энергия осциллятора с демпфированием",
+      "text": "Для E=f^2+(f')^2 производная имеет знак, направленный к x=0, поэтому энергия не превосходит E(0) с обеих сторон.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим E(x)=f(x)^2+f'(x)^2. Тогда E'=2ff'+2f'f''=2f'(f+f'')=-2x g(x)(f'(x))^2. При x>=0 имеем E'<=0, значит E(x)<=E(0). При x<=0 имеем E'>=0; двигаясь от x к 0, получаем снова E(x)<=E(0). Следовательно, для всех x выполнено f(x)^2<=E(x)<=E(0), и потому |f(x)|<=sqrt(E(0)).",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "energy_monotonicity"
+    ],
+    "objects": [
+      "energy_method",
+      "boundedness",
+      "differential_inequality"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "putnam-modern-1997-b2",
+      "Putnam",
+      "energy_method",
+      "boundedness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Идея стандартная с тонкостью: энергия убывает в направлении к нулю с обеих сторон. Техника умеренная: дифференцирование энергии и знаки короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "energy_method",
+    "boundedness",
+    "differential_inequality",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 1997 год."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "oral-exam-excellent-gronwall-perturbed-solution",
+  "title": "Оценка ошибки для возмущенного уравнения через Гронуолла",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,y) непрерывна и удовлетворяет |f(t,u)-f(t,v)|<=L(t)|u-v| на [0,T], где L непрерывна и неотрицательна. Пусть y'=f(t,y), z'=f(t,z)+r(t), y(0)=z(0), где r непрерывна. Докажите оценку |y(t)-z(t)| <= int_0^t exp(int_s^t L(tau)d tau)|r(s)| ds.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "gronwall_inequality",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ввести накопленную ошибку как новую неизвестную",
+      "text": "Разность решений удовлетворяет интегральному неравенству. Чтобы получить точное ядро, удобно применить Гронуолла с переменной нижней границей или продифференцировать вспомогательную мажоранту.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим w(t)=|y(t)-z(t)|. Из интегральной формы уравнений и условия y(0)=z(0) получаем w(t)<=int_0^t L(s)w(s) ds + int_0^t |r(s)| ds. Положим R(t)=int_0^t |r(s)| ds и применим интегральную форму Гронуолла: w(t)<=R(t)+int_0^t exp(int_s^t L(tau)d tau)L(s)R(s) ds. Интегрируя второе слагаемое по частям в форме dR(s)=|r(s)|ds, получаем эквивалентную оценку w(t)<=int_0^t exp(int_s^t L(tau)d tau)|r(s)| ds. Можно также проверить ее напрямую: правая часть U(t) удовлетворяет U'=L(t)U+|r(t)|, U(0)=0, а неравенство для w и сравнение с линейным уравнением дают w<=U.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonautonomous"
+    ],
+    "methods": [
+      "gronwall_estimate",
+      "continuous_dependence"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "lipschitz_condition",
+      "gronwall_inequality"
+    ],
+    "goal": [
+      "estimate",
+      "prove"
+    ],
+    "keywords": [
+      "perturbed_solution",
+      "continuous_dependence",
+      "gronwall"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Это не просьба доказать Гронуолла, а проверка умения применить его с неоднородным возмущением и правильным весом.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "gronwall",
+    "existence_uniqueness",
+    "differential_inequality"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как устная задача на применение неравенства Гронуолла к устойчивости решения."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Проверена базовая карточка с доказательством Гронуолла; здесь добавлена прикладная оценка возмущенного решения."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "cluster-variational-euler-poisson-fixed",
+  "title": "Уравнение Эйлера-Пуассона для функционала со второй производной",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть F=F(x,y,y',y'') гладка, а y дает локальный экстремум функционала J[y]=int_a^b F(x,y,y',y'') dx среди кривых, для которых y(a), y'(a), y(b), y'(b) закреплены. Вывести уравнение Эйлера-Пуассона: F_y-d/dx F_{y'}+d^2/dx^2 F_{y''}=0.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Два раза интегрировать граничный член",
+      "text": "В первой вариации появляются h' и h''. При закрепленных y и y' на концах граничные члены после двух интегрирований по частям исчезают.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Возьмем вариацию y_e=y+epsilon h, где h(a)=h'(a)=h(b)=h'(b)=0. Из стационарности следует 0=delta J[y]h=int_a^b (F_y h+F_{y'}h'+F_{y''}h'') dx. Интегрируем второй член один раз, а третий два раза: int F_{y'}h' dx=[F_{y'}h]_a^b-int (d/dx F_{y'})h dx, int F_{y''}h'' dx=[F_{y''}h']_a^b-[d/dx(F_{y''})h]_a^b+int (d^2/dx^2 F_{y''})h dx. Все граничные слагаемые равны нулю из-за условий на h и h'. Поэтому int_a^b (F_y-d/dx F_{y'}+d^2/dx^2 F_{y''})h dx=0 для всех гладких h с компактной поддержкой в (a,b). По основной лемме вариационного исчисления коэффициент при h равен нулю на интервале.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "fourth_order_linear",
+      "boundary_value"
+    ],
+    "methods": [
+      "first_variation",
+      "euler_poisson_equation",
+      "integration_by_parts"
+    ],
+    "objects": [
+      "higher_derivative_functional",
+      "fixed_endpoints",
+      "clamped_boundary_conditions"
+    ],
+    "goal": [
+      "derive"
+    ],
+    "keywords": [
+      "cluster-variational-calculus",
+      "euler-poisson",
+      "higher-derivatives",
+      "fixed-endpoints"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "Базовый вывод Эйлера-Пуассона: новый шаг относительно Эйлера-Лагранжа состоит во втором интегрировании по частям.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "task_cluster",
+    "cluster_representative",
+    "boundary_value",
+    "variational_calculus",
+    "euler_poisson",
+    "higher_derivatives_functional",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 7 программы: элементы вариационного исчисления, производные высших порядков."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-variational-calculus",
+    "notes": [
+      "Добавлено при кластерном аудите как теоретический prerequisite для карточек с производными высшего порядка."
+    ]
+  }
+}

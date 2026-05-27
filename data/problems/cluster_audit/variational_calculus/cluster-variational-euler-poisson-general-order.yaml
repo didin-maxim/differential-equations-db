@@ -1,0 +1,112 @@
+{
+  "id": "cluster-variational-euler-poisson-general-order",
+  "title": "Формула Эйлера-Пуассона для производных до порядка m",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть J[y]=int_a^b F(x,y,y',...,y^(m)) dx, а на концах закреплены значения y,y',...,y^(m-1). Вывести общее уравнение Эйлера-Пуассона sum_{k=0}^m (-1)^k d^k/dx^k F_{y^(k)}=0.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Повторить интегрирование k раз",
+      "text": "Каждый член F_{y^(k)} h^(k) переносится на h после k интегрирований по частям и приобретает знак (-1)^k.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Для вариации y_e=y+epsilon h имеем h^(j)(a)=h^(j)(b)=0 при j=0,...,m-1. Первая вариация имеет вид delta J[y]h=sum_{k=0}^m int_a^b F_{y^(k)} h^(k) dx. Для фиксированного k интегрируем по частям k раз. Все возникающие граничные члены содержат одну из величин h,h',...,h^(k-1) на концах, поэтому равны нулю. Остается int_a^b (-1)^k d^k/dx^k(F_{y^(k)}) h dx. Складывая по k, получаем int_a^b [sum_{k=0}^m (-1)^k d^k/dx^k F_{y^(k)}]h dx=0 для всех h с компактной поддержкой. Основная лемма вариационного исчисления дает заявленное дифференциальное уравнение.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "higher_order"
+    ],
+    "methods": [
+      "euler_poisson_equation",
+      "first_variation",
+      "integration_by_parts"
+    ],
+    "objects": [
+      "higher_derivative_functional",
+      "fixed_endpoints",
+      "higher_order_boundary_conditions"
+    ],
+    "goal": [
+      "derive",
+      "generalize"
+    ],
+    "keywords": [
+      "cluster-variational-calculus",
+      "euler-poisson",
+      "general-order",
+      "higher-derivatives"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "Общая формула требует аккуратной индексации, но механизм полностью переносим из случая y''.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "task_cluster",
+    "boundary_value",
+    "variational_calculus",
+    "euler_poisson",
+    "higher_derivatives_functional",
+    "advanced_standard_course",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 7 программы: элементы вариационного исчисления; общая формула включена как теоретическая карточка аудита."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-variational-calculus",
+    "notes": [
+      "Добавлено как третий вариант вывода Эйлера-Пуассона: общий порядок m."
+    ]
+  }
+}

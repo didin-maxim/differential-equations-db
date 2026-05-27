@@ -1,0 +1,114 @@
+{
+  "id": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+  "title": "Линейная комбинация с двумя нулями и энергетический запрет",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть q непрерывна на [a,b] и q(x)<=0. Докажите, что уравнение y''+q(x)y=0 не имеет ненулевого решения с y(a)=y(b)=0. Затем примените это так: если y1,y2 - два решения и y1(a)y2(b)-y2(a)y1(b)=0, то y1,y2 линейно зависимы.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала сделать нужную комбинацию, потом умножить на решение",
+      "text": "Условие на значения в концах означает, что есть нетривиальная линейная комбинация y1,y2, зануляющаяся в a и b. Для такого решения интегрирование y(y''+qy)=0 дает сумму неотрицательных членов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть y(a)=y(b)=0 и y''+qy=0. Умножим уравнение на y и проинтегрируем: 0=int_a^b y y'' dx + int_a^b qy^2 dx. Интегрирование по частям дает int_a^b y y'' dx = [yy']_a^b - int_a^b (y')^2 dx = -int_a^b (y')^2 dx. Значит int_a^b (y')^2 dx - int_a^b qy^2 dx=0. Так как q<=0, обе части подынтегральной суммы (y')^2 и -qy^2 неотрицательны, поэтому y'=0 на [a,b]. Следовательно y постоянно, а из y(a)=0 получаем y≡0. Теперь пусть y1(a)y2(b)-y2(a)y1(b)=0. Тогда векторы (y1(a),y2(a)) и (y1(b),y2(b)) линейно зависимы, поэтому найдутся не все нулевые alpha,beta такие, что alpha y1(a)+beta y2(a)=0 и alpha y1(b)+beta y2(b)=0. Комбинация y=alpha y1+beta y2 решает то же уравнение и имеет два нуля, значит y≡0. Это и есть линейная зависимость y1,y2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "energy_method",
+      "linear_combination"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "linear_higher_order"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "two_zeros",
+      "linear_combination",
+      "energy_identity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Хорошая устная проверка: надо не только знать энергетическое тождество, но и подобрать линейную комбинацию по двум концам.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_higher_order",
+    "boundary_value",
+    "energy_method",
+    "zero_location"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как задача на выбор линейной комбинации и интегральное тождество."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Проверены карточки по краевым задачам и нулям решений; такой двухшаговой устной задачи с детерминантом значений на концах не было."
+    ]
+  }
+}

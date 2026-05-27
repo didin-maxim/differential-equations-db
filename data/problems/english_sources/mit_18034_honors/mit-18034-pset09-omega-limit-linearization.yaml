@@ -1,0 +1,110 @@
+{
+  "id": "mit-18034-pset09-omega-limit-linearization",
+  "title": "Предел траектории автономной системы и локальная линеаризация",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "mini_theorem"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть x'=f(x,y), y'=g(x,y), где f и g непрерывно дифференцируемы. (a) Если решение имеет конечный предел (x(t),y(t))->(x1,y1) при t->+infty, доказать, что (x1,y1) - критическая точка. (b) Показать, что в окрестности критической точки (x0,y0) система записывается как производная вектора (x-x0,y-y0) равна матрице с коэффициентами a,b,c,d, умноженной на этот вектор, причем эта матрица стремится к якобиану поля в точке.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Использовать автономность и формулу конечных приращений",
+      "text": "Если в предельной точке поле ненулевое, одна координата продолжала бы монотонно уходить, что несовместимо со сходимостью. Локальная линейная часть получается из интегральной формы формулы Лагранжа.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть, например, f(x1,y1)<0. Тогда по непрерывности найдутся alpha>0 и окрестность предельной точки, где f<-alpha. Для всех достаточно больших t траектория лежит в этой окрестности, значит x'(t)<-alpha и x(t)<=-alpha t+C, что противоречит сходимости x(t) к конечному x1. Если f(x1,y1)>0, тем же рассуждением x(t)>=alpha t+C и снова нет конечного предела. Если g(x1,y1)<0 или g(x1,y1)>0, противоречие получается для координаты y(t). Поэтому f(x1,y1)=g(x1,y1)=0. Для второй части перенесем критическую точку в начало. По формуле Ньютона-Лейбница вдоль отрезка от 0 до (x,y) имеем f(x,y)=int_0^1 [f_x(sx,sy)x+f_y(sx,sy)y] ds. Значит f=a(x,y)x+b(x,y)y, где a=int_0^1 f_x(sx,sy)ds, b=int_0^1 f_y(sx,sy)ds. Так же g=c(x,y)x+d(x,y)y, где c=int_0^1 g_x(sx,sy)ds, d=int_0^1 g_y(sx,sy)ds. Непрерывность частных производных дает a->f_x(0,0), b->f_y(0,0), c->g_x(0,0), d->g_y(0,0) при (x,y)->0. После обратного сдвига получаем требуемую локальную запись около (x0,y0).",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "qualitative_limit",
+      "linearization",
+      "mean_value_formula"
+    ],
+    "objects": [
+      "critical_point",
+      "jacobian",
+      "omega_limit"
+    ],
+    "goal": [
+      "prove_qualitative_property"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 9",
+      "critical point",
+      "linearization",
+      "omega limit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: нужно связать сходимость траектории с ненулевым векторным полем и аккуратно вывести линеаризацию; technical_score=3: вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_system",
+    "phase_plane",
+    "equilibrium_linearization",
+    "mean_value_theorem",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #9, Problem 2; Problem set 9, Solution keys, Problem 2"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: в базе есть конкретные фазовые портреты, но эта карточка выделяет переносимый качественный факт о конечном пределе и локальной матричной форме поля.",
+      "Метка advanced_standard_course: это естественное обоснование метода линеаризации, немного выходящее за вычислительные фазовые портреты."
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "putnam-early-1957-ii6-zero-location",
+  "title": "Putnam 1957 II-6: локализация нуля линейного уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть y(0)=0, y'(0)=1 и (x^2+9)y''+(x^2+4)y=0. Доказать, что y(x)=0 для некоторого x из промежутка [sqrt(63/53) pi, 3pi/2].",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить с двумя синусами",
+      "text": "Интегральное тождество для y''z-yz'' дает сначала существование нуля до 3pi/2, а затем запрещает нуль до sqrt(63/53)pi.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение сравнением",
+      "text": "Перепишем уравнение как y''+Q(x)y=0, где Q=(x^2+4)/(x^2+9). Сначала сравним с z''+(4/9)z=0, z(0)=0, z'(0)=1, то есть z=(3/2)sin(2x/3). На (0,3pi/2) имеем Q>4/9 и z>0. Тождество (y'z-yz')'=(y''z-yz'')=(4/9-Q)yz. Если y не имеет нулей на (0,3pi/2), то y>0 там из-за y'(0)=1. Интегрируя от 0 до 3pi/2, получаем слева 2y(3pi/2)/3>=0, а справа строго отрицательный интеграл, противоречие. Значит нуль есть до 3pi/2. Теперь положим k=sqrt(63/53)pi и сравним с w''+(53/63)w=0, w(0)=0, w'(0)=1. Так как pi^2<10, на [0,3pi/2] выполнено Q<53/63, а w>0 на (0,k). Если h<=k - первый положительный нуль y, то y>0 на (0,h), y(h)=0, y'(h)<=0. Интегрирование тождества (w'y-wy')'=(w''y-wy'')=(Q-53/63)wy от 0 до h дает левую часть -w(h)y'(h)>=0, тогда как правая часть отрицательна. Противоречие. Поэтому первый нуль лежит в (k,3pi/2), что доказывает требуемое.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order_linear"
+    ],
+    "methods": [
+      "comparison",
+      "wronskian_identity"
+    ],
+    "objects": [
+      "zeros",
+      "oscillation"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "Putnam 1957 II-6",
+      "zero_location",
+      "comparison"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 8,
+    "comment": "Идея сильная: вронскианное тождество используется для двухсторонней локализации нуля. Техника высокая: нужно аккуратно вести интегральные оценки.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "zero_location",
+    "oscillation",
+    "comparison",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol5713.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "Интервал записан в возрастающем порядке; это соответствует архивному решению."
+    ]
+  }
+}

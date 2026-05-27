@@ -1,0 +1,32 @@
+{
+  "id": "putnam-modern",
+  "title": "Putnam поздние include-кандидаты по дифференциальным уравнениям",
+  "created_at": "2026-05-26",
+  "scope": [
+    "student_olympiad",
+    "putnam",
+    "modern"
+  ],
+  "problem_ids": [
+    "putnam-modern-1979-b4",
+    "putnam-modern-1987-a3",
+    "putnam-modern-1988-a2",
+    "putnam-modern-1990-b1",
+    "putnam-modern-1994-b3",
+    "putnam-modern-1995-a5",
+    "putnam-modern-1997-b2",
+    "putnam-modern-1999-b4",
+    "putnam-modern-2005-b3",
+    "putnam-modern-2009-a2",
+    "putnam-modern-2009-b5",
+    "putnam-modern-2010-b5",
+    "putnam-modern-2023-a3"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка основана на docs/reviews/olympiad-scan-putnam.md и сверке с исходными statement TeX/PDF Putnam archive.",
+    "Источник карточек: src-putnam-archive.",
+    "1979 B4 сверена по Kalva/Scholes; задачи 1987-2023 сверены по TeX-файлам архива Kedlaya.",
+    "Все карточки имеют полные русские решения; карточки без solutions в этой пачке не добавлялись."
+  ]
+}

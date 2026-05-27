@@ -1,0 +1,26 @@
+{
+  "id": "olympiad-international-extra",
+  "title": "Дополнительный импорт международных англоязычных студенческих олимпиад",
+  "created_at": "2026-05-27",
+  "scope": [
+    "student_olympiad",
+    "international_extra",
+    "official_or_reliable_archives",
+    "differential_equations_central"
+  ],
+  "problem_ids": [
+    "smmc-2018-a3-log-ratio-concavity",
+    "istcim-2022-c-integral-identity-ode",
+    "istcim-2023-e-functional-ode-cosine",
+    "imc-2006-p6-real-root-differential-operator",
+    "bme-2023-p3-periodic-high-derivative-bound"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка основана на docs/reviews/olympiad-scan-international-extra.md.",
+    "Добавлены только задачи, где ОДУ, дифференциальное неравенство или функционально-дифференциальное сведение являются центральным механизмом решения.",
+    "Simon Marais 2024 B4/C4 и VJIMC 2015 Category II Problem 4 оставлены как borderline: ОДУ возникает после вспомогательной редукции, но исходная задача в первую очередь про рекуррентные/интегральные преобразования.",
+    "Berkeley Math Tournament не импортировался: в найденных материалах это в основном школьный/HS-формат, релевантного undergraduate DE-архива не найдено.",
+    "Новые связи вынесены в data/relations/relations.d/olympiad-international-extra.yaml."
+  ]
+}

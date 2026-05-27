@@ -1,0 +1,120 @@
+{
+  "id": "mipt-middle-cauchy-formula-variable-system",
+  "title": "Формула Коши для неоднородной системы с переменными коэффициентами",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit",
+      "mipt_middle_level"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть Phi(t) - фундаментальная матрица однородной системы x'=A(t)x на интервале I, причем Phi(t0) обратима. Вывести формулу решения задачи x'=A(t)x+g(t), x(t0)=x0: x(t)=Phi(t)Phi(t0)^(-1)x0+Phi(t) int_{t0}^t Phi(s)^(-1)g(s) ds.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Заменить постоянный вектор на функцию",
+      "text": "В представлении x=Phi(t)c(t) члены с A(t)Phi(t)c(t) сокращаются, и остается c'=Phi^{-1}g.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Ищем решение в виде x(t)=Phi(t)c(t). Тогда x'=Phi'c+Phi c'=A(t)Phi c+Phi c'. Подстановка в x'=A(t)x+g(t) дает A Phi c+Phi c'=A Phi c+g, значит c'=Phi^{-1}g. Интегрируя, получаем c(t)=c(t0)+int_{t0}^t Phi(s)^(-1)g(s)ds. Из начального условия x0=Phi(t0)c(t0), то есть c(t0)=Phi(t0)^(-1)x0. Подстановка c(t) дает указанную формулу. Если выбрать нормировку Phi(t0)=E, первый множитель упрощается до Phi(t)x0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "inhomogeneous_linear",
+      "variable_coefficients"
+    ],
+    "methods": [
+      "variation_of_constants",
+      "fundamental_matrix",
+      "cauchy_formula"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "transition_matrix",
+      "inhomogeneous_system"
+    ],
+    "goal": [
+      "derive",
+      "apply_formula"
+    ],
+    "keywords": [
+      "mipt_middle_level",
+      "variable_coefficients",
+      "fundamental_matrix",
+      "cauchy_formula"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартная вариация постоянных для системы; technical_score=4: нужно аккуратно работать с матрицей Phi^{-1}.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "middle_student_check",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "linear_systems",
+    "variation_of_parameters",
+    "complete_proof",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_theory",
+      "status": "seed_reference",
+      "note": "Типовая формула Коши и вариация постоянных для линейных систем с переменными коэффициентами."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-mipt-middle-level",
+    "notes": [
+      "Добавлено как мост между постоянной матричной экспонентой и переменными коэффициентами; вычислительная часть намеренно минимальна."
+    ]
+  }
+}

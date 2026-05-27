@@ -1,0 +1,110 @@
+{
+  "id": "putnam-early-1971-b5-hypocycloid-system",
+  "title": "Putnam 1971 B5: гипоциклоиды из линейной системы второго порядка",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что графики в плоскости (x,y) всех решений системы x''+y'+6x=0, y''-x'+6y=0 с условиями x'(0)=y'(0)=0 являются гипоциклоидами. Найти радиус неподвижной окружности и возможные радиусы катящихся окружностей.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Комплексифицировать систему",
+      "text": "Переменная z=x+iy превращает систему в одно уравнение с постоянными коэффициентами, а его две частоты совпадают с параметризацией гипоциклоиды.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "complexify_linear_system"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим z=x+iy. Тогда первая строка плюс i, умноженное на вторую, дает z''-iz'+6z=0. Характеристическое уравнение lambda^2-ilambda+6=0 имеет корни 3i и -2i, поэтому z=Ae^{3it}+Be^{-2it}. Условия x'(0)=y'(0)=0 означают z'(0)=0, то есть 3iA-2iB=0 и B=3A/2. Следовательно, с точностью до поворота и масштаба x=A cos 3t+B cos 2t, y=A sin 3t-B sin 2t, где B=3A/2. Гипоциклоида, образованная окружностью радиуса R внутри окружности радиуса cR, имеет параметризацию x=(c-1)R cos bt+R cos((c-1)bt), y=(c-1)R sin bt-R sin((c-1)bt), возможно после отражения оси y. Сравнение частот 3 и 2 дает два описания одной и той же кривой: либо c-1=2/3, то есть радиус неподвижной окружности равен (5/3)R, либо после отражения c-1=3/2, то есть неподвижный радиус равен (5/2)R. Итак, для каждой траектории катящаяся окружность может иметь радиус 3/5 или 2/5 радиуса неподвижной окружности; эквивалентно неподвижный радиус равен 5R/3 или 5R/2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "complexify_linear_system"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "second_order_linear"
+    ],
+    "methods": [
+      "complexification",
+      "constant_coefficients",
+      "parametric_curve"
+    ],
+    "objects": [
+      "hypocycloid",
+      "trajectory"
+    ],
+    "goal": [
+      "identify"
+    ],
+    "keywords": [
+      "Putnam 1971 B5",
+      "complexification",
+      "hypocycloid"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 9,
+    "technical_score": 7,
+    "comment": "Идея сильная: комплексная форма системы должна быть связана с параметризацией гипоциклоиды. Техника заметная: линейная система стандартна, но частоты и кривая требуют аккуратной сборки.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_systems",
+    "constant_coefficients",
+    "complexification",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol7111.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "В архивной странице в строке комплексного уравнения визуально потерян штрих у z'; карточка использует корректное уравнение z''-iz'+6z=0."
+    ]
+  }
+}

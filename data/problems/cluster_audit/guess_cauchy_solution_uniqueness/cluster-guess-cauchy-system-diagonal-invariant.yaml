@@ -1,0 +1,124 @@
+{
+  "id": "cluster-guess-cauchy-system-diagonal-invariant",
+  "title": "Инвариантная диагональ системы и угаданная траектория",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit",
+      "model_task"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача Коши для нелинейной системы",
+        "text": "Решить задачу Коши x'=x+sin(y-x), y'=y+sin(y-x), x(0)=1, y(0)=1.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "linear_system",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Остаться на диагонали",
+      "text": "Начальная точка лежит на диагонали x=y. На этой прямой нелинейная добавка sin(y-x) исчезает, и остается простое уравнение u'=u. Единственность запрещает траектории сойти с найденного решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Проверка инвариантной траектории",
+      "text": "Попробуем искать решение на диагонали x=y=u. Тогда sin(y-x)=sin 0=0, а система сводится к u'=u. Из u(0)=1 получаем u(t)=e^t. Значит кандидат: x(t)=e^t, y(t)=e^t. Проверим его в исходной системе: x'=e^t=x+0, y'=e^t=y+0, начальные условия выполнены. Правая часть F(x,y)=(x+sin(y-x), y+sin(y-x)) гладкая на R^2, значит локально липшицева. Поэтому задача Коши с начальной точкой (1,1) имеет единственное локальное решение. Поскольку найденная траектория решает эту задачу, любое решение совпадает с ней; продолжение совпадения на весь общий интервал снова следует из локальной единственности. Ответ: x(t)=y(t)=e^t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "lipschitz_condition"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "existence_uniqueness",
+      "invariant_set"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "invariant_line",
+      "nonlinear_system"
+    ],
+    "goal": [
+      "solve_ivp"
+    ],
+    "keywords": [
+      "guess_cauchy_solution_uniqueness",
+      "guess_solution",
+      "invariant_diagonal",
+      "nonlinear_system",
+      "cauchy_uniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: нужно увидеть инвариантную прямую и затем использовать единственность системы, а не пытаться решать нелинейную систему целиком.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "nonlinear_system",
+    "invariant",
+    "standard_course_methods",
+    "self_authored",
+    "model_exam_task",
+    "task_cluster",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Self-authored/model task for the invariant-line variant of the cluster."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_guess_cauchy_solution_uniqueness_links",
+    "notes": [
+      "Вариант 'система с инвариантной прямой': диагональ дает простое частное решение, а гладкость системы закрывает единственность."
+    ]
+  }
+}

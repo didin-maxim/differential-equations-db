@@ -1,0 +1,117 @@
+{
+  "id": "oral-middle-linear-first-order-resonance",
+  "title": "Линейное уравнение первого порядка с резонансной правой частью",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Решить задачу Коши y' - 2y = e^(2x), y(0)=0. Отдельно объяснить, почему в ответе появляется множитель x.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Интегрирующий множитель убирает однородный рост",
+      "text": "Умножение на e^(-2x) превращает левую часть в производную e^(-2x)y. Правая часть после этого становится единицей, поэтому интегрирование дает линейный множитель x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Умножим уравнение на e^(-2x). Тогда (e^(-2x)y)'=1. Интегрируя, получаем e^(-2x)y=x+C, то есть y=e^(2x)(x+C). Из условия y(0)=0 следует C=0. Поэтому y=x e^(2x). Множитель x появляется потому, что правая часть e^(2x) имеет тот же экспоненциальный множитель, что и однородное решение; после снятия этого множителя остается постоянная правая часть.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order",
+      "inhomogeneous_linear"
+    ],
+    "methods": [
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "resonant_forcing"
+    ],
+    "goal": [
+      "solve",
+      "explain_method"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "linear_first_order",
+      "integrating_factor",
+      "resonance"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартный интегрирующий множитель с устным пояснением резонансного x; technical_score=4: один короткий интеграл и начальное условие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_first_order",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача для различения оценок 5-7; перед добавлением проверена локальным поиском по базе."
+    ]
+  }
+}

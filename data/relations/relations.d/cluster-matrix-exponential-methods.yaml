@@ -1,0 +1,92 @@
+{
+  "relations": [
+    {
+      "id": "rel-matrix-exp-inverse-waterloo-flow",
+      "from": "waterloo-fundamental-matrix-flow-inverse",
+      "to": "cluster-matrix-exp-inverse-by-negative-time",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Waterloo-карточка доказывает групповое свойство Phi(t+s)=Phi(t)Phi(s) и Phi(-t)=Phi(t)^{-1}; новая карточка применяет тот же факт к явной формуле e^{At}.",
+      "backward_text": "Короткое вычисление e^{-At}=E(-t) является прикладным примером общего свойства фундаментальной матрицы как потока.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-matrix-exp-recover-derivative-oral-recover",
+      "from": "cluster-matrix-exp-recover-a-derivative-zero",
+      "to": "oral-above-three-recover-system-from-fundamental-matrix",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки восстанавливают матрицу системы из фундаментальной матрицы; новая выделяет быстрый частный случай E(0)=I и A=E'(0).",
+      "backward_text": "Устная карточка использует более общую формулу A=X'X^{-1}; при нормировке X(0)=I она сводится к производной в нуле.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-matrix-exp-spectrum-jordan-block",
+      "from": "cluster-matrix-exp-spectrum-from-modes",
+      "to": "linear-system-jordan-block",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Карточка про спектр по режимам обобщает наблюдение из жордановой клетки: множитель t e^{lambda t} указывает на нетривиальную nilpotent-часть.",
+      "backward_text": "Базовая жорданова клетка 2x2 является минимальным вычислительным примером режима t e^{lambda t}, который в новой карточке читается как спектральный сигнал.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-matrix-exp-spectrum-repeated-complex",
+      "from": "cluster-matrix-exp-spectrum-from-modes",
+      "to": "cluster-linear-systems-repeated-complex-four-dimensional",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки читают комплексную пару и жорданову кратность по режимам e^{alpha t}cos beta t, e^{alpha t}sin beta t и дополнительным множителям t.",
+      "backward_text": "Четырехмерная система с кратной комплексной парой дает конкретный пример тех режимов, которые новая карточка учит распознавать без полного решения системы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-matrix-exp-det-trace-msu-integral",
+      "from": "cluster-matrix-exp-det-trace-shortcut",
+      "to": "msu-ode-2006-2-det-integral-matrix-exp",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Формула det(e^{At})=e^{t tr A} является базовым determinant/trace фактом рядом с MSU-задачей, где также важно не раскрывать большой определитель напрямую.",
+      "backward_text": "MSU-задача использует другой главный член интеграла экспоненты, но выигрывает от того же навыка видеть determinant-level структуру вместо полного матричного счета.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-matrix-exp-det-trace-floquet-liouville",
+      "from": "cluster-matrix-exp-det-trace-shortcut",
+      "to": "teschl-stanford-bridge-floquet-determinant-liouville",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Постоянно-коэффициентная формула det(e^{At})=e^{t tr A} является частным случаем Лиувилля для фундаментальной матрицы, который затем переносится на детерминант монодромии.",
+      "backward_text": "Floquet-карточка применяет ту же trace/determinant идею к периодической системе и монодромии, где вместо t tr A стоит интеграл следа за период.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-matrix-exp-discrete-monodromy-iterate",
+      "from": "cluster-matrix-exp-discrete-rotation-recurrence",
+      "to": "teschl-stanford-bridge-monodromy-period-iterate",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Дискретная система x_{n+1}=Ax_n и итерации монодромии используют один операторный механизм: состояние после n шагов получается степенью одной матрицы.",
+      "backward_text": "Монодромия периодической системы является непрерывным источником дискретной динамики по периодам; новая карточка показывает тот же расчет степеней на маленькой матрице.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-matrix-exp-recover-msu-autonomous",
+      "from": "cluster-matrix-exp-recover-a-derivative-zero",
+      "to": "msu-ode-2012-3-recover-autonomous-matrix",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Новая карточка дает базовый прием восстановления генератора по локальным данным e^{At}; MSU-задача является более тонким восстановлением A по одной траектории и значению e^A на векторе.",
+      "backward_text": "Олимпиадная задача показывает, что восстановление A из экспоненты может иметь ветвление логарифма; lemma-card фиксирует простой однозначный локальный случай через производную в нуле.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

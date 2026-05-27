@@ -1,0 +1,139 @@
+{
+  "id": "oral-exam-geometry-two-tangent-roots",
+  "title": "Построение нулей старшего коэффициента по двум графикам решений",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ],
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная геометрическая задача",
+        "text": "Дано линейное однородное уравнение второго порядка a(x)y''+b(x)y'+c(x)y=0, где a,b,c непрерывны. На рисунке изображены графики двух его решений. Одно из решений является линейной функцией и пересекает ось x в точке A. По рисунку видно, что из точки A к графику второго решения можно провести две касательные. С помощью линейки построить два корня уравнения a(x)=0.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "source_note": "Надежный опубликованный источник при локальном и интернет-поиске не найден; авторство указано по сообщению пользователя.",
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fig-two-tangent-roots",
+      "type": "image",
+      "path": "data/assets/images/oral_exam_geometry/two-tangent-roots.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Касательные из A являются новыми линейными решениями",
+      "text": "Любая прямая через A является графиком функции, пропорциональной данному линейному решению, значит тоже является решением. Если такая прямая касается второго решения в точке T, то при a(x_T) != 0 единственность задачи Коши заставила бы второе решение совпасть с этой прямой около T. Поэтому a(x_T)=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "graphical_tangent_cauchy_uniqueness",
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть l(x) - данное линейное решение, а A=(x_A,0) - точка его пересечения с осью x. Так как l не является нулевой функцией, l(x)=m(x-x_A) с m != 0. Поэтому график любой невертикальной прямой, проходящей через A, имеет вид y=k(x-x_A)=(k/m)l(x), то есть задает решение того же однородного линейного уравнения. Проведем из A две касательные к графику второго решения u и обозначим точки касания через T1=(x1,u(x1)) и T2=(x2,u(x2)). Каждая из этих касательных является графиком некоторого решения, пропорционального l. В точке Ti это линейное решение и u имеют одинаковые значение и производную, потому что прямая касается графика u. Если бы a(xi) было отлично от нуля, то в окрестности xi уравнение можно было бы разделить на a(x) и применить единственность задачи Коши для линейного уравнения второго порядка. Тогда u совпало бы с касательной хотя бы локально, что противоречит рисунку: второй график в точке касания не является той прямой. Значит a(x1)=0 и a(x2)=0. Построение поэтому такое: линейкой провести две касательные из A ко второму графику, отметить точки касания T1,T2 и взять их абсциссы на оси x; эти две точки оси x и есть построенные корни уравнения a(x)=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "graphical_tangent_cauchy_uniqueness",
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "homogeneous_linear"
+    ],
+    "methods": [
+      "graphical_construction",
+      "tangent_line",
+      "cauchy_uniqueness",
+      "linear_combination"
+    ],
+    "objects": [
+      "solution_graphs",
+      "tangent_lines",
+      "leading_coefficient_zeros"
+    ],
+    "goal": [
+      "construct"
+    ],
+    "keywords": [
+      "oral_exam_geometry",
+      "two_tangents",
+      "leading_coefficient",
+      "cauchy_uniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "Идея уровня отличника: надо увидеть, что касательная из нуля линейного решения сама является решением, а затем обратить единственность задачи Коши в критерий вырождения старшего коэффициента.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "graphical_construction",
+    "cauchy_uniqueness",
+    "oral_exam_geometry",
+    "linear_higher_order",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "olympiad_style",
+    "exam_score_8",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "folklore_reference",
+      "status": "needs_human_review",
+      "note": "Локальный поиск по базе и веб-поиск по точным фрагментам условия не дали надежного опубликованного источника; авторство М. Дидина указано отдельным полем authors со статусом attributed_by_user."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_geometry_links",
+    "notes": [
+      "Источник искался локально по ключевым словам и в интернете по точным фрагментам условия; надежная публикация не найдена.",
+      "Схематический рисунок создан как локальный SVG asset."
+    ]
+  }
+}

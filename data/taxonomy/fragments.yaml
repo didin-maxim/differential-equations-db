@@ -1,0 +1,36 @@
+{
+  "fragments": [
+    {
+      "id": "foundations",
+      "title": "Основы и теоремы существования"
+    },
+    {
+      "id": "first_order",
+      "title": "Уравнения первого порядка"
+    },
+    {
+      "id": "linear_equations",
+      "title": "Линейные уравнения"
+    },
+    {
+      "id": "systems",
+      "title": "Системы"
+    },
+    {
+      "id": "qualitative",
+      "title": "Качественная теория"
+    },
+    {
+      "id": "boundary_value",
+      "title": "Краевые и спектральные задачи"
+    },
+    {
+      "id": "series_methods",
+      "title": "Ряды и особые точки"
+    },
+    {
+      "id": "olympiad",
+      "title": "Студенческие олимпиадные задачи"
+    }
+  ]
+}

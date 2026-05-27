@@ -1,0 +1,30 @@
+{
+  "id": "local-du-written-2007-2015",
+  "title": "МФТИ ДУ: письменные экзамены 2007-2008, 2011-2012, 2014-2015",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "written_exam",
+    "mipt",
+    "ru"
+  ],
+  "problem_ids": [
+    "local-du-written-2014-51-system-jordan-zero",
+    "local-du-written-2014-51-free-endpoint-functional",
+    "local-du-written-2014-51-constant-coeff-third-order",
+    "local-du-written-2014-51-equilibrium-linearization",
+    "local-du-written-2014-51-factorized-variable-coeff",
+    "local-du-written-2014-51-characteristics-pde",
+    "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+    "local-du-written-2014-51-lagrange-singular-curves",
+    "local-du-written-2007-81-sturm-zero",
+    "local-du-written-2011-21-parameter-variations"
+  ],
+  "status": "needs_human_review",
+  "notes": [
+    "Источник карточек: src-local-du-written-exams; локальные PDF: DE2007-08.pdf, DE2011-2012.pdf, DE2014-15.pdf.",
+    "Отбор сделан по тематике ДУ и вариационного исчисления из письменной программы. Чистые кратные интегралы, ряды и интегральные неравенства не добавлялись; в этих трех PDF выбранные задачи содержат содержательное ДУ, вариационное уравнение или метод характеристик.",
+    "Большинство вариантов внутри PDF однотипны. В batch включены представители основных экзаменационных шаблонов: линейные системы, вариационный функционал, линейные уравнения с постоянными и переменными коэффициентами, линеаризация равновесий, характеристики, нелинейная задача Коши, уравнение Лагранжа-Клеро, сравнение Штурма и параметрические вариационные уравнения.",
+    "Похожие вычислительные варианты отфильтрованы и отмечены в editorial.notes соответствующих карточек."
+  ]
+}

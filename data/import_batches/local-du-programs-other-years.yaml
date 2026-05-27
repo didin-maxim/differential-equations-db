@@ -1,0 +1,22 @@
+{
+  "id": "local-du-programs-other-years",
+  "title": "Содержательные задачи из локальных программ других лет",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "programs_other_years",
+    "mipt_core",
+    "src-local-du-8-program-or-exam"
+  ],
+  "problem_ids": [
+    "local-du-programs-other-years-bounded-periodic-oscillator",
+    "local-du-programs-other-years-riccati-global-continuation",
+    "local-du-programs-other-years-pendulum-sin-phase-portrait"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Обработаны локальные программы и задания 1.pdf, 2.pdf, 2 (3).pdf, 5 (1).pdf, 5 (2).pdf; 8.pdf не переимпортировался, так как уже обработан отдельно.",
+    "Письменные экзаменационные варианты 2007-2024 просмотрены только как зона потенциальных дублей и не импортировались в этот batch.",
+    "Импорт ограничен тремя задачами с переносимой идеей: параметрическая ограниченность/периодичность, барьерное продолжение, полный фазовый портрет через энергию."
+  ]
+}

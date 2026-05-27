@@ -1,0 +1,111 @@
+{
+  "id": "mit-18034-pset03-bvp-maximum-principle",
+  "title": "Максимум-принцип для краевой задачи с положительным нулевым порядком",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть y удовлетворяет на интервале a<x<b уравнению (cosh x)y''+(cos x)y'=(1+x^2)y и краевым условиям y(a)=y(b)=1. Доказать, что 0<y(x)<1 для всех a<x<b.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Исключить внутренний максимум и минимум",
+      "text": "Внутренний максимум выше 1 противоречит знакам y'=0, y''<=0 в уравнении. Внутренний отрицательный минимум противоречит знакам y'=0, y''>=0; нулевой минимум запрещается единственностью задачи Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что y(c)>1 в некоторой внутренней точке. Тогда на [a,b] функция имеет внутренний максимум c с y(c)>1, y'(c)=0 и y''(c)<=0. Подстановка в уравнение дает (cosh c)y''(c)=(1+c^2)y(c), но левая часть <=0, а правая >0, противоречие. Значит y<=1. Если y(c)<0 в некоторой точке, то существует внутренний минимум c с y(c)<0, y'(c)=0, y''(c)>=0. Тогда (cosh c)y''(c)=(1+c^2)y(c), левая часть >=0, правая <0, снова противоречие. Следовательно y>=0. Наконец, если y(c)=0 во внутренней точке, то это минимум: y'(c)=0. Линейное уравнение с начальными данными y(c)=y'(c)=0 имеет только нулевое решение, что несовместимо с y(a)=y(b)=1. Поэтому 0<y<1 внутри интервала.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "maximum_principle",
+      "cauchy_uniqueness"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "comparison",
+      "sign_bounds"
+    ],
+    "goal": [
+      "prove_bound"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 3",
+      "краевая задача",
+      "maximum principle",
+      "sign estimate"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "idea_score=7: нужно не решать краевую задачу, а применить максимум-принцип к знакам в точке экстремума; technical_score=2: вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "maximum_principle",
+    "comparison",
+    "sign_analysis",
+    "cauchy_uniqueness",
+    "advanced_standard_course",
+    "low_technical",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #3, Problem 5; Solutions to Problemset 3, Problem 5"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: отличается от уже имеющихся спектральных BVP и энергетической единственности; главный механизм - точечный максимум-принцип для линейного ОДУ.",
+      "Метка advanced_standard_course: метод понятен после теоремы единственности и краевых задач, но формулирует качественный принцип, который обычно стоит на границе базового курса."
+    ]
+  }
+}

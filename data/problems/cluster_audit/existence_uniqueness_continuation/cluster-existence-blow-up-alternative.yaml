@@ -1,0 +1,113 @@
+{
+  "id": "cluster-existence-blow-up-alternative",
+  "title": "Альтернатива продолжения: конечный конец означает выход из компакта",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,x) непрерывна и локально липшицева по x в открытой области U в R x R^n. Пусть x(t) - максимальное решение задачи x'=f(t,x), заданное на правом полуинтервале [t0,T_+). Докажите: если T_+<+infty, то при t->T_+- график (t,x(t)) выходит из любого компакта K, содержащегося в U. В частности, при U=R x R^n выполнено |x(t)|->infty.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Если график имеет предельную точку внутри области, решение склеивается дальше",
+      "text": "Ограниченность на компакте дает ограниченную производную, поэтому вдоль последовательности t_m->T_+ возникает предельная точка. Локальная теорема от этой точки продолжает решение за T_+.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Предположим противное: существует компакт K внутри U и последовательность t_m->T_+- такая, что (t_m,x(t_m)) принадлежит K. После перехода к подпоследовательности можно считать, что (t_m,x(t_m))->(T_+,x_*), причем предельная точка лежит в K, а значит и в U. Возьмем компактную окрестность V этой точки внутри U. На V правая часть ограничена, |f|<=M. Поэтому если s и t достаточно близки к T_+ и соответствующий кусок графика лежит в V, то |x(t)-x(s)|<=M|t-s|. Отсюда x(t) имеет предел x_* при t->T_+-. Задача Коши с начальными данными x(T_+)=x_* имеет локальное решение справа от T_+. Склеив его с прежним решением, получаем продолжение за T_+, что противоречит максимальности. Следовательно, при конечном правом конце график обязан покидать каждый компакт области. Если U=R x R^n и |x(t)| не стремится к бесконечности, то на некоторой последовательности x(t_m) ограничены; вместе с t_m->T_+ это дает компакт и противоречие.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "continuation_criterion",
+      "a_priori_bound"
+    ],
+    "objects": [
+      "maximal_solution",
+      "blow_up_alternative",
+      "compact_subset"
+    ],
+    "goal": [
+      "prove",
+      "diagnose_maximal_interval"
+    ],
+    "keywords": [
+      "existence_uniqueness_continuation",
+      "blow_up_alternative",
+      "maximal_solution",
+      "continuation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: надо понять отрицание продолжимости через компакты; technical_score=3: доказательство короткое.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "mipt_core",
+    "standard_course_methods",
+    "existence_uniqueness",
+    "continuation",
+    "global_solution",
+    "blow_up",
+    "complete_proof",
+    "low_technical",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "locator": "Section 2.6, Corollary 2.16",
+      "note": "Стандартная альтернатива продолжения максимального решения."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-existence-uniqueness-continuation",
+    "notes": [
+      "Добавлено как явная формулировка альтернативы взрыва, чтобы отделить общий критерий от частных сравнений y'=y^2."
+    ]
+  }
+}

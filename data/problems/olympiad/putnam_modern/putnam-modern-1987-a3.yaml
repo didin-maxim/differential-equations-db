@@ -1,0 +1,106 @@
+{
+  "id": "putnam-modern-1987-a3",
+  "title": "Putnam 1987 A3: знаки решения резонансного уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для всех действительных x функция y=f(x) удовлетворяет y''-2y'+y=2e^x. (a) Если f(x)>0 при всех x, обязано ли быть f'(x)>0 при всех x? (b) Если f'(x)>0 при всех x, обязано ли быть f(x)>0 при всех x?",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Снять экспоненту",
+      "text": "Замена f=e^x q превращает оператор (D-1)^2 в обычную вторую производную q''.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим f(x)=e^x q(x). Тогда f''-2f'+f=e^x q'', откуда q''=2 и q(x)=x^2+ax+b. Поэтому f'(x)=e^x(q+q')=e^x(x^2+(a+2)x+a+b). В пункте (a) ответ отрицательный: при q=x^2+1/4 имеем f=e^x(x^2+1/4)>0 для всех x, но f'(-1)=e^(-1)(1-2+1/4)<0. В пункте (b) ответ положительный. Условие f'>0 равносильно положительности квадратичного трехчлена r(x)=x^2+(a+2)x+a+b для всех x. Его дискриминант отрицателен: (a+2)^2-4(a+b)<0, то есть b>a^2/4+1. Тогда минимум q равен b-a^2/4 и он больше 1, значит q(x)>0 для всех x. Так как e^x>0, получаем f(x)>0 для всех x.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "resonance_ansatz"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "constant_coefficients",
+      "sign_analysis"
+    ],
+    "goal": [
+      "prove",
+      "disprove"
+    ],
+    "keywords": [
+      "putnam-modern-1987-a3",
+      "Putnam",
+      "constant_coefficients",
+      "resonance",
+      "sign_analysis"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 6,
+    "comment": "Идея стандартная с небольшой вариацией: резонансная замена снимает оператор (D-1)^2. Техника умеренная: нужно решить уравнение и разобрать знаки квадратных трехчленов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "constant_coefficients",
+    "sign_analysis",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 1987 год."
+    ]
+  }
+}

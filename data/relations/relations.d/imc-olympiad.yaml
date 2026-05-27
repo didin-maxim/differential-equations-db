@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-linear-factor-imc-1994-p3",
+      "from": "linear-first-order-formula",
+      "to": "imc-1994-p3-rolle-integrating-factor",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Интегрирующий множитель превращает выражение с производными в одну производную.",
+      "backward_text": "IMC 1994 P3 показывает тот же прием для линейного дифференциального оператора высокого порядка.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-convex-two-zeros-imc-2019-p3",
+      "from": "convex-solution-two-zeros",
+      "to": "imc-2019-p3-convex-differential-inequality",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи заменяют дифференциальное неравенство утверждением о выпуклости.",
+      "backward_text": "IMC 2019 P3 использует выпуклость вспомогательной функции и оценку касательной вместо хорды.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-linear-factor-imc-2023-p7",
+      "from": "linear-first-order-formula",
+      "to": "imc-2023-p7-boundary-linear-expression",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Формула линейного уравнения объясняет множитель e^(-x) для выражения f'-f.",
+      "backward_text": "IMC 2023 P7 превращает линейный множитель в олимпиадное применение теоремы Ролля.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-imc-1994-p3-imc-2023-p7",
+      "from": "imc-1994-p3-rolle-integrating-factor",
+      "to": "imc-2023-p7-boundary-linear-expression",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах равенство на концах после множителя e^(-x) дает точку Ролля.",
+      "backward_text": "IMC 2023 P7 является краевой версией того же приема с выражением f'-f.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-linear-factor-imc-2025-p6",
+      "from": "linear-first-order-formula",
+      "to": "imc-2025-p6-derivative-of-f-over-x",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Множитель 1/x переводит уравнение f'-(1/x)f=-k/x в производную отношения.",
+      "backward_text": "IMC 2025 P6 распознает тот же линейный множитель внутри задачи на среднее значение.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-imc-2023-p7-imc-2025-p6",
+      "from": "imc-2023-p7-boundary-linear-expression",
+      "to": "imc-2025-p6-derivative-of-f-over-x",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют Ролля после деления на решение однородного линейного уравнения.",
+      "backward_text": "IMC 2025 P6 является более короткой версией приема: вместо e^(-x) появляется множитель 1/x.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

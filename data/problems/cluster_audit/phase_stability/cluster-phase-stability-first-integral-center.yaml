@@ -1,0 +1,119 @@
+{
+  "id": "cluster-phase-stability-first-integral-center",
+  "title": "Первый интеграл и центр около строгого экстремума",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Стандартный мотив фазовой плоскости",
+        "text": "Пусть H(x,y) - первый интеграл автономной системы на плоскости, H имеет строгий локальный экстремум в изолированном равновесии O, а близкие уровни H=const являются замкнутыми кривыми вокруг O. Какой вывод об устойчивости и типе равновесия следует сделать?",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Уровни первого интеграла служат барьерами",
+      "text": "Траектория не может перейти с одного уровня H на другой. Замкнутые близкие уровни удерживают ее около равновесия, но сохранение H не заставляет приближаться к равновесию.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Вывод",
+      "text": "Такое равновесие является центром в качественном смысле: достаточно близкие ненулевые траектории лежат на замкнутых уровнях первого интеграла и обходят O. Строгий экстремум H позволяет для любой малой окрестности O выбрать еще меньшую область, ограниченную уровнем H=const и содержащуюся внутри этой окрестности; траектории из нее не выходят, потому что H сохраняется. Значит O устойчиво по Ляпунову. Но если начальная точка не равна O и лежит на замкнутом уровне H=c != H(O), то H(z(t))=c для всех t, поэтому z(t) не может стремиться к O. Следовательно, центр не является асимптотически устойчивым.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane",
+      "energy_method"
+    ],
+    "objects": [
+      "center",
+      "closed_level_curve",
+      "lyapunov_stability",
+      "not_asymptotically_stable"
+    ],
+    "goal": [
+      "prove_stability",
+      "classify"
+    ],
+    "keywords": [
+      "first integral",
+      "center",
+      "closed ovals",
+      "phase plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Стандартный качественный мотив: первый интеграл дает барьерные овалы и объясняет устойчивый, но не асимптотический центр.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "first_integral",
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "nonlinear_system",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "standard_course_reference",
+      "status": "source_verified",
+      "note": "Используется как теоретическое обобщение уже импортированной карточки о центре из первого интеграла."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Добавлено как компактная lemma-card для мотива 'первый интеграл -> центр'."
+    ]
+  }
+}

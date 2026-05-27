@@ -1,0 +1,112 @@
+{
+  "id": "oral-above-three-integrating-factor-x-only",
+  "title": "Интегрирующий множитель, зависящий только от x",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для формы (2xy+y)dx+x^2dy=0 при x != 0 найти интегрирующий множитель, зависящий только от x, и решить уравнение.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "integrating_factor",
+          "exact_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-x-factor",
+      "title": "Проверить критерий для множителя mu(x)",
+      "text": "Если (M_y-N_x)/N зависит только от x, то множитель ищется как exp integral (M_y-N_x)/N dx.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Здесь M=2xy+y, N=x^2. Имеем M_y=2x+1 и N_x=2x, поэтому (M_y-N_x)/N=1/x^2 зависит только от x. Значит можно взять mu(x)=exp(integral x^{-2}dx)=exp(-1/x). После умножения получаем точную форму. Потенциал удобно восстанавливать из F_y=mu N=e^{-1/x}x^2: отсюда F=e^{-1/x}x^2y+phi(x). Тогда F_x=e^{-1/x}(2x+1)y+phi'(x), что совпадает с mu M при phi'=0. Поэтому общий интеграл задается равенством x^2 y e^{-1/x}=C на промежутках, где x не обращается в нуль.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "integrating_factor",
+      "find_potential"
+    ],
+    "objects": [
+      "exact_equation",
+      "integrating_factor"
+    ],
+    "goal": [
+      "solve",
+      "choose_method"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "integrating-factor",
+      "mu-x"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 4,
+    "comment": "idea_score=4: стандартный критерий для множителя одной переменной прямо указан в условии; technical_score=4: короткое восстановление потенциала.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_4",
+    "exact_equation",
+    "integrating_factor"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на применение критерия интегрирующего множителя mu(x)."
+    ]
+  }
+}

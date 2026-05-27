@@ -1,0 +1,112 @@
+{
+  "id": "imc-2006-p6-real-root-differential-operator",
+  "title": "IMC 2006 P6: вещественные корни полинома через оператор A(D)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть A(x)=a0+a1 x+...+an x^n - вещественный многочлен степени n. Доказать, что все его корни вещественны тогда и только тогда, когда для любых x0<...<xn и любой n раз дифференцируемой функции f, обращающейся в нуль в этих n+1 точках, найдется xi∈(x0,xn) с a0 f(xi)+a1 f'(xi)+...+an f^(n)(xi)=0.",
+        "source_ids": [
+          "src-imc-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Факторизовать дифференциальный оператор",
+      "text": "Если A имеет вещественные корни, оператор A(D) раскладывается в произведение операторов D-c. Каждый множитель убирается теоремой Ролля после экспоненциального множителя; обратное направление строится из решения линейного ОДУ с комплексным корнем.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Запишем A(D)=a0 I+a1 D+...+an D^n. Сначала пусть все корни A вещественны. Для линейного множителя D-c используется следующий вариант Ролля: если f обращается в нуль в двух точках, то для g(x)=e^(-cx)f(x) найдется точка, где g'=0, то есть f'-cf=0. Если A(x)=(x-c)B(x), то из нулей f в x0,...,xn получаем точки y0∈(x0,x1),...,y_{n-1}∈(x_{n-1},xn), где h=f'-cf равна нулю. По индукции для B(D) и функции h найдется xi с B(D)h(xi)=0, то есть A(D)f(xi)=0. Обратное направление: пусть у A есть невещестенный корень u+iv, v≠0. Тогда линейное ОДУ A(D)g=0 имеет вещественное решение g(x)=e^(ux) sin(vx) с бесконечно многими нулями. Пусть k - минимальный индекс с ak≠0. Для достаточно малого eps функция f(x)=g(x)+eps x^k сохраняет n+1 простых нулей на подходящем большом промежутке, но A(D)f=A(D)g+eps A(D)x^k=eps ak k! не обращается в нуль. Это противоречит требуемому свойству. Следовательно, комплексных корней быть не может.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_higher_order"
+    ],
+    "methods": [
+      "rolle_on_transformed_expression",
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "differential_operator",
+      "constant_coefficients",
+      "zeros",
+      "linear_ode"
+    ],
+    "goal": [
+      "prove_equivalence"
+    ],
+    "keywords": [
+      "IMC 2006 P6",
+      "differential operator",
+      "Rolle theorem",
+      "real-rooted polynomial",
+      "linear ODE"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 8,
+    "comment": "Идея 10: связь вещественной корневости с факторизацией A(D) и Роллем сильная и переносимая. Техника 8: индукция по множителям и контрпример из комплексного корня требуют аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "differential_operator",
+    "constant_coefficients",
+    "rolle_theorem",
+    "zero_location",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-imc-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Источник: IMC 2006 Day 1 Solutions, Problem 6, https://www.imc-math.org.uk/imc2006/day1_solutions.pdf.",
+      "Этот include-кандидат отсутствовал в предыдущем scan report IMC и добавлен в international_extra как пропущенная международная задача."
+    ]
+  }
+}

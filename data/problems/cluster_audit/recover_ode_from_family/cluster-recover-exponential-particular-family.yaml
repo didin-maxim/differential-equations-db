@@ -1,0 +1,118 @@
+{
+  "id": "cluster-recover-exponential-particular-family",
+  "title": "Восстановить линейное ОДУ по сдвинутому экспоненциальному семейству",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для семейства кривых y=e^x+C e^{-x}, где C - произвольная постоянная, восстановите дифференциальное уравнение первого порядка, для которого эти кривые являются интегральными. Объясните, почему здесь сначала полезно отделить фиксированное частное решение.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Убрать фиксированную часть семейства",
+      "text": "Параметр сидит только в разности y-e^x. Дифференцирование этой разности сразу дает однородный множитель e^{-x}, а затем параметр исключается без интегрирования.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из заданного семейства имеем y-e^x=C e^{-x}. Дифференцируем при постоянном C: y'-e^x=-C e^{-x}. Но C e^{-x}=y-e^x, поэтому y'-e^x=-(y-e^x). После приведения получаем искомое уравнение y'+y=2e^x. Обратно, если решить это линейное уравнение, то (e^x y)'=2e^{2x}, откуда e^x y=e^{2x}+C и y=e^x+C e^{-x}. Значит восстановленное ОДУ имеет ровно данное однопараметрическое семейство решений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "linear_first_order",
+      "explicit_family"
+    ],
+    "methods": [
+      "parameter_elimination",
+      "differentiate_family",
+      "linear_reconstruction"
+    ],
+    "objects": [
+      "integral_curves",
+      "one_parameter_family"
+    ],
+    "goal": [
+      "derive",
+      "verify"
+    ],
+    "keywords": [
+      "recover_ode_from_family",
+      "exponential_family",
+      "particular_solution_shift"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "intro",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 2,
+    "comment": "Базовое исключение одного параметра; новая маленькая идея - увидеть фиксированную часть e^x и не превращать задачу в механическую замену формы кривой.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "recover_ode_from_family",
+    "linear_first_order",
+    "standard_course_methods",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_problem",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Составлено как компактный представитель кластера recover-ode-from-family после проверки Waterloo и local_du."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-recover-ode-from-family",
+    "notes": [
+      "Не добавлять рядом очередные семейства вида y=phi(x)+C psi(x), если они отличаются только выбором phi и psi."
+    ]
+  }
+}

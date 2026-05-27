@@ -1,0 +1,109 @@
+{
+  "id": "weak-pass-nonunique-continuous-counterexample",
+  "title": "Контрпример к единственности при непрерывной правой части",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "counterexample"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Верно ли утверждение: если f(x,y) непрерывна около начальной точки, то задача Коши y'=f(x,y), y(x0)=y0 имеет единственное локальное решение? Дать короткий контрпример с двумя разными решениями одной задачи Коши.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Непрерывности мало для единственности",
+      "text": "Нужно предъявить правую часть без липшицевости по y в начальной точке. Тогда нулевое решение может сосуществовать с решением, которое некоторое время выходит из равновесия.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Утверждение неверно. Возьмем задачу y'=3|y|^{2/3}, y(0)=0. Правая часть непрерывна по y, но не липшицева около y=0. Одно решение - y(x)=0. Другое решение задается формулой y(x)=0 при x<=0 и y(x)=x^3 при x>=0. Эта функция имеет непрерывную производную: слева и справа в нуле производная равна 0. При x<0 обе части уравнения равны 0, при x>0 имеем y'=3x^2 и 3|y|^{2/3}=3|x^3|^{2/3}=3x^2. В точке x=0 равенство тоже верно. Значит одна и та же задача Коши имеет по крайней мере два локальных решения.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "counterexample",
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "lipschitz_condition"
+    ],
+    "goal": [
+      "disprove"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "nonuniqueness",
+      "continuous_rhs"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: нужно отличить существование Пеано от единственности Пикара; technical_score=2: проверка двух явных функций.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "existence_uniqueness",
+    "peano",
+    "counterexample",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: теорема Пеано уже содержит пример с sqrt(|y|), поэтому здесь использован другой простой контрпример y'=3|y|^{2/3}."
+    ]
+  }
+}

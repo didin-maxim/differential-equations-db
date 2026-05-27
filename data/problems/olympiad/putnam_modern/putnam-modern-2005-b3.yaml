@@ -1,0 +1,106 @@
+{
+  "id": "putnam-modern-2005-b3",
+  "title": "Putnam 2005 B3: функционально-дифференциальная классификация",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти все дифференцируемые функции f:(0,infty)->(0,infty), для которых существует положительное число a такое, что f'(a/x)=x/f(x) для всех x>0.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дважды использовать инволюцию x -> a/x",
+      "text": "Подстановка x -> a/x и дифференцирование дают ОДУ, которое в логарифмической переменной заставляет логарифмический наклон быть постоянным.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из исходного равенства после замены x на a/x получаем f'(x)=a/(x f(a/x)), то есть f(a/x)=a/(x f'(x)). Дифференцируем это тождество: левая часть равна -(a/x^2)f'(a/x), а правая равна -a(f'(x)+x f''(x))/(x f'(x))^2. Используя f'(a/x)=x/f(x), получаем x(f')^2=f(f'+xf''). Перепишем это как (x f')'=x(f')^2/f. Положим x=e^u и F(u)=ln f(e^u). Тогда f'=f F'/x, а равенство превращается в F''=0. Значит F(u)=cu+d и f(x)=C x^c, где C>0. Подстановка в исходное условие дает C c (a/x)^(c-1)=x/(C x^c), то есть C^2 c a^(c-1)=1. Поэтому c>0. Если c!=1, для любого C>0 можно выбрать a=(1/(C^2 c))^(1/(c-1)); если c=1, необходимо и достаточно C=1. Ответ: f(x)=C x^c при c>0, c!=1, C>0, а также отдельный случай f(x)=x.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "logarithmic_derivative"
+    ],
+    "objects": [
+      "functional_differential",
+      "nonlinear_transform",
+      "global_solution"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "putnam-modern-2005-b3",
+      "Putnam",
+      "functional_differential",
+      "log_change",
+      "classification"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 12,
+    "idea_score": 11,
+    "technical_score": 8,
+    "comment": "Идея олимпиадная: функциональное условие надо превратить в обычное ОДУ через инверсию и логарифмическую переменную. Техника высокая: дифференцирование и классификация степенных решений требуют аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "nonlinear_transform",
+    "global_solution",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 2005 год."
+    ]
+  }
+}

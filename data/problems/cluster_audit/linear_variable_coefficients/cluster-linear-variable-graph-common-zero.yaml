@@ -1,0 +1,141 @@
+{
+  "id": "cluster-linear-variable-graph-common-zero",
+  "title": "Общий нуль двух графиков и масштабирование решений",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "На рисунке две различные функции u и v имеют общий нуль x0: u(x0)=v(x0)=0. Докажите, что они не могут быть линейно независимыми решениями одного уравнения y''+p(x)y'+q(x)y=0 с непрерывными p,q. Объясните, почему умножение одного из графиков на ненулевую константу не устраняет препятствие.",
+        "source_ids": [
+          "src-didin-linear-variable-coefficients-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Общий нуль сразу зануляет вронскиан",
+      "text": "В общей нулевой точке W(u,v)(x0)=u v'-u' v=0. Формула Абеля переводит это в линейную зависимость, а масштабирование сохраняет общий нуль.",
+      "status": "ai_checked",
+      "standard_idea_ids": []
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Если u и v решают одно и то же уравнение, то их вронскиан удовлетворяет W'=-pW. В точке x0 обе функции равны нулю, поэтому W(x0)=u(x0)v'(x0)-u'(x0)v(x0)=0. Отсюда W тождественно равен нулю на интервале, следовательно u и v линейно зависимы. Значит две различные линейно независимые функции с общим нулем не могут быть парой решений такого уравнения. Если заменить u на c u, где c != 0, общий нуль сохранится и новый вронскиан станет cW, так что тот же аргумент остается без изменений.",
+      "status": "ai_checked",
+      "standard_idea_ids": []
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "homogeneous_linear"
+    ],
+    "methods": [
+      "common_zero",
+      "wronskian_liouville",
+      "abel_identity",
+      "linear_scaling"
+    ],
+    "objects": [
+      "solution_graphs",
+      "common_zero",
+      "wronskian"
+    ],
+    "goal": [
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "linear_variable_coefficients",
+      "cluster_linear_variable_graph_common_zero"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Нужно заметить, что общий нуль сильнее обычного пересечения: он сразу обнуляет вронскиан независимо от наклонов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "graphical_construction",
+    "wronskian_obstruction",
+    "self_authored",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-didin-linear-variable-coefficients-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная постановка для закрытия графического дефицита кластера; внешний источник для точного варианта не найден."
+    },
+    {
+      "source_id": "src-mit-es1803-topic7",
+      "role": "open_course_reference",
+      "status": "source_verified",
+      "note": "MIT OCW ES.1803 Topic 7 фиксирует графическое следствие единственности: трансверсальные пересечения возможны, касание разных решений невозможно."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-variable-coefficients",
+    "notes": [
+      "Карточка добавлена в кластерном аудите линейных уравнений с переменными коэффициентами.",
+      "Рисунок является локальным схематическим SVG asset."
+    ]
+  },
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ],
+  "assets": [
+    {
+      "id": "fig-common-zero",
+      "type": "image",
+      "path": "data/assets/images/linear_variable_coefficients/graph-common-zero.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ]
+}

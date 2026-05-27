@@ -1,0 +1,158 @@
+{
+  "relations": [
+    {
+      "id": "rel-nonolymp-qual-lyapunov-template-to-seed",
+      "from": "cluster-phase-stability-lyapunov-direct-method",
+      "to": "lyapunov-linearization-example",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Карточка прямого метода Ляпунова дает общий шаблон: выбрать положительно определенную функцию и проверить знак производной вдоль решений.",
+      "backward_text": "Пример с системой x'=-x+y^3, y'=-y является коротким применением этого шаблона с локальной оценкой смешанного члена.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-nonolymp-qual-lyapunov-seed-to-middle",
+      "from": "lyapunov-linearization-example",
+      "to": "oral-middle-nonlinear-system-lyapunov",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи проверяют одну переносимую идею: квадратичная энергия остается убывающей в малой окрестности, если нелинейные члены достаточно малы.",
+      "backward_text": "Устная задача среднего уровня является экзаменационной версией той же локальной оценки функции Ляпунова.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-nonolymp-qual-phase-semistable-to-weak",
+      "from": "oral-above-three-phase-line-semistable",
+      "to": "weak-pass-phase-line-semistable",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки учат распознавать полуустойчивое равновесие по отсутствию смены направления на фазовой прямой.",
+      "backward_text": "Слабая устная карточка является более простым экзаменационным представителем той же фазовой идеи.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-nonolymp-qual-linearization-template-to-written-2014",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "local-du-written-2014-51-equilibrium-linearization",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема о гиперболической линеаризации объясняет, почему тип равновесия можно читать по матрице Якоби.",
+      "backward_text": "Письменная задача 2014 года является прямым упражнением на поиск равновесий и классификацию по линеаризации.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-nonolymp-qual-linearization-to-lebl-degenerate",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "lebl-diffyqs-degenerate-linearization-critical-point",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Гиперболическая линеаризация полезна как граница метода: при нулевой линеаризации приходится анализировать старшие нелинейные члены.",
+      "backward_text": "Дегенеративная задача показывает, почему нулевая матрица Якоби не классифицирует равновесие сама по себе.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-nonolymp-qual-linearization-to-lebl-invariant",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "lebl-diffyqs-invariant-half-plane-two-sinks",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "После локальной классификации равновесий инвариантная линия отделяет бассейны притяжения и не дает траектории перейти к другому фокусу.",
+      "backward_text": "Задача с инвариантной линией добавляет к линеаризации глобальный фазовый аргумент.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-nonolymp-qual-energy-cluster-from-conservation",
+      "from": "energy-integral-oscillator",
+      "to": "resit-pass-3-energy-oscillator-check",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Сохранение энергии осциллятора является теоретическим фактом, который проверяется в простой устной задаче.",
+      "backward_text": "Устная задача на энергию - минимальный экзаменационный пример применения леммы о первом интеграле.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-nonolymp-qual-energy-to-damped-periodic",
+      "from": "energy-integral-oscillator",
+      "to": "oral-exam-excellent-damped-periodic-zero",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Сохраняющаяся энергия превращается в монотонную при наличии демпфирования, что запрещает нетривиальную периодичность.",
+      "backward_text": "Задача про затухающий осциллятор использует тот же энергетический расчет, но с отрицательной производной энергии.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-nonolymp-qual-energy-to-boundary-zeros",
+      "from": "energy-integral-oscillator",
+      "to": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Энергетическое интегральное тождество позволяет заменить явное решение знаком интеграла.",
+      "backward_text": "Запрет двух нулей линейной комбинации является краевой версией энергетического метода.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-nonolymp-qual-energy-to-local-du-8-t2",
+      "from": "energy-integral-oscillator",
+      "to": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Переменный коэффициент требует модифицировать энергию, но общий ход остается априорной энергетической оценкой.",
+      "backward_text": "Теоретическая задача T2 является более продвинутой версией той же идеи контроля решения через энергию.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-nonolymp-qual-energy-to-written-2020",
+      "from": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "to": "local-du-written-2020-energy-monotonicity-exp-inverse",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют знак производной энергии при положительном переменном коэффициенте для качественного вывода.",
+      "backward_text": "Письменная задача 2020 года является вычислительно умеренным представителем монотонной энергии с экспоненциальным коэффициентом.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-nonolymp-qual-existence-to-inverse-comparison",
+      "from": "blow-up-comparison-y-square",
+      "to": "oral-middle-comparison-inverse-bound",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Сравнение через производную обратной величины является стандартным коротким способом получить ограничение времени существования.",
+      "backward_text": "Устная задача среднего уровня формулирует тот же прием без олимпиадной упаковки.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-nonolymp-qual-liouville-to-linear-stability",
+      "from": "oral-above-three-liouville-area-preservation",
+      "to": "local-du-filippov-132-linear-stability-translation",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют структурные свойства линейной системы, но одна смотрит на площадь фундаментального параллелограмма, а другая на перенос устойчивости между решениями.",
+      "backward_text": "Перенос устойчивости всех решений линейной системы является соседним качественным следствием линейной структуры.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-nonolymp-qual-first-integral-global-source",
+      "from": "lotka-volterra-first-integral",
+      "to": "local-du-written-2016-global-first-integrals-source",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обоих случаях первый интеграл превращает решение системы в движение по уровням инварианта.",
+      "backward_text": "Линейный источник с глобальными первыми интегралами является линейно-алгебраическим вариантом той же идеи инварианта.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

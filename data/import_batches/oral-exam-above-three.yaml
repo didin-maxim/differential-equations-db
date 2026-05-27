@@ -1,0 +1,30 @@
+{
+  "id": "oral-exam-above-three",
+  "title": "Устный экзамен: задачи для проверки уровня выше тройки",
+  "created_at": "2026-05-26",
+  "scope": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "mipt_core",
+    "low_technical"
+  ],
+  "problem_ids": [
+    "oral-above-three-riccati-shift-known-solution",
+    "oral-above-three-homogeneous-ratio-substitution",
+    "oral-above-three-integrating-factor-x-only",
+    "oral-above-three-reduction-order-known-solution",
+    "oral-above-three-fundamental-matrix-change-basis",
+    "oral-above-three-recover-system-from-fundamental-matrix",
+    "oral-above-three-liouville-area-preservation",
+    "oral-above-three-phase-line-semistable",
+    "oral-above-three-global-continuation-bounded-on-strips",
+    "oral-above-three-nonunique-nonlipschitz-delayed"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавлены 10 собственно составленных модельных устных задач с source_id src-mipt-oral-exam-model-tasks.",
+    "Формулировки ориентированы на отличие твердого минимума от понимания выше тройки: выбор замены, смысл фундаментальной матрицы, связь с матрицей системы, качественный вывод, единственность и продолжение.",
+    "Перед добавлением выполнен поиск по существующим карточкам; новые задачи связаны с близкими карточками только по реальному механизму."
+  ]
+}

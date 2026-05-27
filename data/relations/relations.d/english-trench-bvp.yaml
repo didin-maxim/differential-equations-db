@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-trench-variation-to-green-function-formula",
+      "from": "variation-of-parameters-sine",
+      "to": "trench-bvp-green-function-formula",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Вариация постоянных в обычной неоднородной задаче является локальным механизмом, из которого строится формула функции Грина для краевой задачи.",
+      "backward_text": "Формула функции Грина показывает, как та же вариация постоянных выбирает пределы интегрирования под краевые условия.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-trench-green-formula-to-robin-example",
+      "from": "trench-bvp-green-function-formula",
+      "to": "trench-bvp-robin-green-kernel-example",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Общая формула сразу дает Green kernel после выбора решений, удовлетворяющих левому и правому условиям Робина.",
+      "backward_text": "Пример с условиями Робина конкретизирует общую формулу функции Грина без чистого шаблона Дирихле.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-trench-green-formula-to-resonance-alternative",
+      "from": "trench-bvp-green-function-formula",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Green function formula работает при тривиальном ядре; резонансная альтернатива описывает, что меняется при ненулевом ядре.",
+      "backward_text": "Резонансная альтернатива полезно сравнивается с нерезонансной функцией Грина: обратный оператор заменяется условием совместности.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-trench-resonance-to-dirichlet-sine-condition",
+      "from": "trench-bvp-resonance-solvability-alternative",
+      "to": "trench-bvp-dirichlet-resonance-sine-condition",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Общая альтернатива в резонансе превращается для y''+y с условиями Дирихле в одно условие ортогональности к sin x.",
+      "backward_text": "Задача Дирихле с y''+y=F является минимальной моделью общей резонансной альтернативы.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-local-du-resonance-to-trench-resonance",
+      "from": "local-du-standard-resonant-linear-bvp-solvability",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Локальная самосопряженная формулировка и конструктивная формулировка Trench выражают одну и ту же идею совместности в резонансе.",
+      "backward_text": "Версия Trench уточняет резонанс через фундаментальные решения и показывает, как возникает интегральное условие.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-trench-sl-form-to-green-identity",
+      "from": "trench-bvp-sturm-liouville-integrating-factor",
+      "to": "trench-bvp-green-identity-self-adjoint-boundary",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Приведение к форме (p y')'+q y позволяет применить интегрирование по частям в самосопряженном виде.",
+      "backward_text": "Тождество Грина объясняет, зачем приводить уравнение к форме Штурма-Лиувилля.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-trench-green-identity-to-real-eigenvalues",
+      "from": "trench-bvp-green-identity-self-adjoint-boundary",
+      "to": "trench-bvp-real-eigenvalues",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Вещественность спектра следует из тождества Грина после разделения комплексной собственной функции на действительную и мнимую части.",
+      "backward_text": "Теорема о вещественных собственных значениях является прямым спектральным применением тождества Грина.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-trench-green-identity-to-weighted-orthogonality",
+      "from": "trench-bvp-green-identity-self-adjoint-boundary",
+      "to": "trench-bvp-weighted-orthogonality",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Ортогональность разных собственных функций получается после подстановки двух собственных уравнений в тождество Грина.",
+      "backward_text": "Ортогональность с весом - короткое и важное применение самосопряженности.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-trench-green-identity-to-energy-nonnegative",
+      "from": "trench-bvp-green-identity-self-adjoint-boundary",
+      "to": "trench-bvp-energy-no-negative-eigenvalues",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Оба результата используют интегрирование по частям и зануление краевого члена разделенными условиями.",
+      "backward_text": "Энергетический запрет отрицательных собственных значений является знаковой версией той же самосопряженной интегральной идеи.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-trench-weighted-orthogonality-to-resonance",
+      "from": "trench-bvp-weighted-orthogonality",
+      "to": "local-du-standard-resonant-linear-bvp-solvability",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Весовая ортогональность собственных функций подготавливает условие ортогональности правой части в резонансной краевой задаче.",
+      "backward_text": "Резонансная разрешимость использует ту же ортогональность, но уже для правой части неоднородного уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-euler-cauchy-to-trench-log-spectrum",
+      "from": "euler-cauchy-equation",
+      "to": "trench-bvp-euler-log-spectrum",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Навык решать уравнение Эйлера-Коши нужен, чтобы увидеть синусоидальный спектр в переменной log x.",
+      "backward_text": "Логарифмический спектр показывает спектральное применение обычного уравнения Эйлера-Коши.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

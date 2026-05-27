@@ -1,0 +1,116 @@
+{
+  "id": "seemous-2010-p1-iterated-integrals-linear-ode",
+  "title": "SEEMOUS 2010 P1: сумма повторных интегралов как линейное ОДУ",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f0 непрерывна на [0,1], а f_n(x)=∫_0^x f_{n-1}(t)dt для n>=1. Докажите равномерную сходимость ряда ∑_{n=1}^∞ f_n на [0,1] и найдите его сумму.",
+        "source_ids": [
+          "src-seemous-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "linear_first_order_equation",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сумма ряда удовлетворяет линейному уравнению",
+      "text": "После доказательства равномерной сходимости можно дифференцировать сумму почленно: F'=F+f0. Дальше задача становится обычным линейным уравнением первого порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_iteration",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть M=max_{[0,1]} |f0|. Индукцией из определения получаем |f_n(x)|<=M x^n/n!, значит ∑ f_n сходится равномерно на [0,1]. Кроме того, f_n'=f_{n-1}, поэтому ряд производных ∑_{n>=1} f_n'=∑_{n>=0} f_n также сходится равномерно: к уже доказанной сходимости добавляется один член f0. Обозначим F=∑_{n>=1} f_n. Тогда F(0)=0 и F'=f0+F. Умножая на e^{-x}, получаем (e^{-x}F(x))'=e^{-x}f0(x). Интегрирование от 0 до x дает F(x)=e^x ∫_0^x f0(t)e^{-t}dt.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order",
+      "integral_equation_to_ode"
+    ],
+    "methods": [
+      "integrating_factor",
+      "termwise_differentiation",
+      "picard_iteration"
+    ],
+    "objects": [
+      "iterated_integrals",
+      "series_of_functions"
+    ],
+    "goal": [
+      "find",
+      "prove_convergence"
+    ],
+    "keywords": [
+      "SEEMOUS 2010 Problem 1",
+      "iterated integrals",
+      "linear ODE",
+      "integrating factor"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Идея 7: распознать в сумме повторных интегралов решение линейного уравнения. Техника 5: равномерная сходимость и один интегрирующий множитель.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_first_order",
+    "integrating_factor",
+    "integral_equation_to_ode",
+    "picard_iteration",
+    "standard_course_methods",
+    "source_solution_checked",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-seemous-archive",
+      "role": "public_archive_mirror_statement_and_solution",
+      "status": "source_verified",
+      "url": "https://huggingface.co/datasets/AI-MO/olympiads/resolve/main/MatematickiTalent/raw/en-seemous/en-2010.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad-vjimc-europe",
+    "notes": [
+      "Включено несмотря на интегральную формулировку: главный переносимый ход - F'=F+f0 и интегрирующий множитель."
+    ]
+  }
+}

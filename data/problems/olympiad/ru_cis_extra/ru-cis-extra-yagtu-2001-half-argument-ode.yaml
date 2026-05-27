@@ -1,0 +1,115 @@
+{
+  "id": "ru-cis-extra-yagtu-2001-half-argument-ode",
+  "title": "ЯГТУ 2001: уравнение y'(x)=y(x/2) и отсутствие ограниченных решений",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти решение y(x), x∈R, дифференциального уравнения y'(x)=y(x/2), удовлетворяющее начальному условию y(0)=y0. Доказать, что это уравнение не имеет ограниченных на всей числовой прямой решений, отличных от y=0.",
+        "source_ids": [
+          "src-yagtu-student-olympiad-collection"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Развернуть решение в ряд от начального значения",
+      "text": "Аргумент x/2 ближе к нулю, поэтому начальное значение y(0) рекурсивно задает все производные в нуле. Получается целая функция с положительными коэффициентами при y0>0; это сразу запрещает нетривиальную ограниченность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из уравнения последовательно следует гладкость решения. Дифференцируя n раз равенство y'(x)=y(x/2), получаем y^(n+1)(x)=2^(-n)y^(n)(x/2). При x=0 это дает рекурсию a_(n+1)=2^(-n)a_n для a_n=y^(n)(0), откуда a_n=y0/2^(n(n-1)/2). Поэтому кандидат имеет вид y(x)=y0 sum_(n=0)^infty x^n/(n! 2^(n(n-1)/2)). Ряд сходится при всех x, его можно почленно дифференцировать, и после сдвига индекса получается y'(x)=y0 sum_(n=0)^infty (x/2)^n/(n! 2^(n(n-1)/2))=y(x/2). Значит это решение задачи Коши. Если y0>0, то при x>=0 все члены ряда неотрицательны и y(x)>=y0(1+x), так что решение не ограничено. Если y0<0, то -y имеет тот же вид с положительным начальным значением и также не ограничена. Остается y0=0, когда y тождественно равно нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "series_recursion"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "functional_differential",
+      "olympiad"
+    ],
+    "methods": [
+      "series_recursion",
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "functional_differential",
+      "boundedness",
+      "global_solution"
+    ],
+    "goal": [
+      "solve",
+      "prove"
+    ],
+    "keywords": [
+      "ЯГТУ 2001",
+      "y'(x)=y(x/2)",
+      "функционально-дифференциальное уравнение",
+      "ограниченные решения"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 5,
+    "comment": "Идейная сложность 9: нужно увидеть, что уравнение с сжатым аргументом задает весь ряд Тейлора и тем самым глобальное решение. Техническая часть умеренная: рекурсия коэффициентов и проверка ряда.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "series_solution",
+    "global_solution",
+    "boundedness",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-yagtu-student-olympiad-collection",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://baumo.narod.ru/Yar01.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad_ru_cis_extra_links",
+    "notes": [
+      "PDF, страница 2, задача 12; текстовый слой сверялся с отображением страницы."
+    ]
+  }
+}

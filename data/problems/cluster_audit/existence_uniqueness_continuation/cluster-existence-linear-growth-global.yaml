@@ -1,0 +1,119 @@
+{
+  "id": "cluster-existence-linear-growth-global",
+  "title": "Глобальное существование при линейном росте правой части",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,x) непрерывна и локально липшицева по x на R x R^n. Предположим, что для каждого T>0 существуют M_T,L_T>=0 такие, что |f(t,x)|<=M_T+L_T|x| при |t|<=T. Докажите, что любое решение задачи Коши x'=f(t,x), x(t0)=x0 продолжается на всю числовую ось.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Линейный рост запрещает конечный уход на бесконечность",
+      "text": "На любом конечном отрезке норма решения удовлетворяет интегральному неравенству с правой частью M+L|x|. Гронуолл дает априорную границу, после чего критерий продолжения исключает конечный конец максимального интервала.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Достаточно доказать продолжимость вправо; левая полуось получается тем же рассуждением после замены направления времени. Зафиксируем конечный T>t0 и рассмотрим решение на его максимальном правом куске внутри [t0,T]. Для |t|<=T имеем |f(t,x)|<=M+L|x|. Из интегральной формы следует |x(t)|<=|x0|+int_{t0}^t (M+L|x(s)|) ds. По неравенству Гронуолла |x(t)|<=(|x0|+M(T-t0)) exp(L(T-t0)) для всех t<T, пока решение определено. Значит на каждом конечном промежутке график решения лежит в компакте [t0,T] x B_R. Если бы правый конец максимального интервала был конечным, теорема продолжения требовала бы выхода из любого такого компакта, что противоречит полученной оценке. Поэтому правый конец не меньше любого T, то есть равен +infty. Применяя тот же довод к уравнению dz/ds=-f(t0-s,z), получаем продолжимость до -infty.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "gronwall_estimate",
+      "continuation_criterion",
+      "a_priori_bound"
+    ],
+    "objects": [
+      "global_solution",
+      "linear_growth",
+      "maximal_solution"
+    ],
+    "goal": [
+      "prove_global_existence"
+    ],
+    "keywords": [
+      "existence_uniqueness_continuation",
+      "linear_growth",
+      "global_solution",
+      "gronwall"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: нужно совместить априорную оценку и альтернативу продолжения; technical_score=3: сам расчет Гронуолла короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "mipt_core",
+    "standard_course_methods",
+    "existence_uniqueness",
+    "continuation",
+    "gronwall",
+    "global_solution",
+    "complete_proof",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "locator": "Section 2.6, Theorem 2.17",
+      "note": "Использована стандартная формулировка глобального существования при линейном росте правой части."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-existence-uniqueness-continuation",
+    "notes": [
+      "Добавлено при аудите кластера как компактный представитель линейного роста; не дублирует задачи с ограниченной правой частью и односторонней оценкой Филиппова."
+    ]
+  }
+}

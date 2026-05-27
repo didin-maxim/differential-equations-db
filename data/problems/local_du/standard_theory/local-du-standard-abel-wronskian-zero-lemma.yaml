@@ -1,0 +1,116 @@
+{
+  "id": "local-du-standard-abel-wronskian-zero-lemma",
+  "title": "Лемма Абеля о вронскиане и простоте нулей",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p,q непрерывны на I. Для двух решений уравнения y''+p(x)y'+q(x)y=0 их вронскиан W=y1 y2'-y1' y2 удовлетворяет W'=-pW и потому W(x)=W(x0) exp(-int_{x0}^x p(s) ds). Следовательно W либо тождественно равен нулю, либо нигде не равен нулю. В частности, если решение y имеет y(x0)=y'(x0)=0, то y тождественно равно нулю, а всякий нуль ненулевого решения прост или изолирован.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать вронскиан",
+      "text": "Подстановка уравнения в производную W оставляет только член с p(x), после чего получается линейное уравнение первого порядка для W.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Дифференцируем W=y1 y2'-y1' y2: W'=y1 y2''-y1''y2. Из уравнения y''=-py'-qy получаем W'=y1(-py2'-qy2)-(-py1'-qy1)y2=-p(y1y2'-y1'y2)=-pW. Интегрирование линейного уравнения для W дает указанную формулу. Если W(x0)=0, то W тождественно нулевой; если W(x0)!=0, то экспонента не обращается в нуль. Если y(x0)=y'(x0)=0, то y и нулевое решение имеют одинаковые начальные данные, поэтому по единственности линейной задачи Коши y=0. Поэтому у ненулевого решения не может быть кратного нуля. Если бы нули ненулевого решения накапливались в точке x0 из I, то по непрерывности y(x0)=0, а из предела разностных отношений также y'(x0)=0; это невозможно. Значит нули изолированы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "abel_identity",
+      "wronskian_liouville",
+      "cauchy_uniqueness"
+    ],
+    "objects": [
+      "wronskian",
+      "zero_location",
+      "fundamental_system"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "abel_identity",
+      "wronskian",
+      "simple_zeros"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "Стандартная лемма курса; добавлена не как дубль общей формулы Лиувилля для систем, а как скалярное следствие с явным выводом о нулях.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "linear_higher_order",
+    "wronskian",
+    "zero_location",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 4 программы: определитель Вронского и формула Лиувилля-Остроградского."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "Перед добавлением найден общий узел liouville-wronskian-formula; эта карточка оставлена как скалярная лемма для нулей, используемая в теории Штурма."
+    ]
+  }
+}

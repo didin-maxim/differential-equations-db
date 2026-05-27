@@ -1,0 +1,145 @@
+{
+  "id": "cluster-linear-variable-graph-scaled-tangency",
+  "title": "Касание после умножения одного графика на константу",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "На рисунке даны две различные ненулевые функции u и v. В отмеченной точке x0 выполнено v(x0)=c u(x0) и v'(x0)=c u'(x0) для некоторого c != 0; пунктиром показан график c u. Докажите, что u и v не могут быть двумя решениями одного уравнения y''+p(x)y'+q(x)y=0 с непрерывными p,q, если v не совпадает с c u.",
+        "source_ids": [
+          "src-didin-linear-variable-coefficients-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Однородность разрешает вертикальное масштабирование решения",
+      "text": "Если u является решением однородного линейного уравнения, то c u тоже решение. После масштабирования получаем прямое касание c u и v, а оно запрещено единственностью задачи Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Допустим, u и v являются решениями одного однородного линейного уравнения. По линейности c u также является решением. В точке x0 функции c u и v имеют одинаковые значение и производную. Их разность z=v-c u решает то же однородное уравнение и имеет z(x0)=z'(x0)=0. Единственность линейной задачи Коши дает z тождественно равно нулю. Значит v=c u на всем интервале, что противоречит условию и рисунку. Поэтому искомого уравнения с непрерывными коэффициентами нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "homogeneous_linear"
+    ],
+    "methods": [
+      "linear_scaling",
+      "graphical_tangent",
+      "cauchy_uniqueness",
+      "wronskian_obstruction"
+    ],
+    "objects": [
+      "solution_graphs",
+      "scaled_solution",
+      "tangent_point"
+    ],
+    "goal": [
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "linear_variable_coefficients",
+      "cluster_linear_variable_graph_scaled_tangency"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Нужно добавить к единственности одну линейную идею: вместе с решением допустимы его ненулевые кратные.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "graphical_construction",
+    "wronskian_obstruction",
+    "self_authored",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-didin-linear-variable-coefficients-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная постановка для закрытия графического дефицита кластера; внешний источник для точного варианта не найден."
+    },
+    {
+      "source_id": "src-mit-es1803-topic7",
+      "role": "open_course_reference",
+      "status": "source_verified",
+      "note": "MIT OCW ES.1803 Topic 7 фиксирует графическое следствие единственности: трансверсальные пересечения возможны, касание разных решений невозможно."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-variable-coefficients",
+    "notes": [
+      "Карточка добавлена в кластерном аудите линейных уравнений с переменными коэффициентами.",
+      "Рисунок является локальным схематическим SVG asset."
+    ]
+  },
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ],
+  "assets": [
+    {
+      "id": "fig-scaled-tangency",
+      "type": "image",
+      "path": "data/assets/images/linear_variable_coefficients/graph-scaled-tangency.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ]
+}

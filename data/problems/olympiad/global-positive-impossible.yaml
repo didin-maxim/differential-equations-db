@@ -1,0 +1,103 @@
+{
+  "id": "global-positive-impossible",
+  "title": "Нет глобального решения при y'≥1+y^2",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что решение неравенства y'≥1+y^2 не может быть определено на всей прямой.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сильное ограничение на траекторию",
+      "text": "Используется единственность, монотонность, энергия или дифференциальное неравенство.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как (arctan y)'=y'/(1+y^2)≥1, то arctan y(t)≥arctan y(0)+t при t>0. Правая часть превысит π/2 за конечное время, что невозможно для arctan y. Значит вперед решение не продолжается бесконечно.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "olympiad_style",
+      "comparison",
+      "blow_up"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "global-positive-impossible",
+      "olympiad",
+      "olympiad_style",
+      "comparison",
+      "blow_up"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: нужно подобрать arctan y как ограниченную переменную сравнения; technical_score=3: одна производная и простая оценка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "comparison",
+    "blow_up",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

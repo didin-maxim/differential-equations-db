@@ -1,0 +1,112 @@
+{
+  "id": "ru-misc-nure-8-3",
+  "title": "Когда y1 и y1^2 решают одно линейное уравнение",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти условия на p(x) и q(x), при которых уравнение y'' + p(x)y' + q(x)y = 0 имеет два линейно независимых решения y1 и y2 = y1^2.",
+        "source_ids": [
+          "src-nure-student-olympiad-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Исключить логарифмическую производную",
+      "text": "Если y и y^2 являются решениями, то вычитание двух подстановок дает связь между q и r = y'/y. Затем исходное уравнение выражает p через r и r', что дает условие на p и q.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Работаем на интервале, где p и q достаточно гладкие, а искомые решения линейно независимы. Если y1(x0) = 0, то y2 = y1^2 имеет в x0 нулевые значение и производную, а значит для линейного уравнения y2 было бы тождественно нулевым; это невозможно. Поэтому y1 не обращается в нуль. Обозначим r = y1'/y1. Подстановка y1 в уравнение дает r' + r^2 + pr + q = 0. Подстановка y1^2 дает 2r' + 4r^2 + 2pr + q = 0. Вычитая удвоенное первое равенство из второго, получаем 2r^2 - q = 0, то есть q = 2r^2. Линейная независимость y1 и y1^2 требует r != 0, поэтому q > 0. Из первого равенства следует r' + 3r^2 + pr = 0. Беря ветвь r = sqrt(q/2) или r = -sqrt(q/2), получаем условие p = -r'/r - 3r. Эквивалентно, для выбранного знака должно выполняться q' + 2pq + 6qr = 0, где r^2 = q/2. В частности для ветви r = sqrt(q/2) это q' + 2pq + 3sqrt(2) q^{3/2} = 0; для противоположной ветви знак последнего слагаемого меняется. Обратно, если q > 0 и для одной из ветвей r = ±sqrt(q/2) выполнено r' + 3r^2 + pr = 0, то y1 = exp(integral r dx) и y2 = y1^2 = exp(integral 2r dx) удовлетворяют исходному уравнению. Их отношение y2/y1 = y1 непостоянно, так как r != 0, значит решения линейно независимы.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "logarithmic_derivative",
+      "wronskian_liouville"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "wronskian",
+      "nonlinear_transform",
+      "sign_analysis"
+    ],
+    "goal": [
+      "characterize"
+    ],
+    "keywords": [
+      "ХНУРЭ 8.3",
+      "y1^2",
+      "логарифмическая производная",
+      "условие на коэффициенты"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 10,
+    "technical_score": 7,
+    "comment": "После аудита 2026-05-27 снижено с idea_score=11 до 10: характеризация через y и y^2 является сильным олимпиадным шаблоном на логарифмическую производную, но обобщение y и y^m показывает переносимый прием. Техническая сложность 7 из-за ветвей знака оставлена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "wronskian",
+    "nonlinear_transform",
+    "sign_analysis",
+    "advanced_standard_course",
+    "source_solution_checked",
+    "olympiad_above_exam"
+  ],
+  "sources": [
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "original_problem_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Сверено по PDF ХНУРЭ: печатное решение записывает ветвь с r = sqrt(q/2); в карточке явно указана симметричная ветвь со знаком минус.",
+      "Аудит олимпиадного слоя 2026-05-27: добавлено обобщение olympiad-level-power-solution-linear-ode-criterion; оценка идеи снижена до 10, technical_score оставлен 7."
+    ]
+  }
+}

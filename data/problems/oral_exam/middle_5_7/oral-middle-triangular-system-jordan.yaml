@@ -1,0 +1,121 @@
+{
+  "id": "oral-middle-triangular-system-jordan",
+  "title": "Треугольная система с жордановым множителем t",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Решить систему x'=x+y, y'=y с начальными условиями x(0)=0, y(0)=1. Объяснить связь ответа с жордановой клеткой.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "initial_value_problem",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала нижняя строка, затем линейное уравнение для верхней",
+      "text": "Треугольная система решается последовательно. Совпадающие собственные значения и ненулевой внедиагональный элемент дают множитель t e^t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из второго уравнения y'=y и y(0)=1 получаем y=e^t. Тогда первое уравнение имеет вид x'-x=e^t. Умножая на e^(-t), получаем (xe^(-t))'=1. Значит xe^(-t)=t+C, а из x(0)=0 следует C=0. Поэтому x=t e^t, y=e^t. Матрица системы равна [[1,1],[0,1]], это жорданова клетка с собственным значением 1, и именно ее нильпотентная часть порождает множитель t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "triangular_system",
+      "matrix_exponential",
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "jordan_block",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "solve",
+      "explain_method"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "linear_system",
+      "jordan_block"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: типовая жорданова клетка в системе с постоянными коэффициентами; technical_score=4: последовательное решение двух уравнений первого порядка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_systems",
+    "matrix_exponential",
+    "jordan_form",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск показал родственную seed-карточку по жордановой клетке, но не эту начальную задачу."
+    ]
+  }
+}

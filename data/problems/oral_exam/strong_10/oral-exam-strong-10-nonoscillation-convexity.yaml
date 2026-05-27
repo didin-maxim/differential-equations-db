@@ -1,0 +1,121 @@
+{
+  "id": "oral-exam-strong-10-nonoscillation-convexity",
+  "title": "Неосцилляция уравнения y''=a(x)y при a>=0",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Пусть a(x) непрерывна и a(x)>=0 на интервале I. Доказать, что ненулевое решение уравнения y''=a(x)y не может иметь две различные точки нуля на I.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Между соседними нулями знак фиксирован, а выпуклость не того направления",
+      "text": "Если взять два соседних нуля, решение между ними не меняет знак. На положительной дуге оно выпукло и не может лежать выше нулевой хорды; на отрицательной дуге аналогично после смены знака.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что у ненулевого решения есть два нуля. Тогда среди нулей можно выбрать соседние c<d так, что y не обращается в нуль на (c,d). На этом интервале y имеет постоянный знак. Если y>0 на (c,d), то y''=a(x)y>=0, то есть y выпукла. Выпуклая функция на [c,d] лежит не выше хорды, соединяющей значения на концах; эта хорда равна нулю, значит y(x)<=0 внутри, противоречие с y>0. Если y<0, применяем тот же аргумент к -y: функция -y положительна, а (-y)''=a(x)(-y)>=0, потому что -y>0 и y''=a y. Снова противоречие. Остается только случай, когда нуль не изолирован; тогда есть предельная точка нулей, и по непрерывности y и y' в этой точке равны нулю, после чего единственность линейной задачи Коши дает тождественный ноль. Итак, ненулевое решение имеет не более одного нуля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "convexity",
+      "cauchy_uniqueness"
+    ],
+    "objects": [
+      "zero_location",
+      "linear_higher_order",
+      "convexity"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "nonoscillation",
+      "convexity",
+      "two_zeros",
+      "oral_exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: нужно выбрать соседние нули и превратить знак коэффициента в геометрию выпуклости. Техническая сложность 4: вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "zero_location",
+    "convexity",
+    "sign_analysis",
+    "existence_uniqueness",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по двум нулям и выпуклости; карточка оформляет стандартный неосцилляционный прием как устную задачу."
+    ]
+  }
+}

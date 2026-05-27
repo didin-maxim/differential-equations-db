@@ -1,0 +1,118 @@
+{
+  "id": "local-du-written-2007-81-sturm-zero",
+  "title": "Нуль решения через сравнение со sin x",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2007-2008, круг 2, билет 81, задача 9",
+        "text": "Доказать, что любое решение уравнения y''+(2+cos 3x)y=0 имеет хотя бы один нуль на отрезке [-1,3].",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить с уравнением z''+z=0",
+      "text": "Так как 2+cos 3x >= 1, на любом промежутке длины pi решение не может сохранять знак: иначе лагранжево тождество с z=sin(x+1) дает противоречие.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим подотрезок [a,b]=[-1,-1+pi], который лежит в [-1,3]. Пусть z=sin(x+1); тогда z(a)=z(b)=0, z>0 на (a,b), z''+z=0. Обозначим q(x)=2+cos 3x, тогда q>=1. Предположим, что ненулевое решение y не имеет нулей на [a,b]. Умножив при необходимости на -1, считаем y>0. Лагранжево тождество дает (y'z-yz')'=y''z-yz''=(1-q)yz<=0. Интегрируя от a до b, получаем [y'z-yz']_a^b<=0. Но z(a)=z(b)=0, z'(a)=1, z'(b)=-1, поэтому левая часть равна y(b)+y(a)>0. Противоречие. Значит у каждого ненулевого решения есть нуль на [a,b], а значит и на [-1,3]. Нулевое решение имеет нули во всех точках.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order",
+      "qualitative"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "lagrange_identity"
+    ],
+    "objects": [
+      "zero_location",
+      "oscillation",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2007-08",
+      "ticket_81",
+      "sturm_zero"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 7,
+    "technical_score": 5,
+    "local_score": 7,
+    "comment": "Для письменного экзамена это качественная задача: нужна идея сравнения Штурма; вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_higher_order",
+    "sturm_theorem",
+    "sturm_comparison",
+    "sturm_zero_count",
+    "zero_location",
+    "oscillation",
+    "comparison",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2007-08.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Включена как содержательная качественная задача по ДУ, в отличие от чисто вычислительных вариантов.",
+      "Похожие утверждения о числе нулей из других билетов DE2007-08 отфильтрованы; здесь выбран самый прямой представитель сравнения с постоянным коэффициентом."
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "oral-exam-strong-10-trace-zero-area-obstruction",
+  "title": "След ноль и невозможность сжатия всех решений на плоскости",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача для сильного студента",
+        "text": "Пусть A(t) - непрерывная матрица 2 на 2 на [0,+infty), tr A(t)=0, и X(t) - фундаментальная матрица системы x'=A(t)x с det X(0) != 0. Доказать, что не могут обе колонки X(t) стремиться к нулю при t->+infty. Сформулировать геометрический смысл результата.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Площадь параллелограмма решений сохраняется",
+      "text": "Формула Лиувилля при нулевом следе дает постоянный определитель фундаментальной матрицы. Две колонки, стремящиеся к нулю, заставили бы площадь стремиться к нулю, что невозможно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "По формуле Лиувилля W(t)=det X(t) удовлетворяет W'=tr A(t) W. Так как tr A(t)=0, получаем W(t)=W(0) для всех t>=0. По условию W(0) != 0, поэтому определитель фундаментальной матрицы никогда не стремится к нулю. Если бы обе колонки X(t) стремились к нулевому вектору, то все четыре элемента матрицы X(t) стремились бы к нулю, а значит det X(t) тоже стремился бы к нулю. Противоречие. Геометрически след равен мгновенной скорости изменения ориентированной площади: при нулевом следе линейный поток сохраняет площадь параллелограмма, натянутого на два независимых решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems"
+    ],
+    "methods": [
+      "liouville_formula",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "wronskian",
+      "invariant"
+    ],
+    "goal": [
+      "prove",
+      "interpret"
+    ],
+    "keywords": [
+      "trace_zero",
+      "area_preservation",
+      "liouville_formula",
+      "fundamental_matrix"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: надо увидеть геометрический инвариант фундаментальной матрицы. Техническая сложность 4: применение формулы Лиувилля короткое.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "wronskian",
+    "invariant",
+    "matrix_exponential",
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_10"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_task",
+      "status": "ai_checked",
+      "note": "Самостоятельно составленная модельная задача для устного экзамена."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_strong_10_links",
+    "notes": [
+      "Перед добавлением выполнен локальный поиск по следу, определителю фундаментальной матрицы и формуле Лиувилля; точный устный вариант не найден."
+    ]
+  }
+}

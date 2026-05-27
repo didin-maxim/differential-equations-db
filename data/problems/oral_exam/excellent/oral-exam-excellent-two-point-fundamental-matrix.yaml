@@ -1,0 +1,116 @@
+{
+  "id": "oral-exam-excellent-two-point-fundamental-matrix",
+  "title": "Двухточечное условие через фундаментальную матрицу",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть X(t) - фундаментальная матрица системы x'=A(t)x на [a,b]. Для заданных матрицы B и вектора c исследуйте разрешимость и единственность условия x(a)+B x(b)=c. Запишите ответ через X(a), X(b) и объясните, почему он не зависит от выбора фундаментальной матрицы.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала выразить конец через начало",
+      "text": "Матрица перехода от a к b равна Phi(b,a)=X(b)X(a)^(-1). Тогда неизвестным становится только x(a), а двухточечное условие превращается в линейную алгебраическую систему.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для любого решения x(t)=X(t)alpha. Поэтому x(b)=X(b)X(a)^(-1)x(a). Обозначим Phi=X(b)X(a)^(-1). Двухточечное условие равносильно (I+B Phi)x(a)=c. Значит решение существует тогда и только тогда, когда c принадлежит образу матрицы I+B Phi; оно единственно тогда и только тогда, когда I+B Phi обратима. В этом случае x(a)=(I+B Phi)^(-1)c, а затем x(t)=X(t)X(a)^(-1)x(a). Если выбрать другую фундаментальную матрицу Y(t)=X(t)C с постоянной обратимой C, то Y(b)Y(a)^(-1)=X(b)C(C^(-1)X(a)^(-1))=X(b)X(a)^(-1). Поэтому критерий не зависит от выбора X.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "boundary_value"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "linear_algebra"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "linear_system",
+      "boundary_value_problem"
+    ],
+    "goal": [
+      "solve",
+      "criterion"
+    ],
+    "keywords": [
+      "transition_matrix",
+      "two_point_condition",
+      "fundamental_matrix"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Проверяется аккуратное владение фундаментальной матрицей и независимостью матрицы перехода от нормировки.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_systems",
+    "boundary_value",
+    "variation_of_parameters"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как модельная задача на матрицу перехода и двухточечные условия."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Перед добавлением проверены задачи на вариацию постоянных и линейные системы; двухточечного критерия через X(b)X(a)^(-1) не было."
+    ]
+  }
+}

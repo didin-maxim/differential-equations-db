@@ -1,0 +1,104 @@
+{
+  "id": "local-du-deficit-first-order-pde-characteristics",
+  "title": "Характеристики линейного уравнения первого порядка в частных производных",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти общее решение уравнения 2u_x+3u_y=0. Затем разобрать задачи Коши: а) u=10 на прямой 3x-2y=5; б) u=e^x на прямой 3x-2y=5; в) u=sin y на прямой x=0. Объяснить, почему ответы в трех случаях имеют разный характер.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Проверить, характеристическая ли начальная кривая",
+      "text": "Инвариант характеристик равен 3x-2y. Данные на характеристике либо задают только одно значение произвольной функции, либо противоречат постоянству вдоль характеристики; данные на нехарактеристической прямой задают функцию полностью.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристическое поле имеет направление (2,3), поэтому вдоль характеристик dy/dx=3/2. Величина 3x-2y постоянна, так что общее решение имеет вид u(x,y)=F(3x-2y), где F - произвольная функция одной переменной. Прямая 3x-2y=5 сама является характеристикой. В пункте а) условие означает только F(5)=10, поэтому решений бесконечно много: любая F с таким значением подходит. В пункте б) на той же характеристике значение решения должно быть постоянным, но e^x меняется вдоль прямой 3x-2y=5; значит, решения нет. В пункте в) прямая x=0 не характеристическая: на ней 3x-2y=-2y, поэтому F(-2y)=sin y. При s=-2y получаем F(s)=sin(-s/2)=-sin(s/2), и единственное решение равно u(x,y)=-sin((3x-2y)/2)=sin(y-3x/2).",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "cauchy_problem_geometry"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_curve",
+      "noncharacteristic_data"
+    ],
+    "goal": [
+      "solve",
+      "classify_well_posedness"
+    ],
+    "keywords": [
+      "local-du-deficit",
+      "first-order-pde",
+      "characteristics",
+      "cauchy-problem",
+      "program-deficit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: главная проверка - отличить характеристические и нехарактеристические начальные данные; technical_score=3: вычисления сводятся к одному инварианту.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "program_deficit",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "first_order_pde_characteristics",
+    "characteristic_cauchy_data"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program_assignment",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-deficit-thinking",
+    "notes": [
+      "Добавлено как точечный представитель почти пустого программного блока про линейные однородные уравнения в частных производных первого порядка."
+    ]
+  }
+}

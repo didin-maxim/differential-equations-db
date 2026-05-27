@@ -1,0 +1,111 @@
+{
+  "id": "local-du-romanko-variational-higher-derivative",
+  "title": "Вариационная задача с производной второго порядка",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти экстремаль функционала J(y)=∫_0^1[(y')^2+(y'')^2]dx при условиях y(0)=0, y'(0)=0, y(1)=e-2, y'(1)=e-1, и определить характер экстремума.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Использовать уравнение Эйлера-Пуассона",
+      "text": "Для функционала от y' и y'' стационарность дает уравнение четвертого порядка. Здесь оно линейно и сразу выделяет экспоненту e^x по заданным краевым данным.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для F=(y')^2+(y'')^2 уравнение Эйлера-Пуассона имеет вид -d/dx(2y')+d^2/dx^2(2y'')=0, то есть y''''-y''=0. Общее решение: y=C1+C2x+C3e^x+C4e^{-x}. Условия y(0)=0 и y'(0)=0 дают C1+C3+C4=0 и C2+C3-C4=0. Удобно заметить, что функция y=e^x-x-1 удовлетворяет всем четырем условиям: y(0)=0, y'(0)=0, y(1)=e-2, y'(1)=e-1; единственность решения линейной краевой задачи для найденной системы констант дает единственную допустимую экстремаль. Для любого допустимого приращения h с h(0)=h'(0)=h(1)=h'(1)=0 имеем J(y+h)-J(y)=2∫(y'h'+y''h'')dx+∫[(h')^2+(h'')^2]dx. Линейный член равен нулю на экстремали после двукратного интегрирования по частям и использования нулевых краевых данных h,h'. Оставшаяся квадратичная часть положительна для h не равной константе, а из h(0)=h(1)=0 такая константа только нулевая. Следовательно, экстремаль дает строгий минимум.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "fourth_order_linear",
+      "variational_problem"
+    ],
+    "methods": [
+      "euler_poisson_equation",
+      "second_variation"
+    ],
+    "objects": [
+      "higher_derivative_functional",
+      "clamped_boundary_conditions",
+      "strict_minimum"
+    ],
+    "goal": [
+      "find_extremal",
+      "classify_extremum"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "variational-calculus",
+      "higher-derivatives",
+      "euler-poisson",
+      "strict-minimum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "idea_score=6: отличие от простейшей задачи в уравнении четвертого порядка и краевых данных на y'; technical_score=5: нужно аккуратно проверить минимум.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "variational_calculus",
+    "euler_lagrange",
+    "euler_poisson",
+    "higher_derivatives_functional",
+    "second_variation",
+    "boundary_value"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§20, пункт о производных высших порядков; задача с ответом y=e^x-x-1."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Не относится к перегруженной простейшей задаче: главный механизм - производные высшего порядка и четвертый порядок Эйлера-Пуассона."
+    ]
+  }
+}

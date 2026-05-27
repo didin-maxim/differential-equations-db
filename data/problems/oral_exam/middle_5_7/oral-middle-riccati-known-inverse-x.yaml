@@ -1,0 +1,118 @@
+{
+  "id": "oral-middle-riccati-known-inverse-x",
+  "title": "Риккати с известным решением 1/x",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Решить на промежутках x>0 уравнение y'=y^2-2/x^2, зная частное решение y0=1/x.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "riccati_equation",
+          "linear_first_order_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вычесть частное решение Риккати",
+      "text": "Замена y=y0+1/u уничтожает квадрат по неизвестной и дает линейное уравнение для u.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Проверка: (1/x)'=-1/x^2, а (1/x)^2-2/x^2=-1/x^2. Положим y=1/x+1/u. Тогда y'=-1/x^2-u'/u^2, а правая часть равна (1/x+1/u)^2-2/x^2=-1/x^2+2/(xu)+1/u^2. После сокращения -1/x^2 и умножения на u^2 получаем -u'=2u/x+1, то есть u'+(2/x)u=-1. Умножаем на x^2: (x^2u)'=-x^2. Поэтому x^2u=C-x^3/3, u=C/x^2-x/3. Итак, y=1/x+1/(C/x^2-x/3) на промежутках, где знаменатель не нулевой. Отдельное частное решение y=1/x также остается в ответе.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "riccati"
+    ],
+    "methods": [
+      "known_riccati_solution",
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "riccati",
+      "linear_first_order",
+      "known_particular_solution"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "riccati",
+      "known_solution",
+      "inverse_x"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "idea_score=7: стандартная техника Риккати, но нужно аккуратно провести замену с переменным частным решением; technical_score=5: линейное уравнение для u короткое.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "riccati",
+    "linear_first_order",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск показал seed-задачу Риккати с постоянным частным решением, но не эту формулировку."
+    ]
+  }
+}

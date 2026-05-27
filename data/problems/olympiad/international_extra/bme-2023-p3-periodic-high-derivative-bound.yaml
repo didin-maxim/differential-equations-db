@@ -1,0 +1,111 @@
+{
+  "id": "bme-2023-p3-periodic-high-derivative-bound",
+  "title": "BME 2023 P3: периодическая оценка через старшую производную",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f:R->R является 2n раз непрерывно дифференцируемой периодической функцией с периодом L и имеет хотя бы один нуль. Доказать оценку max_R |f| <= (L^2/8)^n max_R |f^(2n)|.",
+        "source_ids": [
+          "src-bme-math-contest"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Повторить элементарную оценку второго порядка",
+      "text": "Если периодическая C^2-функция имеет нуль, то ее максимум отстоит от некоторого нуля не дальше L/2, а формула Тейлора дает множитель L^2/8. Затем ту же оценку применяют к f'', f^(4), ...",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Докажем базовую лемму: если u - C^2-периодическая функция периода L и у нее есть нуль, то max |u| <= (L^2/8) max |u''|. Пусть |u| достигает максимума в x0; заменив u на -u, можно считать u(x0)=M>=0. У функции есть нули, повторяющиеся с периодом L, поэтому на окружности длины L от x0 до ближайшего нуля a расстояние не больше L/2. В точке максимума u'(x0)=0, и формула Тейлора между x0 и a дает 0=u(a)=M+u''(xi)(a-x0)^2/2 для некоторого xi. Значит M<=(L^2/8)max|u''|. Теперь применим лемму последовательно к u=f, f'', f^(4), ..., f^(2n-2). Для f нуль есть по условию. Для каждой следующей четной производной нуль тоже есть: ее интеграл за период равен нулю, так что непрерывная периодическая функция либо тождественно нулевая, либо меняет знак. Получаем цепочку max|f^(2j)| <= (L^2/8) max|f^(2j+2)| для j=0,...,n-1. Перемножая эти оценки, получаем требуемое неравенство.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "differential_inequality",
+      "linear_higher_order"
+    ],
+    "methods": [
+      "comparison_argument",
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "periodic_function",
+      "higher_derivatives",
+      "poincare_type_inequality"
+    ],
+    "goal": [
+      "estimate",
+      "prove"
+    ],
+    "keywords": [
+      "BME Mathematics Contest 2023 Problem 3",
+      "periodic function",
+      "higher derivative",
+      "differential inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 7,
+    "technical_score": 6,
+    "comment": "Идея 7: базовая оценка через ближайший нуль и максимум переносится на четные производные. Техника 6: нужно аккуратно обосновать наличие нулей у четных производных и перемножить оценки.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "linear_higher_order",
+    "periodic_solution",
+    "comparison",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-bme-math-contest",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Источник: BME Mathematics Contest 2023, Problem 3, https://math.bme.hu/~mweiner/contest2023.pdf.",
+      "Официального решения в архиве не найдено; приведено самостоятельное полное решение. В условии самого PDF указано, что константа 8 не оптимальна, но достаточна для полного балла."
+    ]
+  }
+}

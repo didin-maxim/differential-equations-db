@@ -1,0 +1,119 @@
+{
+  "id": "local-du-standard-resonant-linear-bvp-solvability",
+  "title": "Условие разрешимости линейной краевой задачи в резонансе",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Рассмотрим самосопряженную краевую задачу L[y]=f на [a,b] с однородными граничными условиями, где L[y]=-(p y')'+r y, p>0, а граничные условия убивают краевой член формулы Грина. Если однородная задача L[y]=0 имеет ненулевые решения, то неоднородная задача разрешима тогда и только тогда, когда int_a^b f(x) phi(x) dx=0 для всякого решения phi однородной задачи. В случае одномерного ядра это одно условие ортогональности; решение, если существует, определено с точностью до добавления C phi.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Использовать формулу Грина",
+      "text": "В резонансе ненулевое решение сопряженной однородной задачи порождает условие совместности; в самосопряженном случае сопряженное решение совпадает с собственным.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Необходимость следует из формулы Грина. Если L[y]=f и L[phi]=0, то int_a^b f phi dx=int_a^b (L[y] phi-y L[phi]) dx. Правая часть равна [p(phi y'-y phi')]_a^b и обращается в нуль для самосопряженных однородных граничных условий. Значит f ортогональна всем phi из ядра. Для достаточности можно записать задачу в конечномерных координатах через фундаментальные решения и параметры начальных данных: граничные условия дают линейную систему на параметры. При резонансе матрица этой системы вырождена, а условие ортогональности к ядру сопряженной системы является обычным условием совместности линейной системы. В самосопряженном случае это ровно найденная ортогональность к решениям L[phi]=0. Если y0 - одно решение, то y0+phi также решение для любого phi из ядра, а разность двух решений лежит в ядре.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "fredholm_alternative",
+      "green_identity",
+      "resonance_condition"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "solvability_condition",
+      "kernel"
+    ],
+    "goal": [
+      "prove_existence",
+      "prove_uniqueness"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "resonance",
+      "linear_bvp",
+      "orthogonality_condition"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Стандартная резонансная альтернатива для линейной краевой задачи; для полного функционального анализа не требуется.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "boundary_value",
+    "linear_higher_order",
+    "eigenvalues",
+    "resonance",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 3: краевые задачи с малым параметром по усмотрению лектора; раздел 4: линейные уравнения и краевые следствия."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "Сформулировано в самосопряженной форме, достаточной для стандартной программы и типовых резонансных краевых задач."
+    ]
+  }
+}

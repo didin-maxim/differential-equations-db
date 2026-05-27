@@ -1,0 +1,124 @@
+{
+  "id": "cluster-recover-translated-parabolas-envelope",
+  "title": "Семейство сдвинутых парабол и особая огибающая",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Семейство парабол задано формулой y=(x-a)^2, где a - параметр. Восстановите дифференциальное уравнение первого порядка для этого семейства. Найдите огибающую семейства и проверьте, является ли она решением восстановленного уравнения.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "После исключения параметра появляется особая кривая",
+      "text": "Из семейства и его производной параметр исключается очень коротко, но результатом становится неразрешенное относительно y' уравнение. Его дискриминантная кривая совпадает с огибающей исходных парабол.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Дифференцируя y=(x-a)^2 при постоянном a, получаем y'=2(x-a). Поэтому (x-a)^2=(y')^2/4, и исключение a дает уравнение (y')^2=4y. Каждая парабола из исходного семейства ему удовлетворяет. Огибающая находится из системы y=(x-a)^2, partial_a[(x-a)^2]=0. Второе равенство дает a=x, значит y=0. Эта прямая не является одной из парабол y=(x-a)^2 при фиксированном a, но она удовлетворяет восстановленному уравнению: при y=0 имеем y'=0 и (y')^2=4y. Значит y=0 - особое решение, возникшее как огибающая семейства. Именно поэтому такую карточку нельзя считать обычной заменой формы кривой: при восстановлении ОДУ появляется новая кривая, отсутствующая в исходном однопараметрическом наборе.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode",
+      "implicit_family"
+    ],
+    "methods": [
+      "parameter_elimination",
+      "differentiate_family",
+      "singular_solution",
+      "envelope"
+    ],
+    "objects": [
+      "integral_curves",
+      "family_of_curves",
+      "envelope",
+      "parabolas"
+    ],
+    "goal": [
+      "derive",
+      "find_singular_solutions",
+      "explain_geometry"
+    ],
+    "keywords": [
+      "recover_ode_from_family",
+      "geometric_family",
+      "singular_envelope",
+      "translated_parabolas"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Вычисления короткие, но идея богаче базового удаления параметра: восстановленное ОДУ содержит огибающую как особое решение.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "recover_ode_from_family",
+    "graphical_construction",
+    "standard_course_methods",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_problem",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Составлено как геометрический представитель recover-family с огибающей; не перепечатка задачи Клеро."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-recover-ode-from-family",
+    "notes": [
+      "Связано с implicit-ode-discriminant только по особой кривой; основная постановка здесь обратная: сначала дано семейство, затем восстанавливается ОДУ.",
+      "Не добавлять соседние варианты y=(x-a)^2+b или y=k(x-a)^2 как новые карточки без нового механизма."
+    ]
+  }
+}

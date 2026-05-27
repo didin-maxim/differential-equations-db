@@ -1,0 +1,115 @@
+{
+  "id": "trench-bvp-green-identity-self-adjoint-boundary",
+  "title": "Тождество Грина для самосопряженной краевой задачи",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "english_source",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть L[y]=(p(x)y')'+q(x)y. Если дважды непрерывно дифференцируемые функции u и v удовлетворяют одним и тем же однородным разделенным краевым условиям B1(y)=0, B2(y)=0, то int_a^b (u Lv-v Lu) dx=0.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Краевые условия убивают вронскиан на концах",
+      "text": "Интегрирование по частям оставляет только p(uv'-u'v) на концах; два решения одного линейного краевого условия делают этот определитель нулевым.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Вычислим: int_a^b [u(pv')'-v(pu')']dx = p(uv'-u'v)|_a^b, поскольку интегралы с p u'v' сокращаются. Члены q в выражении uLv-vLu тоже сокращаются. На левом конце пары (u(a),u'(a)) и (v(a),v'(a)) обе лежат в одном одномерном подпространстве, заданном alpha z+beta z'=0; значит их определитель uv'-u'v в точке a равен нулю. То же верно в точке b для второго краевого условия. Поэтому весь краевой член равен нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "green_identity",
+      "integration_by_parts",
+      "self_adjointness"
+    ],
+    "objects": [
+      "sturm_liouville_operator",
+      "boundary_term",
+      "wronskian"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "green_identity",
+      "self_adjoint_boundary_conditions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Короткая лемма, которая запускает ортогональность и вещественность спектра.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "sturm_liouville",
+    "green_identity",
+    "wronskian",
+    "linear_higher_order",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_theorem",
+      "status": "source_verified",
+      "note": "Trench, Section 13.2, Theorem 13.2.2."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Добавлена как ключевой мост: тождество Грина объясняет сразу несколько спектральных фактов без тяжелого функционального анализа."
+    ]
+  }
+}

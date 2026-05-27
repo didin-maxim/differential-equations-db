@@ -1,0 +1,29 @@
+{
+  "id": "english-lebl-diffyqs",
+  "title": "Jiří Lebl, Notes on Diffy Qs: точечный импорт характеристик, нелинейных систем и спектра",
+  "created_at": "2026-05-26",
+  "scope": [
+    "english_sources",
+    "lebl_diffyqs",
+    "first_order_pde_characteristics",
+    "nonlinear_systems",
+    "eigenvalue_problems"
+  ],
+  "problem_ids": [
+    "lebl-diffyqs-transport-signal-shift",
+    "lebl-diffyqs-damped-transport-characteristics",
+    "lebl-diffyqs-characteristic-data-obstruction",
+    "lebl-diffyqs-variable-coefficient-characteristics",
+    "lebl-diffyqs-degenerate-linearization-critical-point",
+    "lebl-diffyqs-invariant-half-plane-two-sinks",
+    "lebl-diffyqs-radial-monotone-spiral-source",
+    "lebl-diffyqs-robin-dirichlet-transcendental-spectrum",
+    "lebl-diffyqs-weighted-sturm-exponential"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Импорт ограничен 9 карточками: 4 по линейным однородным PDE первого порядка, 3 по качественным идеям нелинейных систем, 2 по спектральным задачам.",
+    "WebWork-шаблоны, длинные вычислительные списки и Fourier/PDE separation не импортировались.",
+    "PDE-карточки связаны с уже добавленными local_du PDE-characteristics и остаются на уровне метода характеристик для линейных уравнений первого порядка."
+  ]
+}

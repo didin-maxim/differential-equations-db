@@ -1,0 +1,109 @@
+{
+  "id": "ru-misc-kfu-2019-19-3",
+  "title": "Нули функции из условия f'(x) = f(-x)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f - непрерывно дифференцируемая вещественная функция на R, f не равна тождественно нулю, и f'(x) = f(-x) для всех x. Найти все вещественные нули f.",
+        "source_ids": [
+          "src-kfu-lobachevsky-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать отраженное условие",
+      "text": "Условие с аргументом -x повышает гладкость функции: правая часть f(-x) уже C^1. После дифференцирования получается линейное уравнение f'' + f = 0, а исходное условие отбирает одну фазу.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из f'(x) = f(-x) следует, что f' является C^1-функцией, значит f дважды дифференцируема. Дифференцируя равенство, получаем f''(x) = -f'(-x). Подставляя исходное условие в точке -x, имеем f'(-x) = f(x), поэтому f''(x) = -f(x). Следовательно f(x) = A cos x + B sin x. Теперь используем исходное условие: f'(x) = -A sin x + B cos x, а f(-x) = A cos x - B sin x. Сравнение коэффициентов при sin x и cos x дает B = A. Так как f не тождественно нулевая, A != 0, и f(x) = A(cos x + sin x) = sqrt(2) A sin(x + pi/4). Поэтому все нули имеют вид x = pi n - pi/4, где n - любое целое число.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "functional_differential",
+      "olympiad"
+    ],
+    "methods": [
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "constant_coefficients",
+      "zero_location",
+      "functional_differential"
+    ],
+    "goal": [
+      "solve",
+      "zero_location"
+    ],
+    "keywords": [
+      "КФУ 2019 19-3",
+      "f'(x)=f(-x)",
+      "нули решения",
+      "сведение к гармоническому осциллятору"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: нужно превратить условие с отражением аргумента в обычное уравнение и восстановить фазу. Техническая сложность 4: решение гармонического осциллятора и сравнение коэффициентов стандартны.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "linear_higher_order",
+    "constant_coefficients",
+    "zero_location",
+    "advanced_standard_course",
+    "olympiad_above_exam"
+  ],
+  "sources": [
+    {
+      "source_id": "src-kfu-lobachevsky-olympiad",
+      "role": "original_problem",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Решение самодостаточно; новая карточка-теорема не нужна."
+    ]
+  }
+}

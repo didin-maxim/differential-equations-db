@@ -1,0 +1,114 @@
+{
+  "id": "lebl-diffyqs-degenerate-linearization-critical-point",
+  "title": "Нулевая линеаризация и фазовая картина по квадратичным членам",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 8.1, упражнение 8.1.5",
+        "text": "Для системы x'=(x-y)^2, y'=(x+y)^2 найти положения равновесия, описать поведение рядом с ними и объяснить, помогает ли линеаризация.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "При нулевом Якобиане смотреть на первые ненулевые члены",
+      "text": "Обе правые части квадратичны, поэтому линейная часть в нуле исчезает. В координатах p=x-y, q=x+y видно, что q'=p^2+q^2 неотрицательна и задает основное направление движения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесие требует одновременно x-y=0 и x+y=0, значит единственная критическая точка - (0,0). Якобиан системы равен нулевой матрице в этой точке, поэтому линейная система не дает фазовой информации. Введем p=x-y и q=x+y. Тогда q'=x'+y'=(x-y)^2+(x+y)^2=p^2+q^2, а p'=x'-y'=p^2-q^2. Поэтому вне нуля величина q строго возрастает. Траектории не могут кружить вокруг нуля или стремиться к нему при t->+infty: они проходят через малую окрестность снизу вверх в координате q. Главный вывод: это не гиперболическая точка, и характер определяется квадратичной частью, а не линеаризацией.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "phase_plane_analysis",
+      "nonhyperbolic_linearization"
+    ],
+    "objects": [
+      "equilibrium",
+      "phase_plane",
+      "degenerate_critical_point"
+    ],
+    "goal": [
+      "classify",
+      "interpret"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-8.1",
+      "nonlinear-system",
+      "degenerate-linearization"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: надо распознать бесполезность линейной части и перейти к удачным координатам; technical_score=3: вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "equilibrium_linearization",
+    "energy_method",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "exercise_adapted",
+      "status": "source_verified",
+      "note": "Раздел 8.1 Linearization, critical points, and equilibria, Exercise 8.1.5; web: https://www.jirka.org/diffyqs/html/linearization_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Добавлено как контраст к экзаменационным задачам, где линеаризация гиперболична и полностью классифицирует равновесие."
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "teschl-stanford-bridge-regular-perturbation-first-correction",
+  "title": "Первый член регулярного возмущения через вариационное уравнение",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача",
+        "text": "Пусть x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon), x_epsilon(t0)=x0, где f и g достаточно гладкие. Пусть x0(t) решает невозмущенную задачу при epsilon=0. Докажите, что z(t)=partial x_epsilon(t)/partial epsilon |_{epsilon=0} удовлетворяет z'=D_x f(t,x0(t))z+g(t,x0(t)), z(t0)=0.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать по малому параметру",
+      "text": "Регулярное возмущение первого порядка является неоднородным вариационным уравнением: матрица берется вдоль невозмущенной траектории, а правая часть равна самому возмущению.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что по теореме о гладкой зависимости от параметра производная z(t)=partial_epsilon x_epsilon(t)|_{epsilon=0} существует на рассматриваемом отрезке. Дифференцируем уравнение x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon) по epsilon. Получаем partial_epsilon x_epsilon'=D_x f(t,x_epsilon) partial_epsilon x_epsilon+g(t,x_epsilon)+epsilon D_x g(t,x_epsilon) partial_epsilon x_epsilon. При epsilon=0 имеем x_epsilon=x0, поэтому z'=D_x f(t,x0(t))z+g(t,x0(t)). Начальное условие не зависит от epsilon, значит z(t0)=0. Если Phi(t) - фундаментальная матрица однородного вариационного уравнения, то z(t)=Phi(t) int_{t0}^t Phi(s)^{-1}g(s,x0(s)) ds. За пределами стандартного курса здесь находится не вычисление линейного уравнения, а сам факт дифференцируемости решения по параметру.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "parameter_dependence",
+      "linear_systems"
+    ],
+    "methods": [
+      "regular_perturbation",
+      "variational_equation",
+      "variation_of_constants"
+    ],
+    "objects": [
+      "parameter_derivative",
+      "first_correction",
+      "inhomogeneous_linear_system"
+    ],
+    "goal": [
+      "derive",
+      "compute_parameter_derivatives"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "regular_perturbation",
+      "parameter_sensitivity",
+      "first_correction"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Две шкалы: в целом advanced_standard_course, но технически это обычное линейное неоднородное уравнение после правильного дифференцирования.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "parameter_sensitivity_ivp",
+    "linear_systems",
+    "variation_of_parameters",
+    "advanced_standard_course",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Teschl, §2.5 Regular perturbation theory; first variational equation for a small parameter in the vector field."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Связано с уже имеющейся письменной задачей на производные по параметру, но сформулировано как общий источник-bridge."
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "cluster-orthogonal-coaxal-imaginary-base-points",
+  "title": "Ортогональные траектории коаксиального пучка без действительных общих точек",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Рассмотрим пучок окружностей x^2+y^2-2ax+1=0, где a - параметр и берутся действительные окружности. У этого пучка нет действительных общих точек, а вся семья симметрична относительно обеих координатных осей. Найдите его ортогональные траектории и объясните, как этот ответ связан с сопряженным пучком окружностей через две действительные точки.",
+        "source_ids": [
+          "src-classical-orthogonal-trajectories"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Поменять местами действительные и мнимые базовые точки",
+      "text": "Пучок x^2+y^2-2ax+1=0 имеет общие точки только в комплексном расширении: (0,i) и (0,-i). Его ортогональный пучок оказывается пучком окружностей через реальные точки (1,0) и (-1,0).",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение через наклон",
+      "text": "Дифференцируем x^2+y^2-2ax+1=0: 2x+2yy'-2a=0. Из исходного уравнения a=(x^2+y^2+1)/(2x), поэтому наклон окружностей равен y'=(y^2-x^2+1)/(2xy). Ортогональные траектории должны удовлетворять dy/dx=-2xy/(y^2-x^2+1). Удобнее считать x функцией y: dx/dy=-(y^2-x^2+1)/(2xy). Для u=x^2 получаем du/dy=(u-y^2-1)/y, то есть u'-u/y=-y-1/y. После умножения на 1/y имеем (u/y)'=-1-1/y^2, откуда u/y=-y+1/y+C. Следовательно, x^2+y^2-Cy-1=0, или x^2+y^2-2by-1=0. Это окружности с центрами на оси Oy, проходящие через (1,0) и (-1,0). Итак, непересекающийся действительный пучок и пучок через две реальные точки являются ортогонально сопряженными. В терминологии коаксиальных систем это пара пучков разных типов: один имеет действительные базовые точки, другой - действительные предельные точки и мнимые общие точки.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_family"
+    ],
+    "methods": [
+      "parameter_elimination",
+      "orthogonal_slope",
+      "linear_equation_for_square"
+    ],
+    "objects": [
+      "orthogonal_trajectories",
+      "coaxal_circles",
+      "limiting_points",
+      "family_of_curves"
+    ],
+    "goal": [
+      "derive",
+      "solve",
+      "explain_geometry"
+    ],
+    "keywords": [
+      "orthogonal_trajectories",
+      "recover_ode_from_family",
+      "geometric_family",
+      "coaxal_circles",
+      "imaginary_base_points"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Главная идея - распознать непересекающийся коаксиальный пучок и его сопряженный пучок; расчет аналогичен, но требует аккуратной смены роли x и y.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "orthogonal_trajectories",
+    "recover_ode_from_family",
+    "graphical_construction",
+    "standard_course_methods",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-classical-orthogonal-trajectories",
+      "role": "classical_reference",
+      "status": "classical_folklore",
+      "note": "Классический факт о сопряженных коаксиальных пучках; нормировка x^2+y^2-2ax+1=0 выбрана для малых чисел и ясной симметрии."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-orthogonal-trajectories",
+    "notes": [
+      "Добавлено точечно как обязательная версия B: пучок без действительных общих точек, симметричный относительно координатных осей.",
+      "Карточка намеренно связана с версией A как ортогонально сопряженный контраст."
+    ]
+  }
+}

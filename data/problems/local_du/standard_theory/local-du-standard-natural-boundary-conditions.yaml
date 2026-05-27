@@ -1,0 +1,111 @@
+{
+  "id": "local-du-standard-natural-boundary-conditions",
+  "title": "Естественные граничные условия в вариационной задаче",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для функционала J[y]=int_a^b F(x,y,y') dx экстремаль со свободным значением y(b) и закрепленным y(a) удовлетворяет, кроме уравнения Эйлера-Лагранжа, естественному условию F_{y'}(b,y(b),y'(b))=0. Если свободны оба значения y(a),y(b), то также F_{y'}(a,y(a),y'(a))=0. Если конец лежит на заданной кривой, соответствующее условие заменяется стандартным условием трансверсальности.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Не убивать граничный член",
+      "text": "При свободном конце вариация h на этом конце произвольна, поэтому граничный член после интегрирования по частям дает дополнительное условие.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Первая вариация равна int_a^b (F_y h+F_{y'}h')dx. После интегрирования по частям получаем int_a^b (F_y-d/dx F_{y'})h dx+[F_{y'}h]_a^b. Из произвольности вариаций внутри интервала следует уравнение Эйлера-Лагранжа. Если y(a) закреплено, то h(a)=0. Если y(b) свободно, то h(b) произвольно, и оставшийся граничный член F_{y'}(b)h(b) обязан обращаться в нуль для всех h(b); значит F_{y'}(b)=0. При свободном левом конце h(a) произвольно, а вклад равен -F_{y'}(a)h(a), поэтому F_{y'}(a)=0. Если конец ограничен кривой или поверхностью, разрешенные значения h на конце не произвольны, а касательны к ограничению; зануление граничной формы на этих допустимых направлениях и есть условие трансверсальности.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "boundary_value"
+    ],
+    "methods": [
+      "first_variation",
+      "natural_boundary_condition",
+      "transversality"
+    ],
+    "objects": [
+      "functional",
+      "free_endpoint",
+      "boundary_terms"
+    ],
+    "goal": [
+      "derive"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "natural_boundary_conditions",
+      "free_endpoint",
+      "transversality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Стандартное продолжение Эйлера-Лагранжа для свободных концов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "boundary_value",
+    "variational_calculus",
+    "euler_lagrange",
+    "natural_boundary_conditions",
+    "transversality",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 7 программы: простейшая задача и свободные концы."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "Добавлено как теоретический prerequisite для уже имеющихся письменных вариационных задач со свободным концом."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "oral-exam-strong-10",
+  "title": "Модельные устные задачи для сильного студента на отл(10)",
+  "created_at": "2026-05-26",
+  "scope": [
+    "oral_exam",
+    "strong_student_check",
+    "model_exam_task",
+    "mipt_core"
+  ],
+  "problem_ids": [
+    "oral-exam-strong-10-one-sided-gronwall-uniqueness",
+    "oral-exam-strong-10-symmetric-part-stability",
+    "oral-exam-strong-10-trace-zero-area-obstruction",
+    "oral-exam-strong-10-sturm-comparison-one-zero",
+    "oral-exam-strong-10-nonoscillation-convexity",
+    "oral-exam-strong-10-wronskian-ratio-zeros",
+    "oral-exam-strong-10-bounded-solutions-wronskian-obstruction",
+    "oral-exam-strong-10-first-integral-closed-ovals"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка составлена как самостоятельные модельные задачи повышенной идейной сложности для сильного студента. Все задачи отмечены advanced_standard_course; внешняя теория beyond_standard_course не используется.",
+    "Перед добавлением выполнен локальный поиск по ключевым механизмам, чтобы не дублировать существующие карточки. Связи добавлены только по общему переносимому механизму."
+  ]
+}

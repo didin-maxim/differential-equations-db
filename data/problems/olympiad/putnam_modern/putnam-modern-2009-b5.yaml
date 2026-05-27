@@ -1,0 +1,106 @@
+{
+  "id": "putnam-modern-2009-b5",
+  "title": "Putnam 2009 B5: асимптотика первого ОДУ",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f:(1,infty)->R - дифференцируемая функция, такая что f'(x)=(x^2-f(x)^2)/(x^2(f(x)^2+1)) для всех x>1. Доказать, что lim_{x->infty} f(x)=infty.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Зажать решение между двумя прямыми барьерами",
+      "text": "Функции x+f и x-f монотонны и уходят на бесконечность; затем |f|<x, f становится монотонной, а конечный предел противоречит правой части ОДУ.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть p=x+f. Тогда p'=1+f'. Если f/x=u, то f'=(1-u^2)/(1+x^2u^2), поэтому p'=1+(1-u^2)/(1+x^2u^2). При x>1 это положительно: числитель после приведения равен 2+(x^2-1)u^2. Значит p возрастает. Он не может иметь конечный предел L, потому что тогда u=f/x=(p-x)/x -> -1, а формула для p' дала бы p'->1, несовместимо с сходимостью возрастающей функции. Следовательно, x+f(x)->infty. Теперь рассмотрим q=x-f. Имеем q'=1-f'=1-(1-u^2)/(1+x^2u^2)=u^2(x^2+1)/(1+x^2u^2)>=0. Если бы q имела конечный предел, то u=(x-q)/x -> 1 и из формулы следовало бы q'->1, что снова несовместимо со сходимостью возрастающей функции. Значит x-f(x)->infty. Поэтому для достаточно больших x имеем -x<f(x)<x, а значит f'(x)>0. Отсюда f имеет конечный или бесконечный предел L. Если L конечен, то f(x)/x->0, и из уравнения следует f'(x)->1/(1+L^2)>0. Тогда f растет хотя бы линейно на хвосте, что противоречит конечности L. Значит L=+infty.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument"
+    ],
+    "objects": [
+      "asymptotic",
+      "differential_inequality",
+      "boundedness"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "putnam-modern-2009-b5",
+      "Putnam",
+      "first_order_ode",
+      "asymptotic",
+      "comparison"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 7,
+    "comment": "Идея сильная: монотонные комбинации x±f дают барьеры для глобальной асимптотики. Техника заметная: несколько оценок нужно провести в правильном порядке.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "asymptotic",
+    "comparison",
+    "differential_inequality",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 2009 год; решение следует барьерному варианту из архива решений."
+    ]
+  }
+}

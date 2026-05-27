@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-guess-cauchy-picard-to-autonomous-equilibrium",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-autonomous-equilibrium",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема Пикара-Линделефа дает локальную единственность, которая превращает проверенное равновесное решение y=0 в полный ответ задачи Коши.",
+      "backward_text": "Автономный пример показывает прикладной сценарий: не искать общее решение, а подставить равновесие и сослаться на единственность.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-guess-cauchy-autonomous-no-crossing-to-equilibrium",
+      "from": "one-dimensional-autonomous-no-crossing",
+      "to": "cluster-guess-cauchy-autonomous-equilibrium",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Запрет пересечения равновесия и решение равновесной задачи Коши используют один и тот же ход: постоянная траектория плюс локальная единственность.",
+      "backward_text": "Новая карточка является вычислительной версией того же принципа для конкретной задачи Коши.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-pendulum-equilibrium",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-pendulum-inverted-equilibrium",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Локальная единственность для гладкой системы первого порядка оправдывает ответ theta=pi без вывода общего решения маятника.",
+      "backward_text": "Маятник показывает, зачем проверять условия единственности даже в задаче, где общее решение обычно неэлементарно.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-guess-cauchy-pendulum-phase-portrait-contrast",
+      "from": "local-du-programs-other-years-pendulum-sin-phase-portrait",
+      "to": "cluster-guess-cauchy-pendulum-inverted-equilibrium",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Фазовый портрет маятника описывает все уровни энергии; равновесная задача Коши требует только распознать одну стационарную траекторию и применить единственность.",
+      "backward_text": "Равновесная карточка является коротким прикладным фрагментом маятникового сюжета, не заменяя полный фазовый портрет.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-nonlinear-oscillator-zero",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-nonlinear-oscillator-zero",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "После сведения уравнения второго порядка к системе теорема единственности фиксирует нулевое решение как единственное решение с нулевыми данными.",
+      "backward_text": "Нелинейный осциллятор тренирует применение теоремы к вектору состояния (y,y').",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-guess-cauchy-state-vector-to-nonlinear-oscillator",
+      "from": "oral-exam-geometry-linear-second-order-uniqueness",
+      "to": "cluster-guess-cauchy-nonlinear-oscillator-zero",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих задачах единственность уравнения второго порядка читается через начальный вектор (y,y'), хотя новая карточка применяет это к нелинейной правой части.",
+      "backward_text": "Нелинейная карточка переносит знакомый ход с линейной задачи Коши на гладкую нелинейную систему.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-system-diagonal",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-system-diagonal-invariant",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Единственность для гладкой автономной системы гарантирует, что найденная траектория на диагонали является единственным решением с начальной точкой (1,1).",
+      "backward_text": "Система с диагональю показывает вариант 'угадать инвариантное множество, решить на нем, применить единственность'.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-guess-cauchy-filippov-integrals-to-system-diagonal",
+      "from": "local-du-filippov-1166-intersection-first-integrals",
+      "to": "cluster-guess-cauchy-system-diagonal-invariant",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "У Филиппова траектория удерживается пересечением первых интегралов; в новой системе удержание на диагонали проверяется напрямую и закрывается единственностью.",
+      "backward_text": "Диагональная система является более элементарным примером инвариантного множества для конкретной задачи Коши.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-designed-line",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-designed-straight-line",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Гладкость правой части дает единственность, поэтому проверенная прямая y=t исчерпывает задачу Коши.",
+      "backward_text": "Прямая y=t является компактным примером неравновесного угаданного решения.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-guess-cauchy-touching-to-designed-line",
+      "from": "two-solutions-touching",
+      "to": "cluster-guess-cauchy-designed-straight-line",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Лемма о совпадении решений после общей точки объясняет, почему проверенный кандидат с теми же начальными данными не может иметь конкурента.",
+      "backward_text": "Задача с прямой является вычислительным применением общего принципа совпадения по данным Коши.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-guess-cauchy-touching-to-linear-graph-tangency",
+      "from": "two-solutions-touching",
+      "to": "cluster-linear-variable-graph-direct-tangency",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют единственность данных Коши для запрета двух разных решений с одной и той же позицией и касательной.",
+      "backward_text": "Графическая задача является визуальной формой принципа совпадения решений по данным Коши.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-sign-barrier",
+      "from": "picard-lindelof-theorem",
+      "to": "oral-exam-excellent-nonautonomous-sign-barrier",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Знаковый барьер опирается на то, что нулевое решение с теми же данными Коши единственно в области, где выполнена локальная липшицевость.",
+      "backward_text": "Барьерная задача является качественным применением той же идеи 'нулевое решение плюс единственность'.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    }
+  ]
+}

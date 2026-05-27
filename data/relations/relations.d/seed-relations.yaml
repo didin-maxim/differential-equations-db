@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-picard-gronwall",
+      "from": "gronwall-inequality",
+      "to": "picard-lindelof-theorem",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла дает стандартную оценку разности решений.",
+      "backward_text": "Теорема Пикара-Линделёфа является главным применением оценки Гронуолла к единственности.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-picard-no-crossing",
+      "from": "picard-lindelof-theorem",
+      "to": "one-dimensional-autonomous-no-crossing",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Единственность из теоремы Пикара запрещает пересечение с равновесием.",
+      "backward_text": "Непересечение равновесия иллюстрирует силу единственности.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-linear-factor-cooling",
+      "from": "linear-first-order-formula",
+      "to": "linear-cooling-law",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Формула линейного уравнения сразу решает закон охлаждения.",
+      "backward_text": "Закон охлаждения является простейшим частным случаем линейной формулы.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-linear-factor-periodic",
+      "from": "linear-first-order-formula",
+      "to": "periodic-linear-equation-zero-mean",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Периодическое условие получается из той же формулы с интегрирующим множителем.",
+      "backward_text": "Олимпиадная периодическая задача показывает дополнительное условие на правую часть.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-riccati-bernoulli",
+      "from": "bernoulli-standard",
+      "to": "riccati-known-solution",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Обе задачи линеаризуются заменой, но Риккати требует известного частного решения.",
+      "backward_text": "Бернулли линеаризуется универсально, в отличие от общего Риккати.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-wronskian-system",
+      "from": "liouville-wronskian-formula",
+      "to": "variation-of-parameters-sine",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Вронскиан входит в формулы вариации постоянных.",
+      "backward_text": "Вариация постоянных дает практический пример использования вронскиана.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-matrix-system-variation",
+      "from": "linear-system-jordan-block",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют exp(At) как фундаментальный оператор.",
+      "backward_text": "Формула неоднородной системы обобщает решение однородной системы с матричной экспонентой.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-phase-line-autonomous",
+      "from": "one-dimensional-autonomous-no-crossing",
+      "to": "autonomous-phase-line-stability",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Непересечение равновесий объясняет стрелки на фазовой прямой.",
+      "backward_text": "Фазовая прямая визуализирует следствие единственности.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-energy-lyapunov",
+      "from": "energy-integral-oscillator",
+      "to": "energy-no-nonconstant-decay-periodic",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки изучают монотонность или сохранение функции вдоль траекторий.",
+      "backward_text": "Запрет периодических траекторий является вариантом энергетического рассуждения с строгим убыванием.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-bendixson-lyapunov-cycle",
+      "from": "bendixson-no-cycles",
+      "to": "energy-no-nonconstant-decay-periodic",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки запрещают замкнутые траектории интегральным противоречием.",
+      "backward_text": "Ляпуновский запрет цикла является более простым родственником критерия Бендиксона.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-comparison-blowup",
+      "from": "blow-up-comparison-y-square",
+      "to": "global-positive-impossible",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи доказывают конечный взрыв интегрированием дифференциального неравенства.",
+      "backward_text": "Неравенство с 1+y^2 использует arctan вместо 1/y.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    },
+    {
+      "id": "rel-euler-frobenius",
+      "from": "euler-cauchy-equation",
+      "to": "regular-singular-euler-frobenius",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Оба решения начинаются с подстановки y=x^r.",
+      "backward_text": "Уравнение Эйлера является моделью индикаторного уравнения Фробениуса.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    }
+  ]
+}

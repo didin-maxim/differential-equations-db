@@ -1,0 +1,22 @@
+{
+  "id": "olympiad-ru-cis-extra",
+  "title": "Дополнительный импорт русскоязычных и СНГ студенческих олимпиад",
+  "created_at": "2026-05-27",
+  "scope": [
+    "student_olympiad",
+    "ru_cis_extra",
+    "non_duplicate_public_archives"
+  ],
+  "problem_ids": [
+    "ru-cis-extra-yagtu-2001-half-argument-ode",
+    "ru-cis-extra-yagtu-2001-sine-barrier",
+    "ru-cis-extra-yagtu-2007-max-switch",
+    "ru-cis-extra-yagtu-2014-exp-minus-xy-limit",
+    "ru-cis-extra-spbgeu-2023-rolle-cubic-operator"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Не дублирует уже импортированные MSU ODE, KFU Lobachevsky, NURE и SPb/ITMO карточки.",
+    "В карточки включены только задачи с надежно читаемым условием; источники с неустойчивым OCR или без публичного текста оставлены в scan report."
+  ]
+}

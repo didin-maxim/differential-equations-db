@@ -1,0 +1,109 @@
+{
+  "id": "mit-18034-pset09-lyapunov-nonlinear-stable",
+  "title": "Нелинейная устойчивость при неустойчивой линеаризации",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Рассмотреть систему x'=y-x^3, y'=-x^3. Показать, что линеаризация в начале координат неустойчива, но само равновесие (0,0) устойчиво по Ляпунову.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подобрать нелинейную функцию Ляпунова",
+      "text": "Линейная часть имеет жорданову неустойчивость, но нелинейные члены дают убывание положительно определенной функции E=x^4+2y^2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Линеаризация в нуле имеет вид x'=y, y'=0. Ее решения: y(t)=b, x(t)=a+bt. При b != 0 они уходят сколь угодно далеко, поэтому линейная система неустойчива. Для нелинейной системы возьмем E(x,y)=x^4+2y^2. Она положительно определена и стремится к нулю вместе с (x,y). Вдоль решений E'=4x^3(y-x^3)+4y(-x^3)=-4x^6<=0. Значит E(t)<=E(0). Для любого eps>0 можно выбрать delta>0 так, что |(x,y)|<delta влечет E(x,y)<min_{|(u,v)|=eps} E(u,v). Тогда решение, начавшееся в delta-окрестности, не может достичь окружности радиуса eps, потому что там E не меньше указанного положительного минимума, а E не возрастает. Следовательно равновесие устойчиво по Ляпунову, хотя линейное приближение неустойчиво.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "lyapunov_function",
+      "linearization_contrast"
+    ],
+    "objects": [
+      "equilibrium",
+      "stability",
+      "nonlinear_terms"
+    ],
+    "goal": [
+      "prove_stability",
+      "compare_linearization"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 9",
+      "Lyapunov",
+      "linearization failure",
+      "nonlinear stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "idea_score=8: надо не доверять линейной части и найти нелинейную функцию Ляпунова; technical_score=3: проверка производной короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "equilibrium_linearization",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #9, Problem 6(b); Problem set 9, Solution keys, Problem 6(b)"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: в базе есть примеры функций Ляпунова, но здесь новая диагностическая ценность - линеаризация дает неправильный вывод об устойчивости.",
+      "Метка advanced_standard_course: это мост за стандартную классификацию по собственным значениям, но решение остается элементарным."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "ru-cis-extra-yagtu-2014-exp-minus-xy-limit",
+  "title": "ЯГТУ 2014: конечный положительный предел для y'=e^{-xy}",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Функция y(x), x∈[0,+∞), удовлетворяет дифференциальному уравнению y'=e^(-xy). Доказать, что существует lim_(x->+∞)y(x) и этот предел принадлежит (0,+∞).",
+        "source_ids": [
+          "src-yagtu-student-olympiad-collection"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дождаться положительности и доминировать экспонентой",
+      "text": "Решение строго возрастает. Если оно еще неположительно, то y'>=1 и оно быстро становится положительным; после этого y>=m>0, а значит y'<=e^{-mx}, что интегрируемо на бесконечности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Всегда y'=e^{-xy}>0, поэтому y возрастает. Если y(0)>0, положим a=0 и m=y(0). Если y(0)<=0, то пока y(x)<=0 при x>=0, имеем -xy>=0 и потому y'(x)=e^{-xy}>=1. Значит за время не больше -y(0)+1 решение станет положительным; выберем точку a, где m=y(a)>0. Для всех x>=a по монотонности y(x)>=m, поэтому 0<y'(x)=e^{-xy(x)}<=e^{-mx}. Интеграл int_a^infty e^{-mx} dx сходится, следовательно y(x)=y(a)+int_a^x y'(t)dt монотонно возрастает и ограничена сверху числом y(a)+int_a^infty e^{-mt}dt. Поэтому существует конечный предел L. Так как y(x)>=m при x>=a, имеем L>=m>0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "differential_inequality",
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument",
+      "monotone_convergence"
+    ],
+    "objects": [
+      "global_solution",
+      "asymptotic",
+      "boundedness"
+    ],
+    "goal": [
+      "prove",
+      "asymptotic"
+    ],
+    "keywords": [
+      "ЯГТУ 2014",
+      "y'=e^{-xy}",
+      "положительный предел",
+      "интегрируемая оценка"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: надо разделить фазу выхода в положительную область и интегрируемое экспоненциальное хвостовое сравнение. Вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "comparison",
+    "global_solution",
+    "asymptotic",
+    "boundedness",
+    "advanced_standard_course",
+    "complete_proof",
+    "olympiad_above_exam"
+  ],
+  "sources": [
+    {
+      "source_id": "src-yagtu-student-olympiad-collection",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://baumo.narod.ru/Yar01.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "olympiad_ru_cis_extra_links",
+    "notes": [
+      "PDF, страница 14, задача 6.3; глобальная заданность на [0,+∞) является частью условия."
+    ]
+  }
+}

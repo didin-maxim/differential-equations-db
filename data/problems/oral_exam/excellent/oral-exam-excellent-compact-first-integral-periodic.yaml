@@ -1,0 +1,117 @@
+{
+  "id": "oral-exam-excellent-compact-first-integral-periodic",
+  "title": "Компактный уровень первого интеграла как периодическая траектория",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для системы x'=y(1+x^2), y'=-x(1+y^2) докажите, что всякое ненулевое решение периодично.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "first_integral",
+          "equilibrium"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Найти правильный первый интеграл, а не решать систему",
+      "text": "Производные ln(1+x^2) и ln(1+y^2) компенсируются вдоль поля. Ненулевые уровни полученного интеграла компактны и не содержат равновесий.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим H(x,y)=ln(1+x^2)+ln(1+y^2). Тогда H'=2x/(1+x^2) * y(1+x^2) + 2y/(1+y^2) * (-x(1+y^2))=2xy-2xy=0, то есть H - первый интеграл. Уровень H=c>0 эквивалентен (1+x^2)(1+y^2)=e^c; он компактен, симметричен и не проходит через начало. Других равновесий у системы нет: из x'=0 следует y=0, из y'=0 следует x=0. Поэтому на уровне c>0 поле нигде не обращается в нуль. Регулярный компактный уровень H=c состоит из замкнутых гладких кривых, и траектория, начавшаяся на одной такой компоненте, остается на ней. Так как скорость на этой компактной компоненте отделена от нуля, обход занимает конечное время. Вернувшись в исходную фазовую точку после обхода, решение повторяется по единственности. Значит всякое решение, кроме равновесия (0,0), периодично.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "qualitative"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane"
+    ],
+    "objects": [
+      "first_integral",
+      "periodic_solution",
+      "equilibrium"
+    ],
+    "goal": [
+      "prove",
+      "qualitative"
+    ],
+    "keywords": [
+      "compact_level",
+      "first_integral",
+      "periodic_orbit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Главная идея - подобрать интеграл и применить маленькую фазовую теорему о компактном регулярном уровне.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "low_technical",
+    "nonlinear_system",
+    "first_integral",
+    "phase_plane",
+    "periodic_solution"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как модельная задача на первый интеграл и регулярные компактные уровни."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Проверены карточки по Лотке-Вольтерре и фазовой плоскости; этой системы и применения компактного уровня не было."
+    ]
+  }
+}

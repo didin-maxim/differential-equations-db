@@ -1,0 +1,112 @@
+{
+  "id": "local-du-written-2022-nonlinear-equilibria-linearization",
+  "title": "Нелинейная система: равновесия и линеаризация",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_22, задача 1",
+        "text": "Найдите все положения равновесия системы x' = sh(8x-7y-4x^2+3xy), y' = exp(2x-y)-1, определите их тип и нарисуйте траектории соответствующих линеаризованных систем.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability",
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала решить алгебру равновесий",
+      "text": "В равновесии аргумент sh равен нулю, а экспонента равна единице. После этого типы читаются по собственным значениям матрицы Якоби.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из exp(2x-y)-1=0 получаем y=2x. Условие sh(8x-7y-4x^2+3xy)=0 дает 8x-7y-4x^2+3xy=0, а после подстановки y=2x: 2x(x-3)=0. Значит равновесия: (0,0) и (3,6). Матрица Якоби равна [[cosh(g)(8-8x+3y), cosh(g)(-7+3x)], [2 exp(2x-y), -exp(2x-y)]], где g=8x-7y-4x^2+3xy. В обоих равновесиях cosh(g)=exp(2x-y)=1. В точке (0,0) получаем [[8,-7],[2,-1]], tr=7, det=6, собственные значения 6 и 1: это неустойчивый узел. В точке (3,6) получаем [[2,2],[2,-1]], tr=1, det=-6, собственные значения 3 и -2: это седло.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "linearization",
+      "eigenvalue_classification"
+    ],
+    "objects": [
+      "equilibrium",
+      "jacobian",
+      "phase_portrait"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "ДУ_В_22",
+      "nonlinear_system",
+      "linearization"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 4,
+    "technical_score": 4,
+    "local_score": 5,
+    "comment": "Идея стандартная: равновесия плюс Якоби. Технически нужно аккуратно решить две алгебраические точки и посчитать спектры.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "stability",
+    "phase_plane",
+    "linear_systems",
+    "equilibrium_linearization",
+    "standard_course_methods",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_22.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Перед добавлением выполнен поиск по базе по словам arctg, фазовые траектории, линеаризация, равновесия.",
+      "Не импортированы как близкие дубли по плану решения: ДУ_В_23 задача 2 и ДУ_В_24 задача 1; обе сводятся к равновесиям, Якоби и типу."
+    ]
+  }
+}

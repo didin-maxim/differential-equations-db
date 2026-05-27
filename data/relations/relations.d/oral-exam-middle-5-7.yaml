@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-oral-middle-linear-resonance-linear-formula",
+      "from": "oral-middle-linear-first-order-resonance",
+      "to": "linear-first-order-formula",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют один и тот же интегрирующий множитель для линейного уравнения первого порядка; устная задача является короткой проверкой применения общей формулы.",
+      "backward_text": "Общая формула для линейного уравнения объясняет, почему в конкретной резонансной задаче после умножения на e^(-2x) остается простое интегрирование.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-oral-middle-wronskian-liouville-seed",
+      "from": "oral-middle-wronskian-liouville-check",
+      "to": "liouville-wronskian-formula",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Устная задача прямо применяет формулу Лиувилля W'=-pW для вычисления вронскиана без решения исходного уравнения.",
+      "backward_text": "Карточка формулы Лиувилля дает общий механизм, из которого получается ответ W(x)=2e^(-x^2) в устной проверке.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-oral-middle-triangular-system-jordan-seed",
+      "from": "oral-middle-triangular-system-jordan",
+      "to": "linear-system-jordan-block",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи демонстрируют один механизм: нильпотентная часть жордановой клетки порождает множитель t при e^t.",
+      "backward_text": "Seed-задача про жорданову клетку является общей матричной версией треугольной устной системы.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-oral-middle-phase-line-double-root-seed",
+      "from": "oral-middle-phase-line-double-root",
+      "to": "autonomous-phase-line-stability",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи решаются чтением знаков правой части на фазовой прямой; новая задача добавляет случай кратного корня и односторонней устойчивости.",
+      "backward_text": "Задача с простыми равновесиями готовит тот же анализ знаков, который затем применяется к кратному равновесию y=1.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-oral-middle-lyapunov-seed",
+      "from": "oral-middle-nonlinear-system-lyapunov",
+      "to": "lyapunov-linearization-example",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют квадратичную функцию Ляпунова и поглощение малых нелинейных членов отрицательной линейной частью.",
+      "backward_text": "Seed-пример Ляпунова показывает тот же способ оценки V' в малой окрестности нуля.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-oral-middle-mixed-eigenvalues-dirichlet",
+      "from": "oral-middle-mixed-boundary-eigenvalues",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе спектральные мини-задачи решаются разбором знака λ и наложением краевых условий на тригонометрическое семейство.",
+      "backward_text": "Задача Дирихле является близким образцом того же расчета спектра для постоянных коэффициентов; в устной задаче меняется тип краевого условия.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-oral-middle-integrating-factor-exact-potential",
+      "from": "oral-middle-integrating-factor-x",
+      "to": "exact-equation-potential",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После нахождения множителя новая задача сводится к восстановлению потенциала полной формы тем же способом, что и в базовой exact-задаче.",
+      "backward_text": "Базовая задача на потенциал стоит раньше: она отрабатывает последний шаг, который здесь выполняется после умножения на μ(x).",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-oral-middle-bernoulli-seed",
+      "from": "oral-middle-bernoulli-log-term",
+      "to": "bernoulli-standard",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют замену Бернулли z=y^(1-n), после чего остается линейное уравнение первого порядка.",
+      "backward_text": "Стандартная задача Бернулли показывает тот же механизм линеаризации; новая устная версия добавляет область x>0 и логарифм.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-oral-middle-riccati-known-seed",
+      "from": "oral-middle-riccati-known-inverse-x",
+      "to": "riccati-known-solution",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи решаются заменой y=y0+1/u при известном частном решении Риккати.",
+      "backward_text": "Seed-задача с постоянным y0 является более коротким образцом той же замены, которая здесь применяется к y0=1/x.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-oral-middle-comparison-blowup-seed",
+      "from": "oral-middle-comparison-inverse-bound",
+      "to": "blow-up-comparison-y-square",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют сравнение с y'=y^2 через производную обратной величины 1/y.",
+      "backward_text": "Задача о взрыве показывает тот же прием с 1/y, но применяет его для конечного времени несуществования, а не для локальной верхней оценки.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    }
+  ]
+}

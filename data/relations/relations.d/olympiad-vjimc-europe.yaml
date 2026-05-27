@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-seemous-2010-to-linear-first-order",
+      "from": "linear-first-order-formula",
+      "to": "seemous-2010-p1-iterated-integrals-linear-ode",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Стандартная формула линейного уравнения сразу решает уравнение для суммы F'=F+f0.",
+      "backward_text": "SEEMOUS 2010 P1 показывает, как линейное ОДУ возникает из ряда повторных интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-seemous-2010-to-imc-2025-factor",
+      "from": "imc-2025-p6-derivative-of-f-over-x",
+      "to": "seemous-2010-p1-iterated-integrals-linear-ode",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи распознают простое линейное выражение после перехода к вспомогательной функции.",
+      "backward_text": "В SEEMOUS 2010 линейное выражение возникает после суммирования Picard-подобных интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-seemous-2020-to-nure-blowup",
+      "from": "ru-misc-nure-8-5",
+      "to": "seemous-2020-p4-pole-fixed-point-series",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "ХНУРЭ 8.5 использует arctan как барьер для конечного времени; SEEMOUS 2020 использует 1/f как барьер около полюса.",
+      "backward_text": "SEEMOUS 2020 является более тонкой асимптотической версией дифференциального сравнения около взрыва.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-seemous-2020-to-olympiad-barriers",
+      "from": "olympiad-level-angle-speed-comparison",
+      "to": "seemous-2020-p4-pole-fixed-point-series",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки превращают дифференциальное неравенство в оценку вспомогательной переменной.",
+      "backward_text": "Здесь вспомогательная переменная не угол, а обратная величина 1/f около полюса.",
+      "status": "ai_checked",
+      "confidence": 0.7
+    },
+    {
+      "id": "rel-bme-2024-to-putnam-2010",
+      "from": "putnam-modern-2010-b5",
+      "to": "bme-2024-p2-composition-ode-nonexistence",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи доказывают невозможность глобального решения композиционного уравнения f'=f(f).",
+      "backward_text": "BME 2024 дает положительную полупрямую и доказательство через обратную функцию и конечный взрыв.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-bme-2024-to-functional-differential-pattern",
+      "from": "olympiad-level-involution-functional-differential",
+      "to": "bme-2024-p2-composition-ode-nonexistence",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки напоминают, что функционально-дифференциальное условие сначала надо превратить в динамическое ограничение.",
+      "backward_text": "BME 2024 не имеет инволюции; вместо нее работает монотонность, обратная функция и blow-up.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-innopolis-2024-to-implicit-branch-switch",
+      "from": "cluster-implicit-branch-switch-square-root",
+      "to": "innopolis-2024-t6-million-cauchy-branches",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В branch-switch задачах надо следить за сменой ветвей; Innopolis 2024 специально выбирает ветви, которые не склеиваются.",
+      "backward_text": "Задача про миллион решений является чистым счетом регулярных ветвей неявного ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-innopolis-2024-to-implicit-discriminant",
+      "from": "cluster-implicit-discriminant-not-solution",
+      "to": "innopolis-2024-t6-million-cauchy-branches",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки относятся к чтению неявного уравнения по регулярным ветвям.",
+      "backward_text": "Innopolis 2024 дает конструктивный пример с заранее заданным числом ветвей через каждую точку.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-vjimc-2016-to-nure-bounded-solution",
+      "from": "ru-misc-nure-8-8",
+      "to": "vjimc-2016-c2-p4-moving-average-delay-variation",
+      "type": "contrast",
+      "distance": 3,
+      "forward_text": "ХНУРЭ 8.8 получает ограниченность прямой интегральной оценкой правой части.",
+      "backward_text": "VJIMC 2016 требует более сильного окна-аргумента: доказывается не просто ограниченность, а ограниченная вариация решения уравнения со скользящим средним.",
+      "status": "ai_checked",
+      "confidence": 0.68
+    }
+  ]
+}

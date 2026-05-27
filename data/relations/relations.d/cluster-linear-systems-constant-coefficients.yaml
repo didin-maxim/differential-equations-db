@@ -1,0 +1,81 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-linear-systems-geom-two-jordan-block",
+      "from": "cluster-linear-systems-jordan-geometric-two",
+      "to": "linear-system-jordan-block",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют нильпотентную часть жордановой структуры и формулу exp((lambda I+N)t)=e^{lambda t}(I+tN). Новая задача добавляет геометрическую кратность 2 при алгебраической кратности 3.",
+      "backward_text": "Базовая жорданова клетка 2x2 является самым коротким образцом того же множителя t, который в новой 3x3 задаче присоединен к сумме двух собственных векторов.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-linear-systems-geom-two-local-du-jordan",
+      "from": "cluster-linear-systems-jordan-geometric-two",
+      "to": "local-du-written-2014-51-system-jordan-zero",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Обе карточки проверяют присоединенные векторы в 3x3 системе, но локальная задача имеет одну клетку для кратности 2 и отдельное собственное значение, а новая модельная задача имеет одно собственное значение кратности 3 и два собственных вектора.",
+      "backward_text": "Локальная экзаменационная задача показывает обычную жорданову клетку в 3x3 системе; новая задача выделяет случай геометрической кратности 2 при тройном собственном значении.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-linear-systems-jordan-forcing-variation",
+      "from": "cluster-linear-systems-jordan-resonant-forcing",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Новая задача является явным малым применением формулы вариации постоянных для x'=Ax+b(t), где резонанс с жордановой клеткой дает t^2.",
+      "backward_text": "Общая формула вариации постоянных объясняет, почему после вынесения e^t неоднородность интегрируется вдоль жордановой цепочки.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-linear-systems-jordan-forcing-seed-jordan",
+      "from": "cluster-linear-systems-jordan-resonant-forcing",
+      "to": "linear-system-jordan-block",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах матрица имеет вид I+N, N^2=0; в неоднородной версии правая часть входит в нижнее звено цепочки и добавляет еще одно интегрирование.",
+      "backward_text": "Однородная жорданова клетка готовит вычисление exp(At), на котором строится резонансное неоднородное решение.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-linear-systems-four-d-complex-waterloo-focus",
+      "from": "cluster-linear-systems-repeated-complex-four-dimensional",
+      "to": "waterloo-spiral-phase-portrait-isoclines",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки работают с комплексными собственными значениями, но Waterloo-карточка классифицирует 2D фокус, а новая задача показывает кратную комплексную пару в четырехмерной companion-системе.",
+      "backward_text": "Фазовый портрет устойчивого фокуса является простым 2D случаем комплексного спектра; новая 4D задача добавляет кратность и множители t.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-linear-systems-four-d-complex-resonance",
+      "from": "cluster-linear-systems-repeated-complex-four-dimensional",
+      "to": "constant-coeff-second-order-resonance",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют кратность корня характеристического многочлена как причину дополнительных множителей t, хотя новая формулировка дана как однородная система четвертого порядка.",
+      "backward_text": "Резонанс во втором порядке является скалярным предшественником того же правила кратных корней, примененного в новой четырехмерной системе.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-linear-systems-flow-inverse-matrix-exp",
+      "from": "waterloo-fundamental-matrix-flow-inverse",
+      "to": "linear-system-jordan-block",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Концептуальное свойство фундаментальной матрицы как потока полезно изучить до вычислительных задач на exp(At).",
+      "backward_text": "Жорданова клетка является конкретным вычислением фундаментального оператора, свойства которого объясняются в Waterloo-карточке.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    }
+  ]
+}

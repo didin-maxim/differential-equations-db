@@ -1,0 +1,109 @@
+{
+  "id": "local-du-romanko-isoperimetric-linear-constraint",
+  "title": "Изопериметрическая задача с линейной связью",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти минимум J(y)=∫_0^pi (y')^2 dx при y(0)=1, y(pi)=-1 и изопериметрическом условии ∫_0^pi y cos x dx=pi/2.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ввести множитель Лагранжа для интегральной связи",
+      "text": "Связь добавляет к уравнению Эйлера внешнюю силу, пропорциональную cos x; резонанс с краевыми данными выделяет y=cos x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим расширенный функционал ∫_0^pi[(y')^2+lambda y cos x]dx. Его уравнение Эйлера: -2y''+lambda cos x=0, то есть y''=(lambda/2)cos x. Общее решение имеет вид y=-(lambda/2)cos x+C1x+C2. Из y(0)=1 получаем C2=1+lambda/2, а из y(pi)=-1 получаем C1=(-2-lambda)/pi. Интегральная связь дает -lambda pi/4-2C1=pi/2, потому что ∫_0^pi cos^2 x dx=pi/2 и ∫_0^pi x cos x dx=-2. Подстановка C1=(-2-lambda)/pi дает lambda=-2, затем C1=0, C2=0, и y=cos x. Для любой допустимой вариации h с h(0)=h(pi)=0 и ∫h cos x dx=0 приращение функционала после использования уравнения Эйлера равно ∫_0^pi(h')^2dx, поскольку линейный член зануляется с учетом связи. Эта величина положительна для h не равной нулю, значит y=cos x дает строгий минимум на классе с заданной связью.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "isoperimetric_variational_problem",
+      "boundary_value"
+    ],
+    "methods": [
+      "lagrange_multiplier",
+      "euler_lagrange",
+      "second_variation"
+    ],
+    "objects": [
+      "integral_constraint",
+      "dirichlet_boundary_conditions",
+      "strict_minimum"
+    ],
+    "goal": [
+      "minimize"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "isoperimetric",
+      "linear-constraint",
+      "lagrange-multiplier",
+      "strict-minimum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: главный шаг - множитель Лагранжа для интегральной связи; technical_score=4: уравнение и проверка короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "variational_calculus",
+    "isoperimetric_problem",
+    "euler_lagrange",
+    "boundary_value"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§21: изопериметрические задачи; представитель с линейной интегральной связью."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Выбрано вместо очередной простейшей вариационной задачи: ключевой механизм - интегральная связь."
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "local-du-deficit-sturm-nonpositive-potential-bvp",
+  "title": "Единственность краевой задачи при неположительном потенциале",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть q непрерывна на всей действительной оси и q(x) <= 0. Доказать, что краевая задача y''+q(x)y=0, y(x1)=a, y(x2)=b при любых a, b и x1 != x2 имеет решение и это решение единственно.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Энергетическая проверка однородной краевой задачи",
+      "text": "Достаточно показать, что однородная задача с нулевыми краями имеет только нулевое решение. Умножение на решение превращает это в знаковое интегральное тождество.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть z - решение однородной краевой задачи z''+q(x)z=0, z(x1)=z(x2)=0. Умножим уравнение на z и проинтегрируем по отрезку между x1 и x2. После интегрирования по частям граничный член z'z на концах равен нулю, поэтому -∫(z')^2 dx+∫qz^2 dx=0, то есть ∫(z')^2 dx=∫qz^2 dx. Левая часть неотрицательна, а правая неположительна, значит обе равны нулю. Тогда z' тождественно равно нулю, а из z(x1)=0 следует z тождественно равно нулю. Значит, однородная краевая задача имеет только нулевое решение. Теперь зафиксируем решение y0 задачи Коши y0(x1)=a, y0'(x1)=0 и решение v задачи Коши v(x1)=0, v'(x1)=1. Любое решение с первым краевым условием имеет вид y=y0+cv. Если бы v(x2)=0, то v было бы ненулевым решением однородной краевой задачи с нулевыми краями, что невозможно. Поэтому v(x2) != 0, и единственный выбор c=(b-y0(x2))/v(x2) дает y(x2)=b. Существование и единственность доказаны.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "energy_identity",
+      "shooting_parameter"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "sturm_comparison",
+      "nonpositive_potential"
+    ],
+    "goal": [
+      "prove_existence_uniqueness"
+    ],
+    "keywords": [
+      "local-du-deficit",
+      "sturm",
+      "boundary-value",
+      "energy-identity",
+      "program-deficit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: нужно соединить энергетическую единственность с параметром стрельбы; technical_score=3: счет короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "program_deficit",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "low_technical",
+    "boundary_value",
+    "sturm_theorem",
+    "sturm_comparison",
+    "comparison",
+    "shooting_parameter",
+    "energy_method"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program_assignment",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-deficit-thinking",
+    "notes": [
+      "Добавлено как представитель дефицитного блока Штурма/краевых задач с идейным доказательством, а не как очередной счет собственных значений."
+    ]
+  }
+}

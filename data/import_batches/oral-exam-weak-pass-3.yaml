@@ -1,0 +1,31 @@
+{
+  "id": "oral-exam-weak-pass-3",
+  "title": "Устные задачи для слабого студента на границе оценки 3",
+  "created_at": "2026-05-26",
+  "scope": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "exam_score_3",
+    "standard_course_methods",
+    "low_technical"
+  ],
+  "problem_ids": [
+    "weak-pass-linear-method-choice",
+    "weak-pass-existence-interval-singular-coeff",
+    "weak-pass-nonunique-continuous-counterexample",
+    "weak-pass-exact-form-recognition",
+    "weak-pass-bernoulli-substitution",
+    "weak-pass-resonance-double-root",
+    "weak-pass-wronskian-zero-dependence",
+    "weak-pass-linear-system-saddle",
+    "weak-pass-phase-line-semistable",
+    "weak-pass-mixed-bvp-eigenvalues",
+    "weak-pass-series-first-coefficients"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Перед добавлением выполнен текстовый поиск по существующим карточкам; задачи являются диагностическими вариантами, а не дубликатами базовых карточек.",
+    "Пачка ориентирована на границу между пересдачей и оценкой 3: выбор метода, область применимости, короткий контрпример, распознавание полной формы, устойчивость и простые вычисления."
+  ]
+}

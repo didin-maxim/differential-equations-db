@@ -1,0 +1,118 @@
+{
+  "id": "cluster-existence-inward-barrier-interval",
+  "title": "Инвариантность отрезка как барьерный аргумент",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "mini_theorem",
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f(t,x) непрерывна на R x R, локально липшицева по x, и для некоторых a<b выполнено f(t,a)>=0, f(t,b)<=0 при всех t>=t0. Докажите, что решение задачи x'=f(t,x), x(t0)=x0 из [a,b] не выходит из отрезка [a,b] вправо по времени. Выведите отсюда глобальное существование вправо, если f определена на всей полосе t>=t0, x in R.",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Оценить положительную часть превышения над барьером",
+      "text": "Локальная липшицевость около границы дает для (x-b)_+ неравенство D^+(x-b)_+<=L(x-b)_+. Так как на границе f(t,b)<=0, Гронуолл запрещает появление положительной части.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Докажем запрет выхода через верхнюю границу. На любом конечном промежутке [t0,T] локальная липшицевость в окрестности отрезка [a,b] дает константу L. Обозначим u(t)=(x(t)-b)_+. В точках, где x(t)>b и решение еще близко к b, имеем u'=x'=f(t,x)<=f(t,b)+L(x-b)<=Lu. В точках, где x(t)<=b, верхняя правая производная u не превосходит max(f(t,b),0)=0. Поэтому D^+u<=Lu и u(t0)=0. По Гронуоллу u(t)=0, то есть x(t)<=b, пока решение существует на [t0,T]. Для нижней границы применим тот же аргумент к v(t)=(a-x(t))_+: если x<a, то v'=-f(t,x)<=-f(t,a)+L(a-x)<=Lv, а при x>=a верхняя правая производная v не положительна. Значит v=0 и x(t)>=a. Отрезок [a,b] положительно инвариантен. На каждом конечном промежутке график лежит в компакте [t0,T] x [a,b], поэтому по критерию продолжения конечный правый конец невозможен; решение существует при всех t>=t0.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "initial_value_problem"
+    ],
+    "methods": [
+      "barrier_argument",
+      "continuation_criterion",
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "invariant_interval",
+      "global_solution",
+      "maximal_solution"
+    ],
+    "goal": [
+      "prove_global_existence",
+      "prove_invariance"
+    ],
+    "keywords": [
+      "existence_uniqueness_continuation",
+      "barrier",
+      "invariant_interval",
+      "global_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: это не вычислительная задача, а качественный первый-выходный барьер; technical_score=3: после идеи доказательство короткое.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "advanced_standard_course",
+    "existence_uniqueness",
+    "continuation",
+    "global_solution",
+    "comparison",
+    "invariant",
+    "complete_proof",
+    "low_technical",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Section 2.6, Problem 2.20",
+      "note": "Адаптировано из стандартной задачи об инвариантности отрезка для автономного случая; формулировка записана в неавтономной барьерной форме."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-existence-uniqueness-continuation",
+    "notes": [
+      "Добавлено для явного покрытия барьерных аргументов; отличается от непересечения решений тем, что границы могут не быть решениями."
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-pde-strip-after-lebl-transport",
+      "from": "lebl-diffyqs-transport-signal-shift",
+      "to": "cluster-pde-characteristics-strip-domain",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "После базовой формулы переноса полезно спросить, какую область вообще покрывают характеристики из заданного отрезка данных.",
+      "backward_text": "Полоса |y-x|<1 является тем же переносом профиля, но с явным учетом ограниченной начальной кривой.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-pde-strip-to-single-hit",
+      "from": "cluster-pde-characteristics-strip-domain",
+      "to": "cluster-pde-characteristics-single-hit-criterion",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Полоса показывает, что значение определяется пересечением характеристики с данными; следующая карточка формулирует это как критерий однократного пересечения.",
+      "backward_text": "Критерий однократности обобщает проверку, что характеристика из точки попадает в начальную кривую ровно один раз.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-pde-local-du-to-characteristic-incompatible",
+      "from": "local-du-deficit-first-order-pde-characteristics",
+      "to": "cluster-pde-characteristics-characteristic-incompatible",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Local_du-карточка содержит общий разбор характеристической прямой; новая карточка выделяет чистый отрицательный случай непостоянных данных на одной характеристике.",
+      "backward_text": "Несовместимые данные u(x,x)=x^2 являются минимальным фрагментом той же диагностики характеристической начальной кривой.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-pde-characteristic-incompatible-nonunique-contrast",
+      "from": "cluster-pde-characteristics-characteristic-incompatible",
+      "to": "cluster-pde-characteristics-characteristic-nonunique",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Если данные на характеристике меняются, решения нет; если они постоянны, решение есть, но соседние характеристики остаются свободными.",
+      "backward_text": "Неединственность при совместимых данных дополняет отрицательный пример: характеристическая кривая не является корректной кривой Коши.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-pde-characteristic-obstruction-lebl-contrast",
+      "from": "lebl-diffyqs-characteristic-data-obstruction",
+      "to": "cluster-pde-characteristics-characteristic-incompatible",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки проверяют данные прямо на характеристике и находят нарушение ОДУ вдоль нее.",
+      "backward_text": "Непостоянство x^2 на прямой y=x является геометрически тем же obstruction, что и несовместимость sin x с уравнением Lebl.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-pde-single-hit-to-double-hit",
+      "from": "cluster-pde-characteristics-single-hit-criterion",
+      "to": "cluster-pde-characteristics-incompatible-double-hit",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Критерий однократного пересечения показывает, что идет не так, когда одна горизонтальная характеристика встречает параболу дважды.",
+      "backward_text": "Двойное пересечение параболы является явным нарушением условия, что номер характеристики должен быть инъективной координатой на начальной кривой.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-pde-double-hit-after-local-du",
+      "from": "local-du-deficit-first-order-pde-characteristics",
+      "to": "cluster-pde-characteristics-incompatible-double-hit",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "После локальной диагностики характеристической прямой естественно рассмотреть глобальный obstruction: начальная кривая может пересечь одну характеристику дважды.",
+      "backward_text": "Парабола с двумя пересечениями развивает ту же идею совместимости данных вдоль характеристик, но уже для нехарактеристических ветвей.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-pde-flow-after-variable-lebl",
+      "from": "lebl-diffyqs-variable-coefficient-characteristics",
+      "to": "cluster-pde-characteristics-flow-geometry",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи требуют решить характеристическое ОДУ с переменным коэффициентом; новая карточка делает явным движение носителя профиля.",
+      "backward_text": "Геометрия x -> x e^t является простым поточным чтением того же метода характеристик с переменной скоростью.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-pde-romanko-after-written-2023",
+      "from": "local-du-written-2023-characteristics-plane-data",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Письменная задача с двумя инвариантами готовит к романьковскому примеру, где инварианты и поверхность Коши алгебраически плотнее.",
+      "backward_text": "Задача Романко является более тяжелым представителем того же приема: найти два первых интеграла и восстановить функцию по поверхности.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-pde-written-2014-romanko-same-method",
+      "from": "local-du-written-2014-51-characteristics-pde",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки решают линейное однородное ЧП первого порядка через два инварианта характеристической системы и данные на поверхности.",
+      "backward_text": "Романко дает ту же структуру, но с другим набором инвариантов и локальной областью x<0, z>0.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    }
+  ]
+}

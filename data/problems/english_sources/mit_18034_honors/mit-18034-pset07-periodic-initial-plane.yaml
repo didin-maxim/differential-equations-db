@@ -1,0 +1,108 @@
+{
+  "id": "mit-18034-pset07-periodic-initial-plane",
+  "title": "Начальные данные, дающие периодическое решение линейной системы",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для системы y1'=y1-2y3, y2'=y2, y3'=y1-y2-y3 найти все начальные векторы (a,b,c), при которых решение с y(0)=(a,b,c) периодично по t.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Отделить растущую координату от вращательной плоскости",
+      "text": "Вторая координата сама равна b e^t, поэтому периодичность сразу требует b=0. На инвариантной плоскости y2=0 оставшаяся система имеет чисто мнимые собственные значения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из y2'=y2 получаем y2(t)=b e^t. Периодическая функция такого вида возможна только при b=0. Если b=0, то плоскость y2=0 инвариантна, и оставшиеся координаты удовлетворяют системе z' = Bz, где z=(y1,y3)^T, B=[[1,-2],[1,-1]]. У этой матрицы tr B=0 и det B=1, поэтому характеристический многочлен lambda^2+1, а B^2=-I. Следовательно e^{Bt}=I cos t+B sin t, и каждое решение на этой плоскости 2pi-периодично. Значит все и только начальные векторы вида (a,0,c), где a и c произвольны, дают периодические решения.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "invariant_subspace",
+      "matrix_exponential",
+      "spectral_decomposition"
+    ],
+    "objects": [
+      "periodic_solution",
+      "initial_data_subspace",
+      "linear_system"
+    ],
+    "goal": [
+      "classify_initial_data"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 7",
+      "periodic initial data",
+      "invariant plane",
+      "linear systems"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: периодичность читается не из полного решения, а из инвариантной плоскости и растущей координаты; technical_score=3: спектр 2x2 короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "periodic_solution",
+    "invariant",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #7, Problem 6; Problem set 7, Solution keys, Problem 6"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: кластер линейных систем с постоянными коэффициентами насыщен, но здесь добавлена новая диагностическая цель - найти подпространство начальных данных с периодическим движением.",
+      "Метка standard_course_methods: достаточно решения y'=Ay, инвариантной плоскости и собственных значений."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "cluster-parameter-dependence-variational-equation",
+  "title": "Аудит кластера зависимости от параметра и вариационного уравнения",
+  "created_at": "2026-05-27",
+  "scope": [
+    "parameter_dependence",
+    "variational_equation",
+    "sensitivity_equation",
+    "regular_perturbation",
+    "initial_data_parameter",
+    "gronwall"
+  ],
+  "problem_ids": [
+    "cluster-parameter-sensitivity-equation-theorem",
+    "cluster-parameter-second-order-coefficient-forcing",
+    "cluster-parameter-system-sensitivity",
+    "cluster-parameter-initial-data-first-order",
+    "cluster-parameter-gronwall-lipschitz-dependence"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавлены только компактные представители, где главный ход - дифференцирование задачи Коши по параметру или оценка разности параметрических решений.",
+    "Новые карточки закрывают второй порядок, систему, зависимость начальных данных, параметр в коэффициенте и правой части, а также качественную оценку через Гронуолла.",
+    "Связи вынесены только в data/relations/relations.d/cluster-parameter-dependence-variational-equation.yaml."
+  ]
+}

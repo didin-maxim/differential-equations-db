@@ -1,0 +1,106 @@
+{
+  "id": "local-du-romanko-variational-two-functions",
+  "title": "Вариационный функционал от двух неизвестных функций",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти экстремаль и характер экстремума для J(y1,y2)=∫_1^2[6y1^2+x^2(y1')^2+(y2')^2]dx при y1(1)=1, y1(2)=4, y2(1)=1, y2(2)=2.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разделить систему уравнений Эйлера по компонентам",
+      "text": "Функционал диагонален по y1 и y2, но это все равно задача на векторную экстремаль: одна компонента дает уравнение Эйлера-Коши, другая - линейную функцию.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для y1 уравнение Эйлера дает 12y1-d/dx(2x^2y1')=0, то есть x^2y1''+2xy1'-6y1=0. Это уравнение Эйлера-Коши с показателями 2 и -3, поэтому y1=C1x^2+C2x^{-3}. Условия y1(1)=1, y1(2)=4 дают C1+C2=1 и 4C1+C2/8=4, откуда C1=1, C2=0, так что y1=x^2. Для y2 имеем -d/dx(2y2')=0, значит y2=C3x+C4; из условий получаем y2=x. Проверка минимума не требует отдельного спектрального анализа: для допустимых вариаций h1,h2 с нулевыми концами вторая вариация равна ∫_1^2[6h1^2+x^2(h1')^2+(h2')^2]dx, она положительна для ненулевой пары. Следовательно, найденная пара (x^2,x) дает строгий минимум.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_system",
+      "linear_second_order"
+    ],
+    "methods": [
+      "vector_euler_lagrange",
+      "euler_cauchy_equation",
+      "second_variation"
+    ],
+    "objects": [
+      "two_unknown_functions",
+      "diagonal_quadratic_functional",
+      "strict_minimum"
+    ],
+    "goal": [
+      "find_extremal",
+      "classify_extremum"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "variational-calculus",
+      "several-functions",
+      "euler-cauchy",
+      "strict-minimum"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 5,
+    "comment": "idea_score=5: это минимальный представитель векторной вариационной задачи; technical_score=5: есть уравнение Эйлера-Коши и проверка второй вариации.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "variational_calculus",
+    "euler_lagrange",
+    "linear_systems"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§20, пункт о нескольких неизвестных функциях."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Включено как один компактный представитель нескольких неизвестных функций; похожие диагональные квадратичные варианты не импортировались."
+    ]
+  }
+}

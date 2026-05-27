@@ -1,0 +1,117 @@
+{
+  "id": "local-du-8-t5-critical-point-by-sturm",
+  "title": "Критическая точка решения через сравнение Штурма",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача 5 из первого задания",
+        "text": "Доказать, что для любого решения уравнения y''+(2+cos 3x)y=0 существует точка xi in [-1,6] такая, что y'(xi)=0.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "На отрезке длины больше 2pi есть два нуля",
+      "text": "Коэффициент 2+cos 3x не меньше 1. По сравнению Штурма решение имеет нуль на каждом промежутке между соседними нулями синуса длины pi. На [-1,6] помещаются два таких промежутка, а между двумя нулями решения по Роллю есть нуль производной.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Если y тождественно равно нулю, утверждение немедленно верно. Пусть y - ненулевое решение. Обозначим Q(x)=2+cos 3x. Тогда Q(x)>=1 для всех x. Применим теорему сравнения Штурма к уравнениям y''+Q(x)y=0 и z''+z=0. Так как Q>=1, между любыми двумя соседними нулями решения z уравнения с коэффициентом 1 у решения y есть хотя бы один нуль. Возьмем z1(x)=sin(x+1). Его соседние нули находятся в точках -1 и -1+pi, значит у y есть нуль в интервале (-1,-1+pi). Возьмем следующий промежуток между нулями того же синуса: (-1+pi,-1+2pi). Он также целиком лежит в [-1,6], потому что -1+2pi<6. Поэтому у y есть еще один нуль в этом втором интервале. Эти два нуля различны. По теореме Ролля между ними существует точка xi, в которой y'(xi)=0. Она лежит внутри [-1,6], что и требовалось.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "rolle_theorem"
+    ],
+    "objects": [
+      "critical_point",
+      "zero_location",
+      "oscillation"
+    ],
+    "goal": [
+      "prove_existence"
+    ],
+    "keywords": [
+      "sturm_comparison",
+      "critical_point",
+      "rolle",
+      "local_du_8"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Стандартное применение сравнения Штурма и теоремы Ролля; вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_comparison",
+    "comparison",
+    "zero_location",
+    "rolle_theorem",
+    "oscillation",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "8.pdf, первое задание, раздел III, задача 5."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_theory_8_links",
+    "notes": [
+      "Интервал [-1,6] проверен явно: в нем содержатся два полных промежутка длины pi между соседними нулями sin(x+1)."
+    ]
+  }
+}

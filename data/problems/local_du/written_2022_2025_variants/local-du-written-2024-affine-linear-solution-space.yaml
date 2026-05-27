@@ -1,0 +1,112 @@
+{
+  "id": "local-du-written-2024-affine-linear-solution-space",
+  "title": "Аффинное пространство решений линейного неоднородного уравнения",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_24, задача 8",
+        "text": "Известно, что y1=x^2 и y2=cos 2x - решения уравнения y''+p(x)y'+q(x)y=f(x), где p,q,f непрерывно дифференцируемы на всей прямой. а) Найдите хотя бы одно решение y3 с y3(pi/4)=pi^2. Сколько существует таких решений и почему? б) Может ли это уравнение иметь решение y4=2x^2+1?",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вычитать решения",
+      "text": "Разность двух решений неоднородного линейного уравнения является решением однородного. Это превращает множество решений в аффинную плоскость.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Разность h=y1-y2=x^2-cos 2x решает соответствующее однородное уравнение. Поэтому y2+C h снова является решением исходного неоднородного уравнения. При x=pi/4 имеем y2=0 и h=pi^2/16, так что выбор C=16 дает y3=16x^2-15cos 2x и y3(pi/4)=pi^2. Таких решений бесконечно много: пространство решений однородного уравнения второго порядка двумерно, а условие значения в одной точке задает одну линейную связь; оно не может занулить все направления, потому что h(pi/4) не равно нулю. Для пункта б предположим, что y4=2x^2+1 тоже решение. Тогда h1=y4-y1=x^2+1 и h2=y1-y2=x^2-cos 2x были бы двумя решениями однородного уравнения. Их значения в нуле: h1(0)=1, h1'(0)=0, h2(0)=-1, h2'(0)=0, поэтому W(0)=0. По теореме о вронскиане для линейного уравнения второго порядка они должны быть линейно зависимы на всей прямой. Но x^2+1 не является постоянным множителем x^2-cos 2x. Противоречие; такого решения y4 быть не может.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "affine_solution_space",
+      "wronskian_obstruction"
+    ],
+    "objects": [
+      "linear_inhomogeneous_equation",
+      "homogeneous_difference",
+      "wronskian"
+    ],
+    "goal": [
+      "construct",
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "ДУ_В_24",
+      "affine_space",
+      "wronskian"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 4,
+    "local_score": 6,
+    "comment": "Задача проверяет структурное понимание линейного неоднородного уравнения; вычислений мало, но нужна идея с вронскианом.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "affine_solution_space",
+    "wronskian",
+    "wronskian_obstruction",
+    "nonexistence",
+    "standard_course_methods",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_24.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Проверены карточки по Лиувиллю, вронскиану и касательному аргументу; эта задача отличается аффинной структурой множества решений.",
+      "Альтернативная задача 8 для потока А.О. Ремизова не импортирована: это более прямая задача на фазовый поток векторного поля, пересекающаяся с базовой техникой линейной системы."
+    ]
+  }
+}

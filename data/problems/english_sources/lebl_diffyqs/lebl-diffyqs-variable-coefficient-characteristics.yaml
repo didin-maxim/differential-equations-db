@@ -1,0 +1,108 @@
+{
+  "id": "lebl-diffyqs-variable-coefficient-characteristics",
+  "title": "Переменный коэффициент в характеристиках первого порядка",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 1.9, пример 1.9.3",
+        "text": "Решить задачу Коши x u_x+u_t+2u=0, u(x,0)=cos x.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Характеристика сама решает ОДУ с переменным коэффициентом",
+      "text": "Вместо прямых с постоянной скоростью возникает dx/dt=x. Начальная точка характеристики равна xi=xe^{-t}, а значение u дополнительно умножается на e^{-2t}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Параметризуем характеристику временем t. Тогда dx/dt=x, поэтому x=xi e^t, где xi - точка пересечения характеристики с прямой t=0. Следовательно xi=xe^{-t}. Вдоль характеристики d u/dt=xu_x+u_t, и уравнение дает du/dt+2u=0. При t=0 значение равно cos xi, значит u=cos xi e^{-2t}. Возвращаясь к x,t, получаем u(x,t)=e^{-2t} cos(xe^{-t}).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "variable_coefficient_characteristics",
+      "noncharacteristic_data"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-1.9",
+      "variable-coefficients",
+      "characteristics"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: первый шаг от прямолинейного переноса к характеристической системе ОДУ; technical_score=3: решаются два элементарных ОДУ.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "characteristic_cauchy_data",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "textbook_example",
+      "status": "source_verified",
+      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.3; web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Оставлено в рамках допустимого PDE: линейное однородное уравнение первого порядка, без нелинейных PDE и без классификации PDE второго порядка."
+    ]
+  }
+}

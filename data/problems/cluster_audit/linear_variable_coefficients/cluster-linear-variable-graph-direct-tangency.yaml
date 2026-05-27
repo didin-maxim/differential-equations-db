@@ -1,0 +1,144 @@
+{
+  "id": "cluster-linear-variable-graph-direct-tangency",
+  "title": "Два графика с общей касательной не могут быть разными решениями",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "На рисунке изображены две различные функции u и v. В точке x0 их графики касаются: u(x0)=v(x0) и u'(x0)=v'(x0). Докажите, что не существует непрерывных p,q на интервале рисунка, для которых обе функции являются решениями одного уравнения y''+p(x)y'+q(x)y=0.",
+        "source_ids": [
+          "src-didin-linear-variable-coefficients-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Касание задает одинаковые начальные данные",
+      "text": "Для уравнения с непрерывными p,q задача Коши с данными y(x0), y'(x0) единственна. Поэтому две разные функции не могут иметь одинаковую позицию и наклон в одной точке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Предположим, что такие p,q существуют. Тогда u и v решают одно и то же линейное уравнение в нормальной форме. Рассмотрим w=u-v. Функция w тоже является решением однородного уравнения, причем w(x0)=0 и w'(x0)=0. По единственности задачи Коши для системы (w,w')'=((w'),-q w-p w') с нулевым начальным вектором получаем w тождественно равно нулю на интервале. Это противоречит рисунку, где графики различны. Следовательно, таких непрерывных коэффициентов p,q нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "homogeneous_linear"
+    ],
+    "methods": [
+      "graphical_tangent",
+      "cauchy_uniqueness",
+      "wronskian_obstruction"
+    ],
+    "objects": [
+      "solution_graphs",
+      "tangent_point",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "linear_variable_coefficients",
+      "cluster_linear_variable_graph_direct_tangency"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Главная идея - увидеть в касании одинаковые данные Коши; вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "graphical_construction",
+    "wronskian_obstruction",
+    "self_authored",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-didin-linear-variable-coefficients-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная постановка для закрытия графического дефицита кластера; внешний источник для точного варианта не найден."
+    },
+    {
+      "source_id": "src-mit-es1803-topic7",
+      "role": "open_course_reference",
+      "status": "source_verified",
+      "note": "MIT OCW ES.1803 Topic 7 фиксирует графическое следствие единственности: трансверсальные пересечения возможны, касание разных решений невозможно."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-variable-coefficients",
+    "notes": [
+      "Карточка добавлена в кластерном аудите линейных уравнений с переменными коэффициентами.",
+      "Рисунок является локальным схематическим SVG asset."
+    ]
+  },
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ],
+  "assets": [
+    {
+      "id": "fig-direct-tangency",
+      "type": "image",
+      "path": "data/assets/images/linear_variable_coefficients/graph-direct-tangency.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ]
+}

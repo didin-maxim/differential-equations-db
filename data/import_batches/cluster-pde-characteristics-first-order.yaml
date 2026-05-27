@@ -1,0 +1,26 @@
+{
+  "id": "cluster-pde-characteristics-first-order",
+  "title": "Аудит кластера характеристик линейных ЧП первого порядка",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "pde_characteristics",
+    "first_order_pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem"
+  ],
+  "problem_ids": [
+    "cluster-pde-characteristics-strip-domain",
+    "cluster-pde-characteristics-characteristic-incompatible",
+    "cluster-pde-characteristics-characteristic-nonunique",
+    "cluster-pde-characteristics-incompatible-double-hit",
+    "cluster-pde-characteristics-single-hit-criterion",
+    "cluster-pde-characteristics-flow-geometry"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет 6 компактных модельных задач на понимание геометрии характеристик, а не новые громоздкие вычисления.",
+    "Источники указаны честно как model/self-authored; точные внешние карточки local_du, письменников, Романко и Lebl подтянуты в representative_card_ids кластера.",
+    "PDE второго порядка и продвинутые semilinear/blow-up примеры не входят в этот batch."
+  ]
+}

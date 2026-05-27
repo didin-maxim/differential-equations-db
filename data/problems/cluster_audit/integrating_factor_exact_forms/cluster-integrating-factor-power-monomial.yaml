@@ -1,0 +1,118 @@
+{
+  "id": "cluster-integrating-factor-power-monomial",
+  "title": "Степенной интегрирующий множитель x^a y^b",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для формы (2y^2+3xy) dx + (3xy+2x^2) dy = 0 на области x y != 0 подберите интегрирующий множитель вида mu=x^a y^b и найдите первый интеграл.",
+        "source_ids": [
+          "src-cluster-integrating-factor-exact-forms-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "exact_equation",
+          "integrating_factor",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Приравнять степени после умножения",
+      "text": "Подстановка mu=x^a y^b переводит условие точности в две линейные связи на a и b, потому что коэффициенты состоят из согласованных мономов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть M=2y^2+3xy, N=3xy+2x^2. После умножения на x^a y^b условие точности дает равенство коэффициентов при x^a y^(b+1) и x^(a+1)y^b: 2(b+2)=3(a+1), 3(b+1)=2(a+2). Отсюда a=1, b=1, то есть можно взять mu=xy. Тогда умноженная форма равна (2xy^3+3x^2y^2) dx + (3x^2y^2+2x^3y) dy. Потенциал находится сразу: F=x^2y^3+x^3y^2, поскольку F_x=2xy^3+3x^2y^2 и F_y=3x^2y^2+2x^3y. Первый интеграл: x^2y^3+x^3y^2=C.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "differential_form"
+    ],
+    "methods": [
+      "integrating_factor",
+      "monomial_ansatz",
+      "find_potential"
+    ],
+    "objects": [
+      "exact_equation",
+      "integrating_factor_power",
+      "first_integral"
+    ],
+    "goal": [
+      "find_integrating_factor",
+      "solve_implicitly"
+    ],
+    "keywords": [
+      "integrating_factor_exact_forms",
+      "power_multiplier",
+      "x_a_y_b"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "idea_score=7: нужно не пользоваться стандартным mu(x)/mu(y), а поставить степенной анзац и извлечь условия на показатели; technical_score=4: после выбора множителя потенциал короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "exact_equation",
+    "integrating_factor",
+    "first_integral",
+    "advanced_standard_course",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "exam_score_7"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-integrating-factor-exact-forms-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная задача на степенной анзац x^a y^b с коротким потенциалом."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-integrating-factor-exact-forms",
+    "notes": [
+      "Добавлено как отдельный allowed variant: идея состоит в подборе показателей, а не в более длинном интегрировании."
+    ]
+  }
+}

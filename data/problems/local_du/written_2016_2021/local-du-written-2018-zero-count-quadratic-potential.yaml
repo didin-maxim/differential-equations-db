@@ -1,0 +1,111 @@
+{
+  "id": "local-du-written-2018-zero-count-quadratic-potential",
+  "title": "Не более пяти нулей для y''+(3-2x-x^2)y=0",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Показать, что каждое нетривиальное решение уравнения y''+(3-2x-x^2)y=0 имеет на R не более пяти нулей.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разделить область знака коэффициента",
+      "text": "Снаружи отрезка, где коэффициент положителен, две соседние нулевые точки невозможны; внутри расстояние между соседними нулями ограничивается через интегральную оценку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Коэффициент q(x)=3-2x-x^2 равен 4-(x+1)^2. Поэтому q<0 на (-infty,-3) и на (1,infty), а на [-3,1] выполнено q<=4. На каждом из внешних промежутков у решения не может быть двух нулей: если y(a)=y(b)=0 и y не меняет знак на (a,b), то при y>0 имеем y''=-qy>0, но положительная дуга с нулями на концах должна иметь внутренний максимум с y''<=0; случай y<0 аналогичен после замены y на -y. Значит снаружи всего не более одного нуля слева и одного справа. Пусть теперь a<b - соседние нули внутри [-3,1]. Умножая уравнение на y и интегрируя по частям, получаем ∫_a^b (y')^2 dx=∫_a^b qy^2 dx<=4∫_a^b y^2 dx. По неравенству Виртингера для функции с нулевыми концами ∫ y^2 dx<=((b-a)^2/pi^2)∫(y')^2 dx. Так как решение нетривиально, сокращение дает b-a>=pi/2. Длина отрезка [-3,1] равна 4, а три промежутка между четырьмя нулями имели бы суммарную длину не меньше 3pi/2>4. Поэтому внутри [-3,1] не более трех нулей. Итого не более 1+3+1=5 нулей на всей прямой.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "qualitative"
+    ],
+    "methods": [
+      "zero_count",
+      "comparison_argument",
+      "wirtinger_inequality"
+    ],
+    "objects": [
+      "second_order_linear",
+      "zeros",
+      "oscillation"
+    ],
+    "goal": [
+      "bound_number_of_zeros"
+    ],
+    "keywords": [
+      "2018 written exam",
+      "zero count",
+      "quadratic potential",
+      "Wirtinger"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "idea_score=7: нужно совместить знак коэффициента и оценку расстояния между нулями; technical_score=5: интегрирование по частям и неравенство Виртингера.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "zero_location",
+    "oscillation",
+    "comparison",
+    "advanced_standard_course",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "2018_v1_ex_work_de.pdf, задача 9."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "linked",
+    "notes": [
+      "Перед добавлением выполнен поиск по zero_location, oscillation и задачам Штурма; точного дубля с потенциалом 3-2x-x^2 не найдено.",
+      "Не импортировались близкие линейные вычислительные задачи этого листка; эта задача оставлена как качественный письменный пример."
+    ]
+  }
+}

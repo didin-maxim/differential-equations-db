@@ -1,0 +1,112 @@
+{
+  "id": "lebl-diffyqs-characteristic-data-obstruction",
+  "title": "Несовместимость начальных данных на характеристике",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Lebl, раздел 1.9, замечание после примера 1.9.3",
+        "text": "Показать, что задача u_x+u=0, u(x,0)=sin x не имеет решения. Объяснить это через характеристики.",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Начальная кривая сама является характеристикой",
+      "text": "Уравнение не содержит u_t, поэтому оно накладывает ОДУ по x прямо на линии t=0. Данные на этой линии должны уже удовлетворять этому ОДУ; произвольная функция недопустима.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Если бы решение существовало, то на линии t=0 мы имели бы u(x,0)=sin x и, дифференцируя это равенство по x, получили бы u_x(x,0)=cos x. Но само уравнение на той же линии требует u_x(x,0)+u(x,0)=0. Получается cos x+sin x=0 для всех x, что неверно. Геометрически поле характеристик направлено вдоль оси x, поэтому прямая t=0 является характеристикой. На характеристике нельзя произвольно задать весь профиль: он должен быть совместим с ОДУ du/dx+u=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "compatibility_check"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_initial_curve",
+      "cauchy_data"
+    ],
+    "goal": [
+      "prove_nonexistence",
+      "classify_well_posedness"
+    ],
+    "keywords": [
+      "lebl-diffyqs",
+      "section-1.9",
+      "characteristic-data",
+      "no-solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: важна диагностика характеристических данных, а не вычисление формулы; technical_score=2: проверка одной производной.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical",
+    "nonexistence",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem",
+    "characteristic_cauchy_data",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "textbook_remark_adapted",
+      "status": "source_verified",
+      "note": "Раздел 1.9, remark after Example 1.9.3; web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-lebl-diffyqs",
+    "notes": [
+      "Связано с local_du PDE-characteristics: показывает отрицательный случай для начальной характеристики."
+    ]
+  }
+}

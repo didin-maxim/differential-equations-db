@@ -1,0 +1,115 @@
+{
+  "id": "local-du-filippov-763-dirichlet-resonance-no-solution",
+  "title": "Когда резонансная краевая задача не имеет решения",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 763*",
+        "text": "При каких a краевая задача y''+a y=1, y(0)=0, y(1)=0 не имеет решений?",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Неразрешимость появляется только при резонансе",
+      "text": "Если однородная задача Дирихле имеет только нулевое решение, краевые условия определяют константы. При собственном значении надо проверить совместимость правой части с собственным направлением.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Если a<0 или a=0, прямое решение через гиперболические функции или два интегрирования показывает, что краевые условия определяют константы, поэтому решение существует. Пусть a=lambda^2>0. Общее решение имеет вид y=C1 cos(lambda x)+C2 sin(lambda x)+1/lambda^2. Из y(0)=0 получаем C1=-1/lambda^2. Второе условие дает C2 sin lambda+(1/lambda^2)(1-cos lambda)=0. Если sin lambda !=0, можно выбрать C2. Если sin lambda=0, то lambda=n pi. При четном n имеем cos lambda=1, второе условие выполнено при любом C2, и решения существуют. При нечетном n имеем cos lambda=-1, остается требование 2/lambda^2=0, невозможное. Значит решений нет ровно при a=(2m+1)^2 pi^2, m=0,1,2,...",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "resonance_ansatz"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "boundary_resonance",
+      "eigenvalue_check"
+    ],
+    "objects": [
+      "dirichlet_problem",
+      "resonance",
+      "eigenvalue"
+    ],
+    "goal": [
+      "classify_parameters",
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "filippov-763",
+      "dirichlet",
+      "resonance",
+      "nonexistence"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: надо отделить обычное определение констант от резонансной совместимости; technical_score=4: явная формула короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "boundary_value",
+    "eigenvalues",
+    "resonance",
+    "nonexistence",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §13, задача 763*."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Добавлено как короткая краевая задача на несовместимость в резонансе, а не как очередной расчет спектра Дирихле."
+    ]
+  }
+}

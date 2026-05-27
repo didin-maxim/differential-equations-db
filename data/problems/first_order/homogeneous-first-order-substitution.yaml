@@ -1,0 +1,103 @@
+{
+  "id": "homogeneous-first-order-substitution",
+  "title": "Однородное уравнение первого порядка",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить y'=(x+y)/x при x>0.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Стандартная замена или множитель",
+      "text": "Задача сводится к одному из базовых алгоритмов первого порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим v=y/x, то есть y=xv(x). Тогда y'=v+xv'. Уравнение дает v+xv'=1+v, откуда xv'=1. Так как x>0, делим на x и интегрируем: v'=1/x, v=ln x+C. Следовательно y=x(ln x+C). Обратная подстановка проверяет ответ.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "separate_variables"
+    ],
+    "objects": [
+      "homogeneous_first_order",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "homogeneous-first-order-substitution",
+      "first_order",
+      "homogeneous_first_order",
+      "mipt_core"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: стандартная замена y=xv; technical_score=3: один элементарный интеграл.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "homogeneous_first_order",
+    "mipt_core",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

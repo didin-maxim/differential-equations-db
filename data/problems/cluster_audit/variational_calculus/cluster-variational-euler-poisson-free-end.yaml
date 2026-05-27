@@ -1,0 +1,114 @@
+{
+  "id": "cluster-variational-euler-poisson-free-end",
+  "title": "Эйлер-Пуассон и естественные условия при свободном правом конце",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Рассмотреть функционал J[y]=int_a^b F(x,y,y',y'') dx. Пусть y(a), y'(a) закреплены, а на правом конце значения y(b) и y'(b) свободны. Вывести уравнение Эйлера-Пуассона и естественные граничные условия на x=b.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Оставить два независимых граничных коэффициента",
+      "text": "Для функционала со второй производной свободный конец дает не одно, а два натуральных условия: при h(b) и при h'(b).",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Вывод",
+      "text": "Первая вариация равна int_a^b (F_y h+F_{y'}h'+F_{y''}h'') dx. После интегрирования по частям получаем int_a^b (F_y-d/dx F_{y'}+d^2/dx^2 F_{y''})h dx + [(F_{y'}-d/dx F_{y''})h+F_{y''}h']_a^b. На левом конце h(a)=h'(a)=0, так как y(a) и y'(a) закреплены. Внутренние вариации дают уравнение Эйлера-Пуассона F_y-d/dx F_{y'}+d^2/dx^2 F_{y''}=0. На правом конце h(b) и h'(b) независимы, поэтому их коэффициенты должны обращаться в нуль: F_{y''}(b,y(b),y'(b),y''(b))=0 и (F_{y'}-d/dx F_{y''})(b,y(b),y'(b),y''(b),y'''(b))=0. Эти две формулы являются естественными граничными условиями для свободного правого конца.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "boundary_value"
+    ],
+    "methods": [
+      "euler_poisson_equation",
+      "natural_boundary_condition",
+      "first_variation"
+    ],
+    "objects": [
+      "higher_derivative_functional",
+      "free_endpoint",
+      "boundary_terms"
+    ],
+    "goal": [
+      "derive"
+    ],
+    "keywords": [
+      "cluster-variational-calculus",
+      "euler-poisson",
+      "natural-boundary-conditions",
+      "free-endpoint"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Свободный конец для y''-функционала добавляет две независимые натуральные границы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "task_cluster",
+    "cluster_representative",
+    "boundary_value",
+    "variational_calculus",
+    "euler_poisson",
+    "higher_derivatives_functional",
+    "natural_boundary_conditions",
+    "free_endpoint_variational",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 7 программы: вариационные задачи со свободными концами и производными высших порядков; карточка выписана как компактный теоретический вывод."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-variational-calculus",
+    "notes": [
+      "Обязательный пример аудита: функционал со второй производной и одним свободным концом."
+    ]
+  }
+}

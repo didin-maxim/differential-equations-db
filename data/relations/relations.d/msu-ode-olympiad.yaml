@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-msu-2003-3-energy-oscillator",
+      "from": "energy-integral-oscillator",
+      "to": "msu-ode-2003-3-bounded-exp-oscillator",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Энергетическая оценка для осциллятора подсказывает монотонную энергию после замены s=2e^{t/2}.",
+      "backward_text": "МГУ 2003/3 показывает, что энергетический прием работает и после нетривиальной замены независимой переменной.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-msu-2005-8-variation-system",
+      "from": "inhomogeneous-linear-system-variation",
+      "to": "msu-ode-2005-8-six-dimensional-resonance",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула вариации постоянных и матричная экспонента являются базовым механизмом решения неоднородной системы.",
+      "backward_text": "МГУ 2005/8 является вычислительно насыщенным примером вариации постоянных для блочной системы.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-msu-2006-2-matrix-exp",
+      "from": "linear-system-jordan-block",
+      "to": "msu-ode-2006-2-det-integral-matrix-exp",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют главный член ряда матричной экспоненты.",
+      "backward_text": "Определитель интеграла exp(At) закрепляет работу с рядом матричной экспоненты в матричном виде.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-msu-2008-11-integrating-factor",
+      "from": "integrating-factor-y",
+      "to": "msu-ode-2008-11-integrating-factor-family",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Стандартный интегрирующий множитель является частным случаем вопроса о всем семействе множителей.",
+      "backward_text": "Классификация МГУ 2008/11 объясняет, почему новый множитель получается умножением на функцию первого интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-msu-2011-12-wronskian-system",
+      "from": "liouville-wronskian-formula",
+      "to": "msu-ode-2011-12-orthogonal-fundamental-matrix",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют дифференцирование инварианта фундаментальной матрицы.",
+      "backward_text": "Ортогональная фундаментальная матрица дает матричный вариант рассуждения об инвариантах линейной системы.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-msu-2012-3-matrix-log",
+      "from": "linear-system-jordan-block",
+      "to": "msu-ode-2012-3-recover-autonomous-matrix",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Опыт с exp(At) для двумерной системы нужен для восстановления генератора по значениям траектории.",
+      "backward_text": "МГУ 2012/3 усложняет стандартную матричную экспоненту обратной задачей на вещественный логарифм.",
+      "status": "ai_checked",
+      "confidence": 0.83
+    },
+    {
+      "id": "rel-msu-2012-9-stability-contrast",
+      "from": "lyapunov-linearization-example",
+      "to": "msu-ode-2012-9-negative-instant-spectrum",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Автономная линейная устойчивость по спектру контрастирует с неавтономным случаем, где мгновенный спектр не контролирует рост.",
+      "backward_text": "Контрпример МГУ 2012/9 показывает границу применимости спектрального критерия устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-msu-2013-9-riccati",
+      "from": "riccati-known-solution",
+      "to": "msu-ode-2013-9-riccati-inverse-square",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи решаются линеаризацией уравнения Риккати.",
+      "backward_text": "МГУ 2013/9 показывает вариант Риккати, где после линеаризации нужна еще замена s=1/x.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-msu-2023-2-uniqueness",
+      "from": "picard-lindelof-theorem",
+      "to": "msu-ode-2023-2-infinite-zeros-linear-ode",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Единственность задачи Коши для линейной системы завершает доказательство невозможности накопления нулей самого решения.",
+      "backward_text": "Задача МГУ 2023/2 является олимпиадным применением единственности после цепочки теоремы Ролля.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-msu-2023-8-wronskian-review",
+      "from": "liouville-wronskian-formula",
+      "to": "msu-ode-2023-8-fourth-order-zero-count-review",
+      "type": "teaches_before",
+      "distance": 3,
+      "forward_text": "Вронскианные и билинейные тождества для линейных уравнений являются подготовкой к задаче о нулях четвертого порядка.",
+      "backward_text": "МГУ 2023/8 требует более тонкого аналога сравнения для уравнения четвертого порядка.",
+      "status": "needs_human_review",
+      "confidence": 0.55
+    }
+  ]
+}

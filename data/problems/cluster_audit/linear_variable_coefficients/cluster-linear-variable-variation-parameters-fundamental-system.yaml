@@ -1,0 +1,118 @@
+{
+  "id": "cluster-linear-variable-variation-parameters-fundamental-system",
+  "title": "Вариация параметров при переменных коэффициентах и заданной фундаментальной системе",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p,q,f непрерывны на I, а y1,y2 - фундаментальная система решений уравнения y''+p(x)y'+q(x)y=0. Запишите частное и общее решение неоднородного уравнения y''+p(x)y'+q(x)y=f(x) через y1,y2 и их вронскиан.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Искать частное решение с переменными коэффициентами",
+      "text": "Положить yp=C1(x)y1+C2(x)y2, наложить C1'y1+C2'y2=0 и решить систему для C1',C2'. Ненулевой вронскиан фундаментальной системы делает формулу корректной на всем I.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Ищем yp=C1 y1+C2 y2 и добавляем стандартное условие C1'y1+C2'y2=0. Тогда yp'=C1 y1'+C2 y2', а yp''=C1'y1'+C2'y2'+C1 y1''+C2 y2''. Подстановка в неоднородное уравнение и использование того, что y1,y2 решают однородное, дает C1'y1'+C2'y2'=f. Поэтому [[y1,y2],[y1',y2']][C1',C2']^T=[0,f]^T. При W=y1 y2'-y1' y2 получаем C1'=-y2 f/W, C2'=y1 f/W. Значит можно взять yp=-y1 int (y2 f/W) dx + y2 int (y1 f/W) dx на любом фиксированном промежутке с выбранной нижней границей. Общее решение равно y=yp+A y1+B y2. Слагаемые от изменения нижних границ поглощаются константами A,B.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "linear_inhomogeneous_equation"
+    ],
+    "methods": [
+      "variation_of_parameters",
+      "wronskian_liouville",
+      "fundamental_system"
+    ],
+    "objects": [
+      "fundamental_system",
+      "wronskian",
+      "linear_inhomogeneous_equation"
+    ],
+    "goal": [
+      "construct_general_solution"
+    ],
+    "keywords": [
+      "linear_variable_coefficients",
+      "cluster_linear_variable_variation_parameters_fundamental_system"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Стандартная формула, но именно для переменных коэффициентов и с контролем роли W в знаменателе.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "variation_of_parameters",
+    "wronskian",
+    "standard_course_methods",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_reference",
+      "status": "seed_reference",
+      "note": "Стандартная формула курса ОДУ для неоднородного линейного уравнения второго порядка."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-variable-coefficients",
+    "notes": [
+      "Карточка отделена от кластера variation-of-constants: здесь представитель нужен как часть теории переменных коэффициентов и фундаментальной системы, а не как еще один вычислительный пример с новой правой частью."
+    ]
+  }
+}

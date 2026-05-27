@@ -1,0 +1,120 @@
+{
+  "id": "oral-middle-nonlinear-system-lyapunov",
+  "title": "Локальная устойчивость нелинейной системы через квадратичную энергию",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Исследовать локальную устойчивость нулевого решения системы x'=-x+y^2, y'=-2y+xy. Достаточно дать короткое доказательство, не строя фазовый портрет.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "stability",
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Квадратичная функция Ляпунова поглощает малые нелинейные члены",
+      "text": "Для V=x^2+y^2 линейная часть дает строго отрицательную производную, а смешанные члены третьего порядка малы в достаточно малой окрестности нуля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Возьмем V=x^2+y^2. Тогда вдоль решений V'=2x(-x+y^2)+2y(-2y+xy)=-2x^2-4y^2+4xy^2. В области |x|<=1/4 имеем |4xy^2|<=y^2, поэтому V'<=-2x^2-3y^2<0 вне нуля. Значит в достаточно малой окрестности функция V строго убывает вдоль ненулевых траекторий. Отсюда нулевое решение локально устойчиво и даже локально асимптотически устойчиво.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "lyapunov_function",
+      "energy_monotonicity"
+    ],
+    "objects": [
+      "equilibrium",
+      "local_stability",
+      "quadratic_energy"
+    ],
+    "goal": [
+      "prove_stability"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "lyapunov",
+      "stability",
+      "nonlinear_system"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 5,
+    "comment": "idea_score=6: стандартная функция Ляпунова, но нужно аккуратно поглотить нелинейный член; technical_score=5: короткая производная и оценка в малой окрестности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "stability",
+    "lyapunov",
+    "energy_method",
+    "nonlinear_system",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск показал родственную карточку Ляпунова, но с другой нелинейностью."
+    ]
+  }
+}

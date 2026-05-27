@@ -1,0 +1,124 @@
+{
+  "id": "cluster-phase-stability-linear-plane-classification",
+  "title": "Классификация равновесия линейной системы на плоскости",
+  "fragment": "systems",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Справочная классификация",
+        "text": "Для системы z'=Az на плоскости перечислить стандартные типы изолированного равновесия z=0 по собственным значениям матрицы A: седло, устойчивый и неустойчивый узел, вырожденный и дикритический узел, устойчивый и неустойчивый фокус, центр, а также случаи кратных и нулевых собственных значений.",
+        "source_ids": [
+          "src-waterloo-amath250-notes"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Тип читается по знакам и мнимым частям собственных значений",
+      "text": "Вещественная часть отвечает за рост или затухание, разные знаки вещественных собственных значений дают седло, а чисто мнимые собственные значения в невырожденном линейном центре дают замкнутые эллипсы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Классификация",
+      "text": "Если det A<0, собственные значения вещественные разных знаков, и нуль является седлом; он неустойчив. Если собственные значения вещественные, одного знака и det A>0, получаем узел: при обоих отрицательных он асимптотически устойчив, при обоих положительных неустойчив. При кратном вещественном собственном значении lambda возможны три стандартных подтипа: дикритический, или звездный, узел при A=lambda I; собственный узел при двух независимых собственных векторах; вырожденный узел при одной жордановой клетке. Знак lambda решает устойчивость: lambda<0 дает асимптотическую устойчивость, lambda>0 - неустойчивость. Если собственные значения alpha+-i beta, beta != 0, то при alpha<0 получаем устойчивый фокус, при alpha>0 неустойчивый фокус, а при alpha=0 центр. Центр устойчив по Ляпунову, но не асимптотически устойчив. Если хотя бы одно собственное значение равно нулю, гиперболическая классификация не применяется: для линейной системы det A=0 означает не изолированное равновесие или нейтральное направление, а для нелинейной системы нужны члены старшего порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "eigenvalue_classification",
+      "matrix_exponential"
+    ],
+    "objects": [
+      "saddle",
+      "stable_node",
+      "unstable_node",
+      "degenerate_node",
+      "star_node",
+      "stable_focus",
+      "unstable_focus",
+      "center",
+      "zero_eigenvalue"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "phase_plane",
+      "linear_systems",
+      "classification",
+      "node",
+      "focus",
+      "saddle",
+      "center"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "Справочный результат стандартного курса; технически это чтение спектра, идейно важно помнить негиперболические исключения.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "phase_plane",
+    "stability",
+    "eigenvalues",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "standard_course_reference",
+      "status": "source_verified",
+      "note": "Раздел о phase portraits and classification of linear systems; использовано как стандартный справочный контекст."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Закрывает обнаруженный пробел: в базе были отдельные седло/фокус/центр, но не было компактной классификационной карточки по всем стандартным типам."
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "local-du-standard-sturm-separation-zeros",
+  "title": "Теорема Штурма о разделении нулей",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть q непрерывна на интервале I, а y1,y2 - линейно независимые решения уравнения y''+q(x)y=0. Тогда между любыми двумя соседними нулями y1 лежит ровно один нуль y2, и наоборот.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Отношение решений монотонно",
+      "text": "На промежутке без нулей y1 производная отношения y2/y1 равна постоянному ненулевому вронскиану, деленному на y1^2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Пусть a<b - соседние нули y1. По лемме о простоте нулей y1 не обращается в нуль на (a,b), а y1'(a) и y1'(b) имеют противоположные знаки. Вронскиан W=y1y2'-y1'y2 постоянен и ненулев, потому что решения независимы. На (a,b) имеем (y2/y1)'=W/y1^2, значит отношение строго монотонно и может иметь не более одного нуля. При x->a+ знаменатель y1 стремится к 0 со знаком y1'(a), а числитель y2(a) не равен нулю, иначе W(a)=0. При x->b- знаменатель y1 стремится к 0 со знаком y1'(b), противоположным знаку y1'(a), а числитель y2(b) также не равен нулю. Поэтому отношение y2/y1 имеет на концах промежутка бесконечные пределы разных знаков и по непрерывности обращается в нуль ровно один раз. Это ровно один нуль y2 между a и b. Для промежутка между соседними нулями y2 тот же довод применяется к отношению y1/y2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "sturm_separation",
+      "wronskian_identity",
+      "ratio_monotonicity"
+    ],
+    "objects": [
+      "zero_location",
+      "oscillation",
+      "fundamental_system"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "sturm_theorem",
+      "separation_of_zeros"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "Стандартное следствие вронскиана для нормальной формы второго порядка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_theorem",
+    "wronskian",
+    "zero_location",
+    "oscillation",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 4 программы: теорема Штурма и следствия."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "Добавлена как недостающее стандартное следствие рядом с уже существующей карточкой сравнения Штурма."
+    ]
+  }
+}

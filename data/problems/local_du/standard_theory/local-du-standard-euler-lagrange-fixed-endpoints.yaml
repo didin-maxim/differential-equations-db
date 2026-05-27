@@ -1,0 +1,108 @@
+{
+  "id": "local-du-standard-euler-lagrange-fixed-endpoints",
+  "title": "Уравнение Эйлера-Лагранжа для закрепленных концов",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "local_du",
+      "course_program"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть F=F(x,y,y') имеет непрерывные нужные производные, а y дает локальный экстремум функционала J[y]=int_a^b F(x,y,y') dx среди C1-кривых с закрепленными концами y(a)=A, y(b)=B. Тогда y удовлетворяет уравнению Эйлера-Лагранжа F_y-d/dx F_{y'}=0 на (a,b).",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Занулить первую вариацию",
+      "text": "Для вариаций h с h(a)=h(b)=0 производная J[y+epsilon h] по epsilon при нуле равна нулю; интегрирование по частям переносит производную с h'.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Возьмем гладкую вариацию y_e=y+epsilon h, где h(a)=h(b)=0. Функция phi(epsilon)=J[y_e] имеет экстремум при epsilon=0, значит phi'(0)=0. Дифференцируя под интегралом, получаем 0=int_a^b (F_y h+F_{y'} h') dx. Интегрируем второй член по частям: int F_{y'}h' dx=[F_{y'}h]_a^b-int (d/dx F_{y'})h dx. Граничный член равен нулю, поэтому int_a^b (F_y-d/dx F_{y'})h dx=0 для всех гладких h с компактной поддержкой в (a,b). По основной лемме вариационного исчисления подынтегральная функция равна нулю.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "boundary_value"
+    ],
+    "methods": [
+      "first_variation",
+      "euler_lagrange"
+    ],
+    "objects": [
+      "functional",
+      "extremal",
+      "fixed_endpoints"
+    ],
+    "goal": [
+      "derive"
+    ],
+    "keywords": [
+      "local_du_standard_theory",
+      "variational_calculus",
+      "euler_lagrange",
+      "fixed_endpoints"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "Базовая теорема вариационного исчисления из программы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "boundary_value",
+    "variational_calculus",
+    "euler_lagrange",
+    "standard_course_methods",
+    "complete_proof",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_program",
+      "status": "source_verified",
+      "note": "8.pdf, раздел 7 программы: элементы вариационного исчисления, простейшая задача."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-standard-theory",
+    "notes": [
+      "В базе были вариационные задачи, но не было отдельной теоретической карточки уравнения Эйлера-Лагранжа."
+    ]
+  }
+}

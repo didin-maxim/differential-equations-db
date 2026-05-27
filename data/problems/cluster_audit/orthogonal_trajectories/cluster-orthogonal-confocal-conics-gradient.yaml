@@ -1,0 +1,115 @@
+{
+  "id": "cluster-orthogonal-confocal-conics-gradient",
+  "title": "Софокусные эллипсы и гиперболы как ортогональные траектории",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть F1=(-1,0), F2=(1,0). Эллипсы задаются уровнями r1+r2=const, а ветви гипербол - уровнями r1-r2=const, где r1 и r2 - расстояния от точки (x,y) до F1 и F2. Докажите без тяжелых вычислений, что софокусные эллипсы и гиперболы пересекаются под прямым углом.",
+        "source_ids": [
+          "src-classical-orthogonal-trajectories"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Градиенты сумм и разностей расстояний",
+      "text": "Нормали к линиям уровня задаются градиентами. Градиент расстояния до фокуса - единичный вектор от фокуса к точке, поэтому градиенты r1+r2 и r1-r2 автоматически перпендикулярны.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство через уровни",
+      "text": "Работаем в точке P=(x,y), не совпадающей с фокусами и лежащей на гладких частях кривых. Пусть e1=grad r1 и e2=grad r2. Это единичные векторы, направленные от F1 к P и от F2 к P, поэтому |e1|=|e2|=1. Нормаль к эллипсу r1+r2=const равна grad(r1+r2)=e1+e2, а нормаль к гиперболе r1-r2=const равна grad(r1-r2)=e1-e2. Их скалярное произведение равно (e1+e2)·(e1-e2)=|e1|^2-|e2|^2=0. Значит нормали к двум линиям уровня перпендикулярны; в плоскости тогда и касательные к этим линиям тоже перпендикулярны. Следовательно, каждый эллипс с фокусами F1,F2 пересекает каждую софокусную гиперболу под прямым углом. Это ровно ортогональная сетка эллиптических координат.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "level_curves"
+    ],
+    "methods": [
+      "gradient_orthogonality",
+      "level_sets",
+      "geometric_proof"
+    ],
+    "objects": [
+      "orthogonal_trajectories",
+      "confocal_conics",
+      "ellipses",
+      "hyperbolas"
+    ],
+    "goal": [
+      "prove",
+      "explain_geometry"
+    ],
+    "keywords": [
+      "orthogonal_trajectories",
+      "geometric_family",
+      "confocal_conics",
+      "elliptic_coordinates"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Идея сильнее вычислений: нужно увидеть линии уровня r1+r2 и r1-r2 и сравнить их градиенты.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "orthogonal_trajectories",
+    "graphical_construction",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-classical-orthogonal-trajectories",
+      "role": "classical_reference",
+      "status": "classical_folklore",
+      "note": "MathWorld и классические геометрические источники фиксируют ортогональность софокусных центральных коник; доказательство через градиенты дано как авторское учебное изложение."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-orthogonal-trajectories",
+    "notes": [
+      "Добавлено как красивая геометрическая задача без тяжелых вычислений.",
+      "Покрывает софокусные эллипсы и гиперболы через уровни суммы и разности расстояний."
+    ]
+  }
+}

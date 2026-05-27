@@ -1,0 +1,119 @@
+{
+  "id": "cluster-recover-two-parameter-parabolas-second-order",
+  "title": "Двухпараметрическое семейство парабол и ОДУ второго порядка",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найдите дифференциальное уравнение минимального порядка, общим решением которого является двухпараметрическое семейство y=ax^2+bx. Объясните, почему порядок должен быть вторым, если параметры a и b независимы.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дважды продифференцировать и исключить два параметра",
+      "text": "Два независимых параметра обычно требуют ОДУ второго порядка. Для парабол через начало параметры легко исключаются из y, y' и y''.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть y=ax^2+bx. Тогда y'=2ax+b и y''=2a. Из этих трех равенств исключим a и b: 2y=2ax^2+2bx, а x^2y''-2xy'=2ax^2-2x(2ax+b)=-2ax^2-2bx. Поэтому x^2y''-2xy'+2y=0. Проверка обратного включения короткая: при x!=0 это уравнение Эйлера, проба y=x^m дает (m-1)(m-2)=0, значит y=C1 x+C2 x^2. На любом промежутке, не проходящем через 0, это ровно исходное двухпараметрическое семейство; многочлены продолжают решение через 0. Один параметр нельзя сохранить в общем случае, потому что через фиксированную точку с фиксированным наклоном можно подобрать единственную пару a,b, а значит семейство имеет две независимые начальные степени свободы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order",
+      "linear_higher_order",
+      "explicit_family"
+    ],
+    "methods": [
+      "parameter_elimination",
+      "differentiate_family",
+      "minimal_order"
+    ],
+    "objects": [
+      "integral_curves",
+      "two_parameter_family",
+      "parabolas"
+    ],
+    "goal": [
+      "derive",
+      "classify_order"
+    ],
+    "keywords": [
+      "recover_ode_from_family",
+      "two_parameter_family",
+      "second_order_ode",
+      "geometric_family"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Идея выше базового одного параметра: порядок ОДУ определяется двумя независимыми постоянными; техника остается короткой.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "recover_ode_from_family",
+    "linear_higher_order",
+    "standard_course_methods",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_problem",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Составлено как представитель двухпараметрического варианта для кластера recover-ode-from-family."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-recover-ode-from-family",
+    "notes": [
+      "Параболы выбраны из-за минимальной алгебры; не следует добавлять рядом семейства ax^2+b или ax^2+bx+c как отдельные карточки без новой идеи."
+    ]
+  }
+}

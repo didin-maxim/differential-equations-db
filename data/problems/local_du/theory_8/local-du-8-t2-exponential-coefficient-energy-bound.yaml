@@ -1,0 +1,114 @@
+{
+  "id": "local-du-8-t2-exponential-coefficient-energy-bound",
+  "title": "Энергетическая оценка решения y'' + exp(2/(x+1))y = 0",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача 2* из первого задания",
+        "text": "Доказать, что для решения задачи Коши y'' + exp(2/(x+1)) y = 0, y(0)=1, y'(0)=0, выполнено неравенство |y(x)| <= exp(x/(x+1)) при x>=0.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Убывающая энергия с переменным коэффициентом",
+      "text": "Для уравнения y''+a(x)y=0 с положительным убывающим a(x) энергия E=y'^2+a(x)y^2 убывает, потому что E'=a'(x)y^2<=0. Здесь a(x)=exp(2/(x+1)).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Положим a(x)=exp(2/(x+1)). Тогда a(x)>0 и a'(x)=-(2/(x+1)^2)a(x)<=0 при x>=0. Рассмотрим E(x)=y'(x)^2+a(x)y(x)^2. Дифференцируя вдоль решения, получаем E'=2y'y''+a'y^2+2ayy'=2y'(-ay)+a'y^2+2ayy'=a'y^2<=0. Следовательно E(x)<=E(0). Из начальных условий E(0)=0^2+exp(2)·1^2=e^2. Так как a(x)y(x)^2<=E(x), имеем |y(x)|<=sqrt(E(x)/a(x))<=sqrt(e^2/exp(2/(x+1)))=exp(1-1/(x+1))=exp(x/(x+1)). Это и требовалось доказать.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "energy_estimate",
+      "differential_inequality"
+    ],
+    "objects": [
+      "boundedness",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "prove_estimate"
+    ],
+    "keywords": [
+      "energy",
+      "monotone_coefficient",
+      "pointwise_bound",
+      "local_du_8"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Идея не вычислять решение, а подобрать убывающую энергию; счет короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "energy_method",
+    "differential_inequality",
+    "boundedness",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "8.pdf, первое задание, раздел II, задача 2*, звездочная."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_theory_8_links",
+    "notes": [
+      "Формула экспоненты сверена по изображению страницы 5: коэффициент exp(2/(x+1)), оценка exp(x/(x+1))."
+    ]
+  }
+}

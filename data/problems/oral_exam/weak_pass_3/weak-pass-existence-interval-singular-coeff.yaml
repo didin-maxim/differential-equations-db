@@ -1,0 +1,117 @@
+{
+  "id": "weak-pass-existence-interval-singular-coeff",
+  "title": "Интервал существования при разрыве коэффициента",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для задачи Коши y' = y/(x-1), y(0)=2 указать максимальный интервал по x, на котором стандартная теорема для линейного уравнения гарантирует единственное решение. Найти это решение и объяснить, почему точку x=1 нельзя просто включить в ответ.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_first_order_equation",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сначала посмотреть область определения",
+      "text": "Коэффициент 1/(x-1) разрывен при x=1, поэтому интервал задачи Коши, содержащий x0=0, не должен пересекать эту точку. Явная формула не отменяет область исходного уравнения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Уравнение линейно и имеет коэффициент 1/(x-1), непрерывный на интервалах (-infty,1) и (1,+infty). Начальная точка x0=0 лежит в (-infty,1), значит стандартная теорема дает единственное решение именно на этом максимальном интервале непрерывности коэффициентов. Решение находится разделением или линейной формулой: y'/y = 1/(x-1), поэтому ln|y|=ln|x-1|+C и y=C(x-1). Из y(0)=2 получаем C=-2, то есть y=2(1-x) на (-infty,1). Хотя формула имеет значение 0 при x=1, исходная правая часть y/(x-1) в этой точке не определена, поэтому x=1 не входит в интервал решения данного уравнения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "linear_first_order"
+    ],
+    "methods": [
+      "existence_uniqueness",
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "maximal_solution",
+      "linear_first_order"
+    ],
+    "goal": [
+      "determine_domain",
+      "solve"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "singular_coefficient",
+      "maximal_interval"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 2,
+    "comment": "idea_score=4: нужно не забыть область определения исходного уравнения; technical_score=2: решение сводится к одному логарифму.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "existence_uniqueness",
+    "linear_first_order",
+    "continuation",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: отдельной устной задачи на конфликт явной формулы с областью определения коэффициента не найдено."
+    ]
+  }
+}

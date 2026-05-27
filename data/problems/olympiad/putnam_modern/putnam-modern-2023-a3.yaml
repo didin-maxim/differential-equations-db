@@ -1,0 +1,107 @@
+{
+  "id": "putnam-modern-2023-a3",
+  "title": "Putnam 2023 A3: минимальное время поворота до нуля",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Определить наименьшее положительное r, для которого существуют дифференцируемые функции f:R->R и g:R->R, удовлетворяющие f(0)>0, g(0)=0, |f'(x)|<=|g(x)| для всех x, |g'(x)|<=|f(x)| для всех x и f(r)=0.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ограничить скорость угла",
+      "text": "Пока f не занулилась, угол atan(g/f) должен пройти от 0 до ±pi/2, а неравенства дают |theta'|<=1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пример f(x)=cos x, g(x)=sin x показывает, что r=pi/2 достижимо: f(0)=1, g(0)=0, |f'|=|g|, |g'|=|f| и f(pi/2)=0. Докажем, что меньшего r быть не может. Пусть f(r)=0 и пусть s - первая точка из (0,r], где f(s)=0. На [0,s) имеем f>0. Кроме того, g(s) не может равняться нулю: если f(s)=g(s)=0, то для x<=s из интегральных неравенств |f(x)|<=int_x^s |g(t)| dt и |g(x)|<=int_x^s |f(t)| dt следует по неравенству Гронуолла назад, что f и g тождественно равны нулю на [0,s], противоречие с f(0)>0. Поэтому угол theta(x)=atan(g(x)/f(x)) стремится при x->s- к pi/2 или -pi/2. Для x<s вычисляем theta'=(f g'-g f')/(f^2+g^2), откуда |theta'|<=(|f||g'|+|g||f'|)/(f^2+g^2)<=1. Значит |theta(s-)-theta(0)|<=s. Так как theta(0)=0, а |theta(s-)|=pi/2, получаем s>=pi/2 и тем более r>=pi/2. Ответ: r=pi/2.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "angle_comparison"
+    ],
+    "objects": [
+      "differential_inequality",
+      "comparison",
+      "zero_location"
+    ],
+    "goal": [
+      "sharp_constant"
+    ],
+    "keywords": [
+      "putnam-modern-2023-a3",
+      "Putnam",
+      "differential_inequality",
+      "angle_method",
+      "sharp_constant"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 10,
+    "technical_score": 5,
+    "comment": "После аудита 2026-05-27 снижено с idea_score=11 до 10: угловой параметр остается олимпиадной идеей выше обычного экзамена, но после распознавания это переносимый шаблон angle_comparison, а не уникальная идея 11+.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "comparison",
+    "zero_location",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 2023 год.",
+      "Аудит олимпиадного слоя 2026-05-27: добавлена общая карточка olympiad-level-angle-speed-comparison; оценка идеи снижена до 10, technical_score оставлен 5."
+    ]
+  }
+}

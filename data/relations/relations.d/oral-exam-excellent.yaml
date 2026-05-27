@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-oral-excellent-sign-barrier-picard",
+      "from": "oral-exam-excellent-nonautonomous-sign-barrier",
+      "to": "picard-lindelof-theorem",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Задача применяет локальную единственность типа Пикара-Линделефа не глобально, а только в областях y>0 и y<0.",
+      "backward_text": "Теорема Пикара-Линделефа дает механизм, которым в задаче запрещается первое пересечение нулевого решения.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-oral-excellent-sign-barrier-no-crossing",
+      "from": "oral-exam-excellent-nonautonomous-sign-barrier",
+      "to": "one-dimensional-autonomous-no-crossing",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Неавтономный знаковый барьер является более тонкой версией запрета пересечения равновесия, где единственность известна только по разные стороны оси.",
+      "backward_text": "Автономная задача о непересечении равновесия является простейшим частным случаем идеи барьера через единственность.",
+      "status": "ai_checked",
+      "confidence": 0.83
+    },
+    {
+      "id": "rel-oral-excellent-trace-zero-liouville",
+      "from": "oral-exam-excellent-trace-zero-no-total-decay",
+      "to": "liouville-wronskian-formula",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Качественный вывод о невозможности полного затухания напрямую использует формулу Лиувилля для det X.",
+      "backward_text": "Формула Лиувилля становится в этой задаче объемным инвариантом, запрещающим одновременное стремление всех решений к нулю.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-oral-excellent-two-point-variation-system",
+      "from": "oral-exam-excellent-two-point-fundamental-matrix",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки требуют свободно выражать решение через фундаментальную матрицу; здесь это дает матрицу перехода для двухточечного условия.",
+      "backward_text": "Формула вариации постоянных является естественным соседним применением той же фундаментальной матрицы, что и критерий двухточечной разрешимости.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-oral-excellent-monodromy-variation-system",
+      "from": "oral-exam-excellent-monodromy-periodic-forcing",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Периодическое решение строится формулой вариации постоянных для неоднородной линейной системы.",
+      "backward_text": "Базовая вариация постоянных для систем является вычислительным ядром критерия через монодромию.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-oral-excellent-monodromy-periodic-scalar",
+      "from": "oral-exam-excellent-monodromy-periodic-forcing",
+      "to": "periodic-linear-equation-zero-mean",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Системный критерий через отсутствие мультипликатора 1 обобщает скалярный анализ периодического линейного уравнения.",
+      "backward_text": "Скалярная периодическая задача показывает тот же механизм в одномерном виде: периодичность превращается в условие на начальное значение.",
+      "status": "ai_checked",
+      "confidence": 0.81
+    },
+    {
+      "id": "rel-oral-excellent-endpoint-dirichlet",
+      "from": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют краевые условия Дирихле для линейного уравнения второго порядка; здесь знак q<=0 убивает ненулевое решение энергетическим тождеством.",
+      "backward_text": "Классическая задача Дирихле дает базовый контекст для рассуждений о ненулевых решениях с двумя нулевыми концами.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-oral-excellent-duffing-energy",
+      "from": "oral-exam-excellent-duffing-energy-periodic",
+      "to": "energy-integral-oscillator",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Периодичность осциллятора x''+x+x^3=0 начинается с сохранения энергии стандартного вида.",
+      "backward_text": "Карточка о первом интеграле энергии дает основной инвариант, который затем превращается в компактную фазовую кривую.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-oral-excellent-compact-integral-lotka",
+      "from": "oral-exam-excellent-compact-first-integral-periodic",
+      "to": "lotka-volterra-first-integral",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи требуют найти первый интеграл и читать по его уровням качественное поведение системы.",
+      "backward_text": "Интеграл Лотки-Вольтерры является более знакомым примером того же приема: фазовые кривые задаются уровнями сохраняющейся функции.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-oral-excellent-damped-energy-decay",
+      "from": "oral-exam-excellent-damped-periodic-zero",
+      "to": "energy-no-nonconstant-decay-periodic",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Задача является конкретным применением принципа: убывающая энергия несовместима с ненулевой периодичностью.",
+      "backward_text": "Общая карточка о монотонной энергии объясняет основной запрет, а здесь из нулевой потери за период дополнительно извлекается зануление решения.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-oral-excellent-gronwall-core",
+      "from": "oral-exam-excellent-gronwall-perturbed-solution",
+      "to": "gronwall-inequality",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Оценка ошибки возмущенного решения является прямым применением неравенства Гронуолла с неоднородным членом.",
+      "backward_text": "Неравенство Гронуолла дает стандартный инструмент для получения явного экспоненциального ядра в оценке устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-oral-excellent-reduction-liouville",
+      "from": "oral-exam-excellent-reduction-of-order-nonzero-solution",
+      "to": "liouville-wronskian-formula",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Формула для второго решения эквивалентна тому, что W(y1,y2)=C exp(-int p), то есть скалярной форме формулы Лиувилля.",
+      "backward_text": "Формула Лиувилля объясняет, почему при известном y1 производная отношения y2/y1 должна быть пропорциональна exp(-int p)/y1^2.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

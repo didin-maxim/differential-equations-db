@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-mipt-middle-continuation-picard",
+      "from": "mipt-middle-maximal-solution-continuation",
+      "to": "picard-lindelof-theorem",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Карточка продолжения использует локальную теорему существования и единственности как механизм малого шага от точки графика.",
+      "backward_text": "Пикара-Линделеф дает локальный кирпич, из которого строится продолжение максимального решения при компактном графике.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-mipt-middle-continuation-arctan",
+      "from": "mipt-middle-maximal-solution-continuation",
+      "to": "local-du-written-2022-global-arctan-continuation",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Лемма формулирует общий принцип, который в письменной задаче применяется через априорную ограниченность решения.",
+      "backward_text": "Письменная задача является конкретным примером: ограниченность правой части не дает графику уйти из компакта за конечное время.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-mipt-middle-cauchy-variable-constant-system",
+      "from": "mipt-middle-cauchy-formula-variable-system",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Формула с фундаментальной матрицей Phi(t) обобщает постоянную формулу через exp(At) на переменные коэффициенты.",
+      "backward_text": "Постоянная матричная экспонента является частным случаем фундаментальной матрицы Phi(t).",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-mipt-middle-cauchy-fundamental-change",
+      "from": "mipt-middle-cauchy-formula-variable-system",
+      "to": "oral-above-three-fundamental-matrix-change-basis",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Формула Коши показывает, почему выбор другой фундаментальной матрицы меняет только координаты постоянного вектора.",
+      "backward_text": "Понимание замены фундаментальной матрицы помогает читать формулу Коши без привязки к одной нормировке Phi(t0)=E.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-mipt-middle-phase-volume-liouville-wronskian",
+      "from": "mipt-middle-liouville-phase-volume",
+      "to": "liouville-wronskian-formula",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Фазовый объем получается применением той же формулы Лиувилля к вариационной системе потока.",
+      "backward_text": "Скалярная формула для вронскиана является линейным прообразом формулы для якобиана потока.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-mipt-middle-phase-volume-area",
+      "from": "mipt-middle-liouville-phase-volume",
+      "to": "oral-above-three-liouville-area-preservation",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Карточка про фазовый объем дает общий потоковый смысл сохранения площади при нулевом следе или дивергенции.",
+      "backward_text": "Устная задача о площади параллелограмма решений является линейным двумерным частным случаем фазового объема.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-mipt-middle-first-integral-energy",
+      "from": "mipt-middle-first-integral-criterion",
+      "to": "energy-integral-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Критерий grad H dot f=0 объясняет, почему энергия осциллятора является первым интегралом.",
+      "backward_text": "Энергетическая карточка является конкретным применением общего критерия первого интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-mipt-middle-first-integral-lotka",
+      "from": "mipt-middle-first-integral-criterion",
+      "to": "lotka-volterra-first-integral",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Перед поиском первого интеграла Лотки-Вольтерры полезно знать общий критерий зануления производной вдоль поля.",
+      "backward_text": "Лотка-Вольтерра демонстрирует тот же критерий на менее очевидном интеграле.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-mipt-middle-series-weak-pass",
+      "from": "mipt-middle-power-series-recurrence",
+      "to": "weak-pass-series-first-coefficients",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Новая карточка требует не только первые коэффициенты, но и явную рекуррентную схему с двумя свободными начальными параметрами.",
+      "backward_text": "Слабая устная проверка является коротким частным случаем того же сравнения коэффициентов.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-mipt-middle-series-airy",
+      "from": "mipt-middle-power-series-recurrence",
+      "to": "power-series-airy-at-zero",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют степенной ряд около обыкновенной точки и сравнение коэффициентов.",
+      "backward_text": "Airy-задача является близким образцом той же рекуррентной техники.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    }
+  ]
+}

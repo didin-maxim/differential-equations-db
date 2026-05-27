@@ -1,0 +1,111 @@
+{
+  "id": "istcim-2022-c-integral-identity-ode",
+  "title": "ISTCiM 2022 C: тождество интегралов через одно и то же ОДУ",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для каждого t>0 доказать равенство двух параметрических интегралов: int_0^infty e^(-tx)/(1+x^2) dx = int_0^infty sin x/(t+x) dx.",
+        "source_ids": [
+          "src-istcim-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить параметры как решения ОДУ",
+      "text": "Обе стороны как функции t удовлетворяют одному неоднородному уравнению y''+y=1/t. Их разность решает гармоническое однородное ОДУ и стремится к нулю при t->infty, значит тождественно равна нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим F(t)=int_0^infty e^(-tx)/(1+x^2) dx и G(t)=int_0^infty sin x/(t+x) dx. Для t>0 допустимо дифференцировать под знаком интеграла на компактных промежутках по t: экспоненциальный множитель контролирует F, а для G производные по t оцениваются степенями (t+x)^(-1). Тогда F''(t)=int_0^infty x^2 e^(-tx)/(1+x^2) dx = int_0^infty e^(-tx) dx - F(t)=1/t-F(t). Для G имеем G'(t)=-int_0^infty sin x/(t+x)^2 dx, G''(t)=2int_0^infty sin x/(t+x)^3 dx. Интегрируя по частям дважды, получаем G''(t)=1/t-G(t). Значит H=F-G удовлетворяет H''+H=0. Общее решение H(t)=A cos t+B sin t. При t->infty оба исходных интеграла стремятся к нулю: для F это следует из мажорирования e^(-tx), а для G - из интегрирования по частям или стандартной оценки осциллирующего интеграла Дирихле. Поэтому H(t)->0. Но ненулевое A cos t+B sin t предела при бесконечности не имеет, следовательно A=B=0 и F=G для всех t>0.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_second_order"
+    ],
+    "methods": [
+      "differentiate_auxiliary_function",
+      "comparison_argument"
+    ],
+    "objects": [
+      "parameter_integral",
+      "linear_higher_order",
+      "boundary_condition_at_infinity"
+    ],
+    "goal": [
+      "prove_identity"
+    ],
+    "keywords": [
+      "ISTCiM 2022 C",
+      "parameter integral",
+      "second order ODE",
+      "harmonic equation",
+      "integral identity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 9,
+    "idea_score": 8,
+    "technical_score": 7,
+    "comment": "Идея 8: увидеть в параметрических интегралах решения одного ОДУ. Техника 7: нужны аккуратное дифференцирование под интегралом, интегрирование по частям и условие на бесконечности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "integral_equation_to_ode",
+    "boundary_value",
+    "asymptotic",
+    "comparison",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-istcim-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Источник: ISTCiM 2022 Problems with Solutions, Problem C, https://istcim.math.us.edu.pl/ISTCiM_2022_problems.pdf.",
+      "Добавлено как include: ОДУ является центральным механизмом доказательства тождества, а не декоративным вычислением производной."
+    ]
+  }
+}

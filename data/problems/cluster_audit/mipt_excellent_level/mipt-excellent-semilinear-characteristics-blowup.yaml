@@ -1,0 +1,123 @@
+{
+  "id": "mipt-excellent-semilinear-characteristics-blowup",
+  "title": "Характеристики и граница существования для полулинейного уравнения в частных производных",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam",
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Модельная задача уровня отличника",
+        "text": "Рассмотрим задачу Коши u_t+u_x=u^2, u(x,0)=1/(1+x^2). Найдите решение методом характеристик и укажите максимальную область в плоскости (x,t), куда это решение продолжается как классическое решение, проходящее через начальную прямую t=0.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "На характеристике остается скалярное уравнение с взрывом",
+      "text": "Прямые x-t=const переносят начальное значение, а вдоль каждой такой прямой значение u решает v'=v^2. Поэтому область существования определяется не алгеброй формулы, а временем взрыва на каждой характеристике.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристики поля partial_t+partial_x имеют вид x=t+xi, то есть xi=x-t. Если v(t)=u(t+xi,t), то v'=v^2 и v(0)=1/(1+xi^2). Отсюда 1/v(t)=1/v(0)-t=1+xi^2-t. Значит u(x,t)=1/(1+(x-t)^2-t). Для фиксированной характеристики xi решение существует до момента t=1+xi^2 и при t, стремящемся к 1+xi^2 снизу, стремится к +infty. Назад по времени знаменатель не обращается в нуль. Поэтому максимальная область, содержащая начальную прямую, задается неравенством t<1+(x-t)^2; на ее границе возникает конечный взрыв вдоль соответствующей характеристики.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde",
+      "semilinear_pde"
+    ],
+    "methods": [
+      "characteristics",
+      "separation",
+      "continuation_criterion"
+    ],
+    "objects": [
+      "characteristic_curve",
+      "maximal_solution",
+      "finite_time_blowup"
+    ],
+    "goal": [
+      "solve",
+      "classify_domain"
+    ],
+    "keywords": [
+      "mipt_excellent_level",
+      "characteristics",
+      "semilinear_pde",
+      "blow_up"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 4,
+    "comment": "Это advanced_standard_course: базовый курс требует линейные уравнения в частных производных первого порядка, а здесь добавлен небольшой полулинейный мост. Идея экзаменационная для сильного студента: увидеть, что характеристика дает ОДУ с конечным временем существования; вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "strong_student_check",
+    "model_exam_task",
+    "self_authored",
+    "advanced_standard_course",
+    "complete_proof",
+    "first_order_pde_characteristics",
+    "characteristic_cauchy_data",
+    "blow_up",
+    "global_solution",
+    "exam_score_9"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как компактный полулинейный мост от программного метода характеристик к критерию продолжения решений."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_mipt_excellent_level_links",
+    "notes": [
+      "Не является дублем линейных карточек на характеристики для уравнений в частных производных: здесь главный контроль - максимальная область и взрыв вдоль характеристики.",
+      "Граница курса явно отмечена в difficulty: полулинейное уравнение в частных производных выходит за минимальный линейный блок, но решается тем же методом характеристик."
+    ]
+  }
+}

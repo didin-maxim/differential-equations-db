@@ -1,0 +1,119 @@
+{
+  "id": "cluster-integrating-factor-mu-xy",
+  "title": "Интегрирующий множитель вида mu(xy)",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для формы e^(-xy)(dx+2dy)=0 подберите интегрирующий множитель вида mu(xy) и запишите общий интеграл.",
+        "source_ids": [
+          "src-cluster-integrating-factor-exact-forms-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "exact_equation",
+          "integrating_factor",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Проверить критерий для функции от xy",
+      "text": "Если mu=h(xy), то из условия точности получается h'(xy)/h(xy)=(N_x-M_y)/(xM-yN), когда правая часть зависит только от xy.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Здесь M=e^(-xy), N=2e^(-xy). Для mu=h(t), t=xy, условие точности имеет вид h'(t)(xM-yN)+h(t)(M_y-N_x)=0, то есть h'/h=(N_x-M_y)/(xM-yN). Имеем M_y=-x e^(-xy), N_x=-2y e^(-xy), поэтому (N_x-M_y)/(xM-yN)=(x-2y)e^(-xy)/((x-2y)e^(-xy))=1 там, где x-2y != 0. Следовательно h'=h и можно взять mu=e^(xy); полученный множитель гладко продолжается через прямую x=2y. После умножения форма становится dx+2dy=0, поэтому первый интеграл равен x+2y=C.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "differential_form"
+    ],
+    "methods": [
+      "integrating_factor",
+      "special_multiplier_ansatz",
+      "find_potential"
+    ],
+    "objects": [
+      "exact_equation",
+      "integrating_factor_xy",
+      "first_integral"
+    ],
+    "goal": [
+      "find_integrating_factor",
+      "solve_implicitly"
+    ],
+    "keywords": [
+      "integrating_factor_exact_forms",
+      "mu_xy",
+      "special_ansatz"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: нужно вывести или вспомнить критерий для множителя h(xy); technical_score=2: после множителя интеграл линейный.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "exact_equation",
+    "integrating_factor",
+    "first_integral",
+    "advanced_standard_course",
+    "low_technical",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-integrating-factor-exact-forms-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная задача на специальный множитель mu(xy); сделана с коротким первым интегралом."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-integrating-factor-exact-forms",
+    "notes": [
+      "Добавлено для покрытия нестандартного критерия без длинных первообразных."
+    ]
+  }
+}

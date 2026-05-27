@@ -1,0 +1,24 @@
+{
+  "difficulty": [
+    {
+      "id": "intro",
+      "title": "Вводный уровень"
+    },
+    {
+      "id": "course_core",
+      "title": "Стандартный курс"
+    },
+    {
+      "id": "course_advanced",
+      "title": "Продвинутый курс"
+    },
+    {
+      "id": "student_olympiad",
+      "title": "Студенческая олимпиада"
+    },
+    {
+      "id": "research_borderline",
+      "title": "Около исследовательского уровня"
+    }
+  ]
+}

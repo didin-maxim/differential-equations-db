@@ -1,0 +1,23 @@
+{
+  "id": "cluster-orthogonal-trajectories",
+  "title": "Кластерный аудит: ортогональные траектории, коаксиальные окружности и софокусные коники",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "orthogonal_trajectories",
+    "recover_ode_from_family",
+    "coaxal_circles",
+    "confocal_conics"
+  ],
+  "problem_ids": [
+    "cluster-orthogonal-coaxal-real-base-points",
+    "cluster-orthogonal-coaxal-imaginary-base-points",
+    "cluster-orthogonal-confocal-conics-gradient"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Точечное пополнение: добавлены только три геометрически разные карточки.",
+    "Существующий представитель orthogonal-trajectories-circles сохранен как базовый близкий пример и связан отношениями; дубль про x^2+y^2=C не добавлялся.",
+    "Точные авторы для формулировок не найдены; задачи оформлены как classical_folklore/self_authored exposition на основе проверенных справочных источников."
+  ]
+}

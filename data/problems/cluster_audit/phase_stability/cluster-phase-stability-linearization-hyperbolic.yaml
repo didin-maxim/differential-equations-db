@@ -1,0 +1,118 @@
+{
+  "id": "cluster-phase-stability-linearization-hyperbolic",
+  "title": "Линеаризация гиперболического равновесия",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Теорема первого приближения",
+        "text": "Пусть f класса C^1, f(0)=0, и матрица A=Df(0) не имеет собственных значений с нулевой вещественной частью. Сформулировать, что линеаризация говорит об устойчивости и локальном фазовом портрете равновесия системы z'=f(z).",
+        "source_ids": [
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "linear_system",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Гиперболический спектр устойчив к малым нелинейным поправкам",
+      "text": "Если линейная часть уже имеет строгий экспоненциальный рост или затухание по направлениям, малые члены высшего порядка не меняют локальный тип устойчивости.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Формулировка и применение",
+      "text": "Если все собственные значения A имеют отрицательные вещественные части, то нулевое равновесие нелинейной системы локально асимптотически устойчиво. Если хотя бы одно собственное значение имеет положительную вещественную часть, равновесие неустойчиво. В гиперболическом случае локальный фазовый портрет качественно имеет тот же тип, что и линейная система z'=Az: узел, седло или фокус с теми же устойчивыми и неустойчивыми направлениями в топологическом смысле. Если у A есть собственные значения на мнимой оси, например центр или нулевое собственное значение, теорема не делает вывода; тогда нужны первые интегралы, функции Ляпунова, нормальные формы или прямой анализ нелинейных членов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_system",
+      "autonomous_system"
+    ],
+    "methods": [
+      "linearization",
+      "eigenvalue_classification"
+    ],
+    "objects": [
+      "hyperbolic_equilibrium",
+      "jacobian",
+      "local_phase_portrait",
+      "stability"
+    ],
+    "goal": [
+      "classify",
+      "interpret"
+    ],
+    "keywords": [
+      "linearization",
+      "hyperbolic equilibrium",
+      "phase plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Стандартный теоретический факт: применять легко, но важно помнить границу гиперболичности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_system",
+    "phase_plane",
+    "stability",
+    "equilibrium_linearization",
+    "linear_systems",
+    "eigenvalues",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "standard_course_reference",
+      "status": "source_verified",
+      "note": "Раздел 8.1 о critical points and linearization."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Добавлено как теоретический мост между карточками на фазовый портрет нелинейной системы и линейной классификацией."
+    ]
+  }
+}

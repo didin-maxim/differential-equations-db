@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-lebl-transport-local-du-characteristics",
+      "from": "lebl-diffyqs-transport-signal-shift",
+      "to": "local-du-deficit-first-order-pde-characteristics",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовый перенос профиля по прямым характеристикам удобно изучить перед задачей, где нужно различать характеристические и нехарактеристические данные.",
+      "backward_text": "Local_du-задача добавляет к транспортной формуле диагностику начальной кривой и вопрос единственности.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-lebl-damped-transport-after-shift",
+      "from": "lebl-diffyqs-transport-signal-shift",
+      "to": "lebl-diffyqs-damped-transport-characteristics",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Здесь значение u постоянно вдоль характеристики; в следующей карточке вдоль той же геометрии появляется скалярное ОДУ с затуханием.",
+      "backward_text": "Затухающий транспорт сохраняет характеристические прямые базовой задачи, но добавляет множитель e^{-t}.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-lebl-characteristic-data-local-du-contrast",
+      "from": "local-du-deficit-first-order-pde-characteristics",
+      "to": "lebl-diffyqs-characteristic-data-obstruction",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Local_du-карточка показывает разные варианты данных на характеристике; Lebl дает минимальный отрицательный пример полной несовместимости.",
+      "backward_text": "Несовместимость на характеристике объясняет, почему в local_du-задаче характер начальной линии меняет существование и единственность.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-lebl-variable-characteristics-local-du",
+      "from": "lebl-diffyqs-variable-coefficient-characteristics",
+      "to": "local-du-written-2023-characteristics-plane-data",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Переменный коэффициент x u_x уже требует решать характеристическое ОДУ, но остается одномерной подготовкой к более сложной плоскостной задаче local_du.",
+      "backward_text": "Local_du-задача использует тот же принцип характеристической системы, но с более содержательным восстановлением данных.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-lebl-degenerate-linearization-local-du-contrast",
+      "from": "local-du-written-2014-51-equilibrium-linearization",
+      "to": "lebl-diffyqs-degenerate-linearization-critical-point",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Экзаменационная задача является гиперболической: Якобиан классифицирует равновесия. У Lebl линейная часть нулевая и нужна квадратичная фазовая информация.",
+      "backward_text": "Вырожденная задача Lebl показывает границу применимости стандартной классификации по собственным значениям.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-lebl-two-sinks-equilibrium-linearization",
+      "from": "local-du-written-2014-51-equilibrium-linearization",
+      "to": "lebl-diffyqs-invariant-half-plane-two-sinks",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "После локальной классификации равновесий Lebl добавляет глобальный вопрос: может ли траектория перейти через инвариантный барьер к другому стоку.",
+      "backward_text": "Два спиральных стока используют ту же матрицу Якоби, но требуют еще инвариантности полуплоскости.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-lebl-radial-monotone-lyapunov-contrast",
+      "from": "lyapunov-linearization-example",
+      "to": "lebl-diffyqs-radial-monotone-spiral-source",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "В базовой карточке функция Ляпунова убывает и доказывает устойчивость; у Lebl та же квадратичная величина возрастает и доказывает неустойчивость.",
+      "backward_text": "Радиальная монотонность у Lebl является зеркальным примером к стандартной устойчивости через V=x^2+y^2.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-lebl-radial-center-linearization",
+      "from": "lebl-diffyqs-degenerate-linearization-critical-point",
+      "to": "lebl-diffyqs-radial-monotone-spiral-source",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки предупреждают, что негиперболическая линеаризация не решает задачу и нужно смотреть на следующий нелинейный механизм.",
+      "backward_text": "Радиально монотонный пример является более структурированной проверкой нелинейного поведения после неинформативной линейной картины.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-lebl-robin-dirichlet-eigenvalues",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "lebl-diffyqs-robin-dirichlet-transcendental-spectrum",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Базовая задача Дирихле дает явные n^2; смешанное условие Lebl приводит к уравнению sin mu+mu cos mu=0.",
+      "backward_text": "Robin-Dirichlet спектр полезно сравнивать с чистой задачей Дирихле, где частоты задаются целыми числами.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-lebl-weighted-sturm-dirichlet",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "lebl-diffyqs-weighted-sturm-exponential",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Весовая задача Lebl сводится к базовому спектру Дирихле после экспоненциальной замены.",
+      "backward_text": "После устранения первой производной задача снова становится задачей Дирихле на отрезке.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-lebl-robin-weighted-sturm-same-family",
+      "from": "lebl-diffyqs-robin-dirichlet-transcendental-spectrum",
+      "to": "lebl-diffyqs-weighted-sturm-exponential",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки расширяют простую спектральную задачу: одна меняет граничное условие, другая меняет сам оператор.",
+      "backward_text": "Весовая задача показывает, что иногда нестандартный оператор проще нестандартного граничного условия, если подобрать замену.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "oral-above-three-reduction-order-known-solution",
+  "title": "Понижение порядка по известному решению",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для x>0 найти общее решение уравнения x^2y''-2xy'+2y=0, если одно решение y1=x известно.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-reduce-order",
+      "title": "Искать второе решение как y=xv",
+      "text": "Известное ненулевое решение позволяет понизить порядок: подстановка y=y1 v должна убрать член с v без производных.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим y=xv(x). Тогда y'=v+xv', y''=2v'+xv''. Подстановка дает x^2(2v'+xv'')-2x(v+xv')+2xv=x^3v''. Следовательно v''=0, откуда v=C1+C2x. Поэтому y=C1x+C2x^2. Два решения x и x^2 линейно независимы на x>0, поскольку их вронскиан равен x^2, так что найдено все общее решение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order"
+    ],
+    "methods": [
+      "reduction_of_order",
+      "wronskian"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "known_solution"
+    ],
+    "goal": [
+      "solve",
+      "choose_substitution"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "reduction-of-order",
+      "known-solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: стандартное понижение порядка по известному решению; technical_score=3: после подстановки все сокращается.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_higher_order",
+    "wronskian"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на связь известного решения и понижения порядка."
+    ]
+  }
+}

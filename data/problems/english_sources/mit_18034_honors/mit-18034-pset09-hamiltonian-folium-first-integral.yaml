@@ -1,0 +1,107 @@
+{
+  "id": "mit-18034-pset09-hamiltonian-folium-first-integral",
+  "title": "Первый интеграл и фолии Декарта в автономной системе",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Показать, что траектории автономной системы x'=x(2y^3-x^3), y'=-y(2x^3-y^3) в областях xy != 0 лежат на кривых x^3+y^3-3cxy=0, где c - постоянная. Объяснить, почему это является задачей на первый интеграл.",
+        "source_ids": [
+          "src-mit-18034-honors-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Угадать однородный первый интеграл",
+      "text": "Кривые имеют вид H(x,y)=const с H=(x^3+y^3)/(xy). Достаточно проверить, что производная H вдоль поля равна нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В области xy != 0 положим H=(x^3+y^3)/(xy). Обозначим N=x^3+y^3 и D=xy. Тогда N'=3x^2x'+3y^2y'=3x^3(2y^3-x^3)-3y^3(2x^3-y^3)=3(y^6-x^6). Кроме того, D'=x'y+xy'=xy((2y^3-x^3)+(-2x^3+y^3))=3xy(y^3-x^3). Поэтому H'=(N'D-ND')/D^2. Но y^6-x^6=(y^3-x^3)(y^3+x^3)=N(y^3-x^3), так что числитель равен нулю. Следовательно H сохраняется вдоль траекторий. Уровень H=3c эквивалентен x^3+y^3-3cxy=0. Оси x=0 и y=0 также инвариантны, потому что соответствующие правые части содержат множители x и y.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane"
+    ],
+    "objects": [
+      "level_curves",
+      "folium_of_descartes",
+      "invariant_axes"
+    ],
+    "goal": [
+      "find_trajectories"
+    ],
+    "keywords": [
+      "MIT 18.034",
+      "листок 9",
+      "first integral",
+      "folium of Descartes",
+      "phase plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "idea_score=6: нужно распознать уровень первого интеграла по форме кривых; technical_score=4: производная рационального выражения короткая, но требует аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "nonlinear_system",
+    "phase_plane",
+    "first_integral",
+    "invariant",
+    "standard_course_methods",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "adapted_problem",
+      "status": "source_verified",
+      "locator": "Problem Set #9, Problem 1(b); Problem set 9, Solution keys, Problem 1"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-mit-18034-honors",
+    "notes": [
+      "Дедупликация: в базе есть первые интегралы для классических осцилляторов и Lotka-Volterra, но не этот однородный рациональный интеграл с фолиями Декарта.",
+      "Метка standard_course_methods: задача решается прямой проверкой первого интеграла в фазовой плоскости."
+    ]
+  }
+}

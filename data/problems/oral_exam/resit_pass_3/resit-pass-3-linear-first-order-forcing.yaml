@@ -1,0 +1,112 @@
+{
+  "id": "resit-pass-3-linear-first-order-forcing",
+  "title": "Линейное уравнение первого порядка с начальным условием",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Решить задачу Коши y'+y=e^x, y(0)=0.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_first_order_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Интегрирующий множитель",
+      "text": "Для y'+p(x)y=q(x) надо умножить на exp(int p dx) и получить производную произведения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Здесь p(x)=1, поэтому интегрирующий множитель равен e^x. После умножения получаем (e^x y)'=e^{2x}. Интегрируем: e^x y=e^{2x}/2+C, значит y=e^x/2+Ce^{-x}. Условие y(0)=0 дает 1/2+C=0, то есть C=-1/2. Ответ: y=(e^x-e^{-x})/2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "linear_first_order",
+      "initial_value_problem",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "resit-pass-3",
+      "oral_exam",
+      "linear_first_order",
+      "integrating_factor"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 3,
+    "comment": "idea_score=3: стандартный интегрирующий множитель; technical_score=3: короткое интегрирование и начальное условие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "resit_exam",
+    "exam_score_3",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_first_order",
+    "integrating_factor"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_resit_pass_3_links",
+    "notes": [
+      "Проверка по базе перед добавлением: точной карточки y'+y=e^x, y(0)=0 не найдено; задача проверяет применение формулы линейного уравнения первого порядка."
+    ]
+  }
+}

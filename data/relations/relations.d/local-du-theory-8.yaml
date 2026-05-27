@@ -1,0 +1,147 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-du-8-sturm-to-t3",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема сравнения Штурма запрещает два нуля у ненулевого решения при q<=0 после сравнения с z''=0.",
+      "backward_text": "Краевая задача T3 является приложением сравнения Штурма к существованию и единственности двухточечной задачи.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-local-du-8-sturm-to-t4",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-8-t4-three-zeros-after-liouville-transform",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Сравнение Штурма с z''+z=0 запрещает два нуля на центральном отрезке длины меньше pi.",
+      "backward_text": "Задача T4 использует теорему Штурма после устранения первой производной и разбиения оси.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-local-du-8-sturm-to-t5",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-8-t5-critical-point-by-sturm",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Сравнение Штурма гарантирует нули решения на двух соседних промежутках между нулями синуса.",
+      "backward_text": "T5 использует теорему Штурма как главный шаг перед применением теоремы Ролля.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-local-du-8-sturm-to-t6a",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "local-du-8-t6a-bessel-infinite-zeros",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Сравнение Штурма с постоянным коэффициентом 1/4 дает по одному нулю на бесконечной последовательности промежутков.",
+      "backward_text": "Осцилляция Бесселя в T6a опирается на теорему Штурма после замены Лиувилля.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-local-du-8-t1-liouville-wronskian",
+      "from": "liouville-wronskian-formula",
+      "to": "local-du-8-t1-bessel-bounded-wronskian",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля для вронскиана дает W=C/x после деления уравнения Бесселя на x^2.",
+      "backward_text": "Задача о двух ограниченных решениях у нуля является прямым применением формулы Лиувилля в особой точке.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-local-du-8-t2-energy-method",
+      "from": "energy-integral-oscillator",
+      "to": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют энергию уравнения второго порядка как управляемую величину вдоль решений.",
+      "backward_text": "Оценка с exp(2/(x+1)) переносит энергетический прием на убывающий переменный коэффициент.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-local-du-8-t3-sturm-comparison",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Модельная задача доказывает сравнение через смешанный вронскиан; T3 применяет тот же механизм как теорему Штурма к запрету двух нулей.",
+      "backward_text": "Краевая задача при q<=0 показывает, как сравнение Штурма превращается в существование и единственность двухточечной задачи.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-local-du-8-t3-shooting-bvp",
+      "from": "shooting-linear-bvp",
+      "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах краевое условие достигается подбором начального наклона через решение специальной задачи Коши.",
+      "backward_text": "T3 добавляет к методу пристрелки штурмовский аргумент, гарантирующий ненулевой знаменатель u(x2).",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-local-du-8-t4-nonoscillation-convexity",
+      "from": "oral-exam-strong-10-nonoscillation-convexity",
+      "to": "local-du-8-t4-three-zeros-after-liouville-transform",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих карточках знак коэффициента превращает дугу решения между двумя нулями в выпуклую или вогнутую функцию с невозможным расположением относительно хорды.",
+      "backward_text": "Задача T4 сочетает этот выпуклый запрет с заменой Лиувилля и сравнением Штурма на центральном отрезке.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-local-du-8-t5-sturm-critical-point",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "local-du-8-t5-critical-point-by-sturm",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют сравнение с синусом, чтобы вынудить появление нулей решения на интервалах контролируемой длины.",
+      "backward_text": "T5 добавляет к появлению двух нулей элементарный шаг Ролля, получая нуль производной.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-du-8-t6a-sturm-oscillation",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "local-du-8-t6a-bessel-infinite-zeros",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Базовое сравнение с синусом используется в T6a на бесконечной последовательности промежутков после приведения Бесселя к нормальной форме.",
+      "backward_text": "Осцилляция Бесселя является хвостовым применением того же штурмовского механизма сравнения с постоянным коэффициентом.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-du-8-t6b-after-t6a",
+      "from": "local-du-8-t6a-bessel-infinite-zeros",
+      "to": "local-du-8-t6b-bessel-zero-spacing-prufer",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Бесконечность нулей из пункта 6a позволяет нумеровать последовательные нули, расстояние между которыми изучается в пункте 6b.",
+      "backward_text": "Асимптотика промежутков между нулями уточняет осцилляционный результат пункта 6a.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-local-du-8-t6b-angle-comparison",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "local-du-8-t6b-bessel-zero-spacing-prufer",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Сравнение с синусом является более простой угловой идеей перед оценкой скорости вращения угла Прюфера.",
+      "backward_text": "Угол Прюфера в T6b можно рассматривать как количественное усиление штурмовского сравнения для коэффициента, стремящегося к единице.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    }
+  ]
+}

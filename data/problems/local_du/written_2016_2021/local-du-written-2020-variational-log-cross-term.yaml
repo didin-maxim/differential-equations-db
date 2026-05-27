@@ -1,0 +1,108 @@
+{
+  "id": "local-du-written-2020-variational-log-cross-term",
+  "title": "Экстремаль с логарифмом и смешанным членом",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти допустимые экстремали функционала J(y)=∫_1^2 [6y^2+8xyy'+x^2(y')^2-4y ln x+(1-2x)y'+1/x] dx при y(1)=7, y(2)=ln 2.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Уравнение Эйлера и квадрат второй вариации",
+      "text": "Смешанный член не мешает: уравнение Эйлера сводится к уравнению Эйлера-Коши, а во второй вариации смешанный член интегрируется по частям.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для F=6y^2+8xyy'+x^2(y')^2-4y ln x+(1-2x)y'+1/x имеем F_y=12y+8xy'-4 ln x и F_{y'}=8xy+2x^2y'+1-2x. Уравнение Эйлера F_y-d/dx F_{y'}=0 дает x^2y''+2xy'-2y+2 ln x-1=0. Частное решение равно ln x, а однородная часть является уравнением Эйлера-Коши с показателями 1 и -2. Поэтому y=C1 x+C2/x^2+ln x. Из условий C1+C2=7 и 2C1+C2/4=0, откуда C1=-1, C2=8. Единственная допустимая экстремаль: y=ln x-x+8/x^2. Для проверки характера экстремума рассмотрим вариацию h с h(1)=h(2)=0. Квадратичная часть приращения равна ∫_1^2 [6h^2+8xhh'+x^2(h')^2] dx. Так как ∫8xhh' dx=[4xh^2]_1^2-∫4h^2 dx, получаем ∫_1^2 [x^2(h')^2+2h^2] dx>0 для h не равной нулю. Следовательно экстремаль дает строгий минимум.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "variational_calculus",
+      "linear_equations",
+      "boundary_value"
+    ],
+    "methods": [
+      "euler_lagrange_equation",
+      "euler_cauchy_equation",
+      "second_variation"
+    ],
+    "objects": [
+      "functional",
+      "extremal",
+      "quadratic_form"
+    ],
+    "goal": [
+      "find_extremal",
+      "classify_extremum"
+    ],
+    "keywords": [
+      "2020 written exam",
+      "Euler-Lagrange",
+      "mixed term",
+      "logarithm"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 6,
+    "comment": "idea_score=6: стандартная вариационная задача, но надо не потерять смешанный член и проверить минимум; technical_score=6: уравнение Эйлера-Коши и аккуратная вторая вариация.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "variational_calculus",
+    "euler_lagrange",
+    "second_variation_test",
+    "boundary_value",
+    "standard_course_methods",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "ДУ_2020_весна.pdf, вариант 1, задача 3."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "no_direct_seed_link",
+    "notes": [
+      "Вариационные задачи в PDF имеют повторяющийся шаблон; импортирован один представитель с логарифмической неоднородностью и нетривиальной проверкой второй вариации.",
+      "Теги ограничены существующей таксономией; вариационное исчисление отражено в differential_equations_profile."
+    ]
+  }
+}

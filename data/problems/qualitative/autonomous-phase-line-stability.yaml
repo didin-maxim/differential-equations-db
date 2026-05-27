@@ -1,0 +1,101 @@
+{
+  "id": "autonomous-phase-line-stability",
+  "title": "Устойчивость равновесий на фазовой прямой",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для y'=y(1-y)(y-2) найти равновесия и определить их устойчивость.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Качественный инвариант или знак",
+      "text": "Решение извлекается из знаков, интеграла энергии, дивергенции или функции Ляпунова.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесия: 0,1,2. Знак f(y)=y(1-y)(y-2): на (-∞,0) положителен, на (0,1) отрицателен, на (1,2) положителен, на (2,∞) отрицателен. Стрелки направлены к 0 с обеих сторон, от 1 с обеих сторон и к 2 с обеих сторон. Поэтому 0 и 2 асимптотически устойчивы, 1 неустойчиво.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "qualitative"
+    ],
+    "methods": [
+      "phase_line_signs"
+    ],
+    "objects": [
+      "phase_line",
+      "stability"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "autonomous-phase-line-stability",
+      "qualitative",
+      "phase_line",
+      "stability"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 3,
+    "comment": "idea_score=4: стандартный анализ знаков на фазовой прямой; technical_score=3: простая таблица интервалов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_line",
+    "stability",
+    "standard_course_methods"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "seed_reference",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "seed_links",
+    "notes": [
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+    ]
+  }
+}

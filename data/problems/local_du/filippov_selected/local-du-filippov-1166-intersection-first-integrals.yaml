@@ -1,0 +1,118 @@
+{
+  "id": "local-du-filippov-1166-intersection-first-integrals",
+  "title": "Общая линия уровней первых интегралов является траекторией",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 1166",
+        "text": "Пусть phi1(t,x,y)=C1 и phi2(t,x,y)=C2 являются первыми интегралами системы dx/dt=f1(t,x,y), dy/dt=f2(t,x,y); функции f1, f2 и первые производные phi1, phi2 по x,y непрерывны. Пусть в пространстве t,x,y поверхности phi1=1 и phi2=2 имеют только одну общую линию. Доказать, что эта линия является интегральной кривой данной системы.",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "first_integral",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Интегралы сохраняют пересечение уровней",
+      "text": "Решение, начатое в точке общей линии, остается сразу на двух поверхностях уровня. Если их пересечение состоит только из этой линии, траектория не может уйти с нее.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference",
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Возьмем любую точку общей линии и выпустим из нее решение системы. По локальной теореме существования оно существует хотя бы на малом интервале. Так как phi1 и phi2 - первые интегралы, вдоль этого решения значения phi1 и phi2 сохраняются. В начальный момент они равны соответственно 1 и 2, значит вся траектория лежит в пересечении поверхностей phi1=1 и phi2=2. По условию это пересечение имеет только одну общую линию, поэтому построенная интегральная кривая лежит на ней. Через каждую точку линии векторное поле тем самым задает касательное направление к линии; значит вся линия является интегральной кривой системы, с возможной перепараметризацией по t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference",
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "qualitative"
+    ],
+    "methods": [
+      "first_integrals",
+      "invariant_sets",
+      "uniqueness"
+    ],
+    "objects": [
+      "first_integral",
+      "integral_curve",
+      "level_surface"
+    ],
+    "goal": [
+      "prove",
+      "geometric_interpretation"
+    ],
+    "keywords": [
+      "filippov-1166",
+      "first-integrals",
+      "level-intersection",
+      "integral-curve"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "idea_score=7: задача проверяет геометрический смысл первых интегралов; technical_score=2: вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "first_integral",
+    "invariant",
+    "phase_plane",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §20, задача 1166."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Отобрано как идейная задача по первым интегралам, не сводящаяся к подбору формулы интеграла."
+    ]
+  }
+}

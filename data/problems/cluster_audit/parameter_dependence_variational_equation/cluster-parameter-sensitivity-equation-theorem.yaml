@@ -1,0 +1,119 @@
+{
+  "id": "cluster-parameter-sensitivity-equation-theorem",
+  "title": "Уравнение чувствительности по параметру",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Базовая теорема",
+        "text": "Пусть f(t,x,lambda) непрерывна по t и непрерывно дифференцируема по (x,lambda) в окрестности графика решения задачи x'=f(t,x,lambda), x(t0,lambda)=xi(lambda), где xi дифференцируема. Если решения существуют на одном фиксированном отрезке, то z(t)=partial x(t,lambda)/partial lambda удовлетворяет z'=D_x f(t,x(t,lambda),lambda)z+partial_lambda f(t,x(t,lambda),lambda), z(t0)=xi'(lambda).",
+        "source_ids": [
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать интегральную форму задачи Коши",
+      "text": "Параметр входит и в поле, и в начальные данные; после дифференцирования остается линейная неоднородная задача вдоль базовой траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Интегральная форма имеет вид x(t,lambda)=xi(lambda)+int_{t0}^t f(s,x(s,lambda),lambda) ds. Дифференцируя ее по lambda и используя гладкую зависимость решения от параметра, получаем z(t)=xi'(lambda)+int_{t0}^t [D_x f(s,x(s,lambda),lambda)z(s)+partial_lambda f(s,x(s,lambda),lambda)] ds. Это интегральная форма заявленной линейной задачи Коши. Стандартная строгость получается из оценки остатка в формуле Тейлора для f и неравенства Гронуолла на фиксированном отрезке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "parameter_dependence",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "variational_equation",
+      "sensitivity_equation",
+      "differentiation_with_respect_to_parameter"
+    ],
+    "objects": [
+      "parameter_derivative",
+      "initial_data_parameter",
+      "linearization_along_solution"
+    ],
+    "goal": [
+      "derive",
+      "prove"
+    ],
+    "keywords": [
+      "parameter_dependence",
+      "variational_equation",
+      "sensitivity_equation",
+      "gronwall"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Теорема отделяет основной механизм кластера от вычислительных примеров: вся техника в записи линейного уравнения чувствительности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "parameter_sensitivity_ivp",
+    "linear_systems",
+    "variation_of_parameters",
+    "gronwall",
+    "advanced_standard_course",
+    "complete_proof",
+    "task_cluster",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Сформулировано как стандартная гладкая зависимость решения от параметра и начальных данных; согласовано с Teschl, §2.4-2.5."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_parameter_dependence_variational_equation",
+    "notes": [
+      "Добавлено при аудите кластера как короткая базовая theorem-карточка: раньше были flow derivative и regular perturbation, но не было одной формулы с параметром одновременно в правой части и начальном условии."
+    ]
+  }
+}

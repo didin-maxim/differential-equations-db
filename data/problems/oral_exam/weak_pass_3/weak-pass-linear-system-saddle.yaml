@@ -1,0 +1,116 @@
+{
+  "id": "weak-pass-linear-system-saddle",
+  "title": "Устойчивость равновесия простой линейной системы",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для системы x'=-x, y'=2y найти положение равновесия, выписать решение с начальными данными (x(0),y(0))=(x0,y0) и определить устойчивость нулевого равновесия.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Посмотреть на знаки собственных направлений",
+      "text": "Одна координата затухает, а другая растет экспоненциально. Наличие растущего направления достаточно для неустойчивости равновесия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Равновесие находится из -x=0 и 2y=0, то есть это точка (0,0). Система уже диагональна, поэтому x(t)=x0 e^{-t}, y(t)=y0 e^{2t}. Если y0=0, траектория идет к нулю вдоль оси x. Но при любом сколь угодно малом y0 != 0 величина |y(t)|=|y0|e^{2t} со временем становится большой. Значит для любого малого шара вокруг нуля можно выбрать начальную точку внутри него, которая позже выйдет из заданной окрестности. Нулевое равновесие неустойчиво; по фазовому портрету это седло.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "sign_analysis"
+    ],
+    "objects": [
+      "linear_system",
+      "equilibrium",
+      "stability"
+    ],
+    "goal": [
+      "classify",
+      "solve"
+    ],
+    "keywords": [
+      "oral_exam",
+      "weak_student_check",
+      "linear_system",
+      "saddle"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 3,
+    "technical_score": 2,
+    "comment": "idea_score=3: нужно связать растущую координату с неустойчивостью; technical_score=2: система уже диагональна.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "weak_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "linear_systems",
+    "stability",
+    "phase_plane",
+    "exam_score_3"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_weak_pass_3_links",
+    "notes": [
+      "Добавлено после поиска по базе: есть жорданов блок, но нет низкотехнической устной проверки седловой неустойчивости."
+    ]
+  }
+}

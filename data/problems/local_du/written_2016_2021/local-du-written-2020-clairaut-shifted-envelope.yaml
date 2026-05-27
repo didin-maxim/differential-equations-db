@@ -1,0 +1,103 @@
+{
+  "id": "local-du-written-2020-clairaut-shifted-envelope",
+  "title": "Уравнение Клеро со сдвигом и огибающей",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти все решения, исследовать особые решения и описать интегральные кривые уравнения y=(x-1)y'-(y')^2.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать по параметру наклона",
+      "text": "Это уравнение типа Клеро: после обозначения p=y' дифференцирование раскладывает решения на семейство прямых p=C и огибающую.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим p=y'. Уравнение имеет вид y=(x-1)p-p^2. Дифференцируем по x: p=p+(x-1)p'-2pp'. Поэтому (x-1-2p)p'=0. Если p'=0, то p=C и получаем семейство прямых y=C(x-1)-C^2. Если x-1-2p=0, то p=(x-1)/2. Тогда y'=p дает y=(x-1)^2/4+C, а подстановка в исходное уравнение оставляет только C=0. Значит особая интегральная кривая: y=(x-1)^2/4. Она является огибающей семейства прямых, потому что исключение C из y=C(x-1)-C^2 и x-1-2C=0 дает ту же параболу.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order"
+    ],
+    "methods": [
+      "clairaut_envelope",
+      "differentiate_with_respect_to_slope"
+    ],
+    "objects": [
+      "singular_solution",
+      "envelope",
+      "direction_field"
+    ],
+    "goal": [
+      "solve",
+      "describe_singular_solution"
+    ],
+    "keywords": [
+      "2020 written exam",
+      "clairaut",
+      "shifted envelope",
+      "singular solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: стандартное уравнение Клеро, но со сдвигом и требованием выделить огибающую; technical_score=3: дифференцирование и один параметр.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "clairaut",
+    "standard_course_methods",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "ДУ_2020_весна.pdf, вариант 1, задача 2."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "linked",
+    "notes": [
+      "Перед добавлением выполнен поиск по базе по Клеро, огибающей и особым решениям; найден seed clairaut-envelope, поэтому импортирован только один представитель письменного шаблона.",
+      "Задача оставлена как локальный экзаменационный вариант со сдвигом x-1; близкие однотипные задачи из соседних вариантов не импортировались."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "oral-exam-resit-pass-3",
+  "title": "Модельные устные задачи для пересдачи на оценку 3",
+  "created_at": "2026-05-26",
+  "scope": [
+    "oral_exam",
+    "resit_exam",
+    "model_exam_task",
+    "exam_score_3",
+    "standard_course_methods"
+  ],
+  "problem_ids": [
+    "resit-pass-3-separable-exponential-growth",
+    "resit-pass-3-linear-first-order-forcing",
+    "resit-pass-3-exact-equation-potential",
+    "resit-pass-3-bernoulli-initial",
+    "resit-pass-3-constant-coeff-real-roots",
+    "resit-pass-3-undetermined-coefficients",
+    "resit-pass-3-phase-line-logistic-signs",
+    "resit-pass-3-cauchy-uniqueness-check",
+    "resit-pass-3-diagonal-linear-system",
+    "resit-pass-3-dirichlet-sine-bvp",
+    "resit-pass-3-energy-oscillator-check"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Набор составлен как устная проверка применения базовых методов на пересдаче: задачи не требуют воспроизведения доказательств стандартных теорем и держат idea_score/technical_score в диапазоне 2-4."
+  ]
+}

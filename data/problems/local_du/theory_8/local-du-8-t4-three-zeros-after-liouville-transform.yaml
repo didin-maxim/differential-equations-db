@@ -1,0 +1,118 @@
+{
+  "id": "local-du-8-t4-three-zeros-after-liouville-transform",
+  "title": "Не более трех нулей после устранения первой производной",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача 4 из первого задания",
+        "text": "Доказать, что любое нетривиальное решение уравнения y'' + 2x^2 y' + (2x+1)y = 0 имеет на действительной оси не более трех нулей.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Замена Лиувилля превращает коэффициент в 1-x^4",
+      "text": "Подстановка y=u exp(-x^3/3) сохраняет нули и убирает первую производную. Получается u''+(1-x^4)u=0: вне [-1,1] коэффициент неположителен, а внутри длина меньше pi и сравнение с синусом запрещает два нуля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Уберем первую производную стандартной заменой y=u exp(-1/2 integral 2x^2 dx)=u exp(-x^3/3). Нули y и u совпадают, потому что множитель exp(-x^3/3) нигде не равен нулю. Для уравнения y''+p y'+r y=0 новая функция u удовлетворяет u''+(r-p'/2-p^2/4)u=0. Здесь p=2x^2, r=2x+1, поэтому r-p'/2-p^2/4=(2x+1)-2x-x^4=1-x^4. Значит нужно оценить число нулей ненулевого решения u''+(1-x^4)u=0. На лучах (-infty,-1] и [1,+infty) коэффициент 1-x^4 неположителен. На любом промежутке между двумя соседними нулями на таком луче u имеет постоянный знак; если u>0, то u''=(x^4-1)u>=0, то есть положительная выпуклая функция должна лежать не выше нулевой хорды, противоречие. Случай u<0 сводится к -u. Поэтому на каждом из двух внешних лучей не более одного нуля. На отрезке [-1,1] коэффициент 1-x^4<=1. По сравнению Штурма с z''+z=0 расстояние между двумя соседними нулями решения уравнения u''+(1-x^4)u=0 не может быть меньше pi: иначе решение z=sin(x-alpha) уравнения с большим коэффициентом 1 должно было бы иметь нуль между двумя нулями u на интервале длины меньше pi, что невозможно для синуса. Длина [-1,1] равна 2<pi, значит внутри этого отрезка не может быть двух нулей. Итак, всего возможно не более одного нуля слева от [-1,1], не более одного нуля на [-1,1] и не более одного нуля справа. Поэтому у исходного нетривиального решения y не более трех нулей на всей действительной оси.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order"
+    ],
+    "methods": [
+      "liouville_transform",
+      "sturm_comparison",
+      "convexity_argument"
+    ],
+    "objects": [
+      "zero_location",
+      "nonoscillation"
+    ],
+    "goal": [
+      "prove_bound"
+    ],
+    "keywords": [
+      "remove_first_derivative",
+      "zero_count",
+      "sturm_comparison",
+      "local_du_8"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "Нужны замена Лиувилля, разбиение оси и два разных неосцилляционных аргумента; вычисления умеренные.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "sturm_liouville",
+    "sturm_comparison",
+    "sturm_zero_count",
+    "liouville_transform",
+    "comparison",
+    "zero_location",
+    "convexity",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "8.pdf, первое задание, раздел III, задача 4."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_theory_8_links",
+    "notes": [
+      "Перед добавлением выполнен поиск по формуле y''+2x^2 y' +(2x+1)y и по механизму сравнения нулей; прямой дубль не найден."
+    ]
+  }
+}

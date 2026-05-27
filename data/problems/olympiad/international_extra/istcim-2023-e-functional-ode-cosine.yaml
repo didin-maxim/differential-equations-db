@@ -1,0 +1,108 @@
+{
+  "id": "istcim-2023-e-functional-ode-cosine",
+  "title": "ISTCiM 2023 E: функциональное уравнение, ведущее к гармоническому ОДУ",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Найти все дифференцируемые функции f:R->R, для которых при всех x,y выполнены f(x-y)-f(x+y)=2f(x+1)f(y+1) и f(x)^2+f(x+1)^2=1.",
+        "source_ids": [
+          "src-istcim-official"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Получить сдвиговое ОДУ первого порядка",
+      "text": "Функциональное уравнение сначала дает четность и анти-период f(x+2)=-f(x), а затем предельный переход по y дает f'(x)=c f(x+1). Еще одно дифференцирование превращает это в f''=-c^2 f.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из второго условия f не может быть тождественно нулевой. Подставляя y=0 в первое условие, получаем f(1)=0, а при x=0 - четность f(-y)=f(y). Заменим y на -y в первом условии и воспользуемся четностью: f(x+y)-f(x-y)=2f(x+1)f(y-1). Сравнение с исходным равенством дает f(x+1)(f(y-1)+f(y+1))=0 для всех x,y. Так как f(x+1) не тождественно ноль, имеем f(y+1)=-f(y-1), то есть f(x+2)=-f(x). Теперь делим равенство f(x+y)-f(x-y)=2f(x+1)f(y-1) на 2y и устремляем y к 0. Так как f(-1)=f(1)=0, получаем f'(x)=c f(x+1), где c=f'(-1). Правая часть непрерывна, значит f' непрерывна, и можно дифференцировать: f''(x)=c f'(x+1)=c^2 f(x+2)=-c^2 f(x). Следовательно, f(x)=A cos(cx)+B sin(cx). Четность дает B=0, а f(1)=0 и f(0)^2+f(1)^2=1 дают A=±1 и cos c=0. Подстановка A cos(cx) в первое исходное тождество показывает, что знак должен быть A=1. Поэтому c=(2k+1)pi/2, k∈Z. Непосредственная проверка по формуле косинуса показывает, что все функции f(x)=cos((2k+1)pi x/2) действительно удовлетворяют двум условиям.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "functional_differential",
+      "linear_second_order"
+    ],
+    "methods": [
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "functional_equation",
+      "harmonic_oscillator",
+      "classification"
+    ],
+    "goal": [
+      "classify_solutions"
+    ],
+    "keywords": [
+      "ISTCiM 2023 E",
+      "functional differential equation",
+      "harmonic ODE",
+      "cosine solutions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 9,
+    "technical_score": 7,
+    "comment": "Идея 9: функциональное тождество надо превратить в сдвиговое дифференциальное уравнение и затем в осциллятор. Техника 7: много совместимых симметрий и проверка знака амплитуды.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "linear_higher_order",
+    "constant_coefficients",
+    "complete_proof",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-istcim-official",
+      "role": "official_statement_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Источник: ISTCiM 2023 Problems with Solutions, Individual Part, Problem E, https://istcim.math.us.edu.pl/ISTCiM2023-problems_with_solutions.pdf."
+    ]
+  }
+}

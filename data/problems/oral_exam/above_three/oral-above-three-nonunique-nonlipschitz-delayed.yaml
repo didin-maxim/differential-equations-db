@@ -1,0 +1,108 @@
+{
+  "id": "oral-above-three-nonunique-nonlipschitz-delayed",
+  "title": "Неединственность из-за нарушения условия Липшица",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для задачи Коши y'=3|y|^{2/3}, y(0)=0 построить хотя бы два разных решения и указать, почему теорема единственности здесь неприменима.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-delayed-solutions",
+      "title": "Склеить нулевой участок с выходом из равновесия",
+      "text": "Нелипшицевость в нуле позволяет решению некоторое время оставаться нулевым, а затем выйти по явной ветви.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Одно решение задается формулой y0(t)=0. Для любого a>=0 зададим ya(t)=0 при t<=a и ya(t)=(t-a)^3 при t>=a. При t>a имеем ya'=3(t-a)^2, а 3|ya|^{2/3}=3|(t-a)^3|^{2/3}=3(t-a)^2. При t<a обе части равны нулю. В точке t=a производная слева и справа равна 0, так что функция действительно является решением. В частности, при a=0 получаем y=t^3 для t>=0, отличное от нулевого решения и удовлетворяющее y(0)=0. Теорема Пикара-Линделёфа не применяется, потому что f(y)=3|y|^{2/3} не является липшицевой по y около нуля: отношение |f(y)-f(0)|/|y-0|=3|y|^{-1/3} неограниченно.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "foundations",
+      "first_order"
+    ],
+    "methods": [
+      "counterexample",
+      "separate_variables"
+    ],
+    "objects": [
+      "existence_uniqueness",
+      "lipschitz_condition",
+      "nonuniqueness"
+    ],
+    "goal": [
+      "construct",
+      "explain"
+    ],
+    "keywords": [
+      "oral-above-three",
+      "nonuniqueness",
+      "non-lipschitz"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "idea_score=6: надо связать неединственность с нелипшицевостью и построить отложенные решения; technical_score=3: проверка производной короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "above_three_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "low_technical",
+    "existence_uniqueness",
+    "counterexample",
+    "separable"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_above_three_links",
+    "notes": [
+      "Модельная устная задача на проверку границы применения теоремы единственности."
+    ]
+  }
+}

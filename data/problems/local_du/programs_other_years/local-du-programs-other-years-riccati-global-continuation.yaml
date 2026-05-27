@@ -1,0 +1,123 @@
+{
+  "id": "local-du-programs-other-years-riccati-global-continuation",
+  "title": "Продолжение решения y'=x-y^2 без явной формулы",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du",
+      "theory_assignment"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Звездная задача из первого задания",
+        "text": "Доказать, что решение задачи Коши y'=x-y^2, y(1)=0 можно продолжить на промежуток [1,+infty).",
+        "source_ids": [
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Нулевая прямая как барьер и критерий продолжения",
+      "text": "Решение не нужно выписывать. При x>=1 оно не может перейти в отрицательную полуплоскость через y=0, а сверху на каждом конечном отрезке его ограничивает интеграл от x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Правая часть f(x,y)=x-y^2 гладкая, поэтому локальное решение единственно и может быть продолжено, пока на конечном отрезке времени не уходит на бесконечность. Покажем априорные оценки справа от x=1. Сразу после начальной точки y'(1)=1, так что решение становится положительным. Более точно, оно не может попасть в область y<0 при x>=1: если бы это случилось, то в первой точке перехода tau имели бы y(tau)=0 и при входе в отрицательную область производная должна была бы быть <=0, но из уравнения y'(tau)=tau>0. Значит y(x)>=0 на всем правом максимальном промежутке существования. Тогда y'=x-y^2<=x. Интегрируя от 1 до x, получаем y(x)<=int_1^x t dt=(x^2-1)/2. Следовательно на каждом конечном отрезке [1,T] решение, пока существует, лежит в компактной полосе 0<=y<=(T^2-1)/2. По критерию продолжения для гладкого уравнения правый конец максимального интервала не может быть конечным. Поэтому решение продолжается на весь промежуток [1,+infty).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "riccati_equation"
+    ],
+    "methods": [
+      "barrier_argument",
+      "continuation_criterion",
+      "differential_inequality"
+    ],
+    "objects": [
+      "global_solution",
+      "maximal_solution",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "prove_global_continuation"
+    ],
+    "keywords": [
+      "local_du_other_years",
+      "global_continuation",
+      "barrier",
+      "riccati",
+      "x_minus_y_squared"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Главная идея - применить критерий продолжения через барьер и оценку, не решая уравнение явно.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "continuation",
+    "global_solution",
+    "comparison",
+    "differential_inequality",
+    "riccati",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "local_du",
+    "program_deficit"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_assignment",
+      "status": "source_verified",
+      "note": "1.pdf, первое задание, задача 3*; в 2 (3).pdf та же задача указана как задача 4* с продолжением на (1,+infty)."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_programs_other_years_links",
+    "notes": [
+      "Перед добавлением сверено с карточкой глобального продолжения через ограниченность на полосах; эта задача оставлена как короткий локальный представитель барьерного продолжения.",
+      "Не дублирует простую проверку Липшица: основной ход - запрет ухода в отрицательную полуплоскость и оценка сверху на конечных отрезках."
+    ]
+  }
+}

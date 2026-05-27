@@ -1,0 +1,130 @@
+{
+  "id": "local-du-filippov-889-attractive-not-lyapunov-stable",
+  "title": "Притяжение к нулю без устойчивости по Ляпунову",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 889",
+        "text": "Траектории системы уравнений dx/dt=P(x,y), dy/dt=Q(x,y), где функции P, P'_x, P'_y, Q, Q'_x, Q'_y непрерывны, изображены на фазовой плоскости. Что можно сказать о поведении решений при t -> +infty? Является ли нулевое решение асимптотически устойчивым? Является ли оно устойчивым по Ляпунову?",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "source_note": "Локальный DjVu не удалось прочитать стандартными средствами окружения: djvutxt/ddjvu/djvused отсутствуют. Условие и рисунок сверены по онлайн-представлению задачи 889 на Решу.РФ; номер рисунка в изображении источника указан как 29.",
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fig-filippov-889-phase-portrait",
+      "type": "image",
+      "path": "data/assets/images/phase_stability/filippov-889-phase-portrait.jpg",
+      "role": "source_statement_figure",
+      "status": "source_extracted",
+      "note": "Обрезано из онлайн-изображения решения задачи 889; полное исходное изображение сохранено рядом как filippov-889-figure-solution.jpg."
+    },
+    {
+      "id": "fig-filippov-889-source-solution",
+      "type": "image",
+      "path": "data/assets/images/phase_stability/filippov-889-figure-solution.jpg",
+      "role": "source_ocr_and_solution_image",
+      "status": "source_extracted"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Притяжение не заменяет epsilon-delta устойчивость",
+      "text": "На рисунке все траектории в итоге входят в начало координат, но траектории, стартующие сколь угодно близко к положительной полуоси x снизу, сначала уходят на фиксированное расстояние по y.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "По направлению стрелок видно, что все изображенные траектории при t->+infty стремятся к началу координат: они входят в нуль, хотя делают перед этим большой обход. Однако устойчивость по Ляпунову требует большего: начав достаточно близко к нулю, решение должно оставаться в заранее заданной малой окрестности для всех t>=0. На рисунке для любого сколь угодно малого delta можно взять начальную точку на нижней ветви с |y(0)|<delta. Такая траектория позже поднимается до уровня |y(t)|>=epsilon0, где epsilon0 фиксирован выбранной горизонтальной полосой на рисунке. Значит условие устойчивости по Ляпунову нарушается. Поэтому нулевое решение неустойчиво по Ляпунову. Асимптотически устойчивым оно тоже не является, потому что асимптотическая устойчивость включает устойчивость по Ляпунову как обязательную часть, даже если предельное притяжение к нулю выполняется.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_portrait_reading",
+      "lyapunov_definition"
+    ],
+    "objects": [
+      "phase_portrait",
+      "attractive_equilibrium",
+      "lyapunov_instability",
+      "not_asymptotically_stable"
+    ],
+    "goal": [
+      "classify",
+      "interpret"
+    ],
+    "keywords": [
+      "Filippov 889",
+      "Lyapunov stability",
+      "attractive but unstable",
+      "phase portrait"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Идея важная для стандартного курса: сходимость к равновесию не равна асимптотической устойчивости без Lyapunov stability.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "graphical_construction",
+    "standard_course_methods",
+    "source_solution_checked",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "А. Ф. Филиппов, задача 889. Онлайн-представление и изображение: https://xn--e1avkt.xn--p1ai/математика/Филиппов/889/ . Локальный DjVu доступен, но без установленного DjVu-инструментария точное извлечение страницы не выполнено."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Обязательная карточка аудита phase-line-stability; добавлена с локальным image asset.",
+      "Ограничение источника зафиксировано: использован онлайн OCR/изображение, потому что локальный DjVu не читался штатными утилитами в окружении."
+    ]
+  }
+}

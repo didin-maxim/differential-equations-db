@@ -1,0 +1,105 @@
+{
+  "id": "local-du-written-2020-parameter-limit-modes",
+  "title": "Параметр, при котором разности решений имеют квадратичный предел",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Выяснить, при каких a из R для любых двух решений y1,y2 уравнения y'''-2(a^2+2a+1)y'=(a-1)e^x sin x существует конечный предел lim_{x->+infty} (y1(x)-y2(x))/x^2.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Правая часть исчезает в разности",
+      "text": "Свойство для любых двух решений зависит только от однородного уравнения для их разности и от наличия растущей экспоненциальной моды.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть z=y1-y2. Тогда z удовлетворяет однородному уравнению z'''-2(a+1)^2z'=0; правая часть исходного уравнения роли не играет. Характеристический многочлен равен r(r^2-2(a+1)^2). Если a!=-1, то есть положительный корень r=sqrt(2)|a+1|, и среди разностей решений есть z=e^{rx}. Для него z/x^2 стремится к бесконечности, поэтому требуемое свойство не выполнено. Если a=-1, то уравнение для разности превращается в z'''=0, и всякая разность имеет вид z=C0+C1x+C2x^2. Тогда z(x)/x^2 стремится к C2. Следовательно единственное значение параметра: a=-1.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations"
+    ],
+    "methods": [
+      "characteristic_polynomial",
+      "homogeneous_difference",
+      "asymptotic_modes"
+    ],
+    "objects": [
+      "constant_coefficients",
+      "parameter",
+      "solution_difference"
+    ],
+    "goal": [
+      "find_parameter",
+      "asymptotic_condition"
+    ],
+    "keywords": [
+      "2020 written exam",
+      "parameter",
+      "constant coefficients",
+      "asymptotic limit"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: нужно перейти от любых двух решений к однородной разности; technical_score=3: характеристический многочлен раскладывается сразу.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "constant_coefficients",
+    "asymptotic",
+    "standard_course_methods",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_problem",
+      "status": "source_verified",
+      "note": "ДУ_2020_весна.pdf, вариант 1, задача 5."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "linked",
+    "notes": [
+      "Добавлена как короткий, но полезный письменный пример: неоднородность является отвлекающим фактором, а вся проверка живет в пространстве разностей.",
+      "Поиск по базе по constant_coefficients и asymptotic не выявил той же параметрической формулировки."
+    ]
+  }
+}

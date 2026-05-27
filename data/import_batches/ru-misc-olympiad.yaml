@@ -1,0 +1,25 @@
+{
+  "id": "ru-misc-olympiad",
+  "title": "Русскоязычные не-МГУ студенческие олимпиадные задачи по ОДУ",
+  "created_at": "2026-05-26",
+  "scope": [
+    "student_olympiad",
+    "ru_misc",
+    "non_msu_sources"
+  ],
+  "problem_ids": [
+    "ru-misc-kfu-2013-13-1",
+    "ru-misc-kfu-2015-15-4",
+    "ru-misc-kfu-2019-19-3",
+    "ru-misc-nure-8-2",
+    "ru-misc-nure-8-3",
+    "ru-misc-nure-8-4",
+    "ru-misc-nure-8-5",
+    "ru-misc-nure-8-8",
+    "ru-misc-spb-itmo-2018-6"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Импортированы только include-кандидаты из зоны КФУ, ХНУРЭ и СПб/ИТМО; СПбПУ gap не добавлялся."
+  ]
+}

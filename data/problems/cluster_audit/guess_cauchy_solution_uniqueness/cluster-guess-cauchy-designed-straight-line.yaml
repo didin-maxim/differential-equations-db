@@ -1,0 +1,120 @@
+{
+  "id": "cluster-guess-cauchy-designed-straight-line",
+  "title": "Угаданная прямая в нелинейной задаче Коши",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit",
+      "model_task"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Задача Коши с очевидной прямой",
+        "text": "Решить задачу Коши y'=1+(y-t)^3+sin(y-t), y(0)=0.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Проверить прямую y=t",
+      "text": "Начальное условие подсказывает y=t. При такой подстановке y-t=0, все нелинейные добавки исчезают, и остается y'=1. Гладкость правой части дает единственность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Проверим функцию y(t)=t. Тогда y'=1, y-t=0, и правая часть равна 1+0+sin 0=1. Начальное условие y(0)=0 выполнено. Правая часть f(t,y)=1+(y-t)^3+sin(y-t) является гладкой функцией переменных (t,y), значит в любой малой окрестности точки (0,0) она локально липшицева по y. По теореме существования и единственности задача Коши имеет единственное локальное решение. Так как y=t уже является таким решением, других решений с теми же начальными данными нет. На любом общем интервале существования совпадение продолжается по той же локальной единственности. Следовательно, ответ: y(t)=t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "lipschitz_condition"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonlinear"
+    ],
+    "methods": [
+      "existence_uniqueness"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "particular_solution",
+      "lipschitz_condition"
+    ],
+    "goal": [
+      "solve_ivp"
+    ],
+    "keywords": [
+      "guess_cauchy_solution_uniqueness",
+      "guess_solution",
+      "straight_line_solution",
+      "cauchy_uniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "idea_score=5: ключевой ход - увидеть частную прямую и не разворачивать искусственное нелинейное уравнение.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "cauchy_uniqueness",
+    "standard_course_methods",
+    "low_technical",
+    "self_authored",
+    "model_exam_task",
+    "task_cluster",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Self-authored/model task: a compact first-order example of the 'guess the IVP solution, then use uniqueness' pattern."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_guess_cauchy_solution_uniqueness_links",
+    "notes": [
+      "Искусственная, но полезная модельная задача: показывает неравновесное угаданное решение y=t."
+    ]
+  }
+}

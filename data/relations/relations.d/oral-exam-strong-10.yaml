@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-oral-strong-10-gronwall-one-sided-uniqueness",
+      "from": "gronwall-inequality",
+      "to": "oral-exam-strong-10-one-sided-gronwall-uniqueness",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла зануляет квадрат разности решений в доказательстве односторонней единственности.",
+      "backward_text": "Односторонняя единственность является более тонким применением той же оценки Гронуолла, чем обычная липшицева единственность.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-oral-strong-10-spectrum-trap-symmetric-part",
+      "from": "msu-ode-2012-9-negative-instant-spectrum",
+      "to": "oral-exam-strong-10-symmetric-part-stability",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Контрпример с отрицательным мгновенным спектром показывает, почему в положительном критерии нужна оценка симметрической части, а не только собственных значений.",
+      "backward_text": "Критерий через симметрическую часть показывает корректную ляпуновскую замену неверному мгновенному спектральному критерию.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-oral-strong-10-lyapunov-symmetric-part",
+      "from": "lyapunov-linearization-example",
+      "to": "oral-exam-strong-10-symmetric-part-stability",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют производную квадратичной функции Ляпунова вдоль решений.",
+      "backward_text": "Неавтономный линейный критерий является матричным вариантом той же ляпуновской оценки.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-oral-strong-10-liouville-trace-zero-area",
+      "from": "liouville-wronskian-formula",
+      "to": "oral-exam-strong-10-trace-zero-area-obstruction",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля дает постоянство det X при нулевом следе и тем самым сохраняет площадь.",
+      "backward_text": "Задача про след ноль является геометрическим применением формулы Лиувилля к фундаментальной матрице.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-oral-strong-10-sturm-putnam-zero-location",
+      "from": "oral-exam-strong-10-sturm-comparison-one-zero",
+      "to": "putnam-early-1957-ii6-zero-location",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Модельная задача доказывает базовое сравнение через смешанный вронскиан с синусом.",
+      "backward_text": "Олимпиадная локализация нуля применяет тот же вронскианный механизм сравнения с более тонкими константами.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-oral-strong-10-convexity-two-zeros",
+      "from": "convex-solution-two-zeros",
+      "to": "oral-exam-strong-10-nonoscillation-convexity",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Простейшая задача про выпуклую функцию с двумя нулями является геометрическим ядром неосцилляционного рассуждения.",
+      "backward_text": "Неосцилляционная задача переносит тот же аргумент с хордами на линейное уравнение y''=a(x)y.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-oral-strong-10-liouville-wronskian-ratio",
+      "from": "liouville-wronskian-formula",
+      "to": "oral-exam-strong-10-wronskian-ratio-zeros",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Постоянство вронскиана для уравнения без первой производной является частным случаем формулы Лиувилля.",
+      "backward_text": "Монотонность отношения v/u показывает, как постоянный вронскиан управляет нулями решений.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-oral-strong-10-wronskian-ratio-bounded",
+      "from": "oral-exam-strong-10-wronskian-ratio-zeros",
+      "to": "oral-exam-strong-10-bounded-solutions-wronskian-obstruction",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют постоянный ненулевой вронскиан независимой пары решений как скрытый инвариант.",
+      "backward_text": "Асимптотическая задача является другим применением того же инварианта, уже не к нулям, а к предельному поведению.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-oral-strong-10-first-integral-lotka",
+      "from": "lotka-volterra-first-integral",
+      "to": "oral-exam-strong-10-first-integral-closed-ovals",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки ищут сохраняющуюся комбинацию координат как первый интеграл плоской системы.",
+      "backward_text": "Задача с замкнутыми овалами дополняет поиск первого интеграла качественным выводом о периодичности уровней.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    }
+  ]
+}

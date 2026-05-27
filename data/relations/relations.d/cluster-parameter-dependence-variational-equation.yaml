@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-parameter-theorem-from-flow-derivative",
+      "from": "teschl-stanford-bridge-flow-derivative-variational-equation",
+      "to": "cluster-parameter-sensitivity-equation-theorem",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Flow derivative является случаем чувствительности по начальному состоянию.",
+      "backward_text": "Новая theorem-карточка добавляет явный параметр в правой части и параметрические начальные данные.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-parameter-theorem-to-first-correction",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "teschl-stanford-bridge-regular-perturbation-first-correction",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Общая формула чувствительности дает неоднородное вариационное уравнение для первой поправки.",
+      "backward_text": "Regular perturbation является важным частным случаем, когда параметр входит как epsilon g(t,x).",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-parameter-theorem-to-local-2023",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "local-du-written-2023-parameter-sensitivity",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема объясняет, почему производная по параметру удовлетворяет линейной задаче Коши.",
+      "backward_text": "Локальная письменная задача применяет эту формулу в конкретном первом порядке с параметрическим начальным условием.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-cluster-parameter-theorem-to-second-order",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "cluster-parameter-second-order-coefficient-forcing",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общая формула чувствительности после сведения второго порядка к системе дает уравнение для z.",
+      "backward_text": "Второй порядок показывает, как параметр в коэффициенте, правой части и начальных данных входит в линейную задачу для z.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-parameter-theorem-to-system",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "cluster-parameter-system-sensitivity",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема напрямую дает векторную систему чувствительности.",
+      "backward_text": "Системная карточка является коротким вычислительным применением общей формулы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-parameter-theorem-to-initial-data",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "cluster-parameter-initial-data-first-order",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общая формула фиксирует начальное условие z(t0)=xi'(lambda).",
+      "backward_text": "Первый порядок изолирует частую ошибку: нужно дифференцировать не только уравнение, но и начальное значение.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-parameter-gronwall-from-gronwall",
+      "from": "gronwall-inequality",
+      "to": "cluster-parameter-gronwall-lipschitz-dependence",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Неравенство Гронуолла является основным инструментом оценки разности параметрических решений.",
+      "backward_text": "Карточка применяет Гронуолла к чувствительности по параметру и начальным данным.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-parameter-gronwall-vs-continuous-dependence",
+      "from": "teschl-stanford-bridge-continuous-dependence-gronwall",
+      "to": "cluster-parameter-gronwall-lipschitz-dependence",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Teschl bridge дает общий механизм непрерывной зависимости через интегральное неравенство.",
+      "backward_text": "Новая карточка специализирует тот же механизм на липшицеву оценку по параметру lambda.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-parameter-second-correction-to-mipt",
+      "from": "cluster-parameter-sensitivity-equation-theorem",
+      "to": "mipt-excellent-second-parameter-correction",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Первая формула чувствительности является базой для последовательных уравнений на высшие поправки.",
+      "backward_text": "Карточка уровня отличника добавляет второй порядок разложения и нелинейный вклад.",
+      "status": "ai_checked",
+      "confidence": 0.87
+    }
+  ]
+}

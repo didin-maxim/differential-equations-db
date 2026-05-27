@@ -1,0 +1,108 @@
+{
+  "id": "ru-misc-nure-8-4",
+  "title": "Общее решение y'' - xy' - y = 0",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Выразить общее решение дифференциального уравнения y'' - xy' - y = 0.",
+        "source_ids": [
+          "src-nure-student-olympiad-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Увидеть полную производную",
+      "text": "Левая часть равна (y' - xy)'. Поэтому второе уравнение сразу понижается до линейного уравнения первого порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как (y' - xy)' = y'' - y - xy', исходное уравнение равносильно (y' - xy)' = 0. Значит y' - xy = C1. Это линейное уравнение первого порядка. Умножим его на e^{-x^2/2}: (y e^{-x^2/2})' = C1 e^{-x^2/2}. Интегрируя от 0 до x, получаем y(x)e^{-x^2/2} = C1 int_0^x e^{-t^2/2} dt + C2. Поэтому общее решение имеет вид y(x) = e^{x^2/2}(C2 + C1 int_0^x e^{-t^2/2} dt). Здесь C1 и C2 - произвольные вещественные константы.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "differentiate_auxiliary_function",
+      "integrating_factor_linear"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "linear_first_order",
+      "integrating_factor"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "ХНУРЭ 8.4",
+      "понижение порядка",
+      "интегрирующий множитель"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 5,
+    "comment": "Идейная сложность 5: нужно распознать полную производную y'-xy. Техническая сложность 5: затем остается стандартное линейное уравнение первого порядка с интегрирующим множителем.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "linear_first_order",
+    "integrating_factor",
+    "standard_course_methods",
+    "source_solution_checked",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "original_problem_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Сверено с решением ХНУРЭ; решение самодостаточно."
+    ]
+  }
+}

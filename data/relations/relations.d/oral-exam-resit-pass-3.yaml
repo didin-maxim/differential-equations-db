@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-resit-pass-3-separable-logistic",
+      "from": "resit-pass-3-separable-exponential-growth",
+      "to": "separable-logistic-equation",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи решаются разделением переменных; новая устная карточка является самым коротким вариантом этого приема.",
+      "backward_text": "Логистическое уравнение использует тот же механизм, но требует частичных дробей и чуть более аккуратной алгебры.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-resit-pass-3-linear-first-order-formula",
+      "from": "linear-first-order-formula",
+      "to": "resit-pass-3-linear-first-order-forcing",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула линейного уравнения первого порядка прямо дает интегрирующий множитель для этой задачи.",
+      "backward_text": "Устная карточка проверяет практическое применение общей формулы в простом случае.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-resit-pass-3-exact-seed",
+      "from": "resit-pass-3-exact-equation-potential",
+      "to": "exact-equation-potential",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах ключевой шаг - восстановить потенциал полной дифференциальной формы.",
+      "backward_text": "Существующая карточка является более содержательной версией той же проверки на полную форму.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-resit-pass-3-bernoulli-standard",
+      "from": "resit-pass-3-bernoulli-initial",
+      "to": "bernoulli-standard",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи линеаризуются заменой z=1/y.",
+      "backward_text": "Стандартная карточка Бернулли показывает тот же прием с правой частью, зависящей от x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-resit-pass-3-real-roots-resonance",
+      "from": "resit-pass-3-constant-coeff-real-roots",
+      "to": "constant-coeff-second-order-resonance",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Сначала полезно уверенно решить однородное уравнение с постоянными коэффициентами и начальными условиями.",
+      "backward_text": "Резонансная задача добавляет к тому же характеристическому анализу подбор частного решения.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-resit-pass-3-undetermined-real-roots",
+      "from": "resit-pass-3-constant-coeff-real-roots",
+      "to": "resit-pass-3-undetermined-coefficients",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Уверенное решение однородной части нужно перед добавлением простого частного решения.",
+      "backward_text": "Неоднородная карточка использует тот же базовый блок общего решения однородного уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-resit-pass-3-phase-line-existing",
+      "from": "resit-pass-3-phase-line-logistic-signs",
+      "to": "autonomous-phase-line-stability",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки читают устойчивость равновесий по знакам на фазовой прямой.",
+      "backward_text": "Существующая карточка является более насыщенным вариантом с тремя равновесиями.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-resit-pass-3-cauchy-peano",
+      "from": "peano-existence-theorem",
+      "to": "resit-pass-3-cauchy-uniqueness-check",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема Пеано объясняет существование при непрерывной правой части и содержит типовой пример неединственности.",
+      "backward_text": "Устная карточка просит применить этот пример как проверку различия существования и единственности.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-resit-pass-3-cauchy-picard-contrast",
+      "from": "picard-lindelof-theorem",
+      "to": "resit-pass-3-cauchy-uniqueness-check",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Теорема Пикара-Линделефа требует липшицевости, которая в устной карточке как раз нарушается.",
+      "backward_text": "Контрпример показывает, почему одной непрерывности недостаточно для единственности.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-resit-pass-3-diagonal-jordan",
+      "from": "resit-pass-3-diagonal-linear-system",
+      "to": "linear-system-jordan-block",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Диагональная система является самым простым случаем вычисления exp(At).",
+      "backward_text": "Жорданова клетка добавляет к диагональному росту нильпотентную часть.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-resit-pass-3-dirichlet-eigenvalues",
+      "from": "resit-pass-3-dirichlet-sine-bvp",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Краевая задача y''+y=0 на [0,pi] является частным случаем дирихлеевой спектральной задачи при собственном значении 1.",
+      "backward_text": "Спектральная карточка обобщает этот расчет на все допустимые значения параметра.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-resit-pass-3-energy-existing",
+      "from": "resit-pass-3-energy-oscillator-check",
+      "to": "energy-integral-oscillator",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Энергия гармонического осциллятора является частным случаем энергии x''+V'(x)=0 при V=x^2/2.",
+      "backward_text": "Общая энергетическая карточка объясняет тот же расчет для произвольного потенциала.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

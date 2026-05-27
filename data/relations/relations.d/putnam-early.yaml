@@ -1,0 +1,169 @@
+{
+  "relations": [
+    {
+      "id": "rel-putnam-early-1939-linear-system",
+      "from": "linear-system-jordan-block",
+      "to": "putnam-early-1939-a5-1-linear-system",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки решают линейные системы с постоянными коэффициентами через тот же линейный механизм.",
+      "backward_text": "Putnam 1939 A5(1) является олимпиадным частным случаем стандартного решения линейной системы.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-putnam-early-1954-linear-tangents",
+      "from": "linear-first-order-formula",
+      "to": "putnam-early-1954-i3-concurrent-tangents",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Линейное уравнение первого порядка задает наклон интегральной кривой и общий параметр семейства.",
+      "backward_text": "Конкурентность касательных показывает геометрическое применение линейного уравнения первого порядка.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-putnam-early-1955-comparison",
+      "from": "blow-up-comparison-y-square",
+      "to": "putnam-early-1955-a7-zero-bounds",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют знак дифференциального выражения для запрета глобального поведения.",
+      "backward_text": "Задача Putnam 1955 A7 переносит идею сравнения и знаков на нули линейного уравнения второго порядка.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-putnam-early-1956-exact",
+      "from": "exact-equation-potential",
+      "to": "putnam-early-1956-b1-homogeneous-exact-first-integral",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Точная форма дает первый интеграл, а однородность помогает записать его явно.",
+      "backward_text": "Putnam 1956 B1 является олимпиадной модификацией восстановления потенциала точной формы.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-putnam-early-1957-zero-comparison",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "putnam-early-1957-ii6-zero-location",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют сравнение с синусоидальными решениями на интервале.",
+      "backward_text": "Локализация нуля в Putnam 1957 II-6 является олимпиадным вариантом сравнения осцилляций.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-putnam-early-1958-integral-linear",
+      "from": "linear-first-order-formula",
+      "to": "putnam-early-1958-i3-integral-constraint",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "После фиксации интегральной константы задача становится стандартным линейным уравнением первого порядка.",
+      "backward_text": "Интегральное условие в Putnam 1958 I-3 добавляет к линейной формуле самосогласованность параметра.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-putnam-early-1959-pursuit-separable",
+      "from": "separable-logistic-equation",
+      "to": "putnam-early-1959-a5-pursuit-curve",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "После вывода уравнения кривой преследования ключевой шаг сводится к разделению переменных.",
+      "backward_text": "Кривая преследования показывает, как разделяющееся уравнение возникает из геометрической кинематики.",
+      "status": "ai_checked",
+      "confidence": 0.7
+    },
+    {
+      "id": "rel-putnam-early-1960-b3-phase-plane",
+      "from": "lyapunov-linearization-example",
+      "to": "putnam-early-1960-b3-fluid-flow",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки анализируют автономную систему через специальную функцию и линеаризацию около равновесия.",
+      "backward_text": "Поток Putnam 1960 B3 добавляет к линеаризации глобальную радиальную динамику.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-putnam-early-1960-b7-linear-comparison",
+      "from": "linear-first-order-formula",
+      "to": "putnam-early-1960-b7-riccati-variational",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Интегрирующий множитель является основой сравнения в первой части задачи.",
+      "backward_text": "Putnam 1960 B7 развивает линейную формулу до дифференциального неравенства и формулы для Риккати.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-putnam-early-1960-b7-riccati",
+      "from": "riccati-known-solution",
+      "to": "putnam-early-1960-b7-riccati-variational",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют линейное мышление вокруг уравнения Риккати.",
+      "backward_text": "Вариационная формула Putnam 1960 B7 является более олимпиадной техникой для Риккати.",
+      "status": "ai_checked",
+      "confidence": 0.75
+    },
+    {
+      "id": "rel-putnam-early-1963-operator",
+      "from": "euler-cauchy-equation",
+      "to": "putnam-early-1963-a3-euler-operator-kernel",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют оператор xD и структуру уравнений эйлерова типа.",
+      "backward_text": "Putnam 1963 A3 превращает оператор Эйлера в интегральное представление через ядро.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-putnam-early-1969-control-linear",
+      "from": "linear-first-order-formula",
+      "to": "putnam-early-1969-a5-controlled-linear-system",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "При x=y управляемая система сводится к одному линейному уравнению первого порядка.",
+      "backward_text": "Управляемая система Putnam 1969 A5 показывает, как линейная формула строит нужное управление.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-putnam-early-1971-complexification",
+      "from": "constant-coeff-second-order-resonance",
+      "to": "putnam-early-1971-b5-hypocycloid-system",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки решают линейные уравнения с постоянными коэффициентами через характеристические корни.",
+      "backward_text": "Putnam 1971 B5 добавляет к характеристическим корням комплексную переменную и геометрическую идентификацию.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-putnam-early-1973-first-integrals",
+      "from": "lotka-volterra-first-integral",
+      "to": "putnam-early-1973-a5-nonlinear-system-blowup",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих нелинейных системах ключевым шагом является поиск сохраняющихся комбинаций координат.",
+      "backward_text": "Putnam 1973 A5 использует первые интегралы для доказательства конечного ухода на бесконечность.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-putnam-early-1975-wronskian",
+      "from": "liouville-wronskian-formula",
+      "to": "putnam-early-1975-a5-wronskian-nonlinear-transform",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Постоянство вронскиана для уравнения без первой производной является главным инвариантом решения.",
+      "backward_text": "Putnam 1975 A5 превращает постоянный вронскиан в нелинейный член 1/z^3.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "olympiad-level-power-solution-linear-ode-criterion",
+  "title": "Если y и y^m решают одно линейное уравнение",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "standard_idea"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть m != 0,1. Найти условие на p(x), q(x), при котором уравнение Y''+p(x)Y'+q(x)Y=0 имеет на интервале два решения вида y и y^m, где y нигде не обращается в нуль и y'/y не тождественно равна нулю.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Свести к логарифмической производной",
+      "text": "Подстановка y и y^m дает две алгебраические связи для r=y'/y; их вычитание выражает q через r^2, а оставшаяся формула задает p.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Обозначим r=y'/y. Для Y=y получаем r'+r^2+pr+q=0. Для Y=y^m логарифмическая производная равна mr, поэтому подстановка дает m r'+m^2 r^2+p m r+q=0. Вычтем m раз первое равенство из второго: m(m-1)r^2+(1-m)q=0, откуда q=m r^2. Тогда первое равенство принимает вид r'+(m+1)r^2+pr=0. Поэтому критерий таков: существует гладкая функция r, не тождественно равная нулю, для которой q=m r^2 и r'+(m+1)r^2+pr=0. Обратно, при таком r функция y=exp(int r dx) дает решения y и y^m; их отношение y^{m-1} непостоянно, если r не тождественно ноль, значит решения линейно независимы. Случай m=2 возвращает условие q=2r^2, используемое в олимпиадной задаче ХНУРЭ.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "logarithmic_derivative",
+      "wronskian_liouville"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "wronskian",
+      "nonlinear_transform",
+      "sign_analysis"
+    ],
+    "goal": [
+      "characterize",
+      "generalize"
+    ],
+    "keywords": [
+      "y and y^m",
+      "logarithmic derivative",
+      "NURE 8.3",
+      "linear second order equation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 10,
+    "technical_score": 6,
+    "comment": "Обобщение показывает, что после распознавания логарифмической производной задача становится шаблонной; это скорее верхний олимпиадный стандарт, чем уникальная идея 11+.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "wronskian",
+    "nonlinear_transform",
+    "sign_analysis",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "generalization_of_existing_olympiad_card",
+      "status": "needs_human_review"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_olympiad_level_links",
+    "notes": [
+      "Добавлено как обобщение ru-misc-nure-8-3; помогает понять, что сложность исходной задачи в распознавании логарифмической производной, а не в уникальной технике."
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "local-du-written-2023-parameter-sensitivity",
+  "title": "Производная решения по параметру",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_23, задача 9",
+        "text": "Функция y=y(x,mu) - решение задачи Коши x^2 y'=-2xy+1/(1+mu x^2 y^2), y|_{x=1}=mu+1. Найдите partial y/partial mu при mu=0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Продифференцировать задачу Коши",
+      "text": "При mu=0 сначала находится базовое решение. Производная z=partial_mu y затем удовлетворяет линейной задаче Коши, полученной дифференцированием исходного уравнения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "При mu=0 уравнение имеет вид y'+(2/x)y=1/x^2, поэтому (x^2y)'=1. Из y(1,0)=1 получаем y0(x)=1/x. Обозначим z=partial_mu y|_{mu=0}. Дифференцируя x^2y'=-2xy+(1+mu x^2y^2)^{-1} по mu и подставляя mu=0, y0=1/x, получаем x^2z'=-2xz-x^2y0^2=-2xz-1. Начальное условие: z(1)=1. Значит z'+(2/x)z=-1/x^2, или (x^2z)'=-1. Отсюда x^2z=-x+C, а из z(1)=1 следует C=2. Итак, partial y/partial mu при mu=0 равна z(x)=(2-x)/x^2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "parameter_dependent_ivp"
+    ],
+    "methods": [
+      "variational_equation",
+      "linear_first_order",
+      "integrating_factor"
+    ],
+    "objects": [
+      "sensitivity",
+      "parameter_derivative"
+    ],
+    "goal": [
+      "compute"
+    ],
+    "keywords": [
+      "ДУ_В_23",
+      "parameter",
+      "sensitivity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 4,
+    "local_score": 5,
+    "comment": "Идея - перейти к вариационному уравнению по параметру; техника сводится к двум линейным уравнениям первого порядка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_first_order",
+    "parameter_sensitivity_ivp",
+    "standard_course_methods",
+    "complete_proof",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_23.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Проверены карточки по параметрам, вариационной формуле и линейным уравнениям; точного локального сюжета про partial_mu y не найдено."
+    ]
+  }
+}

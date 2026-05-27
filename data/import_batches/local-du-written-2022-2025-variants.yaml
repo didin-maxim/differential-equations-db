@@ -1,0 +1,31 @@
+{
+  "id": "local-du-written-2022-2025-variants",
+  "title": "Локальные письменные варианты МФТИ по ДУ 2021-2024",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "written_exam",
+    "mipt",
+    "ru"
+  ],
+  "problem_ids": [
+    "local-du-written-2022-nonlinear-equilibria-linearization",
+    "local-du-written-2022-inverse-square-change",
+    "local-du-written-2022-implicit-discriminant",
+    "local-du-written-2022-global-arctan-continuation",
+    "local-du-written-2023-characteristics-plane-data",
+    "local-du-written-2023-parameter-sensitivity",
+    "local-du-written-2024-linear-y-xu-reduction",
+    "local-du-written-2024-nonlinear-p-of-y",
+    "local-du-written-2024-variational-free-endpoint",
+    "local-du-written-2024-affine-linear-solution-space"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Источник пачки: src-local-du-written-exams; PDF: ДУ_В_22.pdf, ДУ_В_23.pdf, ДУ_В_24.pdf.",
+    "Короткие файлы 1.pdf, 2.pdf, 2 (3).pdf, 5 (1).pdf, 5 (2).pdf проверены и не импортированы: это программы дисциплин, а не варианты/листки задач.",
+    "Не импортированы как дубли по плану решения: ДУ_В_23 задача 2 и ДУ_В_24 задача 1 (равновесия и линеаризация); ДУ_В_22 задача 6 и ДУ_В_24 задача 4 (характеристики и первые интегралы); ДУ_В_23 задача 1 (базовое уравнение с постоянными коэффициентами); ДУ_В_23 задача 4, ДУ_В_22 задача 5 и ДУ_В_24 задача 2 (линейные системы с заданными собственными значениями); ДУ_В_23 задача 5 (понижение порядка, близко к local-du-written-2024-nonlinear-p-of-y); ДУ_В_23 задача 8 и ДУ_В_22 задача 3 (вариационные квадратичные функционалы, базовый/близкий план к импортированной свободной границе).",
+    "Не импортированы из-за неоднозначного извлечения формулы степени y' из PDF: ДУ_В_23 задача 6 и ДУ_В_24 задача 7.",
+    "Альтернативная задача 8 из ДУ_В_24 для потока А.О. Ремизова не импортирована как близкая к стандартному вычислению фазового потока линейного/треугольного векторного поля."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "putnam-early-1975-a5-wronskian-nonlinear-transform",
+  "title": "Putnam 1975 A5: преобразование Вронскиана к уравнению Пинни",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "На интервале I пусть y1 и y2 - линейно независимые положительные решения уравнения y''=f(x)y, где f непрерывна. Доказать, что существует положительная константа c такая, что z=c sqrt(y1 y2) удовлетворяет z''+1/z^3=f(x)z. Ясно указать, как c зависит от y1 и y2.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "wronskian",
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Использовать постоянный Вронскиан",
+      "text": "Так как в уравнении нет y', вронскиан постоянен; дифференцирование z^2=c^2 y1 y2 выражает остаточный член через квадрат Вронскиана.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть W=y1 y2'-y1' y2. Тогда W'=y1 y2''-y1'' y2=f y1 y2-f y1 y2=0, так что W - постоянная. Линейная независимость дает W!=0. Возьмем z=c sqrt(y1y2) и обозначим alpha=c^2/2, тогда z^2=2alpha y1y2. Дифференцируя, получаем zz'=alpha(y1y2'+y1'y2). Еще раз: zz''+(z')^2=alpha(y1y2''+2y1'y2'+y1''y2)=fz^2+2alpha y1'y2'. Умножим на z^2 и заменим (zz')^2 по первой формуле: z^3z''+alpha^2(y1y2'+y1'y2)^2=fz^4+4alpha^2 y1y2y1'y2'. Перенося, получаем z^3z''+alpha^2(y1y2'-y1'y2)^2=fz^4, то есть z^3z''+alpha^2 W^2=fz^4. Чтобы получить z''+1/z^3=fz, нужно alpha^2 W^2=1. Значит alpha=1/|W| и c=sqrt(2/|W|). Эта константа положительна и зависит только от постоянного Вронскиана пары y1,y2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order_linear",
+      "nonlinear_ode"
+    ],
+    "methods": [
+      "wronskian",
+      "nonlinear_transform"
+    ],
+    "objects": [
+      "positive_solutions",
+      "pinney_equation"
+    ],
+    "goal": [
+      "construct"
+    ],
+    "keywords": [
+      "Putnam 1975 A5",
+      "wronskian",
+      "nonlinear_transform"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 10,
+    "technical_score": 8,
+    "comment": "Идея сильная: постоянный вронскиан связывает линейное уравнение с нелинейным преобразованием. Техника высокая: дифференцирование произведения и исключение членов требуют аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "linear_higher_order",
+    "wronskian",
+    "nonlinear_transform",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_archive",
+      "status": "source_verified",
+      "url": "https://prase.cz/kalva/putnam/psoln/psol755.html"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "putnam_early_links",
+    "notes": [
+      "В отличие от архивной краткой записи, здесь явно взят модуль Вронскиана, чтобы c была положительной при любой ориентации пары решений."
+    ]
+  }
+}

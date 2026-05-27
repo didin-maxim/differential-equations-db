@@ -1,0 +1,29 @@
+{
+  "id": "english-mit-18034-honors",
+  "title": "MIT 18.034 Honors Differential Equations: выборочный импорт третьего эшелона",
+  "created_at": "2026-05-26",
+  "scope": [
+    "english_sources",
+    "mit_18034_honors",
+    "third_tier"
+  ],
+  "problem_ids": [
+    "mit-18034-pset03-resonance-limit",
+    "mit-18034-pset03-one-sided-lipschitz-gronwall",
+    "mit-18034-pset03-bvp-maximum-principle",
+    "mit-18034-pset05-picard-tail-estimate",
+    "mit-18034-pset05-second-order-picard-integral",
+    "mit-18034-pset07-euler-system-fundamental-matrix",
+    "mit-18034-pset07-periodic-initial-plane",
+    "mit-18034-pset08-prufer-oscillation-criteria",
+    "mit-18034-pset09-hamiltonian-folium-first-integral",
+    "mit-18034-pset09-omega-limit-linearization",
+    "mit-18034-pset09-lyapunov-nonlinear-stable"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Импорт намеренно выборочный: исключены массовые задачи на constant coefficients и Laplace transform, а также задачи, где MIT-лист ссылается на Birkhoff-Rota без самодостаточного условия.",
+    "Перед добавлением выполнен поиск по кластерам и локальным формулам: resonance, Picard, one-sided Lipschitz, maximum principle, fundamental matrix, periodic solutions, Prufer/oscillation, first integral, Lyapunov.",
+    "Карточки помечены standard_course_methods, если полностью решаются методами стандартного курса, и advanced_standard_course, если являются аккуратным мостом за базовую программу."
+  ]
+}

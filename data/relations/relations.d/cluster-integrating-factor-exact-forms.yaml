@@ -1,0 +1,59 @@
+{
+  "relations": [
+    {
+      "id": "rel-exact-potential-to-mu-x",
+      "from": "exact-equation-potential",
+      "to": "oral-above-three-integrating-factor-x-only",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовая точная форма учит восстанавливать потенциал; задача с mu(x) добавляет предварительный шаг выбора интегрирующего множителя.",
+      "backward_text": "После умножения на mu(x) задача снова сводится к восстановлению потенциала точной формы.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-mu-x-to-mu-y-contrast",
+      "from": "oral-above-three-integrating-factor-x-only",
+      "to": "cluster-integrating-factor-mu-y-short",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Критерий для mu(x) использует зависимость (M_y-N_x)/N только от x; парная задача показывает симметричный критерий для mu(y).",
+      "backward_text": "Короткий mu(y)-пример контрастирует с mu(x): меняется знаменатель критерия и рабочая область, но финальный шаг с потенциалом тот же.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-mu-y-to-power-monomial",
+      "from": "cluster-integrating-factor-mu-y-short",
+      "to": "cluster-integrating-factor-power-monomial",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "После множителя одной переменной естественно перейти к степенному анзацу x^a y^b, где условие точности превращается в линейную систему для показателей.",
+      "backward_text": "Степенной множитель расширяет идею mu(y): вместо одной функции одной переменной подбираются две степени, а потенциал остается коротким.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-power-monomial-to-mu-xy",
+      "from": "cluster-integrating-factor-power-monomial",
+      "to": "cluster-integrating-factor-mu-xy",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Степенной анзац x^a y^b и специальный анзац h(xy) являются разными способами ограничить поиск множителя до маломерного семейства.",
+      "backward_text": "Множитель h(xy) показывает другой нестандартный критерий: вместо степеней сравнивается отношение (N_x-M_y)/(xM-yN).",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-computed-factors-to-factor-family",
+      "from": "cluster-integrating-factor-mu-xy",
+      "to": "msu-ode-2008-11-integrating-factor-family",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "После нескольких конкретных множителей полезно увидеть общий факт: все множители получаются умножением известного множителя на функцию первого интеграла.",
+      "backward_text": "МГУ-задача объясняет, почему конкретный найденный множитель не единственен: его можно домножать на функцию найденного первого интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

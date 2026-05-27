@@ -1,0 +1,111 @@
+{
+  "id": "local-du-romanko-sturm-short-interval-bvp",
+  "title": "Краевая задача на коротком отрезке через сравнение Штурма",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p непрерывна на [a,b], p_* = max p(x) > 0, и b-a < pi/sqrt(p_*). Доказать, что для любых A, B и любой непрерывной f краевая задача y''+p(x)y=f(x), y(a)=A, y(b)=B имеет единственное решение.",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Запретить нулевое попадание сравнением с постоянным коэффициентом",
+      "text": "Нетривиальное решение однородной задачи не может иметь два нуля на таком коротком отрезке: иначе сравнение Штурма заставило бы каждое решение z''+p_*z=0 иметь нуль внутри отрезка, что неверно при длине меньше pi/sqrt(p_*).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "shooting_parameter"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Сначала докажем единственность. Пусть u решает однородную краевую задачу u''+p(x)u=0, u(a)=u(b)=0. Если u не тождественно равно нулю, то между a и b у него есть пара соседних нулей alpha<beta, причем beta-alpha <= b-a < pi/sqrt(p_*). По сравнению Штурма с уравнением z''+p_*z=0 всякое ненулевое решение этого уравнения должно иметь нуль на (alpha,beta). Но можно взять решение, положительное на всем [alpha,beta], например z(x)=cos(sqrt(p_*)(x-m)) при m=(alpha+beta)/2: из-за длины меньше pi/sqrt(p_*) аргумент остается в интервале длины меньше pi, и нуля нет. Противоречие, значит u тождественно равно нулю. Для существования зафиксируем решение y0 неоднородной задачи Коши y0(a)=A, y0'(a)=0 и решение v однородной задачи Коши v(a)=0, v'(a)=1. Все решения с левым краевым условием имеют вид y=y0+cv. Если бы v(b)=0, то v было бы ненулевым решением однородной краевой задачи с нулевыми концами, что уже исключено. Поэтому v(b)!=0, и единственный выбор c=(B-y0(b))/v(b) дает правое краевое условие.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "sturm_comparison",
+      "shooting_parameter",
+      "nonresonance"
+    ],
+    "objects": [
+      "dirichlet_problem",
+      "short_interval",
+      "comparison_equation"
+    ],
+    "goal": [
+      "prove_existence_uniqueness"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "sturm",
+      "short-interval",
+      "boundary-value",
+      "nonresonance"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "idea_score=8: нужно превратить условие на длину в отсутствие двух нулей и затем в обратимость краевой задачи; technical_score=4: вычислений мало.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "advanced_standard_course",
+    "complete_proof",
+    "boundary_value",
+    "sturm_theorem",
+    "comparison",
+    "shooting_parameter",
+    "zero_location"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§10, задача 51: теорема Штурма и граничные задачи."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Выбрано как идейное краевое следствие Штурма, не как очередной счет собственных значений."
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "local-du-filippov-240-radial-global-system",
+  "title": "Глобальное существование системы из радиальной оценки",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 240*",
+        "text": "Дана система в векторной записи y'=f(x,y), удовлетворяющая условиям теоремы существования и единственности в окрестности каждой точки. Пусть в области |y|>b при всех x выполнено y·f(x,y)<=k(x)|y|^2, где k(x) непрерывна. Доказать, что решение с любым начальным условием y(x0)=y0 существует при x0<=x<+infty.",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "maximal_solution",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Следить за радиусом, а не за координатами",
+      "text": "Для V=|y|^2 условие дает V'<=2k(x)V вне шара. Внутри шара на конечном отрезке поле локально ограничено, поэтому выход из любого конечного шара можно контролировать через V и Гронуолла.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity",
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим максимальное решение на правом промежутке и зафиксируем конечный отрезок [x0,B]. Если |y|>b, то для V=|y|^2 имеем V'=2y·f(x,y)<=2k(x)V<=2K V, где K=max_{[x0,B]} |k(x)|. Пока траектория находится вне шара |y|<=b, это неравенство запрещает взрыв радиуса быстрее экспоненты. Внутри шара |y|<=b поле f локально ограничено на каждом компакте по x; если нужно, берем чуть больший шар |y|<=b+1 и получаем конечную константу M для |f| на [x0,B] в этом шаре. Поэтому траектория не может перейти из |y|<=b в бесконечность мгновенно: сначала она выходит через сферу |y|=b, а дальше ее радиус управляется экспоненциальной оценкой. Формально, для r(t)=max(|y(t)|,b) получаем верхнюю оценку r(t)^2<=C_B exp(2K(B-x0)) с конечной C_B, зависящей от начальной точки и локального прохода через шар. Значит на [x0,B] решение остается ограниченным. По критерию продолжения конечный правый конец невозможен. Так как B произволен, решение продолжается на весь луч x>=x0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity",
+        "gronwall_estimate"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "lyapunov_function",
+      "gronwall_estimate",
+      "continuation_criterion"
+    ],
+    "objects": [
+      "vector_field",
+      "maximal_solution",
+      "radial_bound"
+    ],
+    "goal": [
+      "prove_global_existence"
+    ],
+    "keywords": [
+      "filippov-240",
+      "radial-estimate",
+      "global-continuation",
+      "nonlinear-system"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "idea_score=8: ключ в переходе от координат к радиальной функции Ляпунова; technical_score=4: после выбора V расчет короткий.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "nonlinear_system",
+    "lyapunov",
+    "gronwall",
+    "global_solution",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §7, задача 240*."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Отобрано как дефицитная системная версия критерия продолжения; это не еще один скалярный пример с ограниченной правой частью."
+    ]
+  }
+}

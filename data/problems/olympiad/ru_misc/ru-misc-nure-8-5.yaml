@@ -1,0 +1,114 @@
+{
+  "id": "ru-misc-nure-8-5",
+  "title": "Невозможность продолжить y' = y^2 + x до x = 3",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Доказать, что задача y' = y^2 + x, y(0) = 0 не имеет решения на всем интервале (0,3).",
+        "source_ids": [
+          "src-nure-student-olympiad-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ограничить arctan y",
+      "text": "После замены z = arctan y величина z всегда меньше pi/2. Но на отрезке x >= 1 из уравнения следует z' >= 1, что заставляет z слишком быстро вырасти.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "angle_comparison"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Предположим, что решение существует на всем (0,3) и соответствует начальному условию y(0) = 0. Для x > 0 имеем y'(x) = y(x)^2 + x > 0, поэтому y(x) > 0. Положим z(x) = arctan y(x). Тогда 0 < z(x) < pi/2 и z' = y'/(1 + y^2) = (y^2 + x)/(1 + y^2). Так как y = tan z, получаем z' = sin^2 z + x cos^2 z. При x >= 1 отсюда z' >= sin^2 z + cos^2 z = 1. Поэтому для любого x из [1,3) выполнено z(x) >= z(1) + x - 1 > x - 1. Берем, например, x = 2.9. Тогда z(2.9) > 1.9 > pi/2, что противоречит неравенству z < pi/2. Следовательно такого решения на всем интервале (0,3) не существует.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "qualitative",
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument",
+      "angle_comparison"
+    ],
+    "objects": [
+      "blow_up",
+      "finite_time_blowup",
+      "global_solution",
+      "differential_inequality"
+    ],
+    "goal": [
+      "prove",
+      "nonexistence"
+    ],
+    "keywords": [
+      "ХНУРЭ 8.5",
+      "arctan y",
+      "конечный взрыв",
+      "невозможность продолжения"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Идейная сложность 8: ключевой ход - замена arctan y и сравнение угловой переменной до противоречия. Техническая сложность 4: вычисления производной и численная оценка короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "comparison",
+    "blow_up",
+    "finite_time_blowup",
+    "global_solution",
+    "differential_inequality",
+    "advanced_standard_course",
+    "source_solution_checked",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "original_problem_and_solution",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "ru_misc_links",
+    "notes": [
+      "Сверено с решением ХНУРЭ; новая карточка-теорема не нужна, так как сравнение доказано внутри."
+    ]
+  }
+}

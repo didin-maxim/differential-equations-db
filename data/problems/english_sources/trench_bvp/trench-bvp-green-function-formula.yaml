@@ -1,0 +1,117 @@
+{
+  "id": "trench-bvp-green-function-formula",
+  "title": "Формула функции Грина для регулярной двухточечной краевой задачи",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть L[y]=P0(x)y''+P1(x)y'+P2(x)y на [a,b], P0 не обращается в нуль, а однородная задача L[y]=0, B1(y)=0, B2(y)=0 имеет только нулевое решение. Пусть y1,y2 - решения L[y]=0 такие, что B1(y1)=0, B2(y2)=0. Тогда решение задачи L[y]=F, B1(y)=B2(y)=0 задается формулой y(x)=y1(x) int_x^b F(t)y2(t)/(P0(t)W(t)) dt + y2(x) int_a^x F(t)y1(t)/(P0(t)W(t)) dt, где W=y1 y2'-y1' y2. Эквивалентно, y(x)=int_a^b G(x,t)F(t)dt с кусочной функцией Грина.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Встроить краевые условия в вариацию постоянных",
+      "text": "Нужно выбрать нижние и верхние пределы интегралов так, чтобы один фундаментальный множитель автоматически занулял левое условие, а другой - правое.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "По вариации постоянных ищем y=u1 y1+u2 y2 и накладываем стандартное условие u1' y1+u2' y2=0. Тогда u1'=-F y2/(P0 W), u2'=F y1/(P0 W). Выбор u1(x)=int_x^b F(t)y2(t)/(P0(t)W(t))dt и u2(x)=int_a^x F(t)y1(t)/(P0(t)W(t))dt дает L[y]=F. При x=a оба выражения для y и y' содержат тот же линейный функционал B1 от y1, потому B1(y)=0. При x=b по той же подстановке остается множитель B2(y2), значит B2(y)=0. Единственность следует из предположения: разность двух решений решает однородную краевую задачу и поэтому равна нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "green_function",
+      "variation_of_parameters",
+      "wronskian_identity"
+    ],
+    "objects": [
+      "green_kernel",
+      "boundary_value_problem",
+      "fundamental_system"
+    ],
+    "goal": [
+      "derive_formula",
+      "solve"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "green_function",
+      "linear_bvp"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 5,
+    "comment": "Короткий мост от вариации постоянных к функции Грина без функционального анализа.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "green_kernel",
+    "variation_of_parameters",
+    "wronskian",
+    "linear_higher_order",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_theorem",
+      "status": "source_verified",
+      "note": "Trench, Elementary Differential Equations with Boundary Value Problems, Section 13.1, Theorem 13.1.3 and formula (13.1.20) for Green's function."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Отобрана как мостовая теорема: формула объясняет, откуда берется Green kernel в элементарной краевой задаче."
+    ]
+  }
+}

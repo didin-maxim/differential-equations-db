@@ -1,0 +1,125 @@
+{
+  "id": "cluster-phase-stability-visual-center-stable-not-asymptotic",
+  "title": "По замкнутым траекториям распознать устойчивость без асимптотики",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "cluster_audit"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Визуальная модельная задача",
+        "text": "На рисунке близкие к нулю траектории являются замкнутыми кривыми вокруг начала координат. Определить, устойчиво ли нулевое равновесие по Ляпунову, асимптотически устойчиво ли оно или неустойчиво.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "equilibrium",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fig-visual-center-closed-orbits",
+      "type": "image",
+      "path": "data/assets/images/phase_stability/visual-center-closed-orbits.svg",
+      "role": "schematic_statement_figure",
+      "status": "ai_created"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Замкнутые уровни удерживают, но не притягивают",
+      "text": "Траектория, начавшаяся на ненулевой замкнутой кривой, остается около нуля, но не приближается к нему.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нулевое равновесие устойчиво по Ляпунову: для любой малой окрестности можно выбрать меньшую замкнутую кривую вокруг нуля, и траектории внутри соответствующего кольца не уходят далеко. Но равновесие не асимптотически устойчиво. Если начальная точка отлична от нуля, решение движется по своей замкнутой кривой и не стремится к началу координат. Такой портрет соответствует центру: устойчивость есть, предельного притяжения нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_portrait_reading",
+      "first_integral"
+    ],
+    "objects": [
+      "center",
+      "closed_trajectories",
+      "lyapunov_stability",
+      "not_asymptotically_stable"
+    ],
+    "goal": [
+      "classify"
+    ],
+    "keywords": [
+      "visual stability",
+      "center",
+      "stable not asymptotic"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 3,
+    "idea_score": 4,
+    "technical_score": 1,
+    "comment": "Визуальная проверка различия между устойчивостью по Ляпунову и асимптотической устойчивостью.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "first_integral",
+    "graphical_construction",
+    "standard_course_methods",
+    "model_exam_task",
+    "self_authored",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_source",
+      "status": "ai_generated_from_course_requirements",
+      "note": "Self-authored schematic task after web search for analogous visual stability examples; no exact external problem statement was copied."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Схематический SVG создан локально как минимальная visual card для устойчивости центра."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "trench-bvp-energy-no-negative-eigenvalues",
+  "title": "Энергетический запрет отрицательных собственных значений",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "english_source",
+      "exercise"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p(x)>0 и r(x)>0 на [a,b]. Для задач (p y')'+lambda r y=0 с условиями Дирихле-Дирихле, Нейман-Нейман или смешанными Дирихле-Нейман/Нейман-Дирихле доказать, что отрицательных собственных значений нет. Кроме того, lambda=0 является собственным значением только для задачи Нейман-Нейман, где собственная функция постоянна.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Умножить на y и проинтегрировать",
+      "text": "Краевые условия зануляют краевой член, после чего знак int p(y')^2 и int r y^2 контролирует знак lambda.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Пусть y - собственная функция. Умножим уравнение на y и проинтегрируем: int y(p y')' dx+lambda int r y^2 dx=0. Интегрирование по частям дает [p y y']_a^b-int p(y')^2 dx+lambda int r y^2 dx=0. Для всех четырех перечисленных типов условий произведение y y' зануляется на каждом конце, поэтому lambda int r y^2 dx=int p(y')^2 dx. Так как y не тождественно нуль и r>0, знаменатель положителен, значит lambda>=0. Если lambda=0, то int p(y')^2=0, откуда y'=0 и y - постоянна. Постоянная ненулевая функция удовлетворяет только условиям Нейман-Нейман; при наличии условия Дирихле она равна нулю на соответствующем конце и потому тождественно равна нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "energy_method",
+      "integration_by_parts",
+      "sturm_liouville"
+    ],
+    "objects": [
+      "eigenvalues",
+      "quadratic_form",
+      "boundary_value_problem"
+    ],
+    "goal": [
+      "prove_nonexistence",
+      "classify"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "nonnegative_spectrum",
+      "energy_identity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Содержательная знаковая лемма без длинных вычислений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "sturm_liouville",
+    "eigenvalues",
+    "energy_method",
+    "standard_course_methods",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_exercise",
+      "status": "source_verified",
+      "note": "Trench, Section 13.2 Exercises, Exercise 13.2.31."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Выбрана вместо численных Sturm-Liouville упражнений: дает качественный критерий знака спектра."
+    ]
+  }
+}

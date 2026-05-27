@@ -1,0 +1,119 @@
+{
+  "id": "cluster-matrix-exp-discrete-rotation-recurrence",
+  "title": "Дискретная система как поворот-растяжение",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для дискретной системы x_{n+1}=Ax_n, A=[[1,-1],[1,1]], x_0=(1,0)^T, найдите x_n. Затем выпишите рекуррентное соотношение для первой координаты p_n.",
+        "source_ids": [
+          "src-cluster-matrix-exponential-methods-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Матрица умножает комплексное число на 1+i",
+      "text": "Если z_n=p_n+iq_n, то действие A на (p_n,q_n) совпадает с умножением z_n на 1+i; это дискретный аналог диагонализации комплексной пары.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "complexify_linear_system"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим z_n=p_n+iq_n для x_n=(p_n,q_n)^T. Тогда A(p,q)^T=(p-q,p+q)^T, то есть z_{n+1}=(1+i)z_n. При z_0=1 получаем z_n=(1+i)^n=2^{n/2}(cos(n pi/4)+i sin(n pi/4)). Следовательно x_n=(2^{n/2}cos(n pi/4), 2^{n/2}sin(n pi/4))^T. По Кэли-Гамильтону A^2-2A+2I=0, поэтому x_{n+2}=2x_{n+1}-2x_n, и первая координата удовлетворяет p_{n+2}=2p_{n+1}-2p_n, p_0=1, p_1=1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "complexify_linear_system"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "difference_equation"
+    ],
+    "methods": [
+      "diagonalization",
+      "complexification",
+      "cayley_hamilton"
+    ],
+    "objects": [
+      "linear_recurrence",
+      "discrete_linear_system",
+      "complex_eigenvalues"
+    ],
+    "goal": [
+      "solve",
+      "derive_recurrence"
+    ],
+    "keywords": [
+      "matrix_exponential_methods",
+      "discrete_system",
+      "linear_recurrence",
+      "rotation_dilation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "idea_score=5: нужно увидеть комплексное умножение/диагонализацию дискретной системы; technical_score=3: формула степени матрицы короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "linear_recurrence",
+    "eigenvalues",
+    "complexification",
+    "standard_course_methods",
+    "low_technical",
+    "self_authored",
+    "task_cluster",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-cluster-matrix-exponential-methods-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Компактная авторская карточка для дискретного аналога матрично-экспоненциального мышления; внешний источник не использовался."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-matrix-exponential-methods",
+    "notes": [
+      "Дискретный представитель: вместо тяжелого счета степеней матрицы используется комплексная диагонализация и Кэли-Гамильтон."
+    ]
+  }
+}

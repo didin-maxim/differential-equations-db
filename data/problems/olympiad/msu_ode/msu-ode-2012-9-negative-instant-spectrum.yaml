@@ -1,0 +1,110 @@
+{
+  "id": "msu-ode-2012-9-negative-instant-spectrum",
+  "title": "Отрицательный мгновенный спектр не гарантирует устойчивость",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2012, задача 9",
+        "text": "Все собственные значения матрицы A(t), непрерывно зависящей от t, действительны и не превосходят -1 при всех t из R. Следует ли отсюда, что нулевое решение линейной неавтономной системы x'=A(t)x а) асимптотически устойчиво; б) устойчиво?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ненормальность и меняющиеся направления",
+      "text": "В неавтономной системе мгновенные собственные значения не контролируют фундаментальную матрицу. Уже треугольная система с большой наддиагональю имеет спектр {-1}, но растущие решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Контрпример",
+      "text": "Нет в обоих пунктах. Рассмотрим систему x_1'=-x_1+e^{2t}x_2, x_2'=-x_2. Здесь A(t)=[[-1,e^{2t}],[0,-1]] непрерывна на R, и оба ее собственных значения равны -1 при любом t. Возьмем начальные данные x_1(0)=0, x_2(0)=epsilon. Тогда x_2(t)=epsilon e^{-t}. Первое уравнение дает (e^t x_1(t))'=epsilon e^{2t}, поэтому x_1(t)=epsilon(e^t-e^{-t})/2. При любом сколь угодно малом epsilon>0 решение неограниченно растет при t->+infty. Следовательно, нулевое решение не является устойчивым по Ляпунову, а значит тем более не является асимптотически устойчивым.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "counterexample",
+      "variation_of_constants"
+    ],
+    "objects": [
+      "linear_systems",
+      "stability",
+      "counterexample",
+      "complete_proof"
+    ],
+    "goal": [
+      "disprove"
+    ],
+    "keywords": [
+      "msu-ode-2012-9",
+      "stability",
+      "negative_eigenvalues",
+      "nonautonomous_linear_system"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 4,
+    "local_score": 8,
+    "comment": "Идейно задача держится на контрпримере к мгновенному спектральному критерию в неавтономной системе; технически проверка треугольной системы короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "stability",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_12.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с листком МГУ ОДУ 2012."
+    ]
+  }
+}

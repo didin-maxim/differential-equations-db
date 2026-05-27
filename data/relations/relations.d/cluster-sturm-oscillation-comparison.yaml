@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-sturm-comparison-to-disconjugacy-upper-bound",
+      "from": "local-du-8-sturm-comparison-theorem",
+      "to": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Строгая дисконъюгированность при q<C является приложением сравнения Штурма с модельным уравнением z''+Cz=0.",
+      "backward_text": "Лемма превращает теорему сравнения в готовый порог отсутствия двух нулей на конечном отрезке.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-sturm-spacing-to-disconjugacy-upper-bound",
+      "from": "local-du-standard-sturm-zero-spacing-corollaries",
+      "to": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют эталонное расстояние pi/sqrt(C) между нулями синуса.",
+      "backward_text": "Новая лемма выделяет строгий критический случай q<C, нужный для порога C=pi^2/L^2.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-sturm-disconjugacy-to-nonresonance-interpolation",
+      "from": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "to": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Дисконъюгированность дает отсутствие ненулевого решения Дирихле, которое затем обеспечивает единственность двухточечной задачи.",
+      "backward_text": "Лемма о нерезонансе объясняет, зачем в штурмовских оценках исключают два нуля у ненулевого решения.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-sturm-nonresonance-to-safe-threshold",
+      "from": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "to": "cluster-sturm-bvp-unit-endpoints-safe-threshold",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "После энергетического запрета ядра Дирихле лемма сразу дает существование и единственность для концов 1,1.",
+      "backward_text": "Безопасный порог является простым применением общего критерия нерезонанса Дирихле.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-sturm-disconjugacy-to-sharp-threshold",
+      "from": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "to": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Острый порог C<=pi^2/L^2 использует именно строгую дисконъюгированность при f<C.",
+      "backward_text": "Пороговая задача является главным краевым приложением строгой леммы о сравнении с постоянным коэффициентом.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-sturm-nonresonance-to-sharp-threshold",
+      "from": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "to": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Отсутствие решения однородной задачи Дирихле переводится в существование и единственность краевой задачи с y(0)=y(L)=1.",
+      "backward_text": "Острый порог применяет общий нерезонансный критерий к уравнению y''+f(x)y=0.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-sturm-safe-to-sharp-threshold",
+      "from": "cluster-sturm-bvp-unit-endpoints-safe-threshold",
+      "to": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Энергетический порог C<=0 является простым первым случаем перед точной границей pi^2/L^2.",
+      "backward_text": "Острый порог показывает, насколько можно усилить безопасный неположительный случай.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-sturm-sharp-threshold-to-counterexample",
+      "from": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "to": "cluster-sturm-bvp-unit-endpoints-threshold-counterexample",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Доказательство остроты использует тот же постоянный коэффициент, который вынесен в отдельную контрпримерную карточку.",
+      "backward_text": "Контрпример объясняет необходимость условия C<=pi^2/L^2 в полной пороговой задаче.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-sturm-romanko-short-interval-to-sharp-threshold",
+      "from": "local-du-romanko-sturm-short-interval-bvp",
+      "to": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи получают обратимость краевой задачи из запрета двух нулей на коротком отрезке.",
+      "backward_text": "Пороговая карточка специализирует short-interval идею к условию f(x)<C и концам 1,1 с острой границей.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-sturm-resonance-theory-to-threshold-counterexample",
+      "from": "local-du-standard-resonant-linear-bvp-solvability",
+      "to": "cluster-sturm-bvp-unit-endpoints-threshold-counterexample",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Резонансная альтернатива объясняет, почему появление ядра Дирихле может разрушать существование или единственность неоднородной краевой задачи.",
+      "backward_text": "Контрпример показывает резонанс в самом простом постоянном коэффициенте ниже нарушенного порога C.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-sturm-dirichlet-eigenvalues-to-threshold-counterexample",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "cluster-sturm-bvp-unit-endpoints-threshold-counterexample",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Первое собственное значение Дирихле на [0,L] задает точку потери универсальной обратимости.",
+      "backward_text": "Контрпример использует спектральный факт только как диагностический порог, а не как самостоятельную задачу на вычисление спектра.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-cluster-sturm-kneser-to-disconjugacy",
+      "from": "local-du-standard-kneser-criterion",
+      "to": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Кнезер и конечная дисконъюгированность являются разными пороговыми формами осцилляции/неосцилляции.",
+      "backward_text": "Лемма о конечном отрезке является локальным аналогом порогового мышления, используемого в критерии Кнезера на бесконечности.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    }
+  ]
+}

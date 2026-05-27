@@ -1,0 +1,114 @@
+{
+  "id": "mipt-middle-first-integral-criterion",
+  "title": "Критерий первого интеграла автономной системы",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "cluster_audit",
+      "mipt_middle_level"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для автономной системы x'=f(x) в области U доказать: гладкая функция H(x) является первым интегралом тогда и только тогда, когда grad H(x) dot f(x)=0 во всех точках U. Применить критерий к системе x'=y, y'=-x: найти первый интеграл и объяснить, почему ненулевые траектории лежат на окружностях.",
+        "source_ids": [
+          "src-mipt-ode-course"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Производная вдоль поля должна исчезать",
+      "text": "Первый интеграл постоянен на траекториях, значит его полная производная вдоль решения равна нулю. Обратно, если производная вдоль любого вектора поля равна нулю, H не меняется на каждой траектории.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство и пример",
+      "text": "Если H - первый интеграл, то для любого решения x(t) функция H(x(t)) постоянна. По правилу цепочки d/dt H(x(t))=grad H(x(t)) dot x'(t)=grad H(x(t)) dot f(x(t))=0. Через каждую точку области, где задача Коши имеет решение, проходит траектория, поэтому grad H dot f=0 в этой точке. Обратно, если grad H dot f=0 всюду, то вдоль любого решения d/dt H(x(t))=0, значит H сохраняется. Для x'=y, y'=-x берем H=x^2+y^2. Тогда grad H=(2x,2y), и grad H dot f=2xy+2y(-x)=0. Поэтому H постоянно на траекториях. При H=c>0 уровни x^2+y^2=c - окружности, и ненулевая траектория не может покинуть соответствующую окружность.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "qualitative"
+    ],
+    "methods": [
+      "first_integral",
+      "chain_rule",
+      "phase_plane"
+    ],
+    "objects": [
+      "first_integral",
+      "level_set",
+      "trajectory"
+    ],
+    "goal": [
+      "prove",
+      "apply"
+    ],
+    "keywords": [
+      "mipt_middle_level",
+      "first_integral",
+      "criterion",
+      "phase_plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "idea_score=5: базовое понимание определения первого интеграла и производной вдоль поля; technical_score=2: вычисления элементарны.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "cluster_representative",
+    "middle_student_check",
+    "model_exam_task",
+    "mipt_core",
+    "standard_course_methods",
+    "first_integral",
+    "phase_plane",
+    "complete_proof",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "standard_course_theory",
+      "status": "seed_reference",
+      "note": "Стандартный критерий первого интеграла автономной системы."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-mipt-middle-level",
+    "notes": [
+      "Добавлено как теоретическая карточка на понимание определения первого интеграла; не дублирует вычислительные примеры с энергией."
+    ]
+  }
+}

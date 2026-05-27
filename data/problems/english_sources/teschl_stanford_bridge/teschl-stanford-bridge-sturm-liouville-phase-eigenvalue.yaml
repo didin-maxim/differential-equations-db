@@ -1,0 +1,117 @@
+{
+  "id": "teschl-stanford-bridge-sturm-liouville-phase-eigenvalue",
+  "title": "Собственные значения Штурма-Лиувилля через фазовый угол",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Лемма",
+        "text": "Рассмотрим задачу Дирихле -u''+q(x)u=lambda u на [a,b], u(a)=u(b)=0, где q непрерывна. Пусть u(a,lambda)=0, u'(a,lambda)=1, и зададим фазовый угол theta(x,lambda) так, что u=r sin theta, u'=r cos theta, theta(a,lambda)=0. Тогда lambda является собственным значением тогда и только тогда, когда theta(b,lambda) кратен pi.",
+        "source_ids": [
+          "src-stanford-math63cm-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Граничное условие превратить в условие на угол",
+      "text": "Нули решения соответствуют значениям theta из pi Z; начальное условие u'(a)=1 фиксирует единственное решение для каждого lambda.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Для каждого lambda задача Коши u(a)=0, u'(a)=1 имеет единственное решение. Величина r=sqrt(u^2+u'^2) нигде не обращается в нуль: иначе в некоторой точке одновременно u=0 и u'=0, и по единственности решение было бы нулевым, что противоречит u'(a)=1. Поэтому можно выбрать непрерывный угол theta с u=r sin theta, u'=r cos theta и theta(a)=0. Условие u(b)=0 равносильно sin theta(b)=0, то есть theta(b) in pi Z. При этом u не является нулевым решением, значит найденное решение является собственной функцией задачи Дирихле. Обратно, если lambda - собственное значение, собственная функция с u(a)=0 имеет u'(a) != 0; после умножения на константу можно сделать u'(a)=1, и тогда ее правое граничное условие дает theta(b) in pi Z. Метод фазового угла стандартен для расширенного курса Штурма-Лиувилля, но доказательство использует только задачу Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value_problem"
+    ],
+    "methods": [
+      "prufer_angle",
+      "shooting_method",
+      "sturm_liouville"
+    ],
+    "objects": [
+      "eigenvalue",
+      "phase_angle",
+      "dirichlet_boundary_conditions"
+    ],
+    "goal": [
+      "criterion",
+      "prove"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "sturm_liouville",
+      "phase_angle",
+      "dirichlet_eigenvalues"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Фазовый угол является advanced_standard_course; сама лемма служит легким мостом от метода пристрелки к спектральной задаче.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "eigenvalues",
+    "sturm_liouville",
+    "prufer_angle",
+    "shooting_parameter",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-stanford-math63cm-ode",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Stanford Math 63CM ODE notes, §7 Sturm-Liouville theory; phase angle construction for Dirichlet eigenvalue problems."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Выбрано вместо более тяжелой функциональной теории самосопряженных операторов."
+    ]
+  }
+}

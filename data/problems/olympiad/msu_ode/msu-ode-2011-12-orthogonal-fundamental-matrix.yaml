@@ -1,0 +1,110 @@
+{
+  "id": "msu-ode-2011-12-orthogonal-fundamental-matrix",
+  "title": "Ортогональная фундаментальная матрица и кососимметричность A(t)",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2011, задача 12",
+        "text": "Известно, что некоторая фундаментальная матрица системы x'=A(t)x, x из R^n, t из R, при всяком t из R ортогональна. Верно ли, что при всяком t из R матрица A(t) кососимметрична?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцирование ортогональности",
+      "text": "Фундаментальная матрица X удовлетворяет X'=AX и X^{-1}=X^T. Дифференцирование X^T X=I сразу дает кососимметричность X'X^T=A.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Да. Пусть X(t) - указанная фундаментальная матрица. Тогда X'=A X и, поскольку X ортогональна, X^{-1}=X^T. Значит A=X'X^{-1}=X'X^T. Из равенства X^T X=I после дифференцирования получаем X'^T X+X^T X'=0. Умножая это равенство слева на X и справа на X^T, имеем X X'^T+X'X^T=0. Но (X'X^T)^T=X X'^T, поэтому A^T=-A. Следовательно, A(t) кососимметрична при каждом t.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "wronskian_invariant",
+      "matrix_exponential"
+    ],
+    "objects": [
+      "linear_systems",
+      "orthogonal_fundamental_matrix",
+      "wronskian",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "msu-ode-2011-12",
+      "orthogonal_fundamental_matrix",
+      "linear_systems",
+      "skew_symmetric"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 4,
+    "technical_score": 3,
+    "local_score": 5,
+    "comment": "Идейно это прямое дифференцирование ортогональности фундаментальной матрицы; технически достаточно нескольких матричных преобразований.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "wronskian",
+    "orthogonal_fundamental_matrix",
+    "olympiad_style",
+    "complete_proof",
+    "standard_course_methods",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_11.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с листком МГУ ОДУ 2011."
+    ]
+  }
+}

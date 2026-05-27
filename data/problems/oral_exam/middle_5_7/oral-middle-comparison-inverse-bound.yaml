@@ -1,0 +1,119 @@
+{
+  "id": "oral-middle-comparison-inverse-bound",
+  "title": "Сравнение через производную обратной функции",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "oral_exam"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Устная задача",
+        "text": "Пусть y(t)>0 на [0,T] и y'(t) <= y(t)^2, y(0)=1/2. Доказать, что при 0 <= t < min(T,2) выполнено y(t) <= 1/(2-t).",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнивать удобнее обратные величины",
+      "text": "Положительность y позволяет дифференцировать 1/y. Неравенство y' <= y^2 превращается в линейную нижнюю оценку для 1/y.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как y>0, можно рассмотреть z=1/y. Тогда z'=-y'/y^2. Из y'<=y^2 следует z'>=-1. Интегрируя от 0 до t, получаем z(t)>=z(0)-t=2-t. При t<2 правая часть положительна, поэтому 1/y(t)>=2-t и, значит, y(t)<=1/(2-t). Это ровно сравнение с решением u'=u^2, u(0)=1/2, для которого u(t)=1/(2-t).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "differential_inequality",
+      "first_order"
+    ],
+    "methods": [
+      "comparison_argument",
+      "reciprocal_substitution"
+    ],
+    "objects": [
+      "upper_bound",
+      "positive_solution",
+      "model_equation_y_square"
+    ],
+    "goal": [
+      "prove_estimate"
+    ],
+    "keywords": [
+      "oral_exam",
+      "middle_student",
+      "comparison",
+      "differential_inequality",
+      "inverse_function"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 4,
+    "comment": "idea_score=5: стандартное сравнение с y'=y^2 через обратную величину; technical_score=4: одно дифференцирование и интегрирование неравенства.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "middle_student_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "standard_course_methods",
+    "low_technical",
+    "comparison",
+    "differential_inequality",
+    "boundedness",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "model_exam_task",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_middle_5_7_links",
+    "notes": [
+      "Самостоятельно составленная модельная устная задача; локальный поиск показал родственную задачу о взрыве, но не эту локальную оценку сверху."
+    ]
+  }
+}

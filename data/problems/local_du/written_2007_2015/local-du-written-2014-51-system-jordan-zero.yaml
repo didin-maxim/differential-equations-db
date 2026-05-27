@@ -1,0 +1,117 @@
+{
+  "id": "local-du-written-2014-51-system-jordan-zero",
+  "title": "Линейная система с жордановой клеткой при нулевом собственном значении",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2014-2015, вариант 51, задача 1",
+        "text": "Найти все действительные решения системы x'=4x-5y+2z, y'=5x-7y+3z, z'=6x-9y+4z. Дано: lambda_{1,2}=0, lambda_3=1.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разобрать жорданову структуру",
+      "text": "Для lambda=0 геометрическая кратность равна единице: нужен собственный вектор v и присоединенный вектор w с Aw=v. Тогда вклад этой клетки равен C1 v + C2(tv+w).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть A=[[4,-5,2],[5,-7,3],[6,-9,4]]. Для lambda=0 решаем Av=0 и получаем v=(1,2,3). Так как нулевое собственное значение имеет алгебраическую кратность два, ищем присоединенный вектор w из Aw=v; например w=(0,1,3). Для lambda=1 решаем (A-I)q=0 и получаем q=(1,1,1). Поэтому общее действительное решение имеет вид (x,y,z)^T=C1(1,2,3)^T+C2(t(1,2,3)^T+(0,1,3)^T)+C3 e^t(1,1,1)^T. Прямая проверка: A(1,2,3)^T=0, A(0,1,3)^T=(1,2,3)^T, A(1,1,1)^T=(1,1,1)^T.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "jordan_form"
+    ],
+    "objects": [
+      "linear_system",
+      "matrix_exponential",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2014-15",
+      "variant_51",
+      "jordan_zero_eigenvalue"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 5,
+    "local_score": 4,
+    "comment": "idea_score=5: это стандартный шаблон жордановой клетки в линейной системе; technical_score=5: нужно без ошибки найти собственный и присоединенный векторы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_systems",
+    "matrix_exponential",
+    "jordan_form",
+    "constant_coefficients",
+    "mipt_core",
+    "standard_course_methods",
+    "cluster_representative",
+    "exam_score_4"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2014-15.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Перед добавлением выполнен rg-поиск по матрице и ключевым формулам; точного дубля не найдено.",
+      "Похожие задачи 2007-2008 и 2014-2015 на линейные системы с указанными собственными значениями отфильтрованы как однотипные вычислительные варианты."
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "putnam-modern-1999-b4",
+  "title": "Putnam 1999 B4: неравенство f'<2f из f'''<=f",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f - действительная функция с непрерывной третьей производной, причем f(x), f'(x), f''(x), f'''(x) положительны для всех x. Предположим, что f'''(x)<=f(x) для всех x. Доказать, что f'(x)<2f(x) для всех x.",
+        "source_ids": [
+          "src-putnam-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Смотреть назад по прямой",
+      "text": "Положительность на всей прямой запрещает слишком большие производные: иначе квадратичная оценка назад дала бы отрицательные значения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Зафиксируем x. Так как f'''>0, функция f'' возрастает. Для t>0 формула Тейлора с интегральным остатком и оценка f''(x-s)<=f''(x) при 0<=s<=t дают f(x-t)<=f(x)-t f'(x)+t^2 f''(x)/2. Левая часть положительна, значит квадратный трехчлен f(x)-t f'(x)+t^2 f''(x)/2 положителен при всех t>0; отсюда (f')^2<=2ff''. Далее из f'''<=f и возрастания f получаем для 0<=s<=t оценку f'''(x-s)<=f(x). Поэтому f''(x-s)>=f''(x)-s f(x), и тогда f'(x)> int_{x-t}^x f''(u) du >= t f''(x)-t^2 f(x)/2. Максимизируя правую часть по t, берем t=f''(x)/f(x) и получаем (f'')^2<2ff'. Обозначим a=f'/f и b=f''/f. Две оценки дают a^2<=2b и b^2<2a. Следовательно, a^4<=4b^2<8a, то есть a^3<8. Так как a>0, получаем a<2, а значит f'(x)<2f(x). Точка x была произвольной.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument",
+      "differentiate_auxiliary_function"
+    ],
+    "objects": [
+      "differential_inequality",
+      "linear_higher_order",
+      "asymptotic"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "putnam-modern-1999-b4",
+      "Putnam",
+      "higher_order",
+      "differential_inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 12,
+    "idea_score": 11,
+    "technical_score": 8,
+    "comment": "Идея олимпиадная: положительность на всей прямой используется через оценки назад. Техника высокая: несколько вложенных дифференциальных неравенств нужно согласовать без потери знаков.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "linear_higher_order",
+    "comparison",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-putnam-archive",
+      "role": "primary_statement",
+      "status": "source_verified"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Формулировка сверена с TeX-файлом Putnam archive за 1999 год."
+    ]
+  }
+}

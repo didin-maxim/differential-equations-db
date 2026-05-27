@@ -1,0 +1,111 @@
+{
+  "id": "trench-bvp-real-eigenvalues",
+  "title": "У регулярной задачи Штурма-Лиувилля нет комплексных собственных значений",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для регулярной задачи Штурма-Лиувилля L[y]+lambda r(x)y=0, B1(y)=B2(y)=0 с вещественными p,q,r и r>0 комплексное число с ненулевой мнимой частью не может быть собственным значением.",
+        "source_ids": [
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Взять мнимую часть энергетического тождества",
+      "text": "Если y=u+iv и lambda=p+iq, то тождество Грина для u и v зануляет левую часть, а q int r(u^2+v^2) заставляет y быть нулем.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Пусть lambda=p+iq, q не равно 0, и y=u+iv - собственная функция. Разделяя действительную и мнимую части уравнения, получаем Lu+r(pu-qv)=0 и Lv+r(qu+pv)=0. Умножим первое равенство на v, второе на u и вычтем: uLv-vLu+q r(u^2+v^2)=0. Интегрируем по [a,b]. Первый интеграл равен нулю по тождеству Грина, потому что u и v удовлетворяют тем же однородным краевым условиям. Тогда q int_a^b r(u^2+v^2)dx=0. Так как q не равно 0 и r>0, имеем u=v=0 на [a,b], что противоречит ненулевости собственной функции.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "green_identity",
+      "energy_method",
+      "complexification"
+    ],
+    "objects": [
+      "eigenvalue",
+      "sturm_liouville_operator",
+      "weight_function"
+    ],
+    "goal": [
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "trench_bvp",
+      "real_spectrum",
+      "sturm_liouville"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 4,
+    "comment": "Элементарное доказательство вещественности спектра через тождество Грина.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "sturm_liouville",
+    "eigenvalues",
+    "green_identity",
+    "complexification",
+    "energy_method",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "textbook_theorem",
+      "status": "source_verified",
+      "note": "Trench, Section 13.2, Theorem 13.2.3."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-trench-bvp",
+    "notes": [
+      "Полезно как доступная студентам причина вещественности спектра самосопряженной краевой задачи."
+    ]
+  }
+}

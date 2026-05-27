@@ -1,0 +1,119 @@
+{
+  "id": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+  "title": "Счет нулей собственных функций через фазовый угол",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "english_source",
+      "teschl_stanford_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Теорема",
+        "text": "В регулярной задаче Дирихле -u''+q(x)u=lambda u на [a,b] собственные значения можно занумеровать lambda_1<lambda_2<... так, что собственная функция при lambda_n имеет ровно n-1 нулей внутри (a,b). Фазовый способ доказательства: theta(b,lambda_n)=n pi, а внутренние нули соответствуют промежуточным кратным pi.",
+        "source_ids": [
+          "src-stanford-math63cm-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "eigenvalue_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Угол растет и пересекает кратные pi по одному разу",
+      "text": "Если theta(b,lambda) возрастает от 0 к бесконечности при росте lambda, то каждое значение n pi задает одно собственное значение, а число уже пройденных кратных pi равно числу внутренних нулей.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Запустим решение из левого конца условиями u(a)=0, u'(a)=1 и введем фазовый угол theta. По фазовой лемме lambda является собственным значением тогда и только тогда, когда theta(b,lambda) кратен pi. В регулярной теории Штурма-Лиувилля доказывается, что theta(b,lambda) непрерывно и строго возрастает по lambda, причем при lambda -> -infty оно стремится к 0, а при lambda -> +infty стремится к бесконечности. Поэтому уравнение theta(b,lambda)=n pi имеет ровно одно решение lambda_n для каждого n>=1, и они строго упорядочены. Для соответствующего решения theta(a)=0 и theta(b)=n pi; внутренние нули u - это точки, где theta=k pi, k=1,...,n-1. Между соседними такими значениями нет дополнительных нулей, так как r>0 и theta проходит кратные pi последовательно. Следовательно, собственная функция при lambda_n имеет ровно n-1 внутренних нулей. Строгая монотонность theta по lambda является advanced_standard_course, но не требует тяжелой функциональной теории в этой формулировке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value_problem"
+    ],
+    "methods": [
+      "prufer_angle",
+      "sturm_liouville",
+      "zero_count",
+      "shooting_method"
+    ],
+    "objects": [
+      "eigenvalue_sequence",
+      "eigenfunction",
+      "zero_count",
+      "phase_angle"
+    ],
+    "goal": [
+      "prove",
+      "count_zeros"
+    ],
+    "keywords": [
+      "teschl_stanford_bridge",
+      "sturm_liouville",
+      "zero_count",
+      "phase_angle_monotonicity"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 5,
+    "comment": "Основной выход за базовый курс: монотонность фазового угла по спектральному параметру и вывод полного счета нулей.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "eigenvalues",
+    "sturm_liouville",
+    "sturm_zero_count",
+    "prufer_angle",
+    "advanced_standard_course",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-stanford-math63cm-ode",
+      "role": "theory_source",
+      "status": "source_verified",
+      "note": "Stanford Math 63CM ODE notes, §7 Sturm-Liouville theory; monotonicity of the phase angle in lambda and the zero count for the nth eigenfunction."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "english-teschl-stanford-bridge",
+    "notes": [
+      "Карточка намеренно не обсуждает полноту собственных функций и разложения Фурье."
+    ]
+  }
+}

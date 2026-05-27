@@ -1,0 +1,125 @@
+{
+  "id": "cluster-sturm-bvp-unit-endpoints-safe-threshold",
+  "title": "Безопасный порог для y''+f(x)y=0, y(a)=y(b)=1",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f непрерывна на [a,b] и f(x)<C для всех x. Докажите, что при C<=0 краевая задача y''+f(x)y=0, y(a)=1, y(b)=1 обязательно имеет единственное решение. Объясните, почему это безопасный, но вообще не острый порог.",
+        "source_ids": [
+          "src-didin-sturm-oscillation-comparison-audit"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "boundary_value_problem",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Запретить ядро Дирихле энергетическим аргументом",
+      "text": "Если f<0, ненулевое решение однородной задачи с нулевыми концами невозможно: интегрирование y(y''+fy)=0 дает сумму отрицательных членов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как C<=0 и f<C, имеем f(x)<0 на всем [a,b]. Проверим однородное ядро Дирихле. Если u''+f u=0 и u(a)=u(b)=0, то после умножения на u и интегрирования получаем 0=int_a^b u(u''+fu) dx=-int_a^b (u')^2 dx+int_a^b f u^2 dx. Правая часть может быть равна нулю только при u=0, потому что оба слагаемых неположительны, а второе строго отрицательно там, где u не равно нулю. Значит однородного решения с нулевыми концами нет. По лемме о нерезонансе Дирихле задача с заданными концами y(a)=y(b)=1 имеет единственное решение. Порог не острый: например на [0,L] сравнение Штурма дает тот же вывод при всех C<=pi^2/L^2, что допускает положительные C.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "boundary_value"
+    ],
+    "methods": [
+      "energy_identity",
+      "nonresonance",
+      "dirichlet_kernel"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "nonoscillation",
+      "disconjugacy"
+    ],
+    "goal": [
+      "prove_existence_uniqueness"
+    ],
+    "keywords": [
+      "sturm_oscillation_comparison_audit",
+      "unit_endpoints",
+      "safe_threshold"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 2,
+    "comment": "Простой безопасный вариант: вся работа в отсутствии ядра Дирихле.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "boundary_value",
+    "linear_higher_order",
+    "zero_location",
+    "energy_method",
+    "standard_course_methods",
+    "task_cluster",
+    "cluster_representative",
+    "complete_proof",
+    "self_authored",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-didin-sturm-oscillation-comparison-audit",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельная постановка М. Дидина для обязательной темы аудита; точный внешний источник не найден."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-sturm-oscillation-comparison",
+    "notes": [
+      "Добавлена как нижний безопасный порог; не претендует на остроту."
+    ]
+  },
+  "authors": [
+    {
+      "name": "М. Дидин",
+      "role": "author",
+      "status": "attributed_by_user"
+    }
+  ]
+}

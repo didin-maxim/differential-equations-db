@@ -1,0 +1,109 @@
+{
+  "id": "local-du-romanko-first-integral-center",
+  "title": "Центр из первого интеграла с замкнутыми уровнями",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "С помощью первого интеграла доказать, что положение равновесия (0,0) является центром для системы x'=-y(1+x^2), y'=x(1+y^2).",
+        "source_ids": [
+          "src-romanko-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": []
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Найти положительный первый интеграл с изолированным минимумом",
+      "text": "Логарифмические производные подсказывают H=ln(1+x^2)+ln(1+y^2). Его малые уровни - замкнутые овалы вокруг начала, а поле на них не зануляется.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим H(x,y)=ln(1+x^2)+ln(1+y^2). Тогда вдоль решений H' = 2x x'/(1+x^2)+2y y'/(1+y^2) = 2x[-y(1+x^2)]/(1+x^2)+2y[x(1+y^2)]/(1+y^2)=0. Значит H - первый интеграл. В точке (0,0) функция H имеет строгий изолированный минимум, а при малых c>0 линии H=c являются гладкими замкнутыми овалами, близкими к окружностям x^2+y^2=c. На таком овале правые части системы не обращаются одновременно в нуль: из x'=-y(1+x^2)=0 и y'=x(1+y^2)=0 следует x=y=0, а эта точка не лежит на уровне c>0. Поэтому малая траектория не может сойти с своего овала и, двигаясь по компактной гладкой кривой без остановок, периодически обходит его. Следовательно, равновесие является центром.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane"
+    ],
+    "objects": [
+      "center",
+      "closed_level_curve",
+      "equilibrium"
+    ],
+    "goal": [
+      "classify_equilibrium"
+    ],
+    "keywords": [
+      "romanko-selected",
+      "first-integral",
+      "center",
+      "phase-plane",
+      "closed-levels"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "idea_score=7: главное - увидеть, что первый интеграл должен еще иметь замкнутые уровни; technical_score=3: проверка производной короткая.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "first_integral",
+    "phase_plane",
+    "invariant",
+    "nonlinear_system",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_section",
+      "status": "source_verified",
+      "note": "§16, задача 27a: первые интегралы и центр."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-romanko-selected",
+    "notes": [
+      "Добавлено как представитель первых интегралов, где требуется качественный вывод о фазовом портрете, а не только запись H=C."
+    ]
+  }
+}

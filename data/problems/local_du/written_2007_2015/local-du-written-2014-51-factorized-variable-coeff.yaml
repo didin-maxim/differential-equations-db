@@ -1,0 +1,115 @@
+{
+  "id": "local-du-written-2014-51-factorized-variable-coeff",
+  "title": "Линейное уравнение, упрощающееся заменой y=x^3v",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2014-2015, вариант 51, задача 5",
+        "text": "Найти общее решение уравнения x^2 y''-(6+x)xy'+(12+3x)y=x^5 e^{3x}, x>0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Вынести общий степенной множитель",
+      "text": "Подстановка y=x^3v убирает все члены без производных v и превращает левую часть в x^5(v''-v').",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Сначала заметим, что y=x^m e^{lambda x} в однородном уравнении дает условия lambda(lambda-1)=0, m=3. Значит естественно положить y=x^3v. Тогда y'=3x^2v+x^3v', y''=6xv+6x^2v'+x^3v''. После подстановки все члены с v сокращаются, а левая часть равна x^5(v''-v'). Поэтому v''-v'=e^{3x}. Обозначая w=v', получаем w'-w=e^{3x}. Отсюда w=C e^x+e^{3x}/2, v=C1+C2e^x+e^{3x}/6. Следовательно, общее решение исходного уравнения: y=x^3(C1+C2e^x+e^{3x}/6), x>0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order",
+      "variable_coefficients"
+    ],
+    "methods": [
+      "reduction_of_order",
+      "factorization",
+      "linear_first_order"
+    ],
+    "objects": [
+      "ordinary_differential_equation",
+      "mipt_core"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "DE2014-15",
+      "variant_51",
+      "x3_factor"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 6,
+    "technical_score": 6,
+    "local_score": 6,
+    "comment": "Для письменного экзамена это задача на заметную замену y=x^3v; после нее вычисления линейные, но подстановка объемная.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_higher_order",
+    "linear_first_order",
+    "order_reduction_substitution",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "cluster_representative",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Desktop\\ДУ\\DE2014-15.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local_du_written_2007_2015_links",
+    "notes": [
+      "Задача включена как представитель линейных уравнений второго порядка с переменными коэффициентами из письменных вариантов.",
+      "Близкие задачи 2007-2008 и соседних вариантов 2014-2015 отфильтрованы: у них тот же план с подобранным степенно-экспоненциальным множителем."
+    ]
+  }
+}

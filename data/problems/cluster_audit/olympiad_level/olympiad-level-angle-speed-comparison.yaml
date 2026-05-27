@@ -1,0 +1,113 @@
+{
+  "id": "olympiad-level-angle-speed-comparison",
+  "title": "Угловое сравнение для пары дифференциальных неравенств",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "lemma",
+    "secondary": [
+      "standard_idea"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть f и g дифференцируемы на интервале, f^2+g^2>0 и |f'|<=A|g|, |g'|<=A|f|, где A>=0. Тогда для любого непрерывного выбора угла theta=arg(f+ig) выполнено |theta'|<=A. В частности, чтобы повернуть ненулевой вектор (f,g) на угол pi/2, нужно время не меньше pi/(2A).",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Ограничить скорость угла",
+      "text": "Пара неравенств на производные часто означает, что отношение g/f или угол arctan(g/f) не может измениться быстрее заданной константы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "На промежутке, где выбран непрерывный угол, имеем theta'=(f g'-g f')/(f^2+g^2). Поэтому |theta'|<=(|f||g'|+|g||f'|)/(f^2+g^2)<=A(f^2+g^2)/(f^2+g^2)=A. Интегрирование дает |theta(t2)-theta(t1)|<=A|t2-t1|. Если угол должен измениться на pi/2, то |t2-t1|>=pi/(2A). При A=0 угол постоянен.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad"
+    ],
+    "methods": [
+      "angle_comparison",
+      "differential_inequality"
+    ],
+    "objects": [
+      "differential_inequality",
+      "comparison",
+      "zero_location"
+    ],
+    "goal": [
+      "sharp_constant",
+      "recognize_template"
+    ],
+    "keywords": [
+      "angle method",
+      "Putnam 2023 A3",
+      "arctan barrier",
+      "differential inequality"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 10,
+    "idea_score": 10,
+    "technical_score": 4,
+    "comment": "Идея на границе выше экзамена: сам расчет короткий, но выбор угла является типичным олимпиадным распознаванием.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "differential_inequality",
+    "comparison",
+    "zero_location",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "standard_olympiad_pattern",
+      "status": "needs_human_review"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster_olympiad_level_links",
+    "notes": [
+      "Добавлено как распознаваемый шаблон для Putnam 2023 A3 и задач с заменой arctan y в доказательствах взрыва."
+    ]
+  }
+}

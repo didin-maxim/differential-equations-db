@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-lvc-uniqueness-to-direct-tangency",
+      "from": "oral-exam-geometry-linear-second-order-uniqueness",
+      "to": "cluster-linear-variable-graph-direct-tangency",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Локальная единственность задачи Коши сразу запрещает два разных решения с общей касательной.",
+      "backward_text": "Графическая задача является прямым применением единственности к двум начальным данным y(x0), y'(x0).",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-lvc-direct-to-scaled-tangency",
+      "from": "cluster-linear-variable-graph-direct-tangency",
+      "to": "cluster-linear-variable-graph-scaled-tangency",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Если одно решение умножить на константу, скрытая ситуация сводится к прямому касанию.",
+      "backward_text": "Прямое касание - частный случай масштабированного касания при c=1.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-lvc-abel-to-ratio-maximum",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "cluster-linear-variable-graph-ratio-maximum",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Экстремум отношения переводится в W=0, а лемма Абеля превращает это в линейную зависимость решений.",
+      "backward_text": "Графический максимум отношения является визуальной формой абелевского критерия зависимости.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-lvc-abel-to-common-zero",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "cluster-linear-variable-graph-common-zero",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Общий нуль двух решений зануляет W в одной точке; дальше применяется дихотомия Абеля.",
+      "backward_text": "Общий нуль - самый короткий графический способ получить W=0.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-lvc-abel-to-variation-parameters",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "cluster-linear-variable-variation-parameters-fundamental-system",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула вариации параметров делит на вронскиан фундаментальной системы, поэтому нужен факт, что он нигде не обнуляется.",
+      "backward_text": "Вариация параметров показывает вычислительную роль формулы Абеля для переменных коэффициентов.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-lvc-affine-2024-to-three-solutions",
+      "from": "local-du-written-2024-affine-linear-solution-space",
+      "to": "cluster-linear-variable-inhomogeneous-three-solutions",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Письменная задача использует аффинную структуру по двум частным решениям; новая карточка формулирует общий шаблон по трем независимым частным решениям.",
+      "backward_text": "Формула через три решения объясняет, почему разности частных решений в письменной задаче являются однородными решениями.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-lvc-variation-to-three-solutions",
+      "from": "cluster-linear-variable-variation-parameters-fundamental-system",
+      "to": "cluster-linear-variable-inhomogeneous-three-solutions",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Вариация параметров строит одно частное решение по фундаментальной системе, а задача с тремя решениями восстанавливает фундаментальную систему из разностей частных решений.",
+      "backward_text": "Три частных решения позволяют обойти интегралы вариации параметров и получить общее решение алгебраически.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-lvc-reduction-general-to-local-factorized",
+      "from": "oral-exam-excellent-reduction-of-order-nonzero-solution",
+      "to": "local-du-written-2014-51-factorized-variable-coeff",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют известный множитель/замену для снижения порядка переменно-коэффициентного линейного уравнения.",
+      "backward_text": "Письменная задача является вычислительным представителем общей идеи понижения порядка по найденной структуре решения.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-lvc-sturm-separation-to-comparison",
+      "from": "local-du-standard-sturm-separation-zeros",
+      "to": "local-du-8-sturm-comparison-theorem",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Разделение нулей для одного уравнения является базовым вронскианным механизмом перед сравнением двух потенциалов.",
+      "backward_text": "Сравнение Штурма расширяет идею разделения нулей на пару разных уравнений с упорядоченными коэффициентами.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

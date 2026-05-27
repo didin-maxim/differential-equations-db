@@ -1,0 +1,48 @@
+{
+  "relations": [
+    {
+      "id": "rel-orthogonal-basic-circles-to-coaxal-real-base",
+      "from": "orthogonal-trajectories-circles",
+      "to": "cluster-orthogonal-coaxal-real-base-points",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Базовая задача про концентрические окружности и прямые через центр дает правило замены наклона на отрицательно обратный перед коаксиальным пучком через две точки.",
+      "backward_text": "Пучок окружностей через (1,0) и (-1,0) является следующим геометрическим уровнем после концентрических окружностей: та же идея наклонов, но появляется сопряженный коаксиальный пучок.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-waterloo-family-circles-to-coaxal-real-base",
+      "from": "waterloo-family-circles-recover-ode",
+      "to": "cluster-orthogonal-coaxal-real-base-points",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Waterloo-карточка учит восстанавливать ОДУ из семейства окружностей; новая карточка добавляет к этому шаг ортогонального наклона и геометрию сопряженного пучка.",
+      "backward_text": "Коаксиальный пучок через две точки показывает, зачем recover-ODE из семейства полезен в задачах на ортогональные траектории.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-coaxal-real-base-to-imaginary-base-contrast",
+      "from": "cluster-orthogonal-coaxal-real-base-points",
+      "to": "cluster-orthogonal-coaxal-imaginary-base-points",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Пучок с двумя действительными общими точками контрастирует с пучком без действительных общих точек; в ортогонально сопряженной паре эти роли меняются местами.",
+      "backward_text": "Непересекающийся пучок x^2+y^2-2ax+1=0 возвращает как ортогональные траектории пучок через (1,0) и (-1,0), то есть ту же пару с переставленными ролями.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-coaxal-real-base-to-confocal-conics",
+      "from": "cluster-orthogonal-coaxal-real-base-points",
+      "to": "cluster-orthogonal-confocal-conics-gradient",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Коаксиальные окружности дают первое знакомство с ортогональными сетками; софокусные коники переносят ту же идею на уровни суммы и разности расстояний до фокусов.",
+      "backward_text": "Софокусные эллипсы и гиперболы являются более геометричным и менее вычислительным примером ортогональных траекторий после пучков окружностей.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

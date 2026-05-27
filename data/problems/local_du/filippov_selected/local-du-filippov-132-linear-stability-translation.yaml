@@ -1,0 +1,114 @@
+{
+  "id": "local-du-filippov-132-linear-stability-translation",
+  "title": "Устойчивость одного решения линейной системы переносится на все решения",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "local_du"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Филиппов, задача 132 из раздела теоретических вопросов",
+        "text": "Доказать, что если одно решение линейной системы устойчиво, то устойчиво каждое решение этой системы.",
+        "source_ids": [
+          "src-filippov-problem-book"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разность двух решений подчиняется одной однородной системе",
+      "text": "Для линейной системы устойчивость траектории зависит не от самой траектории, а от уравнения для малых отклонений. Отклонения от любых двух решений удовлетворяют одному и тому же однородному уравнению.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим линейную систему x'=A(t)x+b(t); однородный случай получается при b=0. Пусть phi(t) - устойчивое решение. Если psi(t) - другое решение, то разность любых двух решений неоднородной системы удовлетворяет однородной системе z'=A(t)z. Устойчивость phi означает: для любого epsilon существует delta такое, что всякое решение, начавшееся delta-близко к phi(t0), остается epsilon-близко к phi(t) при t>=t0. Но это ровно утверждение, что нулевое решение системы z'=A(t)z устойчиво. Для решения psi отклонение соседнего решения от psi снова удовлетворяет той же системе z'=A(t)z. Поэтому тот же delta обеспечивает малость отклонения от psi. Следовательно psi устойчиво. Так как psi было произвольным, устойчивы все решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous"
+    ],
+    "methods": [
+      "linear_superposition",
+      "stability_reduction"
+    ],
+    "objects": [
+      "linear_system",
+      "stability",
+      "difference_of_solutions"
+    ],
+    "goal": [
+      "prove",
+      "qualitative"
+    ],
+    "keywords": [
+      "filippov-132",
+      "linear-stability",
+      "difference-equation",
+      "translation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "idea_score=6: надо распознать устойчивость как свойство уравнения для отклонений; technical_score=2: вычислений нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "linear_systems",
+    "stability",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "selected_problem",
+      "status": "source_verified",
+      "note": "Филиппов, §24, задача 132."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "local-du-filippov-selected",
+    "notes": [
+      "Отобрано как текстовая проверка понимания устойчивости линейных систем, не как вычисление собственных чисел."
+    ]
+  }
+}

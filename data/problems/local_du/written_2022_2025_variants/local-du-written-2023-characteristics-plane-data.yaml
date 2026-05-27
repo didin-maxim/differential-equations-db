@@ -1,0 +1,114 @@
+{
+  "id": "local-du-written-2023-characteristics-plane-data",
+  "title": "Линейное уравнение в частных производных методом характеристик",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "ДУ_В_23, задача 3",
+        "text": "Найдите общее решение уравнения x u_x+2y u_y+x u_z=0, x>0, и решите задачу Коши u=(x-z)/x при x=y.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Найти первые интегралы характеристик",
+      "text": "Характеристическая система dx/x=dy/(2y)=dz/x дает два инварианта; данные на плоскости x=y выражают произвольную функцию через них.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристики удовлетворяют dx/ds=x, dy/ds=2y, dz/ds=x. Из dy/dx=2y/x получаем первый интеграл I1=y/x^2. Из dz/dx=1 получаем I2=z-x. Поэтому общее решение имеет вид u=Phi(y/x^2,z-x). На начальной поверхности x=y имеем I1=1/x и I2=z-x, а заданное значение u=(x-z)/x=-(z-x)/x=-I1 I2. Следовательно, Phi(I1,I2)=-I1 I2, и решение задачи Коши равно u(x,y,z)=-(y/x^2)(z-x)=y(x-z)/x^2.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde",
+      "characteristic_system"
+    ],
+    "methods": [
+      "method_of_characteristics",
+      "first_integrals"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "cauchy_data_on_surface"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "ДУ_В_23",
+      "characteristics",
+      "first_integrals"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 4,
+    "local_score": 4,
+    "comment": "Метод характеристик стандартен; вычисления короткие и хорошо проверяются подстановкой.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "first_integral",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem",
+    "noncharacteristic_curve",
+    "standard_course_methods",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "ДУ_В_23.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Импортирован как базовый представитель задач первого порядка в частных производных через характеристики.",
+      "При аудите PDE-characteristics перенесена из fragment=systems в first_order и поднята до exam_score_5: это письменная задача на два инварианта и перенос данных с плоскости.",
+      "ДУ_В_22 задача 6 не импортирована как близкий дубль по плану; она отличается более громоздкими инвариантами y^2-z^2 и x/(y^2z), но не новым методом."
+    ]
+  }
+}

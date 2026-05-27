@@ -1,0 +1,257 @@
+{
+  "relations": [
+    {
+      "id": "rel-orphan-audit-resonance-double-root-undetermined",
+      "from": "weak-pass-resonance-double-root",
+      "to": "resit-pass-3-undetermined-coefficients",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Обе карточки используют метод неопределенных коэффициентов для линейного ОДУ с постоянными коэффициентами; первая показывает резонанс и необходимость множителя x, вторая дает базовый нерезонансный случай.",
+      "backward_text": "Базовое неоднородное уравнение y''+y=1 полезно сравнить с резонансной правой частью: там тот же подбор частного решения требует поправки на кратность корня.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-orphan-audit-resonance-double-root-second-order",
+      "from": "weak-pass-resonance-double-root",
+      "to": "constant-coeff-second-order-resonance",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах переносимый механизм один: правая часть попадает в корень характеристического многочлена, поэтому пробное частное решение умножается на нужную степень x.",
+      "backward_text": "Карточка про второе уравнение с постоянными коэффициентами является более ранним представителем того же резонансного подбора частного решения.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-orphan-audit-third-order-parameter-modes",
+      "from": "local-du-written-2014-51-constant-coeff-third-order",
+      "to": "local-du-written-2020-parameter-limit-modes",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки читаются через характеристический многочлен скалярного уравнения: в первой он нужен для построения общего решения, во второй - для отбора мод, не нарушающих предельное условие.",
+      "backward_text": "Параметрическая задача использует тот же анализ корней, что и вычислительное уравнение третьего порядка, но переносит его с решения на асимптотику разности решений.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-orphan-audit-euler-change-inverse-square",
+      "from": "euler-cauchy-equation",
+      "to": "local-du-written-2022-inverse-square-change",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют замену независимой переменной, которая превращает переменные коэффициенты в уравнение с постоянными коэффициентами; различается только форма удобной замены.",
+      "backward_text": "Задача с t=1/x^2 является более хитрым вариантом той же идеи, что уравнение Эйлера: сначала найти правильную шкалу независимой переменной, потом решать постоянные коэффициенты.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-orphan-audit-variation-sine-basic",
+      "from": "variation-of-parameters-sine",
+      "to": "basic-mipt-variation-constants-ypp-plus-y",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют одну формулу вариации постоянных для y''+y=f(x); разница только в правой части и технической тяжести интегралов.",
+      "backward_text": "Базовая карточка y''+y=1 является короткой тренировкой перед примером с sec x, где тот же метод требует аккуратных тригонометрических интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-orphan-audit-variation-system-two-point",
+      "from": "inhomogeneous-linear-system-variation",
+      "to": "oral-exam-excellent-two-point-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Формула вариации постоянных для системы дает язык фундаментальной матрицы, который затем используется в двухточечном условии x(a)+Bx(b)=c.",
+      "backward_text": "Двухточечная задача не требует длинного интегрирования, но использует тот же объект X(t), что и вариация постоянных для неоднородной линейной системы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-orphan-audit-fundamental-change-flow-inverse",
+      "from": "oral-above-three-fundamental-matrix-change-basis",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки проверяют фундаментальную матрицу как оператор потока: одна фиксирует замену базиса Y=XC, другая использует групповое свойство и обратный поток.",
+      "backward_text": "Waterloo-карточка про обратный поток является динамической формой того же факта: фундаментальная матрица задает изоморфизм пространства начальных данных.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-orphan-audit-liouville-area-trace-zero",
+      "from": "oral-above-three-liouville-area-preservation",
+      "to": "oral-exam-excellent-trace-zero-no-total-decay",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "В обеих задачах работает формула Лиувилля det X(t)=det X(t0) exp(int tr A): нулевой след сохраняет площадь или объем и запрещает одновременное затухание всех независимых решений.",
+      "backward_text": "Задача про невозможность полного затухания является более сильным качественным следствием той же trace/determinant идеи, что и сохранение площади в R^2.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-orphan-audit-liouville-matrix-exp-det",
+      "from": "oral-above-three-liouville-area-preservation",
+      "to": "cluster-matrix-exp-det-trace-shortcut",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Формула Лиувилля для неавтономной фундаментальной матрицы обобщает короткий факт det(e^{At})=e^{t tr A} из карточки про матричную экспоненту.",
+      "backward_text": "Детерминант экспоненты постоянной матрицы - частный случай trace/determinant механизма, который в устной карточке применяется к площади параллелограмма решений.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-orphan-audit-stability-translation-difference",
+      "from": "local-du-filippov-132-linear-stability-translation",
+      "to": "oral-exam-excellent-trace-zero-no-total-decay",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе задачи используют линейную структуру пространства решений, но разные переносимые механизмы: устойчивость переносится через разность решений, а запрет полного затухания - через определитель фундаментальной матрицы.",
+      "backward_text": "Trace-zero карточка полезно сравнивает линейность решений с объемным инвариантом: не всякое качественное свойство переносится только разностью решений.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-orphan-audit-jordan-system-matrix-exp",
+      "from": "oral-middle-triangular-system-jordan",
+      "to": "linear-system-jordan-block",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки демонстрируют жорданов множитель t в решении линейной системы с постоянными коэффициентами; устная версия делает это на минимальной треугольной системе.",
+      "backward_text": "Жорданова клетка из базовой карточки является матричным прототипом короткой устной задачи, где множитель t виден прямо из треугольной системы.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-orphan-audit-global-integrals-exp-det",
+      "from": "local-du-written-2016-global-first-integrals-source",
+      "to": "cluster-matrix-exp-det-trace-shortcut",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих карточках выгодно читать инварианты системы из e^{tA}: детерминант/след дают вронскиан, а структура экспоненты подсказывает первые интегралы.",
+      "backward_text": "Короткая determinant/trace карточка является базовым фрагментом для письменной задачи, где по явной e^{tA} нужно извлечь вронскиан и глобальные первые интегралы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-orphan-audit-dirichlet-resonance-filippov-trench",
+      "from": "local-du-filippov-763-dirichlet-resonance-no-solution",
+      "to": "trench-bvp-dirichlet-resonance-sine-condition",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют резонансную альтернативу для задачи Дирихле: ненулевое ядро однородного оператора заставляет правую часть удовлетворять условию ортогональности.",
+      "backward_text": "Trench-карточка формулирует общий критерий разрешимости, частным случаем которого является вопрос Филиппова о параметрах a, при которых решений нет.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-orphan-audit-resonance-green-function",
+      "from": "trench-bvp-dirichlet-resonance-sine-condition",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "special_case",
+      "distance": 1,
+      "forward_text": "Карточка y''+y=F на [0,pi] является коротким частным случаем общей резонансной альтернативы для линейной краевой задачи.",
+      "backward_text": "Общая Trench-карточка объясняет тот же механизм через ядро и условие совместности; конкретный синусовый пример удобен для устной проверки.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-orphan-audit-resonance-green-identity",
+      "from": "trench-bvp-dirichlet-resonance-sine-condition",
+      "to": "trench-bvp-green-identity-self-adjoint-boundary",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Условие ортогональности правой части в резонансной задаче возникает из того же интегрирования по частям, которое в Green identity карточке записано как самосопряженное тождество.",
+      "backward_text": "Тождество Грина является теоретическим источником резонансной альтернативы: в конкретной задаче Дирихле оно превращается в один интеграл против sin x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-orphan-audit-shooting-two-point-matrix",
+      "from": "shooting-linear-bvp",
+      "to": "oral-exam-excellent-two-point-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Метод стрельбы для y''=0 является одномерным прототипом матричного условия через фундаментальную матрицу: неизвестный начальный наклон заменяется неизвестным начальным вектором.",
+      "backward_text": "Двухточечная системная задача обобщает стрельбу: вместо одного параметра решается линейная система для начальных данных через X(a) и X(b).",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-orphan-audit-endpoint-energy-sturm",
+      "from": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+      "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки доказывают запрет ненулевого решения с двумя нулями через интегральную энергетическую форму при q<=0; это конкретный механизм дисконъюгированности.",
+      "backward_text": "Теоретическая карточка T3 через Штурма имеет тот же энергетический скелет, который в устной задаче применяется к линейной комбинации двух решений.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-orphan-audit-endpoint-energy-cluster",
+      "from": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+      "to": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки используют энергетическую оценку для уравнения второго порядка: одна запрещает два нуля, другая дает количественную границу решения.",
+      "backward_text": "Оценка решения с экспоненциальным коэффициентом является более вычислительным вариантом той же энергетической культуры, что и запрет двух нулей.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-orphan-audit-weighted-sturm-liouville",
+      "from": "lebl-diffyqs-weighted-sturm-exponential",
+      "to": "trench-bvp-weighted-orthogonality",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют самосопряженную форму (p y')'+lambda w y=0 и весовую ортогональность собственных функций; Lebl-пример дает явный спектр.",
+      "backward_text": "Trench-карточка фиксирует общий весовой механизм ортогональности, который в Lebl-задаче применяется после устранения первой производной.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-orphan-audit-euler-log-spectrum-cauchy",
+      "from": "trench-bvp-euler-log-spectrum",
+      "to": "euler-cauchy-equation",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих задачах ключевая замена x=e^t превращает уравнение Эйлера в постоянные коэффициенты; в спектральной задаче граничные точки дают длину логарифмического интервала.",
+      "backward_text": "Обычное уравнение Эйлера является локальной тренировкой перед краевой задачей, где та же логарифмическая замена приводит к спектру.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-orphan-audit-airy-series-middle",
+      "from": "power-series-airy-at-zero",
+      "to": "mipt-middle-power-series-recurrence",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки строят рекурсию коэффициентов степенного решения около обычной точки для уравнения вида y''+/- x y=0.",
+      "backward_text": "Средняя устная карточка является более дидактической версией того же приема подстановки ряда и сдвига индексов.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-orphan-audit-series-first-coefficients-middle",
+      "from": "weak-pass-series-first-coefficients",
+      "to": "mipt-middle-power-series-recurrence",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Карточка для слабого студента тренирует первые коэффициенты той же рекурсии, которую средняя карточка просит вывести в общем виде.",
+      "backward_text": "Общая рекуррентная формула объясняет, почему в простой карточке первые коэффициенты определяются начальными данными и следующими шагами рекурсии.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-orphan-audit-frobenius-euler-cauchy",
+      "from": "regular-singular-euler-frobenius",
+      "to": "euler-cauchy-equation",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Индикаторное уравнение Фробениуса в регулярной особой точке обобщает степенной поиск решения для уравнения Эйлера.",
+      "backward_text": "Уравнение Эйлера является модельным случаем, где индикаторное уравнение сразу дает точные степени x^r.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

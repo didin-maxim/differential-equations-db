@@ -1,0 +1,21 @@
+{
+  "id": "local-du-deficit-thinking",
+  "title": "Точечные задачи на дефицитные темы программы 8.pdf",
+  "created_at": "2026-05-26",
+  "scope": [
+    "local_du",
+    "program_deficit",
+    "deficit_thinking"
+  ],
+  "problem_ids": [
+    "local-du-deficit-first-order-pde-characteristics",
+    "local-du-deficit-sturm-nonpositive-potential-bvp",
+    "local-du-deficit-variational-quadratic-threshold"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка намеренно мала: добавлены только представители пустых или почти пустых программных блоков.",
+    "Карточки письменных экзаменов не редактировались; источник - локальный файл 8.pdf с программой и заданиями.",
+    "Простейшая задача вариационного исчисления отмечена как потенциально перегружаемый кластер: дальше добавлять только новые механизмы, а не однотипные квадратичные функционалы."
+  ]
+}

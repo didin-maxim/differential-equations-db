@@ -1,0 +1,117 @@
+{
+  "id": "oral-exam-excellent-duffing-energy-periodic",
+  "title": "Периодичность нелинейного осциллятора без явного решения",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Докажите, что каждое ненулевое решение уравнения x''+x+x^3=0 является периодическим. Явно решать уравнение не требуется.",
+        "source_ids": [
+          "src-mipt-oral-exam-model-tasks"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Энергия задает компактную замкнутую фазовую кривую",
+      "text": "У осциллятора сохраняется H=v^2/2+x^2/2+x^4/4. Ненулевой уровень энергии является замкнутой кривой в фазовой плоскости без равновесий; движение по такой кривой возвращается в исходную точку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим v=x'. Тогда система имеет вид x'=v, v'=-x-x^3. Вдоль решений сохраняется H(x,v)=v^2/2+x^2/2+x^4/4, потому что H'=v(-x-x^3)+(x+x^3)v=0. Для ненулевого решения энергия E>0. Уровень H=E компактен и задается формулой v=+-sqrt(2E-x^2-x^4/2), где x лежит между двумя конечными поворотными точками -a и a. На этом уровне нет равновесий: равновесие системы только (0,0), оно имеет энергию 0. Поэтому траектория с E>0 движется по всей замкнутой овальной кривой уровня. Время одного обхода конечно: например половина периода равна int_{-a}^a dx/sqrt(2E-x^2-x^4/2), а около поворотных точек знаменатель имеет обычную корневую особенность, дающую сходящийся интеграл. После одного обхода фазовая точка (x,v) возвращается в исходное положение; по единственности дальнейшее движение повторяется. Значит x(t) периодична.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_second_order",
+      "qualitative"
+    ],
+    "methods": [
+      "energy_first_integral",
+      "phase_plane"
+    ],
+    "objects": [
+      "first_integral",
+      "periodic_solution",
+      "phase_plane"
+    ],
+    "goal": [
+      "prove",
+      "qualitative"
+    ],
+    "keywords": [
+      "duffing_oscillator",
+      "energy_level",
+      "periodic_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 4,
+    "comment": "Нужно связать первый интеграл, компактный уровень и единственность движения по фазовой кривой; явных интегралов почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "oral_exam",
+    "excellent_check",
+    "model_exam_task",
+    "self_authored",
+    "mipt_core",
+    "advanced_standard_course",
+    "low_technical",
+    "first_integral",
+    "energy_method",
+    "phase_plane",
+    "periodic_solution"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-oral-exam-model-tasks",
+      "role": "self_authored_model_task",
+      "status": "source_verified",
+      "note": "Составлено как устная задача на применение энергии к качественной фазовой картине."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-26",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "oral_exam_excellent_links",
+    "notes": [
+      "Проверены карточки по энергии осциллятора и запрету периодических траекторий при убывающей энергии; задачи о периодичности всех ненулевых решений x''+x+x^3=0 не было."
+    ]
+  }
+}

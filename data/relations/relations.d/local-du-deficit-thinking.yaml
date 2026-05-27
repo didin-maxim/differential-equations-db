@@ -1,0 +1,37 @@
+{
+  "relations": [
+    {
+      "id": "rel-local-du-deficit-sturm-shooting-bvp",
+      "from": "shooting-linear-bvp",
+      "to": "local-du-deficit-sturm-nonpositive-potential-bvp",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют параметр начального наклона для сведения краевого условия к задаче Коши.",
+      "backward_text": "Энергетическая единственность показывает, почему в этой краевой задаче параметр стрельбы выбирается единственным образом.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-local-du-deficit-variational-dirichlet-eigenvalue",
+      "from": "dirichlet-eigenvalues-interval",
+      "to": "local-du-deficit-variational-quadratic-threshold",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Первое собственное значение задачи Дирихле задает порог знака второй вариации квадратичного функционала.",
+      "backward_text": "Вариационная задача показывает, как спектральный порог задачи Дирихле превращается в критерий минимума.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-local-du-deficit-sturm-variational-energy-threshold",
+      "from": "local-du-deficit-sturm-nonpositive-potential-bvp",
+      "to": "local-du-deficit-variational-quadratic-threshold",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе карточки решают вопрос существования или экстремума через знак интегральной квадратичной формы.",
+      "backward_text": "Квадратичный функционал является вариационным вариантом той же энергетической проверки знака.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    }
+  ]
+}

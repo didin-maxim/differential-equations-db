@@ -1,0 +1,24 @@
+{
+  "id": "cluster-mipt-excellent-level",
+  "title": "Аудит верхнего экзаменационного уровня МФТИ",
+  "created_at": "2026-05-27",
+  "scope": [
+    "oral_exam",
+    "excellent_check",
+    "strong_student_check",
+    "advanced_standard_course",
+    "mipt_excellent_level_audit"
+  ],
+  "problem_ids": [
+    "mipt-excellent-semilinear-characteristics-blowup",
+    "mipt-excellent-periodic-system-resonant-monodromy",
+    "mipt-excellent-second-parameter-correction",
+    "mipt-excellent-legendre-violation-no-minimum"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавлены только компактные идейные карточки без тяжелых интегралов и без массового расширения насыщенных кластеров.",
+    "Источник всех новых карточек: src-mipt-oral-exam-model-tasks; это self_authored модельные задачи, составленные для границы уровня отличника.",
+    "Связи вынесены только в data/relations/relations.d/cluster-mipt-excellent-level.yaml."
+  ]
+}
