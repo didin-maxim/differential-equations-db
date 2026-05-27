@@ -1,4 +1,4 @@
-# Аудит сильного письменного экзамена: хор(7)-отл(8)
+﻿# Аудит сильного письменного экзамена: хор(7)-отл(8)
 
 Роль прохода: пользователь-аудитор базы, сильный студент МФТИ, который готовится именно к письменному экзамену, а не к олимпиаде. Смотрел прежде всего карточки `idea_score` 6..8 с метками/контекстом `exam_score_7`, `exam_score_8`, `advanced_standard_course`, `mipt_core`, а также доступность через `viewer/index.html` и `index/generated.json`.
 
@@ -79,7 +79,7 @@
 - `cluster-variational-transversality-moving-endpoint` - хорошая короткая задача на трансверсальность, `idea_score=6`, `technical_score=3`.
 - `cluster-variational-euler-poisson-free-end` - свободный конец, `idea_score=6`, `technical_score=4`.
 - `local-du-written-2021-free-endpoint-cubic-variation` - письменная задача с хорошей посадкой, `idea_score=6`, `technical_score=3`.
-- `local-du-deficit-variational-quadratic-threshold` - порог экстремума, `idea_score=7`, `technical_score=4`.
+- `local-du-deficit-variational-quadratic-bound` - порог экстремума, `idea_score=7`, `technical_score=4`.
 - `mipt-excellent-legendre-violation-no-minimum` - аккуратная задача на 8 без большого счета, `idea_score=8`, `technical_score=3`.
 
 С осторожностью:

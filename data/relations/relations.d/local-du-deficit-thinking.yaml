@@ -14,18 +14,18 @@
     {
       "id": "rel-local-du-deficit-variational-dirichlet-eigenvalue",
       "from": "dirichlet-eigenvalues-interval",
-      "to": "local-du-deficit-variational-quadratic-threshold",
+      "to": "local-du-deficit-variational-quadratic-bound",
       "type": "prerequisite",
       "distance": 1,
-      "forward_text": "Первое собственное значение задачи Дирихле задает порог знака второй вариации квадратичного функционала.",
-      "backward_text": "Вариационная задача показывает, как спектральный порог задачи Дирихле превращается в критерий минимума.",
+      "forward_text": "Первое собственное значение задачи Дирихле задает смену знака второй вариации квадратичного функционала.",
+      "backward_text": "Вариационная задача показывает, как первое собственное значение задачи Дирихле превращается в критерий минимума.",
       "status": "ai_checked",
       "confidence": 0.88
     },
     {
-      "id": "rel-local-du-deficit-sturm-variational-energy-threshold",
+      "id": "rel-local-du-deficit-sturm-variational-energy-bound",
       "from": "local-du-deficit-sturm-nonpositive-potential-bvp",
-      "to": "local-du-deficit-variational-quadratic-threshold",
+      "to": "local-du-deficit-variational-quadratic-bound",
       "type": "same_method",
       "distance": 2,
       "forward_text": "Обе карточки решают вопрос существования или экстремума через знак интегральной квадратичной формы.",

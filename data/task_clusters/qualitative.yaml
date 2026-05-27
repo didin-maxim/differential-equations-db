@@ -118,7 +118,7 @@
         "mit-18034-pset09-lyapunov-nonlinear-stable",
         "mit-18034-pset09-omega-limit-linearization",
         "waterloo-second-order-pq-stability",
-        "waterloo-critical-damping-crossing-threshold",
+        "waterloo-critical-damping-crossing-condition",
         "waterloo-oscillator-speed-before-crossing",
         "putnam-early-1960-b3-fluid-flow",
         "msu-ode-2012-9-negative-instant-spectrum",
@@ -186,7 +186,7 @@
         "prefer_new_cards": [
           "Короткая задача на выбор неочевидной энергии без тяжелой алгебры.",
           "Наглядный мост к устойчивости по Ляпунову, если он не дублирует phase-line-stability.",
-          "Один аккуратный пример на параметрический энергетический порог, если он не является задачей Штурма."
+          "Один аккуратный пример на критическое значение параметра в энергетическом рассуждении, если он не является задачей Штурма."
         ]
       },
       "representative_card_ids": [
@@ -241,7 +241,7 @@
         },
         {
           "id": "linear_growth_global",
-          "description": "Глобальность через оценку |f(t,x)|<=M(t)+L(t)|x| и Гронуолла.",
+          "description": "Глобальность через оценку |f(t,x)|≤M(t)+L(t)|x| и Гронуолла.",
           "use_when": "Когда задача учит априорной оценке нормы, а не только ограниченной правой части."
         },
         {
@@ -256,7 +256,7 @@
         },
         {
           "id": "implicit_regular_ivp",
-          "description": "Регулярная неявная задача F(t,y,y')=0 при F_p != 0.",
+          "description": "Регулярная неявная задача F(t,y,y')=0 при F_p ≠ 0.",
           "use_when": "Когда центральная идея - разрешить уравнение относительно производной и затем применить Пикара-Линделефа."
         }
       ],

@@ -32,6 +32,13 @@ def load_task_clusters():
     return clusters
 
 
+def load_task_blocks():
+    blocks = []
+    for path in data_files("task_blocks"):
+        blocks.extend(load_json_file(path, {}).get("blocks", []))
+    return blocks
+
+
 def load_exam_simulation_config():
     base = ROOT / "data" / "exam_simulation"
     config = load_json_file(base / "config.yaml", {})
@@ -224,6 +231,100 @@ def cluster_memberships(problem_id, clusters):
     return compact(memberships)
 
 
+def query_matches_card(card, query):
+    if not isinstance(query, dict):
+        return False
+    fragments = set(query.get("fragment_ids") or [])
+    tags = set(query.get("tag_ids") or [])
+    any_tags = set(query.get("any_tag_ids") or [])
+    exclude_tags = set(query.get("exclude_tag_ids") or [])
+    card_tags = set(card.get("tags") or [])
+    if fragments and card.get("fragment") not in fragments:
+        return False
+    if tags and not tags.issubset(card_tags):
+        return False
+    if any_tags and not (any_tags & card_tags):
+        return False
+    if exclude_tags and (exclude_tags & card_tags):
+        return False
+    return True
+
+
+def apply_task_blocks(cards, clusters, blocks):
+    cluster_to_block = {}
+    block_labels = {block.get("id"): block.get("title") or block.get("id") for block in blocks}
+    for block in blocks:
+        for cluster_id in block.get("cluster_ids") or []:
+            cluster_to_block[cluster_id] = block.get("id")
+
+    for card in cards:
+        block_ids = compact(cluster_to_block.get(cluster_id) for cluster_id in (card.get("cluster_ids") or []))
+        if card.get("kind") == "problem" and not card.get("cluster_ids"):
+            for block in blocks:
+                if any(query_matches_card(card, query) for query in block.get("unclustered_queries") or []):
+                    block_ids = compact([block.get("id")])
+                    break
+        card["task_block_ids"] = block_ids
+        card["task_block_labels"] = [block_labels.get(block_id, block_id) for block_id in block_ids]
+        if block_ids:
+            card["search_text"] = "\n".join(
+                [
+                    card.get("search_text") or "",
+                    " ".join(block_ids),
+                    " ".join(card["task_block_labels"]),
+                ]
+            ).lower()
+
+    cluster_ids = {cluster.get("id") for cluster in clusters}
+    enriched_blocks = []
+    for block in blocks:
+        cluster_ids_in_block = [cluster_id for cluster_id in (block.get("cluster_ids") or []) if cluster_id in cluster_ids]
+        cluster_id_set = set(cluster_ids_in_block)
+        block_cards = [
+            card
+            for card in cards
+            if cluster_id_set & set(card.get("cluster_ids") or [])
+        ]
+        unclustered_cards = [
+            card
+            for card in cards
+            if card.get("kind") == "problem"
+            and not card.get("cluster_ids")
+            and block.get("id") in (card.get("task_block_ids") or [])
+        ]
+        unclustered_summaries = []
+        for query in block.get("unclustered_queries") or []:
+            matched = [
+                card
+                for card in unclustered_cards
+                if query_matches_card(card, query)
+            ]
+            if not matched:
+                continue
+            unclustered_summaries.append(
+                {
+                    "id": query.get("id"),
+                    "title": query.get("title") or query.get("id"),
+                    "fragment_ids": query.get("fragment_ids") or [],
+                    "tag_ids": query.get("tag_ids") or [],
+                    "any_tag_ids": query.get("any_tag_ids") or [],
+                    "count": len(matched),
+                }
+            )
+        item = {
+            **block,
+            "cluster_ids": cluster_ids_in_block,
+            "cluster_count": len(cluster_ids_in_block),
+            "card_count": len(block_cards) + len(unclustered_cards),
+            "problem_count": sum(1 for card in block_cards if card.get("kind") == "problem") + len(unclustered_cards),
+            "unclustered_problem_count": len(unclustered_cards),
+            "unclustered_problem_ids": [card.get("id") for card in unclustered_cards],
+            "unclustered_summaries": unclustered_summaries,
+        }
+        enriched_blocks.append(item)
+    return enriched_blocks
+
+
 def build_cards(problem_files, clusters, sources, standard_ideas, definitions):
     source_labels = {
         item.get("id"): item.get("short_name") or item.get("short_title") or item.get("title") or item.get("id")
@@ -298,6 +399,8 @@ def build_cards(problem_files, clusters, sources, standard_ideas, definitions):
                 "authors": authors,
                 "cluster_ids": cluster_ids,
                 "cluster_labels": [cluster_labels.get(item, item) for item in cluster_ids],
+                "task_block_ids": [],
+                "task_block_labels": [],
                 "standard_idea_ids": idea_ids,
                 "standard_idea_labels": [idea_labels.get(item, item) for item in idea_ids],
                 "definition_ids": def_ids,
@@ -328,15 +431,19 @@ def build_data():
     standard_ideas = load_standard_ideas()
     definitions = load_definitions()
     clusters = load_task_clusters()
+    blocks = load_task_blocks()
+    cards = build_cards(problem_files, clusters, sources, standard_ideas, definitions)
+    blocks = apply_task_blocks(cards, clusters, blocks)
     exam_simulation = load_exam_simulation_config()
     return {
         "problems": problems,
-        "cards": build_cards(problem_files, clusters, sources, standard_ideas, definitions),
+        "cards": cards,
         "relations": load_relations(),
         "sources": sources,
         "definitions": definitions,
         "standard_ideas": standard_ideas,
         "task_clusters": clusters,
+        "task_blocks": blocks,
         "exam_simulation": exam_simulation,
         "taxonomy": taxonomy(),
         "meta": {
@@ -344,6 +451,7 @@ def build_data():
             "problem_count": problem_count,
             "theory_count": theory_count,
             "cluster_count": len(clusters),
+            "task_block_count": len(blocks),
             "exam_simulation_version": exam_simulation.get("exam_simulation_version"),
         },
     }

@@ -9,7 +9,7 @@
     "waterloo-log-family-qualitative-recover",
     "waterloo-singular-linear-qualitative-sketch",
     "waterloo-second-order-pq-stability",
-    "waterloo-critical-damping-crossing-threshold",
+    "waterloo-critical-damping-crossing-condition",
     "waterloo-oscillator-speed-before-crossing",
     "waterloo-spiral-phase-portrait-isoclines",
     "waterloo-fundamental-matrix-flow-inverse"

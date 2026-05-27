@@ -62,11 +62,11 @@
   <text class="label" x="639" y="252">T2</text>
 
   <circle class="root" cx="304" cy="360" r="7"/>
-  <text class="small" x="264" y="392">x1</text>
+  <text class="small" x="264" y="392">x_1</text>
   <circle class="root" cx="626" cy="360" r="7"/>
-  <text class="small" x="608" y="392">x2</text>
+  <text class="small" x="608" y="392">x_2</text>
 
   <text class="small" x="343" y="104">касательная из A</text>
   <text class="small" x="615" y="232">касательная из A</text>
-  <text class="caption" x="248" y="438">x1 и x2 - абсциссы точек касания, значит a(x1)=a(x2)=0</text>
+  <text class="caption" x="248" y="438">x_1 и x_2 - абсциссы точек касания, значит a(x_1)=a(x_2)=0</text>
 </svg>

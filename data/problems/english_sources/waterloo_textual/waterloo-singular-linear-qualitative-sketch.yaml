@@ -2,39 +2,76 @@
   "id": "waterloo-singular-linear-qualitative-sketch",
   "title": "Качественный эскиз линейного уравнения с сингулярной прямой",
   "fragment": "first_order",
-  "kind": {"primary": "problem", "secondary": []},
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
   "language": "ru",
   "statements": {
-    "original": [{
-      "id": "stmt-original",
-      "title": "Линейное уравнение около особой точки",
-      "text": "Рассмотрите уравнение x y' + (x+1)y=e^{-x}. Найдите семейство решений на промежутках x>0 и x<0 и объясните качественную структуру эскиза около x=0: какие решения продолжаются гладко, а какие имеют вертикальную асимптоту.",
-      "source_ids": ["src-waterloo-amath250-notes"],
-      "status": "ai_checked",
-      "self_contained": {"status": "ai_checked"},
-      "definition_ids": ["linear_first_order_equation"]
-    }]
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Линейное уравнение около особой точки",
+        "text": "Рассмотрите уравнение x y' + (x+1)y=\\(e^{-x}\\). Найдите семейство решений на промежутках x>0 и x<0 и объясните качественную структуру эскиза около x=0: какие решения продолжаются гладко, а какие имеют вертикальную асимптоту.",
+        "source_ids": [
+          "src-waterloo-amath250-notes"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_first_order_equation"
+        ]
+      }
+    ]
   },
-  "ideas": [{
-    "id": "idea-main",
-    "title": "Сингулярная точка решает судьбу эскиза",
-    "text": "На каждом из промежутков x>0 и x<0 работает обычный интегрирующий множитель. Но качественно важнее член C/x: только одна кривая проходит через x=0 без разрыва.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["integrating_factor_linear"]
-  }],
-  "solutions": [{
-    "id": "sol-main",
-    "title": "Решение",
-    "text": "При x не равном нулю уравнение имеет вид y'+(1+1/x)y=e^{-x}/x. Интегрирующий множитель на каждом из промежутков x>0 и x<0 можно взять равным x e^x. Тогда (x e^x y)'=1, откуда x e^x y=x+C и y=e^{-x}(1+C/x). Если C=0, решение y=e^{-x} гладко проходит через x=0 и удовлетворяет предельному равенству y(0)=1. Если C не равен нулю, главный член Ce^{-x}/x дает вертикальную асимптоту при x->0+ или x->0-. Поэтому эскиз состоит из одной регулярной кривой и двух семейств ветвей, уходящих к бесконечности у сингулярной прямой.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["integrating_factor_linear"]
-  }],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сингулярная точка решает судьбу эскиза",
+      "text": "На каждом из промежутков x>0 и x<0 работает обычный интегрирующий множитель. Но качественно важнее член C/x: только одна кривая проходит через x=0 без разрыва.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "При x не равном нулю уравнение имеет вид y'+(1+1/x)y=\\(e^{-x}\\)/x. Интегрирующий множитель на каждом из промежутков x>0 и x<0 можно взять равным x \\(e^{x}\\). Тогда (x \\(e^{x}\\) y)'=1, откуда x \\(e^{x}\\) y=x+C и y=\\(e^{-x}\\)(1+C/x). Если C=0, решение y=\\(e^{-x}\\) гладко проходит через x=0 и удовлетворяет предельному равенству y(0)=1. Если C не равен нулю, главный член C\\(e^{-x}\\)/x дает вертикальную асимптоту при x→0+ или x→0-. Поэтому эскиз состоит из одной регулярной кривой и двух семейств ветвей, уходящих к бесконечности у сингулярной прямой.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ]
+    }
+  ],
   "differential_equations_profile": {
-    "equation_type": ["first_order", "linear_singular_coefficient"],
-    "methods": ["integrating_factor", "qualitative_sketch", "singular_point_analysis"],
-    "objects": ["linear_first_order", "asymptote", "continuation"],
-    "goal": ["solve", "sketch"],
-    "keywords": ["Waterloo", "singular_linear_equation", "qualitative_sketch"],
+    "equation_type": [
+      "first_order",
+      "linear_singular_coefficient"
+    ],
+    "methods": [
+      "integrating_factor",
+      "qualitative_sketch",
+      "singular_point_analysis"
+    ],
+    "objects": [
+      "linear_first_order",
+      "asymptote",
+      "continuation"
+    ],
+    "goal": [
+      "solve",
+      "sketch"
+    ],
+    "keywords": [
+      "Waterloo",
+      "singular_linear_equation",
+      "qualitative_sketch"
+    ],
     "status": "ai_checked"
   },
   "difficulty": {
@@ -45,19 +82,32 @@
     "comment": "Стандартный множитель дополняется качественным анализом особой прямой x=0.",
     "status": "ai_checked"
   },
-  "tags": ["linear_first_order", "integrating_factor", "singular_point_analysis", "graphical_construction", "asymptotic", "standard_course_methods", "complete_proof", "source_solution_checked"],
-  "sources": [{
-    "source_id": "src-waterloo-amath250-notes",
-    "role": "original_problem",
-    "status": "source_verified",
-    "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 1, problem 3, PDF p.194."
-  }],
+  "tags": [
+    "linear_first_order",
+    "integrating_factor",
+    "singular_point_analysis",
+    "graphical_construction",
+    "asymptotic",
+    "standard_course_methods",
+    "complete_proof",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 1, problem 3, PDF p.194."
+    }
+  ],
   "editorial": {
     "created_by": "ai",
     "created_at": "2026-05-26",
     "review_status": "ai_checked",
     "public_ready": true,
     "relations_status": "batch_links",
-    "notes": ["Оставлена из-за нетипичной качественной структуры около x=0; не является простым дублем linear_first_order."]
+    "notes": [
+      "Оставлена из-за нетипичной качественной структуры около x=0; не является простым дублем linear_first_order."
+    ]
   }
 }

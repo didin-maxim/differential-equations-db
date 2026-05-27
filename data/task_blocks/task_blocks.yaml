@@ -1,0 +1,159 @@
+{
+  "task_blocks_version": 1,
+  "blocks": [
+    {
+      "id": "first-order-and-characteristics",
+      "title": "ОДУ первого порядка, преобразования и характеристики",
+      "description": "Начальные методы первого порядка: разделение, точные формы, Риккати/Бернулли, восстановление уравнения по семейству кривых, неявные ОДУ, ортогональные траектории, понижение порядка и характеристики ЧП первого порядка.",
+      "cluster_ids": [
+        "separable-homogeneous-first-order",
+        "integrating-factor-exact-forms",
+        "pde-characteristics-first-order",
+        "riccati-bernoulli-reductions",
+        "recover-ode-from-family",
+        "implicit-ode-discriminant",
+        "orthogonal-trajectories",
+        "nonlinear-second-order-order-reductions"
+      ],
+      "unclustered_queries": [
+        {
+          "id": "unclustered-first-order",
+          "title": "Вне кластеров: первый порядок и характеристики",
+          "fragment_ids": [
+            "first_order"
+          ]
+        },
+        {
+          "id": "unclustered-pursuit-separable",
+          "title": "Вне кластеров: геометрические и разделяющиеся задачи первого порядка",
+          "any_tag_ids": [
+            "pursuit_curve",
+            "separable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linear-ode-and-systems",
+      "title": "Линейные ОДУ, системы и ряды",
+      "description": "Линейные уравнения и системы: первый порядок, постоянные и переменные коэффициенты, вариация постоянных, фундаментальные матрицы, матричная экспонента, периодические системы, степенные ряды и параметрическая чувствительность.",
+      "cluster_ids": [
+        "linear-first-order-ode",
+        "linear-equations-variable-coefficients",
+        "variation-of-constants",
+        "floquet-periodic-linear-systems",
+        "scalar-constant-coefficient-linear-ode",
+        "power-series-linear-ode",
+        "constant-coefficient-linear-systems",
+        "matrix-exponential-methods",
+        "fundamental-matrix-linear-systems",
+        "parameter-dependence-variational-equation"
+      ],
+      "unclustered_queries": [
+        {
+          "id": "unclustered-linear-equations",
+          "title": "Вне кластеров: линейные уравнения",
+          "fragment_ids": [
+            "linear_equations"
+          ]
+        },
+        {
+          "id": "unclustered-linear-higher-order-and-systems",
+          "title": "Вне кластеров: высшие порядки, операторы и системы",
+          "any_tag_ids": [
+            "linear_higher_order",
+            "linear_systems",
+            "matrix_exponential",
+            "differential_operator",
+            "wronskian",
+            "zero_location"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundary-spectral-and-variational",
+      "title": "Краевые, спектральные и вариационные задачи",
+      "description": "Краевые задачи, спектр, Штурм, функции Грина, резонанс и простейшая вариационная задача. Блок намеренно объединяет вычислительные, теоретические и олимпиадные карточки, если смысл держится на краевых условиях или экстремали.",
+      "cluster_ids": [
+        "boundary-spectral-problems",
+        "sturm-oscillation-comparison",
+        "green-functions-bvp",
+        "linear-bvp-solvability-resonance",
+        "simple-variational-calculus"
+      ],
+      "unclustered_queries": [
+        {
+          "id": "unclustered-boundary-value",
+          "title": "Вне кластеров: краевые и спектральные задачи",
+          "any_tag_ids": [
+            "boundary_value",
+            "eigenvalues",
+            "sturm_liouville",
+            "variational_calculus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qualitative-foundations-and-dynamics",
+      "title": "Качественная теория, существование и устойчивость",
+      "description": "Существование и единственность, продолжение, фазовая прямая и плоскость, устойчивость, первые интегралы, предельные циклы, энергетические оценки и задачи, где важнее качественный вывод, чем явная формула.",
+      "cluster_ids": [
+        "guess-cauchy-solution-uniqueness",
+        "phase-line-stability",
+        "energy-estimates-second-order-ode",
+        "existence-uniqueness-continuation",
+        "limit-cycles-qualitative-criteria",
+        "first-integrals-plane-systems"
+      ],
+      "unclustered_queries": [
+        {
+          "id": "unclustered-foundations-qualitative",
+          "title": "Вне кластеров: основания и качественная теория",
+          "fragment_ids": [
+            "foundations",
+            "qualitative"
+          ]
+        },
+        {
+          "id": "unclustered-stability-existence-boundedness",
+          "title": "Вне кластеров: устойчивость, продолжение и ограниченность",
+          "any_tag_ids": [
+            "existence_uniqueness",
+            "phase_line",
+            "stability",
+            "boundedness",
+            "blow_up",
+            "global_solution",
+            "periodic_solution",
+            "nonexistence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "olympiad-and-advanced-methods",
+      "title": "Олимпиадные и нестандартные методы",
+      "description": "Олимпиадные приемы: множители и теорема Ролля, дифференциальные неравенства и барьеры, функционально-дифференциальные уравнения, интегральные уравнения, вронскианские преобразования и другие задачи, где стандартная тема служит носителем нестандартной идеи.",
+      "cluster_ids": [
+        "wronskian-nonlinear-transforms",
+        "integral-equation-to-ode",
+        "olympiad-transformed-linear-mvt",
+        "olympiad-differential-inequalities-barriers",
+        "olympiad-functional-differential-equations"
+      ],
+      "unclustered_queries": [
+        {
+          "id": "unclustered-functional-differential-olympiad",
+          "title": "Вне кластеров: функционально-дифференциальные и олимпиадные задачи",
+          "any_tag_ids": [
+            "functional_differential",
+            "olympiad_style",
+            "olympiad_above_exam"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -61,7 +61,7 @@
       "to": "cluster-parameter-initial-data-first-order",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Общая формула фиксирует начальное условие z(t0)=xi'(lambda).",
+      "forward_text": "Общая формула фиксирует начальное условие z(t_0)=xi'(lambda).",
       "backward_text": "Первый порядок изолирует частую ошибку: нужно дифференцировать не только уравнение, но и начальное значение.",
       "status": "ai_checked",
       "confidence": 0.91

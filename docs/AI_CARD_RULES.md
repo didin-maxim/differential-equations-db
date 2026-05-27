@@ -133,10 +133,19 @@
 
 ```powershell
 python tools\check_encoding.py
+python tools\check_tex_quality.py
 python tools\validate.py
 python tools\check_links.py
 python tools\audit_rules.py
 ```
+
+`check_tex_quality.py` is a blocking check for all visible educational text in
+`data/**/*.yaml` and text labels in `data/assets/**/*.svg`. It catches raw TeX
+sources such as `x0`, `t0`, `R x R^n`, `exp(...)`, `e^(...)`, `int_a^b`,
+ASCII arrows and ASCII comparisons outside math delimiters. Raw aliases inside
+exam auto-check fields such as `accepted_text` are the only intentional
+exception: they are not rendered to the student and exist to accept common
+keyboard input.
 
 Для прохода по новым или отредактированным карточкам запускайте:
 

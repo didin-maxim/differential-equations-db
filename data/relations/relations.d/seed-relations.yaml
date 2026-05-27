@@ -72,7 +72,7 @@
       "to": "inhomogeneous-linear-system-variation",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Обе карточки используют exp(At) как фундаментальный оператор.",
+      "forward_text": "Обе карточки используют \\(e^{At}\\) как фундаментальный оператор.",
       "backward_text": "Формула неоднородной системы обобщает решение однородной системы с матричной экспонентой.",
       "status": "ai_checked",
       "confidence": 0.85

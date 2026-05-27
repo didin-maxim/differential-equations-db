@@ -1,4 +1,4 @@
-# Аудит кластера parameter-dependence-variational-equation
+﻿# Аудит кластера parameter-dependence-variational-equation
 
 Дата: 2026-05-27.
 
@@ -55,7 +55,7 @@ Relations: `data/relations/relations.d/cluster-parameter-dependence-variational-
 Без удаления из базы:
 
 - `mit-18034-pset03-resonance-limit` - parameter-adjacent, но главный ход это резонансный предел близких частот, а не уравнение чувствительности.
-- `waterloo-critical-damping-crossing-threshold` и `waterloo-second-order-pq-stability` - полезны для параметрической устойчивости, но решаются анализом корней/порогов, не вариационным уравнением.
+- `waterloo-critical-damping-crossing-condition` и `waterloo-second-order-pq-stability` - полезны для параметрической устойчивости, но решаются анализом корней/порогов, не вариационным уравнением.
 - Карточки с чистой `variation_of_parameters` для линейных неоднородных уравнений (`variation-of-parameters-sine`, `inhomogeneous-linear-system-variation`, BVP Green-kernel карточки) должны оставаться в соседних кластерах, если параметрическая чувствительность не является целью.
 
 Technical monster candidates в просмотренной зоне не удалялись. Потенциально нежелательный тип для будущих импортов: задача, где после корректного дифференцирования по параметру остается длинное интегрирование фундаментальной матрицы без новой идеи.

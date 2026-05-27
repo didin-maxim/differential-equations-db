@@ -17,7 +17,7 @@
       "to": "variation-of-parameters-sine",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор формулирует стандартную систему на u1' и u2' через Вронскиан; задача y''+y=sec x является базовым вычислительным representative этой ветки.",
+      "forward_text": "Навигатор формулирует стандартную систему на u_1' и u_2' через Вронскиан; задача y''+y=sec x является базовым вычислительным representative этой ветки.",
       "backward_text": "Задача с sec x иллюстрирует ветку навигатора про скалярное уравнение второго порядка с известной ФСР и ненулевым Вронскианом.",
       "status": "ai_checked",
       "confidence": 0.98
@@ -39,7 +39,7 @@
       "to": "inhomogeneous-linear-system-variation",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор выводит системную формулу x=Xc, c'=X^{-1}b; theorem-card для постоянной A записывает тот же ход через e^{A(t-s)}.",
+      "forward_text": "Навигатор выводит системную формулу x=Xc, c'=X^{-1}b; theorem-card для постоянной A записывает тот же ход через \\(e^{A(t-s)}\\).",
       "backward_text": "Формула для x'=Ax+b(t) является постояннокоэффициентным частным случаем общей формулы Коши из навигатора.",
       "status": "ai_checked",
       "confidence": 0.98
@@ -50,7 +50,7 @@
       "to": "oral-exam-excellent-two-point-fundamental-matrix",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор указывает, что после интегральной формулы начальные или двухточечные условия накладываются на постоянную c или на начальное значение x(t0).",
+      "forward_text": "Навигатор указывает, что после интегральной формулы начальные или двухточечные условия накладываются на постоянную c или на начальное значение x(t_0).",
       "backward_text": "Двухточечная задача через фундаментальную матрицу показывает, как формула Коши превращает неоднородность в линейное условие на начальные данные.",
       "status": "ai_checked",
       "confidence": 0.93
@@ -127,7 +127,7 @@
       "to": "cluster-matrix-exponential-method-guide",
       "type": "contrast",
       "distance": 1,
-      "forward_text": "Навигатор variation-of-constants использует e^{A(t-s)} как ядро интеграла правой части; matrix-exponential guide оставляет задачи, где свойство e^{At} само является главным ходом.",
+      "forward_text": "Навигатор variation-of-constants использует \\(e^{A(t-s)}\\) как ядро интеграла правой части; matrix-exponential guide оставляет задачи, где свойство \\(e^{At}\\) само является главным ходом.",
       "backward_text": "Матричная экспонента дает оператор переноса в формуле Коши, но если вопрос сводится к неоднородному интегралу, задача ближе к variation-of-constants.",
       "status": "ai_checked",
       "confidence": 0.94

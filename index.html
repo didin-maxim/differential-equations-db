@@ -354,15 +354,16 @@
           <div class="topline">
             <span class="pill">431 карточек</span>
             <span class="pill">333 задач</span>
+            <span class="pill">5 блоков</span>
             <span class="pill">34 кластеров</span>
             <span class="pill">76 определений</span>
             <span class="pill">49 источников</span>
           </div>
           <h1>База по дифференциальным уравнениям</h1>
-          <p class="lead">Навигационная стартовая страница для поиска по базе, перехода к режимам просмотра, кластерам задач, определениям, источникам и симуляции устного экзамена.</p>
+          <p class="lead">Рабочая база кафедры высшей математики: поиск по карточкам, каталог методических кластеров, теоретические блоки, источники и режим экзаменационной тренировки.</p>
           <div class="actions" aria-label="Основная навигация">
             <a class="action primary" href="viewer/index.html?nav=cards">Открыть режим просмотра</a>
-            <a class="action" href="viewer/index.html?nav=clusters">Кластеры</a>
+            <a class="action" href="viewer/index.html?nav=blocks">Смысловые блоки</a>
             <a class="action" href="viewer/index.html?nav=exam">Симуляция экзамена</a>
           </div>
         </div>
@@ -394,14 +395,14 @@
         <a class="entry primary" href="viewer/index.html?nav=cards">
           <span class="entry-kicker">Поиск и просмотр</span>
           <strong>Viewer базы</strong>
-          <span>Полный список с поиском, фильтрами, сортировкой, идеями и решениями.</span>
+          <span>Поиск, фильтры, сортировка, идеи и решения в полном viewer.</span>
           <em>431 карточек</em>
         </a>
-        <a class="entry" href="viewer/index.html?nav=clusters">
-          <span class="entry-kicker">Методы</span>
-          <strong>Кластеры задач</strong>
-          <span>Группы похожих приемов, маршруты и стандартные идеи.</span>
-          <em>34 кластеров</em>
+        <a class="entry" href="viewer/index.html?nav=blocks">
+          <span class="entry-kicker">Навигация</span>
+          <strong>Смысловые блоки</strong>
+          <span>Крупные разделы базы: сначала блок, затем кластеры, затем задачи внутри выбранного кластера.</span>
+          <em>5 блоков</em>
         </a>
         <a class="entry" href="viewer/index.html?nav=exam">
           <span class="entry-kicker">Тренировка</span>
@@ -412,7 +413,7 @@
         <a class="entry compact" href="viewer/index.html?nav=problems">
           <span class="entry-kicker">Практика</span>
           <strong>Задачи</strong>
-          <span>Фильтр по задачам без теоретических карточек.</span>
+          <span>Практические карточки открываются в viewer с фильтрами и решениями.</span>
           <em>333 задач</em>
         </a>
         <a class="entry compact" href="viewer/index.html?nav=theory">
@@ -444,179 +445,34 @@
 
     <section class="band">
       <div class="section-head">
-        <h2>Все кластеры</h2>
-        <a href="viewer/index.html?nav=clusters">Открыть каталог</a>
+        <h2>Смысловые блоки базы</h2>
+        <a href="viewer/index.html?nav=blocks">Открыть блоки</a>
       </div>
-      <div class="cluster-links" aria-label="Главные страницы кластеров">
+      <div class="cluster-links" aria-label="Крупные смысловые блоки базы">
         
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=variation-of-constants">
-          <strong>Вариация постоянных</strong>
-          <span>7 задач</span>
+        <a class="cluster-link" href="viewer/index.html?nav=blocks&block=first-order-and-characteristics">
+          <strong>ОДУ первого порядка, преобразования и характеристики</strong>
+          <span>8 кластеров</span>
         </a>
 
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=recover-ode-from-family">
-          <strong>Восстановление ОДУ по семейству кривых</strong>
-          <span>7 задач</span>
+        <a class="cluster-link" href="viewer/index.html?nav=blocks&block=linear-ode-and-systems">
+          <strong>Линейные ОДУ, системы и ряды</strong>
+          <span>10 кластеров</span>
         </a>
 
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=wronskian-nonlinear-transforms">
-          <strong>Вронскиан и нелинейные преобразования решений</strong>
-          <span>3 задач</span>
+        <a class="cluster-link" href="viewer/index.html?nav=blocks&block=boundary-spectral-and-variational">
+          <strong>Краевые, спектральные и вариационные задачи</strong>
+          <span>5 кластеров</span>
         </a>
 
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=parameter-dependence-variational-equation">
-          <strong>Зависимость от параметров и вариационное уравнение</strong>
-          <span>9 задач</span>
+        <a class="cluster-link" href="viewer/index.html?nav=blocks&block=qualitative-foundations-and-dynamics">
+          <strong>Качественная теория, существование и устойчивость</strong>
+          <span>6 кластеров</span>
         </a>
 
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=integral-equation-to-ode">
-          <strong>Интегральные уравнения, сводящиеся к ОДУ</strong>
-          <span>6 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=integrating-factor-exact-forms">
-          <strong>Интегрирующий множитель и точные формы</strong>
-          <span>10 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=boundary-spectral-problems">
-          <strong>Краевые спектральные задачи</strong>
-          <span>9 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=linear-first-order-ode">
-          <strong>Линейное ОДУ первого порядка</strong>
-          <span>14 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=constant-coefficient-linear-systems">
-          <strong>Линейные системы с постоянными коэффициентами</strong>
-          <span>18 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=linear-equations-variable-coefficients">
-          <strong>Линейные уравнения с переменными коэффициентами</strong>
-          <span>19 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=matrix-exponential-methods">
-          <strong>Матричная экспонента как метод</strong>
-          <span>14 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=nonlinear-second-order-order-reductions">
-          <strong>Нелинейные ОДУ второго порядка: понижение порядка</strong>
-          <span>6 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=implicit-ode-discriminant">
-          <strong>Неразрешенные ОДУ и дискриминантное множество</strong>
-          <span>12 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=olympiad-differential-inequalities-barriers">
-          <strong>Олимпиадные дифференциальные неравенства, барьеры и взрыв</strong>
-          <span>15 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=olympiad-transformed-linear-mvt">
-          <strong>Олимпиадные линейные выражения: множитель, Ролль и среднее значение</strong>
-          <span>8 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=orthogonal-trajectories">
-          <strong>Ортогональные траектории семейств кривых</strong>
-          <span>4 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=first-integrals-plane-systems">
-          <strong>Первые интегралы и фазовые траектории на плоскости</strong>
-          <span>12 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=floquet-periodic-linear-systems">
-          <strong>Периодические линейные системы и теория Флоке</strong>
-          <span>4 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=limit-cycles-qualitative-criteria">
-          <strong>Предельные циклы: качественные критерии</strong>
-          <span>5 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=simple-variational-calculus">
-          <strong>Простейшая задача вариационного исчисления</strong>
-          <span>12 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=separable-homogeneous-first-order">
-          <strong>Разделение переменных и однородная замена первого порядка</strong>
-          <span>4 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=linear-bvp-solvability-resonance">
-          <strong>Разрешимость линейных краевых задач и резонанс</strong>
-          <span>5 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=riccati-bernoulli-reductions">
-          <strong>Редукции Риккати и Бернулли к линейным уравнениям</strong>
-          <span>10 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=scalar-constant-coefficient-linear-ode">
-          <strong>Скалярные линейные ОДУ с постоянными коэффициентами</strong>
-          <span>15 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=power-series-linear-ode">
-          <strong>Степенные ряды для линейных ОДУ</strong>
-          <span>4 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=existence-uniqueness-continuation">
-          <strong>Существование, единственность и продолжение решений</strong>
-          <span>29 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=guess-cauchy-solution-uniqueness">
-          <strong>Угадать решение задачи Коши и применить единственность</strong>
-          <span>9 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=phase-line-stability">
-          <strong>Фазовая прямая и устойчивость</strong>
-          <span>33 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=fundamental-matrix-linear-systems">
-          <strong>Фундаментальная матрица линейной системы</strong>
-          <span>8 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=green-functions-bvp">
-          <strong>Функции Грина для краевых задач</strong>
-          <span>3 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=olympiad-functional-differential-equations">
-          <strong>Функционально-дифференциальные олимпиадные уравнения</strong>
-          <span>8 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=pde-characteristics-first-order">
-          <strong>Характеристики для линейных ЧП первого порядка</strong>
-          <span>16 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=sturm-oscillation-comparison">
-          <strong>Штурм: сравнение, осцилляция и нули</strong>
-          <span>20 задач</span>
-        </a>
-
-        <a class="cluster-link" href="viewer/index.html?nav=clusters&cluster=energy-estimates-second-order-ode">
-          <strong>Энергетические оценки для уравнений второго порядка</strong>
-          <span>9 задач</span>
+        <a class="cluster-link" href="viewer/index.html?nav=blocks&block=olympiad-and-advanced-methods">
+          <strong>Олимпиадные и нестандартные методы</strong>
+          <span>5 кластеров</span>
         </a>
       </div>
     </section>

@@ -2,39 +2,77 @@
   "id": "waterloo-oscillator-speed-before-crossing",
   "title": "Скорость осциллятора перед первым пересечением равновесия",
   "fragment": "systems",
-  "kind": {"primary": "problem", "secondary": []},
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
   "language": "ru",
   "statements": {
-    "original": [{
-      "id": "stmt-original",
-      "title": "Скорость перед первым пересечением равновесия",
-      "text": "Осциллятор удовлетворяет y''+4y'+5y=0, y(0)=0, y'(0)=1. Не ограничиваясь явным графиком, определите: модуль скорости |y'| максимален непосредственно до первого пересечения равновесия y=0, после него или ровно в момент пересечения?",
-      "source_ids": ["src-waterloo-amath250-notes"],
-      "status": "ai_checked",
-      "self_contained": {"status": "ai_checked"},
-      "definition_ids": ["linear_system", "stability"]
-    }]
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Скорость перед первым пересечением равновесия",
+        "text": "Осциллятор удовлетворяет y''+4y'+5y=0, y(0)=0, y'(0)=1. Не ограничиваясь явным графиком, определите: модуль скорости |y'| максимален непосредственно до первого пересечения равновесия y=0, после него или ровно в момент пересечения?",
+        "source_ids": [
+          "src-waterloo-amath250-notes"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "stability"
+        ]
+      }
+    ]
   },
-  "ideas": [{
-    "id": "idea-main",
-    "title": "Максимум скорости виден на фазовой плоскости",
-    "text": "Для скорости v=y' максимум |v| на гладком участке, где v не равна нулю, достигается при v'=0. Уравнение v'=-4v-5y показывает, с какой стороны от оси y=0 лежит эта точка.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["state_vector_uniqueness"]
-  }],
-  "solutions": [{
-    "id": "sol-main",
-    "title": "Решение",
-    "text": "Положим v=y'. Тогда y'=v, v'=-5y-4v. Решение сначала имеет y>0 и v>0, затем v меняет знак, а первое следующее пересечение равновесия y=0 происходит при движении вниз, то есть v<0. В момент этого пересечения v'=-4v>0, значит v уже увеличивается от отрицательных значений к нулю, а |v| уменьшается. Максимум отрицательной скорости должен был произойти раньше, когда v'=0, то есть на прямой -5y-4v=0. При v<0 это дает y>0, следовательно точка максимального |v| лежит до пересечения y=0. Явная проверка дает y=e^{-2t} sin t, но для ответа достаточно фазового аргумента.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["state_vector_uniqueness"]
-  }],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Максимум скорости виден на фазовой плоскости",
+      "text": "Для скорости v=y' максимум |v| на гладком участке, где v не равна нулю, достигается при v'=0. Уравнение v'=-4v-5y показывает, с какой стороны от оси y=0 лежит эта точка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим v=y'. Тогда y'=v, v'=-5y-4v. Решение сначала имеет y>0 и v>0, затем v меняет знак, а первое следующее пересечение равновесия y=0 происходит при движении вниз, то есть v<0. В момент этого пересечения v'=-4v>0, значит v уже увеличивается от отрицательных значений к нулю, а |v| уменьшается. Максимум отрицательной скорости должен был произойти раньше, когда v'=0, то есть на прямой -5y-4v=0. При v<0 это дает y>0, следовательно точка максимального |v| лежит до пересечения y=0. Явная проверка дает y=\\(e^{-2t}\\) sin t, но для ответа достаточно фазового аргумента.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
   "differential_equations_profile": {
-    "equation_type": ["linear_system", "mechanical_oscillator", "qualitative"],
-    "methods": ["phase_plane", "nullcline_analysis"],
-    "objects": ["phase_portrait", "damped_oscillator", "velocity"],
-    "goal": ["classify", "explain"],
-    "keywords": ["Waterloo", "mechanical_oscillator", "speed_maximum"],
+    "equation_type": [
+      "linear_system",
+      "mechanical_oscillator",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_plane",
+      "nullcline_analysis"
+    ],
+    "objects": [
+      "phase_portrait",
+      "damped_oscillator",
+      "velocity"
+    ],
+    "goal": [
+      "classify",
+      "explain"
+    ],
+    "keywords": [
+      "Waterloo",
+      "mechanical_oscillator",
+      "speed_maximum"
+    ],
     "status": "ai_checked"
   },
   "difficulty": {
@@ -45,19 +83,32 @@
     "comment": "Главный шаг - прочитать максимум скорости по изоклине v'=0 на фазовой плоскости.",
     "status": "ai_checked"
   },
-  "tags": ["phase_plane", "linear_systems", "stability", "nullcline_analysis", "graphical_construction", "standard_course_methods", "complete_proof", "source_solution_checked"],
-  "sources": [{
-    "source_id": "src-waterloo-amath250-notes",
-    "role": "original_problem",
-    "status": "source_verified",
-    "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 5, problem 9(e), PDF p.227."
-  }],
+  "tags": [
+    "phase_plane",
+    "linear_systems",
+    "stability",
+    "nullcline_analysis",
+    "graphical_construction",
+    "standard_course_methods",
+    "complete_proof",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "original_problem",
+      "status": "source_verified",
+      "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 5, problem 9(e), PDF p.227."
+    }
+  ],
   "editorial": {
     "created_by": "ai",
     "created_at": "2026-05-26",
     "review_status": "ai_checked",
     "public_ready": true,
     "relations_status": "batch_links",
-    "notes": ["Импортирована именно концептуальная часть Waterloo, без дублирования полного решения constant coefficients."]
+    "notes": [
+      "Импортирована именно концептуальная часть Waterloo, без дублирования полного решения constant coefficients."
+    ]
   }
 }

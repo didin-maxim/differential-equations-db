@@ -1,4 +1,4 @@
-# Аудит кластера вариационного исчисления
+﻿# Аудит кластера вариационного исчисления
 
 Дата: 2026-05-26.
 
@@ -25,7 +25,7 @@
 | изопериметрия | `local-du-romanko-isoperimetric-linear-constraint`, `local-du-romanko-isoperimetric-energy-normalization` |
 | несколько функций | `local-du-romanko-variational-two-functions` |
 | высшие производные / Эйлер-Пуассон | `local-du-romanko-variational-higher-derivative`, `cluster-variational-euler-poisson-fixed`, `cluster-variational-euler-poisson-free-end`, `cluster-variational-euler-poisson-general-order` |
-| Лежандр, Якоби, вторая вариация | `local-du-standard-legendre-jacobi-conditions`, `local-du-romanko-jacobi-strict-maximum`, `local-du-deficit-variational-quadratic-threshold` |
+| Лежандр, Якоби, вторая вариация | `local-du-standard-legendre-jacobi-conditions`, `local-du-romanko-jacobi-strict-maximum`, `local-du-deficit-variational-quadratic-bound` |
 | глобальная квадратичная теория | `cluster-variational-quadratic-coercive-minimizer` |
 
 Добавлены точные навигационные теги `euler_poisson`, `higher_derivatives_functional`, `second_variation`, `legendre_condition`, `jacobi_condition`; ими помечены новые карточки и ближайшие существующие представители Романко/стандартной теории.
@@ -45,7 +45,7 @@
 Ближайшие родственники в базе:
 
 - `local-du-written-2020-variational-log-cross-term`: конкретный положительно-квадратичный пример с фиксированными концами и проверкой минимума.
-- `local-du-deficit-variational-quadratic-threshold`: контрастный пример, где знак второй вариации зависит от спектрального порога.
+- `local-du-deficit-variational-quadratic-bound`: контрастный пример, где знак второй вариации зависит от спектрального порога.
 - `local-du-standard-euler-lagrange-fixed-endpoints`: теоретический prerequisite для вывода линейной краевой задачи.
 
 Интернет-поиск точного аналога нормировки

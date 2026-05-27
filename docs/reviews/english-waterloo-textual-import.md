@@ -1,4 +1,4 @@
-# Waterloo AMATH 250 textual import
+﻿# Waterloo AMATH 250 textual import
 
 Дата: 2026-05-26.
 
@@ -27,7 +27,7 @@
 - `waterloo-log-family-qualitative-recover` - логарифмическое семейство, асимптоты и выпуклость.
 - `waterloo-singular-linear-qualitative-sketch` - линейное уравнение с особой прямой `x=0`.
 - `waterloo-second-order-pq-stability` - параметрическая область затухания для `y''+p y'+q y=0`.
-- `waterloo-critical-damping-crossing-threshold` - критическое демпфирование и порог начальной скорости.
+- `waterloo-critical-damping-crossing-condition` - критическое демпфирование и порог начальной скорости.
 - `waterloo-oscillator-speed-before-crossing` - максимум скорости перед первым пересечением равновесия.
 - `waterloo-spiral-phase-portrait-isoclines` - устойчивый фокус через спектр, направление вращения и изоклины.
 - `waterloo-fundamental-matrix-flow-inverse` - `Phi(t+s)=Phi(t)Phi(s)` и `Phi(-t)=Phi(t)^{-1}`.

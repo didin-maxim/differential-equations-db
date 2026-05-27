@@ -63,7 +63,7 @@
         },
         {
           "id": "second_variation_legendre_jacobi",
-          "description": "Знак второй вариации проверяется через условия Лежандра, Якоби, сопряженные точки или спектральный порог.",
+          "description": "Знак второй вариации проверяется через условия Лежандра, Якоби, сопряженные точки или первое собственное значение.",
           "use_when": "Главная цель - классификация экстремума, а не только нахождение стационарной кривой."
         },
         {
@@ -99,7 +99,7 @@
         "local-du-written-2020-variational-log-cross-term",
         "local-du-written-2021-free-endpoint-cubic-variation",
         "local-du-written-2024-variational-free-endpoint",
-        "local-du-deficit-variational-quadratic-threshold",
+        "local-du-deficit-variational-quadratic-bound",
         "local-du-romanko-variational-higher-derivative",
         "local-du-romanko-variational-two-functions",
         "local-du-romanko-isoperimetric-linear-constraint",
@@ -192,7 +192,7 @@
         "mit-18034-pset03-resonance-limit",
         "msu-ode-2026-6-singular-linear-system-epsilon"
       ],
-      "notes": "Создано 2026-05-27; уточнено аудитом 2026-05-27 в docs/reviews/cluster-parameter-dependence-variational-equation-audit.md. Пересекается с existence-uniqueness и variation-of-constants, но представитель здесь должен иметь целью чувствительность: производную по параметру/начальным данным или оценку этой зависимости. Parameter-adjacent карточки вроде resonance limit, critical damping threshold и общей устойчивости по корням не считать точными representatives без sensitivity equation. Аудит orphan-карточек 2026-05-27 оставил MIT resonance limit как пограничную карточку рядом с параметрической чувствительностью, но отметил, что это не полноценное вариационное уравнение. Методический блок cluster-parameter-dependence-method-guide добавлен 2026-05-27 как навигатор по дифференцированию решения по параметру, вариационному уравнению потока, фундаментальной матрице, Гронуоллу, непрерывной/гладкой зависимости, системам и уравнениям второго порядка."
+      "notes": "Создано 2026-05-27; уточнено аудитом 2026-05-27 в docs/reviews/cluster-parameter-dependence-variational-equation-audit.md. Пересекается с existence-uniqueness и variation-of-constants, но представитель здесь должен иметь целью чувствительность: производную по параметру/начальным данным или оценку этой зависимости. Parameter-adjacent карточки вроде resonance limit, critical damping crossing condition и общей устойчивости по корням не считать точными representatives без sensitivity equation. Аудит orphan-карточек 2026-05-27 оставил MIT resonance limit как пограничную карточку рядом с параметрической чувствительностью, но отметил, что это не полноценное вариационное уравнение. Методический блок cluster-parameter-dependence-method-guide добавлен 2026-05-27 как навигатор по дифференцированию решения по параметру, вариационному уравнению потока, фундаментальной матрице, Гронуоллу, непрерывной/гладкой зависимости, системам и уравнениям второго порядка."
     }
   ]
 }

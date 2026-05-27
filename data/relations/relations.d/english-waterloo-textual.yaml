@@ -25,11 +25,11 @@
     {
       "id": "rel-waterloo-pq-critical-damping",
       "from": "waterloo-second-order-pq-stability",
-      "to": "waterloo-critical-damping-crossing-threshold",
+      "to": "waterloo-critical-damping-crossing-condition",
       "type": "teaches_before",
       "distance": 1,
       "forward_text": "Классификация корней второго порядка объясняет, почему критический режим имеет двойной корень и множитель t.",
-      "backward_text": "Порог пересечения равновесия является качественным применением критического случая из параметрической классификации.",
+      "backward_text": "Условие пересечения равновесия является качественным применением критического случая из параметрической классификации.",
       "status": "ai_checked",
       "confidence": 0.86
     },

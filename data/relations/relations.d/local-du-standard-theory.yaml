@@ -83,7 +83,7 @@
       "to": "local-du-8-t3-nonpositive-q-bvp-sturm",
       "type": "prerequisite",
       "distance": 1,
-      "forward_text": "Следствие при q<=0 прямо дает запрет двух нулей у ненулевого решения, используемый в T3.",
+      "forward_text": "Следствие при q≤0 прямо дает запрет двух нулей у ненулевого решения, используемый в T3.",
       "backward_text": "T3 является краевым применением неосцилляционного следствия из теоремы Штурма.",
       "status": "ai_checked",
       "confidence": 0.96
@@ -94,7 +94,7 @@
       "to": "local-du-written-2007-81-sturm-zero",
       "type": "prerequisite",
       "distance": 1,
-      "forward_text": "Задача 2007 года является прямым применением следствия q>=1 на отрезке длины pi.",
+      "forward_text": "Задача 2007 года является прямым применением следствия q≥1 на отрезке длины π.",
       "backward_text": "Письменная задача конкретизирует стандартное следствие Штурма сравнением с sin x.",
       "status": "ai_checked",
       "confidence": 0.9
@@ -166,12 +166,12 @@
       "confidence": 0.9
     },
     {
-      "id": "rel-local-du-standard-legendre-jacobi-to-variational-threshold",
+      "id": "rel-local-du-standard-legendre-jacobi-to-variational-bound",
       "from": "local-du-standard-legendre-jacobi-conditions",
-      "to": "local-du-deficit-variational-quadratic-threshold",
+      "to": "local-du-deficit-variational-quadratic-bound",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Обе карточки проверяют характер экстремума через вторую вариацию и спектральный порог.",
+      "forward_text": "Обе карточки проверяют характер экстремума через вторую вариацию и первое собственное значение.",
       "backward_text": "Квадратичный функционал является конкретной моделью общей идеи Лежандра-Якоби о знаке второй вариации.",
       "status": "ai_checked",
       "confidence": 0.86

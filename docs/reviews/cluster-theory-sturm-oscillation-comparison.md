@@ -1,4 +1,4 @@
-# Теоретико-методический блок: Штурм, сравнение, осцилляция и нули
+﻿# Теоретико-методический блок: Штурм, сравнение, осцилляция и нули
 
 Дата прохода: 2026-05-27. Зона: `sturm-oscillation-comparison`.
 
@@ -42,7 +42,7 @@
 - `local-du-standard-kneser-criterion`;
 - `cluster-sturm-disconjugacy-strict-upper-bound-lemma`;
 - `cluster-sturm-dirichlet-nonresonance-interpolation-lemma`;
-- `cluster-sturm-bvp-unit-endpoints-sharp-threshold`;
+- `cluster-sturm-bvp-unit-endpoints-exact-bound`;
 - `local-du-written-2007-81-sturm-zero`;
 - `local-du-romanko-sturm-short-interval-bvp`;
 - `mit-18034-pset08-prufer-oscillation-criteria`;

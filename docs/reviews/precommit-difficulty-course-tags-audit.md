@@ -1,4 +1,4 @@
-# Pre-commit аудит: сложности и course-теги
+﻿# Pre-commit аудит: сложности и course-теги
 
 Дата: 2026-05-27.
 
@@ -33,9 +33,9 @@
 - `periodic-solution-monotone-derivative` -> `standard_course_methods`;
 - `solve-functional-ode-composition` -> `standard_course_methods`;
 - `two-solutions-touching` -> `standard_course_methods`;
-- `cluster-sturm-bvp-unit-endpoints-sharp-threshold` ->
+- `cluster-sturm-bvp-unit-endpoints-exact-bound` ->
   `advanced_standard_course`;
-- `cluster-sturm-bvp-unit-endpoints-threshold-counterexample` ->
+- `cluster-sturm-bvp-unit-endpoints-resonance-counterexample` ->
   `standard_course_methods`.
 
 Эти правки безопасны: решения используют стандартные приемы курса

@@ -15,7 +15,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Пусть известно, что E(t)=e^{At}, где E(t)=diag(e^t R(t), e^{2t}J(t)), R(t)=[[cos t,-sin t],[sin t,cos t]], J(t)=[[1,t],[0,1]]. Не вычисляя A и не обращая матрицу E(t) напрямую, найдите e^{-At}.",
+        "text": "Пусть известно, что \\(E(t)=e^{At}\\), где \\(E(t)=\\operatorname{diag}(e^t R(t), e^{2t}J(t))\\), \\(R(t)=\\begin{pmatrix}\\cos t&-\\sin t\\\\ \\sin t&\\cos t\\end{pmatrix}\\), \\(J(t)=\\begin{pmatrix}1&t\\\\0&1\\end{pmatrix}\\). Не вычисляя \\(A\\) и не обращая матрицу \\(E(t)\\) напрямую, найдите \\(e^{-At}\\).",
         "source_ids": [
           "src-cluster-matrix-exponential-methods-audit"
         ],
@@ -34,7 +34,7 @@
     {
       "id": "idea-main",
       "title": "Обратный ход времени",
-      "text": "Для автономного линейного потока обратный оператор к e^{At} равен e^{-At}; поэтому достаточно заменить t на -t в уже известной экспоненте.",
+      "text": "Для автономного линейного потока обратный оператор к \\(e^{At}\\) равен \\(e^{-At}\\); поэтому достаточно заменить \\(t\\) на \\(-t\\) в уже известной экспоненте.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "matrix_exponential"
@@ -45,7 +45,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Так как E(t)=e^{At}, имеем e^{-At}=E(-t). Поэтому R(t) заменяется на R(-t)=[[cos t,sin t],[-sin t,cos t]], множитель e^t - на e^{-t}, а жорданов блок e^{2t}[[1,t],[0,1]] - на e^{-2t}[[1,-t],[0,1]]. Итак, e^{-At}=diag(e^{-t}R(-t), e^{-2t}[[1,-t],[0,1]]). Прямое обращение четырехмерной матрицы здесь не требуется: сработало групповое свойство матричной экспоненты.",
+      "text": "Так как \\(E(t)=e^{At}\\), имеем \\(e^{-At}=E(-t)\\). Поэтому \\(R(t)\\) заменяется на \\(R(-t)=\\begin{pmatrix}\\cos t&\\sin t\\\\-\\sin t&\\cos t\\end{pmatrix}\\), множитель \\(e^t\\) - на \\(e^{-t}\\), а жорданов блок \\(e^{2t}\\begin{pmatrix}1&t\\\\0&1\\end{pmatrix}\\) - на \\(e^{-2t}\\begin{pmatrix}1&-t\\\\0&1\\end{pmatrix}\\). Итак, \\(e^{-At}=\\operatorname{diag}(e^{-t}R(-t), e^{-2t}\\begin{pmatrix}1&-t\\\\0&1\\end{pmatrix})\\). Прямое обращение четырехмерной матрицы здесь не требуется: сработало групповое свойство матричной экспоненты.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "matrix_exponential"
@@ -82,7 +82,7 @@
     "local_score": 4,
     "idea_score": 5,
     "technical_score": 2,
-    "comment": "idea_score=5: нужно распознать обратимость потока e^{At}; technical_score=2: после этого только замена t на -t.",
+    "comment": "idea_score=5: нужно распознать обратимость потока \\(e^{At}\\); technical_score=2: после этого только замена t на -t.",
     "status": "ai_checked"
   },
   "tags": [
@@ -110,7 +110,7 @@
     "public_ready": true,
     "relations_status": "cluster-matrix-exponential-methods",
     "notes": [
-      "Показывает e^{-At}=(e^{At})^{-1} на читаемой смеси вращения и жорданова блока."
+      "Показывает \\(e^{-At}\\)=(\\(e^{At}\\))^{-1} на читаемой смеси вращения и жорданова блока."
     ]
   }
 }

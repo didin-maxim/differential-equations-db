@@ -1,4 +1,4 @@
-# Аудит подготовки к простому письменному экзамену глазами слабого студента
+﻿# Аудит подготовки к простому письменному экзамену глазами слабого студента
 
 Дата прохода: 2026-05-27.
 
@@ -36,7 +36,7 @@
 
 1. Нет готового фильтра/маршрута "письменный минимум на 3/4".
 
-   Я могу выбрать `exam_score_3` или `exam_score_4`, но тогда теряю важные базовые карточки без этих тегов: `linear-first-order-formula`, `exact-equation-potential`, `autonomous-phase-line-stability`, `shooting-linear-bvp`, `dirichlet-eigenvalues-interval`. Если выбрать `low_technical`, попадаются карточки с высокой идеей: `local-du-deficit-first-order-pde-characteristics`, `local-du-deficit-sturm-nonpositive-potential-bvp`, `local-du-deficit-variational-quadratic-threshold`, `cluster-existence-inward-barrier-interval`.
+   Я могу выбрать `exam_score_3` или `exam_score_4`, но тогда теряю важные базовые карточки без этих тегов: `linear-first-order-formula`, `exact-equation-potential`, `autonomous-phase-line-stability`, `shooting-linear-bvp`, `dirichlet-eigenvalues-interval`. Если выбрать `low_technical`, попадаются карточки с высокой идеей: `local-du-deficit-first-order-pde-characteristics`, `local-du-deficit-sturm-nonpositive-potential-bvp`, `local-du-deficit-variational-quadratic-bound`, `cluster-existence-inward-barrier-interval`.
 
 2. `basic_mipt_minimum` не выглядит как нормальный навигационный слой.
 
@@ -64,7 +64,7 @@
 - `integrating-factor-y`: имеет `idea_score=6`, `technical_score=5`; как первый интегрирующий множитель она слишком тяжелая.
 - `local-du-deficit-first-order-pde-characteristics`: хорошая и полезная, но `idea_score=6`; как первая карточка на PDE лучше `lebl-diffyqs-transport-signal-shift`.
 - `local-du-deficit-sturm-nonpositive-potential-bvp`: `low_technical`, но идея 7. Для письменного минимума это не "легкая краевая", а доказательная задача.
-- `local-du-deficit-variational-quadratic-threshold`: `low_technical`, но идея 7 и нужен спектральный порог/Пуанкаре. Это не простая вариационная задача для слабого студента.
+- `local-du-deficit-variational-quadratic-bound`: `low_technical`, но идея 7 и нужен спектральный порог/Пуанкаре. Это не простая вариационная задача для слабого студента.
 - `local-du-filippov-763-dirichlet-resonance-no-solution`: полезная краевая резонансная задача, но как минимум она сложнее `resit-pass-3-dirichlet-sine-bvp` и `weak-pass-mixed-bvp-eigenvalues`.
 - `local-du-written-2014-51-characteristics-pde`: настоящий письменный пример, но `exam_score_6`; для 3/4 его надо оставить как "после базовых характеристик", а не как старт.
 - `local-du-standard-euler-lagrange-fixed-endpoints`: хорошая теорема, но она не заменяет простую вычислительную карточку на вариационное исчисление.

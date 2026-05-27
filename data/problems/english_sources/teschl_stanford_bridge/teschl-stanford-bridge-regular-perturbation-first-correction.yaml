@@ -15,7 +15,7 @@
       {
         "id": "stmt-original",
         "title": "Задача",
-        "text": "Пусть x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon), x_epsilon(t0)=x0, где f и g достаточно гладкие. Пусть x0(t) решает невозмущенную задачу при epsilon=0. Докажите, что z(t)=partial x_epsilon(t)/partial epsilon |_{epsilon=0} удовлетворяет z'=D_x f(t,x0(t))z+g(t,x0(t)), z(t0)=0.",
+        "text": "Пусть x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon), x_epsilon(t_0)=x_0, где f и g достаточно гладкие. Пусть x_0(t) решает невозмущенную задачу при epsilon=0. Докажите, что z(t)=partial x_epsilon(t)/partial epsilon |_{epsilon=0} удовлетворяет z'=D_x f(t,x_0(t))z+g(t,x_0(t)), z(t_0)=0.",
         "source_ids": [
           "src-teschl-ode-dynamical-systems"
         ],
@@ -45,7 +45,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Предположим, что по теореме о гладкой зависимости от параметра производная z(t)=partial_epsilon x_epsilon(t)|_{epsilon=0} существует на рассматриваемом отрезке. Дифференцируем уравнение x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon) по epsilon. Получаем partial_epsilon x_epsilon'=D_x f(t,x_epsilon) partial_epsilon x_epsilon+g(t,x_epsilon)+epsilon D_x g(t,x_epsilon) partial_epsilon x_epsilon. При epsilon=0 имеем x_epsilon=x0, поэтому z'=D_x f(t,x0(t))z+g(t,x0(t)). Начальное условие не зависит от epsilon, значит z(t0)=0. Если Phi(t) - фундаментальная матрица однородного вариационного уравнения, то z(t)=Phi(t) int_{t0}^t Phi(s)^{-1}g(s,x0(s)) ds. За пределами стандартного курса здесь находится не вычисление линейного уравнения, а сам факт дифференцируемости решения по параметру.",
+      "text": "Предположим, что по теореме о гладкой зависимости от параметра производная z(t)=partial_epsilon x_epsilon(t)|_{epsilon=0} существует на рассматриваемом отрезке. Дифференцируем уравнение x_epsilon'=f(t,x_epsilon)+epsilon g(t,x_epsilon) по epsilon. Получаем partial_epsilon x_epsilon'=D_x f(t,x_epsilon) partial_epsilon x_epsilon+g(t,x_epsilon)+epsilon D_x g(t,x_epsilon) partial_epsilon x_epsilon. При epsilon=0 имеем x_epsilon=x_0, поэтому z'=D_x f(t,x_0(t))z+g(t,x_0(t)). Начальное условие не зависит от epsilon, значит z(t_0)=0. Если Phi(t) - фундаментальная матрица однородного вариационного уравнения, то z(t)=Phi(t) \\(\\int_{t_0}^t\\) Phi(s)^{-1}g(s,x_0(s)) ds. За пределами стандартного курса здесь находится не вычисление линейного уравнения, а сам факт дифференцируемости решения по параметру.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"

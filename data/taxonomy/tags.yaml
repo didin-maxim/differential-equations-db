@@ -132,7 +132,7 @@
     "variational_calculus",
     "euler_lagrange",
     "second_variation_test",
-    "quadratic_variational_threshold",
+    "quadratic_variational_bound",
     "free_endpoint_variational",
     "natural_boundary_conditions",
     "transversality",

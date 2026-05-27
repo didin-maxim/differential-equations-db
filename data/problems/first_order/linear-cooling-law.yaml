@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Температура тела T удовлетворяет T'=-k(T-T0), T(0)=T1. Найти T(t) и предел при t -> +∞.",
+        "text": "Температура тела T удовлетворяет T'=-k(T-T0), T(0)=T1. Найти T(t) и предел при t → +∞.",
         "source_ids": [
           "src-mipt-ode-course"
         ],
@@ -41,7 +41,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Уравнение для u=T-T0 имеет вид u'=-ku. Значит u(t)=u(0)e^{-kt}. Поэтому T(t)=T0+(T1-T0)e^{-kt}, а предел при k>0 равен T0.",
+      "text": "Уравнение для u=T-T0 имеет вид u'=-ku. Значит u(t)=u(0)\\(e^{-kt}\\). Поэтому T(t)=T0+(T1-T0)\\(e^{-kt}\\), а предел при k>0 равен T0.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "integrating_factor_linear"

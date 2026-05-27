@@ -78,12 +78,12 @@
       "confidence": 0.93
     },
     {
-      "id": "rel-romanko-variational-threshold-jacobi-maximum",
-      "from": "local-du-deficit-variational-quadratic-threshold",
+      "id": "rel-romanko-variational-bound-jacobi-maximum",
+      "from": "local-du-deficit-variational-quadratic-bound",
       "to": "local-du-romanko-jacobi-strict-maximum",
       "type": "same_method",
       "distance": 2,
-      "forward_text": "Квадратичная форма второй вариации и спектральный порог решают вопрос о характере экстремума.",
+      "forward_text": "Квадратичная форма второй вариации и первое собственное значение решают вопрос о характере экстремума.",
       "backward_text": "Условие Якоби является локальной формой той же спектральной проверки знака второй вариации.",
       "status": "ai_checked",
       "confidence": 0.84
@@ -94,7 +94,7 @@
       "to": "local-du-romanko-jacobi-strict-maximum",
       "type": "contrast",
       "distance": 2,
-      "forward_text": "Минимум энергии опирается на положительный первый спектральный порог Дирихле.",
+      "forward_text": "Минимум энергии опирается на положительное первое собственное значение задачи Дирихле.",
       "backward_text": "Строгий максимум возникает при отрицательной второй вариации и отсутствии сопряженной точки до правого конца.",
       "status": "ai_checked",
       "confidence": 0.79

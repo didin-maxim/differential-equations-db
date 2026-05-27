@@ -1,4 +1,4 @@
-# QA англоязычных импортов
+﻿# QA англоязычных импортов
 
 Дата: 2026-05-26.
 
@@ -20,7 +20,7 @@
   - `waterloo-singular-linear-qualitative-sketch`: `singular_point_analysis`;
   - `waterloo-oscillator-speed-before-crossing`: `nullcline_analysis`;
   - `waterloo-spiral-phase-portrait-isoclines`: `isocline_analysis`;
-  - `waterloo-critical-damping-crossing-threshold`: `critical_damping`.
+  - `waterloo-critical-damping-crossing-condition`: `critical_damping`.
 - Уточнены теги BVP/Floquet cards: `maximum_principle`, `fredholm_alternative`, `green_identity`, `floquet_theory`.
 - Обновлены representatives/policies в `clusters.yaml`:
   - `linear-first-order-ode`: добавлен `waterloo-singular-linear-qualitative-sketch`, кластер переведен в `watch`;

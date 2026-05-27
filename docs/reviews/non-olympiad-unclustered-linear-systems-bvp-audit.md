@@ -1,4 +1,4 @@
-# Аудит неолимпиадных задач вне кластеров: линейные ОДУ, системы, краевые задачи
+﻿# Аудит неолимпиадных задач вне кластеров: линейные ОДУ, системы, краевые задачи
 
 Дата: 2026-05-27.
 
@@ -33,7 +33,7 @@
 - `local-du-written-2022-inverse-square-change`
 - `mit-18034-pset03-resonance-limit`
 - `waterloo-second-order-pq-stability`
-- `waterloo-critical-damping-crossing-threshold`
+- `waterloo-critical-damping-crossing-condition`
 
 Основание: общий механизм через характеристический многочлен, кратность корней, резонанс правой части, устойчивость/ограниченность по корням или замену, сводящую задачу к постоянным коэффициентам. Это не дубль `constant-coefficient-linear-systems`, потому что там объектом является матрица и спектр системы.
 
@@ -127,7 +127,7 @@
 В `phase-line-stability` добавлены:
 
 - `waterloo-second-order-pq-stability`
-- `waterloo-critical-damping-crossing-threshold`
+- `waterloo-critical-damping-crossing-condition`
 
 ## Уникальные задачи
 

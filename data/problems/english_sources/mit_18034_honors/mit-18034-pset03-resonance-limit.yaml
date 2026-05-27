@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Пусть omega>0, omega0 != omega и omega0 близко к omega. Для уравнения y''+omega^2 y=sin(omega0 t) рассмотрим частное решение y2(t)=(sin(omega0 t)-sin(omega t))/(omega^2-omega0^2), у которого начальные данные остаются конечными при omega0 -> omega. Найти предел y2 и проверить, что он дает частное решение резонансного уравнения y''+omega^2 y=sin(omega t).",
+        "text": "Пусть omega>0, omega0 ≠ omega и omega0 близко к omega. Для уравнения y''+omega^2 y=sin(omega0 t) рассмотрим частное решение y_2(t)=(sin(omega0 t)-sin(omega t))/(omega^2-omega0^2), у которого начальные данные остаются конечными при omega0 → omega. Найти предел y_2 и проверить, что он дает частное решение резонансного уравнения y''+omega^2 y=sin(omega t).",
         "source_ids": [
           "src-mit-18034-honors-ode"
         ],
@@ -41,7 +41,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Для omega0 != omega функция y2 является частным решением, потому что sin(omega0 t)/(omega^2-omega0^2) дает правую часть sin(omega0 t), а sin(omega t)/(omega^2-omega0^2) является решением однородного уравнения. При omega0 -> omega числитель и знаменатель стремятся к нулю. По правилу Лопиталя по параметру omega0 получаем lim y2(t)=lim (t cos(omega0 t))/(-2 omega0)=-t cos(omega t)/(2 omega). Проверка прямая: если yp=-t cos(omega t)/(2 omega), то yp''+omega^2 yp=sin(omega t). Значит резонансное частное решение возникает как предел правильно нормированных нерезонансных частных решений.",
+      "text": "Для omega0 ≠ omega функция y_2 является частным решением, потому что sin(omega0 t)/(omega^2-omega0^2) дает правую часть sin(omega0 t), а sin(omega t)/(omega^2-omega0^2) является решением однородного уравнения. При omega0 → omega числитель и знаменатель стремятся к нулю. По правилу Лопиталя по параметру omega0 получаем lim y_2(t)=lim (t cos(omega0 t))/(-2 omega0)=-t cos(omega t)/(2 omega). Проверка прямая: если yp=-t cos(omega t)/(2 omega), то yp''+omega^2 yp=sin(omega t). Значит резонансное частное решение возникает как предел правильно нормированных нерезонансных частных решений.",
       "status": "ai_checked"
     }
   ],

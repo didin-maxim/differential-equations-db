@@ -11,8 +11,19 @@
       "question_type": "application",
       "answer_mode": "numeric",
       "prompt_override": "Решите y'=xy, y(0)=2. Введите значение ln(y(1)/2).",
-      "auto_check": {"type": "numeric", "value": 0.5, "tolerance": 0.000001, "accepted_text": ["1/2", "0.5"]},
-      "recovery_topics": ["linear_equations", "existence_uniqueness"]
+      "auto_check": {
+        "type": "numeric",
+        "value": 0.5,
+        "tolerance": 1e-06,
+        "accepted_text": [
+          "1/2",
+          "0.5"
+        ]
+      },
+      "recovery_topics": [
+        "linear_equations",
+        "existence_uniqueness"
+      ]
     },
     {
       "id": "exam-sim-q02-linear-first-order-formula",
@@ -21,13 +32,23 @@
       "topic": "first_order",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Решите задачу y'+2y=e^{-x}, y(0)=0. Введите y(x).",
+      "prompt_override": "Решите задачу y'+2y=\\(e^{-x}\\), y(0)=0. Введите y(x).",
       "auto_check": {
         "type": "formula",
-        "accepted_latex": ["e^{-x}-e^{-2x}", "\\exp(-x)-\\exp(-2x)"],
-        "accepted_text": ["e^(-x)-e^(-2x)", "exp(-x)-exp(-2*x)"]
+        "accepted_latex": [
+          "e^{-x}-e^{-2x}",
+          "\\exp(-x)-\\exp(-2x)"
+        ],
+        "accepted_text": [
+          "e^(-x)-e^(-2x)",
+          "exp(-x)-exp(-2*x)"
+        ]
       },
-      "distractor_notes": ["Потеря начального условия", "Знак e^{-2x}-e^{-x}", "Попытка разделить переменные без преобразования"]
+      "distractor_notes": [
+        "Потеря начального условия",
+        "Знак \\(e^{-2x}\\)-\\(e^{-x}\\)",
+        "Попытка разделить переменные без преобразования"
+      ]
     },
     {
       "id": "exam-sim-q03-exact-potential",
@@ -36,11 +57,16 @@
       "topic": "first_order",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Для (2xy+cos x)dx+(x^2+e^y)dy=0 введите потенциал F(x,y) без произвольной константы.",
+      "prompt_override": "Для (2xy+cos x)dx+(x^2+\\(e^{y}\\))dy=0 введите потенциал F(x,y) без произвольной константы.",
       "auto_check": {
         "type": "formula",
-        "accepted_latex": ["x^2y+\\sin x+e^y"],
-        "accepted_text": ["x^2*y+sin(x)+e^y", "x^2 y + sin x + e^y"]
+        "accepted_latex": [
+          "x^2y+\\sin x+e^y"
+        ],
+        "accepted_text": [
+          "x^2*y+sin(x)+e^y",
+          "x^2 y + sin x + e^y"
+        ]
       }
     },
     {
@@ -54,13 +80,32 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": true,
-        "correct_options": ["saddle", "unstable", "stable_manifold_x_axis"],
+        "correct_options": [
+          "saddle",
+          "unstable",
+          "stable_manifold_x_axis"
+        ],
         "options": [
-          {"id": "saddle", "text": "Нуль является седлом."},
-          {"id": "unstable", "text": "Нулевое равновесие неустойчиво."},
-          {"id": "stable_manifold_x_axis", "text": "Ось x является устойчивым направлением."},
-          {"id": "asymptotically_stable", "text": "Нуль асимптотически устойчив."},
-          {"id": "center", "text": "Нуль является центром."}
+          {
+            "id": "saddle",
+            "text": "Нуль является седлом."
+          },
+          {
+            "id": "unstable",
+            "text": "Нулевое равновесие неустойчиво."
+          },
+          {
+            "id": "stable_manifold_x_axis",
+            "text": "Ось x является устойчивым направлением."
+          },
+          {
+            "id": "asymptotically_stable",
+            "text": "Нуль асимптотически устойчив."
+          },
+          {
+            "id": "center",
+            "text": "Нуль является центром."
+          }
         ]
       }
     },
@@ -75,12 +120,26 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["sqrt_abs_y"],
+        "correct_options": [
+          "sqrt_abs_y"
+        ],
         "options": [
-          {"id": "sqrt_abs_y", "text": "y'=2 sqrt(|y|), y(0)=0: есть y=0 и склеенные решения."},
-          {"id": "linear_y", "text": "y'=y, y(0)=0."},
-          {"id": "constant_one", "text": "y'=1, y(0)=0."},
-          {"id": "lipschitz_cubic", "text": "y'=y^3, y(0)=0."}
+          {
+            "id": "sqrt_abs_y",
+            "text": "y'=2 sqrt(|y|), y(0)=0: есть y=0 и склеенные решения."
+          },
+          {
+            "id": "linear_y",
+            "text": "y'=y, y(0)=0."
+          },
+          {
+            "id": "constant_one",
+            "text": "y'=1, y(0)=0."
+          },
+          {
+            "id": "lipschitz_cubic",
+            "text": "y'=y^3, y(0)=0."
+          }
         ]
       }
     },
@@ -91,16 +150,30 @@
       "topic": "linear_equations",
       "question_type": "application",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Для двух решений линейного однородного уравнения второго порядка W(x0)=0. Что верно?",
+      "prompt_override": "Для двух решений линейного однородного уравнения второго порядка W(x_0)=0. Что верно?",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["dependent"],
+        "correct_options": [
+          "dependent"
+        ],
         "options": [
-          {"id": "dependent", "text": "Они линейно зависимы на всем интервале."},
-          {"id": "maybe_independent", "text": "Они могут быть независимы, если W не равен нулю в других точках."},
-          {"id": "need_constant_coefficients", "text": "Вывод верен только при постоянных коэффициентах."},
-          {"id": "only_if_y_values_zero", "text": "Нужны еще условия y1(x0)=y2(x0)=0."}
+          {
+            "id": "dependent",
+            "text": "Они линейно зависимы на всем интервале."
+          },
+          {
+            "id": "maybe_independent",
+            "text": "Они могут быть независимы, если W не равен нулю в других точках."
+          },
+          {
+            "id": "need_constant_coefficients",
+            "text": "Вывод верен только при постоянных коэффициентах."
+          },
+          {
+            "id": "only_if_y_values_zero",
+            "text": "Нужны еще условия y_1(x_0)=y_2(x_0)=0."
+          }
         ]
       }
     },
@@ -111,8 +184,18 @@
       "topic": "boundary_sturm",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Для y''+lambda y=0, y'(0)=0, y(pi/2)=0 введите все собственные значения lambda через n=0,1,2,...",
-      "auto_check": {"type": "formula", "accepted_latex": ["(2n+1)^2", "\\lambda_n=(2n+1)^2"], "accepted_text": ["(2n+1)^2", "lambda_n=(2n+1)^2"]}
+      "prompt_override": "Для y''+lambda y=0, y'(0)=0, y(π/2)=0 введите все собственные значения lambda через n=0,1,2,...",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "(2n+1)^2",
+          "\\lambda_n=(2n+1)^2"
+        ],
+        "accepted_text": [
+          "(2n+1)^2",
+          "lambda_n=(2n+1)^2"
+        ]
+      }
     },
     {
       "id": "exam-sim-q08-phase-line-semistable",
@@ -125,12 +208,27 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": true,
-        "correct_options": ["minus_one_unstable", "one_semistable"],
+        "correct_options": [
+          "minus_one_unstable",
+          "one_semistable"
+        ],
         "options": [
-          {"id": "minus_one_unstable", "text": "y=-1 неустойчиво."},
-          {"id": "one_semistable", "text": "y=1 устойчиво с одной стороны и неустойчиво с другой."},
-          {"id": "one_asymptotically_stable", "text": "y=1 асимптотически устойчиво с двух сторон."},
-          {"id": "alternate_automatically", "text": "Устойчивость обязательно чередуется при переходе через каждый корень."}
+          {
+            "id": "minus_one_unstable",
+            "text": "y=-1 неустойчиво."
+          },
+          {
+            "id": "one_semistable",
+            "text": "y=1 устойчиво с одной стороны и неустойчиво с другой."
+          },
+          {
+            "id": "one_asymptotically_stable",
+            "text": "y=1 асимптотически устойчиво с двух сторон."
+          },
+          {
+            "id": "alternate_automatically",
+            "text": "Устойчивость обязательно чередуется при переходе через каждый корень."
+          }
         ]
       }
     },
@@ -142,7 +240,16 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для y''+xy=0, y(0)=1, y'(0)=0 введите первые пять коэффициентов a0,a1,a2,a3,a4 через запятую.",
-      "auto_check": {"type": "formula", "accepted_text": ["1,0,0,-1/6,0", "1, 0, 0, -1/6, 0"], "accepted_latex": ["1,0,0,-\\frac16,0"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_text": [
+          "1,0,0,-1/6,0",
+          "1, 0, 0, -1/6, 0"
+        ],
+        "accepted_latex": [
+          "1,0,0,-\\frac16,0"
+        ]
+      }
     },
     {
       "id": "exam-sim-q10-variation-constants-short",
@@ -152,7 +259,17 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Введите общее решение уравнения y''+y=1.",
-      "auto_check": {"type": "formula", "accepted_latex": ["1+C_1\\cos x+C_2\\sin x", "C_1\\cos x+C_2\\sin x+1"], "accepted_text": ["1+C1*cos(x)+C2*sin(x)", "C1 cos x + C2 sin x + 1"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "1+C_1\\cos x+C_2\\sin x",
+          "C_1\\cos x+C_2\\sin x+1"
+        ],
+        "accepted_text": [
+          "1+C1*cos(x)+C2*sin(x)",
+          "C1 cos x + C2 sin x + 1"
+        ]
+      }
     },
     {
       "id": "exam-sim-q11-dirichlet-resonance-dimension",
@@ -161,8 +278,12 @@
       "topic": "boundary_sturm",
       "question_type": "application",
       "answer_mode": "numeric",
-      "prompt_override": "У краевой задачи y''+y=0, y(0)=0, y(pi)=0 сколько линейно независимых решений?",
-      "auto_check": {"type": "numeric", "value": 1, "tolerance": 0}
+      "prompt_override": "У краевой задачи y''+y=0, y(0)=0, y(π)=0 сколько линейно независимых решений?",
+      "auto_check": {
+        "type": "numeric",
+        "value": 1,
+        "tolerance": 0
+      }
     },
     {
       "id": "exam-sim-q12-energy-oscillator",
@@ -172,7 +293,15 @@
       "question_type": "application",
       "answer_mode": "numeric",
       "prompt_override": "Для x''+x=0, x(0)=1, x'(0)=0 введите значение E=(x')^2/2+x^2/2.",
-      "auto_check": {"type": "numeric", "value": 0.5, "tolerance": 0.000001, "accepted_text": ["1/2", "0.5"]}
+      "auto_check": {
+        "type": "numeric",
+        "value": 0.5,
+        "tolerance": 1e-06,
+        "accepted_text": [
+          "1/2",
+          "0.5"
+        ]
+      }
     },
     {
       "id": "exam-sim-q13-homogeneous-first-order-method",
@@ -185,12 +314,27 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": true,
-        "correct_options": ["y_equals_xv", "separable_after_substitution"],
+        "correct_options": [
+          "y_equals_xv",
+          "separable_after_substitution"
+        ],
         "options": [
-          {"id": "y_equals_xv", "text": "Положить y=xv."},
-          {"id": "separable_after_substitution", "text": "После замены получить уравнение с разделяющимися переменными."},
-          {"id": "constant_coefficients", "text": "Свести к линейному уравнению с постоянными коэффициентами второго порядка."},
-          {"id": "sturm", "text": "Применить сравнение Штурма."}
+          {
+            "id": "y_equals_xv",
+            "text": "Положить y=xv."
+          },
+          {
+            "id": "separable_after_substitution",
+            "text": "После замены получить уравнение с разделяющимися переменными."
+          },
+          {
+            "id": "constant_coefficients",
+            "text": "Свести к линейному уравнению с постоянными коэффициентами второго порядка."
+          },
+          {
+            "id": "sturm",
+            "text": "Применить сравнение Штурма."
+          }
         ]
       }
     },
@@ -202,7 +346,17 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для (2xy+y)dx+x^2dy=0 найдите интегрирующий множитель вида mu(x). Введите mu(x) с точностью до постоянного множителя.",
-      "auto_check": {"type": "formula", "accepted_latex": ["x", "Cx"], "accepted_text": ["x", "C*x"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "x",
+          "Cx"
+        ],
+        "accepted_text": [
+          "x",
+          "C*x"
+        ]
+      }
     },
     {
       "id": "exam-sim-q15-riccati-known-solution",
@@ -211,16 +365,30 @@
       "topic": "first_order",
       "question_type": "method",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Риккати y'=y^2-2y+1 имеет частное решение y0=1. Какая замена стандартна?",
+      "prompt_override": "Риккати y'=y^2-2y+1 имеет частное решение y_0=1. Какая замена стандартна?",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["y_equals_1_plus_1u"],
+        "correct_options": [
+          "y_equals_1_plus_1u"
+        ],
         "options": [
-          {"id": "y_equals_1_plus_1u", "text": "y=1+1/u, после чего получается линейное уравнение для u."},
-          {"id": "y_equals_xv", "text": "y=xv, потому что уравнение однородное."},
-          {"id": "fourier", "text": "Разложить решение в ряд Фурье."},
-          {"id": "sturm_compare", "text": "Сравнить с синусом по Штурму."}
+          {
+            "id": "y_equals_1_plus_1u",
+            "text": "y=1+1/u, после чего получается линейное уравнение для u."
+          },
+          {
+            "id": "y_equals_xv",
+            "text": "y=xv, потому что уравнение однородное."
+          },
+          {
+            "id": "fourier",
+            "text": "Разложить решение в ряд Фурье."
+          },
+          {
+            "id": "sturm_compare",
+            "text": "Сравнить с синусом по Штурму."
+          }
         ]
       }
     },
@@ -231,8 +399,19 @@
       "topic": "linear_equations",
       "question_type": "method",
       "answer_mode": "formula",
-      "prompt_override": "Для y''-3y'+2y=e^x введите вид частного решения, который надо подставлять.",
-      "auto_check": {"type": "formula", "accepted_latex": ["Ax e^x", "C x e^x"], "accepted_text": ["A*x*e^x", "C*x*exp(x)", "A x e^x"]}
+      "prompt_override": "Для y''-3y'+2y=\\(e^{x}\\) введите вид частного решения, который надо подставлять.",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "Ax e^x",
+          "C x e^x"
+        ],
+        "accepted_text": [
+          "A*x*e^x",
+          "C*x*exp(x)",
+          "A x e^x"
+        ]
+      }
     },
     {
       "id": "exam-sim-q17-euler-cauchy-roots",
@@ -242,7 +421,17 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для x^2 y''-3xy'+4y=0 введите корни характеристического уравнения Эйлера.",
-      "auto_check": {"type": "formula", "accepted_text": ["2,2", "2"], "accepted_latex": ["2,2", "r=2\\text{ кратности }2"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_text": [
+          "2,2",
+          "2"
+        ],
+        "accepted_latex": [
+          "2,2",
+          "r=2\\text{ кратности }2"
+        ]
+      }
     },
     {
       "id": "exam-sim-q18-transport-profile",
@@ -252,7 +441,17 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для alpha u_x+u_t=0, u(x,0)=f(x), введите решение u(x,t).",
-      "auto_check": {"type": "formula", "accepted_latex": ["f(x-\\alpha t)"], "accepted_text": ["f(x-alpha*t)", "f(x-αt)", "f(x-alpha t)"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "f(x-\\alpha t)"
+        ],
+        "accepted_text": [
+          "f(x-alpha*t)",
+          "f(x-αt)",
+          "f(x-alpha t)"
+        ]
+      }
     },
     {
       "id": "exam-sim-q19-jordan-system",
@@ -261,8 +460,17 @@
       "topic": "systems_matrix_exponential",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Для A=[[2,1],[0,2]] введите матрицу e^{At}.",
-      "auto_check": {"type": "formula", "accepted_text": ["e^(2t)*[[1,t],[0,1]]", "exp(2t)[[1,t],[0,1]]"], "accepted_latex": ["e^{2t}\\begin{pmatrix}1&t\\\\0&1\\end{pmatrix}"]}
+      "prompt_override": "Для A=[[2,1],[0,2]] введите матрицу \\(e^{At}\\).",
+      "auto_check": {
+        "type": "formula",
+        "accepted_text": [
+          "e^(2t)*[[1,t],[0,1]]",
+          "exp(2t)[[1,t],[0,1]]"
+        ],
+        "accepted_latex": [
+          "e^{2t}\\begin{pmatrix}1&t\\\\0&1\\end{pmatrix}"
+        ]
+      }
     },
     {
       "id": "exam-sim-q20-liouville-self-check",
@@ -273,7 +481,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Докажите формулу Лиувилля W'=tr(A)W для фундаментальной матрицы.",
-        "criteria": ["Обозначена фундаментальная матрица X и W=det X.", "Использована формула дифференцирования det X или разложение по столбцам.", "Получено W'=tr(A)W, а не только частный случай постоянной матрицы.", "Отмечено следствие W(t)=W(t0)exp(int tr A)."]
+        "criteria": [
+          "Обозначена фундаментальная матрица X и W=det X.",
+          "Использована формула дифференцирования det X или разложение по столбцам.",
+          "Получено W'=tr(A)W, а не только частный случай постоянной матрицы.",
+          "Отмечено следствие W(t)=W(t_0)\\(\\(e^{int tr A}\\)\\)."
+        ]
       }
     },
     {
@@ -285,7 +498,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Выведите уравнение Эйлера-Лагранжа для закрепленных концов.",
-        "criteria": ["Введена вариация y+epsilon eta с eta(a)=eta(b)=0.", "Найдена первая вариация.", "Интегрирован по частям член с eta'.", "Применена основная лемма вариационного исчисления."]
+        "criteria": [
+          "Введена вариация y+epsilon eta с eta(a)=eta(b)=0.",
+          "Найдена первая вариация.",
+          "Интегрирован по частям член с eta'.",
+          "Применена основная лемма вариационного исчисления."
+        ]
       }
     },
     {
@@ -297,7 +515,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Выведите формулу решения y'+p(x)y=q(x).",
-        "criteria": ["Правильно выбран интегрирующий множитель exp(int p).", "Левая часть свернута в производную произведения.", "Константа или начальное условие обработаны на одном промежутке непрерывности.", "Не потеряна зависимость нижнего предела интеграла."]
+        "criteria": [
+          "Правильно выбран интегрирующий множитель \\(\\(e^{int p}\\)\\).",
+          "Левая часть свернута в производную произведения.",
+          "Константа или начальное условие обработаны на одном промежутке непрерывности.",
+          "Не потеряна зависимость нижнего предела интеграла."
+        ]
       }
     },
     {
@@ -307,8 +530,18 @@
       "topic": "linear_equations",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Решите y'-2y=e^{2x}, y(0)=0. Введите y(x).",
-      "auto_check": {"type": "formula", "accepted_latex": ["x e^{2x}"], "accepted_text": ["x*e^(2x)", "x exp(2x)", "x*exp(2*x)"]}
+      "prompt_override": "Решите y'-2y=\\(e^{2x}\\), y(0)=0. Введите y(x).",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "x e^{2x}"
+        ],
+        "accepted_text": [
+          "x*e^(2x)",
+          "x exp(2x)",
+          "x*exp(2*x)"
+        ]
+      }
     },
     {
       "id": "exam-sim-q24-bernoulli-log-special",
@@ -321,12 +554,28 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": true,
-        "correct_options": ["zero_solution", "bernoulli_substitution", "domain_x_positive"],
+        "correct_options": [
+          "zero_solution",
+          "bernoulli_substitution",
+          "domain_x_positive"
+        ],
         "options": [
-          {"id": "zero_solution", "text": "Особое решение y=0."},
-          {"id": "bernoulli_substitution", "text": "Замену для уравнения Бернулли, например z=y^{-2}."},
-          {"id": "domain_x_positive", "text": "Работу на промежутке x>0."},
-          {"id": "constant_coefficients", "text": "Характеристическое уравнение с постоянными коэффициентами."}
+          {
+            "id": "zero_solution",
+            "text": "Особое решение y=0."
+          },
+          {
+            "id": "bernoulli_substitution",
+            "text": "Замену для уравнения Бернулли, например z=y^{-2}."
+          },
+          {
+            "id": "domain_x_positive",
+            "text": "Работу на промежутке x>0."
+          },
+          {
+            "id": "constant_coefficients",
+            "text": "Характеристическое уравнение с постоянными коэффициентами."
+          }
         ]
       }
     },
@@ -341,12 +590,26 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["criterion_x"],
+        "correct_options": [
+          "criterion_x"
+        ],
         "options": [
-          {"id": "criterion_x", "text": "(M_y-N_x)/N зависит только от x."},
-          {"id": "criterion_y", "text": "(N_x-M_y)/M зависит только от x."},
-          {"id": "always_exact", "text": "Любая форма имеет множитель mu(x)."},
-          {"id": "sturm_condition", "text": "Нужно проверить знаки соседних нулей решений."}
+          {
+            "id": "criterion_x",
+            "text": "(M_y-N_x)/N зависит только от x."
+          },
+          {
+            "id": "criterion_y",
+            "text": "(N_x-M_y)/M зависит только от x."
+          },
+          {
+            "id": "always_exact",
+            "text": "Любая форма имеет множитель mu(x)."
+          },
+          {
+            "id": "sturm_condition",
+            "text": "Нужно проверить знаки соседних нулей решений."
+          }
         ]
       }
     },
@@ -358,8 +621,13 @@
       "question_type": "thinking",
       "answer_mode": "self_check",
       "self_check": {
-        "task": "Докажите оценку y(t)<=1/(2-t) из условия y'(t)<=y(t)^2, y(0)=1/2.",
-        "criteria": ["Работаете с положительным y и величиной 1/y.", "Правильно меняете знак: (1/y)'=-y'/y^2 >= -1.", "Получаете 1/y(t)>=2-t.", "Честно указываете интервал t<2."]
+        "task": "Докажите оценку y(t)≤1/(2-t) из условия y'(t)≤y(t)^2, y(0)=1/2.",
+        "criteria": [
+          "Работаете с положительным y и величиной 1/y.",
+          "Правильно меняете знак: (1/y)'=-y'/y^2 ≥ -1.",
+          "Получаете 1/y(t)≥2-t.",
+          "Честно указываете интервал t<2."
+        ]
       }
     },
     {
@@ -370,7 +638,15 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для y'=alpha(1-x)+y-y^2, y(0)=0, в разложении y=alpha z+alpha^2 w+o(alpha^2) введите z(x).",
-      "auto_check": {"type": "formula", "accepted_latex": ["x"], "accepted_text": ["x"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "x"
+        ],
+        "accepted_text": [
+          "x"
+        ]
+      }
     },
     {
       "id": "exam-sim-q28-sturm-separation-self-check",
@@ -381,7 +657,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Докажите теорему Штурма о разделении нулей для y''+q(x)y=0.",
-        "criteria": ["Использован постоянный ненулевой вронскиан двух независимых решений.", "Показано существование нуля второго решения между соседними нулями первого.", "Показана единственность такого нуля.", "Отдельно проговорено, почему нули решений простые."]
+        "criteria": [
+          "Использован постоянный ненулевой вронскиан двух независимых решений.",
+          "Показано существование нуля второго решения между соседними нулями первого.",
+          "Показана единственность такого нуля.",
+          "Отдельно проговорено, почему нули решений простые."
+        ]
       }
     },
     {
@@ -391,16 +672,30 @@
       "topic": "boundary_sturm",
       "question_type": "method",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Почему задача y''+y=1, y'(0)=0, y(pi/2)=0 не имеет решения?",
+      "prompt_override": "Почему задача y''+y=1, y'(0)=0, y(π/2)=0 не имеет решения?",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["orthogonality_resonance"],
+        "correct_options": [
+          "orthogonality_resonance"
+        ],
         "options": [
-          {"id": "orthogonality_resonance", "text": "Правая часть не удовлетворяет условию совместимости с решением сопряженной однородной задачи."},
-          {"id": "no_homogeneous_solution", "text": "Потому что у однородной задачи нет нетривиального решения."},
-          {"id": "peano_fails", "text": "Потому что правая часть разрывна."},
-          {"id": "lambda_negative", "text": "Потому что lambda<0."}
+          {
+            "id": "orthogonality_resonance",
+            "text": "Правая часть не удовлетворяет условию совместимости с решением сопряженной однородной задачи."
+          },
+          {
+            "id": "no_homogeneous_solution",
+            "text": "Потому что у однородной задачи нет нетривиального решения."
+          },
+          {
+            "id": "peano_fails",
+            "text": "Потому что правая часть разрывна."
+          },
+          {
+            "id": "lambda_negative",
+            "text": "Потому что lambda<0."
+          }
         ]
       }
     },
@@ -412,8 +707,13 @@
       "question_type": "thinking",
       "answer_mode": "self_check",
       "self_check": {
-        "task": "Постройте второе решение по одному нигде не нулевому решению y1.",
-        "criteria": ["Ищете y2=u y1 или используете вронскиан.", "Получаете уравнение первого порядка для u'.", "Формула содержит exp(-int p)/y1^2.", "Объяснена линейная независимость построенного решения."]
+        "task": "Постройте второе решение по одному нигде не нулевому решению y_1.",
+        "criteria": [
+          "Ищете y_2=u y_1 или используете вронскиан.",
+          "Получаете уравнение первого порядка для u'.",
+          "Формула содержит \\(\\(e^{-int p}\\)\\)/y_1^2.",
+          "Объяснена линейная независимость построенного решения."
+        ]
       }
     },
     {
@@ -424,7 +724,17 @@
       "question_type": "application",
       "answer_mode": "formula",
       "prompt_override": "Для y'=y^2+mu t, y(0)=0, y=mu z+mu^2 w+o(mu^2). Введите z(t).",
-      "auto_check": {"type": "formula", "accepted_latex": ["t^2/2", "\\frac{t^2}{2}"], "accepted_text": ["t^2/2", "0.5*t^2"]}
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "t^2/2",
+          "\\frac{t^2}{2}"
+        ],
+        "accepted_text": [
+          "t^2/2",
+          "0.5*t^2"
+        ]
+      }
     },
     {
       "id": "exam-sim-q32-legendre-violation",
@@ -435,7 +745,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Покажите, что \\(y=0\\) экстремаль, но не слабый локальный минимум для \\(J=\\int_0^\\pi (y^2-(y')^2)\\,dx\\).",
-        "criteria": ["Проверена экстремальность \\(y=0\\).", "Вторая вариация записана с правильным знаком.", "Выбрана допустимая малая вариация, например \\(\\sin(nx)\\), дающая отрицательное при достаточно большом \\(n\\).", "Связь с условием Лежандра объяснена через \\(F_{y'y'}<0\\)."]
+        "criteria": [
+          "Проверена экстремальность \\(y=0\\).",
+          "Вторая вариация записана с правильным знаком.",
+          "Выбрана допустимая малая вариация, например \\(\\sin(nx)\\), дающая отрицательное при достаточно большом \\(n\\).",
+          "Связь с условием Лежандра объяснена через \\(F_{y'y'}<0\\)."
+        ]
       }
     },
     {
@@ -447,7 +762,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Докажите знаковый барьер из локальной единственности у нулевого решения.",
-        "criteria": ["Нулевое решение распознано как решение из-за f(t,0)=0.", "Если ненулевое решение меняет знак, оно пересекает ось.", "В точке пересечения применяется локальная единственность в окрестности оси.", "Сделан вывод, что ненулевое решение не может перейти через ось."]
+        "criteria": [
+          "Нулевое решение распознано как решение из-за f(t,0)=0.",
+          "Если ненулевое решение меняет знак, оно пересекает ось.",
+          "В точке пересечения применяется локальная единственность в окрестности оси.",
+          "Сделан вывод, что ненулевое решение не может перейти через ось."
+        ]
       }
     },
     {
@@ -459,7 +779,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Докажите, что при tr A(t)=0 две колонки фундаментальной матрицы не могут обе стремиться к нулю.",
-        "criteria": ["Использована формула Лиувилля для det X.", "Из tr A=0 получено det X(t)=const !=0.", "Если обе колонки стремятся к нулю, площадь параллелограмма стремится к нулю.", "Противоречие сформулировано геометрически."]
+        "criteria": [
+          "Использована формула Лиувилля для det X.",
+          "Из tr A=0 получено det X(t)=const ≠0.",
+          "Если обе колонки стремятся к нулю, площадь параллелограмма стремится к нулю.",
+          "Противоречие сформулировано геометрически."
+        ]
       }
     },
     {
@@ -471,7 +796,12 @@
       "answer_mode": "self_check",
       "self_check": {
         "task": "Докажите экспоненциальную устойчивость по отрицательной симметрической части A(t).",
-        "criteria": ["Взята функция V=|x|^2.", "Правильно вычислено V'=x^T(A+A^T)x.", "Получена оценка V'<=-2alpha V и применено Гронуолл/интегрирование.", "Объяснено, почему это не критерий по мгновенным собственным значениям."]
+        "criteria": [
+          "Взята функция V=|x|^2.",
+          "Правильно вычислено V'=x^T(A+A^T)x.",
+          "Получена оценка V'≤-2alpha V и применено Гронуолл/интегрирование.",
+          "Объяснено, почему это не критерий по мгновенным собственным значениям."
+        ]
       }
     },
     {
@@ -482,8 +812,13 @@
       "question_type": "thinking",
       "answer_mode": "self_check",
       "self_check": {
-        "task": "Проведите прямое сравнение с sin(x-a) и докажите наличие нуля на (a,a+pi].",
-        "criteria": ["Введено сравнивающее решение s=sin(x-a).", "Вычислена производная подходящего вронскиана или интегральное тождество.", "Использовано q(x)>=1 с правильным знаком.", "Аккуратно разобран случай отсутствия нуля до a+pi и получено противоречие."]
+        "task": "Проведите прямое сравнение с sin(x-a) и докажите наличие нуля на (a,a+π].",
+        "criteria": [
+          "Введено сравнивающее решение s=sin(x-a).",
+          "Вычислена производная подходящего вронскиана или интегральное тождество.",
+          "Использовано q(x)≥1 с правильным знаком.",
+          "Аккуратно разобран случай отсутствия нуля до a+π и получено противоречие."
+        ]
       }
     },
     {
@@ -494,10 +829,20 @@
       "question_type": "application",
       "answer_mode": "numeric",
       "prompt_override": "При каком alpha точка (0,0) является равновесием системы x_1'=ln(1+alpha x_1), x_2'=alpha cos x_2-1?",
-      "auto_check": {"type": "numeric", "value": 1, "tolerance": 0.000001, "accepted_text": ["1"]},
+      "auto_check": {
+        "type": "numeric",
+        "value": 1,
+        "tolerance": 1e-06,
+        "accepted_text": [
+          "1"
+        ]
+      },
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 2,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -513,18 +858,39 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["no_by_uniqueness"],
+        "correct_options": [
+          "no_by_uniqueness"
+        ],
         "options": [
-          {"id": "no_by_uniqueness", "text": "Нет: если решение достигло \\(a\\), то по локальной единственности оно совпадает с постоянным решением \\(x\\equiv a\\)."},
-          {"id": "yes_if_f_a_zero", "text": "Да, одного условия \\(f(a)=0\\) достаточно для прихода непостоянной траектории в \\(a\\)."},
-          {"id": "yes_if_initial_a", "text": "Да, начавшись в \\(a\\), решение может затем выйти из стационарной точки."},
-          {"id": "stop_without_uniqueness", "text": "Да: траектория может дойти до \\(a\\) и просто остановиться, несмотря на локальную единственность."}
+          {
+            "id": "no_by_uniqueness",
+            "text": "Нет: если решение достигло \\(a\\), то по локальной единственности оно совпадает с постоянным решением \\(x\\equiv a\\)."
+          },
+          {
+            "id": "yes_if_f_a_zero",
+            "text": "Да, одного условия \\(f(a)=0\\) достаточно для прихода непостоянной траектории в \\(a\\)."
+          },
+          {
+            "id": "yes_if_initial_a",
+            "text": "Да, начавшись в \\(a\\), решение может затем выйти из стационарной точки."
+          },
+          {
+            "id": "stop_without_uniqueness",
+            "text": "Да: траектория может дойти до \\(a\\) и просто остановиться, несмотря на локальную единственность."
+          }
         ]
       },
-      "distractor_notes": ["Подмена стационарности точки возможностью попадания в нее.", "Игнорирование слова непостоянное: при начальном условии x(0)=a локальная единственность дает только постоянное решение.", "Забывание условия локальной липшицевости, без которого возможны склейки с равновесием."],
+      "distractor_notes": [
+        "Подмена стационарности точки возможностью попадания в нее.",
+        "Игнорирование слова непостоянное: при начальном условии x(0)=a локальная единственность дает только постоянное решение.",
+        "Забывание условия локальной липшицевости, без которого возможны склейки с равновесием."
+      ],
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 3,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -540,17 +906,34 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["negative_real_parts"],
+        "correct_options": [
+          "negative_real_parts"
+        ],
         "options": [
-          {"id": "negative_real_parts", "text": "Все собственные значения имеют отрицательные действительные части."},
-          {"id": "negative_real_eigenvalues", "text": "Все собственные значения действительные и отрицательные."},
-          {"id": "symmetric_negative", "text": "Матрица обязательно симметрична и отрицательно определена."},
-          {"id": "mod_less_one", "text": "Все собственные значения по модулю меньше 1."}
+          {
+            "id": "negative_real_parts",
+            "text": "Все собственные значения имеют отрицательные действительные части."
+          },
+          {
+            "id": "negative_real_eigenvalues",
+            "text": "Все собственные значения действительные и отрицательные."
+          },
+          {
+            "id": "symmetric_negative",
+            "text": "Матрица обязательно симметрична и отрицательно определена."
+          },
+          {
+            "id": "mod_less_one",
+            "text": "Все собственные значения по модулю меньше 1."
+          }
         ]
       },
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 8,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -566,17 +949,34 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["stable"],
+        "correct_options": [
+          "stable"
+        ],
         "options": [
-          {"id": "stable", "text": "Устойчивость по Ляпунову."},
-          {"id": "asymptotic", "text": "Асимптотическую устойчивость без дополнительных условий."},
-          {"id": "unstable", "text": "Неустойчивость."},
-          {"id": "inconclusive", "text": "Метод ничего не говорит даже об устойчивости."}
+          {
+            "id": "stable",
+            "text": "Устойчивость по Ляпунову."
+          },
+          {
+            "id": "asymptotic",
+            "text": "Асимптотическую устойчивость без дополнительных условий."
+          },
+          {
+            "id": "unstable",
+            "text": "Неустойчивость."
+          },
+          {
+            "id": "inconclusive",
+            "text": "Метод ничего не говорит даже об устойчивости."
+          }
         ]
       },
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 11,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -592,17 +992,34 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["asymptotically_stable"],
+        "correct_options": [
+          "asymptotically_stable"
+        ],
         "options": [
-          {"id": "asymptotically_stable", "text": "Асимптотически устойчиво: справа поле отрицательно, слева положительно."},
-          {"id": "unstable", "text": "Неустойчиво."},
-          {"id": "stable_not_asymptotic", "text": "Устойчиво, но не асимптотически устойчиво."},
-          {"id": "lyapunov_impossible", "text": "Нельзя решить без специальной функции Ляпунова."}
+          {
+            "id": "asymptotically_stable",
+            "text": "Асимптотически устойчиво: справа поле отрицательно, слева положительно."
+          },
+          {
+            "id": "unstable",
+            "text": "Неустойчиво."
+          },
+          {
+            "id": "stable_not_asymptotic",
+            "text": "Устойчиво, но не асимптотически устойчиво."
+          },
+          {
+            "id": "lyapunov_impossible",
+            "text": "Нельзя решить без специальной функции Ляпунова."
+          }
         ]
       },
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 13,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -614,21 +1031,38 @@
       "topic": "qualitative",
       "question_type": "method",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Для z'=Az+o(|z|) все Re lambda_i<=0, и у одного собственного значения Re lambda_i=0. Что можно заключить из линейной части?",
+      "prompt_override": "Для z'=Az+o(|z|) все Re lambda_i≤0, и у одного собственного значения Re lambda_i=0. Что можно заключить из линейной части?",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["inconclusive"],
+        "correct_options": [
+          "inconclusive"
+        ],
         "options": [
-          {"id": "inconclusive", "text": "Однозначного вывода нет: нужны нелинейные члены или дополнительная структура."},
-          {"id": "unstable", "text": "Равновесие обязательно неустойчиво."},
-          {"id": "stable_not_asymptotic", "text": "Равновесие обязательно устойчиво, но не асимптотически."},
-          {"id": "asymptotic", "text": "Равновесие обязательно асимптотически устойчиво."}
+          {
+            "id": "inconclusive",
+            "text": "Однозначного вывода нет: нужны нелинейные члены или дополнительная структура."
+          },
+          {
+            "id": "unstable",
+            "text": "Равновесие обязательно неустойчиво."
+          },
+          {
+            "id": "stable_not_asymptotic",
+            "text": "Равновесие обязательно устойчиво, но не асимптотически."
+          },
+          {
+            "id": "asymptotic",
+            "text": "Равновесие обязательно асимптотически устойчиво."
+          }
         ]
       },
       "attribution": {
         "source_id": "src-test-lyapunov-stability-alekseev",
-        "authors": ["Алексеев В.А.", "Дубинская В.Ю."],
+        "authors": [
+          "Алексеев В.А.",
+          "Дубинская В.Ю."
+        ],
         "original_question_number": 19,
         "import_decision": "interactive_overlay_no_new_card"
       }
@@ -640,22 +1074,42 @@
       "topic": "first_order",
       "question_type": "method",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Для e^{y'}+xy+y'=0 выберите корректные начальные данные задачи Коши около точки (1,1).",
+      "prompt_override": "Для \\(e^{y'}\\)+xy+y'=0 выберите корректные начальные данные задачи Коши около точки (1,1).",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["y_at_1"],
+        "correct_options": [
+          "y_at_1"
+        ],
         "options": [
-          {"id": "y_and_derivative_same_point", "text": "y(1)=1, y'(1)=0."},
-          {"id": "two_y_values", "text": "y(1)=1, y(2)=0."},
-          {"id": "mixed_derivative_other_point", "text": "y(1)=1, y'(2)=0."},
-          {"id": "y_at_1", "text": "y(1)=1."}
+          {
+            "id": "y_and_derivative_same_point",
+            "text": "y(1)=1, y'(1)=0."
+          },
+          {
+            "id": "two_y_values",
+            "text": "y(1)=1, y(2)=0."
+          },
+          {
+            "id": "mixed_derivative_other_point",
+            "text": "y(1)=1, y'(2)=0."
+          },
+          {
+            "id": "y_at_1",
+            "text": "y(1)=1."
+          }
         ]
       },
-      "distractor_notes": ["Путаница с ОДУ второго порядка.", "Попытка задавать производную как независимое начальное условие.", "Игнорирование совместности с F(x,y,p)=0."],
+      "distractor_notes": [
+        "Путаница с ОДУ второго порядка.",
+        "Попытка задавать производную как независимое начальное условие.",
+        "Игнорирование совместности с F(x,y,p)=0."
+      ],
       "attribution": {
         "source_id": "src-test-du-implicit-first-order-lopushanski",
-        "authors": ["Лопушански М.С."],
+        "authors": [
+          "Лопушански М.С."
+        ],
         "original_question_number": 1,
         "import_decision": "new_card_and_interactive_overlay"
       }
@@ -668,11 +1122,25 @@
       "question_type": "application",
       "answer_mode": "numeric",
       "prompt_override": "Сколько локальных решений уравнения (y')^3-3xy(y')^2-x^3y^2+3x^2y^2y'=0 проходит через точку (1,2)?",
-      "auto_check": {"type": "numeric", "value": 1, "tolerance": 0, "accepted_text": ["1", "одно", "ровно одно"]},
-      "recovery_topics": ["existence_uniqueness", "implicit_ode_discriminant"],
+      "auto_check": {
+        "type": "numeric",
+        "value": 1,
+        "tolerance": 0,
+        "accepted_text": [
+          "1",
+          "одно",
+          "ровно одно"
+        ]
+      },
+      "recovery_topics": [
+        "existence_uniqueness",
+        "implicit_ode_discriminant"
+      ],
       "attribution": {
         "source_id": "src-test-du-implicit-first-order-lopushanski",
-        "authors": ["Лопушански М.С."],
+        "authors": [
+          "Лопушански М.С."
+        ],
         "original_question_number": 2,
         "import_decision": "new_card_and_interactive_overlay"
       }
@@ -688,18 +1156,38 @@
       "auto_check": {
         "type": "multiple_choice",
         "multiple": false,
-        "correct_options": ["singular_inside_discriminant"],
+        "correct_options": [
+          "singular_inside_discriminant"
+        ],
         "options": [
-          {"id": "discriminant_all_singular", "text": "Любое решение, лежащее в дискриминантной кривой, является особым."},
-          {"id": "singular_inside_discriminant", "text": "Любое особое решение содержится в p-дискриминантной кривой."},
-          {"id": "discriminant_only_solutions", "text": "Дискриминантная кривая состоит только из решений данного уравнения."},
-          {"id": "no_general_relation", "text": "Между особыми решениями и p-дискриминантом нет общей связи."}
+          {
+            "id": "discriminant_all_singular",
+            "text": "Любое решение, лежащее в дискриминантной кривой, является особым."
+          },
+          {
+            "id": "singular_inside_discriminant",
+            "text": "Любое особое решение содержится в p-дискриминантной кривой."
+          },
+          {
+            "id": "discriminant_only_solutions",
+            "text": "Дискриминантная кривая состоит только из решений данного уравнения."
+          },
+          {
+            "id": "no_general_relation",
+            "text": "Между особыми решениями и p-дискриминантом нет общей связи."
+          }
         ]
       },
-      "distractor_notes": ["Обращение верного утверждения.", "Подмена дискриминанта множеством решений.", "Игнорирование регулярной единственности при F_p != 0."],
+      "distractor_notes": [
+        "Обращение верного утверждения.",
+        "Подмена дискриминанта множеством решений.",
+        "Игнорирование регулярной единственности при F_p ≠ 0."
+      ],
       "attribution": {
         "source_id": "src-test-du-implicit-first-order-lopushanski",
-        "authors": ["Лопушански М.С."],
+        "authors": [
+          "Лопушански М.С."
+        ],
         "original_question_number": 5,
         "import_decision": "new_card_and_interactive_overlay"
       }
@@ -707,9 +1195,28 @@
   ],
   "coverage": {
     "question_count": 45,
-    "by_answer_mode": {"self_check": 11, "numeric": 5, "formula": 13, "multiple_choice": 16},
-    "by_question_type": {"application": 21, "method": 13, "proof": 4, "thinking": 7},
-    "by_target_score": {"3": 8, "4": 11, "5": 11, "6": 5, "7": 3, "8": 4, "9": 2, "10": 1}
+    "by_answer_mode": {
+      "self_check": 11,
+      "numeric": 5,
+      "formula": 13,
+      "multiple_choice": 16
+    },
+    "by_question_type": {
+      "application": 21,
+      "method": 13,
+      "proof": 4,
+      "thinking": 7
+    },
+    "by_target_score": {
+      "3": 8,
+      "4": 11,
+      "5": 11,
+      "6": 5,
+      "7": 3,
+      "8": 4,
+      "9": 2,
+      "10": 1
+    }
   },
   "notes": [
     "Стартовый набор намеренно меньше всей базы: он покрывает крупные темы и разные типы проверки без вычислительных монстров.",

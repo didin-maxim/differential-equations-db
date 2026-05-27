@@ -28,7 +28,7 @@
       "to": "written-mipt-2000-cauchy-p-of-y-guess",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор объясняет, как переносить условия y(x0), y'(x0) в редуцированную задачу p(y0)=y'(x0).",
+      "forward_text": "Навигатор объясняет, как переносить условия y(x_0), y'(x_0) в редуцированную задачу p(y_0)=y'(x_0).",
       "backward_text": "MIPT 2000 является representative-задачей, где начальные условия выбирают нужную ветвь после редукции p(y).",
       "status": "ai_checked",
       "confidence": 0.95
@@ -95,7 +95,7 @@
       "type": "contrast",
       "distance": 2,
       "forward_text": "После понижения порядка часто остается разделяющееся уравнение, но этот кластер отвечает за распознавание второго порядка и ветви p, а не за само разделение переменных.",
-      "backward_text": "Логистическое уравнение представляет соседний кластер separable-homogeneous-first-order, где нет дополнительного шага y'' -> p' или p dp/dy.",
+      "backward_text": "Логистическое уравнение представляет соседний кластер separable-homogeneous-first-order, где нет дополнительного шага y'' → p' или p dp/dy.",
       "status": "ai_checked",
       "confidence": 0.84
     },

@@ -43,7 +43,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "При alpha=0 имеем y0''+y0=0, y0(0)=1, y0'(0)=0, поэтому y0=cos t. Дифференцируя исходную задачу по alpha и подставляя alpha=0, получаем z''+z=t-y0=t-cos t, z(0)=1, z'(0)=1. Отсюда z(t)=cos t+t-(t/2)sin t.",
+      "text": "При alpha=0 имеем y_0''+y_0=0, y_0(0)=1, y_0'(0)=0, поэтому y_0=cos t. Дифференцируя исходную задачу по alpha и подставляя alpha=0, получаем z''+z=t-y_0=t-cos t, z(0)=1, z'(0)=1. Отсюда z(t)=cos t+t-(t/2)sin t.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"

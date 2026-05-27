@@ -1,6 +1,6 @@
 {
   "id": "cluster-sturm-oscillation-comparison",
-  "title": "Аудит кластера Sturm: сравнение, осцилляция, краевые пороги",
+  "title": "Аудит кластера Sturm: сравнение, осцилляция, краевые условия",
   "created_at": "2026-05-27",
   "scope": [
     "task_cluster",
@@ -14,14 +14,14 @@
     "cluster-sturm-method-guide",
     "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
     "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
-    "cluster-sturm-bvp-unit-endpoints-safe-threshold",
-    "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
-    "cluster-sturm-bvp-unit-endpoints-threshold-counterexample"
+    "cluster-sturm-bvp-unit-endpoints-sufficient-condition",
+    "cluster-sturm-bvp-unit-endpoints-exact-bound",
+    "cluster-sturm-bvp-unit-endpoints-resonance-counterexample"
   ],
   "status": "ai_checked",
   "notes": [
     "Добавление точечное: кластер уже saturated, поэтому новые карточки закрывают только обязательный блок y''+f(x)y=0, f(x)<C, y(a)=y(b)=1, две связующие леммы и один методический навигатор.",
-    "Центральный результат: на [0,L] универсальная гарантия существования и единственности для всех непрерывных f<C имеет место ровно при C<=pi^2/L^2; на [a,b] заменить L на b-a.",
+    "Центральный результат: на [0,L] универсальная гарантия существования и единственности для всех непрерывных f<C имеет место ровно при C≤π^2/L^2; на [a,b] заменить L на b-a.",
     "Все новые карточки являются self-authored/model tasks М. Дидина; точный внешний источник для этих формулировок не найден.",
     "Связи записаны только в data/relations/relations.d/cluster-sturm-oscillation-comparison.yaml.",
     "cluster-sturm-method-guide является теоретико-методическим блоком, а не новой вычислительной задачей."

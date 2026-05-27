@@ -1,4 +1,4 @@
-# Аудит базового минимума МФТИ по ДУ
+﻿# Аудит базового минимума МФТИ по ДУ
 
 Дата прохода: 2026-05-27. Область проверки: карточки с `difficulty.idea_score <= 4`, а также карточки с тегами `exam_score_3`, `low_technical`, `resit_exam`, `weak_student_check`. Цель прохода - не расширять базу массово, а проверить нижний порог: что студент на 3/4 действительно должен уметь по стандартному курсу МФТИ.
 
@@ -49,6 +49,6 @@
 
 ## Спорные, Но Не Исправленные
 
-- Карточки с `low_technical`, но `idea_score >= 6` (`local-du-deficit-first-order-pde-characteristics`, `local-du-deficit-sturm-nonpositive-potential-bvp`, `local-du-deficit-variational-quadratic-threshold` и похожие) оставлены как есть: там действительно низкая техника, но идея не является минимальной для оценки 3.
+- Карточки с `low_technical`, но `idea_score >= 6` (`local-du-deficit-first-order-pde-characteristics`, `local-du-deficit-sturm-nonpositive-potential-bvp`, `local-du-deficit-variational-quadratic-bound` и похожие) оставлены как есть: там действительно низкая техника, но идея не является минимальной для оценки 3.
 - Олимпиадные карточки с `idea_score <= 4` не переводились в `exam_score_3`: низкая идея сама по себе не означает минимальный экзаменационный порог, если формат или техника не типичны для слабого устного ответа.
 - `oral-above-three-riccati-shift-known-solution` оставлена с idea 5: в отличие от `riccati-known-solution`, там нужно сначала заметить частное решение `y=x`.

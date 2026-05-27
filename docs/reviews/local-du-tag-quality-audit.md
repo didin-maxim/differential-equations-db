@@ -1,4 +1,4 @@
-# Аудит качества меток local_du
+﻿# Аудит качества меток local_du
 
 Дата прохода: 2026-05-26. Зона прохода: `data/taxonomy/tags.yaml` и фактические `tags` в `data/problems/**`, с правками только в `data/problems/local_du/**`.
 
@@ -28,7 +28,7 @@
 - `implicit_ode_discriminant`
 - `parameter_sensitivity_ivp`
 - `change_independent_variable`, `order_reduction_substitution`, `p_of_y_reduction`
-- `free_endpoint_variational`, `second_variation_test`, `quadratic_variational_threshold`
+- `free_endpoint_variational`, `second_variation_test`, `quadratic_variational_bound`
 - `sturm_comparison`, `sturm_zero_count`, `liouville_transform`, `prufer_angle`, `bessel_equation`
 - `equilibrium_linearization`
 - `affine_solution_space`, `wronskian_obstruction`
@@ -43,7 +43,7 @@
 - `local-du-written-2011-21-parameter-variations`, `local-du-written-2023-parameter-sensitivity`: добавлена `parameter_sensitivity_ivp`.
 - `local-du-written-2022-inverse-square-change`: добавлена `change_independent_variable`.
 - `local-du-written-2014-51-factorized-variable-coeff`, `local-du-written-2024-linear-y-xu-reduction`, `local-du-written-2024-nonlinear-p-of-y`: добавлены точные метки редукции порядка; для p(y) отдельно `p_of_y_reduction`.
-- Вариационные local_du карточки получили `variational_calculus`/`euler_lagrange` там, где раньше оставался только `boundary_value`, плюс точные `free_endpoint_variational`, `second_variation_test`, `quadratic_variational_threshold` по фактическому механизму.
+- Вариационные local_du карточки получили `variational_calculus`/`euler_lagrange` там, где раньше оставался только `boundary_value`, плюс точные `free_endpoint_variational`, `second_variation_test`, `quadratic_variational_bound` по фактическому механизму.
 - Штурмовские и бесселевы карточки `theory_8` получили `sturm_comparison`, `sturm_zero_count`, `liouville_transform`, `prufer_angle`, `bessel_equation` там, где эти методы уже были явно записаны в профиле.
 - Карточки на равновесия и линеаризацию получили `equilibrium_linearization`.
 - Карточка про аффинное пространство решений получила `affine_solution_space` и `wronskian_obstruction`.

@@ -1,4 +1,4 @@
-# Аудит кластера: Штурм, сравнение, осцилляция и нули
+﻿# Аудит кластера: Штурм, сравнение, осцилляция и нули
 
 Дата прохода: 2026-05-27. Зона: `sturm-oscillation-comparison`.
 
@@ -7,9 +7,9 @@
 - Добавлены 5 карточек в `data/problems/cluster_audit/sturm_oscillation_comparison/`:
   - `cluster-sturm-dirichlet-nonresonance-interpolation-lemma`;
   - `cluster-sturm-disconjugacy-strict-upper-bound-lemma`;
-  - `cluster-sturm-bvp-unit-endpoints-safe-threshold`;
-  - `cluster-sturm-bvp-unit-endpoints-sharp-threshold`;
-  - `cluster-sturm-bvp-unit-endpoints-threshold-counterexample`.
+  - `cluster-sturm-bvp-unit-endpoints-sufficient-condition`;
+  - `cluster-sturm-bvp-unit-endpoints-exact-bound`;
+  - `cluster-sturm-bvp-unit-endpoints-resonance-counterexample`.
 - Добавлены связи в `data/relations/relations.d/cluster-sturm-oscillation-comparison.yaml`.
 - Добавлен batch `data/import_batches/cluster-sturm-oscillation-comparison.yaml`.
 - Обновлена политика кластера в `data/task_clusters/clusters.yaml`: добавлены варианты `dirichlet_disconjugacy_threshold`, `bvp_interpolation_nonresonance`, `sharpness_counterexample`; уточнены duplicate-сигналы, representative ids, deficit policy и notes.

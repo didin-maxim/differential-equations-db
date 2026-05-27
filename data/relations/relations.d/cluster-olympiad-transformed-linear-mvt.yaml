@@ -50,7 +50,7 @@
       "to": "imc-1994-p3-rolle-integrating-factor",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор объясняет высокопорядковую ветку: множитель e^{-x} заставляет телескопически сократиться сумму производных.",
+      "forward_text": "Навигатор объясняет высокопорядковую ветку: множитель \\(e^{-x}\\) заставляет телескопически сократиться сумму производных.",
       "backward_text": "IMC 1994 P3 является representative-вариантом higher_order_operator для сильного студента.",
       "status": "ai_checked",
       "confidence": 0.94

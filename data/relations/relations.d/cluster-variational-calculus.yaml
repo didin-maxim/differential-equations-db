@@ -89,12 +89,12 @@
       "confidence": 0.82
     },
     {
-      "id": "rel-cluster-var-threshold-to-quadratic-coercive",
-      "from": "local-du-deficit-variational-quadratic-threshold",
+      "id": "rel-cluster-var-bound-to-quadratic-coercive",
+      "from": "local-du-deficit-variational-quadratic-bound",
       "to": "cluster-variational-quadratic-coercive-minimizer",
       "type": "contrast",
       "distance": 2,
-      "forward_text": "Пороговая задача показывает, как знак квадратичной формы может разрушить глобальный минимум.",
+      "forward_text": "Задача с критическим значением параметра показывает, как знак квадратичной формы может разрушить глобальный минимум.",
       "backward_text": "Коэрцитивная теорема фиксирует противоположный случай: положительный q и y'^2 дают строгую выпуклость и единственность.",
       "status": "ai_checked",
       "confidence": 0.86
@@ -199,13 +199,13 @@
       "confidence": 0.97
     },
     {
-      "id": "rel-cluster-var-guide-to-quadratic-threshold",
+      "id": "rel-cluster-var-guide-to-quadratic-bound",
       "from": "cluster-variational-method-guide",
-      "to": "local-du-deficit-variational-quadratic-threshold",
+      "to": "local-du-deficit-variational-quadratic-bound",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор предупреждает, что знак второй вариации может определяться спектральным порогом квадратичной формы.",
-      "backward_text": "Пороговая карточка является компактным примером различия между экстремалью и минимумом.",
+      "forward_text": "Навигатор предупреждает, что знак второй вариации может определяться первым собственным значением для квадратичной формы.",
+      "backward_text": "Карточка с критическим значением параметра является компактным примером различия между экстремалью и минимумом.",
       "status": "ai_checked",
       "confidence": 0.9
     },
@@ -227,7 +227,7 @@
       "type": "contrast",
       "distance": 2,
       "forward_text": "Навигатор использует собственные значения только как язык знака второй вариации или отношения Рэлея; вычисление спектра как цель относится к boundary-spectral-problems.",
-      "backward_text": "Базовая задача Дирихле задает соседний спектральный кластер, который нужен вариационному блоку как пороговый ориентир, а не как новый вариационный расчет.",
+      "backward_text": "Базовая задача Дирихле задает соседний спектральный кластер, который нужен вариационному блоку как ориентир для первого собственного значения, а не как новый вариационный расчет.",
       "status": "ai_checked",
       "confidence": 0.86
     },

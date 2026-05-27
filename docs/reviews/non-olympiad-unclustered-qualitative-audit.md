@@ -1,4 +1,4 @@
-# Аудит неолимпиадных qualitative/stability задач вне кластеров
+﻿# Аудит неолимпиадных qualitative/stability задач вне кластеров
 
 Дата: 2026-05-27.
 
@@ -29,7 +29,7 @@
 - `mit-18034-pset09-lyapunov-nonlinear-stable`
 - `mit-18034-pset09-omega-limit-linearization`
 - `waterloo-second-order-pq-stability`
-- `waterloo-critical-damping-crossing-threshold`
+- `waterloo-critical-damping-crossing-condition`
 - `waterloo-oscillator-speed-before-crossing`
 
 Кластер стал крупнее, но это содержательно оправдано: у него уже есть политика ближайшего слоя фазовой плоскости и устойчивости, а добавленные задачи представляют разные механизмы, а не только замену коэффициентов.
