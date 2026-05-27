@@ -1,0 +1,109 @@
+{
+  "id": "msu-ode-2019-3-nonzero-field-nonunique-plane",
+  "title": "Ненулевое непрерывное поле на плоскости не гарантирует единственность",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2019, задача 3",
+        "text": "Для n=1 верно: если правая часть уравнения x'=f(x), x из R^n, непрерывна и не принимает нулевых значений, то все пространство R^n состоит из точек существования и единственности. Распространяется ли это утверждение на случай n=2? Ответ обосновать.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-transverse-clock",
+      "title": "Добавить невырожденные часы",
+      "text": "В плоскости можно сделать одну координату временем, а во второй оставить обычную пеановскую неединственность; векторное поле при этом нигде не обращается в ноль.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нет. Рассмотрим автономную систему x'=1, y'=2 sqrt(|y|). Векторное поле непрерывно и нигде не равно нулю, потому что первая компонента всегда равна 1. Но через точку (0,0) проходят разные решения: например x=t, y=0 и, для любого c>=0, решение x=t, y=0 при t<=c, y=(t-c)^2 при t>=c. Все они имеют одно и то же начальное значение при t=0, если c=0 дает немедленный выход, а c>0 - задержанный выход после движения вдоль оси. Значит в R^2 ненулевость непрерывного поля не гарантирует единственность.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "foundations",
+      "olympiad"
+    ],
+    "methods": [
+      "peano_counterexample",
+      "add_clock_variable"
+    ],
+    "objects": [
+      "continuous_vector_field",
+      "nonunique_solution",
+      "initial_value_problem"
+    ],
+    "goal": [
+      "disprove"
+    ],
+    "keywords": [
+      "msu-ode-2019-3",
+      "nonzero_vector_field",
+      "nonuniqueness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 3,
+    "local_score": 8,
+    "comment": "Идея сильная, но короткая: спрятать одномерную неединственность во второй координате и защитить ненулевость первой координатой.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "existence_uniqueness",
+    "peano",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_19.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Добавлена как качественный контрпример к теореме единственности: рядом есть Peano/non-Lipschitz карточки, но здесь новая геометрическая защита ненулевости поля."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "msu-ode-2025-2026",
+  "title": "МГУ ОДУ 2025-2026: modern A import",
+  "created_at": "2026-05-27",
+  "scope": [
+    "student_olympiad",
+    "msu_ode",
+    "ru",
+    "modern_import"
+  ],
+  "source_ids": [
+    "src-msu-ode-olympiad"
+  ],
+  "problem_ids": [
+    "msu-ode-2025-2-min-order-polynomial-solutions",
+    "msu-ode-2025-3-gyroscopic-stabilization",
+    "msu-ode-2025-6-global-matrix-riccati-invertible",
+    "msu-ode-2025-7-superstable-second-order-impossible",
+    "msu-ode-2026-3-decoupled-phase-curves-count",
+    "msu-ode-2026-5-polar-stable-not-asymptotic",
+    "msu-ode-2026-6-singular-linear-system-epsilon"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Импорт сделан выборочно по листкам МГУ ОДУ 2025 и 2026: добавлялись только задачи с переносимой ДУ-идеей и без очевидного дубля в базе.",
+    "2025/1, 2026/1 и 2026/2 оставлены в scan-отчете как более вычислительные; 2025/5, 2025/8, 2026/4, 2026/7, 2026/8 требуют отдельного более тонкого разбора или не являются компактными карточками первого прохода.",
+    "Предложения для симуляции экзамена вынесены в data/exam_simulation/question_batches/msu-ode-2025-2026.yaml и не вливаются напрямую в основной questions.yaml."
+  ]
+}

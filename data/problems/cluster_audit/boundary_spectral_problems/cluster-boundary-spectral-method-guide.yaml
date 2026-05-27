@@ -1,0 +1,327 @@
+{
+  "id": "cluster-boundary-spectral-method-guide",
+  "title": "Методический навигатор: краевые спектральные задачи",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера boundary-spectral-problems сначала отделяют линейную краевую постановку от обычной неоднородной BVP: параметр lambda является собственным значением, только если однородная задача с заданными краевыми условиями имеет ненулевое решение. В простых задачах y''+lambda y=0 это проверяют через три случая lambda>0, lambda=0, lambda<0 и нулевой определитель системы на константы; нулевой параметр всегда проверяют отдельно. В регулярной задаче Штурма-Лиувилля работают с самосопряженной формой (p y')'+(lambda r-q)y=0, r>0: собственные функции при разных собственных значениях ортогональны с весом r, а тождество Грина объясняет вещественность спектра и условия совместности. Если неоднородная задача попадает в собственное значение, появляется резонанс: правая часть должна быть ортогональна собственному решению сопряженной задачи; при самосопряженных разделенных условиях это обычная весовая ортогональность. Если собственного значения нет, соседний язык функции Грина строит обратный оператор; если цель - именно ядро, карточка ближе к green-functions-bvp. Связь со Штурмом читать так: нули и сравнение помогают считать или упорядочивать собственные значения, но не заменяют сам спектральный расчет. Связь с вариационными задачами возникает через вторую вариацию, уравнение Якоби и спектральный порог квадратичной формы.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-coddington-levinson",
+          "src-teschl-ode-dynamical-systems",
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "eigenvalue_of_boundary_value_problem",
+          "fundamental_system_solutions",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-diagnose-spectral-vs-bvp",
+      "title": "Сначала проверить, действительно ли задача спектральная",
+      "text": "Спектральной является не всякая краевая задача, а только та, где параметр подбирают из условия существования ненулевого решения однородной краевой задачи. Если параметр отсутствует и нужно только доказать существование или единственность, это соседний кластер linear-bvp-solvability-resonance.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-determinant-and-special-values",
+      "title": "Нетривиальность - это ранг краевых условий",
+      "text": "После записи фундаментальной системы краевые условия дают линейную систему на константы. Собственные значения появляются там, где ее определитель равен нулю; особые случаи вроде lambda=0, совпадения корней или сингулярной замены нельзя читать по формуле, полученной при делении на параметр.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_system_solutions",
+        "wronskian",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-self-adjoint-orthogonality",
+      "title": "Самосопряженность дает ортогональность и вещественность",
+      "text": "В форме Штурма-Лиувилля разность двух уравнений после умножения крест-накрест сворачивается в граничный член. Разделенные самосопряженные условия зануляют этот член, поэтому разные собственные функции ортогональны с весом, а комплексный спектр в регулярной вещественной постановке не возникает.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem"
+      ]
+    },
+    {
+      "id": "idea-resonance-solvability",
+      "title": "При собственном значении появляется условие совместности",
+      "text": "Если однородная краевая задача имеет ядро, неоднородную правую часть нельзя исправить добавлением собственного решения. В самосопряженном случае условие разрешимости читается как ортогональность правой части соответствующей собственной функции; в общем случае нужна сопряженная задача или конструктивная формула через фундаментальную систему.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_of_boundary_value_problem",
+        "fundamental_system_solutions"
+      ]
+    },
+    {
+      "id": "idea-neighbor-clusters",
+      "title": "Соседние кластеры различаются главным объектом",
+      "text": "Если главный объект - нули, сравнение, дисконъюгированность или угол Пруфера, задача ближе к sturm-oscillation-comparison. Если главный объект - кусочная функция Грина, это green-functions-bvp. Если цель - критерий разрешимости конкретной неоднородной BVP, это linear-bvp-solvability-resonance. Если спектр возникает как знак второй вариации или уравнение Якоби, это содержательный мост к simple-variational-calculus.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-computational-route",
+      "title": "Маршрут вычисления спектра",
+      "text": "1. Привести задачу к однородному линейному уравнению с параметром и однородными краевыми условиями. 2. Выписать фундаментальную систему для каждого качественно разного значения параметра: обычно lambda=mu^2, lambda=0, lambda=-mu^2. 3. Подставить краевые условия и получить матрицу на произвольные постоянные. 4. Приравнять определитель нулю и аккуратно исключить только те значения, при которых вывод был законен. 5. Для каждого найденного lambda выбрать ненулевой вектор констант и записать собственную функцию с точностью до множителя. 6. Проверить кратность: в регулярных разделенных задачах второго порядка собственные значения обычно простые, но это надо читать из ранга конкретных условий.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_system_solutions",
+        "wronskian",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    },
+    {
+      "id": "guide-sturm-liouville-route",
+      "title": "Маршрут Штурма-Лиувилля",
+      "text": "1. Проверить, находится ли уравнение в самосопряженной форме или приводится к ней интегрирующим множителем. 2. Зафиксировать вес r(x) и скалярный продукт int_a^b ruv dx. 3. Для вещественности и ортогональности использовать тождество Грина, а не новый подбор констант. 4. Для простейших примеров держать три модели: Дирихле-Дирихле дает sin(nx), смешанные условия сдвигают частоты, весовая задача может сводиться заменой переменной или множителем. 5. Для качественных вопросов о числе нулей перейти к Sturm-соседу: сравнение и фазовый угол объясняют порядок собственных функций, но сами краевые условия остаются спектральной частью.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "angle_comparison"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    },
+    {
+      "id": "guide-resonance-green-route",
+      "title": "Маршрут резонанса и функции Грина",
+      "text": "Если lambda не является собственным значением соответствующей однородной BVP, неоднородная задача имеет единственное решение и его можно записывать через функцию Грина. Если lambda является собственным значением, обратного оператора нет: нужно проверить условие совместности с ядром сопряженной задачи. В самосопряженной учебной модели это int_a^b r(x) f(x) phi(x) dx=0. При выполнении условия решения образуют аффинное семейство y_part+C phi, при нарушении условия решений нет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_of_boundary_value_problem",
+        "fundamental_system_solutions",
+        "wronskian"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не добавлять новый представитель только потому, что отрезок [0,pi] заменен на [0,L]. Не терять lambda=0: формула через mu часто не покрывает этот случай. Не называть правую часть ортогональной без указания веса или сопряженной задачи. Не смешивать Green kernel с вычислением спектра: функция Грина строится для нерезонансного оператора или после отдельной регуляризации. Не использовать теоремы Штурма как замену краевым условиям: они дают порядок и нули, а собственное значение все равно фиксируется попаданием в граничное условие.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order",
+      "sturm_liouville"
+    ],
+    "methods": [
+      "spectral_parameter",
+      "boundary_determinant",
+      "shooting_parameter",
+      "sturm_liouville",
+      "green_identity",
+      "weighted_orthogonality",
+      "fredholm_alternative",
+      "green_function",
+      "sturm_comparison",
+      "second_variation_threshold"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "eigenvalue_of_boundary_value_problem",
+      "eigenfunction",
+      "fundamental_system",
+      "wronskian",
+      "sturm_liouville_operator",
+      "green_kernel",
+      "solvability_condition"
+    ],
+    "goal": [
+      "choose_method",
+      "compute_eigenvalues",
+      "prove_orthogonality",
+      "diagnose_resonance",
+      "separate_neighbor_clusters",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "boundary-spectral-problems",
+      "method_guide",
+      "boundary value eigenvalue problem",
+      "Sturm-Liouville",
+      "weighted orthogonality",
+      "Fredholm alternative",
+      "Green function",
+      "resonance",
+      "Sturm comparison",
+      "variational second variation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет новый вычислительный спектральный пример; сложность в выборе между явным определителем, самосопряженной ортогональностью, резонансной совместностью, функцией Грина, Sturm-соседом и вариационным порогом.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "boundary_value",
+    "eigenvalues",
+    "sturm_liouville",
+    "green_kernel",
+    "fredholm_alternative",
+    "wronskian",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Разделы программы о краевых задачах, Штурме и вариационном исчислении",
+      "note": "Локальный ориентир по объему: краевые задачи, собственные значения, теорема Штурма и вариационные связи через вторую вариацию."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачный фон для краевых, штурмовских и вариационных постановок, где спектральный порог появляется в коротких учебных задачах."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник по линейным ОДУ и краевым задачам; используется как локальный фон для резонансных и двухточечных условий."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическая строгая теория линейных ОДУ, краевых задач и фундаментальных систем; полезна для языка ядра, сопряженности и спектрального параметра."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Sturm-Liouville and oscillation material",
+      "note": "Открытая строгая ссылка на связь собственных значений, нулей, сравнения и фазового угла."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Chapter 13, Sections 13.1-13.2",
+      "note": "Открытый учебник с функциями Грина, резонансной альтернативой, тождеством Грина, вещественностью и ортогональностью в Sturm-Liouville problems."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Основной локальный ориентир по границе между спектром, Штурмом и вариационными сюжетами."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Ближайший русскоязычный задачный фон."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Классические упражнения по линейным и краевым задачам."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "priority": 4,
+      "comment": "Строгий классический язык линейной теории."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Открытая ссылка для Sturm-связи и счета нулей."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "priority": 6,
+      "comment": "Открытый учебник по BVP, Green function и Sturm-Liouville."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-boundary-spectral-problems-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера boundary-spectral-problems, а не как новая вычислительная спектральная задача.",
+      "Новые определения не добавлялись: использованы существующие definition_ids из definitions.yaml; определения функции Грина и альтернативы Фредгольма в слое definitions пока отсутствуют, поэтому они связаны через theorem-карточки.",
+      "Карточка помечена task_cluster, method_guide, cluster_representative и primary=theorem, чтобы индексироваться как теория/методический блок и находиться через кластер."
+    ]
+  }
+}

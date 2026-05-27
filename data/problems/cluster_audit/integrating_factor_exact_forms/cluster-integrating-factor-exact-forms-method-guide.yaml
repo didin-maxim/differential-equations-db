@@ -1,0 +1,318 @@
+{
+  "id": "cluster-integrating-factor-exact-forms-method-guide",
+  "title": "Методический навигатор: интегрирующий множитель и точные формы",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера integrating-factor-exact-forms уравнение сначала записывают как дифференциальную 1-форму M(x,y) dx+N(x,y) dy=0 на выбранной области. Если M_y=N_x и область не создает топологической ловушки для потенциала, форма точна: ищут F с F_x=M, F_y=N и записывают первый интеграл F=C. Если форма не точна, не начинают с тяжелых первообразных, а проверяют короткие признаки множителя. Множитель mu(x) существует по стандартному тесту, когда (M_y-N_x)/N зависит только от x; тогда mu=exp int ((M_y-N_x)/N) dx. Парный тест для mu(y): (N_x-M_y)/M зависит только от y, и mu=exp int ((N_x-M_y)/M) dy. Для однородной формы с M,N одной степени часто работает mu=1/(xM+yN) там, где знаменатель не равен нулю. Для специальных анзацев h(xy), h(y/x) или x^a y^b условие точности подставляют прямо в (mu M)_y=(mu N)_x: удачный вид распознается тем, что остается функция одной переменной или линейные условия на показатели. После умножения заново фиксируют рабочую область, восстанавливают потенциал и проверяют, не потеряны ли интегральные кривые на нулях множителя, знаменателей или при делении на x,y. Для задачи Коши выбирают ту компоненту области, где лежит начальная точка, и только затем определяют константу F(x0,y0).",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-arnold-ode",
+          "src-mit-1803sc-ode",
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "exact_equation",
+          "integrating_factor",
+          "first_integral",
+          "general_solution",
+          "particular_solution",
+          "integral_curve",
+          "initial_value_problem",
+          "cauchy_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-diagnose-form",
+      "title": "Сначала читать форму, а не первообразную",
+      "text": "Главный объект этого кластера - пара M,N и условие точности M_y=N_x. Если форма уже точна, задача заканчивается восстановлением потенциала; если нет, смысловой шаг состоит в выборе класса множителя, а не в усложнении интегралов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ],
+      "definition_ids": [
+        "exact_equation",
+        "integrating_factor",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "idea-one-variable-tests",
+      "title": "Критерии mu(x) и mu(y) проверять как фильтры",
+      "text": "Для mu(x) надо смотреть, исчезает ли y из (M_y-N_x)/N; для mu(y) - исчезает ли x из (N_x-M_y)/M. Эти тесты быстро отбрасывают неподходящий вид множителя и не требуют сначала решать уравнение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "exact_equation"
+      ]
+    },
+    {
+      "id": "idea-algebraic-ansatz",
+      "title": "Анзац выбирать по алгебре формы",
+      "text": "Однородность подсказывает знаменатель xM+yN; мономная структура подсказывает x^a y^b; выражения через xy или y/x подсказывают h(xy) или h(y/x). Хороший анзац после подстановки в точность оставляет короткое уравнение для одной функции или линейную систему для показателей.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "idea-domain-and-lost-curves",
+      "title": "Область является частью ответа",
+      "text": "Множитель должен быть ненулевым на рабочей области, а деление на x, y, N, M или xM+yN может удалить целые интегральные кривые. После нахождения F=C надо вернуться к исходной форме и проверить исключенные множества.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "integrating_factor",
+        "integral_curve",
+        "general_solution",
+        "particular_solution"
+      ]
+    },
+    {
+      "id": "idea-neighbor-boundaries",
+      "title": "Не смешивать с соседними кластерами",
+      "text": "Линейное уравнение y'+p(x)y=q(x) относится к linear-first-order-ode, если не используется язык 1-формы и точности. Однородное уравнение y'=Phi(y/x) обычно идет в separable-homogeneous-first-order, если решается заменой y=xv; в этот кластер оно попадает только как однородная форма с множителем. Ортогональные траектории остаются отдельным геометрическим кластером, хотя после восстановления поля наклонов иногда возникает точная форма или первый интеграл.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "separate_variables",
+        "find_potential"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "integral_curve",
+        "first_integral"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-method-route",
+      "title": "Маршрут выбора метода",
+      "text": "1. Переписать уравнение в виде M dx+N dy=0 и явно назвать рабочую область, где M,N имеют нужную гладкость. 2. Проверить M_y=N_x. Если равенство выполнено, восстановить F: интегрировать M по x или N по y, затем подобрать недостающую функцию второй переменной. 3. Если точности нет, проверить mu(x) и mu(y) как самые дешевые тесты одной переменной. 4. Если оба теста не прошли, посмотреть на структуру: однородные степени, множитель 1/(xM+yN), мономный анзац x^a y^b, специальный h(xy) или h(y/x). 5. После множителя снова проверить точность и только потом искать потенциал. 6. Записать F=C, а для задачи Коши подставить начальную точку в той компоненте области, где множитель допустим. 7. Проверить исключенные множества исходным уравнением: на них могут жить отдельные решения или компоненты общего ответа.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "exact_equation",
+        "integrating_factor",
+        "first_integral",
+        "initial_value_problem"
+      ]
+    },
+    {
+      "id": "guide-criteria-proof",
+      "title": "Откуда берутся критерии",
+      "text": "Для множителя mu(x) условие точности имеет вид (mu M)_y=(mu N)_x, то есть mu M_y=mu' N+mu N_x. После деления на mu N получаем mu'/mu=(M_y-N_x)/N; левая часть зависит только от x, поэтому правая часть должна быть функцией x. Для mu(y) условие записывается как mu' M+mu M_y=mu N_x, откуда mu'/mu=(N_x-M_y)/M, и правая часть должна зависеть только от y. Для h(xy) или x^a y^b доказательство строится той же подстановкой, только производные множителя уже содержат x,y; поэтому критерий не запоминают как отдельную магическую формулу, а быстро выводят из (mu M)_y=(mu N)_x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "exact_equation"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не применять критерий mu(x), если (M_y-N_x)/N зависит от y после сокращений, и не менять знак в парном критерии mu(y). Не считать множитель обязанным быть единственным: его можно домножать на подходящую функцию найденного первого интеграла. Не забывать про область: mu=|y| и mu=y задают один и тот же локальный множитель только на полуплоскостях y>0 или y<0. Не делить на x, y, M, N или xM+yN без возврата к исходной форме. Не относить обычное линейное уравнение первого порядка сюда только потому, что у него тоже есть integrating factor; в этом кластере решающим объектом является точность формы M dx+N dy.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "find_potential",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "first_integral",
+        "integral_curve",
+        "linear_first_order_equation"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "differential_form"
+    ],
+    "methods": [
+      "exact_equation",
+      "find_potential",
+      "integrating_factor",
+      "integrating_factor_x",
+      "integrating_factor_y",
+      "homogeneous_form_integrating_factor",
+      "monomial_ansatz",
+      "special_multiplier_ansatz",
+      "domain_check"
+    ],
+    "objects": [
+      "exact_equation",
+      "integrating_factor",
+      "differential_form",
+      "potential",
+      "first_integral",
+      "integral_curve",
+      "cauchy_problem"
+    ],
+    "goal": [
+      "choose_method",
+      "find_integrating_factor",
+      "solve_implicitly",
+      "construct_first_integral",
+      "avoid_lost_solutions",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "integrating-factor-exact-forms",
+      "method_guide",
+      "exact form",
+      "M_y=N_x",
+      "potential",
+      "mu_x",
+      "mu_y",
+      "mu_xy",
+      "x_a_y_b",
+      "lost solutions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет длинных первообразных; сложность в диагностике вида множителя, выборе рабочей области и проверке потерянных интегральных кривых.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "exact_equation",
+    "integrating_factor",
+    "first_integral",
+    "homogeneous_first_order",
+    "linear_first_order",
+    "orthogonal_trajectories",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "cluster_representative",
+    "method_guide"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый локальный курс: точные уравнения, интегрирующий множитель, неявный общий интеграл и задачи Коши первого порядка."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачник с типовыми упражнениями на точные уравнения, множители и восстановление первого интеграла."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник для проверки разных видов уравнений первого порядка и аккуратности при преобразованиях."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическая русскоязычная опора для геометрического языка интегральных кривых, первых интегралов и дифференциальных форм."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Unit I, first-order differential equations",
+      "note": "Открытый видеокурс MIT OCW с материалами по уравнениям первого порядка, integrating factors и exact equations."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "First-order equations and exact equations",
+      "note": "Открытый учебник с кратким повторением точных уравнений, интегрирующих множителей и геометрического чтения решений."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной локальный курс и терминология."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Русскоязычные тренировочные задачи на exact equations и integrating factors."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Классические задачи первого порядка и контроль областей после преобразований."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 4,
+      "comment": "Геометрический фон: формы, интегральные кривые и первые интегралы."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Видео и notes для повторения стандартных методов первого порядка."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 6,
+      "comment": "Открытый учебный текст с exact equations и integrating factors."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-integrating-factor-exact-forms-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера integrating-factor-exact-forms, без новых вычислительных задач с длинными первообразными.",
+      "Определения не дублируются: exact_equation, integrating_factor, first_integral, general_solution, particular_solution, integral_curve и cauchy_problem подключены через definition_ids.",
+      "Карточка помечена task_cluster, method_guide и cluster_representative, чтобы индексироваться как методический слой кластера."
+    ]
+  }
+}

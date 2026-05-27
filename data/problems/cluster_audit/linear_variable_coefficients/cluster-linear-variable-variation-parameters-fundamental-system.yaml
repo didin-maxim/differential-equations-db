@@ -1,6 +1,6 @@
 {
   "id": "cluster-linear-variable-variation-parameters-fundamental-system",
-  "title": "Вариация параметров при переменных коэффициентах и заданной фундаментальной системе",
+  "title": "Вариация параметров при заданной фундаментальной системе",
   "fragment": "linear_equations",
   "kind": {
     "primary": "theorem",
@@ -27,7 +27,10 @@
           "ordinary_differential_equation",
           "solution",
           "initial_value_problem",
-          "wronskian"
+          "wronskian",
+          "general_solution",
+          "particular_solution",
+          "fundamental_system_solutions"
         ]
       }
     ]

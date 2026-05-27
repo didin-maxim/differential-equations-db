@@ -1,0 +1,180 @@
+{
+  "relations": [
+    {
+      "id": "rel-boundary-spectral-guide-to-dirichlet-model",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет модель Дирихле как базовый случай: собственные значения появляются из ненулевого решения системы на константы после разбора знака lambda.",
+      "backward_text": "Задача Дирихле является минимальным вычислительным представителем маршрута: знак параметра, краевые условия, нулевой определитель и собственные функции sin(nx).",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-mixed-weak",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "weak-pass-mixed-bvp-eigenvalues",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, что смешанные условия являются содержательным вариантом только когда меняют спектральное уравнение, а не просто длину отрезка.",
+      "backward_text": "Смешанная устная задача тренирует тот же детерминантный маршрут, но с другим краевым функционалом.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-robin-transcendental",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "lebl-diffyqs-robin-dirichlet-transcendental-spectrum",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор готовит к случаю, где краевые условия дают не явный список частот, а трансцендентное уравнение на спектральный параметр.",
+      "backward_text": "Robin-Dirichlet пример показывает, почему в saturated кластере полезен один представитель с неявным спектральным условием.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-euler-log-spectrum",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-euler-log-spectrum",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор допускает не только синусно-косинусную модель: после логарифмической замены эйлерово уравнение возвращается к спектральному определителю.",
+      "backward_text": "Euler-log карточка является содержательным несинусным представителем кластера, потому что меняет независимую переменную и форму собственных функций.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-weighted-orthogonality",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-weighted-orthogonality",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует весовой скалярный продукт как главный результат самосопряженной Sturm-Liouville постановки.",
+      "backward_text": "Теорема об ортогональности дает короткое доказательство одного из центральных методов навигатора через тождество Грина.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-real-eigenvalues",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-real-eigenvalues",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор относит вещественность спектра к самосопряженной ветке, где граничный член в тождестве Грина исчезает.",
+      "backward_text": "Теорема о вещественных собственных значениях конкретизирует самосопряженный блок регулярной Sturm-Liouville задачи.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-resonance-alternative",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет вычисление собственных значений от резонансной неоднородной задачи: при собственном значении нужно условие совместности.",
+      "backward_text": "Конструктивная альтернатива разрешимости раскрывает ветку навигатора, где ядро однородной BVP уже найдено и проверяется правая часть.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-dirichlet-resonance-condition",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-dirichlet-resonance-sine-condition",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему в модели Дирихле при lambda=1 правая часть должна быть ортогональна собственной функции sin x.",
+      "backward_text": "Dirichlet resonance карточка является самым коротким вычислительным примером резонансной совместности из спектрального блока.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-local-resonant-bvp",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "local-du-standard-resonant-linear-bvp-solvability",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор связывает собственное значение однородной задачи с учебной альтернативой: нет ядра - единственность, есть ядро - условие на правую часть.",
+      "backward_text": "Локальная теория резонансной BVP является русскоязычным теоретическим узлом для ветки linear-bvp-solvability-resonance.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-green-function-formula",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-green-function-formula",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор проводит границу с green-functions-bvp: если спектрального значения нет, можно строить функцию Грина; если главная цель - само ядро, это соседний кластер.",
+      "backward_text": "Формула функции Грина показывает нерезонансную сторону спектральной картины: обратный оператор существует именно вне ядра однородной BVP.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-green-identity",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "trench-bvp-green-identity-self-adjoint-boundary",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Для ортогональности, вещественности спектра и резонансного условия навигатор опирается на тождество Грина с зануленным граничным членом.",
+      "backward_text": "Тождество Грина является техническим ядром самосопряженной ветки методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-sturm-guide",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор оставляет в boundary-spectral-problems вычисление lambda, ортогональность и резонанс; нули, сравнение и дисконъюгированность передает Sturm-навигатору.",
+      "backward_text": "Sturm-навигатор является соседним блоком для порядка нулей и сравнения; спектральная BVP нужна ему только как пороговый ориентир.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-sturm-zero-count-phase",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор связывает спектральный порядок собственных функций с фазовым счетом нулей, но оставляет этот счет в соседнем Sturm-блоке.",
+      "backward_text": "Фазовая zero-count карточка показывает, как Sturm-инструмент уточняет структуру eigenfunction в спектральной задаче.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-wronskian-formula",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "liouville-wronskian-formula",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Детерминант краевых условий и формулы Грина используют фундаментальную систему и вронскиан; формула Лиувилля является базовым контролем этой независимости.",
+      "backward_text": "Формула Лиувилля служит линейно-алгебраической подкладкой для спектральных и Green-построений, но сама не является краевой спектральной задачей.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-variational-guide",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "cluster-variational-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отмечает вариационный мост: спектр возникает как знак второй вариации, уравнение Якоби или порог квадратичной формы, но не заменяет расчет первой вариации.",
+      "backward_text": "Вариационный навигатор использует boundary-spectral-problems как соседний язык для спектрального порога и отсутствия сопряженных точек.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-boundary-spectral-guide-to-variational-jacobi",
+      "from": "cluster-boundary-spectral-method-guide",
+      "to": "local-du-standard-legendre-jacobi-conditions",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Спектральный порог линейной краевой задачи является одним из способов читать знак второй вариации и отсутствие сопряженных точек.",
+      "backward_text": "Условия Лежандра-Якоби являются вариационной стороной того же Sturm-Liouville механизма, когда объектом становится минимум функционала.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

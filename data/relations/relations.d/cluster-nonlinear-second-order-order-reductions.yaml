@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-local-2024-p-of-y",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "local-du-written-2024-nonlinear-p-of-y",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует стандартный ход p(y)=y' и y''=p dp/dy, который является главным методом в локальной задаче 2024 года.",
+      "backward_text": "Локальная задача 2024 года служит вычислительным representative ветви p(y) с начальным условием и выбором регулярной ветви.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-total-derivative",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют распознавание скрытой производной и последующее понижение порядка; навигатор добавляет правило проверки потерянных ветвей.",
+      "backward_text": "Задача 2014 года показывает специальный вариант редукции, где ключ не просто p(y), а сворачивание в полную производную.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-written-2000-p-of-y",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "written-mipt-2000-cauchy-p-of-y-guess",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, как переносить условия y(x0), y'(x0) в редуцированную задачу p(y0)=y'(x0).",
+      "backward_text": "MIPT 2000 является representative-задачей, где начальные условия выбирают нужную ветвь после редукции p(y).",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-written-2002-p-of-y",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "written-mipt-2002-v1-nonlinear-p-of-y-cauchy",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Блок задает общий алгоритм p(y), включая запрет на безусловное деление на p и проверку выбранной ветви.",
+      "backward_text": "MIPT 2002 проверяет ту же ветку метода на конкретной нелинейной задаче Коши.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-log-derivative",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "written-mipt-2000-cauchy-log-derivative",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет логарифмическую производную и специальные инварианты как соседние варианты понижения порядка.",
+      "backward_text": "Карточка с логарифмической производной показывает, что иногда естественная переменная не p, а комбинация y'/y.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-invariant-derivative",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "written-mipt-2003-v2-invariant-derivative-cauchy",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Блок предупреждает, что специальные полные производные являются вариантом той же редукционной диагностики, но требуют отдельной проверки делений.",
+      "backward_text": "MIPT 2003 дает representative на инвариант производной, не сводящийся к самой простой замене p(y).",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-energy-oscillator",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "energy-integral-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Редукция p(y) для y''+V'(y)=0 дает энергетический интеграл p^2/2+V(y)=C, поэтому навигатор подводит к базовому representative энергетического уровня.",
+      "backward_text": "Энергетический осциллятор является соседним representative кластера energy-estimates-second-order-ode: здесь энергия уже используется как первый интеграл и фазовый уровень.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-duffing-energy",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "oral-exam-excellent-duffing-energy-periodic",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор объясняет, почему автономное уравнение второго порядка дает энергию и почему знак скорости/уровень энергии нужно читать как ветвь решения.",
+      "backward_text": "Duffing-карточка показывает качественное применение той же энергии уже в соседней зоне энергетических оценок и периодичности.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-separable-logistic",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "separable-logistic-equation",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "После понижения порядка часто остается разделяющееся уравнение, но этот кластер отвечает за распознавание второго порядка и ветви p, а не за само разделение переменных.",
+      "backward_text": "Логистическое уравнение представляет соседний кластер separable-homogeneous-first-order, где нет дополнительного шага y'' -> p' или p dp/dy.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-homogeneous-ratio",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "oral-above-three-homogeneous-ratio-substitution",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет редукцию второго порядка от однородной замены первого порядка y=xv: обе могут приводить к разделению, но диагностируются по разным отсутствующим структурам.",
+      "backward_text": "Однородная замена y=xv является representative соседнего separable-homogeneous-first-order, а не самостоятельной редукцией y''.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-first-integrals-guide",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "cluster-first-integrals-plane-systems-method-guide",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Энергия, полученная понижением порядка, является первым интегралом фазовой системы (y,p), поэтому редукционный блок естественно связан с навигатором первых интегралов.",
+      "backward_text": "Навигатор first-integrals-plane-systems помещает энергетические уровни второго порядка в более общую геометрию фазовых траекторий.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-nonlinear-second-order-guide-to-phase-energy-center",
+      "from": "cluster-nonlinear-second-order-order-reductions-method-guide",
+      "to": "cluster-phase-stability-first-integral-center",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Понижение порядка до энергии подготавливает чтение замкнутых уровней как фазовых кривых и центров.",
+      "backward_text": "Карточка о центре через первый интеграл использует уже геометрическую, а не вычислительную сторону того же энергетического уровня.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

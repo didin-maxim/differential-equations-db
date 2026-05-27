@@ -1,0 +1,118 @@
+{
+  "id": "written-mipt-2004-v4-finite-interval-blowup",
+  "title": "Конечный интервал существования из оценки y'>=1+y^2",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2004/2005, вариант 4, задача 9",
+        "text": "Пусть функция y(x) является решением уравнения y'=y^2+sin^2 x+2cos^2 x+3sin^2 y, рассматриваемого при -infty<x<infty, -infty<y<infty. Докажите, что y(x) определена лишь на конечном промежутке.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Перейти к arctan y",
+      "text": "Правая часть не меньше 1+y^2. Поэтому arctan y растет со скоростью не меньше 1 и за конечное время достигает границы возможных значений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Поскольку sin^2 x+2cos^2 x>=1 и 3sin^2 y>=0, имеем y'>=1+y^2. Тогда phi(x)=arctan y(x) удовлетворяет phi'=y'/(1+y^2)>=1. Если решение существует на интервале (a,b) и x0 принадлежит (a,b), то для x>x0 получаем phi(x)>=phi(x0)+x-x0. Так как phi<pi/2, отсюда b<=x0+pi/2-phi(x0)<+infty. Для левого конца берем x<x0 и интегрируем неравенство phi'>=1 от x до x0: phi(x0)-phi(x)>=x0-x, то есть phi(x)<=phi(x0)+x-x0. Из phi>-pi/2 следует a>=x0-pi/2-phi(x0)>-infty. Значит максимальный интервал существования конечен с обеих сторон.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonautonomous",
+      "maximal_solution"
+    ],
+    "methods": [
+      "differential_inequality",
+      "blow_up",
+      "arctangent_substitution"
+    ],
+    "objects": [
+      "maximal_interval",
+      "finite_time_blowup"
+    ],
+    "goal": [
+      "prove_non_global_existence"
+    ],
+    "keywords": [
+      "MIPT_2004_2005",
+      "variant_4",
+      "problem_9",
+      "written_exam",
+      "blow_up",
+      "arctan"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 2,
+    "local_score": 6,
+    "comment": "Короткая задача на критерий продолжения и сравнение; вычисления минимальны, поэтому подходит для устной модификации.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "existence_uniqueness",
+    "blow_up",
+    "low_technical",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2004-2005.pdf",
+      "locator": "2004/2005, вариант 4, задача 9"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2004-2006",
+    "notes": [
+      "Выбрана вместо однотипных вычислительных задач пачки как чистый представитель blow-up через дифференциальное неравенство.",
+      "В симуляции экзамена можно спрашивать верхнюю оценку длины максимального интервала или ключевую замену arctan y."
+    ]
+  }
+}

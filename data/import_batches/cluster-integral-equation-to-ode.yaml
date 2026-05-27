@@ -1,0 +1,22 @@
+{
+  "id": "cluster-integral-equation-to-ode",
+  "title": "Теоретико-методический блок кластера интегральных уравнений, сводящихся к ОДУ",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "integral-equation-to-ode",
+    "method_guide",
+    "integral_equation_to_ode",
+    "volterra_integral_equation",
+    "fredholm_integral_equation"
+  ],
+  "problem_ids": [
+    "cluster-integral-equation-to-ode-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавление точечное: существующие представители кластера уже покрывают олимпиадные примеры, а новая карточка задает общий методический навигатор.",
+    "Блок фиксирует перенос начальных/краевых условий из интеграла, обязательную проверку потерянных констант и базовую границу Volterra/Fredholm.",
+    "Связи записаны только в data/relations/relations.d/cluster-integral-equation-to-ode.yaml."
+  ]
+}

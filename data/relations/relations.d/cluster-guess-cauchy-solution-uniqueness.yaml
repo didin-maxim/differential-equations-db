@@ -131,6 +131,149 @@
       "backward_text": "Барьерная задача является качественным применением той же идеи 'нулевое решение плюс единственность'.",
       "status": "ai_checked",
       "confidence": 0.89
+    },
+    {
+      "id": "rel-guess-cauchy-picard-to-method-guide",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-guess-cauchy-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема Пикара-Линделефа является основной теоремой единственности, которая превращает проверенный кандидат в ответ задачи Коши.",
+      "backward_text": "Методический блок специализирует теорему Пикара-Линделефа на прием 'угадать частное решение и не искать общий интеграл'.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-guess-cauchy-peano-contrast-method-guide",
+      "from": "peano-existence-theorem",
+      "to": "cluster-guess-cauchy-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Пеано дает существование при непрерывной правой части, но не гарантирует, что угаданное решение единственно.",
+      "backward_text": "Методический блок предупреждает: если есть только условия Пеано без Липшица, быстрый вывод о единственности ломается.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-guess-cauchy-continuation-to-method-guide",
+      "from": "maximal-continuation-theorem",
+      "to": "cluster-guess-cauchy-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Теорема продолжения объясняет, как локально найденное совпадение решений переносится на весь общий интервал существования.",
+      "backward_text": "Навигатор использует продолжение совпадения как финальный шаг после локальной единственности.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-guess-cauchy-existence-guide-to-method-guide",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-guess-cauchy-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Широкий навигатор дает выбор между Пикаром, Пеано, продолжением и контрпримерами; специализированный блок использует ветку локальной единственности для конкретного угаданного решения.",
+      "backward_text": "Блок guess-cauchy является прикладным частным случаем общего маршрута existence-uniqueness-continuation.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-guess-cauchy-phase-guide-to-method-guide",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "cluster-guess-cauchy-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Фазовая прямая и равновесия помогают быстро распознать постоянное решение автономной задачи Коши.",
+      "backward_text": "Методический блок использует только локальный фрагмент фазовой идеи: одно равновесие как ответ для конкретных начальных данных, без полной классификации устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.87
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-autonomous-equilibrium",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "cluster-guess-cauchy-autonomous-equilibrium",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует первый шаблон: если начальные данные лежат в равновесии автономного поля, проверить постоянное решение и локальную липшицевость.",
+      "backward_text": "Автономная карточка является минимальным примером ветки 'равновесие плюс единственность'.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-pendulum",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "cluster-guess-cauchy-pendulum-inverted-equilibrium",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что для маятника с равновесными данными не нужен общий фазовый портрет: достаточно системы первого порядка и гладкости поля.",
+      "backward_text": "Маятник иллюстрирует ветку 'сложное общее решение, но простая конкретная задача Коши'.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-nonlinear-oscillator",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "cluster-guess-cauchy-nonlinear-oscillator-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор задает проверку для уравнений второго порядка: перейти к вектору состояния и применить единственность к нулевому решению.",
+      "backward_text": "Нелинейный осциллятор является примером, где вся работа состоит в распознавании нулевой траектории и проверке гладкости системы.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-system-diagonal",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "cluster-guess-cauchy-system-diagonal-invariant",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет инвариантные прямые и плоскости как способ угадать траекторию системы до применения единственности.",
+      "backward_text": "Диагональная система конкретизирует маршрут: заметить инвариантную диагональ, решить на ней и закрыть задачу локальной единственностью полного поля.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-designed-line",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "cluster-guess-cauchy-designed-straight-line",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор включает неравновесные угаданные кривые: после подстановки прямой y=t гладкость правой части дает единственность.",
+      "backward_text": "Карточка с прямой y=t показывает, что метод не сводится только к равновесиям.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-no-crossing",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "one-dimensional-autonomous-no-crossing",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет общий принцип: равновесная интегральная кривая и локальная единственность запрещают пересечение с другой траекторией.",
+      "backward_text": "Непересечение равновесия является качественным следствием того же приема для автономного уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-touching",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "two-solutions-touching",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует, что совпадение начального фазового вектора запрещает два разных решения в липшицевой области.",
+      "backward_text": "Карточка о касании двух решений является геометрическим тестом этого принципа.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-guess-cauchy-method-guide-to-written-pofy",
+      "from": "cluster-guess-cauchy-method-guide",
+      "to": "written-mipt-2000-cauchy-p-of-y-guess",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор помогает отделить момент догадки конкретного решения задачи Коши от более длинной редукции p=p(y).",
+      "backward_text": "Письменная задача МФТИ является реальным экзаменационным представителем приема 'догадка плюс данные Коши'.",
+      "status": "ai_checked",
+      "confidence": 0.84
     }
   ]
 }

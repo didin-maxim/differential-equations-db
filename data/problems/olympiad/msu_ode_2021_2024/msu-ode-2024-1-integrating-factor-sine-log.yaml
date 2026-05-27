@@ -1,0 +1,113 @@
+{
+  "id": "msu-ode-2024-1-integrating-factor-sine-log",
+  "title": "Интегрирующий множитель для синусной формы",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2024, задача 1",
+        "text": "Решите уравнение (1+2x^2 y cos(x^2 y)) dx + x^3 cos(x^2 y) dy = 0.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "exact_equation",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подобрать множитель одной переменной",
+      "text": "После деления формы на x появляется полный дифференциал d(sin(x^2 y)+ln|x|). При этом надо отдельно вернуть вертикальное решение x=0, потерянное при делении.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "На области x != 0 умножим уравнение на mu(x)=1/x. Получим форму ((1/x)+2xy cos(x^2 y)) dx + x^2 cos(x^2 y) dy. Это полный дифференциал функции F(x,y)=ln|x|+sin(x^2 y), потому что F_x=1/x+2xy cos(x^2 y), F_y=x^2 cos(x^2 y). Поэтому регулярные интегральные кривые задаются равенством sin(x^2 y)+ln|x|=C. При умножении на 1/x мы исключили прямую x=0; в исходной дифференциальной форме при x=0 остается dx=0, так что x=0 также является решением.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "find_potential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "olympiad"
+    ],
+    "methods": [
+      "integrating_factor",
+      "exact_equation"
+    ],
+    "objects": [
+      "exact_equation",
+      "integrating_factor",
+      "first_integral",
+      "complete_proof"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "msu-ode-2024-1",
+      "integrating_factor",
+      "exact_form",
+      "lost_solution"
+    ],
+    "status": "source_solution_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 4,
+    "local_score": 6,
+    "comment": "Идейно это стандартный множитель mu(x), но олимпиадная аккуратность состоит в возврате решения x=0 после деления.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "exact_equation",
+    "integrating_factor",
+    "first_integral",
+    "olympiad_style",
+    "complete_proof",
+    "standard_course_methods",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem_and_solution",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/odu_24_resheniya.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Импорт modern B: 2024/2023/2021. Оставлена как компактный недубль: близкие карточки дают mu(x), mu(y), степенной множитель и семейство множителей, но здесь полезен отдельный контроль потерянного решения."
+    ]
+  }
+}

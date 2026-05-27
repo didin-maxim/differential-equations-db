@@ -1,0 +1,311 @@
+{
+  "id": "cluster-linear-bvp-solvability-resonance-method-guide",
+  "title": "Методический навигатор: разрешимость линейных краевых задач и резонанс",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Учебная альтернатива для линейной краевой задачи",
+        "text": "Для линейной краевой задачи L[y]=f с однородными краевыми условиями сначала решают однородную задачу L[y]=0. Если ее ядро нулевое, оператор краевой задачи обратим: неоднородная задача имеет единственное решение, которое можно получить стрельбой, через фундаментальную систему или через функцию Грина. Если однородная задача имеет ненулевое решение, наступает резонанс: добавление элемента ядра не меняет краевые условия, поэтому единственности нет, а существование требует условия совместности. В учебной самосопряженной постановке L[y]=-(p y')'+q y с условиями, зануляющими граничный член формулы Грина, это условие имеет вид int_a^b f(x) phi(x) dx=0 для всех phi из ядра. В несамосопряженном случае правая часть должна быть ортогональна ядру сопряженной краевой задачи. Это конечномерная альтернатива Фредгольма: либо ядро однородной задачи тривиально и решение единственно для любой правой части, либо ядро нетривиально, и тогда допустимые правые части выделяются ортогональностью к сопряженному ядру, а решения определены с точностью до добавления элементов ядра. Связь со спектром читается так: резонанс появляется при собственном значении соответствующей однородной BVP; связь с Green-функцией такова, что обычное Green-ядро существует только в нерезонансном случае. В вариационных задачах тот же механизм возникает для уравнения Якоби и второй вариации: появление нетривиальной вариации с нулевыми концами означает потерю обратимости линейной краевой задачи.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-coddington-levinson",
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "boundary_value_problem",
+          "eigenvalue_problem",
+          "eigenvalue_of_boundary_value_problem",
+          "fundamental_system_solutions",
+          "wronskian",
+          "green_function_bvp",
+          "self_adjoint_boundary_problem",
+          "fredholm_alternative"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-start-with-homogeneous-kernel",
+      "title": "Сначала смотреть ядро однородной BVP",
+      "text": "Главный диагностический вопрос: есть ли ненулевое решение однородного уравнения с нулевыми краевыми условиями. Нулевое ядро дает единственность и обратимость, ненулевое ядро означает резонанс.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "fundamental_system_solutions",
+        "wronskian"
+      ]
+    },
+    {
+      "id": "idea-resonance-as-compatibility",
+      "title": "Резонанс заменяет одно краевое условие условием на правую часть",
+      "text": "В резонансе свободное однородное решение уже удовлетворяет краевым условиям, поэтому им нельзя исправить произвольную правую часть. Оставшееся условие становится условием совместности, обычно интегральной ортогональностью.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "fredholm_alternative"
+      ]
+    },
+    {
+      "id": "idea-adjoint-kernel",
+      "title": "В общем случае нужна сопряженная задача",
+      "text": "Самосопряженность позволяет тестировать правую часть на собственных решениях той же задачи. Если оператор или краевые условия не самосопряжены, тестовые функции берутся из ядра сопряженной краевой задачи.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "self_adjoint_boundary_problem",
+        "fredholm_alternative"
+      ]
+    },
+    {
+      "id": "idea-green-function-side",
+      "title": "Функция Грина живет на нерезонансной стороне",
+      "text": "Обычная функция Грина является ядром обратного оператора, поэтому требует тривиального ядра однородной BVP. При резонансе вместо полного обратного оператора появляется проекция на совместимые правые части или отдельная регуляризация.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "green_function_bvp",
+        "fredholm_alternative",
+        "boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-neighbor-clusters",
+      "title": "Соседние кластеры различаются главным вопросом",
+      "text": "Если ищут значения параметра для нетривиального однородного решения, это boundary-spectral-problems. Если строят кусочное ядро обратного оператора, это green-functions-bvp. Если доказывают нерезонанс через запрет двух нулей или сравнение, это sturm-oscillation-comparison. Если линейная BVP возникает как уравнение Якоби или вторая вариация, это мост к вариационным задачам.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "boundary_value_problem",
+        "eigenvalue_problem",
+        "green_function_bvp"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут проверки разрешимости",
+      "text": "1. Привести краевые условия к однородным: если концы неоднородны, сначала вынести простую функцию, удовлетворяющую этим условиям. 2. Решить или описать однородную задачу L[y]=0 с нулевыми краевыми условиями. 3. Если ядро нулевое, использовать стрельбу, фундаментальную систему, матрицу перехода или Green-функцию для единственного решения. 4. Если ядро ненулевое, зафиксировать базис ядра и найти сопряженное ядро; в самосопряженной задаче это тот же базис. 5. Проверить условия int f psi_j=0 для всех psi_j из сопряженного ядра, с нужным весом, если он входит в постановку. 6. При выполнении условий найти одно частное решение и добавить произвольную линейную комбинацию решений однородной краевой задачи. 7. При нарушении хотя бы одного условия совместности зафиксировать отсутствие решений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "boundary_value_problem",
+        "fundamental_system_solutions",
+        "self_adjoint_boundary_problem",
+        "fredholm_alternative"
+      ]
+    },
+    {
+      "id": "guide-finite-dimensional-route",
+      "title": "Линейно-алгебраическая форма того же критерия",
+      "text": "Для системы x'=A(t)x+g(t) с двухточечным условием M x(a)+N x(b)=c записывают x(b)=Phi(b,a)x(a)+eta(b). Получается конечномерная система (M+N Phi)x(a)=c-N eta(b). Если матрица M+N Phi обратима, решение единственно. Если она вырождена, правая часть должна лежать в ее образе; эквивалентно она ортогональна левому ядру этой матрицы. Это та же учебная альтернатива Фредгольма без функционально-аналитического языка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "fundamental_matrix",
+        "boundary_value_problem",
+        "fredholm_alternative"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя проверять ортогональность только к одному собственному решению, если ядро многомерно. Нельзя использовать собственное решение исходной задачи вместо сопряженного в несамосопряженной постановке без доказательства самосопряженности. Нельзя строить обычную функцию Грина при ненулевом ядре и затем делать вид, что обратный оператор существует. Нельзя называть любую краевую задачу спектральной: если параметр не ищут из условия нетривиальности однородной задачи, главный объект может быть просто разрешимостью. В вариационных задачах нельзя забывать, что линейная BVP появляется после линеаризации условий стационарности и допустимых вариаций.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "eigenvalue_problem",
+        "green_function_bvp",
+        "self_adjoint_boundary_problem",
+        "fredholm_alternative"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order",
+      "linear_systems",
+      "sturm_liouville"
+    ],
+    "methods": [
+      "homogeneous_kernel",
+      "shooting_parameter",
+      "fundamental_matrix",
+      "fredholm_alternative",
+      "adjoint_kernel",
+      "orthogonality_condition",
+      "green_identity",
+      "green_function",
+      "sturm_nonresonance",
+      "second_variation_threshold"
+    ],
+    "objects": [
+      "boundary_value_problem",
+      "homogeneous_boundary_value_problem",
+      "kernel",
+      "adjoint_kernel",
+      "solvability_condition",
+      "green_kernel",
+      "eigenvalue_of_boundary_value_problem",
+      "jacobi_equation"
+    ],
+    "goal": [
+      "choose_method",
+      "prove_existence",
+      "prove_nonexistence",
+      "prove_uniqueness",
+      "diagnose_resonance",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "linear-bvp-solvability-resonance",
+      "method_guide",
+      "homogeneous BVP",
+      "resonance",
+      "Fredholm alternative",
+      "adjoint kernel",
+      "orthogonality condition",
+      "Green function",
+      "boundary spectral problem",
+      "Sturm nonresonance",
+      "variational Jacobi equation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "Методический блок требует различать ядро однородной BVP, сопряженное ядро, самосопряженный частный случай, Green-оператор, спектральный резонанс и вариационный источник линейной краевой задачи; вычислительная техника остается умеренной.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "boundary_value",
+    "linear_higher_order",
+    "linear_systems",
+    "resonance",
+    "fredholm_alternative",
+    "green_kernel",
+    "eigenvalues",
+    "sturm_liouville",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "mipt_core"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Разделы о линейных уравнениях, краевых задачах, спектре и вариационном исчислении",
+      "note": "Локальный ориентир по уровню: резонансная BVP, условия совместности и связь с вариационными задачами входят в продвинутый курс."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Задачный фон для краевых, штурмовских и вариационных постановок."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник по линейным ОДУ, краевым задачам и резонансным примерам."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Строгий язык линейной теории, фундаментальных систем, сопряженности и краевых операторов."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Chapter 13, boundary value problems and Green's functions",
+      "note": "Открытый учебник с конструктивной резонансной альтернативой, Green-функциями и Sturm-Liouville блоком."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Основной локальный ориентир по границам кластера."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "priority": 2,
+      "comment": "Открытый учебный источник для Fredholm/Green-ветки."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Близкий задачный фон для резонансных BVP."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 4,
+      "comment": "Связь с вариационными и штурмовскими задачами."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "priority": 5,
+      "comment": "Классический строгий фон линейной теории."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-bvp-solvability-resonance-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера linear-bvp-solvability-resonance, а не как новый вычислительный пример.",
+      "Карточка покрывает однородную краевую задачу, резонанс, ортогональность правой части сопряженному ядру, учебную альтернативу Фредгольма, Green-функцию, собственные значения, Sturm-нерезонанс и вариационный мост.",
+      "Использованы существующие definition_ids, включая green_function_bvp, self_adjoint_boundary_problem и fredholm_alternative."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "msu-ode-2026-5-polar-stable-not-asymptotic",
+  "title": "Устойчивость через инвариантные окружности",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2026, задача 5",
+        "text": "На плоскости задана автономная система с нулевым решением, которая при rho>0 в полярных координатах имеет вид phi'=rho^2(2+cos phi), rho'=rho^3 sin(1/rho). Является ли нулевое решение устойчивым, а если да, то асимптотически ли?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_statement_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "stability",
+          "autonomous_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Искать инвариантные окружности rho=const",
+      "text": "Радиальное уравнение не зависит от phi. Нули sin(1/rho) дают окружности rho=1/(pi k), которые не пересекаются траекториями и накапливаются к нулю.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "radial_limit_cycle_stability"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нули радиальной скорости имеют вид rho_k=1/(pi k), k=1,2,... Эти окружности инвариантны, а phi'=rho^2(2+cos phi)>0, так что на них движение непостоянное. Для любого epsilon>0 можно выбрать k так, что rho_k<epsilon, и взять delta=rho_k. Если rho(0)<delta, траектория не может пересечь инвариантную окружность rho=rho_k, поэтому остается внутри круга радиуса epsilon. Значит, нулевое решение устойчиво по Ляпунову. Оно не является асимптотически устойчивым: если rho(0)=rho_k, то rho(t)=rho_k для всех t, и траектория не стремится к нулю.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "polar_system"
+    ],
+    "methods": [
+      "radial_equation",
+      "invariant_circle",
+      "lyapunov_stability_definition"
+    ],
+    "objects": [
+      "zero_solution",
+      "limit_cycle",
+      "lyapunov_stability",
+      "asymptotic_stability"
+    ],
+    "goal": [
+      "classify_stability"
+    ],
+    "keywords": [
+      "МГУ ОДУ 2026/5",
+      "полярные координаты",
+      "устойчиво не асимптотически",
+      "инвариантные окружности"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 3,
+    "local_score": 8,
+    "comment": "Идея сильная: устойчивость обеспечивают барьерные циклы, накапливающиеся к нулю; асимптотическая устойчивость ломается на самих циклах.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "stability",
+    "lyapunov",
+    "limit_cycle",
+    "polar_coordinates",
+    "phase_plane",
+    "olympiad_style",
+    "advanced_standard_course",
+    "complete_proof",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/ode2026-solutions.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "msu-ode-2025-2026",
+    "notes": [
+      "Добавлено как качественная задача на определения устойчивости и предельные циклы; не является дублем радиальной тестовой задачи, потому что здесь циклы накапливаются к нулю и дают устойчивость без притяжения."
+    ]
+  }
+}

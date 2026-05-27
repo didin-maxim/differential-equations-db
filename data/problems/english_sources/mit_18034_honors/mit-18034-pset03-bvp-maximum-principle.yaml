@@ -1,6 +1,6 @@
 {
   "id": "mit-18034-pset03-bvp-maximum-principle",
-  "title": "Максимум-принцип для краевой задачи с положительным нулевым порядком",
+  "title": "Принцип максимума для краевой задачи",
   "fragment": "boundary_value",
   "kind": {
     "primary": "problem",

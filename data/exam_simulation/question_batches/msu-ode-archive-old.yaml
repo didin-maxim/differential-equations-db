@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "mode_id": "oral_exam_simulation",
+  "status": "proposal",
+  "source_batch_id": "msu-ode-archive-old",
+  "questions": [
+    {
+      "id": "exam-sim-proposal-msu-2004-delay-value",
+      "card_id": "msu-ode-2004-2-delay-step-value",
+      "target_score": 6,
+      "topic": "existence_uniqueness",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "Пусть u'(t)+u(t-1)=0 на [0,3], u(t)=1 на [-1,0]. Найдите u(3).",
+      "auto_check": {
+        "type": "numeric",
+        "value": -0.16666666666666666,
+        "tolerance": 0.000001,
+        "accepted_text": [
+          "-1/6",
+          "-0.1666666667"
+        ]
+      },
+      "recovery_topics": [
+        "functional_differential",
+        "method_of_steps"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2014-no-entire",
+      "card_id": "msu-ode-2014-1-no-entire-abs-linear",
+      "target_score": 6,
+      "topic": "existence_uniqueness",
+      "question_type": "thinking",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Есть ли у уравнения y'+|y|+1=0 решение, определенное на всей R?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Да, потому что правая часть непрерывна при всех y.",
+          "is_correct": false,
+          "rationale": "Непрерывность дает локальное существование, но не глобальность в обе стороны."
+        },
+        {
+          "id": "b",
+          "text": "Нет: любое решение при продолжении назад достигает y=0 за конечное время после линейного участка y<0.",
+          "is_correct": true,
+          "rationale": "Это основной ход решения."
+        },
+        {
+          "id": "c",
+          "text": "Да, единственное такое решение равно y=-1.",
+          "is_correct": false,
+          "rationale": "y=-1 не является решением, так как y'+|y|+1=2."
+        },
+        {
+          "id": "d",
+          "text": "Нет, потому что нарушается единственность в точке y=0.",
+          "is_correct": false,
+          "rationale": "Единственность здесь не является причиной; правая часть липшицева по частям и однозначна."
+        }
+      ],
+      "recovery_topics": [
+        "global_solution",
+        "phase_line"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2019-nonzero-field",
+      "card_id": "msu-ode-2019-3-nonzero-field-nonunique-plane",
+      "target_score": 8,
+      "topic": "existence_uniqueness",
+      "question_type": "thinking",
+      "answer_mode": "self_check",
+      "prompt_override": "Постройте непрерывное нигде не нулевое поле на плоскости, для которого задача Коши неединственна.",
+      "rubric": [
+        "Есть пеановская неединственность во второй координате, например y'=2sqrt(|y|).",
+        "Добавлена первая координата x'=1, поэтому векторное поле нигде не обращается в ноль.",
+        "Выписаны хотя бы два разных решения с одинаковым начальным условием."
+      ],
+      "recovery_topics": [
+        "peano",
+        "nonuniqueness"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2022-oscillatory-stability",
+      "card_id": "msu-ode-2022-2-oscillatory-semistability",
+      "target_score": 8,
+      "topic": "qualitative",
+      "question_type": "application",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Для y'=y(mu-y^2 sin(1/y)) укажите параметры устойчивости нуля.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Устойчив при mu<0, асимптотически устойчив при mu<0.",
+          "is_correct": false,
+          "rationale": "При mu=0 нуль тоже устойчив, но не асимптотически."
+        },
+        {
+          "id": "b",
+          "text": "Устойчив при mu<=0, асимптотически устойчив при mu<0.",
+          "is_correct": true,
+          "rationale": "При mu=0 накопление равновесий сохраняет устойчивость и запрещает притяжение всех близких точек."
+        },
+        {
+          "id": "c",
+          "text": "Устойчив и асимптотически устойчив при mu<=0.",
+          "is_correct": false,
+          "rationale": "Ненулевые равновесия при mu=0 не стремятся к нулю."
+        },
+        {
+          "id": "d",
+          "text": "Неустойчив при всех mu из-за sin(1/y).",
+          "is_correct": false,
+          "rationale": "Осцилляции нижнего порядка не разрушают устойчивость при mu<0 и дают ловушки при mu=0."
+        }
+      ],
+      "recovery_topics": [
+        "phase_line",
+        "stability"
+      ]
+    }
+  ],
+  "notes": [
+    "Вопросы являются proposal: 2004/2 хорошо подходит для numeric, 2014/1 и 2022/2 - для multiple_choice, 2019/3 лучше оставить self_check.",
+    "2009/2 намеренно не добавлена в симуляцию: это качественная олимпиадная конструкция, но в устной симуляции легко превращается в самопроверку без надежной автопроверки."
+  ]
+}

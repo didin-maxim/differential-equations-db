@@ -1,0 +1,21 @@
+{
+  "id": "cluster-limit-cycles-qualitative-criteria",
+  "title": "Кластерный аудит: предельные циклы и качественные критерии",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "limit_cycles",
+    "qualitative_criteria",
+    "bendixson",
+    "phase_plane"
+  ],
+  "problem_ids": [
+    "cluster-limit-cycles-qualitative-criteria-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавлена как теоретико-методический слой к существующему кластеру limit-cycles-qualitative-criteria.",
+    "Representative-задачи кластера уже пришли из тестового архива и соседних импортов; новая карточка является навигатором по определениям, запретам, устойчивости и границам продвинутых фактов.",
+    "Бендиксон использован как факт, уже присутствующий в базе; Дюлак, Пуанкаре-Бендиксон и индекс Пуанкаре отмечены как продвинутый слой, если они не даны в задаче явно."
+  ]
+}

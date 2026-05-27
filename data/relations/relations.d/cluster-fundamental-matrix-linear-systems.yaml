@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-fundamental-guide-to-change-basis",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "oral-above-three-fundamental-matrix-change-basis",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует общий факт Y(t)=X(t)C для двух фундаментальных матриц; устная карточка проверяет его на нормировке X(t0)=I и решении задачи Коши.",
+      "backward_text": "Задача на смену базиса является минимальным representative для раздела guide про произвольную и нормированную фундаментальную матрицу.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-fundamental-guide-to-flow-inverse",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает матрицу перехода Phi(t,s), композицию и обратимость; Waterloo-card дает короткое доказательство этих свойств для автономного нормированного потока.",
+      "backward_text": "Потоковая карточка является representative для свойств Phi(t,s)Phi(s,r)=Phi(t,r) и Phi(t,s)^{-1}=Phi(s,t), перечисленных в методическом блоке.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-fundamental-guide-to-two-point",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "oral-exam-excellent-two-point-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет Phi(b,a)=X(b)X(a)^{-1} как инвариантный оператор переноса; двухточечная карточка превращает условие x(a)+B x(b)=c в линейную алгебру через этот оператор.",
+      "backward_text": "Двухточечная задача показывает, зачем важно отделять произвольную фундаментальную матрицу от матрицы перехода, не зависящей от выбора базиса.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-fundamental-guide-to-liouville-area",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "oral-above-three-liouville-area-preservation",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует формулу Лиувилля det X(t)=det X(t0) exp(int tr A); карточка про площадь является базовой геометрической проверкой случая tr A=0.",
+      "backward_text": "Задача на сохранение площади иллюстрирует determinant/trace-ветку навигатора без явного вычисления фундаментальной матрицы.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-fundamental-guide-to-trace-zero-decay",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "oral-exam-excellent-trace-zero-no-total-decay",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор подчеркивает, что след управляет объемом параллелепипеда решений; карточка trace-zero-no-total-decay использует тот же инвариант для запрета одновременного затухания всех независимых направлений.",
+      "backward_text": "Карточка с нулевым следом является более сильной проверкой формулы Лиувилля и ее качественного следствия для пространства решений.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-fundamental-guide-to-mit-euler-system",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "mit-18034-pset07-euler-system-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок говорит, что столбцы X(t) должны образовывать базис решений; MIT-карточка строит такую фундаментальную матрицу для переменно-коэффициентной системы через эйлеровское уравнение.",
+      "backward_text": "MIT-задача является вычислительным representative: она показывает, как общий язык X'=A(t)X применяется, когда фундаментальная матрица не равна простой e^{At}.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-fundamental-guide-to-orthogonal-matrix",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "msu-ode-2011-12-orthogonal-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор использует формулу A(t)=X'(t)X(t)^{-1} для восстановления коэффициента из фундаментальной матрицы; MSU-карточка применяет ее к ортогональной X(t) и получает кососимметричность A(t).",
+      "backward_text": "Ортогональная фундаментальная матрица является representative для ветки, где свойства X(t) напрямую превращаются в свойства A(t).",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-fundamental-guide-to-recover-system",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "oral-above-three-recover-system-from-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок включает восстановление A(t)=X'(t)X(t)^{-1}; устная карточка дает прямую тренировку этого факта на заданной фундаментальной матрице.",
+      "backward_text": "Задача на восстановление системы фиксирует одну из базовых формул навигатора и отделяет ее от частного случая A=E'(0) для матричной экспоненты.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-fundamental-guide-to-matrix-exp-guide",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "cluster-matrix-exponential-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор фундаментальной матрицы использует e^{A(t-s)} как постояннокоэффициентный случай Phi(t,s); matrix-exponential guide берет задачи, где свойства самой e^{At} являются главным ходом.",
+      "backward_text": "Матричная экспонента является нормированной фундаментальной матрицей для x'=Ax, но если вопрос про произвольную X(t), смену базиса, det X или Phi(t,s), он относится к fundamental-matrix-linear-systems.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-fundamental-guide-to-constant-coeff-guide",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "cluster-linear-systems-constant-coefficients-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Фундаментальный навигатор фиксирует оператор переноса и инварианты X(t); constant-coefficients guide отвечает за построение общего решения x'=Ax по спектру, жордановым цепочкам и правым частям конечного типа.",
+      "backward_text": "В постояннокоэффициентном блоке фундаментальная матрица обычно равна e^{At}, но главный труд там - спектральная структура A, а не свойства произвольной фундаментальной матрицы.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-fundamental-guide-to-variation-guide",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "cluster-variation-of-constants-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор фундаментальной матрицы выводит формулу Коши как следствие Phi(t,s); variation-of-constants guide берет задачи, где главный объект - интеграл неоднородности и выбор частного решения.",
+      "backward_text": "Вариация постоянных использует X(t)c(t) и Phi(t,s), но если правой части нет или важны обратимость, Лиувилль и смена базиса, задача остается в fundamental-matrix-linear-systems.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-fundamental-guide-to-parameter-dependence",
+      "from": "cluster-fundamental-matrix-method-guide",
+      "to": "cluster-parameter-dependence-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок дает язык Phi(t,s) для линейной вариационной системы; parameter-dependence guide применяет этот объект как производную нелинейного потока по начальному состоянию или параметру.",
+      "backward_text": "Параметрический навигатор использует фундаментальную матрицу не как самостоятельную тему линейных систем, а как оператор чувствительности, поэтому связь идет через вариационное уравнение.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "test-implicit-cubic-branch-count",
+  "title": "Сколько регулярных ветвей проходит через точку",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "test_import",
+      "exam_interaction_source"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Сколько различных локальных решений уравнения (y')^3-3xy(y')^2-x^3y^2+3x^2y^2y'=0 проходят через точку (1,2)?",
+        "source_ids": [
+          "src-test-du-implicit-first-order-lopushanski"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "cauchy_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Посчитать допустимые наклоны и проверить регулярность",
+      "text": "В точке (x0,y0) неявное уравнение дает алгебраическое уравнение на p=y'. Каждый простой действительный корень p порождает одну регулярную локальную ветвь решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В точке (1,2) получаем уравнение p^3-6p^2+12p-4=0, то есть (p-2)^3+4=0. У него ровно один действительный корень p=2-sqrt[3]{4}. Проверим регулярность: F_p=3p^2-6xyp+3x^2y^2=3(p-xy)^2, и при x=1, y=2 этот корень не равен xy=2, значит F_p != 0. По теореме о неявной функции и теореме существования и единственности через точку проходит ровно одно локальное решение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode"
+    ],
+    "methods": [
+      "implicit_regular_ivp",
+      "branch_count"
+    ],
+    "objects": [
+      "regular_branch",
+      "algebraic_equation_for_slope"
+    ],
+    "goal": [
+      "count_solutions"
+    ],
+    "keywords": [
+      "implicit_first_order",
+      "branch_count",
+      "cauchy_problem"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 5,
+    "technical_score": 3,
+    "comment": "Стандартный шаблон: корни по p плюс регулярность F_p != 0; вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "implicit_ode_discriminant",
+    "existence_uniqueness",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_5",
+    "test_import"
+  ],
+  "sources": [
+    {
+      "source_id": "src-test-du-implicit-first-order-lopushanski",
+      "role": "source_task_adapted",
+      "status": "source_verified",
+      "note": "Архив тестов: вопрос 2. Автор/исполнитель из xlsx: Лопушански М.С.; сохранен как числовой интерактив."
+    }
+  ],
+  "authors": [
+    {
+      "name": "Лопушански М.С.",
+      "role": "test_author_or_executor",
+      "source_id": "src-test-du-implicit-first-order-lopushanski"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "test-implicit-first-order",
+    "notes": [
+      "Тестовый формат уместен: ответ однозначный и не раскрывает план решения.",
+      "Карточка не добавляет новый кластер; она усиливает regular-branch сторону implicit-ode-discriminant."
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cluster-fundamental-matrix-linear-systems",
+  "title": "Кластерный аудит: фундаментальная матрица линейной системы",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "fundamental_matrix",
+    "linear_systems",
+    "cauchy_formula",
+    "liouville_formula"
+  ],
+  "problem_ids": [
+    "cluster-fundamental-matrix-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет теоретико-методический блок для существующего кластера fundamental-matrix-linear-systems.",
+    "Новые вычислительные representative-задачи не добавлялись: кластер уже содержит change-of-basis, Liouville/determinant, two-point condition, flow inverse, Euler-system fundamental matrix и orthogonal fundamental matrix.",
+    "Цель пачки - закрепить определения, формулы и границы с matrix-exponential-methods, constant-coefficient-linear-systems, variation-of-constants и parameter-dependence-variational-equation."
+  ]
+}

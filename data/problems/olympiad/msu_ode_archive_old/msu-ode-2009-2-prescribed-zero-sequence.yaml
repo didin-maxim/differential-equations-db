@@ -1,0 +1,108 @@
+{
+  "id": "msu-ode-2009-2-prescribed-zero-sequence",
+  "title": "Произвольная последовательность нулей решения линейного уравнения второго порядка",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2009, задача 2",
+        "text": "Пусть lambda_1<lambda_2<lambda_3<... - произвольная неограниченная последовательность чисел. Может ли она быть последовательностью нулей некоторого решения какого-либо уравнения x''+a(t)x=0, где a(t) - гладкая функция?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-build-solution",
+      "title": "Сначала построить решение",
+      "text": "Нужно не угадывать коэффициент a(t), а построить гладкую функцию x с нужными простыми нулями и с x''=0 около каждого нуля; тогда a=-x''/x гладко продолжается через нули.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Да. Так как последовательность не имеет конечных точек накопления, можно выбрать попарно непересекающиеся малые окрестности точек lambda_k. Построим гладкую функцию x, которая имеет ровно эти нули, меняет знак при каждом lambda_k и в малой окрестности каждого lambda_k совпадает с c_k(t-lambda_k) с ненулевым c_k. Вне этих окрестностей склейка делается гладко и без новых нулей. Тогда x'' тождественно равна нулю около каждого lambda_k, поэтому отношение -x''/x гладко продолжается через нули значением 0. Положив a(t)=-x''(t)/x(t) вне нулей и a(t)=0 около нулей, получаем гладкий коэффициент и уравнение x''+a(t)x=0, у которого x имеет заданную последовательность нулей.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "inverse_construction",
+      "smooth_gluing"
+    ],
+    "objects": [
+      "second_order_linear_ode",
+      "zeros_of_solutions",
+      "smooth_coefficient"
+    ],
+    "goal": [
+      "construct_example"
+    ],
+    "keywords": [
+      "msu-ode-2009-2",
+      "prescribed_zeros",
+      "linear_second_order"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 9,
+    "technical_score": 4,
+    "local_score": 9,
+    "comment": "Главная трудность - инвертировать задачу и обеспечить гладкость коэффициента в нулях; вычислений почти нет.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "zero_location",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_9"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_09.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Добавлена как обратная конструкция к штурмовско-нулевому блоку; не является дублем задач на запрет накопления нулей."
+    ]
+  }
+}

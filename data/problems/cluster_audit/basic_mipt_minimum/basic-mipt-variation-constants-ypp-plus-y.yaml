@@ -24,7 +24,10 @@
         },
         "definition_ids": [
           "wronskian",
-          "ordinary_differential_equation"
+          "ordinary_differential_equation",
+          "general_solution",
+          "particular_solution",
+          "fundamental_system_solutions"
         ]
       }
     ]

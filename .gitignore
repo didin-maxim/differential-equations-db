@@ -1,4 +1,6 @@
 __pycache__/
 *.pyc
+.scratch/
+tmp/
 index/generated.json
 viewer/index.html

@@ -51,6 +51,8 @@
     "blow_up",
     "global_solution",
     "periodic_solution",
+    "limit_cycle",
+    "poincare_index",
     "olympiad_style",
     "mipt_core",
     "complete_proof",
@@ -144,8 +146,11 @@
     "trace_determinant",
     "linear_recurrence",
     "task_cluster",
+    "method_guide",
+    "theory_bridge",
     "cluster_representative",
     "duplicate_filtered",
-    "program_deficit"
+    "program_deficit",
+    "test_import"
   ]
 }

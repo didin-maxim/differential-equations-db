@@ -1,0 +1,25 @@
+{
+  "id": "msu-ode-2021-2024",
+  "title": "МГУ ОДУ modern B: 2024, 2023, 2021",
+  "created_at": "2026-05-27",
+  "scope": [
+    "student_olympiad",
+    "msu_ode",
+    "modern_archive",
+    "ru"
+  ],
+  "problem_ids": [
+    "msu-ode-2024-1-integrating-factor-sine-log",
+    "msu-ode-2024-6-variable-coeff-characteristic-root",
+    "msu-ode-2024-8-trace-average-bounded-change",
+    "msu-ode-2021-2-nonextendable-blowup-coordinates",
+    "msu-ode-2021-5-inhomogeneous-second-order-span"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Просмотрены официальные страницы math.msu.ru/node/2170, /node/2026, /node/1571 и соответствующие PDF 2024, 2023, 2021.",
+    "2023 уже частично присутствует в базе как msu-ode-2023-2 и msu-ode-2023-8; новые дубли по 2023 не добавлялись.",
+    "2024 и 2021 импортированы выборочно: исключены задачи с декоративным ОДУ-ходом, явные дубли и сюжеты, слишком удаленные от тематики базы.",
+    "Для симуляции экзамена создан отдельный proposal data/exam_simulation/question_batches/msu-ode-2021-2024.yaml."
+  ]
+}

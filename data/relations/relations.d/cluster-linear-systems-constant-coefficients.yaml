@@ -76,6 +76,127 @@
       "backward_text": "Жорданова клетка является конкретным вычислением фундаментального оператора, свойства которого объясняются в Waterloo-карточке.",
       "status": "ai_checked",
       "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-diagonal",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "resit-pass-3-diagonal-linear-system",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор начинает с простого спектрального случая; диагональная система является минимальной реализацией маршрута через собственные значения и независимые моды.",
+      "backward_text": "Базовая диагональная система служит первым вычислительным примером спектральной ветки методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-jordan-block",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "linear-system-jordan-block",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, что нехватка собственных векторов приводит к присоединенной цепочке и множителю t; жорданова клетка 2x2 является самым коротким примером этого правила.",
+      "backward_text": "Жорданова клетка конкретизирует ветку методического блока про кратные собственные значения и присоединенные векторы.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-geometric-two",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "cluster-linear-systems-jordan-geometric-two",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет алгебраическую кратность от геометрической; эта карточка проверяет случай тройного собственного значения с двумя собственными векторами и одной присоединенной связью.",
+      "backward_text": "Модельная 3x3 задача является содержательной проверкой ветки методического блока про структуру жордановых цепочек.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-complex-real-form",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "waterloo-spiral-phase-portrait-isoclines",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит комплексную пару в вещественные синусно-косинусные решения; Waterloo-карточка показывает тот же механизм на фазовом портрете фокуса.",
+      "backward_text": "Фокус на плоскости является наглядной реализацией комплексной ветки методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-repeated-complex",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "cluster-linear-systems-repeated-complex-four-dimensional",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что кратная комплексная пара дает вещественные режимы с дополнительными множителями t; четырехмерная карточка является компактным представителем этой ситуации.",
+      "backward_text": "Кратная комплексная пара иллюстрирует продвинутую ветку методического блока без громоздкой арифметики.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-variation-system",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор использует формулу вариации постоянных как основной маршрут для x'=Ax+f(t); эта теорема дает саму интегральную формулу через exp(At).",
+      "backward_text": "Формула вариации постоянных является теоретическим ядром неоднородной ветки методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-jordan-forcing",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "cluster-linear-systems-jordan-resonant-forcing",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает, что резонанс неоднородности с жордановой цепочкой увеличивает степень t; модельная карточка показывает это на малой 2x2 системе.",
+      "backward_text": "Резонансная неоднородная система является короткой проверкой ветки навигатора про правые части специального вида.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-fundamental-flow",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор связывает решение x'=Ax с фундаментальной матрицей e^{At}; Waterloo-карточка раскрывает оператор потока, обратимость и групповое свойство.",
+      "backward_text": "Свойства фундаментальной матрицы объясняют, почему спектральные решения постоянных коэффициентов можно упаковать в один оператор e^{At}.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-det-trace",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "cluster-matrix-exp-det-trace-shortcut",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор упоминает det(e^{At})=e^{t tr A} как быстрый determinant/trace факт; соседняя lemma-card выделяет его в отдельный метод матричной экспоненты.",
+      "backward_text": "Формула det exp через след является специальным свойством фундаментального оператора, которое полезно помнить при решении систем с постоянными коэффициентами.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-liouville",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "liouville-wronskian-formula",
+      "type": "special_case",
+      "distance": 2,
+      "forward_text": "Постоянно-коэффициентная формула det(e^{At})=e^{t tr A} является частным случаем формулы Лиувилля для определителя фундаментальной матрицы.",
+      "backward_text": "Формула Лиувилля объясняет trace/determinant часть методического блока в более общем языке фундаментальных матриц.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-linear-systems-guide-to-phase-stability-guide",
+      "from": "cluster-linear-systems-constant-coefficients-method-guide",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор решает систему через спектр и e^{At}; фазовый навигатор использует тот же спектр только как ветку классификации устойчивости и фазового портрета.",
+      "backward_text": "Фазовый навигатор показывает, когда спектральное решение постоянной линейной системы нужно читать как устойчивость, фокус, узел или седло.",
+      "status": "ai_checked",
+      "confidence": 0.86
     }
   ]
 }

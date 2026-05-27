@@ -1,0 +1,124 @@
+{
+  "id": "written-2004-2006",
+  "title": "Предложения для симуляции экзамена по письменным работам МФТИ 2004-2006",
+  "status": "proposal",
+  "created_at": "2026-05-27",
+  "notes": [
+    "Исходные письменные задачи 1-8 в основном технические; для устной симуляции отобраны короткие модификации последних качественных задач.",
+    "Перед переносом в основной overlay questions.yaml стоит проверить distractors и формульный парсер."
+  ],
+  "questions": [
+    {
+      "id": "exam-sim-proposal-written-2004-sine-drift-limits",
+      "card_id": "written-mipt-2004-v1-sine-square-drift-limits",
+      "target_score": 6,
+      "topic": "qualitative",
+      "question_type": "method",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Пусть y'=sin^2 x+sin^2 y и решение задано на всей прямой. Какие утверждения верны?",
+      "auto_check": {
+        "type": "multiple_choice",
+        "multiple": true,
+        "correct_options": [
+          "right_plus_infty",
+          "left_minus_infty"
+        ],
+        "options": [
+          {
+            "id": "right_plus_infty",
+            "text": "При x->+infty выполнено y(x)->+infty."
+          },
+          {
+            "id": "left_minus_infty",
+            "text": "При x->-infty выполнено y(x)->-infty."
+          },
+          {
+            "id": "may_have_finite_right_limit",
+            "text": "Возможен конечный предел справа, если y попадает в нуль sin y."
+          },
+          {
+            "id": "periodic_solution",
+            "text": "Существуют ненулевые периодические решения."
+          }
+        ]
+      },
+      "rationale": "Тестовый формат уместен: неправильные варианты соответствуют естественным ошибкам про нули sin y и периодичность правой части."
+    },
+    {
+      "id": "exam-sim-proposal-written-2004-multiplicative-decay",
+      "card_id": "written-mipt-2004-v2-v3-multiplicative-sine-comparison",
+      "target_score": 6,
+      "topic": "qualitative",
+      "question_type": "method",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Для ненулевого решения y'=-(1+sin^2 x+sin^2 y)y выберите ключевой ход доказательства y(x)->0.",
+      "auto_check": {
+        "type": "multiple_choice",
+        "multiple": false,
+        "correct_options": [
+          "log_abs"
+        ],
+        "options": [
+          {
+            "id": "log_abs",
+            "text": "Рассмотреть (ln|y|)' и сравнить его с -1."
+          },
+          {
+            "id": "phase_line",
+            "text": "Построить фазовую прямую автономного уравнения."
+          },
+          {
+            "id": "energy_y_square",
+            "text": "Показать, что y^2 является первым интегралом."
+          },
+          {
+            "id": "sturm",
+            "text": "Применить теорему сравнения Штурма."
+          }
+        ]
+      },
+      "rationale": "Проверяется метод, а не длинная техника; distractors близки к реальным неправильным классификациям."
+    },
+    {
+      "id": "exam-sim-proposal-written-2004-blowup-interval-length",
+      "card_id": "written-mipt-2004-v4-finite-interval-blowup",
+      "target_score": 6,
+      "topic": "existence_uniqueness",
+      "question_type": "application",
+      "answer_mode": "formula",
+      "prompt_override": "Если y'>=1+y^2 на максимальном интервале решения, какую универсальную верхнюю оценку можно дать для длины этого интервала?",
+      "auto_check": {
+        "type": "formula",
+        "accepted_text": [
+          "pi",
+          "<=pi",
+          "не больше pi"
+        ],
+        "accepted_latex": [
+          "\\pi",
+          "\\le \\pi"
+        ]
+      },
+      "rationale": "Формат короткий и однозначный: ключевой ход - производная arctan y не меньше 1."
+    },
+    {
+      "id": "exam-sim-proposal-written-2005-integrable-potential-self-check",
+      "card_id": "written-mipt-2005-v9-integrable-potential-unbounded-solution",
+      "target_score": 8,
+      "topic": "linear_equations",
+      "question_type": "thinking",
+      "answer_mode": "self_check",
+      "prompt_override": "Докажите, что у уравнения y''sinh x+y=0 есть неограниченное решение на (1,+infty). Достаточно построить на далеком хвосте решение, близкое к x-A.",
+      "self_check": {
+        "criteria": [
+          "Уравнение записано как y''+q(x)y=0 с q(x)=1/sinh x.",
+          "Выбрано A так, что int_A^infty (t-A)q(t)dt мало.",
+          "Записано интегральное уравнение y=x-A-int_A^x (x-t)q(t)y(t)dt.",
+          "Объяснено, почему оно имеет решение с y(x)>=(x-A)/2 на хвосте.",
+          "Сделан вывод о неограниченности и продолжении решения влево до (1,+infty)."
+        ]
+      },
+      "rationale": "Автопроверка здесь неуместна: это идейная задача на построение, лучше оставить self-check."
+    }
+  ]
+}

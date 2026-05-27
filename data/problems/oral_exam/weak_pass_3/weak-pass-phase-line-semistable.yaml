@@ -24,7 +24,8 @@
           "autonomous_equation",
           "phase_line",
           "equilibrium",
-          "stability"
+          "stability",
+          "lyapunov_stability"
         ]
       }
     ]

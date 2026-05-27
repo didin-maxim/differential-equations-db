@@ -22,7 +22,10 @@
         },
         "definition_ids": [
           "autonomous_equation",
-          "phase_line"
+          "phase_line",
+          "equilibrium",
+          "lyapunov_stability",
+          "asymptotic_stability"
         ]
       }
     ]

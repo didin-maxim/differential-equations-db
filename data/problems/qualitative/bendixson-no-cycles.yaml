@@ -1,6 +1,6 @@
 {
   "id": "bendixson-no-cycles",
-  "title": "Критерий Бендиксона без замкнутых траекторий",
+  "title": "Критерий Бендиксона об отсутствии замкнутых траекторий",
   "fragment": "qualitative",
   "kind": {
     "primary": "theorem",

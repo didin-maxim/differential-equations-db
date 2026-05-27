@@ -32,6 +32,83 @@
       "backward_text": "Базовый пример является минимальной версией той же идеи y=xv.",
       "status": "ai_checked",
       "confidence": 0.95
+    },
+    {
+      "id": "rel-sep-hom-guide-to-exp-growth",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "resit-pass-3-separable-exponential-growth",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует минимальный маршрут разделения переменных; пересдачная карточка является его самым коротким примером без особых уровней.",
+      "backward_text": "Простая экспоненциальная задача конкретизирует ветку навигатора, где деление и область не создают дополнительных ловушек.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-sep-hom-guide-to-logistic",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "separable-logistic-equation",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор требует сначала выписать стационарные уровни и рабочую область; логистическая карточка показывает эту ветку на стандартной автономной модели.",
+      "backward_text": "Логистическое уравнение является базовым представителем навигатора: разделение переменных сочетается с равновесиями и чтением фазовой прямой.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-sep-hom-guide-to-homogeneous-basic",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "homogeneous-first-order-substitution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, что однородное уравнение сначала решается заменой y=xv на выбранном промежутке x != 0; базовая карточка реализует этот маршрут в минимальной форме.",
+      "backward_text": "Базовая однородная карточка показывает центральный ход навигатора: после y=xv остается разделение переменных.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-sep-hom-guide-to-oral-ratio",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "oral-above-three-homogeneous-ratio-substitution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отдельно фиксирует рабочий сектор и запретные значения отношения y/x; устная карточка проверяет именно этот выбор при y'=(x^2+y^2)/(xy).",
+      "backward_text": "Устная карточка конкретизирует предупреждение навигатора: после y=xv надо следить за знаком, областью и недопустимостью y=0.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-sep-hom-guide-to-linear-first-order-guide",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "cluster-linear-first-order-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет разделение и y=xv от стандартной линейной формы y'+p(x)y=q(x), где главный инструмент - множитель exp(int p).",
+      "backward_text": "Линейный навигатор является соседним маршрутом: он может иметь похожие интегралы, но распознается по линейности относительно y, а не по произведению a(x)b(y) или отношению y/x.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-sep-hom-guide-to-exact-forms-guide",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "cluster-integrating-factor-exact-forms-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор по separable/homogeneous держит в центре разделение переменных; exact-forms держит в центре 1-форму, критерий точности и восстановление потенциала.",
+      "backward_text": "Навигатор по точным формам является соседним методом: даже если после множителя появляется разделение, главный объект там - точная 1-форма.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-sep-hom-guide-to-orthogonal-circles",
+      "from": "cluster-separable-homogeneous-method-guide",
+      "to": "orthogonal-trajectories-circles",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор предупреждает, что ортогональные траектории классифицируются по геометрической цели; разделение переменных там может быть только последним вычислительным шагом.",
+      "backward_text": "Базовая карточка ортогональных траекторий показывает соседний маршрут: сначала восстановить поле наклонов и заменить наклон на отрицательно обратный, а не просто искать separable-форму.",
+      "status": "ai_checked",
+      "confidence": 0.9
     }
   ]
 }

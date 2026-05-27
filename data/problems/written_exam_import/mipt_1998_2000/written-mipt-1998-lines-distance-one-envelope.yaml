@@ -1,0 +1,128 @@
+{
+  "id": "written-mipt-1998-lines-distance-one-envelope",
+  "title": "ОДУ для прямых на расстоянии 1 от начала координат",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "written_exam_import"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 1998/99, вариант 1, задача 9",
+        "text": "Написать такое дифференциальное уравнение F(x,y,y')=0, для которого каждая прямая, не параллельная оси y и отстоящая от начала координат на расстоянии 1, является графиком решения. Какие еще кривые являются графиками решений этого уравнения?",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Превратить геометрию прямой в условие на наклон",
+      "text": "Если прямая имеет вид y=px+b, то ее расстояние от начала равно |b|/sqrt(1+p^2). На графике решения p=y', поэтому b=y-xy'.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem"
+      ]
+    },
+    {
+      "id": "idea-envelope",
+      "title": "Не забыть огибающую семейства",
+      "text": "Неявное уравнение содержит не только исходные прямые, но и особые решения: огибающие семейства касательных к окружности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть искомая прямая записана как y=px+b, где p - ее наклон. Условие расстояния от начала координат равно b^2/(1+p^2)=1. На графике решения p=y', а b=y-xy'. Поэтому подходит уравнение (y-xy')^2=1+(y')^2. Все прямые исходного семейства действительно являются его решениями. Чтобы найти особые решения, рассмотрим F=(y-xp)^2-1-p^2=0 и F_p=-2x(y-xp)-2p=0. Обозначая b=y-xp, получаем p=-xb и b^2=1+p^2=1+x^2b^2. Отсюда b^2=1/(1-x^2), |x|<1, и y=b+xp=b(1-x^2)=+-sqrt(1-x^2). Значит, кроме прямых, решениями являются две дуги единичной окружности y=+-sqrt(1-x^2), |x|<1.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode"
+    ],
+    "methods": [
+      "recover_ode_from_family",
+      "envelope",
+      "implicit_discriminant"
+    ],
+    "objects": [
+      "family_of_lines",
+      "singular_solution",
+      "envelope"
+    ],
+    "goal": [
+      "construct_equation",
+      "find_singular_solution"
+    ],
+    "keywords": [
+      "MIPT written 1998",
+      "distance to origin",
+      "tangent family",
+      "unit circle"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 8,
+    "technical_score": 3,
+    "local_score": 8,
+    "comment": "Идея геометрическая: надо увидеть свободную прямую как касательную к единичной окружности и затем не потерять особые решения; вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "recover_ode_from_family",
+    "implicit_ode_discriminant",
+    "clairaut",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\du^98.pdf",
+      "note": "1998/99, вариант 1, задача 9."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-1998-2000",
+    "notes": [
+      "Импортирована как редкая письменная задача с геометрической идеей; близкие карточки recover-ode-from-family и implicit-ode-discriminant не дублируют именно условие расстояния до начала координат.",
+      "Для симуляции экзамена подходит как self_check: автоматическая проверка формулы слишком легко подсказывает ход через y-xy'."
+    ]
+  }
+}

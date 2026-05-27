@@ -1,6 +1,6 @@
 {
   "id": "oral-exam-geometry-linear-second-order-uniqueness",
-  "title": "Единственность линейной задачи Коши второго порядка вне нуля старшего коэффициента",
+  "title": "Единственность задачи Коши для линейного уравнения второго порядка",
   "fragment": "olympiad",
   "kind": {
     "primary": "theorem",

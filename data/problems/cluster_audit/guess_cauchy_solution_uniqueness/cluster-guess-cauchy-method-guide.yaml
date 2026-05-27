@@ -1,0 +1,332 @@
+{
+  "id": "cluster-guess-cauchy-method-guide",
+  "title": "Методический навигатор: угадать решение задачи Коши и применить единственность",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В задачах кластера guess-cauchy-solution-uniqueness ответ получают не через общее решение, а через короткую цепочку: заметить простой кандидат по начальным данным, проверить его подстановкой, проверить локальную единственность задачи Коши и заключить, что других решений с теми же начальными данными нет. Кандидатом обычно служит равновесие автономного поля, нулевое решение, движение на инвариантной прямой или плоскости, симметрично построенная траектория либо специально видимая кривая вроде y=t. Для уравнений высокого порядка и систем единственность проверяют в фазовых переменных; для продолжения совпадения на больший интервал используют локальную единственность в каждой точке уже найденной траектории.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-filippov-problem-book",
+          "src-romanko-problem-book",
+          "src-teschl-ode-dynamical-systems",
+          "src-lebl-diffyqs",
+          "src-arnold-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "integral_curve",
+          "equilibrium",
+          "maximal_solution",
+          "lipschitz_condition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-read-initial-data",
+      "title": "Начальные данные подсказывают кандидата",
+      "text": "Если начальная точка попала в нуль правой части автономного уравнения, первым кандидатом является постоянное равновесие. Если все начальные координаты и производные зануляют уравнение, пробуют нулевое решение. Если начальная точка лежит на диагонали, оси, плоскости симметрии или уровне, проверяют инвариантность этого множества и решают уже ограниченную задачу.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness",
+        "first_integral_difference"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "equilibrium",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-no-general-solution",
+      "title": "Общее решение не является целью",
+      "text": "После проверки конкретной траектории общая квадратура, полный фазовый портрет или формула через фундаментальную матрицу нужны только тогда, когда единственность неприменима или надо описать все начальные данные. В этом кластере достаточно решить ровно ту задачу Коши, которая задана.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "general_solution",
+        "particular_solution",
+        "cauchy_problem"
+      ]
+    },
+    {
+      "id": "idea-uniqueness-checklist",
+      "title": "Единственность проверяется в окрестности, а не вдоль одной кривой",
+      "text": "Стандартная проверка: записать уравнение в нормальной форме z'=F(t,z), убедиться, что начальная точка лежит в области определения, и проверить локальную липшицевость F по фазовым переменным. Достаточно C^1-гладкости по z на окрестности; для линейной системы достаточно непрерывности коэффициентов. Для уравнения n-го порядка фазовый вектор содержит функцию и первые n-1 производных.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "lipschitz_condition",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-continuation-of-coincidence",
+      "title": "Локальное совпадение продолжается шаг за шагом",
+      "text": "Теорема Пикара-Линделефа сначала дает совпадение найденного кандидата с любым другим решением только около начального момента. Если оба решения существуют дальше, то в конце уже доказанного участка они имеют одинаковый фазовый вектор; новая локальная единственность продлевает совпадение. Поэтому ответ корректен на всем общем интервале существования, а при глобальном кандидате часто на всем максимальном интервале.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ],
+      "definition_ids": [
+        "maximal_solution",
+        "lipschitz_condition"
+      ]
+    },
+    {
+      "id": "idea-nonlipschitz-failure",
+      "title": "Нелипшицевость ломает быстрый вывод",
+      "text": "Если правая часть непрерывна, но не липшицева по фазовой переменной в начальной точке, угаданное решение может быть не единственным. Типовой механизм - отложенные решения уравнений вида y'=c|y|^alpha при 0<alpha<1: нулевая траектория существует, но к ней добавляются решения, которые некоторое время стоят в нуле и затем уходят.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ],
+      "definition_ids": [
+        "lipschitz_condition",
+        "initial_value_problem"
+      ]
+    },
+    {
+      "id": "idea-model-examples",
+      "title": "Один маршрут покрывает ОДУ, системы и маятник",
+      "text": "Для y'=f(y), f(a)=0, ответ y=a фиксируется единственностью. Для theta''+sin theta=0 с данными (pi,0) надо перейти к системе theta'=v, v'=-sin theta и увидеть равновесие. Для системы с начальной точкой на инвариантной диагонали сначала решают простое уравнение на диагонали, затем гладкость полного поля запрещает сход с найденной траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "autonomous_equation",
+        "equilibrium",
+        "phase_trajectory"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-solution-route",
+      "title": "Маршрут решения",
+      "text": "1. Выписать начальный фазовый вектор: для первого порядка это y(t0), для второго - (y(t0),y'(t0)), для системы - вся начальная точка. 2. По данным попробовать простые кандидаты: константу, нуль, прямую y=t+c, экспоненту на диагонали, симметричную или инвариантную траекторию. 3. Подставить кандидата в исходное уравнение, а не только в упрощенную версию. 4. Привести задачу к z'=F(t,z) и проверить условия единственности в окрестности начальной точки: F определена и локально липшицева по z. 5. Сослаться на единственность задачи Коши; если ответ нужен на большем интервале, отдельно сказать, что совпадение продолжается по локальной единственности вдоль найденной траектории. 6. Не искать общее решение, если вопрос уже закрыт конкретной задачей Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "cauchy_problem",
+        "integral_curve",
+        "lipschitz_condition"
+      ]
+    },
+    {
+      "id": "guide-when-method-breaks",
+      "title": "Граница применимости",
+      "text": "Метод нельзя применять автоматически, если правая часть разрывна, не задана в начальной точке, не разрешена относительно старшей производной или не липшицева там, где нужна единственность. В таких случаях угаданное решение остается решением, но не обязано быть единственным. Тогда задача уходит в соседний кластер existence-uniqueness-continuation: надо доказывать существование по Пеано, строить контрпример к единственности, выбирать ветвь неявного уравнения или анализировать максимальное продолжение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "maximal_solution",
+        "lipschitz_condition"
+      ]
+    },
+    {
+      "id": "guide-neighbor-clusters",
+      "title": "Связь с соседними кластерами",
+      "text": "С phase-line-stability связь содержательна только для автономных равновесий: там изучают все равновесия и устойчивость, здесь нужно одно равновесное решение с конкретными данными Коши. С existence-uniqueness-continuation связь идет через теорему Пикара-Линделефа и контрпримеры к Липшицу: широкий кластер выбирает и доказывает теоремы, а этот кластер применяет уже проверенную единственность к найденному кандидату.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "equilibrium",
+        "maximal_solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "first_order",
+      "second_order",
+      "autonomous_equation",
+      "autonomous_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "guess_solution",
+      "existence_uniqueness",
+      "cauchy_uniqueness",
+      "picard_lindelof",
+      "state_vector_uniqueness",
+      "invariant_set",
+      "local_lipschitz_check"
+    ],
+    "objects": [
+      "initial_value_problem",
+      "integral_curve",
+      "equilibrium",
+      "particular_solution",
+      "maximal_solution",
+      "lipschitz_condition",
+      "pendulum",
+      "invariant_line"
+    ],
+    "goal": [
+      "choose_method",
+      "solve_ivp",
+      "avoid_general_solution",
+      "prove_uniqueness",
+      "diagnose_nonuniqueness"
+    ],
+    "keywords": [
+      "guess-cauchy-solution-uniqueness",
+      "guess_cauchy_solution_uniqueness",
+      "method_guide",
+      "cauchy_problem",
+      "cauchy_uniqueness",
+      "equilibrium_solution",
+      "invariant_solution",
+      "pendulum_equilibrium",
+      "non_lipschitz_failure"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную сложность; основная трудность - распознать, что конкретная задача Коши уже решена кандидатом и теоремой единственности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "method_guide",
+    "theory_bridge",
+    "cluster_representative",
+    "existence_uniqueness",
+    "cauchy_problem",
+    "cauchy_uniqueness",
+    "phase_line",
+    "phase_plane",
+    "invariant",
+    "nonlinear_system",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык задачи Коши, локальной единственности и сведения уравнений высокого порядка к системам."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Задачниковый фон для коротких приемов с особыми траекториями, инвариантными множествами и качественными аргументами."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачник для сопоставления стандартных задач Коши, систем и качественных приемов."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Sections 2.4-2.6",
+      "note": "Строгая открытая опора по локальной единственности, максимальным решениям и продолжению совпадения решений."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Sections on existence and uniqueness; autonomous equations",
+      "note": "Открытый учебный текст для базовой проверки условий существования-единственности и автономных равновесий."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическая геометрическая перспектива на интегральные кривые, фазовые траектории и маятник."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной курс: формулировки задачи Коши и теоремы единственности."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 2,
+      "comment": "Задачниковая культура распознавания специальных траекторий."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Стандартные задачи Коши и системы в русскоязычном формате."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 4,
+      "comment": "Строгая теория локальной единственности и максимальных решений."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 5,
+      "comment": "Открытый вводный источник по existence-uniqueness и автономным равновесиям."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 6,
+      "comment": "Геометрический язык интегральных кривых и маятника."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-guess-cauchy-solution-uniqueness",
+    "notes": [
+      "Добавлено как теоретико-методический блок к кластеру, а не как новая вычислительная задача.",
+      "Новые определения не добавлялись: использованы definition_ids для задачи Коши, интегральной кривой, равновесия, максимального решения и условия Липшица.",
+      "Блок явно фиксирует границу метода: при нелипшицевости угаданное решение может быть неединственным."
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "local-du-written-2014-51-constant-coeff-third-order",
-  "title": "Третье линейное уравнение с постоянными коэффициентами и правой частью cos^2 x",
+  "title": "Линейное уравнение третьего порядка с постоянными коэффициентами",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",

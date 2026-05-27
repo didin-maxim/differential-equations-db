@@ -24,7 +24,10 @@
         },
         "definition_ids": [
           "equilibrium",
-          "stability"
+          "stability",
+          "phase_trajectory",
+          "lyapunov_stability",
+          "asymptotic_stability"
         ]
       }
     ]

@@ -1,6 +1,6 @@
 {
   "id": "cluster-orthogonal-coaxal-imaginary-base-points",
-  "title": "Ортогональные траектории коаксиального пучка без действительных общих точек",
+  "title": "Ортогональные траектории коаксиального пучка окружностей",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",
@@ -26,7 +26,8 @@
         "definition_ids": [
           "ordinary_differential_equation",
           "solution",
-          "direction_field"
+          "direction_field",
+          "orthogonal_trajectories"
         ]
       }
     ]

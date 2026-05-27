@@ -1,0 +1,23 @@
+{
+  "id": "cluster-nonlinear-second-order-order-reductions",
+  "title": "Аудит кластера понижения порядка нелинейных ОДУ второго порядка",
+  "created_at": "2026-05-27",
+  "scope": [
+    "nonlinear_second_order",
+    "order_reduction",
+    "p_of_y",
+    "p_of_x",
+    "energy_first_integral",
+    "branch_tracking",
+    "initial_conditions"
+  ],
+  "problem_ids": [
+    "cluster-nonlinear-second-order-order-reductions-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавлен отдельный теоретико-методический навигатор к существующему кластеру nonlinear-second-order-order-reductions.",
+    "Блок покрывает отсутствие y и x, замены p(x)=y' и p(y)=y', автономные и квазиконсервативные формы, связь с энергией, перенос начальных условий и потерю ветвей при делении.",
+    "Связи вынесены в data/relations/relations.d/cluster-nonlinear-second-order-order-reductions.yaml."
+  ]
+}

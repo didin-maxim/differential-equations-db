@@ -1,6 +1,6 @@
 {
   "id": "mit-18034-pset07-euler-system-fundamental-matrix",
-  "title": "Фундаментальная матрица переменно-коэффициентной системы через уравнение Эйлера",
+  "title": "Фундаментальная матрица системы через уравнение Эйлера",
   "fragment": "systems",
   "kind": {
     "primary": "problem",

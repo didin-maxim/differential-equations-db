@@ -1,0 +1,149 @@
+{
+  "id": "msu-ode-2025-2026",
+  "title": "Предложения для симуляции экзамена по задачам МГУ ОДУ 2025-2026",
+  "status": "proposal",
+  "created_at": "2026-05-27",
+  "notes": [
+    "Это не прямой импорт в основной questions.yaml. Вопросы требуют ручного баланса с текущими 47 вопросами симуляции.",
+    "Оригинальные олимпиадные задачи часто сильнее устного экзамена; здесь предложены короткие модификации с однозначной проверкой."
+  ],
+  "questions": [
+    {
+      "id": "exam-sim-proposal-msu-2025-2-min-order",
+      "card_id": "msu-ode-2025-2-min-order-polynomial-solutions",
+      "target_score": 6,
+      "topic": "linear_equations",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "Четыре данные функции лежат в пространстве квадратичных многочленов, и среди них есть три линейно независимые. Каков минимальный порядок линейного однородного ОДУ, которое может иметь их решениями?",
+      "auto_check": {
+        "type": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "accepted_text": [
+          "3",
+          "третий"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-msu-2025-3-stability-d",
+      "card_id": "msu-ode-2025-3-gyroscopic-stabilization",
+      "target_score": 5,
+      "topic": "qualitative",
+      "question_type": "application",
+      "answer_mode": "formula",
+      "prompt_override": "Для матрицы [[1,a],[-a,-d]] с d>0 найдите условие на d, при котором можно подобрать a так, чтобы нулевое решение было асимптотически устойчивым.",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "d>1"
+        ],
+        "accepted_text": [
+          "d>1",
+          "d > 1"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-msu-2025-6-inverse-trick",
+      "card_id": "msu-ode-2025-6-global-matrix-riccati-invertible",
+      "target_score": 7,
+      "topic": "systems_matrix_exponential",
+      "question_type": "method",
+      "answer_mode": "formula",
+      "prompt_override": "Если A'=A^2 и A(t) невырождена, чему равно (A^{-1})'?",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "-I",
+          "-E"
+        ],
+        "accepted_text": [
+          "-I",
+          "-E",
+          "минус единичная матрица"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-msu-2026-3-count-points",
+      "card_id": "msu-ode-2026-3-decoupled-phase-curves-count",
+      "target_score": 6,
+      "topic": "qualitative",
+      "question_type": "application",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Для системы x'=x^3-4x+3, y'=y^2026-1 сколько фазовых кривых являются точками?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "id": "b",
+          "text": "3",
+          "is_correct": true
+        },
+        {
+          "id": "c",
+          "text": "6",
+          "is_correct": false
+        },
+        {
+          "id": "d",
+          "text": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2026-5-stability-kind",
+      "card_id": "msu-ode-2026-5-polar-stable-not-asymptotic",
+      "target_score": 8,
+      "topic": "qualitative",
+      "question_type": "concept",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "В задаче с rho'=rho^3 sin(1/rho) и phi'=rho^2(2+cos phi) что верно про нулевое решение?",
+      "options": [
+        {
+          "id": "a",
+          "text": "неустойчиво",
+          "is_correct": false
+        },
+        {
+          "id": "b",
+          "text": "устойчиво, но не асимптотически устойчиво",
+          "is_correct": true
+        },
+        {
+          "id": "c",
+          "text": "асимптотически устойчиво",
+          "is_correct": false
+        },
+        {
+          "id": "d",
+          "text": "устойчивость зависит от угла phi(0)",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2026-6-param-derivative",
+      "card_id": "msu-ode-2026-6-singular-linear-system-epsilon",
+      "target_score": 8,
+      "topic": "systems_matrix_exponential",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "В специальной ветви задачи МГУ 2026/6 с x(0)=y(0)=1,z(0)=0 чему равно ∂x/∂epsilon при epsilon=0?",
+      "auto_check": {
+        "type": "numeric",
+        "value": 0,
+        "tolerance": 0,
+        "accepted_text": [
+          "0"
+        ]
+      }
+    }
+  ]
+}

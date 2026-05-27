@@ -1,0 +1,127 @@
+{
+  "id": "msu-ode-2021-5-inhomogeneous-second-order-span",
+  "title": "Размерность семейства решений неоднородного уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2021, задача 5",
+        "text": "Рассматривается уравнение y''+p(t)y'+q(t)y=f(t), где p,q,f in C^1(R). а) Какое наибольшее число k линейно независимых решений может иметь это уравнение? б) Одинаково ли это число для разных троек p,q,f? в) Обязательно ли линейно независимые решения из такого набора служат решениями некоторого линейного однородного уравнения k-го порядка с непрерывными на R коэффициентами?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Аффинная плоскость решений",
+      "text": "Множество решений неоднородного уравнения имеет вид y_p+V, где V - двумерное пространство решений однородного уравнения. Поэтому линейная оболочка имеет размерность 2 или 3.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    },
+    {
+      "id": "idea-wronskian",
+      "title": "Вронскиан трех решений связан с правой частью",
+      "text": "Для трех решений y_p, y_p+u, y_p+v третьего порядка вронскиан равен f(t)W(u,v) с точностью до знака. Если f имеет нули, эти три функции не могут быть фундаментальной системой нормированного однородного уравнения третьего порядка с непрерывными коэффициентами.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть V - двумерное пространство решений однородного уравнения, а y_p - одно частное решение. Все решения имеют вид y_p+u, u in V. Если f=0, множество решений само является двумерным линейным пространством, поэтому максимум равен 2. Если f не равно тождественно нулю, то y_p не лежит в V, иначе Ly_p=0=f; тогда линейная оболочка affine-плоскости y_p+V имеет размерность 3. Значит, наибольшее возможное k равно 3, но для разных троек p,q,f максимум может быть 2 или 3. Для пункта в) ответ отрицательный. Например, в уравнении y''=t возьмем решения t^3/6, t^3/6+1, t^3/6+t. Они линейно независимы, но их вронскиан равен t и обращается в ноль. У фундаментальной системы нормированного линейного однородного уравнения третьего порядка с непрерывными коэффициентами вронскиан либо нигде не обращается в ноль, либо тождественно равен нулю по формуле Абеля. Поэтому эти три решения не могут быть фундаментальной системой такого уравнения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "affine_solution_space",
+      "wronskian",
+      "counterexample"
+    ],
+    "objects": [
+      "affine_solution_space",
+      "linear_higher_order",
+      "wronskian",
+      "counterexample",
+      "complete_proof"
+    ],
+    "goal": [
+      "classify",
+      "disprove"
+    ],
+    "keywords": [
+      "msu-ode-2021-5",
+      "inhomogeneous_linear_equation",
+      "solution_space",
+      "wronskian_obstruction"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 4,
+    "local_score": 8,
+    "comment": "Первая часть стандартна для неоднородных линейных уравнений; пункт про невозможность однородного уравнения третьего порядка требует увидеть вронскианный обструкционный пример.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "affine_solution_space",
+    "wronskian",
+    "wronskian_obstruction",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/olymp2021ode_0.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Ближайшие родственники: задача о восстановлении общего решения по трем решениям неоднородного уравнения и локальная карточка local-du-written-2024-affine-linear-solution-space. Эта карточка добавляет именно вопрос о максимальной линейной независимости и обструкцию через нули вронскиана."
+    ]
+  }
+}

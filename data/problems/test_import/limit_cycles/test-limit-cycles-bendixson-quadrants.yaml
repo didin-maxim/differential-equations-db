@@ -1,0 +1,124 @@
+{
+  "id": "test-limit-cycles-bendixson-quadrants",
+  "title": "Предельные циклы в квадрантах фазовой плоскости",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "test_import",
+      "multiple_choice"
+    ]
+  },
+  "language": "ru",
+  "authors": [
+    {
+      "name": "Деркач М.М.",
+      "role": "test_author",
+      "status": "xlsx_attributed"
+    }
+  ],
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Переформулированная тестовая задача",
+        "text": "Для системы x'=1+x^2y-4x, y'=3x-x^2y определить, в каких открытых квадрантах критерий Бендиксона сразу запрещает предельные циклы. Укажите все подходящие квадранты.",
+        "source_ids": [
+          "src-test-du-limit-cycles"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "equilibrium"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Посчитать дивергенцию и ее знак",
+      "text": "Критерий Бендиксона дает запрет, когда дивергенция сохраняет строгий знак в односвязной области. В этой задаче знак удобно читать по произведению xy.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "bendixson_divergence"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Дивергенция поля равна d/dx(1+x^2y-4x)+d/dy(3x-x^2y)=2xy-4-x^2. Если xy<0, то 2xy<0 и вся дивергенция строго отрицательна. Поэтому в квадрантах x>0,y<0 и x<0,y>0 предельных циклов нет. В квадрантах с xy>0 этот быстрый аргумент уже не работает: знак выражения 2xy-4-x^2 там может меняться, а из критерия Бендиксона нельзя заключить ни существование, ни отсутствие цикла.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "bendixson_divergence"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_planar_system",
+      "qualitative"
+    ],
+    "methods": [
+      "bendixson_divergence",
+      "sign_analysis"
+    ],
+    "objects": [
+      "limit_cycle",
+      "divergence",
+      "quadrants"
+    ],
+    "goal": [
+      "exclude"
+    ],
+    "keywords": [
+      "bendixson",
+      "limit_cycle",
+      "quadrants",
+      "divergence"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 3,
+    "comment": "Идея стандартная для продвинутой качественной теории: применить Бендиксона локально в квадрантах; техника сводится к одному вычислению дивергенции.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "bendixson",
+    "phase_plane",
+    "sign_analysis",
+    "periodic_solution",
+    "limit_cycle",
+    "test_import",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-test-du-limit-cycles",
+      "role": "test_archive_problem_adapted",
+      "status": "source_verified",
+      "note": "Исходная задача 3 спрашивала область существования циклов, хотя приведенное решение доказывает только запрет в квадрантах xy<0; карточка делает проверяемый вывод строгим."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "test_limit_cycles_import",
+    "notes": [
+      "Тестовый формат уместен как multiple-choice с несколькими правильными ответами: неправильные варианты естественно проверяют путаницу между 'Бендиксон запрещает' и 'цикл существует'.",
+      "Автор взят из строки 'Исследование предельных циклов' файла C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx."
+    ]
+  }
+}

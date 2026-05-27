@@ -22,7 +22,11 @@
         },
         "definition_ids": [
           "ordinary_differential_equation",
-          "solution"
+          "solution",
+          "general_solution",
+          "singular_solution",
+          "integral_curve",
+          "discriminant_curve"
         ]
       }
     ]
@@ -32,7 +36,12 @@
       "id": "idea-main",
       "title": "Дифференцировать по параметру наклона",
       "text": "Это уравнение типа Клеро: после обозначения p=y' дифференцирование раскладывает решения на семейство прямых p=C и огибающую.",
-      "status": "ai_checked"
+      "status": "ai_checked",
+      "definition_ids": [
+        "general_solution",
+        "singular_solution",
+        "integral_curve"
+      ]
     }
   ],
   "solutions": [

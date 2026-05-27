@@ -1,0 +1,143 @@
+{
+  "exam_simulation_version": 1,
+  "mode_id": "oral_exam_simulation",
+  "title": "Симуляция экзамена",
+  "start_levels": [3, 4, 5, 6, 7, 8, 9, 10],
+  "failure_level": 2,
+  "min_questions": 4,
+  "max_questions": 5,
+  "candidate_filter": {
+    "allowed_kinds": ["problem", "theorem", "lemma", "definition"],
+    "allowed_course_tags": ["standard_course_methods", "advanced_standard_course"],
+    "excluded_tags": [
+      "olympiad_above_exam",
+      "beyond_standard_course",
+      "needs_solution_completion"
+    ],
+    "max_problem_technical_score": 5,
+    "prefer_tags": [
+      "oral_exam",
+      "model_exam_task",
+      "theoretical_exam_task",
+      "low_technical",
+      "standard_course_methods"
+    ]
+  },
+  "level_to_idea_score": {
+    "3": [2, 3],
+    "4": [3, 4],
+    "5": [4, 5],
+    "6": [5, 6],
+    "7": [6, 7],
+    "8": [7, 8],
+    "9": [8, 9],
+    "10": [9, 10]
+  },
+  "question_types": [
+    "proof",
+    "method",
+    "application",
+    "thinking"
+  ],
+  "target_question_type_sequence": [
+    "application",
+    "method",
+    "proof",
+    "thinking",
+    "least_covered"
+  ],
+  "answer_modes": [
+    "self_check",
+    "numeric",
+    "formula",
+    "formula_slots",
+    "multiple_choice"
+  ],
+  "major_topics": [
+    {
+      "id": "first_order",
+      "title": "Уравнения первого порядка",
+      "fragments": ["first_order"]
+    },
+    {
+      "id": "linear_equations",
+      "title": "Линейные уравнения высших порядков",
+      "fragments": ["linear_equations"]
+    },
+    {
+      "id": "systems_matrix_exponential",
+      "title": "Системы и матричная экспонента",
+      "fragments": ["systems"],
+      "cluster_ids": ["matrix-exponential-methods", "constant-coefficient-linear-systems"]
+    },
+    {
+      "id": "existence_uniqueness",
+      "title": "Существование, единственность, продолжение",
+      "cluster_ids": ["existence-uniqueness-continuation", "guess-cauchy-solution-uniqueness"]
+    },
+    {
+      "id": "qualitative",
+      "title": "Фазовые траектории, устойчивость, первые интегралы",
+      "fragments": ["qualitative"]
+    },
+    {
+      "id": "boundary_sturm",
+      "title": "Краевые задачи и Штурм",
+      "fragments": ["boundary_value"],
+      "cluster_ids": ["sturm-oscillation-comparison", "boundary-spectral-problems"]
+    },
+    {
+      "id": "variational_calculus",
+      "title": "Вариационное исчисление",
+      "cluster_ids": ["simple-variational-calculus"]
+    },
+    {
+      "id": "pde_characteristics",
+      "title": "Линейные ЧП первого порядка",
+      "cluster_ids": ["pde-characteristics-first-order"]
+    },
+    {
+      "id": "series_methods",
+      "title": "Степенные ряды",
+      "fragments": ["series_methods"],
+      "cluster_ids": ["power-series-linear-ode"]
+    }
+  ],
+  "rating_model": {
+    "initial_uncertainty": 1.5,
+    "uncertainty_after_closed_questions": {
+      "1": 1.5,
+      "2": 1.1,
+      "3": 0.8,
+      "4": 0.6,
+      "5": 0.45
+    },
+    "correct_base_gain": 0.65,
+    "correct_stretch_gain": 0.15,
+    "wrong_base_loss": 0.85,
+    "wrong_stretch_loss": 0.2,
+    "min_rating": 2,
+    "max_rating": 10
+  },
+  "finish_rules": {
+    "after_four_questions_finish_if": [
+      "visible_range_width_at_most_1",
+      "last_two_correct_and_rating_at_least_start_plus_0_8",
+      "last_two_wrong_and_rating_at_most_start_minus_1_2",
+      "at_least_three_major_topics_and_three_question_types_covered"
+    ],
+    "ask_fifth_question_if": [
+      "visible_range_width_above_1",
+      "alternating_correctness_pattern",
+      "no_proof_or_self_check_question_yet",
+      "all_questions_from_one_major_topic"
+    ],
+    "always_finish_after_question": 5
+  },
+  "selection_rules": {
+    "avoid_same_cluster_before_other_topics": 3,
+    "avoid_same_fragment_back_to_back": true,
+    "target_min_major_topics_in_five_questions": 3,
+    "after_wrong_answer_allow_adjacent_simpler_topic": true
+  }
+}

@@ -131,6 +131,171 @@
       "backward_text": "Лемма о конечном отрезке является локальным аналогом порогового мышления, используемого в критерии Кнезера на бесконечности.",
       "status": "ai_checked",
       "confidence": 0.74
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-comparison-theorem",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-8-sturm-comparison-theorem",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, когда выбирать сравнение Штурма: при порядке коэффициентов и эталоне с известными нулями.",
+      "backward_text": "Теорема сравнения является главным рабочим инструментом ветки, где больший коэффициент заставляет нули появляться чаще.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-separation",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-standard-sturm-separation-zeros",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет разделение нулей от сравнения: здесь работают два решения одного и того же уравнения.",
+      "backward_text": "Разделение нулей дает базовый вронскианный механизм для задач о чередовании и простоте нулей.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-zero-spacing",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-standard-sturm-zero-spacing-corollaries",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор направляет конечные оценки через эталонное расстояние pi/sqrt(C) между нулями синуса.",
+      "backward_text": "Следствия о расстоянии между нулями являются готовым техническим блоком для сравнения с y''+C y=0.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-oscillation-tests",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-standard-oscillation-nonoscillation-tests",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит задачи на бесконечном хвосте из локального сравнения в язык осцилляции и неосцилляции.",
+      "backward_text": "Признаки осцилляции и неосцилляции дают базовую развилку для утверждений о бесконечном числе нулей.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-kneser",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-standard-kneser-criterion",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор рекомендует критерий Кнезера только в асимптотическом режиме сравнения q(x) с порогом 1/(4x^2).",
+      "backward_text": "Критерий Кнезера специализирует общую осцилляционную логику к эйлеровскому обратноквадратичному порогу.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-disconjugacy-lemma",
+      "from": "cluster-sturm-method-guide",
+      "to": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет дисконъюгированность как правильный язык для запрета двух нулей на конечном отрезке.",
+      "backward_text": "Лемма о строгом верхнем ограничении является модельной реализацией ветки дисконъюгированности через сравнение с y''+C y=0.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-dirichlet-nonresonance",
+      "from": "cluster-sturm-method-guide",
+      "to": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет краевое следствие: запрет ненулевого решения Дирихле превращается в существование и единственность задачи с заданными концами.",
+      "backward_text": "Лемма о нерезонансе Дирихле формализует переход от штурмовского запрета двух нулей к обратимости двухточечной задачи.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-sharp-threshold",
+      "from": "cluster-sturm-method-guide",
+      "to": "cluster-sturm-bvp-unit-endpoints-sharp-threshold",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор показывает, что порог C<=pi^2/L^2 является не спектральным счетом ради счета, а следствием дисконъюгированности и нерезонанса.",
+      "backward_text": "Острая пороговая карточка служит компактным примером полного маршрута: сравнение, запрет ядра Дирихле, краевая единственность и контрпример.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-written-zero",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-written-2007-81-sturm-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор помогает распознать письменную задачу на наличие нуля как прямое сравнение с синусоидальным эталоном.",
+      "backward_text": "Экзаменационная карточка является короткой тренировкой ветки comparison_one_zero из методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-romanko-short-bvp",
+      "from": "cluster-sturm-method-guide",
+      "to": "local-du-romanko-sturm-short-interval-bvp",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему короткий отрезок в краевой задаче следует читать через дисконъюгированность, а не через явное решение.",
+      "backward_text": "Задача Романко является содержательным representative-примером краевого следствия о запрете двух нулей.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-prufer-card",
+      "from": "cluster-sturm-method-guide",
+      "to": "mit-18034-pset08-prufer-oscillation-criteria",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает на угол Пруфера там, где удобнее считать вращение фазового вектора, а не искать каждый нуль отдельно.",
+      "backward_text": "Карточка MIT раскрывает фазово-угловой маршрут навигатора на явном выводе уравнения для theta.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-teschl-zero-count",
+      "from": "cluster-sturm-method-guide",
+      "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор и карточка Teschl/Stanford используют один фазовый язык для связи числа нулей с Sturm-Liouville картиной.",
+      "backward_text": "Фазовый zero-count является продвинутым representative-примером ветки Пруфера и осцилляции.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-boundary-spectral-cluster",
+      "from": "cluster-sturm-method-guide",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет штурмовский вывод о нулях и нерезонансе от задачи, где главная цель - вычислить собственные значения Дирихле.",
+      "backward_text": "Модельная спектральная задача задает соседний кластер boundary-spectral-problems; в штурмовском блоке она нужна только как пороговый ориентир.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-liouville-wronskian",
+      "from": "cluster-sturm-method-guide",
+      "to": "liouville-wronskian-formula",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет задачи о нулях от общего контроля фундаментальной системы через формулу Лиувилля.",
+      "backward_text": "Формула Лиувилля является соседней базовой техникой linear-equations-variable-coefficients и входит в Sturm-рассуждения только через вронскиан и отношения решений.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-sturm-guide-to-graph-ratio",
+      "from": "cluster-sturm-method-guide",
+      "to": "cluster-linear-variable-graph-ratio-maximum",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор включает графические и нулевые аргументы только когда они сводятся к вронскиану, единственности или запрету нулей; иначе это соседняя тема линейных уравнений с переменными коэффициентами.",
+      "backward_text": "Графическая задача на отношение решений показывает соседний не-штурмовский способ использовать нули и касание в линейном уравнении.",
+      "status": "ai_checked",
+      "confidence": 0.78
     }
   ]
 }

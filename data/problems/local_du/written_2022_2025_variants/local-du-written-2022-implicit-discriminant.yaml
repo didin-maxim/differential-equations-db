@@ -22,7 +22,11 @@
         },
         "definition_ids": [
           "ordinary_differential_equation",
-          "direction_field"
+          "solution",
+          "direction_field",
+          "discriminant_curve",
+          "singular_solution",
+          "integral_curve"
         ]
       }
     ]
@@ -35,6 +39,10 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "discriminant_curve",
+        "singular_solution"
       ]
     }
   ],

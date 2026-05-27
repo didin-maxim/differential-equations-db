@@ -1,0 +1,127 @@
+{
+  "id": "test-implicit-special-solution-contained-in-discriminant",
+  "title": "Особое решение и дискриминантная кривая",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "test_import",
+      "exam_interaction_source"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Для уравнения F(x,y,y')=0, F in C^1, выбрать верное отношение между особыми решениями и p-дискриминантной кривой.",
+        "source_ids": [
+          "src-test-du-implicit-first-order-lopushanski"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "singular_solution",
+          "discriminant_curve",
+          "integral_curve"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Особое решение должно лежать там, где теряется регулярность",
+      "text": "Если вдоль решения F_p != 0, уравнение локально превращается в обычное y'=f(x,y), и касающаяся другая ветвь запрещена единственностью. Поэтому особая кривая лежит в p-дискриминанте, но сам дискриминант может не быть решением.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Верное утверждение: любое особое решение содержится в p-дискриминантной кривой. Действительно, если в точке решения F_p != 0, то по теореме о неявной функции рядом есть единственная C^1-ветвь p=f(x,y). Для обычного уравнения y'=f(x,y) с C^1 правой частью две разные интегральные кривые не могут касаться в одной точке с тем же начальным значением. Значит особенность возможна только при F_p=0. Обратные утверждения неверны: дискриминант может быть границей поля направлений или содержать точки, через которые вообще не проходит интегральная кривая.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode"
+    ],
+    "methods": [
+      "discriminant_curve",
+      "implicit_regular_ivp"
+    ],
+    "objects": [
+      "singular_solution",
+      "discriminant_set",
+      "regular_branch"
+    ],
+    "goal": [
+      "classify",
+      "compare_definitions"
+    ],
+    "keywords": [
+      "implicit_ode_discriminant",
+      "singular_solution",
+      "discriminant_set"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Технически это короткий тест, но нужно понимать роль F_p и единственности на регулярной ветви.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "implicit_ode_discriminant",
+    "existence_uniqueness",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_6",
+    "test_import"
+  ],
+  "sources": [
+    {
+      "source_id": "src-test-du-implicit-first-order-lopushanski",
+      "role": "source_task_adapted",
+      "status": "source_verified",
+      "note": "Архив тестов: вопрос 5, переформулирован как более точная conceptual multiple_choice-задача. Автор/исполнитель из xlsx: Лопушански М.С."
+    }
+  ],
+  "authors": [
+    {
+      "name": "Лопушански М.С.",
+      "role": "test_author_or_executor",
+      "source_id": "src-test-du-implicit-first-order-lopushanski"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "test-implicit-first-order",
+    "notes": [
+      "Оставлено как качественный тест на понимание, а не как голое воспроизведение определения.",
+      "Связано с существующими карточками о дискриминанте: эта карточка формулирует общий принцип, а соседние показывают примеры."
+    ]
+  }
+}

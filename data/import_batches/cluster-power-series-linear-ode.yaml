@@ -1,0 +1,20 @@
+{
+  "id": "cluster-power-series-linear-ode",
+  "title": "Кластерный аудит степенных рядов для линейных ОДУ",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "series_methods",
+    "power-series-linear-ode",
+    "method_guide"
+  ],
+  "problem_ids": [
+    "cluster-power-series-linear-ode-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет теоретико-методический навигатор к уже существующему кластеру power-series-linear-ode.",
+    "Новые однотипные вычислительные задачи не добавлялись: существующие representatives закрывают обычную точку, первые коэффициенты, рекурсию и базовую модель Фробениуса.",
+    "Связи этого прохода вынесены в data/relations/relations.d/cluster-power-series-linear-ode.yaml."
+  ]
+}

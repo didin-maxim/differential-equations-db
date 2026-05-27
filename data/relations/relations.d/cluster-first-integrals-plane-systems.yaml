@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-first-integrals-guide-to-energy-oscillator",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "energy-integral-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок объясняет, почему энергия уравнения второго порядка является первым интегралом фазовой системы.",
+      "backward_text": "Осциллятор E=(x')^2/2+V(x) является минимальным вычислительным примером ветки 'энергия как уровень фазовой плоскости'.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-lotka-volterra",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "lotka-volterra-first-integral",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует базовую проверку H_x P+H_y Q=0, которая прямо применяется к первому интегралу Лотки-Вольтерры.",
+      "backward_text": "Lotka-Volterra показывает неэнергетический, но стандартный пример сохраняющегося H на области x>0, y>0.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-romanko-center",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "local-du-romanko-first-integral-center",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет именно тот ход, который нужен в задаче Романко: найти H, проверить Hdot=0 и прочитать замкнутые уровни как центр.",
+      "backward_text": "Задача Романко является содержательным примером ветки 'первый интеграл со строгим экстремумом дает центр'.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-filippov-1166",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "local-du-filippov-1166-intersection-first-integrals",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Блок объясняет геометрию уровней первого интеграла; Филиппов 1166 усиливает ее до пересечения двух уровней и интегральной кривой.",
+      "backward_text": "Филиппов 1166 проверяет, что студент понимает первый интеграл как инвариантное множество, а не только как формулу H=C.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-mit-folium",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "mit-18034-pset09-hamiltonian-folium-first-integral",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что фазовые кривые являются компонентами уровней H; MIT folium требует именно такой проверки для рационального однородного интеграла.",
+      "backward_text": "Фолий Декарта дает пример, где уровень H=C имеет особую геометрию и нельзя ограничиться словами 'энергия овальная'.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-phase-center-lemma",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "cluster-phase-stability-first-integral-center",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют замкнутые уровни первого интеграла как барьеры устойчивости и одновременно исключают асимптотическую устойчивость центра.",
+      "backward_text": "Лемма phase-line-stability является компактной теоремой о той ветке, которую навигатор помещает внутрь общего метода первых интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-phase-stability-guide",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор первых интегралов фокусируется на инвариантных уровнях H; общий навигатор устойчивости объясняет, когда вместо этого нужны фазовая прямая, спектр, линеаризация или функция Ляпунова.",
+      "backward_text": "Навигатор устойчивости показывает границу: первый интеграл является одной веткой качественного анализа, но не заменяет все методы классификации равновесий.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-lyapunov-direct-method",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "cluster-phase-stability-lyapunov-direct-method",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Блок явно отделяет Hdot=0 от функции Ляпунова со знаком Vdot; прямой метод Ляпунова является соседней, но другой веткой доказательства устойчивости.",
+      "backward_text": "Прямой метод Ляпунова полезен там, где сохранения H недостаточно или требуется доказать притяжение.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-first-integrals-guide-to-pde-two-invariants",
+      "from": "cluster-first-integrals-plane-systems-method-guide",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Геометрия инвариантов уровней переносится на метод характеристик: два первых интеграла характеристической системы задают поверхность решения PDE.",
+      "backward_text": "PDE-карточка Романко показывает соседнюю область применения той же идеи инвариантов, но уже для характеристической системы уравнения в частных производных.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "olympiad-level-backward-positivity-derivative-lemma",
-  "title": "Положительность на всей прямой как оценка производных назад",
+  "title": "Оценка производных из положительности на всей прямой",
   "fragment": "olympiad",
   "kind": {
     "primary": "lemma",

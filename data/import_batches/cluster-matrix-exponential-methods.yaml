@@ -10,6 +10,7 @@
     "linear_recurrence"
   ],
   "problem_ids": [
+    "cluster-matrix-exponential-method-guide",
     "cluster-matrix-exp-inverse-by-negative-time",
     "cluster-matrix-exp-recover-a-derivative-zero",
     "cluster-matrix-exp-spectrum-from-modes",

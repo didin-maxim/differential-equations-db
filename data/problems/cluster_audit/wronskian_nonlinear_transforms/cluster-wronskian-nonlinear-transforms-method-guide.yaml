@@ -1,0 +1,277 @@
+{
+  "id": "cluster-wronskian-nonlinear-transforms-method-guide",
+  "title": "Методический навигатор: Вронскиан и нелинейные преобразования решений",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Кластер wronskian-nonlinear-transforms нужен для задач, где линейное уравнение используется не ради полного решения, а как источник инварианта для нелинейной величины: степени y^m, отношения y2/y1, произведения пары решений, корня из произведения или логарифмической производной. Из линейной теории реально переносится немного: формула Абеля-Лиувилля для W, дихотомия W=0 или W нигде не равен нулю на рабочем интервале, размерность пространства решений, простота нулей ненулевого решения и возможность читать (y2/y1)' как W/y1^2 там, где y1 не обращается в нуль. Все остальное надо проверять заново: знак решения, отсутствие нулей в знаменателе, выбор ветви корня или степени, гладкость преобразования и исключительные случаи. Для уравнения y''+p(x)y'+q(x)y=0 Вронскиан связывает независимость и ФСР, а для формы без y' он постоянен и часто превращает длинную алгебру в один квадрат W^2. В олимпиадных задачах главная ловушка - формально подставить нелинейное выражение и забыть, что оно может быть недопустимо в нулях; вторая ловушка - принять любой нелинейный прием за Риккати или Бернулли, хотя здесь исходная линейность пары решений и Вронскиан являются центральным объектом.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-putnam-archive",
+          "src-nure-student-olympiad-book",
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "wronskian",
+          "linear_independence_solutions",
+          "fundamental_system_solutions"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-transferable-linear-core",
+      "title": "Переносить только инвариант, а не всю линейную теорию",
+      "text": "В задачах кластера обычно достаточно знать, что W управляется формулой Абеля или постоянен в уравнении без первой производной. ФСР и общее решение важны как язык независимости, но не как приглашение решать уравнение полностью.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville",
+        "wronskian_invariant"
+      ],
+      "definition_ids": [
+        "wronskian",
+        "fundamental_system_solutions",
+        "linear_independence_solutions"
+      ]
+    },
+    {
+      "id": "idea-nonlinear-transform-domain",
+      "title": "Сначала проверить область нелинейного преобразования",
+      "text": "Деление на y1, переход к y'/y, степень y^m, корень sqrt(y1y2) или отношение y2/y1 допустимы только на интервалах, где выбранные функции не зануляются и сохраняется нужный знак. Поэтому нули и знаки являются частью метода, а не технической оговоркой в конце.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "solution",
+        "wronskian"
+      ]
+    },
+    {
+      "id": "idea-ratio-and-zeros",
+      "title": "Отношение решений связывает нули с Вронскианом",
+      "text": "На промежутке без нулей y1 производная отношения равна (y2/y1)' = W/y1^2. Поэтому экстремум отношения, общий нуль или слишком частое пересечение обычно означают W=0 либо конфликт с простотой нулей и единственностью задачи Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "wronskian",
+        "linear_independence_solutions"
+      ]
+    },
+    {
+      "id": "idea-border-with-neighbors",
+      "title": "Граница с соседними кластерами проходит по главной идее",
+      "text": "Если задача требует построить ФСР, вариацию параметров или обычную формулу Абеля, это linear-equations-variable-coefficients. Если речь о разделении нулей, сравнении или спектральной краевой задаче, это sturm-oscillation-comparison или boundary-spectral-problems. В этот кластер попадает только случай, где нелинейная комбинация решений является центральным объектом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_system_solutions",
+        "wronskian"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут решения",
+      "text": "1. Выяснить, какая нелинейная величина задана: y^m, y2/y1, y1y2, sqrt(y1y2), y'/y или специальная комбинация пары решений. 2. Зафиксировать рабочий интервал без запрещенных нулей и с нужным знаком; если такого интервала нет, сначала разобрать нулевой или знаковый случай. 3. Выписать W и его закон: W'=-pW для y''+p(x)y'+q(x)y=0 или W=const для y''=f(x)y. 4. Дифференцировать не саму громоздкую формулу, а удобную величину: логарифмическую производную, квадрат корня, отношение решений или произведение. 5. Заменить возникающие выражения через исходное линейное уравнение и W. 6. Вернуться к исходной формулировке: выбрать константу, ветвь корня или знак, проверить независимость решений и исключительные случаи.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville",
+        "wronskian_invariant",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "wronskian",
+        "linear_independence_solutions"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не делить на решение и не брать логарифмическую производную до проверки, что решение не обращается в нуль на выбранном интервале. Не считать W постоянным для общего уравнения y''+p(x)y'+q(x)y=0: постоянство есть только при p=0, а в общем случае работает формула Абеля. Не выводить линейную независимость из того, что формулы выглядят разными; надо проверить W или непостоянство отношения. Не подставлять y^m или sqrt(y1y2) как гладкое решение через нуль или смену знака. Не переносить сюда обычные задачи на Риккати, Бернулли, вариацию параметров или Штурма, если нелинейное преобразование пары решений не является главным ходом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville",
+        "wronskian_invariant",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "solution",
+        "wronskian",
+        "linear_independence_solutions"
+      ]
+    },
+    {
+      "id": "guide-proof-pattern",
+      "title": "Шаблон короткого доказательства",
+      "text": "Для степени одного решения обычно кладут r=y'/y: подстановка y и y^m дает две связи, из которых исключаются r' и p r. Для пары решений чаще начинают с W=y1y2'-y1'y2: производная отношения дает W/y1^2, а в задаче типа Пинни дифференцируют z^2=c^2 y1y2 и сводят остаток к W^2. В задачах о нулях не надо сразу звать полную теорию Штурма: часто хватает единственности задачи Коши, простоты нулей и факта, что W не может занулиться в одной точке у независимой пары.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "wronskian_invariant",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "wronskian",
+        "solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "linear_higher_order",
+      "nonlinear_ode",
+      "variable_coefficients",
+      "olympiad"
+    ],
+    "methods": [
+      "wronskian_liouville",
+      "wronskian_invariant",
+      "logarithmic_derivative",
+      "nonlinear_transform",
+      "ratio_of_solutions",
+      "zero_and_sign_control",
+      "cauchy_uniqueness"
+    ],
+    "objects": [
+      "wronskian",
+      "fundamental_system",
+      "linear_independence",
+      "positive_solutions",
+      "zeros",
+      "nonlinear_transform",
+      "pinney_equation"
+    ],
+    "goal": [
+      "choose_method",
+      "prove_structure",
+      "construct",
+      "characterize",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "wronskian-nonlinear-transforms",
+      "Wronskian",
+      "nonlinear transform",
+      "y^m",
+      "ratio of solutions",
+      "Pinney",
+      "zeros of solutions"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 9,
+    "idea_score": 9,
+    "technical_score": 2,
+    "comment": "Методический блок компактный и почти без вычислений, но сам кластер относится к олимпиадному уровню: трудность в распознавании переносимого вронскианного инварианта и в контроле допустимости нелинейного преобразования.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "olympiad_style",
+    "linear_higher_order",
+    "wronskian",
+    "nonlinear_transform",
+    "zero_location",
+    "sign_analysis",
+    "advanced_standard_course",
+    "olympiad_above_exam",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "note": "Базовый язык Вронскиана, формулы Лиувилля-Остроградского, ФСР и нулей решений линейных ОДУ."
+    },
+    {
+      "source_id": "src-putnam-archive",
+      "role": "representative_problem_archive",
+      "status": "source_verified",
+      "note": "Putnam 1975 A5 является главным примером преобразования пары линейных решений в нелинейное уравнение Пинни."
+    },
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "representative_problem_book",
+      "status": "source_verified",
+      "note": "Задача ХНУРЭ 8.3 задает ветку y и y^2 через логарифмическую производную."
+    },
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "generalization_reference",
+      "status": "needs_human_review",
+      "note": "Используется только для обобщающей карточки y и y^m, уже присутствующей в базе."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Опорный курс: Вронскиан, ФСР, Лиувилль-Остроградский и нули."
+    },
+    {
+      "source_id": "src-putnam-archive",
+      "priority": 2,
+      "comment": "Классический representative на постоянный W и уравнение Пинни."
+    },
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "priority": 3,
+      "comment": "Representative на нелинейную степень решения."
+    },
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "priority": 4,
+      "comment": "Обобщающая карточка для y и y^m."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-wronskian-nonlinear-transforms-method-guide",
+    "notes": [
+      "Добавлено как компактный теоретико-методический блок малого кластера, а не как расширение общего linear-equations-variable-coefficients.",
+      "Новые определения не добавлялись: достаточно существующих wronskian, linear_independence_solutions и fundamental_system_solutions.",
+      "Граница со Штурмом, ФСР/Абелем и Риккати-Бернулли явно вынесена в текст и relations."
+    ]
+  }
+}

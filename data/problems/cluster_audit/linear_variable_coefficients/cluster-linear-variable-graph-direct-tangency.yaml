@@ -1,6 +1,6 @@
 {
   "id": "cluster-linear-variable-graph-direct-tangency",
-  "title": "Два графика с общей касательной не могут быть разными решениями",
+  "title": "Два графика с общей касательной",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",

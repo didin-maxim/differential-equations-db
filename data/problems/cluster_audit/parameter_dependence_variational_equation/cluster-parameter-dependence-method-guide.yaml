@@ -1,0 +1,325 @@
+{
+  "id": "cluster-parameter-dependence-method-guide",
+  "title": "Методический навигатор: зависимость от параметров и вариационное уравнение",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Кластер parameter-dependence-variational-equation отвечает за задачи, где изучают не само решение задачи Коши, а его чувствительность к параметру, начальному условию или малому возмущению. Базовая схема для x'=f(t,x,lambda), x(t0,lambda)=xi(lambda): сначала фиксируют решение x0(t) при нужном значении параметра, затем дифференцируют интегральную форму задачи Коши и получают линейную задачу для z=partial_lambda x: z'=D_x f(t,x0,lambda0)z+partial_lambda f(t,x0,lambda0), z(t0)=xi'(lambda0). Для зависимости от начальной точки производная потока U=D_{x0}phi удовлетворяет однородному матричному вариационному уравнению U'=D_x f(t,phi)U, U(t0)=I, то есть является нормированной фундаментальной матрицей вдоль траектории. Если гладкости по параметру пока нет, разность двух решений оценивают через липшицево неравенство и Гронуолла, получая непрерывную или липшицеву зависимость. Уравнения второго порядка и более высоких порядков сначала переводят к системе первого порядка; в линейных задачах с параметром надо дифференцировать и коэффициенты, и правую часть, и начальные данные. Обычная вариация постоянных для неоднородного линейного уравнения относится сюда только тогда, когда она решает именно уравнение чувствительности или уравнение для регулярной поправки.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-18034-honors-ode",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "linear_system",
+          "fundamental_matrix",
+          "gronwall_inequality",
+          "lipschitz_condition",
+          "variation_of_constants_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-integral-form-first",
+      "title": "Дифференцировать интегральную форму",
+      "text": "Чувствительность не выводят из уже найденной явной формулы, если ее нет. Задачу Коши записывают как x=xi(lambda)+int f(s,x(s,lambda),lambda) ds и дифференцируют по параметру; цепное правило дает линейное уравнение вдоль базовой траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "picard_lindelof"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-initial-data-flow",
+      "title": "Начальные данные дают производную потока",
+      "text": "Если параметром является начальная точка, то производная решения по x0 является матрицей. Ее столбцы решают одно и то же линейное вариационное уравнение, поэтому U(t) играет роль фундаментальной матрицы для линеаризации вдоль выбранного решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-gronwall-before-smoothness",
+      "title": "Гронуолл работает до производной",
+      "text": "Непрерывная и липшицева зависимость доказываются через оценку разности двух решений. Этот шаг часто нужен перед гладкой зависимостью: он удерживает решения на одном отрезке и контролирует остатки после вычитания.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ],
+      "definition_ids": [
+        "gronwall_inequality",
+        "lipschitz_condition"
+      ]
+    },
+    {
+      "id": "idea-higher-order-as-system",
+      "title": "Второй порядок читать как систему",
+      "text": "Для y''=F(t,y,y',lambda) параметрическая производная z=partial_lambda y удовлетворяет линейному уравнению второго порядка, но его безопаснее получать из системы для (y,y'). Тогда автоматически дифференцируются оба начальных условия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "cauchy_problem",
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-regular-perturbation",
+      "title": "Регулярная поправка - это чувствительность",
+      "text": "Разложение x=x0+epsilon x1+... дает на первом порядке то же неоднородное вариационное уравнение. На втором порядке появляются новые члены из второй производной поля или нелинейности; это новая идея только если меняется структура уравнения, а не длина интеграла.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "variation_of_constants_system"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут выбора метода",
+      "text": "1. Определить, что именно меняется: параметр в правой части, коэффициенте, начальных данных или сама начальная точка потока. 2. Зафиксировать базовое значение параметра и базовое решение на общем отрезке существования. 3. Если требуется производная по параметру, продифференцировать интегральную форму задачи Коши и начальные данные; получить линейную задачу для z. 4. Если параметр - начальная точка, записать матричное уравнение U'=D_x f(t,phi)U, U(t0)=I и читать U как фундаментальную матрицу. 5. Если требуется только непрерывная зависимость, оценить разность двух интегральных уравнений и применить Гронуолла. 6. Для второго порядка перейти к системе для вектора состояния, затем при желании вернуться к скалярному уравнению для z. 7. Решать полученную линейную задачу коротким способом: интегрирующим множителем, фундаментальной матрицей или формулой вариации постоянных.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "gronwall_estimate",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "fundamental_matrix",
+        "gronwall_inequality",
+        "variation_of_constants_system"
+      ]
+    },
+    {
+      "id": "guide-proof-route",
+      "title": "Как строить доказательство",
+      "text": "Доказательство гладкой зависимости обычно начинается с интегрального уравнения и разностного отношения. Из формулы Тейлора для f выделяют D_x f умножить на разность решений и partial_lambda f умножить на приращение параметра; остаток контролируется непрерывностью производных на компактной трубке около базового решения. Непрерывная зависимость и Гронуолл дают, что разностные отношения остаются ограниченными и сходятся к решению линейной задачи. Единственность линейной задачи Коши завершает вывод: любая предельная чувствительность обязана быть тем же z.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "gronwall_estimate",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "cauchy_problem",
+        "linear_system",
+        "lipschitz_condition",
+        "gronwall_inequality"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя дифференцировать только уравнение и забывать про параметрические начальные данные. Нельзя применять формулу чувствительности без общего отрезка существования и достаточной гладкости правой части по фазовой переменной и параметру. Нельзя относить сюда любую задачу с числовым параметром: если вопрос решается только характеристическим многочленом, резонансом или классификацией устойчивости, это соседний кластер. Нельзя путать вариационное уравнение потока с вариационным исчислением: здесь вариация означает линеаризацию ОДУ вдоль решения. Наконец, нельзя превращать методический representative в длинный интегральный счет; ценность блока в правильном линейном уравнении для чувствительности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "gronwall_estimate"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "linear_system",
+        "fundamental_matrix"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "parameter_dependent_ivp",
+      "nonlinear_system",
+      "linear_system",
+      "linear_second_order"
+    ],
+    "methods": [
+      "differentiation_with_respect_to_parameter",
+      "variational_equation",
+      "sensitivity_equation",
+      "continuous_dependence",
+      "gronwall_estimate",
+      "fundamental_matrix",
+      "variation_of_constants",
+      "regular_perturbation",
+      "state_vector_reduction"
+    ],
+    "objects": [
+      "parameter_derivative",
+      "initial_data_parameter",
+      "solution_flow",
+      "jacobian_matrix",
+      "linearization_along_solution",
+      "fundamental_matrix",
+      "lipschitz_dependence"
+    ],
+    "goal": [
+      "choose_method",
+      "derive",
+      "prove_continuous_dependence",
+      "compute_parameter_derivatives",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "parameter-dependence-variational-equation",
+      "method_guide",
+      "parameter_dependence",
+      "variational_equation",
+      "sensitivity_equation",
+      "flow_derivative",
+      "continuous_dependence",
+      "gronwall",
+      "regular_perturbation"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительных задач; сложность в правильной постановке линейного уравнения чувствительности и в различении гладкой и непрерывной зависимости.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "method_guide",
+    "cluster_representative",
+    "parameter_sensitivity_ivp",
+    "variation_of_parameters",
+    "linear_systems",
+    "gronwall",
+    "picard_iteration",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Локальная программа по ДУ",
+      "note": "Используется как локальная рамка курса: задача Коши, системы, фундаментальная матрица, непрерывная зависимость и дифференцирование решения по параметру."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "Разделы по системам, линейным уравнениям и зависимости от параметров по локальному обзору",
+      "note": "Русскоязычный задачный фон для параметрических задач Коши, систем и линейных уравнений."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "§24-§26 и номера 1064-1070 по локальным обзорам",
+      "note": "Филиппов явно выделяет зависимость от начальных условий и параметров, а также дифференцирование решения по параметру."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "§§2.4-2.5",
+      "note": "Открытая строгая ссылка на непрерывную и гладкую зависимость, вариационное уравнение потока и оценки через Гронуолла."
+    },
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "role": "course_assignments",
+      "status": "source_verified",
+      "locator": "Problem sets on Gronwall, Picard iteration, systems and perturbations",
+      "note": "MIT Honors ODE полезен как внешний набор коротких задач на Гронуолла, существование и системные формулы."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Units on first-order systems and existence/uniqueness",
+      "note": "Видеокурс MIT OCW добавлен как доступная внешняя траектория повторения систем, матричного языка и базовой теории задачи Коши."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Локальный курс и терминология."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Русскоязычный задачный фон."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Классическая русскоязычная подборка по зависимости от параметров."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 4,
+      "comment": "Строгая открытая теория зависимости от начальных данных и параметров."
+    },
+    {
+      "source_id": "src-mit-18034-honors-ode",
+      "priority": 5,
+      "comment": "Открытые задания для мостов через Гронуолла и системы."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Видео и notes для повторения систем и задачи Коши."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-parameter-dependence-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера, а не как новая вычислительная задача.",
+      "Новые определения не добавлялись: использованы существующие definition_ids для задачи Коши, линейной системы, фундаментальной матрицы, Гронуолла и условия Липшица.",
+      "Вариационное уравнение и непрерывная зависимость связаны через theorem-карточки, поскольку отдельных definition_ids для них в слое definitions сейчас нет."
+    ]
+  }
+}

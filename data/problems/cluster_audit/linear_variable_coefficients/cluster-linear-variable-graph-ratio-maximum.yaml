@@ -1,6 +1,6 @@
 {
   "id": "cluster-linear-variable-graph-ratio-maximum",
-  "title": "Внутренний максимум отношения двух графиков запрещает общую линейную ОДУ",
+  "title": "Отношение двух графиков с внутренним максимумом",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",

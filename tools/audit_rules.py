@@ -3,14 +3,75 @@ import sys
 from lib import load_problem_files
 
 
+EXAM_SCORE_TAGS = {f"exam_score_{score}" for score in range(3, 11)}
+TITLE_MARKERS = ["TODO", "???", "FIXME"]
+
+
+def as_list(value):
+    return value if isinstance(value, list) else []
+
+
+def has_method_guide_marker(problem):
+    kind = problem.get("kind", {})
+    secondary = set(as_list(kind.get("secondary")))
+    tags = set(problem.get("tags", []))
+    return "method_guide" in secondary or "method_guide" in tags
+
+
+def iter_definition_ids(problem):
+    for stmt_group in problem.get("statements", {}).values():
+        for stmt in as_list(stmt_group):
+            yield from as_list(stmt.get("definition_ids"))
+    for group_name in ["ideas", "solutions"]:
+        for item in as_list(problem.get(group_name)):
+            yield from as_list(item.get("definition_ids"))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-items", type=int, default=20)
     args = parser.parse_args()
     warnings = []
     for path, p in load_problem_files():
-        if p.get("editorial", {}).get("public_ready") and p.get("editorial", {}).get("review_status") != "ai_checked":
+        tags = set(p.get("tags", []))
+        kind = p.get("kind", {})
+        secondary = set(as_list(kind.get("secondary")))
+        difficulty = p.get("difficulty", {})
+        editorial = p.get("editorial", {})
+        title = p.get("title", "")
+
+        if editorial.get("public_ready") and editorial.get("review_status") != "ai_checked":
             warnings.append(f"{p.get('id')}: public_ready with non-ai_checked review_status")
+        if editorial.get("public_ready") and (
+            editorial.get("review_status") == "needs_human_review"
+            or "needs_solution_completion" in tags
+        ):
+            warnings.append(f"{p.get('id')}: public_ready while marked as needing human/solution review")
+        if len(title) > 110:
+            warnings.append(f"{p.get('id')}: title is very long")
+        for marker in TITLE_MARKERS:
+            if marker.lower() in title.lower():
+                warnings.append(f"{p.get('id')}: title contains marker {marker}")
+        if "standard_course_methods" in tags and "beyond_standard_course" in tags:
+            warnings.append(f"{p.get('id')}: both standard_course_methods and beyond_standard_course tags")
+        if EXAM_SCORE_TAGS.intersection(tags) and difficulty.get("technical_score", 0) > 5:
+            warnings.append(f"{p.get('id')}: exam_score tag with technical_score > 5")
+        if "olympiad_above_exam" in tags and EXAM_SCORE_TAGS.intersection(tags):
+            warnings.append(f"{p.get('id')}: olympiad_above_exam with exam_score tag")
+
+        if has_method_guide_marker(p):
+            if kind.get("primary") not in {"theorem", "standard_fact"}:
+                warnings.append(f"{p.get('id')}: method guide should be theorem/standard_fact")
+            if not {"method_guide", "task_cluster"}.issubset(secondary):
+                warnings.append(f"{p.get('id')}: method guide should have secondary method_guide and task_cluster")
+            if "cluster_representative" not in tags:
+                warnings.append(f"{p.get('id')}: method guide should be a cluster representative")
+            if difficulty.get("technical_score", 0) > 3:
+                warnings.append(f"{p.get('id')}: method guide has high technical_score")
+            if not p.get("references"):
+                warnings.append(f"{p.get('id')}: method guide has no references")
+            if not list(iter_definition_ids(p)):
+                warnings.append(f"{p.get('id')}: method guide has no definition_ids")
         for sol in p.get("solutions", []):
             text = sol.get("text", "")
             if len(text) < 120:

@@ -1,0 +1,255 @@
+{
+  "id": "cluster-integral-equation-to-ode-method-guide",
+  "title": "Методический навигатор: интегральные уравнения, сводящиеся к ОДУ",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В задачах кластера integral-equation-to-ode интеграл не является самостоятельным объектом теории интегральных уравнений: его дифференцируют, обозначают скрытую интегральную величину константой или вводят вспомогательную функцию, после чего получают обычную задачу Коши, краевую задачу или линейную систему малой размерности. Для уравнений Вольтерра переменный верхний предел сразу дает начальное условие: при x=a интеграл обычно равен нулю, а каждое дифференцирование переносит в ОДУ значения y(a), y'(a), ... . Для уравнений Фредгольма с фиксированными пределами интеграл чаще превращается в неизвестный параметр C=int_a^b K(s)y(s)ds; после решения ОДУ этот параметр надо заново определить из исходного интеграла. При дифференцировании нельзя терять постоянные: производная интегрального равенства дает только необходимое условие, поэтому все исходные значения, краевые условия и условия самосогласованности возвращаются в конце. Задача остается задачей по ДУ, если решающий шаг - получение и решение ОДУ; если же главный вопрос состоит в существовании решения интегрального оператора, спектре ядра, сжимающем отображении или резольвенте без перехода к ОДУ, это уже чистое интегральное уравнение вне фокуса базы.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-coddington-levinson",
+          "src-teschl-ode-dynamical-systems",
+          "src-trench-ode-bvp"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "boundary_value_problem",
+          "integral_equation",
+          "volterra_integral_equation",
+          "fredholm_integral_equation",
+          "linear_first_order_equation",
+          "green_function_bvp",
+          "fredholm_alternative"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-differentiate-integral",
+      "title": "Дифференцирование дает ОДУ, но не весь ответ",
+      "text": "После применения основной теоремы анализа или дифференцирования по параметру получается дифференциальное уравнение. Это только необходимая часть: потерянное значение исходного интегрального равенства надо восстановить отдельным условием.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "picard_iteration"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "integral_equation"
+      ]
+    },
+    {
+      "id": "idea-volterra-conditions",
+      "title": "Вольтерра приносит начальные условия из нижнего предела",
+      "text": "Если интеграл имеет вид int_a^x, то подстановка x=a часто сразу дает y(a) или первое условие связи. При повторных интегралах каждое дифференцирование уменьшает кратность интеграла и в конце дает задачу Коши.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "volterra_integral_equation",
+        "initial_value_problem"
+      ]
+    },
+    {
+      "id": "idea-fredholm-constant",
+      "title": "Фредгольм с фиксированными пределами хранит скрытые параметры",
+      "text": "Интеграл по фиксированному отрезку часто ведет себя как неизвестная константа или несколько констант. Их нельзя выбирать произвольно: после решения ОДУ они определяются системой самосогласованности, а иногда дают условие существования.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "fredholm_integral_equation",
+        "boundary_value_problem",
+        "fredholm_alternative"
+      ]
+    },
+    {
+      "id": "idea-border-with-neighbors",
+      "title": "Граница кластера определяется главным объектом",
+      "text": "Если после перехода к ОДУ важны локальное существование, единственность и продолжение, нужен сосед existence-uniqueness-continuation. Если получается линейное уравнение с переменными коэффициентами, подключается linear-equations-variable-coefficients. Если интегральное представление является Green-оператором краевой задачи, это уже green-functions-bvp.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "initial_value_problem",
+        "boundary_value_problem",
+        "green_function_bvp"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут решения",
+      "text": "1. Определить тип интеграла: переменный верхний предел, фиксированные пределы, параметрический интеграл или повторный интеграл. 2. До дифференцирования выписать, какие значения исходного равенства будут потеряны: обычно это x=a, x=b, условие на бесконечности или значение всего интеграла. 3. Дифференцировать столько раз, сколько нужно для исчезновения интеграла или для замыкания системы. 4. Решить полученное ОДУ, систему или краевую задачу стандартными методами. 5. Вернуться к исходному интегральному равенству: проверить константы интегрирования, начальные/краевые условия, самосогласованность скрытых интегралов и допустимость дифференцирования.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "integrating_factor_linear",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "initial_value_problem",
+        "boundary_value_problem",
+        "integral_equation"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не заменять исходное интегральное уравнение только его производной: так теряется константа и можно получить лишние решения. Не считать фиксированный интеграл известной константой без финального уравнения на эту константу. Не переносить начальное условие из int_a^x автоматически, если в ядре есть сингулярность или требуется дополнительная гладкость. Не относить к этому кластеру задачи, где ОДУ не возникает, а основная работа идет с интегральным оператором, нормой ядра, резольвентой или спектром.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "integral_equation",
+        "volterra_integral_equation",
+        "fredholm_integral_equation",
+        "solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "integral_equation_to_ode",
+      "linear_first_order",
+      "linear_second_order",
+      "boundary_value",
+      "qualitative"
+    ],
+    "methods": [
+      "differentiate_integral_equation",
+      "transfer_initial_conditions",
+      "self_consistency",
+      "variation_of_constants",
+      "cauchy_uniqueness",
+      "green_function"
+    ],
+    "objects": [
+      "volterra_integral_equation",
+      "fredholm_integral_equation",
+      "hidden_integral_constant",
+      "initial_condition",
+      "boundary_condition",
+      "green_kernel"
+    ],
+    "goal": [
+      "choose_method",
+      "reduce_to_ode",
+      "solve",
+      "prove_identity",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "integral-equation-to-ode",
+      "differentiate integral equation",
+      "Volterra",
+      "Fredholm",
+      "self consistency",
+      "lost constants"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок почти не добавляет вычислений; сложность в том, чтобы не потерять условия при дифференцировании и правильно отделить ОДУ-задачу от настоящей теории интегральных уравнений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "integral_equation_to_ode",
+    "linear_first_order",
+    "linear_higher_order",
+    "boundary_value",
+    "green_kernel",
+    "fredholm_alternative",
+    "cauchy_uniqueness",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "mipt_core",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "note": "Локальный курс ДУ задает базовый язык задач Коши, краевых задач, линейных уравнений и интегральных представлений решений."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "role": "classical_reference",
+      "status": "source_verified",
+      "note": "Классический фон для связи интегральных формул, задач Коши и линейных операторов."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "note": "Открытая строгая опора для перехода между интегральной формой задачи Коши и ОДУ."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "note": "Используется для границы с Green-представлениями и линейными краевыми задачами."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Базовая программа курса ДУ."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "priority": 2,
+      "comment": "Классический язык существования, единственности и интегральных формул."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 3,
+      "comment": "Открытый теоретический фон по ОДУ."
+    },
+    {
+      "source_id": "src-trench-ode-bvp",
+      "priority": 4,
+      "comment": "Соседний слой краевых задач и функций Грина."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-integral-equation-to-ode-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера integral-equation-to-ode, а не как новая вычислительная задача.",
+      "Карточка закрывает дифференцирование интегрального уравнения, перенос условий, потерю констант, базовое различие Volterra/Fredholm и границы с чистыми интегральными уравнениями.",
+      "Соседние связи вынесены в data/relations/relations.d/cluster-integral-equation-to-ode.yaml."
+    ]
+  }
+}

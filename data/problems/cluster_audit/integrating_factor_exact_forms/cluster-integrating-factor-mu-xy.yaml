@@ -1,6 +1,6 @@
 {
   "id": "cluster-integrating-factor-mu-xy",
-  "title": "Интегрирующий множитель вида mu(xy)",
+  "title": "Интегрирующий множитель, зависящий от xy",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",

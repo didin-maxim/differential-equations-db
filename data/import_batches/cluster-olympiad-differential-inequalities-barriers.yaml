@@ -1,0 +1,23 @@
+{
+  "id": "cluster-olympiad-differential-inequalities-barriers",
+  "title": "Методический блок кластера олимпиадных дифференциальных неравенств, барьеров и взрыва",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "olympiad-differential-inequalities-barriers",
+    "olympiad",
+    "differential_inequality",
+    "barrier",
+    "method_guide"
+  ],
+  "problem_ids": [
+    "cluster-olympiad-differential-inequalities-barriers-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет только theorem/method_guide/cluster_representative для уже существующего олимпиадного кластера.",
+    "Новые архивные вычислительные задачи не импортировались: текущие representatives уже покрывают угол, arctan/blow-up, energy, backward positivity, интегрируемые хвосты, выпуклость, логарифмические отношения и асимптотические барьеры.",
+    "Связи вынесены в data/relations/relations.d/cluster-olympiad-differential-inequalities-barriers.yaml.",
+    "Экзаменационная пригодность представителей зафиксирована в docs/reviews/cluster-theory-olympiad-differential-inequalities-barriers.md."
+  ]
+}

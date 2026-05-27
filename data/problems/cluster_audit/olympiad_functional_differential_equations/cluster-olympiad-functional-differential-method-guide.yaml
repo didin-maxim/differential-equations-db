@@ -1,0 +1,308 @@
+{
+  "id": "cluster-olympiad-functional-differential-method-guide",
+  "title": "Методический навигатор: функционально-дифференциальные олимпиадные уравнения",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Границы кластера",
+        "text": "Кластер olympiad-functional-differential-equations относится к базе дифференциальных уравнений только тогда, когда производная является существенной частью механизма: функциональное соотношение после подстановки, дифференцирования, итерации или проверки области определения сводится к ОДУ, системе, дифференциальному неравенству, рекурсии производных или конечному противоречию. Если условие является почти чистым функциональным уравнением, а производная используется только как декоративная гладкость, такую задачу не надо притягивать в базу ДУ. Типовые формы: f'(T(x)) связано с f(x) при инволюции T(T(x))=x; f'(x)=f(-x) или сдвиговое тождество, которое после дифференцирования дает f''+af=0; композиционное уравнение f'(x)=f(f(x)), где монотонность и рост дают несуществование; уравнение с сжатым или запаздывающим аргументом, где главная работа - переход к ряду, окнам осцилляции или ОДУ-подобной оценке. Такие задачи обычно выше стандартного экзамена: надо не просто решить готовое ОДУ, а сначала распознать, как функциональная связь порождает дифференциальную динамику, и затем проверить, что обратные замены, знаки, область и глобальность не потеряны.",
+        "source_ids": [
+          "src-student-olympiad-folklore",
+          "src-putnam-archive",
+          "src-istcim-official",
+          "src-bme-math-contest",
+          "src-kfu-lobachevsky-olympiad",
+          "src-yagtu-student-olympiad-collection",
+          "src-vjimc-archive"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "functional_differential_equation",
+          "argument_involution",
+          "function_composition"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-membership-test",
+      "title": "Сначала проверить, почему это все еще ДУ",
+      "text": "Задача входит в базу ДУ, если после функционального условия появляется обычное ОДУ, система, дифференциальное неравенство, рекурсия производных или аргумент про продолжение/взрыв. Если итоговое решение целиком держится на алгебре функционального уравнения без дифференциальной динамики, это near-miss для этого кластера.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "functional_differential_equation",
+        "ordinary_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-involution",
+      "title": "Инволюцию использовать дважды",
+      "text": "При T(T(x))=x полезно записать условие в точках x и T(x), выразить функциональный аргумент через f, f' или вспомогательную величину, а уже затем дифференцировать. Для T(x)=a/x часто помогает u=ln x: отражение в логарифмической переменной становится линейной симметрией, а положительность позволяет взять ln f.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "argument_involution",
+        "functional_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-symmetry-differentiation",
+      "title": "Симметрия и дифференцирование функционального тождества",
+      "text": "В задачах с отражением, сдвигом или четностью сначала извлекают симметрии: четность, антипериод, фазовое условие, ненулевость множителя. Дифференцировать стоит только после этого, чтобы получить замкнутое ОДУ вроде f''+cf=0 и не потерять исходное функциональное ограничение, которое затем отбирает фазу или амплитуду.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "functional_differential_equation",
+        "ordinary_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-composition-growth",
+      "title": "Композиция f(f(x)) чаще ведет к качественному противоречию",
+      "text": "Для f'=f(f(x)) редко надо ждать явной формулы. Обычно проверяют знак, монотонность, выпуклость, существование обратной функции на хвосте и сравнение роста. Если из уравнения следует f' >= c f^2 или еще более быстрый рост, глобальная область определения становится главным источником противоречия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ],
+      "definition_ids": [
+        "function_composition",
+        "functional_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-domain-check",
+      "title": "Область определения является частью решения",
+      "text": "Нужно отдельно проверять, что T(x) лежит в области, логарифмическая замена допустима, f не обращается в нуль там, где берется ln f или деление на f, обратная функция существует на нужном хвосте, а дифференцирование исходного условия не добавило лишних решений и не потеряло начальные или функциональные ограничения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "comparison_argument"
+      ],
+      "definition_ids": [
+        "solution",
+        "functional_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-standard-boundaries",
+      "title": "Граница со стандартными кластерами",
+      "text": "Если после первой редукции остается обычное линейное уравнение с постоянными коэффициентами и главная работа - решить его, это соседство со scalar-constant-coefficient-linear-ode. Если функциональное условие было интегралом и центральный шаг - дифференцировать интегральное равенство, основным владельцем может быть integral-equation-to-ode. Если задача на f'=f(f) превращается в автономную задачу Коши y'=f(y) с единственностью, нужна связь с existence-uniqueness-continuation, но олимпиадный кластер остается владельцем только при существенной композиционной идее.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "comparison_argument",
+        "picard_lindelof"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "initial_value_problem",
+        "functional_differential_equation"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-diagnostic-route",
+      "title": "Диагностический маршрут",
+      "text": "1. Определить тип функционального аргумента: инволюция, отражение, сдвиг, сжатие, запаздывание или композиция. 2. Проверить область: где определены x, T(x), f(x), f(f(x)); разрешены ли логарифм, деление, обратная функция. 3. Использовать условие повторно: подставить T(x), -x, x+period, f(x) или соседнее окно. 4. Только после замыкания дифференцировать функциональное тождество или вывести неравенство. 5. Решить полученное ОДУ/систему либо доказать blow-up/монотонность/затухание без явного решения. 6. Подставить ответ или противоречие обратно в исходное условие: восстановить фазу, знак, параметры, начальные данные и глобальность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "logarithmic_derivative",
+        "comparison_argument"
+      ],
+      "definition_ids": [
+        "functional_differential_equation",
+        "argument_involution",
+        "function_composition",
+        "solution"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не дифференцировать функциональное тождество до выяснения симметрий: можно получить незамкнутое выражение с f'(T(x)). Не забывать исходное условие после решения ОДУ: оно часто отбирает фазу, знак или параметр. Не делить на f и не брать ln f без положительности или отдельного разбора нулей. Не переносить сюда каждую задачу с f(x/2) или интегралом: если главный метод - степенной ряд, интегральное уравнение или стандартное ОДУ без функциональной идеи, нужна связь с соседним кластером, а не новый дубль.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "functional_differential_equation",
+        "solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "functional_differential",
+      "olympiad",
+      "first_order",
+      "linear_second_order",
+      "delay_differential_equation"
+    ],
+    "methods": [
+      "differentiate_auxiliary_function",
+      "involution_argument",
+      "logarithmic_derivative",
+      "change_independent_variable",
+      "monotonicity",
+      "inverse_function",
+      "blow_up_comparison",
+      "series_recursion"
+    ],
+    "objects": [
+      "functional_differential_equation",
+      "argument_involution",
+      "composition",
+      "domain_of_definition",
+      "global_solution",
+      "ordinary_differential_equation",
+      "functional_equation"
+    ],
+    "goal": [
+      "choose_method",
+      "classify",
+      "disprove",
+      "reduce_to_ode",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "olympiad-functional-differential-equations",
+      "functional differential",
+      "involution",
+      "f'=f(f(x))",
+      "differentiate functional equation",
+      "domain check",
+      "above exam"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 11,
+    "idea_score": 11,
+    "technical_score": 3,
+    "comment": "Методический блок сам не добавляет вычислительную задачу. Высокая сложность кластера в распознавании функциональной симметрии, корректной редукции к ОДУ или неравенству и проверке глобальной области, что обычно выше стандартного экзамена.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "olympiad_style",
+    "functional_differential",
+    "nonlinear_transform",
+    "global_solution",
+    "advanced_standard_course",
+    "beyond_standard_course",
+    "olympiad_above_exam",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "method_guide",
+    "theory_bridge",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "standard_olympiad_pattern",
+      "status": "needs_human_review",
+      "note": "Используется как источник обобщенной методической схемы, не как новая архивная задача."
+    },
+    {
+      "source_id": "src-putnam-archive",
+      "role": "representative_problem_source",
+      "status": "source_verified",
+      "note": "Putnam 2005 B3 и Putnam 2010 B5 задают две границы: инволюционная классификация и композиционное несуществование."
+    },
+    {
+      "source_id": "src-istcim-official",
+      "role": "representative_problem_source",
+      "status": "source_verified",
+      "note": "ISTCiM 2023 E показывает переход от функционального тождества к гармоническому ОДУ."
+    },
+    {
+      "source_id": "src-bme-math-contest",
+      "role": "representative_problem_source",
+      "status": "source_verified",
+      "note": "BME 2024 P2 показывает положительную версию f'=f∘f и blow-up через обратную функцию."
+    },
+    {
+      "source_id": "src-kfu-lobachevsky-olympiad",
+      "role": "representative_problem_source",
+      "status": "source_verified",
+      "note": "КФУ 2019 19-3 показывает отражение x -> -x и редукцию к f''+f=0."
+    },
+    {
+      "source_id": "src-yagtu-student-olympiad-collection",
+      "role": "representative_problem_source",
+      "status": "source_verified",
+      "note": "ЯГТУ 2001 half-argument задает границу с функционально-дифференциальными уравнениями с сжатым аргументом."
+    },
+    {
+      "source_id": "src-vjimc-archive",
+      "role": "boundary_problem_source",
+      "status": "source_verified",
+      "note": "VJIMC moving average является пограничным примером: владелец близок к integral-equation-to-ode, но функционально-дифференциальный шаг важен для связей."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-putnam-archive",
+      "priority": 1,
+      "comment": "Инволюция и композиционное уравнение как два сильных олимпиадных представителя."
+    },
+    {
+      "source_id": "src-istcim-official",
+      "priority": 2,
+      "comment": "Симметрии функционального тождества и переход к гармоническому ОДУ."
+    },
+    {
+      "source_id": "src-bme-math-contest",
+      "priority": 3,
+      "comment": "Композиционное несуществование на положительной полуоси."
+    },
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "priority": 4,
+      "comment": "Обобщенная схема инволюции и редукции."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-olympiad-functional-differential-equations",
+    "notes": [
+      "Добавлено как теоретико-методический блок существующего кластера olympiad-functional-differential-equations; новые задачи не добавлялись.",
+      "Карточка помечена theorem, method_guide, task_cluster и cluster_representative, чтобы индексироваться как навигатор кластера, а не как еще одна олимпиадная задача.",
+      "Границы с integral-equation-to-ode, scalar-constant-coefficient-linear-ode, existence-uniqueness-continuation и стандартными линейными кластерами вынесены в ideas и relations."
+    ]
+  }
+}

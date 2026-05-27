@@ -25,7 +25,9 @@
         "definition_ids": [
           "equilibrium",
           "stability",
-          "lyapunov_function"
+          "lyapunov_function",
+          "lyapunov_stability",
+          "asymptotic_stability"
         ]
       }
     ]

@@ -1,6 +1,6 @@
 {
   "id": "waterloo-fundamental-matrix-flow-inverse",
-  "title": "Фундаментальная матрица как поток: почему Phi(-t)=Phi(t)^{-1}",
+  "title": "Фундаментальная матрица и обратный поток",
   "fragment": "systems",
   "kind": {"primary": "lemma", "secondary": []},
   "language": "ru",

@@ -1,6 +1,6 @@
 {
   "id": "cluster-variational-euler-poisson-free-end",
-  "title": "Эйлер-Пуассон и естественные условия при свободном правом конце",
+  "title": "Естественные условия при свободном конце для функционала со второй производной",
   "fragment": "boundary_value",
   "kind": {
     "primary": "lemma",
@@ -24,7 +24,11 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "boundary_value_problem"
+          "boundary_value_problem",
+          "functional",
+          "extremal",
+          "variation",
+          "transversality_condition"
         ]
       }
     ]

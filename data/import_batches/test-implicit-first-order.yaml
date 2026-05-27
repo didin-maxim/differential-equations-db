@@ -1,0 +1,26 @@
+{
+  "id": "test-implicit-first-order",
+  "title": "Импорт тестового архива: неразрешенные уравнения первого порядка",
+  "created_at": "2026-05-27",
+  "scope": [
+    "test_archive",
+    "implicit_first_order",
+    "discriminant_curve",
+    "exam_interactions"
+  ],
+  "source_ids": [
+    "src-test-du-implicit-first-order-lopushanski"
+  ],
+  "problem_ids": [
+    "test-implicit-cauchy-data-regular-branch",
+    "test-implicit-cubic-branch-count",
+    "test-implicit-special-solution-contained-in-discriminant"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Архив: C:\\Users\\Admin\\Downloads\\Уравнения первого порядка, не разрешенные относительно производной.zip.",
+    "Автор/исполнитель из xlsx: Лопушански М.С.",
+    "Из 11 тестовых вопросов добавлены только 3: остальные являются чистыми определениями, дублируют уже покрытые варианты Клеро/огибающей или имеют слишком неоднозначную формулировку для публичной базы.",
+    "Для всех добавленных задач тестовый формат признан уместным и подключен как overlay к режиму симуляции экзамена."
+  ]
+}

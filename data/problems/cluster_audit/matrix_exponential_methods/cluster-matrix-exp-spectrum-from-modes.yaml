@@ -1,6 +1,6 @@
 {
   "id": "cluster-matrix-exp-spectrum-from-modes",
-  "title": "Спектр A по ростам и осцилляциям e^{At}",
+  "title": "Спектр матрицы по режимам матричной экспоненты",
   "fragment": "systems",
   "kind": {
     "primary": "lemma",

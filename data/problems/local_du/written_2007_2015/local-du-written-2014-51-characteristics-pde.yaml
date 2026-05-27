@@ -21,6 +21,9 @@
           "status": "ai_checked"
         },
         "definition_ids": [
+          "pde_characteristic_first_order",
+          "cauchy_problem",
+          "integral_curve",
           "first_integral"
         ]
       }
@@ -93,8 +96,7 @@
     "noncharacteristic_curve",
     "advanced_standard_course",
     "standard_course_methods",
-    "cluster_representative",
-    "exam_score_6"
+    "cluster_representative"
   ],
   "sources": [
     {
@@ -111,6 +113,7 @@
     "public_ready": true,
     "relations_status": "local_du_written_2007_2015_links",
     "notes": [
+      "2026-05-27 precommit audit: removed exam_score_6 because technical_score=6; keep as written_exam technical practice, not a short oral simulation item.",
       "Задача включена как пограничная для базы: это уравнение в частных производных первого порядка, но оно входит в письменную программу ДУ и решается методом характеристик, то есть через систему ОДУ.",
       "При аудите PDE-characteristics убран тег linear_first_order, чтобы не смешивать карточку с обычными линейными ОДУ первого порядка.",
       "Однотипные задачи на характеристики из DE2007-08 и DE2011-2012 отфильтрованы."

@@ -98,6 +98,138 @@
       "backward_text": "Сравнение Штурма расширяет идею разделения нулей на пару разных уравнений с упорядоченными коэффициентами.",
       "status": "ai_checked",
       "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-lvc-liouville-to-method-guide",
+      "from": "liouville-wronskian-formula",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Общая формула Лиувилля объясняет, почему в методическом блоке вронскиан проверяют в одной точке и затем переносят вывод на весь интервал.",
+      "backward_text": "Навигатор показывает, где формула Лиувилля используется в скалярных переменно-коэффициентных задачах: ФСР, вариация параметров и графические обструкции.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-lvc-abel-to-method-guide",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Скалярная лемма Абеля дает центральный тест навигатора: W либо нигде не ноль, либо тождественно нулевой, а нули ненулевого решения просты и изолированы.",
+      "backward_text": "Методический блок раскладывает лемму Абеля по типовым применениям: независимость, ФСР, отношение решений, графические запреты и вход в теорию Штурма.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-lvc-existence-guide-to-method-guide",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "Единственность задачи Коши является базовым запретом, на котором в линейном переменно-коэффициентном блоке держатся касание графиков, простота нулей и размерность пространства решений.",
+      "backward_text": "Навигатор специализирует общий existence-uniqueness язык к линейным уравнениям: начальные данные становятся координатами решения в ФСР.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-variation-parameters",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "cluster-linear-variable-variation-parameters-fundamental-system",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, когда выбирать вариацию параметров: неоднородное уравнение, заданная фундаментальная система и ненулевой вронскиан на рабочем интервале.",
+      "backward_text": "Формула вариации параметров является основной реализацией ветки навигатора про неоднородные переменно-коэффициентные уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-three-solutions",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "cluster-linear-variable-inhomogeneous-three-solutions",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет аффинную структуру множества решений: разности частных решений дают однородную фундаментальную систему.",
+      "backward_text": "Карточка с тремя частными решениями является чистым алгебраическим representative ветки про неоднородное аффинное пространство.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-reduction-order",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "oral-exam-excellent-reduction-of-order-nonzero-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает, что известное ненулевое решение надо использовать для перехода к отношению y/y1 и уравнению первого порядка для производной отношения.",
+      "backward_text": "Устная карточка раскрывает ветку навигатора про построение второго решения по одному известному решению.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-direct-tangency",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "cluster-linear-variable-graph-direct-tangency",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит графическое касание в совпадение начальных данных y(x0), y'(x0) и тем самым в единственность задачи Коши.",
+      "backward_text": "Прямая графическая карточка является минимальным representative ветки про запрет касания разных решений.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-ratio-maximum",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "cluster-linear-variable-graph-ratio-maximum",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор показывает, что экстремум отношения решений надо читать как W(x0)=0 и дальше применять лемму Абеля.",
+      "backward_text": "Карточка с максимумом отношения является графическим representative ветки W=0 => линейная зависимость.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-sturm-separation",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "local-du-standard-sturm-separation-zeros",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор рекомендует переходить от леммы Абеля к разделению Штурма, когда вопрос уже касается чередования нулей двух независимых решений.",
+      "backward_text": "Теорема разделения является ближайшим штурмовским расширением вронскианной техники линейных уравнений с переменными коэффициентами.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-sturm-method-guide",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор оставляет в linear-equations-variable-coefficients только локальные следствия о нулях, а полноценное сравнение, осцилляцию и дисконъюгированность отправляет в соседний кластер sturm-oscillation-comparison.",
+      "backward_text": "Штурмовский навигатор использует вронскианную базу линейных уравнений, но выбирает другие цели: сравнение, осцилляцию, пороги нулей и краевой нерезонанс.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-variation-cluster-rep",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "variation-of-parameters-sine",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет кластер linear-equations-variable-coefficients от общего variation-of-constants: здесь важны ФСР и W как структура переменных коэффициентов, а не очередная правая часть для интегрирования.",
+      "backward_text": "Базовая карточка вариации параметров служит вычислительным соседом; методический блок объясняет, когда та же формула становится именно переменно-коэффициентной теорией.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-lvc-method-guide-to-constant-coeff-rep",
+      "from": "cluster-linear-variable-method-guide",
+      "to": "constant-coeff-second-order-resonance",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор предупреждает, что при переменных коэффициентах обычно нет характеристического многочлена и метода неопределенных коэффициентов; вместо них работают ФСР, W, редукция порядка и вариация параметров.",
+      "backward_text": "Постояннокэффициентная резонансная карточка является соседним эталоном: там главный объект - корни характеристического многочлена, а не Абель-Лиувилль на интервале.",
+      "status": "ai_checked",
+      "confidence": 0.86
     }
   ]
 }

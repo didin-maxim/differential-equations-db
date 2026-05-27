@@ -1,0 +1,117 @@
+{
+  "id": "written-mipt-2004-v1-sine-square-drift-limits",
+  "title": "Неограниченный дрейф уравнения y'=sin^2 x+sin^2 y",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2004/2005, вариант 1, задача 9",
+        "text": "Пусть вещественная функция y(x), -infty<x<infty, является решением дифференциального уравнения y'=sin^2 x+sin^2 y. Докажите, что lim_{x->-infty} y(x)=-infty и lim_{x->+infty} y(x)=+infty.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сравнить прирост с интегралом sin^2 x",
+      "text": "Правая часть не меньше sin^2 x. Поэтому полный прирост на бесконечной полуоси бесконечен, а монотонность запрещает конечный предел.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как y'=sin^2 x+sin^2 y>=0, решение монотонно не убывает. При x>0 имеем y(x)-y(0)=int_0^x (sin^2 t+sin^2 y(t)) dt >= int_0^x sin^2 t dt = x/2 - sin 2x/4, и правая часть стремится к +infty. Значит y(x)->+infty. При x<0 получаем y(0)-y(x)=int_x^0 y'(t)dt >= int_x^0 sin^2 t dt = -x/2 + sin 2x/4. Эта нижняя оценка стремится к +infty при x->-infty, поэтому y(x)->-infty слева.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonautonomous",
+      "qualitative"
+    ],
+    "methods": [
+      "comparison",
+      "monotonicity",
+      "improper_integral_estimate"
+    ],
+    "objects": [
+      "global_solution",
+      "limits_at_infinity"
+    ],
+    "goal": [
+      "prove_limits"
+    ],
+    "keywords": [
+      "MIPT_2004_2005",
+      "variant_1",
+      "problem_9",
+      "written_exam",
+      "sine_square",
+      "comparison"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 2,
+    "local_score": 6,
+    "comment": "Последняя задача письменного варианта, но решение короткое: нужно увидеть неинтегрируемую нижнюю оценку прироста.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "boundedness",
+    "low_technical",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2004-2005.pdf",
+      "locator": "2004/2005, вариант 1, задача 9"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2004-2006",
+    "notes": [
+      "Добавлена как компактная качественная задача из последнего номера варианта; не раздувает вычислительные кластеры.",
+      "Для симуляции экзамена уместнее тестовый вопрос о предельном поведении, а не исходная письменная формулировка."
+    ]
+  }
+}

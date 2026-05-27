@@ -1,0 +1,326 @@
+{
+  "id": "cluster-separable-homogeneous-method-guide",
+  "title": "Методический навигатор: разделение переменных и однородная замена",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера separable-homogeneous-first-order сначала проверяют две диагностики. Разделяющееся уравнение приводится к виду y'=a(x)b(y) или A(x) dx+B(y) dy=0; перед делением на b(y) надо отдельно выписать стационарные решения b(y_*)=0, иначе они исчезают из ответа. Оставшаяся ветвь решается на рабочем промежутке, где коэффициенты определены и b(y) не обращается в нуль: int dy/b(y)=int a(x) dx+C, затем учитываются начальные данные и максимальный интервал решения. Однородное уравнение первого порядка распознается по виду y'=Phi(y/x) или по однородной 1-форме M dx+N dy=0 одинаковой степени; на промежутке x>0 или x<0 кладут y=xv, получают v+xv'=Phi(v), то есть x dv/dx=Phi(v)-v, и снова отделяют особые прямые Phi(v)=v до деления. Рабочая область для однородной замены - не вся плоскость, а выбранный конус или сектор x != 0, где отношение v=y/x, исходная правая часть и интегралы имеют смысл. Логистическое уравнение является базовой автономной разделяющейся моделью: его равновесия читаются до интегрирования, фазовая прямая объясняет монотонность и невозможность пересечения стационарных уровней при единственности. Линейные уравнения первого порядка, точные формы и ортогональные траектории находятся рядом, но распознаются другим главным объектом: стандартной линейной формой y'+p(x)y=q(x), потенциалом 1-формы или заменой поля наклонов на отрицательно обратное.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-lebl-diffyqs",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "separable_equation",
+          "initial_value_problem",
+          "cauchy_problem",
+          "maximal_solution",
+          "general_solution",
+          "particular_solution",
+          "integral_curve",
+          "autonomous_equation",
+          "equilibrium",
+          "phase_line",
+          "linear_first_order_equation",
+          "exact_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-separable-recognition",
+      "title": "Разделимость проверяется до интегрирования",
+      "text": "Нужно увидеть произведение функции x и функции y или эквивалентную сумму A(x) dx+B(y) dy. Если выражения смешивают x и y не только через произведение, частное или однородность, это уже другой маршрут.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "separable_equation",
+        "ordinary_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-lost-equilibria",
+      "title": "Деление может удалить стационарные решения",
+      "text": "В уравнении y'=a(x)b(y) нули b дают решения y=y_*. Их записывают до шага dy/b(y)=a(x) dx. В автономных примерах эти же уровни являются равновесиями фазовой прямой и границами интервалов, между которыми движутся нестабильные ветви.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "equilibrium",
+        "phase_line",
+        "particular_solution"
+      ]
+    },
+    {
+      "id": "idea-domain",
+      "title": "Ответ включает рабочий промежуток",
+      "text": "Интегральная формула действительна только там, где исходное поле определено, выбранная ветвь не пересекает запрещенные уровни, а логарифмы, корни и знаменатели имеют смысл. Для задачи Коши берут компоненту области, содержащую начальную точку.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "initial_value_problem",
+        "cauchy_problem",
+        "maximal_solution",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-homogeneous-cone",
+      "title": "Однородная замена живет в выбранном конусе",
+      "text": "Замена y=xv требует x != 0, поэтому заранее выбирают x>0 или x<0. Если правая часть имеет особые значения отношения y/x, рабочая область дополнительно режется на секторы; прямые y=cx проверяются отдельно как решения Phi(c)=c.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "solution",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-neighbor-router",
+      "title": "Соседний метод определяется главным объектом",
+      "text": "Если дана форма y'+p(x)y=q(x), главный ход - линейный множитель. Если дана 1-форма M dx+N dy, главный ход - точность или интегрирующий множитель формы. Если дана семья кривых и требуется ортогональная, сначала восстанавливают поле наклонов и меняют наклон на отрицательно обратный.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "find_potential",
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "exact_equation",
+        "integral_curve"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-separable-route",
+      "title": "Маршрут для разделяющихся уравнений",
+      "text": "1. Привести уравнение к виду y'=a(x)b(y) или A(x) dx+B(y) dy=0 и зафиксировать область исходной записи. 2. До деления найти все уровни b(y)=0 и записать стационарные решения, если они допустимы. 3. На каждой нестабильной ветви, где b(y) != 0, разделить переменные и проинтегрировать. 4. Для задачи Коши выбрать константу и ту компоненту области, которая содержит начальную точку. 5. Проверить, не были ли при алгебре добавлены или потеряны решения из-за логарифмов, корней, знаменателей и обратных функций. 6. В автономном случае дополнить формулу фазовой прямой: знаки правой части между равновесиями дают монотонность и устойчивость уровней.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "separable_equation",
+        "equilibrium",
+        "phase_line",
+        "initial_value_problem",
+        "maximal_solution"
+      ]
+    },
+    {
+      "id": "guide-homogeneous-route",
+      "title": "Маршрут для однородной замены",
+      "text": "1. Проверить, что правая часть зависит от y/x, x/y или что M и N в 1-форме однородны одной степени. 2. Выбрать рабочий промежуток x>0 или x<0; если есть начальное условие, знак x берется из начальной точки. 3. Положить y=xv и заменить y' на v+xv'. 4. Получить x v'=Phi(v)-v и до деления отдельно проверить прямые y=cx, где Phi(c)=c. 5. На оставшихся секторах разделить переменные dv/(Phi(v)-v)=dx/x. 6. Вернуться к y=xv, указать сектор или конус, где решение действительно, и проверить исходное уравнение в точках, где знаменатели могли обращаться в нуль.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "solution",
+        "integral_curve",
+        "maximal_solution"
+      ]
+    },
+    {
+      "id": "guide-boundaries",
+      "title": "Границы с соседними кластерами",
+      "text": "Разделение переменных остается главным кластером, если решение начинается с распознавания произведения a(x)b(y) или с замены y=xv. Линейный кластер выбирают, когда уравнение уже имеет форму y'+p(x)y=q(x) и решается множителем exp(int p). Exact-forms выбирают, когда главным объектом является 1-форма и потенциал. Orthogonal-trajectories выбирают, когда цель - построить семейство кривых, ортогональных данному; возникающее после этого разделение является внутренним шагом, а не основанием переносить задачу сюда.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables",
+        "integrating_factor_linear",
+        "find_potential"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "exact_equation",
+        "integral_curve"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "autonomous_first_order"
+    ],
+    "methods": [
+      "separate_variables",
+      "homogeneous_first_order_substitution",
+      "stationary_solution_check",
+      "domain_check",
+      "phase_line_signs",
+      "neighbor_cluster_router"
+    ],
+    "objects": [
+      "separable_equation",
+      "homogeneous_first_order",
+      "stationary_solution",
+      "equilibrium",
+      "phase_line",
+      "logistic_equation",
+      "working_interval",
+      "working_cone",
+      "integral_curve"
+    ],
+    "goal": [
+      "choose_method",
+      "solve_ivp",
+      "preserve_stationary_solutions",
+      "control_domain",
+      "read_phase_line",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "separable-homogeneous-first-order",
+      "method_guide",
+      "separable",
+      "homogeneous_first_order",
+      "y_equals_xv",
+      "stationary_solution",
+      "lost_solution",
+      "domain_of_definition",
+      "working_cone",
+      "logistic_equation",
+      "phase_line"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 4,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет новый вычислительный шаблон; сложность в диагностике метода, сохранении стационарных решений, выборе рабочей области и границах с соседними кластерами.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "separable",
+    "homogeneous_first_order",
+    "phase_line",
+    "sign_analysis",
+    "cauchy_problem",
+    "mipt_core",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "note": "Базовый курс для разделяющихся уравнений, логистического примера и однородной замены первого порядка."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Разделы программы по уравнениям первого порядка",
+      "note": "Локальная программа задает границы стандартного блока первого порядка и типовые требования к задаче Коши."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Задачный фон для разделения переменных, однородных уравнений и контроля особых решений."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник для проверки аккуратности при делении, замене и выборе промежутка решения."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "First order differential equations",
+      "note": "Открытый учебник для сверки separable equations, autonomous equations и logistic model."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Unit I, first-order differential equations",
+      "note": "Открытый курс MIT OCW с базовой методикой separable equations и qualitative behavior."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основная терминология и стандартные алгоритмы первого порядка."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 2,
+      "comment": "Локальный ориентир по составу экзаменационного блока."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Проверка типовых задач и редукций."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 4,
+      "comment": "Контроль доменов, особых решений и аккуратности преобразований."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 5,
+      "comment": "Открытая сверка с separable/logistic/autonomous изложением."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Дополнительная методическая сверка по first-order ODE."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-separable-homogeneous-first-order",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера separable-homogeneous-first-order без новых однотипных вычислительных задач.",
+      "definition_ids вынесены в statement, ideas и route-блоки; новые определения не добавлялись, использованы существующие separable_equation, phase_line, equilibrium, exact_equation и linear_first_order_equation.",
+      "Блок закрывает распознавание разделения, потерю стационарных решений при делении, область определения, замену y=xv, выбор рабочего промежутка или конуса, логистику и фазовые рассуждения."
+    ]
+  }
+}

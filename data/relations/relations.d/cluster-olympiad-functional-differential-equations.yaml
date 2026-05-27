@@ -1,0 +1,147 @@
+{
+  "relations": [
+    {
+      "id": "rel-olympiad-functional-guide-to-involution-lemma",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "olympiad-level-involution-functional-differential",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок расширяет лемму об инволюции до общей диагностики кластера: инволюция является одной из типовых веток функционально-дифференциальных олимпиадных задач.",
+      "backward_text": "Лемма про T(T(x))=x является минимальным переносимым приемом внутри навигатора и показывает, почему повторная подстановка должна идти перед дифференцированием.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-putnam-2005",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "putnam-modern-2005-b3",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает маршрут x -> a/x, логарифмическую переменную и проверку положительности; Putnam 2005 B3 является полной классификацией этого инволюционного шаблона.",
+      "backward_text": "Putnam 2005 B3 показывает, что функциональная инверсия становится обычным ОДУ только после аккуратного выражения f(a/x), дифференцирования и возврата к исходному параметру a.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-kfu-reflection",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "ru-misc-kfu-2019-19-3",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет отражение x -> -x как простейшую симметрию, где дифференцирование исходного условия дает гармоническое ОДУ.",
+      "backward_text": "КФУ 2019 19-3 является компактным representative: после f'(x)=f(-x) получается f''+f=0, а исходное условие отбирает фазу.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-istcim-cosine",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "istcim-2023-e-functional-ode-cosine",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что сначала надо извлечь четность, антипериод и ненулевость множителя; ISTCiM 2023 E затем дифференцирует тождество до f''=-c^2 f.",
+      "backward_text": "ISTCiM 2023 E показывает более насыщенную сдвиговую версию той же идеи: функциональные симметрии дают правильное ОДУ и финальную проверку амплитуды.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-putnam-2010",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "putnam-modern-2010-b5",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует композиционную ветку f'=f(f(x)): вместо явного решения искать монотонность, выпуклость, рост и глобальное противоречие.",
+      "backward_text": "Putnam 2010 B5 является сильным representative этой ветки: композиция не редуцируется к линейному ОДУ, но остается дифференциальной задачей через blow-up argument.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-bme-2024",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "bme-2024-p2-composition-ode-nonexistence",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют композиционное уравнение f'=f∘f как источник глобального роста; навигатор фиксирует обратную функцию и область определения как обязательные проверки.",
+      "backward_text": "BME 2024 P2 является положительной полуосевой версией композиционного несуществования, где обратная функция делает оценку роста особенно явной.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-composition-ivp",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "solve-functional-ode-composition",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет настоящую композиционную олимпиадную трудность от случая, где f(0)=0 сразу превращает задачу в автономную задачу Коши y'=f(y).",
+      "backward_text": "Композиционная задача около нуля полезна как нижняя граница кластера: здесь функциональная форма есть, но решение почти полностью принадлежит стандартной единственности.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-yagtu-half-argument",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "ru-cis-extra-yagtu-2001-half-argument-ode",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор включает сжатый аргумент как пограничную ветку: здесь функционально-дифференциальность существенна, но основной метод ближе к рекурсии производных и степенному ряду.",
+      "backward_text": "ЯГТУ 2001 показывает, что не всякая функциональная связь редуцируется к конечномерному ОДУ; иногда владелец связи с power-series-linear-ode сильнее, чем инволюционный шаблон.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-vjimc-moving-average",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "vjimc-2016-c2-p4-moving-average-delay-variation",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отмечает границу с интегральными условиями: VJIMC moving average после дифференцирования дает delay-уравнение, но исходным владельцем часто остается integral-equation-to-ode.",
+      "backward_text": "VJIMC 2016 CII P4 показывает, почему пограничные задачи надо связывать relations, а не автоматически переносить в функционально-дифференциальный кластер.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-integral-equation-guide",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "cluster-integral-equation-to-ode-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Функционально-дифференциальный навигатор отвечает за transformed-argument и composition-задачи; integral-equation-to-ode отвечает за условия, где главный источник ОДУ - дифференцирование интеграла.",
+      "backward_text": "Интегральный навигатор помогает не расширять олимпиадный functional-differential cluster за счет всех задач со скользящими средними и параметрическими интегралами.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-constant-coeff-guide",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "cluster-scalar-constant-coefficients-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "После редукции функционального тождества часто возникает f''+cf=0; навигатор владеет распознаванием функциональной редукции, а постояннокоэффициентный кластер - стандартным решением полученного ОДУ.",
+      "backward_text": "Методический блок постоянных коэффициентов является соседней стандартной техникой и не должен поглощать олимпиадную часть про извлечение симметрий из функционального условия.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-existence-guide",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "cluster-existence-uniqueness-continuation-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В композиционных задачах иногда достаточно единственности для автономной задачи Коши; навигатор отмечает это как нижнюю границу, а не как основной олимпиадный шаблон.",
+      "backward_text": "Кластер существования и единственности объясняет стандартный механизм, который может завершить простую композиционную задачу после сведения к y'=f(y).",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-olympiad-functional-guide-to-power-series-guide",
+      "from": "cluster-olympiad-functional-differential-method-guide",
+      "to": "cluster-power-series-linear-ode-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Уравнения с сжатым аргументом могут задавать рекурсию производных в нуле; в таких случаях functional-differential relation фиксирует источник, а power-series-linear-ode - технику ряда.",
+      "backward_text": "Навигатор степенных рядов помогает удержать границу: если вся содержательная работа в рекурсии коэффициентов, не надо добавлять новый functional-differential representative.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

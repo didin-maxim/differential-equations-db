@@ -1,0 +1,333 @@
+{
+  "id": "cluster-limit-cycles-qualitative-criteria-method-guide",
+  "title": "Методический навигатор: предельные циклы и качественные критерии",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для автономной системы на плоскости z'=F(z), z=(x,y), предельный цикл - это изолированная замкнутая фазовая траектория: в любой достаточно малой кольцевой окрестности этой кривой нет других замкнутых траекторий, кроме нее самой. Поэтому не всякая замкнутая траектория является предельным циклом: в центре линейного осциллятора или на регулярных замкнутых уровнях первого интеграла обычно лежит семейство вложенных периодических траекторий, и каждая из них не изолирована. На уровне стандартного курса сначала проверяют простые качественные признаки: радиальную редукцию r'=R(r), знак дивергенции по критерию Бендиксона, инвариантные или ловящие области, связь с устойчивостью через поведение близких траекторий и запрет замкнутых орбит при наличии глобального первого интеграла с регулярными уровнями. Критерий Бендиксона в базе уже представлен как отдельная теорема: в односвязной области, где div F сохраняет один знак и не тождественно равна нулю, замкнутых траекторий нет. Вариант Бендиксона-Дюлака с множителем B использует знак div(BF); это полезное расширение, но если множитель не дан явно, его подбор обычно выходит за стандартную программу. Теорема Пуанкаре-Бендиксона, отображение Пуанкаре и индекс Пуанкаре являются продвинутыми фактами: их можно применять в навигаторе как помеченный beyond_standard_course слой, но не подменять ими базовую проверку определения, знака дивергенции и фазовой геометрии.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-arnold-ode",
+          "src-teschl-ode-dynamical-systems",
+          "src-lebl-diffyqs",
+          "src-waterloo-amath250-notes",
+          "src-test-du-limit-cycles"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_trajectory",
+          "closed_phase_trajectory",
+          "periodic_solution",
+          "limit_cycle",
+          "bendixson_criterion",
+          "first_integral",
+          "lyapunov_stability",
+          "asymptotic_stability",
+          "poincare_index"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-isolated-cycle",
+      "title": "Сначала отделить периодическую траекторию от предельного цикла",
+      "text": "Замкнутая фазовая траектория становится предельным циклом только при изолированности. Если рядом есть непрерывное семейство замкнутых уровней H=C, то это периодические траектории центра, но не предельные циклы. Эта диагностика защищает от типичной ошибки: называть все овалы фазового портрета предельными циклами.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "closed_phase_trajectory",
+        "limit_cycle",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "idea-bendixson-region",
+      "title": "Бендиксон запрещает, но не доказывает существование",
+      "text": "После вычисления div F=P_x+Q_y надо явно назвать область: она должна быть односвязной, лежать в области гладкости поля и содержать предполагаемую замкнутую траекторию вместе с внутренностью. Если знак дивергенции постоянен и не нулевой тождественно, циклов в этой области нет. Если знак меняется, критерий просто молчит.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "bendixson_divergence"
+      ],
+      "definition_ids": [
+        "bendixson_criterion",
+        "closed_phase_trajectory"
+      ]
+    },
+    {
+      "id": "idea-radial-stability",
+      "title": "Радиальная задача сводит цикл к равновесию для радиуса",
+      "text": "Для систем, где в полярных координатах r'=R(r), phi'=Omega(r,phi) и Omega не обращается в нуль на r=r0, окружность R(r0)=0 является периодической траекторией. Если это изолированный корень R, то она является предельным циклом. Знак R слева и справа от r0 дает устойчивый, неустойчивый или полуустойчивый цикл так же, как на фазовой прямой.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "radial_limit_cycle_stability",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "limit_cycle",
+        "lyapunov_stability"
+      ]
+    },
+    {
+      "id": "idea-integral-contrast",
+      "title": "Первый интеграл обычно дает семейство овалов, а не изолированный цикл",
+      "text": "Если H сохраняется и регулярные уровни H=C образуют вложенные замкнутые кривые, то движение по ним периодично, но каждый овал не изолирован. Первый интеграл тем самым помогает отличить центр от предельного цикла и объясняет, почему устойчивость центра не является асимптотической.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "closed_phase_trajectory",
+        "limit_cycle",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "idea-advanced-existence",
+      "title": "Существование через ловящую область требует пометки уровня",
+      "text": "Если область положительно инвариантна, компактна и не содержит равновесий, то теорема Пуанкаре-Бендиксона дает периодическую траекторию в предельном множестве. Это стандартный факт качественной теории, но для базового экзамена его лучше помечать как advanced или beyond_standard_course, особенно если требуется доказательство.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "limit_cycle",
+        "periodic_solution",
+        "equilibrium"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route-definition",
+      "title": "Маршрут проверки определения",
+      "text": "1. Убедиться, что система автономна и рассматривается фазовая плоскость, а не график решения как функции времени. 2. Найти замкнутую фазовую траекторию: решение должно возвращаться в ту же точку через период T>0 и не быть равновесием. 3. Проверить изолированность: рядом не должно быть семейства других замкнутых траекторий. 4. Если замкнутые кривые являются регулярными уровнями первого интеграла H=C и заполняют кольцо, назвать их периодическими траекториями центра, но не предельными циклами. 5. Если к циклу с одной или двух сторон приближаются соседние траектории, использовать это как признак устойчивости цикла, но не как замену проверке его изолированности.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "phase_trajectory",
+        "closed_phase_trajectory",
+        "periodic_solution",
+        "limit_cycle",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "guide-route-exclusion",
+      "title": "Маршрут запрета циклов",
+      "text": "1. Для системы x'=P(x,y), y'=Q(x,y) вычислить div F=P_x+Q_y. 2. Выбрать конкретную область D, где P,Q гладкие и где могла бы лежать замкнутая траектория вместе со своей внутренностью. 3. Проверить односвязность D; проколотая область или кольцо требуют отдельного рассуждения. 4. Если div F имеет один строгий знак или один знак и не равна нулю тождественно, применить критерий Бендиксона и запретить замкнутые траектории в D. 5. Если есть предложенный множитель B, проверить знак div(BF); без заданного B подбор множителя Дюлака считать продвинутым шагом. 6. Если знак дивергенции меняется, честный вывод такой: данный критерий не применим, а не 'цикл существует'.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "bendixson_divergence"
+      ],
+      "definition_ids": [
+        "bendixson_criterion",
+        "closed_phase_trajectory",
+        "limit_cycle"
+      ]
+    },
+    {
+      "id": "guide-route-radial",
+      "title": "Маршрут радиальной устойчивости",
+      "text": "1. Перейти к полярным координатам или напрямую вычислить (r^2)'=2xx'+2yy'. 2. Получить уравнение для r или r^2 и найти положительные корни, соответствующие окружностям. 3. Проверить, что угловая скорость на окружности не зануляется так, что движение вырождается в равновесия. 4. Изолированный положительный корень радиального уравнения дает предельный цикл. 5. Если радиус при r<r0 растет, а при r>r0 убывает, цикл устойчив; обратные стрелки дают неустойчивость; одинаковое направление с двух сторон дает полуустойчивость. 6. Если корни радиального уравнения накапливаются, отдельные окружности могут быть периодическими, но вопрос о предельном цикле и устойчивости нужно формулировать по определению изолированности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "radial_limit_cycle_stability",
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "phase_line",
+        "limit_cycle",
+        "lyapunov_stability"
+      ]
+    },
+    {
+      "id": "guide-route-existence-advanced",
+      "title": "Маршрут существования в продвинутом слое",
+      "text": "1. Найти компактную положительно инвариантную область или кольцо: поле должно направлять траектории внутрь на границах либо границы должны быть инвариантными. 2. Проверить, что внутри нет равновесий, если планируется применять теорему Пуанкаре-Бендиксона в короткой форме. 3. Сделать вывод о наличии периодической траектории в omega-предельном множестве и отдельно проверить, является ли она изолированной. 4. Если используется индекс Пуанкаре, сложить индексы особых точек внутри замкнутой траектории и получить сумму +1; этот шаг помечать beyond_standard_course. 5. Не использовать индексную арифметику как замену локальной классификации равновесий: индексы ограничивают возможную конфигурацию, но не рисуют весь фазовый портрет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "poincare_index_inside_cycle"
+      ],
+      "definition_ids": [
+        "limit_cycle",
+        "equilibrium",
+        "poincare_index"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не называть любой периодический овал предельным циклом: нужна изолированность. Не применять Бендиксона в области, которая не содержит внутренность предполагаемой замкнутой кривой или не является односвязной. Не выводить существование цикла из того, что Бендиксон не сработал. Не путать устойчивость предельного цикла с устойчивостью равновесия внутри него. Не забывать, что первый интеграл с замкнутыми уровнями обычно исключает асимптотическое притяжение к равновесию и одновременно показывает не-изолированность соседних периодических траекторий.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "limit_cycle",
+        "bendixson_criterion",
+        "first_integral",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_planar_system",
+      "polar_system",
+      "qualitative"
+    ],
+    "methods": [
+      "phase_plane",
+      "polar_coordinates",
+      "radial_equation",
+      "bendixson_divergence",
+      "first_integral",
+      "invariant_region",
+      "poincare_index"
+    ],
+    "objects": [
+      "limit_cycle",
+      "closed_phase_trajectory",
+      "periodic_solution",
+      "equilibrium",
+      "divergence",
+      "invariant_circle",
+      "lyapunov_stability",
+      "asymptotic_stability"
+    ],
+    "goal": [
+      "choose_method",
+      "exclude_cycles",
+      "prove_existence",
+      "classify_stability",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "limit-cycles-qualitative-criteria",
+      "method_guide",
+      "limit cycle",
+      "closed trajectory",
+      "Bendixson criterion",
+      "Dulac multiplier",
+      "radial stability",
+      "Poincare index",
+      "first integral"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок сам по себе малотехнический: главная сложность в различении замкнутой траектории и предельного цикла, корректной области для Бендиксона и пометке продвинутых фактов вроде индекса Пуанкаре.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "phase_plane",
+    "stability",
+    "periodic_solution",
+    "limit_cycle",
+    "bendixson",
+    "poincare_index",
+    "advanced_standard_course",
+    "beyond_standard_course",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык курса: автономные системы, фазовая плоскость, устойчивость, первые интегралы и критерий Бендиксона."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классический русский источник по геометрическому языку автономных систем и предельных циклов."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Autonomous systems, Poincare-Bendixson material and stability",
+      "note": "Открытая строгая теория фазового потока и качественных критериев."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Sections on nonlinear systems, limit cycles and Bendixson-Dulac ideas",
+      "note": "Доступное учебное изложение фазовой плоскости, предельных циклов и критериев отсутствия."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Qualitative sketches and phase portraits",
+      "note": "Учебные заметки с качественным чтением фазовых портретов и устойчивости."
+    },
+    {
+      "source_id": "src-test-du-limit-cycles",
+      "role": "cluster_seed_archive",
+      "status": "source_verified",
+      "note": "Тестовый архив дал стартовые representative-задачи на радиальные циклы, Бендиксона и индекс внутри цикла."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной язык стандартного курса."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 2,
+      "comment": "Классическая геометрическая терминология."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 3,
+      "comment": "Строгая открытая теория для продвинутых фактов."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 4,
+      "comment": "Учебный маршрут по limit cycles и Bendixson-Dulac."
+    },
+    {
+      "source_id": "src-test-du-limit-cycles",
+      "priority": 5,
+      "comment": "Локальные representative-примеры кластера."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-limit-cycles-qualitative-criteria",
+    "notes": [
+      "Добавлено как теоретико-методический блок к кластеру limit-cycles-qualitative-criteria, а не как новая вычислительная задача.",
+      "Продвинутые факты явно отделены: Бендиксон-Дюлак без заданного множителя, теорема Пуанкаре-Бендиксона и индекс Пуанкаре помечены как слой за пределами базовой программы.",
+      "Карточка связывает определения предельного цикла, замкнутой траектории, устойчивости, фазовой плоскости и первого интеграла."
+    ]
+  }
+}

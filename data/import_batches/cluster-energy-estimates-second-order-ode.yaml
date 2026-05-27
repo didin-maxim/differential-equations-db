@@ -1,0 +1,25 @@
+{
+  "id": "cluster-energy-estimates-second-order-ode",
+  "title": "Теоретико-методический блок кластера энергетических оценок второго порядка",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "energy-estimates-second-order-ode",
+    "method_guide",
+    "second_order_ode",
+    "energy_method",
+    "first_integral",
+    "lyapunov_function",
+    "phase_plane"
+  ],
+  "problem_ids": [
+    "cluster-energy-estimates-second-order-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавление точечное: создана одна теоретико-методическая карточка, а не новый набор однотипных задач.",
+    "Блок покрывает умножение на y', энергию T+V, знаки E', априорные оценки, ограниченность, периодичность и невозможность.",
+    "Связи вынесены в data/relations/relations.d/cluster-energy-estimates-second-order-ode.yaml и ведут к representative-задачам и соседним кластерам.",
+    "Новые definition_ids не создавались; использованы существующие определения первого интеграла, фазовой траектории, функции Ляпунова и устойчивости."
+  ]
+}

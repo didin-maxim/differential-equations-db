@@ -26,7 +26,9 @@
           "ordinary_differential_equation",
           "solution",
           "stability",
-          "lyapunov_function"
+          "lyapunov_function",
+          "lyapunov_stability",
+          "asymptotic_stability"
         ]
       }
     ]

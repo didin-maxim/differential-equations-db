@@ -1,0 +1,32 @@
+{
+  "id": "test-lyapunov-stability",
+  "title": "Импорт тестового архива: устойчивость по Ляпунову",
+  "created_at": "2026-05-27",
+  "scope": [
+    "test_import",
+    "exam_simulation",
+    "lyapunov",
+    "stability",
+    "qualitative"
+  ],
+  "source_ids": [
+    "src-test-lyapunov-stability-alekseev"
+  ],
+  "problem_ids": [],
+  "exam_question_ids": [
+    "exam-sim-test-lyap-01-autonomous-after-simplification",
+    "exam-sim-test-lyap-02-equilibrium-parameter",
+    "exam-sim-test-lyap-03-no-finite-entry-equilibrium",
+    "exam-sim-test-lyap-07-y-minus-square-stability",
+    "exam-sim-test-lyap-08-spectrum-asymptotic-stability",
+    "exam-sim-test-lyap-11-direct-method-nonpositive",
+    "exam-sim-test-lyap-13-sin-x-minus-x",
+    "exam-sim-test-lyap-19-linearization-center-case"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Архив содержит 20 тестовых вопросов. В базу добавлены только 8 интерактивных overlay-вопросов к уже существующим карточкам; новые карточки не создавались, чтобы не дублировать кластер устойчивости.",
+    "Вопросы на чистые определения устойчивости/асимптотической/экспоненциальной устойчивости, историю корректности по Адамару и слишком общие эвристики отфильтрованы как дубли или как неудачные для текущей базы.",
+    "Авторство взято из строки темы в C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx и сохранено в source metadata и attribution каждого overlay."
+  ]
+}

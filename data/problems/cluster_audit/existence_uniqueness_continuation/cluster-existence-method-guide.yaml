@@ -1,0 +1,275 @@
+{
+  "id": "cluster-existence-uniqueness-continuation-method-guide",
+  "title": "Методический навигатор: существование, единственность и продолжение",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок",
+        "text": "Для задач кластера existence-uniqueness-continuation сначала выбирают уровень регулярности правой части, затем отделяют локальную разрешимость от вопроса о максимальном продолжении. Базовый маршрут: непрерывность дает существование по Пеано; локальная липшицевость или C^1-гладкость по фазовой переменной дает Пикара-Линделефа и единственность; оценки Гронуолла дают единственность, непрерывную зависимость и глобальность при линейном росте; критерий продолжения переводит априорную ограниченность, барьер или выход из компактов в ответ об интервале существования.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-arnold-ode",
+          "src-teschl-ode-dynamical-systems",
+          "src-lebl-diffyqs",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "initial_value_problem",
+          "maximal_solution",
+          "lipschitz_condition",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-regularity-first",
+      "title": "Начинать с регулярности, а не с формулы",
+      "text": "Если правая часть только непрерывна, разумная цель - существование и возможная неединственность. Если есть локальный Липшиц по y или по x в системе первого порядка, можно применять Пикара-Линделефа и пользоваться непересечением решений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ]
+    },
+    {
+      "id": "idea-compact-continuation",
+      "title": "Продолжение доказывается априорной границей",
+      "text": "Для максимального решения надо не угадывать конец интервала, а показать, что на каждом конечном промежутке график остается в компакте области определения; тогда теорема продолжения запрещает конечный обрыв.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    },
+    {
+      "id": "idea-gronwall-router",
+      "title": "Гронуолл связывает три сюжета",
+      "text": "Оценка разности решений дает единственность и непрерывную зависимость; оценка нормы одного решения при линейном росте дает глобальность; односторонний Липшиц заменяет симметричную липшицевость там, где хватает контроля положительной части.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ]
+    },
+    {
+      "id": "idea-first-exit-barrier",
+      "title": "Барьеры читать через первый выход",
+      "text": "Если на границе области поле направлено внутрь или касательно, то первый выход невозможен. После инвариантности компактная область становится априорной оценкой для продолжения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    },
+    {
+      "id": "idea-implicit-regular",
+      "title": "Неявную задачу сначала привести к нормальной форме",
+      "text": "Для F(t,y,y')=0 регулярная точка F_p != 0 означает p=phi(t,y). Только после этого применяют Пикара-Линделефа; при F_p=0 задача уже относится к ветвям и дискриминанту.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "picard_lindelof"
+      ]
+    },
+    {
+      "id": "idea-counterexamples",
+      "title": "Контрпример должен ломать ровно нужное условие",
+      "text": "Нелипшицевость типа y'=c|y|^alpha, 0<alpha<1, объясняет отложенные решения; разрыв правой части ломает Пеано; выход из области определения или взрыв объясняет невозможность глобального продолжения.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-solution-route",
+      "title": "Маршрут разбора задачи",
+      "text": "1. Привести уравнение к задаче Коши для системы первого порядка и явно записать область D, где задана правая часть. 2. Проверить регулярность: непрерывность f дает локальное существование по Пеано; локальный Липшиц по фазовой переменной дает Пикара-Линделефа; C^1 по фазовой переменной является удобным достаточным условием Липшица на компактах. 3. Если спрашивают единственность или зависимость от данных, записать разность двух решений и получить неравенство вида u(t)<=u(t0)+int L(s)u(s)ds; дальше работает Гронуолл. 4. Если спрашивают максимальный интервал, построить априорную оценку нормы или инвариантную область и применить теорему продолжения: конечный конец возможен только при выходе графика из любого компакта области. 5. Если дана неявная задача F(t,y,y')=0, проверить F_p: при F_p!=0 перейти к y'=phi(t,y), при F_p=0 не обещать единственность без отдельного анализа ветвей.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "gronwall_estimate",
+        "comparison_argument",
+        "implicit_function_theorem"
+      ]
+    },
+    {
+      "id": "guide-method-choice",
+      "title": "Критерии выбора теоремы",
+      "text": "Пеано выбирают, когда нужно доказать хотя бы одно решение при непрерывной правой части или объяснить, почему единственность не следует. Пикара-Линделефа выбирают, когда задача требует запрета пересечений, совпадения угаданного решения с настоящим или корректности потока. Гронуолл выбирают, когда в доказательстве возникает интегральная оценка разности, возмущения или нормы. Теорему продолжения выбирают, когда надо отличить локальную разрешимость от глобальной: сама локальная теорема не говорит, что решение не оборвется на конечном времени. Барьер выбирают, когда решение нужно удержать в области без явной формулы. Неявную теорему о функции выбирают только в регулярной точке по производной.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "gronwall_estimate",
+        "comparison_argument",
+        "implicit_function_theorem"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя заменять непрерывность правой части единственностью: Пеано не запрещает несколько решений. Нельзя проверять Липшиц только вдоль найденной кривой, если теорема нужна в окрестности начальной точки. Нельзя выводить глобальность из ограниченности f на одной траектории без контроля приближения к границе области. Нельзя считать, что конечный конец максимального решения всегда означает |y|->infty: в общей области возможен выход к границе D. Нельзя применять обычную задачу Коши к F(t,y,y')=0, пока не проверено F_p!=0 и не выбрана ветвь y'=phi(t,y). Наконец, при барьерах надо проверять направление поля именно на границе и формулировать аргумент через первый момент выхода.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "implicit_function_theorem"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "initial_value_problem",
+      "nonlinear_ode",
+      "nonlinear_system",
+      "implicit_ode"
+    ],
+    "methods": [
+      "picard_lindelof",
+      "peano",
+      "maximal_continuation",
+      "blow_up_alternative",
+      "gronwall_estimate",
+      "continuous_dependence",
+      "barrier_argument",
+      "invariant_region",
+      "implicit_function_theorem",
+      "one_sided_lipschitz"
+    ],
+    "objects": [
+      "local_solution",
+      "maximal_solution",
+      "global_solution",
+      "compact_subset",
+      "finite_time_blowup",
+      "nonuniqueness"
+    ],
+    "goal": [
+      "choose_method",
+      "prove_existence",
+      "prove_uniqueness",
+      "prove_continuation",
+      "diagnose_nonuniqueness"
+    ],
+    "keywords": [
+      "existence_uniqueness_continuation",
+      "method_guide",
+      "picard_lindelof",
+      "peano",
+      "gronwall",
+      "continuation",
+      "barrier",
+      "implicit_ivp"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную нагрузку; сложность в выборе правильной теоремы и границы применимости.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "existence_uniqueness",
+    "picard_iteration",
+    "peano",
+    "continuation",
+    "gronwall",
+    "comparison",
+    "global_solution",
+    "blow_up",
+    "boundedness",
+    "counterexample",
+    "mipt_core",
+    "standard_course_methods",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Русскоязычная базовая программа: Пикар-Линделеф, Пеано, Гронуолл, продолжение решений."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическое русскоязычное изложение общей теории ОДУ и геометрического смысла решений."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Sections 2.4-2.6",
+      "note": "Использованы формулировки о непрерывной зависимости, максимальных решениях, альтернативе продолжения и линейном росте."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Chapter 1.9 and related existence-uniqueness material",
+      "note": "Понятный открытый англоязычный учебник для первичного чтения условий существования и единственности."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "note": "Открытый курс с видеолекциями MIT OCW; полезен как внешний визуальный маршрут по базовой теории и примерам."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной русскоязычный курс для терминов и базовых формулировок."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 2,
+      "comment": "Классическое русскоязычное чтение для геометрии решений и продолжения."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 3,
+      "comment": "Открытый строгий источник по максимальным решениям, непрерывной зависимости и продолжению."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 4,
+      "comment": "Открытый вводный конспект с доступной подачей существования и единственности."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Открытые видеолекции для повторения базового курса."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-existence-uniqueness-continuation-method-guide",
+    "notes": [
+      "Добавлено как методический блок к крупному кластеру; это не новая вычислительная задача, а навигатор по выбору теорем и типовым ошибкам.",
+      "Новые определения не добавлялись: использованы уже существующие initial_value_problem, maximal_solution, lipschitz_condition и gronwall_inequality."
+    ]
+  }
+}

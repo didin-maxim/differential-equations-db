@@ -109,6 +109,116 @@
       "backward_text": "Романко дает ту же структуру, но с другим набором инвариантов и локальной областью x<0, z>0.",
       "status": "ai_checked",
       "confidence": 0.84
+    },
+    {
+      "id": "rel-pde-guide-after-first-integral-criterion",
+      "from": "mipt-middle-first-integral-criterion",
+      "to": "cluster-pde-characteristics-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Критерий первого интеграла автономной системы объясняет, почему инварианты характеристической системы постоянны вдоль ее интегральных кривых.",
+      "backward_text": "Навигатор использует ту же идею сохранения вдоль поля, но переносит ее с фазовых траекторий на характеристики линейного ЧП.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-pde-guide-after-filippov-first-integrals",
+      "from": "local-du-filippov-1166-intersection-first-integrals",
+      "to": "cluster-pde-characteristics-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Филипповская карточка из кластера first-integrals-plane-systems показывает геометрию пересечения уровней нескольких первых интегралов.",
+      "backward_text": "Навигатор использует ту же геометрию инвариантов для характеристической системы: в трех переменных два первых интеграла нумеруют характеристические кривые.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-pde-guide-after-existence-guide",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-pde-characteristics-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Общая логика задачи Коши и продолжения решений ОДУ нужна для чтения характеристик как потока интегральных кривых.",
+      "backward_text": "PDE-навигатор специализирует существование, единственность и продолжение к характеристическому потоку и данным на кривой или поверхности.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-pde-guide-to-local-du-deficit",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "local-du-deficit-first-order-pde-characteristics",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор заранее выделяет три исхода данных на начальной кривой: корректная кривая Коши, характеристическая несовместимость и характеристическая неединственность.",
+      "backward_text": "Local_du-карточка является минимальной проверкой этого маршрута на одной линейной задаче с характеристической и нехарактеристической прямой.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-pde-guide-to-romanko-two-invariants",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему в трех независимых переменных надо искать два первых интеграла характеристической системы и затем восстанавливать произвольную функцию по поверхности Коши.",
+      "backward_text": "Романко является более плотной реализацией этой ветки: две независимые характеристики, поверхность Коши и алгебраическое восстановление F(I1,I2).",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-pde-guide-to-strip-domain",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "cluster-pde-characteristics-strip-domain",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует правило области продолжения: брать объединение характеристик, выходящих из той части кривой, где заданы данные.",
+      "backward_text": "Полоса |y-x|<1 является самым коротким вычислением этой области для данных на конечном отрезке.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-pde-guide-to-single-hit",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "cluster-pde-characteristics-single-hit-criterion",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет локальную нехарактеристичность от глобального условия: нужная характеристика должна попадать в данные ровно один раз.",
+      "backward_text": "Критерий однократного пересечения дает компактную проверку этой глобальной части метода.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-pde-guide-to-characteristic-incompatible",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "cluster-pde-characteristics-characteristic-incompatible",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что на характеристической начальной кривой данные обязаны удовлетворять ОДУ вдоль характеристики.",
+      "backward_text": "Несовместимые данные u(x,x)=x^2 показывают отрицательный исход этой диагностики.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-pde-guide-to-characteristic-nonunique",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "cluster-pde-characteristics-characteristic-nonunique",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет вторую характеристическую развилку: совместимые данные могут дать существование, но не задают соседние характеристики.",
+      "backward_text": "Карточка с постоянными данными на характеристике является минимальным примером существования без единственности.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-pde-guide-to-flow-geometry",
+      "from": "cluster-pde-characteristics-method-guide",
+      "to": "cluster-pde-characteristics-flow-geometry",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор требует читать характеристики как поток, который переносит не только значения u, но и носитель начального профиля.",
+      "backward_text": "Геометрия x -> x e^t является простым примером такого поточного чтения.",
+      "status": "ai_checked",
+      "confidence": 0.94
     }
   ]
 }

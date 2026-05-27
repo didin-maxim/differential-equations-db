@@ -1,0 +1,332 @@
+{
+  "id": "cluster-matrix-exponential-method-guide",
+  "title": "Методический навигатор: матричная экспонента как метод",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В кластере matrix-exponential-methods матричная экспонента рассматривается не как длинный способ решить очередную систему, а как операторный объект. Базовые факты: e^{A0}=I, d/dt e^{At}=Ae^{At}=e^{At}A, e^{A(t+s)}=e^{At}e^{As}, (e^{At})^{-1}=e^{-At}, а при E(t)=e^{At} генератор восстанавливается как A=E'(0). Если X(t) - фундаментальная матрица системы x'=A(t)x, то A(t)=X'(t)X(t)^{-1}; для постоянной A нормированная фундаментальная матрица равна e^{A(t-t0)}. Спектр A читается в e^{At} через спектральное отображение: собственное значение lambda дает режим e^{lambda t}, комплексная пара alpha+-i beta дает e^{alpha t}cos beta t и e^{alpha t}sin beta t, а жорданова клетка размера m добавляет множители 1,t,...,t^{m-1}. Определитель не считают напрямую: det(e^{At})=e^{t tr A}. Для x'=Ax+b(t) формула вариации постоянных имеет вид x(t)=e^{A(t-t0)}x0+int_{t0}^t e^{A(t-s)}b(s) ds. Дискретный аналог - x_{n+1}=Mx_n и рекурренты, где вместо e^{At} работает M^n, а спектр и жорданова структура управляют ростом, колебаниями и полиномиальными множителями.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "matrix_exponential",
+          "matrix_eigenvalue",
+          "det_exp_trace_identity",
+          "variation_of_constants_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-operator-first",
+      "title": "Сначала использовать операторное свойство",
+      "text": "Если в условии уже дана или узнается e^{At}, сначала проверяют групповое свойство, обратный ход времени, производную в нуле, коммутирование с A и нормировку E(0)=I. Это часто заменяет обращение матрицы, перемножение блоков и раскрытие ряда.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-recover-generator",
+      "title": "Генератор восстанавливается локально",
+      "text": "Для нормированной экспоненты E(t)=e^{At} матрица A равна E'(0). Для произвольной фундаментальной матрицы X(t) системы x'=A(t)x используется более общий факт A(t)=X'(t)X(t)^{-1}; поэтому важно не путать нормировку E(0)=I с произвольной заменой базиса решений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-spectrum-jordan",
+      "title": "Спектр виден по режимам",
+      "text": "Рост e^{alpha t}, частота beta и множители t^k обычно важнее полного вычисления e^{At}. Жорданова nilpotent-часть N дает конечный множитель e^{Nt}=I+tN+...+t^{m-1}N^{m-1}/(m-1)!, поэтому полиномиальный множитель сообщает о длине цепочки.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "matrix_eigenvalue",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-trace-determinant",
+      "title": "След управляет объемом",
+      "text": "Формула det(e^{At})=e^{t tr A} является постояннокоэффициентной версией формулы Лиувилля. В задачах на площадь, объем, обратимость и след она должна срабатывать до попытки выписать саму экспоненту.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "det_exp_trace_identity",
+        "fundamental_matrix"
+      ]
+    },
+    {
+      "id": "idea-systems-and-recurrences",
+      "title": "Системы и рекурренты имеют один операторный язык",
+      "text": "Для постоянной системы e^{A(t-s)} переносит вклад правой части из времени s во время t. Для рекуррент x_{n+1}=Mx_n ту же роль играет M^n: диагонализация, комплексные собственные значения и жордановы блоки дают рост, вращение и полиномиальные множители без перебора шагов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "variation_of_constants_system",
+        "matrix_eigenvalue"
+      ]
+    },
+    {
+      "id": "idea-cluster-boundaries",
+      "title": "Держать границы соседних кластеров",
+      "text": "Если главное действие - построить общее решение x'=Ax по спектру, это constant-coefficient-linear-systems. Если главный объект - произвольная X(t), смена базиса или условие на концах, это fundamental-matrix-linear-systems. Если главный вопрос - интеграл неоднородности, это variation-of-constants. В matrix-exponential-methods остается случай, где свойство e^{At} само делает решение коротким.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "fundamental_matrix",
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-diagnostic-route",
+      "title": "Диагностический маршрут",
+      "text": "1. Установить, дана ли нормированная экспонента E(0)=I или произвольная фундаментальная матрица X(t). 2. Если нужен обратный оператор, заменить t на -t. 3. Если нужен генератор, взять E'(0) или X'X^{-1}. 4. Если нужен определитель, взять след, а не раскрывать det. 5. Если нужно читать спектр, искать e^{alpha t}, cos beta t, sin beta t и множители t^k. 6. Если дана неоднородность, записать интеграл с e^{A(t-s)} и только потом решать, нужен ли явный счет.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "matrix_exponential",
+        "det_exp_trace_identity",
+        "variation_of_constants_system"
+      ]
+    },
+    {
+      "id": "guide-jordan-route",
+      "title": "Маршрут через жорданову структуру",
+      "text": "Если A=PJP^{-1}, то e^{At}=P e^{Jt} P^{-1}. Для блока J=lambda I+N экспонента равна e^{lambda t}e^{Nt}, а e^{Nt} - конечный полином, потому что N^m=0. Над вещественными числами комплексную пару переводят в вращательно-растягивающий блок e^{alpha t}R_{beta t}; при кратной паре появляются те же полиномиальные множители t^k.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "matrix_eigenvalue",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не обращать e^{At} как обычную числовую матрицу, если известна E(-t). Не восстанавливать A по E'(t) при t не равном 0 без умножения на E(t)^{-1}. Не считать det(e^{At}) по элементам. Не переносить правило e^{(A+B)t}=e^{At}e^{Bt} без коммутирования A и B. Не относить каждую задачу на x'=Ax сюда: если e^{At} только фон, владельцем часто является соседний кластер систем с постоянными коэффициентами.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "matrix_exponential",
+        "det_exp_trace_identity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients",
+      "autonomous_system",
+      "linear_recurrence"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "fundamental_matrix",
+      "jordan_form",
+      "spectral_mapping",
+      "trace_determinant",
+      "variation_of_constants",
+      "matrix_power"
+    ],
+    "objects": [
+      "matrix_exponential",
+      "fundamental_matrix",
+      "generator_matrix",
+      "eigenvalues",
+      "jordan_block",
+      "trace",
+      "determinant",
+      "linear_flow",
+      "matrix_recurrence"
+    ],
+    "goal": [
+      "choose_method",
+      "prove",
+      "recover",
+      "read_spectrum",
+      "solve",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "matrix-exponential-methods",
+      "method_guide",
+      "matrix exponential",
+      "fundamental matrix",
+      "recover A",
+      "det exp trace",
+      "Jordan structure",
+      "variation of constants",
+      "matrix recurrence"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную нагрузку; сложность в распознавании, какое свойство e^{At} должно сработать до прямого счета.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "constant_coefficients",
+    "matrix_exponential",
+    "jordan_form",
+    "variation_of_parameters",
+    "trace_determinant",
+    "linear_recurrence",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "cluster_representative",
+    "method_guide"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый локальный язык курса: системы с постоянными коэффициентами, фундаментальная матрица, матричная экспонента и вариация постоянных."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program",
+      "status": "source_verified",
+      "locator": "Локальная программа и задания по ДУ",
+      "note": "Используется как локальная привязка к стандартному блоку линейных систем и методическим требованиям курса."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "Разделы по линейным системам и постоянным коэффициентам",
+      "note": "Русскоязычная опора для типовых вычислений с матричной экспонентой, жордановыми блоками и системами."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Sections on systems, matrix exponentials and fundamental matrices",
+      "note": "Открытые notes с полезной интерпретацией фундаментальной матрицы как потока и обратного времени."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Linear systems and matrix exponential sections",
+      "note": "Строгая открытая ссылка для связи матричной экспоненты, спектра, фундаментальной матрицы и формулы Лиувилля."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Unit IV, First-order systems, Matrix exponentials",
+      "note": "Видеолекции и notes MIT OCW по нормальным модам, матричной экспоненте и неоднородным системам."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Локальная терминология курса."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 2,
+      "comment": "Локальная программа и экзаменационный контекст."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Русскоязычные типовые задачи."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 4,
+      "comment": "Открытые notes по фундаментальной матрице и flow-интерпретации."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Открытая строгая ссылка по линейным системам, спектру и формуле Лиувилля."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Видео и notes для повторения matrix exponential."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-matrix-exponential-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок крупного кластера matrix-exponential-methods.",
+      "Определения не дублируются внутри текста: основные понятия вынесены в definition_ids, а theorem-связи идут через relations к уже существующим representative-card.",
+      "Карточка помечена task_cluster, method_guide и cluster_representative, чтобы индексироваться как методический слой кластера."
+    ]
+  }
+}

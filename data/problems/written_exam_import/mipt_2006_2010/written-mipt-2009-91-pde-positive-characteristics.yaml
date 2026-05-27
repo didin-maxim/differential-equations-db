@@ -1,0 +1,119 @@
+{
+  "id": "written-mipt-2009-91-pde-positive-characteristics",
+  "title": "Задача Коши для уравнения первого порядка в четверти",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2008/2009, вариант 91, задача 6",
+        "text": "В области x>0, y>0 найти все решения уравнения 2xy u_x+(x+y^2)u_y=0 и решить задачу Коши u=x при x=y^2.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "cauchy_problem",
+          "pde_characteristic_first_order",
+          "integral_curve",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Заменить y^2 на новую переменную вдоль характеристик",
+      "text": "Характеристическое уравнение для v=y^2 становится линейным: v'-v/x=1. Поэтому номер характеристики выражается как y^2/x-ln x.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристики удовлетворяют dy/dx=(x+y^2)/(2xy). Для v=y^2 получаем dv/dx=2y dy/dx=1+v/x, то есть v'-v/x=1. Умножая на 1/x, имеем (v/x)'=1/x, поэтому I=y^2/x-ln x является первым интегралом. Общее решение в области x>0, y>0 имеет вид u=F(I). На начальной кривой x=y^2 положим x=s>0; тогда I=1-ln s, а условие дает u=s. Значит F(1-ln s)=s, или F(I)=exp(1-I). Поэтому решение задачи Коши равно u(x,y)=exp(1-y^2/x+ln x)=e x exp(-y^2/x). Прямая подстановка и проверка условия при x=y^2 завершают решение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order_pde"
+    ],
+    "methods": [
+      "method_of_characteristics",
+      "first_integral",
+      "linear_substitution"
+    ],
+    "objects": [
+      "characteristics",
+      "cauchy_data",
+      "positive_quadrant"
+    ],
+    "goal": [
+      "solve",
+      "solve_cauchy_problem"
+    ],
+    "keywords": [
+      "MIPT_2009",
+      "written_exam",
+      "ticket_91",
+      "first_order_pde"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 5,
+    "technical_score": 4,
+    "local_score": 5,
+    "comment": "Стандартный метод характеристик с удачной заменой v=y^2; вычисления короткие и годятся для устной модификации.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem",
+    "first_integral",
+    "standard_course_methods",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\2009.pdf",
+      "note": "Вариант 91, задача 6; текст извлечен визуально, поскольку PDF не содержит пригодного текстового слоя."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2006-2010",
+    "notes": [
+      "Из вариантов 91-94 выбран один представитель PDE-задач: остальные отличаются тем же планом характеристик и более громоздкими коэффициентами.",
+      "Для симуляции экзамена предложена устная версия с вводом первого интеграла и значения решения в точке."
+    ]
+  }
+}

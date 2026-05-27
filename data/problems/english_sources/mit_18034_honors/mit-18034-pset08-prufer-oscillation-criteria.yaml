@@ -1,6 +1,6 @@
 {
   "id": "mit-18034-pset08-prufer-oscillation-criteria",
-  "title": "Угловые переменные для осцилляции и неосцилляции",
+  "title": "Угол Пруфера для осцилляции и неосцилляции",
   "fragment": "boundary_value",
   "kind": {
     "primary": "problem",

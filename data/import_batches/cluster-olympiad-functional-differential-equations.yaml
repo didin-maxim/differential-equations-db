@@ -1,0 +1,20 @@
+{
+  "id": "cluster-olympiad-functional-differential-equations",
+  "title": "Методический блок: функционально-дифференциальные олимпиадные уравнения",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "olympiad",
+    "functional_differential",
+    "method_guide"
+  ],
+  "problem_ids": [
+    "cluster-olympiad-functional-differential-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет только методический theorem/method_guide для существующего кластера olympiad-functional-differential-equations.",
+    "Новые олимпиадные задачи не импортировались.",
+    "Цель блока - зафиксировать границы: когда функционально-дифференциальная задача остается частью базы ДУ, как работают инволюция, симметрия, дифференцирование функционального тождества, редукция к ОДУ/системе и проверка области определения."
+  ]
+}

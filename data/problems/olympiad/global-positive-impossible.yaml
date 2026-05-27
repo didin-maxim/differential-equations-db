@@ -1,6 +1,6 @@
 {
   "id": "global-positive-impossible",
-  "title": "Нет глобального решения при y'≥1+y^2",
+  "title": "Глобальные решения при y'≥1+y^2",
   "fragment": "olympiad",
   "kind": {
     "primary": "problem",
@@ -70,18 +70,19 @@
     "status": "ai_checked"
   },
   "difficulty": {
-    "main": "student_olympiad",
+    "main": "course_core",
     "local_score": 7,
     "idea_score": 6,
     "technical_score": 3,
-    "comment": "idea_score=6: нужно подобрать arctan y как ограниченную переменную сравнения; technical_score=3: одна производная и простая оценка.",
+    "comment": "idea_score=6: нужно подобрать arctan y как ограниченную переменную сравнения; technical_score=3: одна производная и простая оценка. Экзаменационный аудит 2026-05-27: это стандартная задача на сравнение/взрыв без внешней теории.",
     "status": "ai_checked"
   },
   "tags": [
     "olympiad_style",
     "comparison",
     "blow_up",
-    "standard_course_methods"
+    "standard_course_methods",
+    "exam_score_6"
   ],
   "sources": [
     {
@@ -97,7 +98,8 @@
     "public_ready": true,
     "relations_status": "seed_links",
     "notes": [
-      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом.",
+      "Экзаменационный аудит олимпиадных задач 2026-05-27: переведена ближе к экзамену как стандартная идея arctan y при сравнении с y'=1+y^2."
     ]
   }
 }

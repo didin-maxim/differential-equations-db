@@ -1,0 +1,105 @@
+{
+  "id": "msu-ode-2004-2-delay-step-value",
+  "title": "Значение решения уравнения с запаздыванием методом шагов",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2004, задача 2",
+        "text": "Пусть абсолютно непрерывная функция u(t) удовлетворяет почти всюду уравнению u'(t)+u(t-1)=0 на [0,3] и u(t)=1 на [-1,0]. Найдите u(3).",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-steps",
+      "title": "Метод шагов",
+      "text": "На каждом следующем отрезке длины 1 правая часть уже известна с предыдущего отрезка, поэтому уравнение становится обычным интегрированием.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "На [0,1] имеем u'(t)=-u(t-1)=-1, поэтому u(t)=1-t. На [1,2] получаем u'(t)=-u(t-1)=t-2 и, так как u(1)=0, u(t)=t^2/2-2t+3/2. На [2,3] уже u'(t)=-u(t-1)=-(t^2/2-3t+4). Поскольку u(2)=-1/2, получаем u(3)=-1/2+integral_2^3(-t^2/2+3t-4)dt=-1/2+1/3=-1/6.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "functional_differential",
+      "olympiad"
+    ],
+    "methods": [
+      "method_of_steps",
+      "integration"
+    ],
+    "objects": [
+      "delay_differential_equation",
+      "absolutely_continuous_solution"
+    ],
+    "goal": [
+      "compute_value"
+    ],
+    "keywords": [
+      "msu-ode-2004-2",
+      "delay_differential",
+      "method_of_steps"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 4,
+    "local_score": 6,
+    "comment": "Идея метода шагов стандартна, но для обычного курса ОДУ это боковая функционально-дифференциальная тема; вычисления короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "functional_differential",
+    "olympiad_style",
+    "complete_proof",
+    "beyond_standard_course",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_04.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Добавлена при аудите старого архива МГУ-ОДУ; это не дубль VJIMC delay-задачи, потому что здесь центральный ход - метод шагов и точное значение."
+    ]
+  }
+}

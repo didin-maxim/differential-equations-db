@@ -22,7 +22,8 @@
         },
         "definition_ids": [
           "boundary_value_problem",
-          "eigenvalue_problem"
+          "eigenvalue_problem",
+          "eigenvalue_of_boundary_value_problem"
         ]
       }
     ]

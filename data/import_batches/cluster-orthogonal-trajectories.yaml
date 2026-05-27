@@ -10,13 +10,15 @@
     "confocal_conics"
   ],
   "problem_ids": [
+    "cluster-orthogonal-trajectories-method-guide",
     "cluster-orthogonal-coaxal-real-base-points",
     "cluster-orthogonal-coaxal-imaginary-base-points",
     "cluster-orthogonal-confocal-conics-gradient"
   ],
   "status": "ai_checked",
   "notes": [
-    "Точечное пополнение: добавлены только три геометрически разные карточки.",
+    "Добавлен отдельный теоретико-методический навигатор и три геометрически разные representative-карточки.",
+    "Методический блок покрывает восстановление поля наклонов, замену наклона на отрицательно обратный, коаксиальные пучки, софокусные коники, exact/separable редукции и стратегию избегать тяжелых ответов.",
     "Существующий представитель orthogonal-trajectories-circles сохранен как базовый близкий пример и связан отношениями; дубль про x^2+y^2=C не добавлялся.",
     "Точные авторы для формулировок не найдены; задачи оформлены как classical_folklore/self_authored exposition на основе проверенных справочных источников."
   ]

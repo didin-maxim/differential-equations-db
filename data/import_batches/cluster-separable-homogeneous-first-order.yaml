@@ -1,0 +1,22 @@
+{
+  "id": "cluster-separable-homogeneous-first-order",
+  "title": "Кластерный аудит: разделение переменных и однородная замена первого порядка",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "separable_equation",
+    "homogeneous_first_order",
+    "stationary_solution_check",
+    "domain_control",
+    "phase_line"
+  ],
+  "problem_ids": [
+    "cluster-separable-homogeneous-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавлен только теоретико-методический навигатор; новые однотипные separable/homogeneous задачи не создавались.",
+    "Блок закрывает распознавание разделяющихся уравнений, потерю стационарных решений при делении, область определения, замену y=xv, рабочий промежуток/конус, связь с логистикой и простую фазовую прямую.",
+    "Representative-задачи остаются существующими карточками seed/oral_exam; новый блок связывает их и соседние кластеры методически."
+  ]
+}

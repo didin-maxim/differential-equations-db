@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-integral-guide-to-putnam1958",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "putnam-early-1958-i3-integral-constraint",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет главный ход этой задачи: заменить интеграл по фиксированному отрезку неизвестной константой и затем определить ее из условия самосогласованности.",
+      "backward_text": "Putnam 1958 I-3 является минимальным представителем ветки Fredholm-подобного фиксированного интеграла, который после решения ОДУ требует обратной проверки.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-putnam1990",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "putnam-modern-1990-b1",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что после дифференцирования интегрального тождества надо вернуть условие при x=0; именно оно фиксирует константу решения f'=f.",
+      "backward_text": "Putnam 1990 B1 показывает опасность потери исходного значения интегрального равенства: производная дает ОДУ, но ответ выбирает недифференцированное условие.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-seemous2010",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "seemous-2010-p1-iterated-integrals-linear-ode",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок выделяет повторные интегралы как Volterra-ветку: несколько дифференцирований превращают цепочку интегралов в линейное ОДУ или систему.",
+      "backward_text": "SEEMOUS 2010 P1 является представителем ветки повторных интегралов, где начальные условия читаются из нижних пределов.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-istcim2022",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "istcim-2022-c-integral-identity-ode",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает параметрический вариант: обе стороны интегрального тождества рассматриваются как функции параметра и сравниваются через одно ОДУ плюс условие на бесконечности.",
+      "backward_text": "ISTCiM 2022 C является продвинутым представителем ветки параметрических интегралов: ОДУ доказывает тождество, а асимптотика заменяет начальное условие.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-kfu2015",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "ru-misc-kfu-2015-15-4",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор помогает распознать, какие интегральные условия после дифференцирования дают обычную ОДУ-задачу и где нужна финальная проверка исходного условия.",
+      "backward_text": "KFU 2015 15.4 служит дополнительным олимпиадным примером того же перехода от интегрального условия к дифференциальному уравнению.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-vjimc2016",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "vjimc-2016-c2-p4-moving-average-delay-variation",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет обычные Volterra/Fredholm-сведения от задач со сдвигом или усреднением: там дифференцирование может дать функционально-дифференциальный соседний механизм.",
+      "backward_text": "VJIMC 2016 C2 P4 показывает границу кластера: интеграл и среднее есть, но задержка и сдвиг требуют дополнительной осторожности.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-existence-guide",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-integral-equation-to-ode-method-guide",
+      "type": "prerequisite",
+      "distance": 2,
+      "forward_text": "После дифференцирования интегрального уравнения нужно понимать, когда полученная задача Коши имеет единственное решение и когда проверка исходного интеграла не породит лишних ветвей.",
+      "backward_text": "Интегральный навигатор использует existence-uniqueness как базовую страховку: ОДУ, полученное дифференцированием, надо решать на корректном интервале и затем сверять с исходным условием.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-linear-variable-guide",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Если дифференцирование интегрального уравнения приводит к линейному ОДУ с переменными коэффициентами, дальше работают ФСР, вронскиан, вариация параметров и стандартные линейные методы.",
+      "backward_text": "Навигатор линейных уравнений продолжает маршрут интегрального блока после того, как интеграл уже устранен и главным объектом стало переменно-коэффициентное ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-integral-guide-to-green-guide",
+      "from": "cluster-integral-equation-to-ode-method-guide",
+      "to": "cluster-green-functions-bvp-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Интегральный навигатор оставляет в своем фокусе случаи, где интеграл устраняется дифференцированием; если интегральное представление является обратным Green-оператором краевой задачи, главный объект переходит в green-functions-bvp.",
+      "backward_text": "Green-навигатор показывает соседний случай, где интеграл не надо уничтожать: ядро G(x,t) само является решением краевой операторной задачи.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    }
+  ]
+}

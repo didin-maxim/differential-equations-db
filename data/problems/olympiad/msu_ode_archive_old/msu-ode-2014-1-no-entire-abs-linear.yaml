@@ -1,0 +1,112 @@
+{
+  "id": "msu-ode-2014-1-no-entire-abs-linear",
+  "title": "Нет решения на всей прямой для y'+|y|+1=0",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2014, задача 1",
+        "text": "Имеется ли среди решений уравнения y'+|y|+1=0 такое, которое определено на всей числовой прямой?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "maximal_solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-backward-crossing",
+      "title": "Посмотреть на отрицательную область назад по времени",
+      "text": "В области y<0 уравнение линейно: y'=y-1. Любое отрицательное решение при движении назад за конечное время достигает нуля, а после этого продолжение в прошлое несовместимо с той же ветвью.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs",
+        "separate_variables"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Нет. Если в некоторый момент y>=0, то y'=-y-1<=-1, поэтому при движении вперед решение за конечное время попадает в область y<0. В области y<0 уравнение имеет вид y'=y-1, откуда y(t)=1+Ce^t, причем C<0. Такое решение при движении назад достигает y=0 в конечный момент t0=ln(-1/C). Значит любое максимальное решение имеет конечный левый конец: его нельзя продолжить на всю прямую. Следовательно, решения, определенного на всей R, не существует.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "olympiad"
+    ],
+    "methods": [
+      "phase_line",
+      "piecewise_linear_solution",
+      "maximal_continuation"
+    ],
+    "objects": [
+      "autonomous_equation",
+      "global_solution",
+      "maximal_solution"
+    ],
+    "goal": [
+      "prove_nonexistence"
+    ],
+    "keywords": [
+      "msu-ode-2014-1",
+      "global_solution",
+      "absolute_value"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 3,
+    "local_score": 6,
+    "comment": "Короткая задача на максимальное продолжение и фазовую прямую; технически почти устная.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_line",
+    "global_solution",
+    "nonexistence",
+    "olympiad_style",
+    "complete_proof",
+    "standard_course_methods",
+    "exam_score_6",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "http://new.math.msu.su/diffur/ODU_14.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Оставлена как компактная олимпиадная проверка глобальности решения, а не как еще один шаблон разделения переменных."
+    ]
+  }
+}

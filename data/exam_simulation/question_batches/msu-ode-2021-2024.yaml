@@ -1,0 +1,98 @@
+{
+  "id": "msu-ode-2021-2024",
+  "title": "Предложения для симуляции экзамена по МГУ ОДУ 2021-2024",
+  "status": "proposal",
+  "created_at": "2026-05-27",
+  "notes": [
+    "Исходные олимпиадные задачи часто слишком идейны для автопроверки; ниже оставлены только low-tech модификации.",
+    "Перед переносом в основной questions.yaml нужно проверить баланс уровней 7-9 и ручные distractor_rationale."
+  ],
+  "questions": [
+    {
+      "id": "exam-sim-proposal-msu-2024-1-first-integral",
+      "card_id": "msu-ode-2024-1-integrating-factor-sine-log",
+      "target_score": 6,
+      "topic": "first_order",
+      "question_type": "application",
+      "answer_mode": "formula",
+      "prompt_override": "Для уравнения из МГУ 2024/1 после умножения на 1/x введите первый интеграл F(x,y).",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "\\sin(x^2y)+\\ln|x|",
+          "\\ln|x|+\\sin(x^2y)"
+        ],
+        "accepted_text": [
+          "sin(x^2*y)+ln|x|",
+          "ln|x|+sin(x^2*y)",
+          "sin(x^2 y)+ln|x|"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-msu-2024-6-counterexample",
+      "card_id": "msu-ode-2024-6-variable-coeff-characteristic-root",
+      "target_score": 8,
+      "topic": "linear_equations",
+      "question_type": "understanding",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Функция t e^t является решением t y'-(t+1)y=0. Что это показывает?",
+      "options": [
+        {
+          "id": "not_constant_coeff_characteristic",
+          "text": "Из решения t e^t не следует кратность корня lambda=1 у характеристического многочлена.",
+          "is_correct": true
+        },
+        {
+          "id": "variable_coeff_has_constant_polynomial",
+          "text": "Уравнение с переменными коэффициентами всегда имеет постоянный характеристический многочлен.",
+          "is_correct": false
+        },
+        {
+          "id": "requires_second_order",
+          "text": "Любое решение вида t e^t требует уравнения второго порядка.",
+          "is_correct": false
+        },
+        {
+          "id": "e_solution_required",
+          "text": "Если e^t не является решением, то t e^t тоже не может быть решением.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-msu-2024-8-trace-average",
+      "card_id": "msu-ode-2024-8-trace-average-bounded-change",
+      "target_score": 8,
+      "topic": "systems_matrix_exponential",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "В условиях карточки среднее значение tr A равно 0, а L и L^{-1} ограничены. Чему равно среднее значение tr B?",
+      "auto_check": {
+        "type": "numeric",
+        "value": 0.0,
+        "tolerance": 0.000001,
+        "accepted_text": [
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-msu-2021-5-max-dimension",
+      "card_id": "msu-ode-2021-5-inhomogeneous-second-order-span",
+      "target_score": 7,
+      "topic": "linear_equations",
+      "question_type": "understanding",
+      "answer_mode": "numeric",
+      "prompt_override": "Какое максимальное число линейно независимых решений может иметь одно неоднородное линейное уравнение второго порядка?",
+      "auto_check": {
+        "type": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "accepted_text": [
+          "3"
+        ]
+      }
+    }
+  ]
+}

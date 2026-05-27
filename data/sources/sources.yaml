@@ -163,6 +163,26 @@
       "note": "Локальный DJVU; для обзорного чтения структуры дополнительно использовался открытый PDF того же издания: НИЦ \"Регулярная и хаотическая динамика\", Ижевск, 2000."
     },
     {
+      "id": "src-libretexts-herman-first-order",
+      "title": "Russell Herman, A First Course in Differential Equations for Scientists and Engineers: Other First Order Equations",
+      "short_name": "Herman/LibreTexts first order",
+      "language": "en",
+      "type": "open_notes",
+      "status": "source_verified",
+      "url": "https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_%28Herman%29/01%3A_First_Order_ODEs/1.04%3A_Other_First_Order_Equations",
+      "note": "Открытая страница LibreTexts по нелинейным уравнениям первого порядка; использован раздел Lagrange and Clairaut Equations, где Клеро представлен как частный случай Лагранжа и обсуждаются singular solutions/envelopes."
+    },
+    {
+      "id": "src-brown-dobrush-singular-solutions",
+      "title": "Vladimir Dobrushkin, Brown University AM33: Singular Solutions",
+      "short_name": "Brown AM33 singular solutions",
+      "language": "en",
+      "type": "open_notes",
+      "status": "source_verified",
+      "url": "https://www.cfm.brown.edu/people/dobrush/am33/Mathematica/ch2/singular.html",
+      "note": "Открытая заметка по singular solutions для F(x,y,y')=0, переходу к нормальной форме и примерам Клеро/огибающих; используется только как методическая внешняя ссылка."
+    },
+    {
       "id": "src-lebl-diffyqs",
       "title": "Jiří Lebl, Notes on Diffy Qs: Differential Equations for Engineers",
       "short_name": "Lebl, Notes on Diffy Qs",
@@ -203,6 +223,16 @@
       "note": "Использованы problem sets и solution keys 1-9; условия переписаны по-русски и решения даны в стиле базы, с локатором problem set/problem внутри карточек."
     },
     {
+      "id": "src-mit-1803sc-ode",
+      "title": "MIT OpenCourseWare 18.03SC Differential Equations, Fall 2011",
+      "short_name": "MIT 18.03SC ODE",
+      "language": "en",
+      "type": "video_course",
+      "status": "source_verified",
+      "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/",
+      "note": "Открытый курс с видеолекциями, заметками и практическими материалами; добавлен как компактная внешняя ссылка для методического блока по существованию, единственности и продолжению."
+    },
+    {
       "id": "src-trench-ode-bvp",
       "title": "William F. Trench, Elementary Differential Equations with Boundary Value Problems",
       "short_name": "Trench ODE BVP",
@@ -231,6 +261,34 @@
       "status": "source_verified",
       "url": "https://www-users.cse.umn.edu/~jwcalder/CalculusOfVariations.pdf",
       "note": "Открытый конспект University of Minnesota; для кластерного аудита использованы Chapter 4.4, Theorems 4.25-4.26 и Remark 4.27 о прямом методе, коэрцитивности, выпуклости и единственности минимизатора."
+    },
+    {
+      "id": "src-gelfand-fomin-calculus-variations",
+      "title": "И. М. Гельфанд, С. В. Фомин, Вариационное исчисление",
+      "short_name": "Гельфанд-Фомин, ВИ",
+      "language": "ru",
+      "type": "book",
+      "status": "seed_reference",
+      "note": "Классический русскоязычный учебник; добавлен как теоретическая опора для первой вариации, уравнения Эйлера, изопериметрии, полей экстремалей и достаточных условий. В этом проходе использован как общая классическая ссылка, без переноса конкретных задач."
+    },
+    {
+      "id": "src-sagan-calculus-variations",
+      "title": "Hans Sagan, Introduction to the Calculus of Variations",
+      "short_name": "Sagan, Calculus of Variations",
+      "language": "en",
+      "type": "book",
+      "status": "seed_reference",
+      "note": "Классическое учебное изложение вариационного исчисления; добавлено как справочный источник по натуральным условиям, трансверсальности, изопериметрическим задачам и второй вариации."
+    },
+    {
+      "id": "src-mit-18086-calculus-variations-video",
+      "title": "MIT OpenCourseWare 18.086 Mathematical Methods for Engineers II: Lecture 23, Calculus of Variations / Weak Form",
+      "short_name": "MIT 18.086: Calculus of Variations",
+      "language": "en",
+      "type": "video_lecture",
+      "status": "source_verified",
+      "url": "https://live.ocw.mit.edu/courses/18-086-mathematical-methods-for-engineers-ii-spring-2006/resources/lecture-23-calculus-of-variations-weak-form/",
+      "note": "Открытая видеолекция MIT OCW; использована как компактная видео-ссылка на вариационный вывод и слабую форму, дополняющая локальную программу и классические тексты."
     },
     {
       "id": "src-didin-variational-cluster-audit",
@@ -298,6 +356,26 @@
       "note": "Компактные постановки, добавленные при кластерном аудите 2026-05-27: область продолжения данных Коши, характеристические данные, неединственность, пересечение характеристик и геометрия транспортного потока. Внешний источник не выдумывался."
     },
     {
+      "id": "src-kth-method-characteristics-notes",
+      "title": "John Andersson, First order PDE: The Methods of Characteristics",
+      "short_name": "KTH characteristics notes",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://www.kth.se/social/files/55fbf802f27654654479b6dd/Lectures_Method_of_Characteristics.pdf",
+      "note": "Открытый конспект KTH, 2015; использован для методического блока по характеристической системе, данным на кривой, существованию, единственности и геометрическим ограничениям метода."
+    },
+    {
+      "id": "src-umd-first-order-pde-characteristics",
+      "title": "University of Maryland Math 462 notes: First order PDE and method of characteristics",
+      "short_name": "UMD first-order PDE notes",
+      "language": "en",
+      "type": "course_notes",
+      "status": "source_verified",
+      "url": "https://math.umd.edu/~petersd/462/charact.pdf",
+      "note": "Короткий открытый конспект по линейным уравнениям первого порядка в частных производных и методу характеристик; добавлен как компактная внешняя сверка формул."
+    },
+    {
       "id": "src-didin-sturm-oscillation-comparison-audit",
       "title": "М. Дидин, модельные задачи для аудита кластера Штурма",
       "short_name": "Дидин: Sturm-аудит",
@@ -355,6 +433,46 @@
       "status": "source_verified",
       "url": "https://innopolis.university/filespublic/TasksSols2024.pdf",
       "note": "Официальный PDF задач и решений 2024 года; импортирована постановка Task 6, но решение в карточке исправляет склейку ветвей в официальном примере."
+    },
+    {
+      "id": "src-test-lyapunov-stability-alekseev",
+      "title": "Тестовый архив ДУ: устойчивость по Ляпунову",
+      "short_name": "Тесты ДУ: устойчивость",
+      "language": "ru",
+      "type": "local_test_archive",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\Устойчивость решения по Ляпунову и асимптотическая устойчивость.zip",
+      "authors": [
+        "Алексеев В.А.",
+        "Дубинская В.Ю."
+      ],
+      "note": "Источник сверялся по локальному архиву с файлами Алексеев.tex и Алексеев.pdf. В строке темы 'Устойчивость по Ляпунову' файла C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx указаны исполнители Алексеев В.А., Дубинская В.Ю.; Алексеев В.Б. присутствует только в общем списке авторов и для этой темы не использован."
+    },
+    {
+      "id": "src-test-du-limit-cycles",
+      "title": "Тестовый архив ДУ: исследование предельных циклов",
+      "short_name": "Тесты ДУ: предельные циклы",
+      "language": "ru",
+      "type": "local_test_archive",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\Исследование предельных циклов.zip",
+      "authors": [
+        "Деркач М.М."
+      ],
+      "note": "Источник сверялся по локальному архиву с PDF limit cycles.pdf. Автор/исполнитель взят из строки темы 'Исследование предельных циклов' файла C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx."
+    },
+    {
+      "id": "src-test-du-implicit-first-order-lopushanski",
+      "title": "Тесты по ДУ: уравнения первого порядка, не разрешенные относительно производной",
+      "short_name": "Тесты ДУ: неразрешенные ОДУ",
+      "language": "ru",
+      "type": "local_test_archive",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\Уравнения первого порядка, не разрешенные относительно производной.zip",
+      "authors": [
+        "Лопушански М.С."
+      ],
+      "note": "Источник сверялся по локальному архиву с PDF/TeX. Автор/исполнитель взят из строки темы файла C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx; импорт выборочный, без дублей клеровских задач."
     }
   ]
 }

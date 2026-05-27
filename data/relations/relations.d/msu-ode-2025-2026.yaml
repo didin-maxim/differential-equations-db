@@ -1,0 +1,114 @@
+{
+  "relations": [
+    {
+      "id": "rel-msu-2025-2-to-recover-min-order",
+      "from": "cluster-recover-parameter-count-order-diagnostic",
+      "to": "msu-ode-2025-2-min-order-polynomial-solutions",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Диагностика числа параметров в семействе решений готовит к подсчету минимального порядка по размерности линейной оболочки.",
+      "backward_text": "МГУ 2025/2 дает линейно-однородный вариант той же идеи: порядок ограничивает размерность пространства решений.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-msu-2025-3-to-linear-stability",
+      "from": "lyapunov-linearization-example",
+      "to": "msu-ode-2025-3-gyroscopic-stabilization",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Критерий устойчивости двумерной линейной системы по следу и определителю является базой для параметрической задачи.",
+      "backward_text": "МГУ 2025/3 показывает, как кососимметрическая связь меняет определитель, но не след.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-msu-2025-6-to-matrix-exp",
+      "from": "cluster-matrix-exp-det-trace-shortcut",
+      "to": "msu-ode-2025-6-global-matrix-riccati-invertible",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Обе карточки учат читать матричное уравнение через универсальные операции с матрицами, а не через покоординатные вычисления.",
+      "backward_text": "МГУ 2025/6 вместо экспоненты использует обратную матрицу: (A^{-1})'=-I превращает нелинейное уравнение в линейное.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-msu-2025-7-to-picard",
+      "from": "picard-lindelof-theorem",
+      "to": "msu-ode-2025-7-superstable-second-order-impossible",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Локальная задача Коши для уравнения второго порядка показывает, что состояние включает y и y'.",
+      "backward_text": "МГУ 2025/7 проверяет понимание определения устойчивости: нельзя контролировать второпорядковую динамику только через y(0).",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-msu-2026-3-to-phase-line",
+      "from": "autonomous-phase-line-stability",
+      "to": "msu-ode-2026-3-decoupled-phase-curves-count",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Фазовая прямая для автономного уравнения является строительным блоком для подсчета инвариантных горизонталей и вертикалей.",
+      "backward_text": "МГУ 2026/3 соединяет две фазовые прямые в задачу на геометрию фазовых кривых на плоскости.",
+      "status": "ai_checked",
+      "confidence": 0.83
+    },
+    {
+      "id": "rel-msu-2026-5-to-limit-cycles",
+      "from": "test-limit-cycles-radial-semistable",
+      "to": "msu-ode-2026-5-polar-stable-not-asymptotic",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Радиальная редукция и инвариантные окружности являются базовым механизмом классификации устойчивости циклов.",
+      "backward_text": "МГУ 2026/5 использует бесконечную последовательность инвариантных окружностей, чтобы получить устойчивость нуля без асимптотической устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-msu-2026-6-to-parameter-dependence",
+      "from": "cluster-parameter-system-sensitivity",
+      "to": "msu-ode-2026-6-singular-linear-system-epsilon",
+      "type": "generalization",
+      "distance": 2,
+      "forward_text": "Обычная чувствительность по параметру готовит к вопросу, когда сингулярный параметр все же не влияет на выбранную ветвь решения.",
+      "backward_text": "МГУ 2026/6 показывает пограничный случай: при epsilon=0 система становится дифференциально-алгебраической, но специальное начальное условие убивает быстрый слой.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-msu-2025-2-to-2021-solution-space-span",
+      "from": "msu-ode-2025-2-min-order-polynomial-solutions",
+      "to": "msu-ode-2021-5-inhomogeneous-second-order-span",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи читают порядок линейного уравнения через размерность пространства или аффинного семейства решений.",
+      "backward_text": "МГУ 2021/5 является более тонким родственником: неоднородность дает аффинное пространство и вронскианную обструкцию.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-msu-2025-3-to-linear-plane-classification",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "msu-ode-2025-3-gyroscopic-stabilization",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Классификация линейной системы на плоскости по следу и определителю является прямым инструментом для выбора параметра a.",
+      "backward_text": "МГУ 2025/3 показывает параметрический вариант: кососимметричная связь меняет determinant, но оставляет trace.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-msu-2025-6-to-scalar-riccati-global-contrast",
+      "from": "local-du-programs-other-years-riccati-global-continuation",
+      "to": "msu-ode-2025-6-global-matrix-riccati-invertible",
+      "type": "contrast",
+      "distance": 3,
+      "forward_text": "Скалярная задача Риккати доказывает глобальность через барьеры и критерий продолжения.",
+      "backward_text": "Матричная задача Риккати решается другим ходом: обратная матрица линеаризует A'=A^2 и сразу дает глобальный невырожденный пример.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    }
+  ]
+}

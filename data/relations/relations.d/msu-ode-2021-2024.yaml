@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-msu-2024-1-to-mu-x",
+      "from": "oral-above-three-integrating-factor-x-only",
+      "to": "msu-ode-2024-1-integrating-factor-sine-log",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Короткая устная задача учит критерию множителя mu(x); МГУ 2024/1 добавляет олимпиадную аккуратность с потерянным решением x=0.",
+      "backward_text": "После множителя 1/x задача снова сводится к восстановлению потенциала полной формы.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-msu-2024-1-to-family",
+      "from": "msu-ode-2024-1-integrating-factor-sine-log",
+      "to": "msu-ode-2008-11-integrating-factor-family",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Здесь найден один конкретный множитель; задача 2008/11 объясняет, как после найденного первого интеграла устроено все семейство множителей.",
+      "backward_text": "Семейство множителей обобщает конкретный найденный множитель 1/x.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-msu-2024-6-to-variable-coeff-power",
+      "from": "msu-ode-2024-6-variable-coeff-characteristic-root",
+      "to": "olympiad-level-power-solution-linear-ode-criterion",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи проверяют, когда простая пробная функция действительно заставляет коэффициенты линейного ОДУ удовлетворять алгебраическому условию.",
+      "backward_text": "Критерий для степенного решения является родственным вариантом: вместо e^{lambda t} используются степени и вронскианный аргумент.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-msu-2024-8-to-trace-det-shortcut",
+      "from": "cluster-matrix-exp-det-trace-shortcut",
+      "to": "msu-ode-2024-8-trace-average-bounded-change",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Короткая карточка det(e^{At})=e^{tr(A)t} дает постояннокэффициентный прообраз формулы Лиувилля; МГУ 2024/8 переносит ее на неавтономную систему и ограниченную замену.",
+      "backward_text": "Задача является неавтономным вариантом той же идеи: след управляет логарифмом определителя фундаментальной матрицы.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-msu-2024-8-to-liouville-area",
+      "from": "oral-above-three-liouville-area-preservation",
+      "to": "msu-ode-2024-8-trace-average-bounded-change",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Нулевая дивергенция/след как сохранение площади является простым случаем контроля среднего логарифмического роста объема.",
+      "backward_text": "Ограниченная замена координат не меняет среднюю скорость изменения фазового объема.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-msu-2021-2-to-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "msu-ode-2021-2-nonextendable-blowup-coordinates",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Теорема о продолжении объясняет, почему непродолжаемое решение на конечном конце должно уходить из каждого компакта.",
+      "backward_text": "Задача проверяет тонкую разницу между уходом нормы и покоординатным пределом.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-msu-2021-2-to-blowup-alt",
+      "from": "cluster-existence-blow-up-alternative",
+      "to": "msu-ode-2021-2-nonextendable-blowup-coordinates",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Blow-up alternative говорит об уходе из компактов; олимпиадная задача показывает, что это не означает покоординатный предел +infty.",
+      "backward_text": "Контрпример с вращающимся направлением уточняет смысл фразы 'решение уходит на бесконечность'.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-msu-2021-5-to-three-solutions",
+      "from": "cluster-linear-variable-inhomogeneous-three-solutions",
+      "to": "msu-ode-2021-5-inhomogeneous-second-order-span",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Карточка про три решения восстанавливает общее решение неоднородного уравнения; МГУ 2021/5 спрашивает, почему вообще могут появиться три линейно независимые функции.",
+      "backward_text": "Аффинная плоскость решений объясняет, почему по трем независимым решениям можно восстановить неоднородный общий вид.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-msu-2021-5-to-abel-wronskian",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "msu-ode-2021-5-inhomogeneous-second-order-span",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Лемма Абеля о нулях вронскиана дает запрет на фундаментальную систему однородного уравнения третьего порядка, если вронскиан выбранной тройки обращается в ноль.",
+      "backward_text": "Задача использует лемму Абеля как обструкцию, а не как обычный тест линейной зависимости.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    }
+  ]
+}

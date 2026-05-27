@@ -1,0 +1,111 @@
+{
+  "id": "written-mipt-2002-v4-implicit-log-singular",
+  "title": "Неявное уравнение с логарифмом производной и особой кривой",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2002/2003, вариант 4, задача 6",
+        "text": "Решить уравнение xy'+ln x-ln y'-2y=0, найти особые решения и начертить интегральные кривые. Рассматривать область x>0, y'>0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "singular_solution",
+          "discriminant_curve",
+          "integral_curve"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Дифференцировать уравнение с p=y'",
+      "text": "Запишем y=(xp+ln x-ln p)/2 и продифференцируем. Получится произведение, которое дает либо регулярное семейство p=Cx, либо особую ветвь px=1.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть p=y'>0. Из уравнения y=(xp+ln x-ln p)/2. Дифференцируем по x: p=(p+xp'+1/x-p'/p)/2. Поэтому p-1/x=(x-1/p)p'. Если px!=1, то p'=p/x, значит p=Cx, C>0. Подстановка в исходное уравнение дает семейство y=(Cx^2-ln C)/2. Если px=1, то p=1/x, и исходное уравнение дает особую кривую y=1/2+ln x. Она является огибающей семейства: для y=(Cx^2-ln C)/2 условие partial_C y=0 дает C=1/x^2 и ровно y=1/2+ln x.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "implicit_first_order"
+    ],
+    "methods": [
+      "p_parameter",
+      "envelope",
+      "discriminant_curve"
+    ],
+    "objects": [
+      "singular_solution",
+      "integral_curves"
+    ],
+    "goal": [
+      "solve",
+      "find_singular_solution"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "MIPT_2002_2003",
+      "variant_4",
+      "implicit_ode",
+      "log_derivative"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 4,
+    "local_score": 5,
+    "comment": "Задача стандартна для неразрешенных уравнений, но факторизация после дифференцирования требует аккуратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "implicit_ode_discriminant",
+    "clairaut",
+    "singular_point_analysis",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\du^02.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2002-2004-links",
+    "notes": [
+      "Добавлено вместо нескольких похожих неявных уравнений пачки: здесь есть короткая огибающая и не слишком тяжелая алгебра."
+    ]
+  }
+}

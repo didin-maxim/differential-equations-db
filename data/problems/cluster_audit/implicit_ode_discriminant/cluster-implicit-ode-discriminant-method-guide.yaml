@@ -1,0 +1,337 @@
+{
+  "id": "cluster-implicit-ode-discriminant-method-guide",
+  "title": "Методический навигатор: неразрешенные ОДУ и дискриминант",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для неразрешенного уравнения первого порядка F(x,y,p)=0, p=y', сначала рассматривают поверхность F=0 в пространстве (x,y,p). В регулярной точке F_p != 0 по теореме о неявной функции выбирают ветвь p=f_i(x,y) и получают обычное поле направлений; задача Коши на такой ветви разбирается стандартной теорией существования и единственности. Дискриминантное множество получают из F=0, F_p=0 и проектируют на плоскость (x,y): там ветви могут сливаться, менять число или терять локальную единственность. Однако дискриминантная кривая сама является решением только после отдельной проверки: если она задается y=phi(x), нужно подставить p=phi'(x) в исходное F(x,phi,phi')=0; вертикальная или не являющаяся графиком компонента не является решением y(x). Особые решения часто возникают как огибающие общего семейства интегральных кривых, но не всякий дискриминант есть огибающая и не всякая огибающая появляется без проверки исходного уравнения. Уравнения Клеро y=xp+g(p) и Лагранжа y=x f(p)+g(p) служат стандартными моделями: дифференцирование по x отделяет ветвь p=const или уравнение для x(p) от особых кривых и огибающих.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-local-du-written-exams",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-libretexts-herman-first-order",
+          "src-brown-dobrush-singular-solutions"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "integral_curve",
+          "general_solution",
+          "particular_solution",
+          "singular_solution",
+          "discriminant_curve",
+          "direction_field"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-branch-first",
+      "title": "Регулярная ветвь идет раньше дискриминанта",
+      "text": "Если в точке F_p != 0, уравнение локально задает p=f(x,y). На этой ветви работают обычные понятия задачи Коши, интегральной кривой, общего и частного решения; дискриминант начинается там, где эта редукция ломается.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "cauchy_problem",
+        "integral_curve",
+        "general_solution",
+        "particular_solution"
+      ]
+    },
+    {
+      "id": "idea-discriminant-is-candidate",
+      "title": "Дискриминант является кандидатом, а не ответом",
+      "text": "Система F=0, F_p=0 находит точки с вырождением по наклону. Чтобы назвать найденную кривую особым решением, нужно проверить, что она является графиком функции и удовлетворяет исходному уравнению с собственным наклоном.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "discriminant_curve",
+        "singular_solution",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-envelope-test",
+      "title": "Огибающая требует двух проверок",
+      "text": "Из общего семейства Phi(x,y,C)=0 огибающую ищут по Phi=0 и Phi_C=0. После исключения C надо проверить касание к семейству и отдельно подстановку в исходное F(x,y,y')=0; иначе можно получить геометрическую кривую без статуса решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "singular_solution",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-clairaut-lagrange",
+      "title": "Клеро и Лагранж являются учебными якорями",
+      "text": "В Клеро после дифференцирования получается множитель p'=0 и множитель, дающий огибающую. В Лагранже p удобно считать параметром: получается линейное уравнение для x(p), а особые кривые возникают из вырожденных условий и требуют подстановки.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "singular_solution"
+      ]
+    },
+    {
+      "id": "idea-cauchy-branching",
+      "title": "Данные Коши должны выбрать ветвь",
+      "text": "В регулярной точке начальные данные вместе с выбранным корнем p_i дают обычную локальную задачу. На дискриминанте возможны несколько продолжений, переключение ветвей или отсутствие графика решения, поэтому единственность нельзя переносить автоматически.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "cauchy_problem",
+        "discriminant_curve",
+        "integral_curve"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-method-route",
+      "title": "Маршрут разбора",
+      "text": "1. Записать p=y' и F(x,y,p)=0, не деля на выражения, которые могут обратиться в нуль. 2. Найти регулярные области: если F_p != 0, локально разрешить p=f_i(x,y) и работать с каждой ветвью как с обычным уравнением y'=f_i(x,y). 3. Найти дискриминант из F=0 и F_p=0; спроектировать его на (x,y), отметив, является ли компонента графиком y=phi(x). 4. Проверить статус каждой дискриминантной компоненты: вычислить phi'(x) и подставить F(x,phi(x),phi'(x)); для вертикальных компонент сразу отметить, что это не решение в классе функций y(x). 5. Если есть общее семейство Phi(x,y,C)=0, найти огибающую через Phi=0, Phi_C=0 и сверить ее с дискриминантом и исходным уравнением. 6. Для Клеро и Лагранжа после дифференцирования отделить регулярное семейство от особых кривых, не теряя ветви p=const и вырожденные значения параметра. 7. В задаче Коши явно указать, сколько регулярных ветвей проходит через точку и попадает ли точка на дискриминант; только после этого говорить о существовании, единственности или ветвлении.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "cauchy_problem",
+        "discriminant_curve",
+        "singular_solution",
+        "integral_curve",
+        "general_solution",
+        "particular_solution"
+      ]
+    },
+    {
+      "id": "guide-method-choice",
+      "title": "Как выбрать прием",
+      "text": "Если F_p != 0 в начальной точке, главный прием - теорема о неявной функции и переход к нормальной форме. Если F_p=0, главный объект - дискриминант и число ветвей по p. Если дана формула общего семейства, главный прием - огибающая через производную по параметру. Если уравнение имеет вид Клеро или Лагранжа, главный прием - дифференцирование после p=y' и параметризация через p. Если вопрос формулируется как задача Коши, главный прием - подсчитать допустимые наклоны и проверить регулярность каждого корня. Если найденная кривая не является графиком y(x), ее описывают как геометрическую границу поля направлений, но не как решение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "cauchy_problem",
+        "direction_field",
+        "discriminant_curve",
+        "singular_solution"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя считать F=0, F_p=0 готовым особым решением: это только дискриминантный кандидат. Нельзя применять Пикара-Линделефа к F(x,y,y')=0 без выбора регулярной ветви p=f(x,y). Нельзя забывать, что разные корни по p дают разные поля направлений даже в одной точке (x,y). Нельзя отбрасывать множители при дифференцировании уравнений Клеро и Лагранжа: именно отброшенный множитель часто дает особую кривую. Нельзя объявлять вертикальную дискриминантную прямую решением для функции y(x). Нельзя добавлять в кластер очередной коэффициентный вариант Клеро, если он не меняет статус дискриминанта, ветвление или проверку задачи Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "implicit_function_theorem",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "solution",
+        "discriminant_curve",
+        "singular_solution",
+        "initial_value_problem"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_ode",
+      "lagrange_clairaut",
+      "initial_value_problem"
+    ],
+    "methods": [
+      "implicit_function_theorem",
+      "regular_branch_analysis",
+      "discriminant_curve",
+      "singular_solution",
+      "envelope",
+      "clairaut_envelope",
+      "lagrange_parameterization",
+      "branch_switching",
+      "cauchy_branch_count"
+    ],
+    "objects": [
+      "implicit_first_order",
+      "direction_field",
+      "regular_branch",
+      "discriminant_set",
+      "singular_solution",
+      "envelope",
+      "integral_curve",
+      "general_solution",
+      "particular_solution",
+      "nonunique_solution"
+    ],
+    "goal": [
+      "choose_method",
+      "classify",
+      "describe_singular_solution",
+      "test_discriminant_solution",
+      "diagnose_nonuniqueness",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "implicit-ode-discriminant",
+      "implicit_ode_discriminant",
+      "method_guide",
+      "F(x,y,p)=0",
+      "discriminant_curve",
+      "singular_solution",
+      "envelope",
+      "clairaut",
+      "lagrange",
+      "branch_switching",
+      "cauchy_problem"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет громоздких параметризаций; сложность в правильной диагностике ветвей, дискриминанта и статуса особой кривой.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "implicit_ode_discriminant",
+    "clairaut",
+    "cauchy_problem",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "mipt_core",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Разделы программы по уравнениям первого порядка",
+      "note": "Локальная программа фиксирует место неразрешенных уравнений, задачи Коши и особых решений в курсе ДУ."
+    },
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "exam_archive",
+      "status": "source_verified",
+      "locator": "ДУ_В_22 задача 7; DE2014-15 вариант 51 задача 8; ДУ_2020_весна вариант 1 задача 2",
+      "note": "Письменные представители покрывают параметрический дискриминант, Клеро со сдвигом и Лагранжа с двумя особыми кривыми."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "Разделы по уравнениям первого порядка и уравнениям, не разрешенным относительно производной",
+      "note": "Русскоязычный задачный фон для Клеро, Лагранжа, огибающих и работы с p=y'."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "Номера по особым решениям, упомянутые в локальных обзорах",
+      "note": "Классический задачник для проверки, что добавляемые карточки не превращаются в однотипные варианты особых решений."
+    },
+    {
+      "source_id": "src-libretexts-herman-first-order",
+      "role": "open_notes",
+      "status": "source_verified",
+      "locator": "Section 1.4, Lagrange and Clairaut Equations",
+      "note": "Открытый конспект с формами Клеро и Лагранжа, сингулярным решением и огибающей."
+    },
+    {
+      "source_id": "src-brown-dobrush-singular-solutions",
+      "role": "open_notes",
+      "status": "source_verified",
+      "locator": "Singular Solutions",
+      "note": "Открытый разбор F(x,y,y')=0, перехода к нормальной форме, general/singular solutions и огибающей."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Основной локальный ориентир по месту темы в курсе."
+    },
+    {
+      "source_id": "src-local-du-written-exams",
+      "priority": 2,
+      "comment": "Экзаменационные представители кластера."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Русскоязычный задачный фон."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 4,
+      "comment": "Классический задачник для сверки вариантов особых решений."
+    },
+    {
+      "source_id": "src-libretexts-herman-first-order",
+      "priority": 5,
+      "comment": "Открытая англоязычная заметка по Клеро и Лагранжу."
+    },
+    {
+      "source_id": "src-brown-dobrush-singular-solutions",
+      "priority": 6,
+      "comment": "Открытая заметка по singular solutions и F(x,y,y')=0."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-implicit-ode-discriminant-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера, а не как новая вычислительная задача.",
+      "Новые определения не добавлялись: использованы definition_ids для задачи Коши, интегральной кривой, общего/частного решения, особого решения и дискриминантной кривой.",
+      "Клеро и Лагранж включены как маршрутизаторы и дедупликационные якоря; коэффициентные варианты без новой геометрии по-прежнему не добавлять."
+    ]
+  }
+}

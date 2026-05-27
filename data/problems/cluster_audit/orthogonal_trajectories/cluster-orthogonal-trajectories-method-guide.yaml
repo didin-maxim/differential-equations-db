@@ -1,0 +1,294 @@
+{
+  "id": "cluster-orthogonal-trajectories-method-guide",
+  "title": "Методический навигатор: ортогональные траектории семейств кривых",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В задачах на ортогональные траектории исходно задано семейство кривых Phi(x,y,C)=0, y=phi(x,C) или геометрическое описание уровней. Первый шаг совпадает с recover-ode-from-family: дифференцируют исходное семейство при постоянном параметре и исключают параметр, получая наклон исходных кривых y'=f(x,y), либо берут нормаль grad Phi для линий уровня. Второй шаг специфичен именно для ортогональных траекторий: в регулярной точке наклон нового семейства равен -1/f(x,y), если f конечен и ненулевой; вертикальные и горизонтальные направления обрабатывают как предельные случаи или через дифференциальную форму, чтобы не потерять оси и вырожденные кривые. После этого решают полученное ОДУ первого порядка: часто оно разделяется, становится линейным после замены u=x^2 или u=y^2, либо распознается как точная форма M dx+N dy=0. Однако хорошее решение не обязано превращаться в тяжелую алгебру: для пучков окружностей лучше узнать сопряженный коаксиальный пучок, а для софокусных коник - сравнить градиенты уровней r1+r2 и r1-r2. Кластер отделяется от recover-ode-from-family тем, что восстановленное поле наклонов здесь только промежуточно; от separable-homogeneous-first-order тем, что разделение переменных является последним техническим шагом; от integrating-factor-exact-forms тем, что точность формы служит способом интегрировать ортогональное поле, а не самостоятельной целью подбора множителя.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-mit-1803sc-ode",
+          "src-lebl-diffyqs",
+          "src-classical-orthogonal-trajectories"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "integral_curve",
+          "direction_field",
+          "orthogonal_trajectories",
+          "separable_equation",
+          "exact_equation",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-recover-then-rotate",
+      "title": "Сначала восстановить наклон, затем повернуть поле",
+      "text": "Для Phi(x,y,C)=0 дифференцируют Phi_x+Phi_y y'=0 при фиксированном C и исключают C. Полученный наклон исходного семейства заменяют на отрицательно обратный. Если удобнее работать с 1-формами, то исходное касательное поле M dx+N dy=0 заменяют на ортогональное поле с повернутым направлением, не деля на выражения, которые могут обращаться в нуль.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "direction_field",
+        "orthogonal_trajectories",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-geometric-pencils",
+      "title": "Пучки окружностей часто лучше узнавать геометрически",
+      "text": "Окружности с общим центром дают ортогональные радиальные прямые. Коаксиальный пучок через две действительные точки ортогонален сопряженному пучку окружностей Аполлония; коаксиальный пучок без действительных общих точек меняет роли с пучком через реальные предельные точки. В таких задачах вычисление наклона нужно как проверка, а не как единственный смысл ответа.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "orthogonal_trajectories",
+        "direction_field"
+      ]
+    },
+    {
+      "id": "idea-confocal-levels",
+      "title": "Софокусные коники удобнее доказывать через уровни",
+      "text": "Эллипсы r1+r2=const и гиперболы r1-r2=const не требуют развернутого уравнения коники. Их нормали равны grad(r1+r2)=e1+e2 и grad(r1-r2)=e1-e2, где e1,e2 - единичные векторы от фокусов; скалярное произведение равно нулю. Это короткий путь к ортогональности без тяжелого ответа.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "orthogonal_trajectories"
+      ]
+    },
+    {
+      "id": "idea-neighbor-boundaries",
+      "title": "Соседние методы определяются главной целью",
+      "text": "Если задача просит только восстановить ОДУ данного семейства, это recover-ode-from-family. Если после ортогонального поворота осталось dy/dx=a(x)b(y), это не переносит задачу в separable-homogeneous-first-order: разделение лишь закрывает вычисление. Если ортогональное поле записано полной формой dF=0 или требует простого множителя, это связь с exact-forms, но главная цель остается геометрической: найти семейство F=C, ортогональное исходному.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "orthogonal_trajectories",
+        "separable_equation",
+        "exact_equation",
+        "integrating_factor"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут решения",
+      "text": "1. Записать исходное семейство в форме, где параметр легко исключается, или как линии уровня. 2. Найти касательное поле исходных кривых: дифференцировать при фиксированном параметре, исключить параметр и отметить точки, где деление запрещено. 3. Заменить наклон m на -1/m; вертикальные и горизонтальные направления проверять отдельно либо работать через векторы/формы. 4. Решить новое уравнение самым коротким способом: разделение, линейное уравнение для x^2 или y^2, точная форма, потенциал уровня или геометрическое распознавание. 5. Записать ответ как семейство кривых и проверить ортогональность в регулярных точках. 6. Не усложнять ответ: если геометрия пучка окружностей или софокусных уровней уже дает семейство, алгебраическая нормальная форма нужна только для контроля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "direction_field",
+        "orthogonal_trajectories",
+        "separable_equation",
+        "exact_equation"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не заменять исходный наклон на отрицательно обратный до исключения параметра: иначе в ответе останется C вместо поля на плоскости. Не делить без проверки на x, y, Phi_y или выражение для наклона: так теряются оси, прямые и вырожденные члены пучка. Не считать всякое разделяющееся уравнение задачей separable-кластера, если оно появилось только после ортогонального поворота. Не разворачивать софокусные коники до громоздких квадратных уравнений, когда градиенты уровней дают ортогональность в одну строку. Не добавлять новые карточки, где меняется только нормировка окружности или параметра, а метод уже покрыт существующим представителем.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "separate_variables"
+      ],
+      "definition_ids": [
+        "integral_curve",
+        "orthogonal_trajectories",
+        "separable_equation",
+        "exact_equation"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "implicit_family",
+      "level_curves",
+      "exact_form",
+      "separable"
+    ],
+    "methods": [
+      "orthogonal_trajectories",
+      "recover_ode_from_family",
+      "parameter_elimination",
+      "orthogonal_slope",
+      "gradient_orthogonality",
+      "level_sets",
+      "separate_variables",
+      "exact_equation",
+      "geometric_proof",
+      "neighbor_cluster_boundary"
+    ],
+    "objects": [
+      "family_of_curves",
+      "integral_curve",
+      "direction_field",
+      "orthogonal_trajectories",
+      "coaxal_circles",
+      "confocal_conics",
+      "level_curves"
+    ],
+    "goal": [
+      "choose_method",
+      "derive",
+      "solve",
+      "explain_geometry",
+      "avoid_heavy_computation",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "orthogonal-trajectories",
+      "method_guide",
+      "orthogonal_trajectories",
+      "negative reciprocal slope",
+      "recover ODE from family",
+      "coaxal circles",
+      "confocal conics",
+      "exact forms boundary",
+      "separable boundary",
+      "avoid heavy answers"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок почти не добавляет вычислений; сложность в диагностике геометрии, корректной замене наклона и выборе короткого ответа.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "orthogonal_trajectories",
+    "recover_ode_from_family",
+    "separable",
+    "exact_equation",
+    "graphical_construction",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "task_cluster",
+    "method_guide",
+    "theory_bridge",
+    "cluster_representative",
+    "duplicate_filtered",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый курс ОДУ: поля направлений, семейства интегральных кривых и стандартная задача на ортогональные траектории окружностей."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Задачник полезен для русскоязычной терминологии первого порядка: семейства кривых, исключение параметров, точные и разделяющиеся уравнения."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник по ОДУ; используется как сверка уровня стандартных вычислений и соседних методов первого порядка."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "note": "Открытые конспекты с recover-family задачами на окружности; полезны для границы между восстановлением ОДУ и ортогональными траекториями."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "open_course",
+      "status": "source_verified",
+      "note": "Открытый курс по уравнениям первого порядка, полям направлений и базовым методам решения."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "note": "Открытый учебник для языка first-order equations, slope fields, solution curves и стандартных методов интегрирования."
+    },
+    {
+      "source_id": "src-classical-orthogonal-trajectories",
+      "role": "classical_reference",
+      "status": "classical_folklore",
+      "note": "Классическая геометрия ортогональных траекторий, сопряженных пучков окружностей и софокусных коник; блок оформлен как авторское учебное изложение."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной локальный язык и базовая задача на окружности."
+    },
+    {
+      "source_id": "src-classical-orthogonal-trajectories",
+      "priority": 2,
+      "comment": "Геометрическое ядро кластера: коаксиальные пучки и софокусные коники."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 3,
+      "comment": "Ближайший сосед recover-family на окружностях."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 4,
+      "comment": "Русскоязычная задачная терминология первого порядка."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 5,
+      "comment": "Сверка стандартного уровня вычислительных методов."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 6,
+      "comment": "Открытая опора по slope fields и first-order methods."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-orthogonal-trajectories",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера orthogonal-trajectories.",
+      "Карточка покрывает recover-шаг, замену наклона на отрицательно обратный, геометрию пучков окружностей, софокусные коники и границы с exact/separable соседями.",
+      "Новые вычислительные варианты не добавлялись: существующие представители уже покрывают базовые окружности, два коаксиальных пучка и софокусные коники."
+    ]
+  }
+}

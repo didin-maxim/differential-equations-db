@@ -1,0 +1,268 @@
+{
+  "id": "cluster-green-functions-bvp-method-guide",
+  "title": "Методический навигатор: функции Грина для краевых задач",
+  "fragment": "boundary_value",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера green-functions-bvp сначала проверяют нерезонанс: однородная краевая задача должна иметь только нулевое решение. Затем выбирают две фундаментальные функции u и v однородного уравнения так, чтобы u удовлетворяла левому краевому условию, а v - правому. Для оператора L[y]=P0(x)y''+P1(x)y'+P2(x)y функция Грина строится кусочно: при x<t берут множитель u(x)v(t), при x>t - v(x)u(t), а общий коэффициент нормируют по скачку производной G_x(t+0,t)-G_x(t-0,t)=1/P0(t), или по скачку потока p(t)(G_x(t+0,t)-G_x(t-0,t))=1 в самосопряженной форме (p y')'+q y. Непрерывность по x в точке t и исходные краевые условия обязательны: без них получится не обратный оператор, а только формальная вариация постоянных. В самосопряженной регулярной задаче Green-оператор симметричен: G(x,t)=G(t,x) с учетом выбранного веса, и это та же причина, по которой работает тождество Грина, вещественность спектра и ортогональность. Если однородная задача имеет ненулевое решение, обычной функции Грина нет: вместо нее появляется альтернатива Фредгольма, то есть условие ортогональности правой части ядру сопряженной задачи и неединственность при выполнении условия. Функция Грина избыточна, когда требуется одно частное решение простой неоднородной задачи или всего лишь критерий разрешимости: тогда прямой подбор, стрельба или вариация постоянных короче, чем построение полного ядра.",
+        "source_ids": [
+          "src-trench-ode-bvp",
+          "src-coddington-levinson",
+          "src-teschl-ode-dynamical-systems",
+          "src-local-du-8-program-or-exam"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "boundary_value_problem",
+          "fundamental_system_solutions",
+          "wronskian",
+          "green_function_bvp",
+          "self_adjoint_boundary_problem",
+          "fredholm_alternative",
+          "eigenvalue_of_boundary_value_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-left-right-solutions",
+      "title": "Подбирать решения от краев, а не от произвольной точки",
+      "text": "Фундаментальная система становится Green-ядром только после адаптации к левому и правому краевым условиям: одна ветвь автоматически зануляет левый функционал, другая - правый.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_system_solutions",
+        "wronskian",
+        "green_function_bvp"
+      ]
+    },
+    {
+      "id": "idea-jump-normalization",
+      "title": "Скачок производной кодирует дельта-источник",
+      "text": "Кусочная функция должна быть непрерывной в точке источника, а скачок ее производной или потока выбирается так, чтобы L_x G(x,t) давал единичный импульс, поэтому нормировка зависит от старшего коэффициента оператора.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "green_function_bvp",
+        "boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-resonance-border",
+      "title": "Резонанс уничтожает обычный обратный оператор",
+      "text": "Если однородная краевая задача имеет ненулевое решение, Green-ядро как обычный обратный оператор не существует: надо проверять Fredholm-условие совместности, а затем учитывать свободное добавление решения ядра.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "green_function_bvp",
+        "fredholm_alternative",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-when-not-to-use-green",
+      "title": "Не строить ядро ради одного короткого ответа",
+      "text": "Если правая часть проста, краевые условия дают одну линейную систему на константы, или нужен только факт существования, полное G(x,t) часто тяжелее прямого решения; Green-функция оправдана, когда нужно решение для произвольной правой части, знак ядра, симметрия или операторная картина.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "green_function_bvp",
+        "boundary_value_problem"
+      ]
+    },
+    {
+      "id": "idea-neighbor-clusters",
+      "title": "Соседние кластеры отличаются главным объектом",
+      "text": "Если нужно найти собственные значения или ортогональность собственных функций, это boundary-spectral-problems. Если цель - условие совместности в резонансной неоднородной BVP, это linear-bvp-solvability-resonance. Если главный вопрос - нули, сравнение, дисконъюгированность или нерезонанс через запрет двух нулей, это sturm-oscillation-comparison. Green-кластер оставляет в центре кусочное ядро и его операторные свойства.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "green_function_bvp",
+        "eigenvalue_problem",
+        "fredholm_alternative",
+        "boundary_value_problem"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-construction-route",
+      "title": "Маршрут построения ядра",
+      "text": "1. Записать однородное уравнение и проверить, что соответствующая однородная краевая задача нерезонансна. 2. Найти u с левым краевым условием и v с правым краевым условием; если W(u,v)=0, это сигнал резонанса или неверного выбора. 3. Положить G(x,t)=A(t)u(x) для x<t и G(x,t)=B(t)v(x) для x>t. 4. Использовать непрерывность в x=t и скачок P0(t)(G_x(t+0,t)-G_x(t-0,t))=1, чтобы получить A(t), B(t); эквивалентно, в стандартной формуле коэффициент содержит P0(t)W(t). 5. Проверить оба краевых условия по переменной x и только после этого записать y(x)=int_a^b G(x,t)F(t)dt. 6. В самосопряженной форме дополнительно проверить симметрию ядра: нарушение симметрии обычно означает ошибку в весе, знаке скачка или нормировке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "green_function_bvp",
+        "fundamental_system_solutions",
+        "wronskian",
+        "self_adjoint_boundary_problem"
+      ]
+    },
+    {
+      "id": "guide-diagnostic-route",
+      "title": "Диагностика границ применимости",
+      "text": "Если детерминант краевых условий на фундаментальные константы не равен нулю, Green-ядро существует и дает единственное решение для любой правой части из выбранного класса. Если детерминант равен нулю, надо остановить Green-построение и перейти к альтернативе Фредгольма: найти ядро сопряженной задачи, проверить ортогональность правой части и описать семейство решений. Если задача спрашивает только один числовой параметр, одно частное решение или отсутствие ядра, прямое решение может быть короче и методически чище.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "shooting_parameter",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "green_function_bvp",
+        "fredholm_alternative",
+        "eigenvalue_of_boundary_value_problem"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "boundary_value",
+      "linear_second_order"
+    ],
+    "methods": [
+      "green_function",
+      "variation_of_parameters",
+      "wronskian_identity",
+      "fredholm_alternative",
+      "self_adjoint_operator"
+    ],
+    "objects": [
+      "green_kernel",
+      "boundary_value_problem",
+      "fundamental_system",
+      "resonance",
+      "self_adjoint_boundary_conditions"
+    ],
+    "goal": [
+      "derive_formula",
+      "solve",
+      "prove_existence",
+      "compare_methods"
+    ],
+    "keywords": [
+      "green_functions_bvp",
+      "jump_condition",
+      "fredholm_alternative",
+      "self_adjoint_symmetry",
+      "linear_bvp"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 8,
+    "technical_score": 2,
+    "comment": "Методический блок почти не добавляет вычислений; сложность в распознавании нерезонанса, нормировки скачка и момента, когда Green-ядро действительно нужно.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "boundary_value",
+    "green_kernel",
+    "green_identity",
+    "fredholm_alternative",
+    "resonance",
+    "sturm_liouville",
+    "wronskian",
+    "variation_of_parameters",
+    "linear_higher_order",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "mipt_core",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Section 13.1",
+      "note": "Основной источник для формулы Green function, примера с Robin conditions и резонансной альтернативы."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "role": "classical_reference",
+      "status": "source_verified",
+      "note": "Классический фон для линейных краевых задач и операторного языка обратимости."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Sturm-Liouville material",
+      "note": "Открытая строгая ссылка для самосопряженности, спектрального соседства и Green-оператора."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "note": "Локальный учебный фон: краевые задачи, спектральные задачи и методические границы применения."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-trench-ode-bvp",
+      "priority": 1,
+      "comment": "Главная открытая опора для конструктивного Green-kernel маршрута."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "priority": 2,
+      "comment": "Классический источник для общего языка линейных краевых задач."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 3,
+      "comment": "Открытая ссылка для самосопряженной и спектральной интерпретации."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 4,
+      "comment": "Локальный ориентир стандартного курса."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-green-functions-bvp-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера green-functions-bvp, а не как новая вычислительная BVP.",
+      "Карточка закрывает построение через две фундаментальные функции, скачок производной/потока, краевые условия, самосопряженную симметрию, резонанс и альтернативу Фредгольма.",
+      "Границы с boundary-spectral-problems, linear-bvp-solvability-resonance и sturm-oscillation-comparison вынесены в отдельные relations."
+    ]
+  }
+}

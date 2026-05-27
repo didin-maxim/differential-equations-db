@@ -21,7 +21,9 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "lyapunov_function"
+          "lyapunov_function",
+          "lyapunov_stability",
+          "asymptotic_stability"
         ]
       }
     ]

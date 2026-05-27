@@ -1,6 +1,6 @@
 {
   "id": "local-du-8-t1-bessel-bounded-wronskian",
-  "title": "Уравнение Бесселя не имеет двух ограниченных решений с ограниченными производными у нуля",
+  "title": "Ограниченные решения уравнения Бесселя у нуля",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",

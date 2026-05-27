@@ -1,6 +1,6 @@
 {
   "id": "weak-pass-bernoulli-substitution",
-  "title": "Бернулли: не решать как линейное до замены",
+  "title": "Уравнение Бернулли и выбор замены",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",

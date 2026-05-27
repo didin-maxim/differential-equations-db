@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-energy-guide-to-energy-oscillator",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "energy-integral-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует базовое домножение на y', которое в осцилляторе дает сохраняющуюся энергию E=(y')^2/2+V(y).",
+      "backward_text": "Карточка осциллятора является минимальным примером ветки 'T+V и E'=0'.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-resit-energy-check",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "resit-pass-3-energy-oscillator-check",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему проверка E'=0 является самостоятельным энергетическим доказательством, а не поиском общего решения.",
+      "backward_text": "Устная карточка является короткой проверкой базового приема на уровне пересдачи.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-damped-periodic-zero",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "oral-exam-excellent-damped-periodic-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Блок выделяет ветку E'<=0 и интеграл потери энергии за период, которая прямо запрещает ненулевое периодическое решение затухающего осциллятора.",
+      "backward_text": "Затухающий осциллятор является содержательным примером, где монотонная энергия работает как функция Ляпунова и исключает возврат на прежний уровень.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-endpoint-no-two-zeros",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "oral-exam-excellent-endpoint-combination-no-two-zeros",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает краевое энергетическое тождество: после интегрирования по частям знак интеграла запрещает заданную конфигурацию нулей.",
+      "backward_text": "Карточка про концевую комбинацию показывает, что энергетический метод не ограничивается фазовыми овалами и может давать невозможность.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-exponential-bound",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общая схема E' с известным знаком объясняет, как из энергетической монотонности получить априорную ограниченность решения и производной.",
+      "backward_text": "Локальная теоретическая карточка является примером ветки 'переменный коэффициент и априорная энергетическая оценка'.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-airy-bounded",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "written-mipt-2009-92-airy-bounded-positive-axis",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок подводит к чтению растущего потенциала как энергетического барьера, из которого следует ограниченность на полуоси.",
+      "backward_text": "Письменная задача МФТИ показывает representative-сценарий, где энергия используется ради boundedness, а не ради явной формулы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-decay-periodic",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "energy-no-nonconstant-decay-periodic",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор фиксирует общий запрет: если энергия строго теряется вдоль ненулевого движения, нетривиальная периодичность невозможна.",
+      "backward_text": "Олимпиадная карточка является чистым примером принципа 'монотонная энергия несовместима с нетривиальным периодом'.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-msu-bounded-exp",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "msu-ode-2003-3-bounded-exp-oscillator",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Блок объясняет переносимый ход: подобрать энергию с экспоненциальным или переменным коэффициентом и использовать ее знак для ограниченности.",
+      "backward_text": "MSU-карточка является representative-задачей на boundedness через специально выбранную энергетическую величину.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-first-integrals-guide",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "cluster-first-integrals-plane-systems-method-guide",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Сохраняющаяся энергия второго порядка является частным первым интегралом фазовой системы на плоскости.",
+      "backward_text": "Навигатор первых интегралов дает более общий фазовый язык для ветки E'=0, но не покрывает все монотонные энергетические оценки.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-phase-stability-guide",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Энергетический блок показывает, когда энергия является первым интегралом или функцией Ляпунова; общий блок устойчивости решает, как это соотнести с фазовой прямой, линеаризацией и определениями устойчивости.",
+      "backward_text": "Навигатор устойчивости задает соседний язык: E'=0 обычно ведет к центру, а E'<=0 или E'<0 используется как функция Ляпунова.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-lyapunov-direct",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "cluster-phase-stability-lyapunov-direct-method",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Монотонная энергия является типичным источником функции Ляпунова; после построения E нужно проверить положительность и знак производной вдоль поля.",
+      "backward_text": "Прямой метод Ляпунова формализует ту часть энергетического метода, где E уже не сохраняется, а убывает или не возрастает.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-energy-guide-to-nonlinear-order-reduction",
+      "from": "cluster-energy-estimates-second-order-method-guide",
+      "to": "written-mipt-2002-v1-nonlinear-p-of-y-cauchy",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает границу с редукциями второго порядка: если цель - решить через p=p(y), это соседний кластер nonlinear-second-order-order-reductions, а не энергетическая оценка.",
+      "backward_text": "MIPT-карточка показывает противоположный сценарий: отсутствие x явно используется для явной редукции порядка, а не для вывода из знака энергии.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

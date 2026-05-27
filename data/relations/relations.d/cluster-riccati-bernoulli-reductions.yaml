@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-rbr-guide-to-bernoulli-standard",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "bernoulli-standard",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует замену z=y^{1-n}; базовая карточка Бернулли является минимальной реализацией этой ветви.",
+      "backward_text": "Базовая задача Бернулли показывает самый короткий случай навигатора: деление на степень y и переход к линейному уравнению первого порядка.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-rbr-guide-to-weak-bernoulli",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "weak-pass-bernoulli-substitution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отдельно предупреждает о делении на y^2 и рабочем интервале; устная карточка проверяет этот выбор замены в задаче Коши.",
+      "backward_text": "Задача Коши на Бернулли конкретизирует ветвь навигатора, где начальное условие разрешает деление и задает интервал до полюса.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-rbr-guide-to-riccati-known",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "riccati-known-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок выводит замену y=y0+1/u и напоминает об отдельном решении y0; seed-карточка является минимальной реализацией этой формулы.",
+      "backward_text": "Риккати с заданным y0 является базовым примером навигатора: известное решение вычитается, а новая неизвестная удовлетворяет линейному уравнению.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-rbr-guide-to-riccati-shift",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "oral-above-three-riccati-shift-known-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает случай, когда частное решение надо сначала заметить; устная карточка реализует это на сдвиге y0=x.",
+      "backward_text": "Карточка со сдвигом показывает, почему в Риккати важен этап угадывания y0, а не только механическая линейная формула после замены.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-rbr-guide-to-riccati-second-order",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "msu-ode-2013-9-riccati-inverse-square",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор фиксирует границу: без известного частного решения Риккати часто линеаризуется через логарифмическую производную к уравнению второго порядка; МГУ-карточка является содержательным примером такой ветви.",
+      "backward_text": "МГУ-задача показывает более сильный вариант Риккати-редукции, где линейное уравнение возникает не для u первого порядка, а после перехода к функции второго порядка.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-rbr-guide-to-putnam-riccati",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "putnam-early-1960-b7-riccati-variational",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Методический блок отделяет вычислительную редукцию Риккати от качественного использования квадратного члена; Putnam-карточка показывает эту качественную сторону.",
+      "backward_text": "Putnam-задача является представителем ветви, где Риккати важен для сравнения и оценки, а не только для получения явной формулы.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-rbr-guide-to-global-riccati",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "local-du-programs-other-years-riccati-global-continuation",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор требует проверять область и особые ветви после редукции; локальная карточка делает этот контроль главным содержанием через продолжимость решения Риккати.",
+      "backward_text": "Глобальная Riccati-карточка конкретизирует предупреждение навигатора: область и барьеры могут быть важнее явной первообразной.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-rbr-guide-to-linear-first-order-guide",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "cluster-linear-first-order-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После замены Бернулли или Риккати появляется обычное линейное уравнение первого порядка; соседний навигатор покрывает именно этот последующий интегрирующий множитель.",
+      "backward_text": "Линейный навигатор нужен как второй этап редукции: он не отвечает за распознавание исходной нелинейной формы Бернулли или Риккати.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-rbr-guide-to-homogeneous-substitution",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "homogeneous-first-order-substitution",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В Бернулли/Риккати главный шаг - степенная или обратная замена к линейному уравнению; в однородном первом порядке главный шаг - y=xv и последующее разделение переменных.",
+      "backward_text": "Однородная замена является соседним маршрутом first-order reductions, но ее не следует смешивать с Бернулли или Риккати только потому, что после замены уравнение упрощается.",
+      "status": "ai_checked",
+      "confidence": 0.87
+    },
+    {
+      "id": "rel-rbr-guide-to-implicit-discriminant-guide",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "cluster-implicit-ode-discriminant-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор Риккати/Бернулли предполагает разрешенную форму y'=f(x,y); неявный навигатор нужен, когда сначала надо выбрать ветвь p или проверить дискриминант.",
+      "backward_text": "В неявных уравнениях сходство с квадратной формой по производной не является поводом применять Риккати: сначала анализируются ветви F(x,y,p)=0 и дискриминант.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-rbr-guide-to-matrix-riccati",
+      "from": "cluster-riccati-bernoulli-method-guide",
+      "to": "msu-ode-2025-6-global-matrix-riccati-invertible",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Методический блок проводит границу со скалярным Риккати: в матричном случае ключевыми становятся обратимость и некоммутативное умножение.",
+      "backward_text": "Матричная задача показывает, почему название Riccati еще не означает применимость скалярной замены y=y0+1/u.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    }
+  ]
+}

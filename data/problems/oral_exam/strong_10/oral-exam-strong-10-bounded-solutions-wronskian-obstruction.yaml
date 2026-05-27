@@ -1,6 +1,6 @@
 {
   "id": "oral-exam-strong-10-bounded-solutions-wronskian-obstruction",
-  "title": "Ограниченные решения и ненулевой Вронскиан",
+  "title": "Ограниченные решения и ненулевой вронскиан",
   "fragment": "olympiad",
   "kind": {
     "primary": "problem",
@@ -25,7 +25,8 @@
         "definition_ids": [
           "ordinary_differential_equation",
           "solution",
-          "wronskian"
+          "wronskian",
+          "linear_independence_solutions"
         ]
       }
     ]

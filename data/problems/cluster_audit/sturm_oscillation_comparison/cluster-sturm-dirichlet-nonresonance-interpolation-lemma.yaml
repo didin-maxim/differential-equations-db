@@ -1,6 +1,6 @@
 {
   "id": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
-  "title": "Нерезонанс Дирихле и единственность двухточечной интерполяции",
+  "title": "Нерезонанс задачи Дирихле и единственность краевой задачи",
   "fragment": "boundary_value",
   "kind": {
     "primary": "lemma",

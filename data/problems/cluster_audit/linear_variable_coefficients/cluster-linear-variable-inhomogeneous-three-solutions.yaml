@@ -27,7 +27,10 @@
           "ordinary_differential_equation",
           "solution",
           "initial_value_problem",
-          "wronskian"
+          "wronskian",
+          "general_solution",
+          "particular_solution",
+          "linear_independence_solutions"
         ]
       }
     ]

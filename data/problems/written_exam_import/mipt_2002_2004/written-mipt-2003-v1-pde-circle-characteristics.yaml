@@ -1,0 +1,115 @@
+{
+  "id": "written-mipt-2003-v1-pde-circle-characteristics",
+  "title": "Характеристики ЧП первого порядка с инвариантом окружности",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2003/2004, вариант 1, задача 7",
+        "text": "Решить уравнение xz u_x+yz u_y+(x-(x^2+y^2))u_z=0 при x>0, z>0 и задачу Коши u=z^2-2x+1 при x^2+y^2=1.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "pde_characteristic_first_order",
+          "cauchy_problem",
+          "integral_curve",
+          "first_integral"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Найти два первых интеграла характеристик",
+      "text": "Для характеристической системы отношение y/x сохраняется. Второй интеграл удобно искать как z^2-2x+x^2+y^2: его производная вдоль характеристик равна нулю.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Характеристическая система: dx/ds=xz, dy/ds=yz, dz/ds=x-x^2-y^2. Из d(y/x)/ds=0 получаем первый интеграл I1=y/x. Для I2=z^2-2x+x^2+y^2 имеем I2'=2z(x-x^2-y^2)-2xz+2x^2z+2y^2z=0. Поэтому общее решение имеет вид u=F(I1,I2). На начальной окружности x^2+y^2=1 величина I2=z^2-2x+1, а условие Коши задает u=I2. Следовательно искомое решение равно u=z^2-2x+x^2+y^2 в области, покрытой соответствующими характеристиками.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde",
+      "linear_homogeneous"
+    ],
+    "methods": [
+      "characteristics",
+      "first_integrals"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "cauchy_problem",
+      "noncharacteristic_curve"
+    ],
+    "goal": [
+      "solve_cauchy_problem"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "MIPT_2003_2004",
+      "variant_1",
+      "pde_characteristics",
+      "circle_data"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 4,
+    "local_score": 5,
+    "comment": "Метод характеристик стандартный; удачный второй интеграл делает задачу короткой и пригодной для устной модификации.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "cauchy_problem",
+    "first_integral",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2003-2004.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2002-2004-links",
+    "notes": [
+      "Выбрана как наиболее чистый представитель PDE-задач пачки B: условие Коши совпадает со вторым первым интегралом.",
+      "Похожие PDE-варианты из двух PDF отфильтрованы как более громоздкие версии того же метода."
+    ]
+  }
+}

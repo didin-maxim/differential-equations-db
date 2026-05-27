@@ -26,7 +26,14 @@
         "definition_ids": [
           "ordinary_differential_equation",
           "solution",
-          "direction_field"
+          "direction_field",
+          "discriminant_curve",
+          "integral_curve",
+          "initial_value_problem",
+          "cauchy_problem",
+          "singular_solution",
+          "general_solution",
+          "particular_solution"
         ]
       }
     ]
@@ -39,6 +46,12 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "discriminant_curve",
+        "integral_curve",
+        "initial_value_problem",
+        "singular_solution"
       ]
     }
   ],

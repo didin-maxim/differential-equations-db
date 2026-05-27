@@ -22,7 +22,11 @@
         "self_contained": {
           "status": "ai_checked"
         },
-        "definition_ids": []
+        "definition_ids": [
+          "pde_characteristic_first_order",
+          "cauchy_problem",
+          "integral_curve"
+        ]
       }
     ]
   },

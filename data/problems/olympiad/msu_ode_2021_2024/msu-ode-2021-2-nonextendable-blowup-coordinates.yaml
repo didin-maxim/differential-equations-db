@@ -1,0 +1,121 @@
+{
+  "id": "msu-ode-2021-2-nonextendable-blowup-coordinates",
+  "title": "Непродолжаемое решение и уход на бесконечность",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2021, задача 2",
+        "text": "Пусть x:(0,infty)->R^2 - непродолжаемое решение системы x'=f(t,x), x=(x_1,x_2)^T, f in C(R^{1+2}). Верно ли, что при t->+0 выполнено: а) |x(t)|->infty; б) хотя бы для одного i из {1,2} выполнено |x_i(t)|->infty?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "initial_value_problem",
+          "linear_system"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-a",
+      "title": "Ограниченность позволила бы продолжить решение",
+      "text": "Если траектория остается в компактной части фазового пространства при t->0+, то непрерывность правой части дает ограниченность производной и конечный предел, откуда решение продолжается.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    },
+    {
+      "id": "idea-b",
+      "title": "Норма может расти при вращающемся направлении",
+      "text": "Из |x(t)|->infty не следует, что одна фиксированная координата стремится к бесконечности по модулю: направление может бесконечно вращаться.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "а) Да. Если |x(t)| не стремится к бесконечности при t->0+, то найдутся t_n->0+ с x(t_n) в некотором шаре. На компактном цилиндре [0,t_1] times B_R правая часть ограничена. Тогда на участках траектории, пока она остается в чуть большем шаре, x равномерно липшицева по t; стандартный критерий продолжения дает конечный предел подпоследовательностей и возможность продолжить решение к t=0, что противоречит непродолжаемости. б) Нет. Можно задать гладкую кривую x(t)=t^{-1}(cos(1/t), sin(1/t)) при t>0. Ее норма стремится к бесконечности, но каждая координата имеет сколь угодно большие нули. Продлив вектор скорости x'(t) до непрерывного поля f(t,x) в окрестности этой непересекающейся кривой, а затем на все R^3, получаем систему, для которой данная кривая является решением. Поэтому ни |x_1(t)|, ни |x_2(t)| не обязаны иметь предел +infty.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "continuation",
+      "counterexample"
+    ],
+    "objects": [
+      "global_solution",
+      "blow_up",
+      "counterexample",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove",
+      "disprove"
+    ],
+    "keywords": [
+      "msu-ode-2021-2",
+      "maximal_solution",
+      "continuation",
+      "coordinate_blowup"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 9,
+    "technical_score": 4,
+    "local_score": 9,
+    "comment": "Пункт а) стандартен для критерия продолжения, но пункт б) требует нетривиального контрпримера с вращающейся уходящей траекторией.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "continuation",
+    "global_solution",
+    "blow_up",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/olymp2021ode_0.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "needs_human_review",
+    "public_ready": false,
+    "relations_status": "batch_links",
+    "notes": [
+      "Решение пункта б) использует стандартную идею реализации заданной гладкой непересекающейся кривой как траектории некоторого непрерывного поля; при желании можно усилить отдельной леммой о продолжении векторного поля с кривой.",
+      "Экзаменационный аудит олимпиадных задач 2026-05-27: exam_score_9 снят до закрытия needs_human_review; задача идейно хорошая, но не должна попадать в симуляцию экзамена до самодостаточного оформления контрпримера."
+    ]
+  }
+}

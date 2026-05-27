@@ -1,6 +1,6 @@
 {
   "id": "one-dimensional-autonomous-no-crossing",
-  "title": "Решения автономного уравнения не пересекают равновесие",
+  "title": "Решения автономного уравнения не проходят через равновесие",
   "fragment": "qualitative",
   "kind": {
     "primary": "theorem",

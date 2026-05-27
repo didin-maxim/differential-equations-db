@@ -1,0 +1,113 @@
+{
+  "id": "msu-ode-2026-3-decoupled-phase-curves-count",
+  "title": "Особые фазовые кривые разделенной системы",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2026, задача 3",
+        "text": "Сколько фазовых кривых системы x'=x^3-4x+3, y'=y^2026-1 имеют вид: а) точки; б) луча, параллельного одной из осей координат; в) интервала, параллельного одной из осей координат? Ответы обоснуйте.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_statement_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Разделить фазовые прямые x и y",
+      "text": "Горизонтальная фазовая кривая появляется при y'=0, вертикальная - при x'=0, а точка - при одновременном выполнении обоих условий.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Уравнение x^3-4x+3=0 имеет три вещественных корня: x=1 и x=(-1±sqrt(13))/2. Уравнение y^2026-1=0 имеет единственный вещественный корень y=1. Поэтому точек равновесия 3. На прямой y=1 горизонтальные фазовые кривые идут по компонентам прямой x с удаленными тремя равновесиями: две внешние компоненты являются лучами, две внутренние - интервалами. На каждой из трех вертикальных прямых x=x_* с x^3-4x+3=0 уравнение для y имеет равновесие y=1, поэтому получаются два вертикальных луча: y<1 и y>1. Итого: точек 3, лучей 2+3*2=8, интервалов 2.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "decoupled_system"
+    ],
+    "methods": [
+      "phase_line_analysis",
+      "equilibrium_count"
+    ],
+    "objects": [
+      "phase_curve",
+      "equilibrium",
+      "ray",
+      "interval"
+    ],
+    "goal": [
+      "count",
+      "classify"
+    ],
+    "keywords": [
+      "МГУ ОДУ 2026/3",
+      "фазовые кривые",
+      "разделенная система",
+      "луч",
+      "интервал"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 3,
+    "local_score": 6,
+    "comment": "Задача не вычислительная, но требует аккуратно различать траектории-точки, лучи и интервалы на инвариантных прямых.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "phase_line",
+    "stability",
+    "olympiad_style",
+    "standard_course_methods",
+    "complete_proof",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/ode2026-solutions.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "msu-ode-2025-2026",
+    "notes": [
+      "Взята из листка 2026 с решениями; формулировка сверена по OCR и математической структуре. Хорошо подходит для интерактивного multiple-choice."
+    ]
+  }
+}

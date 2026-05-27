@@ -1,0 +1,70 @@
+{
+  "relations": [
+    {
+      "id": "rel-written-2004-sine-drift-from-bounded-derivative",
+      "from": "ru-misc-nure-8-2",
+      "to": "written-mipt-2004-v1-sine-square-drift-limits",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В НУРЭ-задаче производная положительна, но имеет интегрируемую верхнюю оценку, поэтому решение ограничено.",
+      "backward_text": "В МФТИ-задаче производная имеет неинтегрируемую нижнюю оценку sin^2 x, поэтому полный прирост бесконечен.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-written-2004-multiplicative-after-log-derivative",
+      "from": "olympiad-level-power-solution-linear-ode-criterion",
+      "to": "written-mipt-2004-v2-v3-multiplicative-sine-comparison",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют логарифмическую производную, чтобы превратить рост функции в интегральную оценку.",
+      "backward_text": "Письменная задача является более коротким экзаменационным вариантом той же идеи: знак множителя сразу дает экспоненциальное убывание или рост.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-written-2004-blowup-after-existence-guide",
+      "from": "cluster-existence-blow-up-alternative",
+      "to": "written-mipt-2004-v4-finite-interval-blowup",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общая альтернатива продолжения объясняет, почему оценка, ведущая к бесконечности y за конечное время, завершает доказательство.",
+      "backward_text": "Письменная задача дает минимальный рабочий пример: arctan y достигает границы за конечное время.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-written-2004-blowup-after-comparison-inverse",
+      "from": "oral-middle-comparison-inverse-bound",
+      "to": "written-mipt-2004-v4-finite-interval-blowup",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи заменяют прямое решение сравнением с простой скалярной моделью, которая взрывается за конечное время.",
+      "backward_text": "В письменной задаче удобнее использовать arctan y вместо обратной функции: это ровно интеграл от 1/(1+y^2).",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-written-2005-unbounded-contrast-airy-bounded",
+      "from": "written-mipt-2009-92-airy-bounded-positive-axis",
+      "to": "written-mipt-2005-v9-integrable-potential-unbounded-solution",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "У растущего коэффициента q(x)=x все решения удается зажать энергетической оценкой после замены Лиувилля.",
+      "backward_text": "При интегрируемом хвостовом q(x) появляется решение, асимптотически похожее на линейную функцию, поэтому оно неограниченно.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-written-2005-unbounded-after-picard-tail",
+      "from": "mit-18034-pset05-picard-tail-estimate",
+      "to": "written-mipt-2005-v9-integrable-potential-unbounded-solution",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Пикаровские оценки хвоста готовят к построению решения через интегральное уравнение на полуоси.",
+      "backward_text": "Здесь тот же интегральный подход используется качественно: не для ряда коэффициентов, а для решения, близкого к x-A.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    }
+  ]
+}

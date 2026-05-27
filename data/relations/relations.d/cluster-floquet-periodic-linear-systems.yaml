@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-floquet-guide-to-monodromy-iterate",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "teschl-stanford-bridge-monodromy-period-iterate",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок задает главный объект M=X(T); Teschl-лемма является минимальным доказательством формулы X(t+T)=X(t)M и итераций M^n.",
+      "backward_text": "Лемма о сдвиге за период конкретизирует первую ветку навигатора: периодическая система превращается в дискретную динамику по периодам.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-floquet-guide-to-determinant-liouville",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "teschl-stanford-bridge-floquet-determinant-liouville",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет det M=exp(int_0^T tr A) как быстрый инвариант; Teschl-карточка доказывает этот факт через формулу Лиувилля.",
+      "backward_text": "Карточка про произведение мультипликаторов является representative-примером ветки навигатора, где след управляет детерминантом монодромии.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-floquet-guide-to-multiplier-stability",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "teschl-stanford-bridge-floquet-multiplier-stability",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует устойчивость через степени M; Teschl-теорема дает строгий критерий для случаев |mu|<1 и |mu|>1.",
+      "backward_text": "Теорема устойчивости является основной проверкой идеи навигатора: непрерывная устойчивость периодической системы читается по спектру оператора за период.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-floquet-guide-to-periodic-forcing",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "oral-exam-excellent-monodromy-periodic-forcing",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выводит аффинное отображение x0 -> Mx0+b для неоднородной периодической системы; устная карточка применяет его в нерезонансном случае 1 notin spec M.",
+      "backward_text": "Карточка с периодическим вынуждением является базовым экзаменационным применением общей ветки про неподвижную точку отображения за период.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-floquet-guide-to-resonant-periodic-forcing",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "mipt-excellent-periodic-system-resonant-monodromy",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок явно отделяет нерезонансный случай от совместности (I-M)x0=b; карточка excellent-level раскрывает резонансный вариант с образом и ядром I-M.",
+      "backward_text": "Резонансная задача проверяет самую тонкую ветку навигатора: мультипликатор 1 не запрещает периодические решения, но требует условия совместности.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-floquet-guide-to-gronwall-multiplier-bound",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "local-du-filippov-127-monodromy-gronwall-bound",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор говорит оценивать мультипликаторы как собственные значения M; задача Филиппова показывает, как получить грубую оценку M через Гронуолла.",
+      "backward_text": "Оценка Филиппова является локальным representative для ветки, где важны не точные мультипликаторы, а bound на оператор монодромии.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-floquet-guide-to-fundamental-matrix-flow",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Монодромия строится из фундаментальной матрицы и ее потоковых свойств; Waterloo-карточка дает общий фундаментально-матричный язык до добавления периодичности.",
+      "backward_text": "Свойства фундаментальной матрицы как потока становятся в Floquet-кластере свойствами оператора за один период.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-floquet-guide-to-matrix-exp-methods",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "cluster-matrix-exponential-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Floquet-навигация работает с монодромией X(T) для периодической A(t); matrix-exponential-methods отвечает за свойства e^{At} и постоянные коэффициенты.",
+      "backward_text": "Матричная экспонента является соседним операторным языком, но при настоящей периодической A(t) главный объект меняется с e^{At} на X(T).",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-floquet-guide-to-phase-stability",
+      "from": "cluster-floquet-periodic-linear-systems-method-guide",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Floquet-критерии классифицируют устойчивость нулевого решения периодической линейной системы через M; phase-line-stability покрывает автономные равновесия, фазовую прямую и фазовый портрет.",
+      "backward_text": "Методический блок устойчивости задает общий язык Lyapunov/asymptotic stability, а Floquet-навигация показывает специальный периодический линейный критерий через мультипликаторы.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -7,9 +7,11 @@
     "pde_characteristics",
     "first_order_pde_characteristics",
     "linear_first_order_pde",
+    "method_guide",
     "cauchy_problem"
   ],
   "problem_ids": [
+    "cluster-pde-characteristics-method-guide",
     "cluster-pde-characteristics-strip-domain",
     "cluster-pde-characteristics-characteristic-incompatible",
     "cluster-pde-characteristics-characteristic-nonunique",
@@ -20,6 +22,7 @@
   "status": "ai_checked",
   "notes": [
     "Пачка добавляет 6 компактных модельных задач на понимание геометрии характеристик, а не новые громоздкие вычисления.",
+    "cluster-pde-characteristics-method-guide является теоретико-методическим блоком, а не новой вычислительной задачей.",
     "Источники указаны честно как model/self-authored; точные внешние карточки local_du, письменников, Романко и Lebl подтянуты в representative_card_ids кластера.",
     "PDE второго порядка и продвинутые semilinear/blow-up примеры не входят в этот batch."
   ]

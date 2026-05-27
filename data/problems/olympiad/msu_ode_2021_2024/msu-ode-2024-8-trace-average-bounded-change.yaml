@@ -1,0 +1,117 @@
+{
+  "id": "msu-ode-2024-8-trace-average-bounded-change",
+  "title": "Средний след линейной системы при ограниченной замене переменных",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2024, задача 8",
+        "text": "Матрица системы x'=A(t)x, t>=0, непрерывна и удовлетворяет lim_{t->infty} (1/t) int_0^t tr A(tau)d tau = 0. Пусть L(t) непрерывно дифференцируема, невырождена и sup_{t>=0}(|L(t)|+|L(t)^{-1}|)<infty. Чему может быть равен lim_{t->infty} (1/t) int_0^t tr B(tau)d tau, где B=L^{-1}AL-L^{-1}L'?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Формула Лиувилля и ограниченный множитель",
+      "text": "Средний след - это средний логарифмический рост определителя фундаментальной матрицы. Замена Y=L^{-1}X меняет определитель только на ограниченный множитель det L^{-1}.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть X(t) - фундаментальная матрица системы x'=A(t)x. По формуле Лиувилля det X(t)=det X(0) exp(int_0^t tr A(tau)d tau), поэтому из условия следует lim_{t->infty} t^{-1} ln|det X(t)|=0. Для системы z'=B(t)z фундаментальная матрица имеет вид Y(t)=L(t)^{-1}X(t), потому что замена x=L(t)z дает z'=L^{-1}ALz-L^{-1}L'z. Так как L и L^{-1} равномерно ограничены и L невырождена, величина ln|det L(t)^{-1}| ограничена сверху и снизу с точностью до константы, не влияющей на деление на t. Следовательно, lim_{t->infty} t^{-1} ln|det Y(t)|=0. Снова применяя формулу Лиувилля, получаем lim_{t->infty} (1/t) int_0^t tr B(tau)d tau=0.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "systems",
+      "olympiad"
+    ],
+    "methods": [
+      "liouville_formula",
+      "change_of_variables",
+      "fundamental_matrix"
+    ],
+    "objects": [
+      "linear_systems",
+      "fundamental_matrix",
+      "trace",
+      "determinant",
+      "complete_proof"
+    ],
+    "goal": [
+      "compute",
+      "prove"
+    ],
+    "keywords": [
+      "msu-ode-2024-8",
+      "trace_average",
+      "liouville_formula",
+      "bounded_change_of_variables"
+    ],
+    "status": "source_solution_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 3,
+    "local_score": 8,
+    "comment": "Технически почти без вычислений; основная идея - узнать след как логарифмическую скорость изменения фазового объема.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "wronskian",
+    "trace_determinant",
+    "matrix_exponential",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem_and_solution",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/odu_24_resheniya.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Добавлена как олимпиадный родственник устных задач на след, определитель фундаментальной матрицы и формулу Лиувилля."
+    ]
+  }
+}

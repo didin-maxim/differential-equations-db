@@ -1,0 +1,109 @@
+{
+  "id": "written-mipt-2003-v2-invariant-derivative-cauchy",
+  "title": "Нелинейная задача Коши через инвариант y'/y^2",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2003/2004, вариант 2, задача 5",
+        "text": "Решить задачу Коши xyy''-2x(y')^2+yy'=0, y(1)=1, y'(1)=1.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "cauchy_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Увидеть производную y'/y^2",
+      "text": "Комбинация yy''-2(y')^2 равна y^3 (y'/y^2)'. После деления на y^3 получается линейное уравнение для u=y'/y^2.",
+      "status": "ai_checked"
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В окрестности x=1 решение не равно нулю. Положим u=y'/y^2. Тогда u'=(yy''-2(y')^2)/y^3. Исходное уравнение после деления на y^3 дает xu'+u=0, то есть (xu)'=0. Из y(1)=1, y'(1)=1 получаем u(1)=1, значит u=1/x. Поэтому y'/y^2=1/x. Интегрируя, получаем -1/y=ln x+C. Из y(1)=1 следует C=-1. Следовательно y=1/(1-ln x) на максимальном интервале, содержащем 1 и не пересекающем x=e.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "nonlinear_second_order"
+    ],
+    "methods": [
+      "invariant_derivative",
+      "order_reduction_substitution",
+      "separable_after_reduction"
+    ],
+    "objects": [
+      "cauchy_problem",
+      "maximal_interval"
+    ],
+    "goal": [
+      "solve"
+    ],
+    "keywords": [
+      "local_du",
+      "written_exam",
+      "MIPT_2003_2004",
+      "variant_2",
+      "invariant_derivative",
+      "blow_up_denominator"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 3,
+    "local_score": 5,
+    "comment": "Главный ход - распознать производную y'/y^2; дальше решение почти устное.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "cauchy_problem",
+    "order_reduction_substitution",
+    "blow_up",
+    "low_technical",
+    "exam_score_5"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2003-2004.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2002-2004-links",
+    "notes": [
+      "Добавлено как не дублирующий представитель нелинейных задач Коши: здесь сворачивается не (yy')', а y'/y^2.",
+      "Близкий вариант 2003/2004, вариант 1 с начальными данными в нуле отфильтрован из-за менее аккуратной области применимости."
+    ]
+  }
+}

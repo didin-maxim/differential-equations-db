@@ -1,0 +1,103 @@
+{
+  "relations": [
+    {
+      "id": "rel-written-2002-pofy-from-2024-pofy",
+      "from": "local-du-written-2024-nonlinear-p-of-y",
+      "to": "written-mipt-2002-v1-nonlinear-p-of-y-cauchy",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи используют переход p=p(y); новая карточка добавляет короткую линеаризацию для 1/p.",
+      "backward_text": "Задача 2002 года является компактной тренировкой той же идеи без громоздких интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-written-2002-pofy-bernoulli-inverse",
+      "from": "weak-pass-bernoulli-substitution",
+      "to": "written-mipt-2002-v1-nonlinear-p-of-y-cauchy",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Замена z=1/y в Бернулли готовит к похожему приему: перейти к обратной величине, чтобы получить линейное уравнение.",
+      "backward_text": "В письменной задаче обратная величина берется уже от производной p(y), а не от самой функции.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    },
+    {
+      "id": "rel-written-2002-implicit-log-clairaut",
+      "from": "clairaut-envelope",
+      "to": "written-mipt-2002-v4-implicit-log-singular",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Классическая огибающая Клеро объясняет, почему после дифференцирования неявного уравнения возникает особая ветвь.",
+      "backward_text": "Логарифмический пример показывает тот же механизм в менее шаблонной записи F(x,y,y')=0.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-written-2002-implicit-log-discriminant",
+      "from": "cluster-implicit-discriminant-not-solution",
+      "to": "written-mipt-2002-v4-implicit-log-singular",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Модель с дискриминантом, который не является решением, полезно сравнить с логарифмической задачей, где особая кривая действительно является огибающей.",
+      "backward_text": "Логарифмическая задача напоминает: найденную дискриминантную кривую надо проверять как решение, а не принимать автоматически.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-written-2003-pde-circle-from-strip",
+      "from": "cluster-pde-characteristics-strip-domain",
+      "to": "written-mipt-2003-v1-pde-circle-characteristics",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Базовая карточка про характеристики и область данных готовит к письменной задаче с двумя первыми интегралами.",
+      "backward_text": "Письменная задача добавляет геометрическое начальное множество x^2+y^2=1 и инвариант, совпадающий с данными Коши.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-written-2003-pde-circle-first-integral",
+      "from": "local-du-written-2014-51-characteristics-pde",
+      "to": "written-mipt-2003-v1-pde-circle-characteristics",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе письменные задачи решаются через первые интегралы характеристической системы.",
+      "backward_text": "Задача 2003 года технически мягче: один из инвариантов сразу совпадает с заданным значением u.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-written-2003-invariant-yyprime",
+      "from": "local-du-written-2014-51-nonlinear-cauchy-total-derivative",
+      "to": "written-mipt-2003-v2-invariant-derivative-cauchy",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "В задаче 2014 года сворачивается (yy')'; в задаче 2003 года похожий письменный почерк требует увидеть (y'/y^2)'.",
+      "backward_text": "Новая карточка расширяет набор распознаваемых полных производных в нелинейных задачах Коши.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-written-2003-invariant-blowup",
+      "from": "oral-middle-comparison-inverse-bound",
+      "to": "written-mipt-2003-v2-invariant-derivative-cauchy",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навык работать с обратной функцией 1/y и знаменателем помогает увидеть конечный правый конец интервала решения.",
+      "backward_text": "Письменная задача дает явное решение y=1/(1-ln x), где blow-up читается по знаменателю.",
+      "status": "ai_checked",
+      "confidence": 0.74
+    },
+    {
+      "id": "rel-written-2003-pde-to-2009-positive-pde",
+      "from": "written-mipt-2003-v1-pde-circle-characteristics",
+      "to": "written-mipt-2009-91-pde-positive-characteristics",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе письменные карточки решают линейное ЧП первого порядка через первые интегралы характеристической системы.",
+      "backward_text": "Задача 2009 года компактнее и живет в положительной четверти; задача 2003 года добавляет пространственную характеристическую систему с z.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

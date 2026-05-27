@@ -1,0 +1,119 @@
+{
+  "id": "written-mipt-1998-bounded-linear-halfline",
+  "title": "Единственное ограниченное решение линейного уравнения на полупрямой",
+  "fragment": "foundations",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "written_exam_import"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 1998/99, вариант 3, задача 9",
+        "text": "Пусть на [0,+infty) задано уравнение y'=a(t)y+b(t), где a(t), b(t) непрерывны, a(t)>=1 и |b(t)|<=1. Доказать, что существует и притом единственное решение, ограниченное на всей полупрямой.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Выбрать начальное значение из условия ограниченности на бесконечности",
+      "text": "Все решения отличаются на C exp(int a), поэтому ограниченное решение может быть только одно; его удобно записать интегралом от t до бесконечности.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Положим A(t,s)=int_t^s a(r)dr. Так как a>=1, интеграл y(t)=-int_t^infty exp(-A(t,s)) b(s) ds сходится абсолютно и |y(t)|<=int_t^infty exp(-(s-t))ds=1. Дифференцируя по t под знаком интеграла, получаем y'=a(t)y+b(t), поэтому это ограниченное решение. Если y1 и y2 - два ограниченных решения, то их разность z удовлетворяет z'=a(t)z, значит z(t)=z(0) exp(int_0^t a(r)dr). При z(0) != 0 это решение неограниченно, поскольку int_0^t a(r)dr >= t. Следовательно, z(0)=0 и ограниченное решение единственно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order"
+    ],
+    "methods": [
+      "variation_of_constants",
+      "a_priori_bound",
+      "asymptotic_boundary_condition"
+    ],
+    "objects": [
+      "bounded_solution",
+      "halfline",
+      "linear_equation"
+    ],
+    "goal": [
+      "prove_existence",
+      "prove_uniqueness"
+    ],
+    "keywords": [
+      "MIPT written 1998",
+      "bounded solution",
+      "half-line"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 8,
+    "technical_score": 3,
+    "local_score": 8,
+    "comment": "Нужно заменить начальное условие граничным условием на бесконечности; формула и оценка короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_first_order",
+    "existence_uniqueness",
+    "boundedness",
+    "global_solution",
+    "asymptotic",
+    "standard_course_methods",
+    "low_technical",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\du^98.pdf",
+      "note": "1998/99, вариант 3, задача 9."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-1998-2000",
+    "notes": [
+      "Добавлена как качественная письменная задача не на вычисления, а на понимание формулы линейного уравнения и поведения на бесконечности.",
+      "В симуляции экзамена лучше использовать self_check: студент должен восстановить доказательство, а не просто угадать знак интеграла."
+    ]
+  }
+}

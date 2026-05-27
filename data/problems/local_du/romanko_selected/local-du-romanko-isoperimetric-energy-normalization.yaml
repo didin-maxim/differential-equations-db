@@ -20,7 +20,12 @@
         "self_contained": {
           "status": "ai_checked"
         },
-        "definition_ids": []
+        "definition_ids": [
+          "functional",
+          "extremal",
+          "variation",
+          "isoperimetric_problem"
+        ]
       }
     ]
   },

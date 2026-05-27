@@ -1,0 +1,108 @@
+{
+  "id": "msu-ode-2025-2-min-order-polynomial-solutions",
+  "title": "Минимальный порядок для полиномиальных решений",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2025, задача 2",
+        "text": "Какой наименьший порядок может иметь линейное однородное уравнение, среди решений которого есть функции y1(x)=x^2+1, y2(x)=1-x, y3(x)=x^2+3x-2, y4(x)=2x^2+x+1? Приведите пример такого уравнения.",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_statement_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Посчитать размерность линейной оболочки решений",
+      "text": "Пространство решений линейного однородного уравнения n-го порядка имеет размерность не больше n. Данные четыре функции лежат в пространстве квадратичных многочленов, и среди них есть три линейно независимые.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Все четыре функции являются квадратичными многочленами, поэтому они являются решениями уравнения y'''=0. Значит, порядок 3 достаточен. Покажем, что меньший порядок невозможен. В координатах относительно базиса 1,x,x^2 функции y1,y2,y3 имеют векторы (1,0,1), (1,-1,0), (-2,3,1). Их определитель равен -2, поэтому эти три функции линейно независимы. Пространство решений линейного однородного уравнения второго порядка не может содержать три линейно независимых решения. Следовательно, минимальный порядок равен 3.",
+      "status": "ai_checked"
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_higher_order"
+    ],
+    "methods": [
+      "dimension_count",
+      "linear_independence"
+    ],
+    "objects": [
+      "solution_space",
+      "polynomial_solutions",
+      "linear_higher_order"
+    ],
+    "goal": [
+      "find_minimum",
+      "construct"
+    ],
+    "keywords": [
+      "МГУ ОДУ 2025/2",
+      "минимальный порядок",
+      "линейное однородное уравнение",
+      "пространство решений"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 6,
+    "technical_score": 2,
+    "local_score": 6,
+    "comment": "Идейно это короткая задача на размерность пространства решений; вычисления сводятся к проверке трех независимых квадратичных многочленов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "affine_solution_space",
+    "olympiad_style",
+    "standard_course_methods",
+    "complete_proof",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/odu2025-usloviya.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "msu-ode-2025-2026",
+    "notes": [
+      "Добавлено как компактная олимпиадная задача, хорошо подходящая для устного формата. Близкие задачи на восстановление ОДУ по семейству решений проверены; здесь главный ход - минимальный порядок через размерность."
+    ]
+  }
+}

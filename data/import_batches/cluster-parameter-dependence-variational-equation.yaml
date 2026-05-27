@@ -11,6 +11,7 @@
     "gronwall"
   ],
   "problem_ids": [
+    "cluster-parameter-dependence-method-guide",
     "cluster-parameter-sensitivity-equation-theorem",
     "cluster-parameter-second-order-coefficient-forcing",
     "cluster-parameter-system-sensitivity",
@@ -19,6 +20,7 @@
   ],
   "status": "ai_checked",
   "notes": [
+    "Добавлен теоретико-методический навигатор кластера: он покрывает дифференцирование по параметру, вариационное уравнение потока, Гронуолла, системы и второй порядок без новых вычислительных задач.",
     "Добавлены только компактные представители, где главный ход - дифференцирование задачи Коши по параметру или оценка разности параметрических решений.",
     "Новые карточки закрывают второй порядок, систему, зависимость начальных данных, параметр в коэффициенте и правой части, а также качественную оценку через Гронуолла.",
     "Связи вынесены только в data/relations/relations.d/cluster-parameter-dependence-variational-equation.yaml."

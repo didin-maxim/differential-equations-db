@@ -1,0 +1,24 @@
+{
+  "id": "test-limit-cycles",
+  "title": "Импорт тестового архива 'Исследование предельных циклов'",
+  "created_at": "2026-05-27",
+  "scope": [
+    "test_import",
+    "limit_cycles",
+    "qualitative_theory"
+  ],
+  "source_archive": "C:\\Users\\Admin\\Downloads\\Исследование предельных циклов.zip",
+  "author_from_xlsx": "Деркач М.М.",
+  "problem_ids": [
+    "test-limit-cycles-radial-semistable",
+    "test-limit-cycles-bendixson-quadrants",
+    "test-limit-cycles-index-inside"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "PDF содержит 5 тестовых пунктов.",
+    "Радиальная задача 2 не импортирована отдельно: она повторяет задачу 1 с тем же планом решения и другой расстановкой знаков.",
+    "Задачи 4 и 5 объединены в одну self-check карточку на индекс особых точек внутри предельного цикла.",
+    "Задача 3 переформулирована как строгий вопрос о запрете по критерию Бендиксона, потому что исходное решение доказывает именно отсутствие циклов в квадрантах xy<0."
+  ]
+}

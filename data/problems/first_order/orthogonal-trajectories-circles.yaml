@@ -21,7 +21,10 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "ordinary_differential_equation"
+          "ordinary_differential_equation",
+          "direction_field",
+          "orthogonal_trajectories",
+          "separable_equation"
         ]
       }
     ]
@@ -34,6 +37,10 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "separate_variables"
+      ],
+      "definition_ids": [
+        "orthogonal_trajectories",
+        "separable_equation"
       ]
     }
   ],
@@ -45,6 +52,11 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "separate_variables"
+      ],
+      "definition_ids": [
+        "direction_field",
+        "orthogonal_trajectories",
+        "separable_equation"
       ]
     }
   ],

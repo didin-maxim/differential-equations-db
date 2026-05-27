@@ -1,6 +1,6 @@
 {
   "id": "oral-middle-integrating-factor-x",
-  "title": "Интегрирующий множитель μ(x) с неэлементарным интегралом",
+  "title": "Интегрирующий множитель, зависящий только от x",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",

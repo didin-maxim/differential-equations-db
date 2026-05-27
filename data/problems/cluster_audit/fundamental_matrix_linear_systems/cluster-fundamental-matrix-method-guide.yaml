@@ -1,0 +1,339 @@
+{
+  "id": "cluster-fundamental-matrix-method-guide",
+  "title": "Методический навигатор: фундаментальная матрица линейной системы",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для однородной линейной системы x'=A(t)x на интервале непрерывности коэффициентов фундаментальная матрица X(t) - это матрица, столбцы которой образуют базис решений; эквивалентно X'=A(t)X и det X(t) не обращается в нуль. Если выбрана точка t0, нормированная фундаментальная матрица Phi(t,t0) задается условием Phi(t0,t0)=I и переводит начальное состояние x(t0)=x0 в x(t)=Phi(t,t0)x0. Для произвольной фундаментальной матрицы X(t) матрица перехода от s к t равна Phi(t,s)=X(t)X(s)^{-1}; она не зависит от выбора X, удовлетворяет Phi(t,s)Phi(s,r)=Phi(t,r), Phi(s,s)=I, Phi(t,s)^{-1}=Phi(s,t) и по первой переменной решает d_t Phi(t,s)=A(t)Phi(t,s). Все решения однородной системы имеют вид x(t)=X(t)c, а все фундаментальные матрицы имеют вид Y(t)=X(t)C с постоянной обратимой C. Обратимость X(t) сохраняется на всем интервале: формула Лиувилля дает det X(t)=det X(t0) exp(int_{t0}^t tr A(tau) d tau), поэтому ненулевой det в одной точке не может стать нулем. При постоянной матрице A нормированная матрица перехода равна e^{A(t-s)}, а det e^{A(t-s)}=e^{(t-s) tr A}. Для неоднородной системы x'=A(t)x+b(t) вариация постоянных дает x(t)=X(t)c(t), c'=X(t)^{-1}b(t), то есть формулу Коши x(t)=Phi(t,t0)x0+int_{t0}^t Phi(t,s)b(s) ds. В задачах этого кластера главный объект - свойства X(t) и Phi(t,s): смена базиса, обратимость, determinant/trace, двухточечные условия, перенос начальных данных и связь с вариационной системой; если главный ход - вычисление спектра постоянной A или интеграла правой части, задача уходит в соседние кластеры.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix",
+          "normalized_fundamental_matrix",
+          "transition_matrix",
+          "cauchy_matrix",
+          "cauchy_formula_linear_system",
+          "liouville_formula_linear_system",
+          "matrix_exponential",
+          "det_exp_trace_identity",
+          "variation_of_constants_system",
+          "initial_value_problem",
+          "cauchy_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-state-transfer",
+      "title": "Сначала выбрать, что именно переносит матрица",
+      "text": "Фундаментальная матрица X(t) зависит от базиса решений, а матрица перехода Phi(t,s)=X(t)X(s)^{-1} зависит только от системы и переносит состояние из момента s в момент t. В задачах на начальные и двухточечные условия почти всегда нужен именно Phi(t,s).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "transition_matrix",
+        "normalized_fundamental_matrix"
+      ]
+    },
+    {
+      "id": "idea-change-basis",
+      "title": "Смена фундаментальной матрицы - это смена базиса",
+      "text": "Если X и Y фундаментальны для одной системы, то Y=XC, где C постоянна и обратима. Поэтому свойства, меняющиеся при правом умножении на C, зависят от выбора базиса, а Phi(t,s), ранг двухточечного оператора и отношение det X(t)/det X(s) инвариантны.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "transition_matrix"
+      ]
+    },
+    {
+      "id": "idea-liouville",
+      "title": "След управляет объемом",
+      "text": "Формула Лиувилля заменяет вычисление det X(t) одним интегралом следа: det X(t)=det X(t0) exp(int tr A). Она доказывает обратимость фундаментальной матрицы, сохранение площади при нулевом следе и постояннокоэффициентную формулу det e^{At}=e^{t tr A}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "liouville_formula_linear_system",
+        "det_exp_trace_identity",
+        "fundamental_matrix"
+      ]
+    },
+    {
+      "id": "idea-cauchy-formula",
+      "title": "Неоднородность накапливается через тот же переходный оператор",
+      "text": "Формула Коши отделяет свободное движение Phi(t,t0)x0 от вклада правой части int Phi(t,s)b(s) ds. Это тот же объект, что и в однородной задаче; меняется только то, что по времени s суммируются малые вклады вынуждения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "cauchy_formula_linear_system",
+        "variation_of_constants_system",
+        "transition_matrix"
+      ]
+    },
+    {
+      "id": "idea-constant-case",
+      "title": "При постоянных коэффициентах матрица перехода становится экспонентой",
+      "text": "Если A не зависит от t, то Phi(t,s)=e^{A(t-s)}. Это мост к matrix-exponential-methods и constant-coefficient-linear-systems: фундаментальная матрица остается главным языком переноса, а явный счет e^{At} и спектра принадлежит соседним кластерам.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "matrix_exponential",
+        "transition_matrix",
+        "fundamental_matrix"
+      ]
+    },
+    {
+      "id": "idea-variational-equation",
+      "title": "Фундаментальная матрица линеаризует зависимость от начального состояния",
+      "text": "Для нелинейного потока производная по начальному состоянию удовлетворяет вариационному линейному уравнению. Поэтому кластер parameter-dependence-variational-equation использует ту же фундаментальную матрицу, но как чувствительность потока, а не как самостоятельный объект линейной системы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "gronwall_estimate"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "transition_matrix"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-diagnostic-route",
+      "title": "Диагностический маршрут",
+      "text": "1. Зафиксировать рабочий интервал, где A(t) непрерывна. 2. Понять, дана произвольная фундаментальная матрица X(t) или нормированная Phi(t,t0). 3. Если нужно перенести данные из s в t, записать Phi(t,s)=X(t)X(s)^{-1}. 4. Если нужно сравнить две фундаментальные матрицы, искать постоянную C в равенстве Y=XC. 5. Если нужен det X, площадь или объем, применять формулу Лиувилля, а не раскрывать определитель. 6. Если есть правая часть b(t), писать формулу Коши и только затем подставлять начальные или краевые условия. 7. Если A постоянна, заменить Phi(t,s) на e^{A(t-s)} и решить, является ли главным вопросом фундаментальная матрица или уже спектральный счет постоянной матрицы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness",
+        "wronskian_liouville",
+        "variation_of_constants",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "normalized_fundamental_matrix",
+        "transition_matrix",
+        "liouville_formula_linear_system",
+        "cauchy_formula_linear_system",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "guide-proof-route",
+      "title": "Как доказывать базовые формулы",
+      "text": "Равенство X'=AX следует из того, что каждый столбец X является решением. Если det X(t0) не равен нулю, столбцы X(t0) задают базис начальных данных; единственность задачи Коши показывает, что X(t)c описывает все решения. Для другой фундаментальной матрицы Y каждый ее столбец выражается через столбцы X с постоянными коэффициентами, значит Y=XC. Матрица Phi(t,s)=X(t)X(s)^{-1} нормирована в s и потому является единственным оператором переноса. Формула Лиувилля получается из (det X)'=det X tr(X'X^{-1})=det X tr A. Вариация постоянных следует из подстановки x=Xc: после сокращения X'=AX остается Xc'=b.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness",
+        "wronskian_liouville",
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "transition_matrix",
+        "liouville_formula_linear_system",
+        "variation_of_constants_system"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не путать произвольную X(t) с нормированной матрицей перехода: X(t0) обычно не равна I. Не считать, что X(t)X(s)^{-1} зависит от выбора базиса решений. Не выводить обратимость X(t) точечным вычислением det, когда формула Лиувилля уже показывает сохранение ненулевого определителя. Не заменять Phi(t,s) на e^{A(t-s)} при переменной A(t). Не относить любую задачу с e^{At} сюда: если основной труд - спектр A, жордановы цепочки или явная экспонента, это соседний постояннокоэффициентный блок.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "normalized_fundamental_matrix",
+        "transition_matrix",
+        "matrix_exponential",
+        "liouville_formula_linear_system"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "linear_inhomogeneous_equation",
+      "variable_coefficients",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "normalized_fundamental_matrix",
+      "transition_matrix",
+      "cauchy_formula",
+      "liouville_formula",
+      "matrix_exponential",
+      "variation_of_constants",
+      "change_of_basis"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "cauchy_matrix",
+      "state_transition_matrix",
+      "linear_flow",
+      "determinant",
+      "trace",
+      "matrix_exponential",
+      "inhomogeneous_integral"
+    ],
+    "goal": [
+      "choose_method",
+      "prove",
+      "transfer_initial_data",
+      "handle_boundary_conditions",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "fundamental-matrix-linear-systems",
+      "method_guide",
+      "fundamental matrix",
+      "normalized fundamental matrix",
+      "transition matrix",
+      "Cauchy formula",
+      "Liouville formula",
+      "variation of constants",
+      "matrix exponential"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную тяжесть; сложность в различении произвольной фундаментальной матрицы, нормированной матрицы перехода, формулы Лиувилля и соседних постояннокоэффициентных методов.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "variation_of_parameters",
+    "wronskian",
+    "trace_determinant",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "method_guide",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый локальный язык курса: линейные системы, фундаментальная матрица, формула Коши и вариация постоянных."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program",
+      "status": "source_verified",
+      "note": "Локальная программа явно включает фундаментальную матрицу, ФСР, формулу Коши и вариацию постоянных."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачный фон по линейным системам, фундаментальной матрице и вариации постоянных."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "note": "Открытые notes с интерпретацией фундаментальной матрицы как оператора потока и обратного хода времени."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "note": "Строгая открытая ссылка по линейным системам, фундаментальной матрице, формуле Лиувилля и вариационным уравнениям."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "note": "Учебная опора по системам, матричной экспоненте и фундаментальным матрицам."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Локальная терминология и базовые формулы."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 2,
+      "comment": "Привязка к программе и экзаменационному контексту."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Типовые задачи по линейным системам."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 4,
+      "comment": "Потоковая интерпретация фундаментальной матрицы."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Строгие формулы Лиувилля и вариационных уравнений."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Учебное повторение матричной экспоненты и систем."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-fundamental-matrix-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера fundamental-matrix-linear-systems.",
+      "Покрыты определение фундаментальной матрицы, нормированная фундаментальная матрица, матрица перехода, формула Коши, обратимость, формула Лиувилля, связь с e^{At} при постоянных коэффициентах и вариация постоянных.",
+      "Границы с matrix-exponential-methods, constant-coefficient-linear-systems, variation-of-constants и parameter-dependence-variational-equation вынесены в идеи и relations."
+    ]
+  }
+}

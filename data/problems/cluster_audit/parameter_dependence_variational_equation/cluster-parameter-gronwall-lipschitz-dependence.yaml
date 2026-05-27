@@ -1,6 +1,6 @@
 {
   "id": "cluster-parameter-gronwall-lipschitz-dependence",
-  "title": "Оценка чувствительности по параметру через Гронуолла",
+  "title": "Оценка чувствительности по параметру через неравенство Гронуолла",
   "fragment": "foundations",
   "kind": {
     "primary": "lemma",

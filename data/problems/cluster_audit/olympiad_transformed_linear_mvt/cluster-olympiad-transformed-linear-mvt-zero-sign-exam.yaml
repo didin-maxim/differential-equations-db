@@ -1,0 +1,167 @@
+{
+  "id": "cluster-olympiad-transformed-linear-mvt-zero-sign-exam",
+  "title": "Сильный экзаменационный вариант: нули линейного выражения после деления на решение",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative",
+      "model_exam_task"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть p непрерывна на [a,b], u - ненулевое решение уравнения u'+p(x)u=0 на [a,b], а y непрерывна на [a,b] и дифференцируема на (a,b). 1) Докажите: если отношение y/u обращается в нуль в точках a<=x0<x1<...<xm<=b, то выражение y'+p y имеет не менее m нулей на (x0,xm). 2) Докажите: если y'+p y не меняет знак и не обращается в нуль тождественно на каждом подотрезке, то y/u строго монотонно, а значит y не может иметь два различных нуля. 3) Объясните, почему это первый-порядковый аналог рассуждений со вронскианом и разделением нулей, но не полноценная теорема Штурма.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "linear_first_order_equation",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Считать нули у отношения",
+      "text": "После деления на u производная отношения равна (y'+p y)/u. Поэтому каждый промежуток между соседними нулями y/u дает по Роллю нуль целевого линейного выражения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation"
+      ]
+    },
+    {
+      "id": "idea-sign",
+      "title": "Знак линейного выражения задает монотонность",
+      "text": "Так как u не имеет нулей, знак (y/u)' отличается от знака y'+p y только постоянным знаком u. Односторонний знак запрещает два нуля отношения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression"
+      ]
+    },
+    {
+      "id": "idea-border",
+      "title": "Граница со Штурмом проходит по порядку уравнения",
+      "text": "Здесь нет сравнения двух потенциалов и нет утверждения о чередовании нулей решений второго порядка. Есть только производная отношения, то есть первый-порядковый прототип вронскианного рассуждения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ],
+      "definition_ids": [
+        "wronskian"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Так как u'+p u=0 и u не обращается в нуль, отношение z=y/u корректно на [a,b]. На (a,b) имеем z'=(u y'-u' y)/u^2=(y'+p y)/u. Между соседними нулями x_{i-1} и x_i функции z теорема Ролля дает точку c_i, где z'(c_i)=0. Отсюда y'(c_i)+p(c_i)y(c_i)=0. Получаем по крайней мере по одному нулю на каждом из m промежутков. Если y'+p y имеет один знак и не зануляется тождественно на промежутках, то z' имеет один знак с точностью до постоянного знака u; значит z строго монотонна и не может иметь два различных нуля. Наконец, формула z'=(u y'-u' y)/u^2 показывает вронскианный числитель. Но в отличие от Штурма мы не сравниваем уравнения второго порядка и не выводим чередование нулей решений одной второй-порядковой задачи; мы используем только одно отношение и Ролля.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression",
+        "wronskian_invariant"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "wronskian"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_first_order",
+      "qualitative"
+    ],
+    "methods": [
+      "homogeneous_solution_ratio",
+      "rolle_theorem",
+      "zero_counting",
+      "sign_analysis",
+      "wronskian_relation",
+      "sturm_contrast"
+    ],
+    "objects": [
+      "zeros",
+      "signs",
+      "linear_expression",
+      "homogeneous_solution",
+      "wronskian"
+    ],
+    "goal": [
+      "count_zeros",
+      "prove_monotonicity",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "olympiad-transformed-linear-mvt",
+      "strong_exam_variant",
+      "zeros_after_ratio",
+      "sign_of_linear_expression",
+      "wronskian_analogy",
+      "sturm_boundary"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 7,
+    "idea_score": 7,
+    "technical_score": 3,
+    "comment": "Хороший вариант для сильного студента на экзамене: требует распознать деление на решение однородного уравнения, выполнить подсчет нулей и проговорить границу со Штурмом; вычисления при этом короткие.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "model_exam_task",
+    "olympiad_style",
+    "olympiad_above_exam",
+    "linear_first_order",
+    "integrating_factor",
+    "rolle_theorem",
+    "sturm_zero_count",
+    "sign_analysis",
+    "wronskian",
+    "strong_student_check",
+    "complete_proof",
+    "self_authored"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "model_task_source",
+      "status": "ai_generated_from_user_request",
+      "note": "Модельный экзаменационный представитель, выделенный из общего шаблона множитель + Ролль + подсчет нулей."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-olympiad-transformed-linear-mvt",
+    "notes": [
+      "Карточка помечена как вариант для сильного студента: она проверяет перенос метода, нули/знаки и границу со Штурмом.",
+      "Это self-authored model task, а не импорт из внешнего олимпиадного источника."
+    ]
+  }
+}

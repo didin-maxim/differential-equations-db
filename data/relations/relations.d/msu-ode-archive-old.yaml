@@ -1,0 +1,59 @@
+{
+  "relations": [
+    {
+      "id": "rel-msu-old-2004-delay-to-vjimc",
+      "from": "msu-ode-2004-2-delay-step-value",
+      "to": "vjimc-2016-c2-p4-moving-average-delay-variation",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи используют запаздывание, но МГУ 2004/2 является коротким методом шагов с точным численным ответом.",
+      "backward_text": "VJIMC 2016 показывает более сложный качественный вариант delay-аргумента, где нужен контроль осцилляций.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-msu-old-2009-zeros-to-2023-zeros",
+      "from": "msu-ode-2009-2-prescribed-zero-sequence",
+      "to": "msu-ode-2023-2-infinite-zeros-linear-ode",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В 2009/2 нули предписываются без конечного накопления; в 2023/2 конечное накопление нулей самого решения запрещено единственностью.",
+      "backward_text": "Запрет накопления нулей объясняет, почему в обратной конструкции 2009/2 нужна именно неограниченная последовательность без конечных точек накопления.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-msu-old-2014-global-to-continuation",
+      "from": "cluster-existence-blow-up-alternative",
+      "to": "msu-ode-2014-1-no-entire-abs-linear",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Альтернатива продолжения учит искать конечный край максимального решения.",
+      "backward_text": "МГУ 2014/1 дает короткий автономный пример, где вся траектория существует вперед, но ломается при продолжении назад.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-msu-old-2019-nonunique-to-peano",
+      "from": "weak-pass-nonunique-continuous-counterexample",
+      "to": "msu-ode-2019-3-nonzero-field-nonunique-plane",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Базовый пеановский пример y'=sqrt(|y|) дает задержанные решения.",
+      "backward_text": "МГУ 2019/3 усиливает пример добавлением координаты-часов, чтобы все поле стало нигде не нулевым.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-msu-old-2022-semistable-to-phase-line",
+      "from": "oral-above-three-phase-line-semistable",
+      "to": "msu-ode-2022-2-oscillatory-semistability",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Обычная полуустойчивость на фазовой прямой готовит различение устойчивости и асимптотической устойчивости.",
+      "backward_text": "МГУ 2022/2 усложняет фазовую прямую накоплением равновесий около нуля.",
+      "status": "ai_checked",
+      "confidence": 0.85
+    }
+  ]
+}

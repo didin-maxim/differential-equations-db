@@ -1,6 +1,6 @@
 {
   "id": "mipt-excellent-semilinear-characteristics-blowup",
-  "title": "Характеристики и граница существования для полулинейного уравнения в частных производных",
+  "title": "Полулинейное уравнение и граница существования",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",
@@ -25,7 +25,8 @@
         },
         "definition_ids": [
           "initial_value_problem",
-          "maximal_solution"
+          "maximal_solution",
+          "pde_characteristic_first_order"
         ]
       }
     ]

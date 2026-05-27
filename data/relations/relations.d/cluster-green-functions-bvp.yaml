@@ -1,0 +1,125 @@
+{
+  "relations": [
+    {
+      "id": "rel-green-guide-to-green-function-formula",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "trench-bvp-green-function-formula",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор дает общий маршрут: выбрать левую и правую фундаментальные функции, нормировать скачок производной и получить кусочное Green-ядро.",
+      "backward_text": "Формула Trench является главным representative-примером маршрута построения функции Грина для регулярной двухточечной BVP.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-green-guide-to-robin-kernel-example",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "trench-bvp-robin-green-kernel-example",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что условия Робина меняют выбор краевых фундаментальных решений и нормировку, но не сам принцип кусочного ядра.",
+      "backward_text": "Robin-пример служит компактной вычислительной проверкой: обе ветви ядра должны удовлетворять своим краевым условиям.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-green-guide-to-green-identity",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "trench-bvp-green-identity-self-adjoint-boundary",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Навигатор использует тождество Грина как критерий самосопряженности и источник симметрии Green-оператора.",
+      "backward_text": "Green identity объясняет, почему при самосопряженных условиях ядро должно быть симметричным и почему исчезает граничный член.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-green-guide-to-resonance-alternative",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор останавливает построение обычной функции Грина при ненулевом ядре и переводит задачу к альтернативе Фредгольма.",
+      "backward_text": "Резонансная альтернатива показывает соседнюю ветку Green-метода: вместо обратного ядра появляется условие совместности и свободное ядро.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-green-guide-to-dirichlet-resonance-condition",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "trench-bvp-dirichlet-resonance-sine-condition",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор связывает отсутствие Green-ядра в резонансе с конкретным условием ортогональности правой части к sin x.",
+      "backward_text": "Dirichlet resonance карточка является минимальным примером того, почему Green-функция не строится при собственном значении.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-green-guide-to-putnam-euler-kernel",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "putnam-early-1963-a3-euler-operator-kernel",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Навигатор отделяет задачи на явное ядро оператора от спектрального счета: важна структура обратного или почти обратного оператора.",
+      "backward_text": "Putnam-карточка является олимпиадным соседним representative для идеи kernel/operator, но без полного регулярного Green-построения.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-green-guide-to-boundary-spectral-guide",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "cluster-boundary-spectral-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор оставляет в green-functions-bvp задачи, где главный объект - кусочное ядро; вычисление собственных значений и ортогональности как цели относится к boundary-spectral-problems.",
+      "backward_text": "Спектральный навигатор использует Green-функцию только как нерезонансный обратный оператор и соседний язык, а не как главный объект.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-green-guide-to-dirichlet-eigenvalues",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор показывает границу: если в задаче ищут lambda для нетривиального решения, это спектральная BVP, а не построение Green-ядра.",
+      "backward_text": "Модельная задача Дирихле задает резонансные значения, при которых обычная функция Грина для соответствующего оператора перестает существовать.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-green-guide-to-local-resonant-bvp",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "local-du-standard-resonant-linear-bvp-solvability",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор передает задачи, где требуется только условие совместности в резонансе, в linear-bvp-solvability-resonance.",
+      "backward_text": "Локальная резонансная карточка является соседним representative для Fredholm-ветки: Green-ядро заменено условием ортогональности.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-green-guide-to-sturm-guide",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор обращается к Штурму только для нерезонанса, знака или отсутствия нулей; самостоятельные задачи о сравнении и дисконъюгированности принадлежат sturm-oscillation-comparison.",
+      "backward_text": "Sturm-навигатор дает соседний способ доказать отсутствие ядра Дирихле, но не строит само Green-ядро.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-green-guide-to-sturm-nonresonance-lemma",
+      "from": "cluster-green-functions-bvp-method-guide",
+      "to": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор использует штурмовский нерезонанс как предварительную проверку существования обратного Green-оператора.",
+      "backward_text": "Лемма о нерезонансе Дирихле показывает, как запрет двух нулей превращается в обратимость двухточечной задачи до построения ядра.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    }
+  ]
+}

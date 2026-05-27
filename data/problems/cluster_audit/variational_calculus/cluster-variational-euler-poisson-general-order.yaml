@@ -1,6 +1,6 @@
 {
   "id": "cluster-variational-euler-poisson-general-order",
-  "title": "Формула Эйлера-Пуассона для производных до порядка m",
+  "title": "Уравнение Эйлера-Пуассона для производных до порядка m",
   "fragment": "boundary_value",
   "kind": {
     "primary": "theorem",
@@ -24,7 +24,10 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "boundary_value_problem"
+          "boundary_value_problem",
+          "functional",
+          "extremal",
+          "variation"
         ]
       }
     ]

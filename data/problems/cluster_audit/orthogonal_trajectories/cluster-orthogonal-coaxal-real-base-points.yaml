@@ -26,7 +26,8 @@
         "definition_ids": [
           "ordinary_differential_equation",
           "solution",
-          "direction_field"
+          "direction_field",
+          "orthogonal_trajectories"
         ]
       }
     ]

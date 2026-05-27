@@ -1,0 +1,59 @@
+{
+  "relations": [
+    {
+      "id": "rel-test-limit-cycles-bendixson-theorem",
+      "from": "bendixson-no-cycles",
+      "to": "test-limit-cycles-bendixson-quadrants",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Критерий Бендиксона является теоретическим фактом, который здесь применяется локально к двум квадрантам.",
+      "backward_text": "Тестовая задача показывает, что важно не только посчитать дивергенцию, но и честно сформулировать область, где ее знак постоянен.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-test-limit-cycles-radial-phase-line",
+      "from": "autonomous-phase-line-stability",
+      "to": "test-limit-cycles-radial-semistable",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Фазовая прямая по знакам правой части является тем же механизмом, только примененным к радиальному уравнению r'=F(r).",
+      "backward_text": "Радиальная система переносит одноразмерную устойчивость равновесий на устойчивость окружностей-предельных циклов.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-test-limit-cycles-radial-putnam-fluid",
+      "from": "test-limit-cycles-radial-semistable",
+      "to": "putnam-early-1960-b3-fluid-flow",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Обе задачи читают предельный цикл через изменение радиуса, но тестовая карточка делает этот механизм совсем прозрачным.",
+      "backward_text": "Putnam-задача является более сложным родственником: окружность r=1 инвариантна и притягивает траектории, хотя радиальное уравнение уже не автономно по r.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-test-limit-cycles-index-linear-classification",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "test-limit-cycles-index-inside",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Классификация седел и узлов дает локальные типы равновесий; индекс добавляет глобальное ограничение на то, что может лежать внутри цикла.",
+      "backward_text": "Задача на индекс показывает границу стандартной линейной классификации: локальные типы нужно суммировать в глобальный инвариант.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-test-limit-cycles-index-first-integrals",
+      "from": "local-du-romanko-first-integral-center",
+      "to": "test-limit-cycles-index-inside",
+      "type": "contrast",
+      "distance": 3,
+      "forward_text": "Первые интегралы дают геометрию замкнутых уровней; индекс дает другой глобальный способ ограничивать фазовый портрет внутри замкнутой кривой.",
+      "backward_text": "Индексная задача не использует первый интеграл, но живет рядом как топологический язык для замкнутых траекторий.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    }
+  ]
+}

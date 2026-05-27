@@ -1,0 +1,21 @@
+{
+  "id": "cluster-wronskian-nonlinear-transforms",
+  "title": "Теоретико-методический блок: Вронскиан и нелинейные преобразования решений",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "olympiad",
+    "wronskian-nonlinear-transforms",
+    "method_guide"
+  ],
+  "problem_ids": [
+    "cluster-wronskian-nonlinear-transforms-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет только компактный method_guide/theorem/cluster_representative для малого кластера.",
+    "Новые вычислительные задачи не добавлялись: существующие представители уже покрывают y и y^m, случай y^2 и преобразование Пинни.",
+    "Новые определения не потребовались; использованы существующие definition_ids для Вронскиана, ФСР и линейной независимости решений.",
+    "Связи вынесены в data/relations/relations.d/cluster-wronskian-nonlinear-transforms.yaml."
+  ]
+}

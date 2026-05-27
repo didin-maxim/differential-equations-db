@@ -46,4 +46,6 @@ python tools\search.py neighbors picard-lindelof-theorem
 
 - [docs/BASE_WORKFLOW_RULES.md](docs/BASE_WORKFLOW_RULES.md) - редакционные
   правила отбора задач, кластеров, сложностей и интеграции перед коммитом.
+- [docs/EXAM_SIMULATION_RULES.md](docs/EXAM_SIMULATION_RULES.md) - правила
+  интерактивного режима "Симуляция экзамена".
 - [docs/reviews/olympiad-selection-criteria.md](docs/reviews/olympiad-selection-criteria.md) - граница темы для отбора задач из студенческих олимпиад.

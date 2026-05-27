@@ -1,0 +1,308 @@
+{
+  "id": "cluster-energy-estimates-second-order-method-guide",
+  "title": "Методический навигатор: энергетические оценки для уравнений второго порядка",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Энергетический метод для второго порядка",
+        "text": "Для уравнения второго порядка энергетический ход начинается с умножения на y' или на выражение, после которого левая часть становится производной квадратичной или механической энергии. В автономном случае y''+V'(y)=0 получают E=(y')^2/2+V(y) и E'=0; это первый интеграл фазовой системы y'=v, v'=-V'(y). При демпфировании, переменном коэффициенте или подобранном весе получают E'<=0, E'>=0 или интегральное тождество на отрезке. Знак производной энергии дает априорные оценки y и y', ограниченность, невозможность нетривиального периодического решения, запрет заданной краевой конфигурации или единственность нулевого решения. Если уровни E замкнуты и регулярны, они читаются как фазовые овалы и дают периодические движения; если E монотонна, она работает уже как функция Ляпунова и препятствует возврату на тот же уровень. Этот блок надо отличать от общей редукции порядка: замена p=p(y) ищет явное решение, а энергетическая оценка извлекает качественный вывод из знака E' без обязательного интегрирования уравнения.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-arnold-ode",
+          "src-teschl-ode-dynamical-systems",
+          "src-waterloo-amath250-notes",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "autonomous_equation",
+          "first_integral",
+          "phase_trajectory",
+          "equilibrium",
+          "lyapunov_function",
+          "lyapunov_stability",
+          "asymptotic_stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-multiply-by-velocity",
+      "title": "Домножение на скорость превращает силу в производную потенциала",
+      "text": "Если уравнение имеет вид y''+g(y)=0, то после умножения на y' получается ((y')^2/2+G(y))'=0, где G'=g. В задачах с коэффициентами или демпфированием тот же прием дает не ноль, а контролируемый знак.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function"
+      ]
+    },
+    {
+      "id": "idea-sign-of-energy",
+      "title": "Знак E' важнее явного решения",
+      "text": "Когда E'<=0, траектория не может вернуться на больший уровень энергии; на периоде это заставляет полную потерю энергии быть нулевой. Когда E>=c((y')^2+y^2) или уровень E ограничивает фазовую точку, из него сразу следует априорная оценка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "lyapunov_function",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-first-integral-vs-lyapunov",
+      "title": "Сохранение энергии и убывание энергии дают разные выводы",
+      "text": "E'=0 удерживает решение на уровне и связывает задачу с первыми интегралами и фазовыми овалами. E'<0 или E'<=0 связывает задачу с функциями Ляпунова: это уже аргумент о невозможности возврата, устойчивости или затухании, а не о замкнутой траектории.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory",
+        "lyapunov_function",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "idea-boundary-integral",
+      "title": "Интегральная энергия превращает краевые условия в знак",
+      "text": "На отрезке часто выгодно интегрировать произведение уравнения на y или y' и перенести производные по частям. Если краевые члены исчезают, сумма неотрицательных интегралов может равняться нулю только для тривиального решения или невозможной конфигурации нулей.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "solution"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route-conserved",
+      "title": "Маршрут для сохраняющейся энергии",
+      "text": "1. Проверить, зависит ли сила только от y: y''+g(y)=0 или эквивалентная автономная форма. 2. Найти потенциал G(y)=int g(y) dy. 3. Записать E=(y')^2/2+G(y) и проверить E'=y'(y''+g(y))=0. 4. Использовать уровень E=C как фазовую кривую: компактный регулярный уровень без равновесий дает периодическое движение, а строгий минимум энергии около равновесия дает устойчивость без притяжения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory",
+        "equilibrium",
+        "lyapunov_stability"
+      ]
+    },
+    {
+      "id": "guide-route-monotone",
+      "title": "Маршрут для монотонной энергии",
+      "text": "1. Выбрать E так, чтобы после подстановки уравнения остались слагаемые известного знака. 2. Выписать E' и не терять коэффициенты, которые отвечают за знак. 3. Для периодического решения интегрировать E' по периоду и получить нулевую полную потерю энергии. 4. Для ограниченности использовать нижнюю положительность E и верхнюю оценку E(t)<=E(t0) или обратную монотонность. 5. Если нулевая потеря заставляет y' или y занулиться на интервале, завершить через единственность задачи Коши.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "lyapunov_function",
+        "solution"
+      ]
+    },
+    {
+      "id": "guide-route-boundary",
+      "title": "Маршрут для краевого энергетического тождества",
+      "text": "1. Выбрать множитель y, y' или весовую комбинацию так, чтобы главный член интегрировался по частям. 2. Проверить, какие краевые члены зануляются условиями задачи. 3. Свести утверждение к интегралу от неотрицательной суммы или к монотонности энергии между концами. 4. Если интеграл равен нулю, каждое неотрицательное слагаемое исчезает на нужном множестве; далее используется непрерывность и единственность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "solution"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не выводить асимптотическую устойчивость из E'=0: сохранение энергии обычно дает центр, а не притяжение. Не объявлять любую положительную функцию энергией без проверки E' вдоль решения. Не путать bounded energy с bounded solution, если энергия не контролирует y и y'. Не добавлять новую карточку в кластер только из-за другой первообразной G(y), когда переносимый ход снова сводится к E'=0 или E'<=0.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function",
+        "asymptotic_stability"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order_ode",
+      "linear_second_order",
+      "nonlinear_second_order",
+      "mechanical_oscillator",
+      "qualitative"
+    ],
+    "methods": [
+      "energy_method",
+      "energy_first_integral",
+      "energy_monotonicity",
+      "phase_plane",
+      "lyapunov_function",
+      "boundary_integral_identity"
+    ],
+    "objects": [
+      "energy",
+      "first_integral",
+      "phase_trajectory",
+      "periodic_solution",
+      "bounded_solution",
+      "lyapunov_function",
+      "a_priori_estimate"
+    ],
+    "goal": [
+      "choose_method",
+      "prove_boundedness",
+      "prove_nonexistence",
+      "prove_periodicity",
+      "derive_a_priori_estimate",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "energy-estimates-second-order-ode",
+      "method_guide",
+      "multiply by y'",
+      "T+V",
+      "energy derivative sign",
+      "a priori estimate",
+      "periodic solution",
+      "Lyapunov function",
+      "phase plane"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок требует выбрать правильную энергию и прочитать знак ее производной; вычислительная нагрузка мала, но важны границы между первым интегралом, функцией Ляпунова и редукцией порядка.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "energy_method",
+    "first_integral",
+    "phase_plane",
+    "lyapunov",
+    "periodic_solution",
+    "boundedness",
+    "nonexistence",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык курса: энергетические интегралы, качественные выводы и связь с фазовой плоскостью."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическая геометрическая интерпретация механической энергии и фазовых кривых."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Autonomous systems, phase portraits and stability material",
+      "note": "Открытый строгий источник по фазовым системам, первым интегралам и устойчивости."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Mechanical oscillators and qualitative sketches",
+      "note": "Учебный материал с осцилляторами, демпфированием и качественным чтением фазовой плоскости."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "note": "Открытый курс для фазовой плоскости, энергии и устойчивости в стандартном курсе ОДУ."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной язык стандартного курса."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 2,
+      "comment": "Геометрический смысл энергии и фазовых траекторий."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 3,
+      "comment": "Учебные примеры с механическими осцилляторами."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 4,
+      "comment": "Строгий открытый источник по фазовым системам."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Дополнительное открытое изложение для повторения."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-energy-estimates-second-order-ode",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок к уже существующему кластеру energy-estimates-second-order-ode.",
+      "Новые определения не вводились: карточка использует существующие definition_ids первого интеграла, фазовой траектории, устойчивости и функции Ляпунова.",
+      "Карточка помечена theorem, method_guide и cluster_representative, чтобы отображаться как теоретический навигатор, а не как еще одна вычислительная задача."
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "cluster-integrating-factor-mu-y-short",
-  "title": "Короткий множитель mu(y) для дифференциальной формы",
+  "title": "Интегрирующий множитель, зависящий только от y",
   "fragment": "first_order",
   "kind": {
     "primary": "problem",

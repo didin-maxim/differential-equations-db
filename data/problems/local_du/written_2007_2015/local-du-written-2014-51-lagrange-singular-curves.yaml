@@ -22,7 +22,12 @@
         },
         "definition_ids": [
           "ordinary_differential_equation",
-          "direction_field"
+          "solution",
+          "direction_field",
+          "general_solution",
+          "singular_solution",
+          "integral_curve",
+          "discriminant_curve"
         ]
       }
     ]
@@ -35,6 +40,11 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "singular_solution",
+        "integral_curve"
       ]
     }
   ],
@@ -93,8 +103,7 @@
     "first_integral",
     "mipt_core",
     "standard_course_methods",
-    "cluster_representative",
-    "exam_score_6"
+    "cluster_representative"
   ],
   "sources": [
     {
@@ -111,6 +120,7 @@
     "public_ready": true,
     "relations_status": "local_du_written_2007_2015_links",
     "notes": [
+      "2026-05-27 precommit audit: removed exam_score_6 because technical_score=6; keep as written_exam technical practice, not a short oral simulation item.",
       "Задача включена как представитель письменных задач на уравнения Лагранжа-Клеро и особые решения.",
       "Аналогичные задачи на интегральные кривые из DE2007-08, DE2011-2012 и соседних вариантов DE2014-15 отфильтрованы."
     ]

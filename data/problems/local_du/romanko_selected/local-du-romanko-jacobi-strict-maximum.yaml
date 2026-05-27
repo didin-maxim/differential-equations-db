@@ -20,7 +20,13 @@
         "self_contained": {
           "status": "ai_checked"
         },
-        "definition_ids": []
+        "definition_ids": [
+          "functional",
+          "extremal",
+          "variation",
+          "conjugate_point",
+          "jacobi_condition"
+        ]
       }
     ]
   },

@@ -1,0 +1,136 @@
+{
+  "relations": [
+    {
+      "id": "rel-variation-guide-to-first-order-formula",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "linear-first-order-formula",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок показывает, что формула первого порядка y'+p(x)y=q(x) является вариацией одной постоянной в однородном решении.",
+      "backward_text": "Формула через интегрирующий множитель является минимальным скалярным случаем общего метода variation-of-constants.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-variation-guide-to-parameters-sine",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "variation-of-parameters-sine",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует стандартную систему на u1' и u2' через Вронскиан; задача y''+y=sec x является базовым вычислительным representative этой ветки.",
+      "backward_text": "Задача с sec x иллюстрирует ветку навигатора про скалярное уравнение второго порядка с известной ФСР и ненулевым Вронскианом.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-variation-guide-to-basic-ypp-plus-y",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "basic-mipt-variation-constants-ypp-plus-y",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок объясняет, что даже когда частное решение можно угадать, вариация постоянных строит его через ФСР и интегралы.",
+      "backward_text": "Пример y''+y=1 является минимальной проверкой формулы вариации постоянных без технически тяжелых интегралов.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-variation-guide-to-system-formula",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выводит системную формулу x=Xc, c'=X^{-1}b; theorem-card для постоянной A записывает тот же ход через e^{A(t-s)}.",
+      "backward_text": "Формула для x'=Ax+b(t) является постояннокоэффициентным частным случаем общей формулы Коши из навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-variation-guide-to-fundamental-two-point",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "oral-exam-excellent-two-point-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает, что после интегральной формулы начальные или двухточечные условия накладываются на постоянную c или на начальное значение x(t0).",
+      "backward_text": "Двухточечная задача через фундаментальную матрицу показывает, как формула Коши превращает неоднородность в линейное условие на начальные данные.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-variation-guide-to-scalar-resonance",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "constant-coeff-second-order-resonance",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет резонанс как появление дополнительного множителя t в интеграле вариации постоянных; скалярная карточка дает постояннокоэффициентный representative.",
+      "backward_text": "Резонансная задача с постоянными коэффициентами является местом, где метод неопределенных коэффициентов короче, но его правило следует из вариации постоянных.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-variation-guide-to-jordan-resonant-system",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "cluster-linear-systems-jordan-resonant-forcing",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор описывает системный резонанс как интегрирование вклада правой части вдоль однородных режимов; жорданова карточка показывает, как это взаимодействует с цепочками A.",
+      "backward_text": "Жорданов резонанс является более структурным соседним примером той же идеи: интеграл неоднородности порождает полиномиальные множители.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-variation-guide-to-linear-variable-parameters",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "cluster-linear-variable-variation-parameters-fundamental-system",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе карточки используют ФСР и Вронскиан для вариации параметров; навигатор отвечает за общий неоднородный метод, а variable-coefficients representative - за роль переменных коэффициентов и ФСР.",
+      "backward_text": "Задача с переменными коэффициентами является содержательным соседним representative: та же формула, но главный акцент на структуре ФСР и W.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-variation-guide-to-linear-variable-guide",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор variation-of-constants оставляет в центре интеграл неоднородности; linear-variable guide берет задачи, где главный объект - ФСР, Вронскиан, редукция порядка или качественные следствия переменных коэффициентов.",
+      "backward_text": "Навигатор переменно-коэффициентного кластера использует вариацию параметров как одну ветку, но не дублирует общий метод неоднородного интеграла.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-variation-guide-to-fundamental-matrix-flow",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор использует фундаментальную матрицу как оператор в формуле Коши; Waterloo-card фокусируется на свойствах самого фундаментального потока, обратимости и композиции.",
+      "backward_text": "Фундаментальная матрица как flow-object является соседним языком: из него получается Phi(t,s), но неоднородный интеграл остается зоной variation-of-constants.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-variation-guide-to-constant-system-guide",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "cluster-linear-systems-constant-coefficients-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор variation-of-constants выбирает задачу по роли неоднородного интеграла и частного решения; constant-coefficients guide выбирает по спектру A, жордановым цепочкам и построению общего решения x'=Ax.",
+      "backward_text": "Методический блок постоянных коэффициентов содержит вариацию постоянных как один способ решить неоднородную систему, но его главный объект шире: спектр и структура постоянной матрицы.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-variation-guide-to-matrix-exp-guide",
+      "from": "cluster-variation-of-constants-method-guide",
+      "to": "cluster-matrix-exponential-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор variation-of-constants использует e^{A(t-s)} как ядро интеграла правой части; matrix-exponential guide оставляет задачи, где свойство e^{At} само является главным ходом.",
+      "backward_text": "Матричная экспонента дает оператор переноса в формуле Коши, но если вопрос сводится к неоднородному интегралу, задача ближе к variation-of-constants.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    }
+  ]
+}

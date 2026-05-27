@@ -1,0 +1,121 @@
+{
+  "id": "written-mipt-2004-v2-v3-multiplicative-sine-comparison",
+  "title": "Экспоненциальное сравнение для y'=±(1+sin^2 x+sin^2 y)y",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2004/2005, варианты 2-3, задача 9",
+        "text": "1) Пусть y(x), 0<=x<+infty, является решением уравнения y'=-(1+sin^2 x+sin^2 y)y. Докажите, что y(x)->0 при x->+infty. 2) Пусть y'= (1+sin^2 x+sin^2 y)y и существует x0>=0 такое, что y(x0)!=0. Докажите, что |y(x)|->+infty при x->+infty.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Взять логарифм модуля ненулевого решения",
+      "text": "Нулевая траектория отделяет знаки по единственности. Для ненулевого решения производная ln|y| равна ±(1+sin^2 x+sin^2 y), поэтому зажимается линейной функцией времени.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В обоих уравнениях правая часть гладкая, поэтому решение, однажды равное нулю, тождественно равно нулю; ненулевое решение не меняет знак. В первом случае для y!=0 получаем (ln|y|)'=-(1+sin^2 x+sin^2 y)<=-1. Поэтому ln|y(x)|<=ln|y(0)|-x, откуда y(x)->0. Если y(0)=0, утверждение тривиально. Во втором случае для x>=x0 имеем (ln|y|)'=1+sin^2 x+sin^2 y>=1. Значит ln|y(x)|>=ln|y(x0)|+(x-x0), и |y(x)|->+infty.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "logarithmic_derivative",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "nonautonomous",
+      "qualitative"
+    ],
+    "methods": [
+      "logarithmic_derivative",
+      "comparison",
+      "uniqueness"
+    ],
+    "objects": [
+      "zero_solution",
+      "asymptotic_behavior",
+      "sign_invariance"
+    ],
+    "goal": [
+      "prove_limit"
+    ],
+    "keywords": [
+      "MIPT_2004_2005",
+      "variant_2",
+      "variant_3",
+      "problem_9",
+      "written_exam",
+      "logarithmic_derivative"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 3,
+    "local_score": 6,
+    "comment": "Обе письменные формулировки имеют один переносимый механизм; объединены, чтобы не создавать дубль.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "mipt_core",
+    "standard_course_methods",
+    "existence_uniqueness",
+    "boundedness",
+    "low_technical",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2004-2005.pdf",
+      "locator": "2004/2005, варианты 2-3, задача 9"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2004-2006",
+    "notes": [
+      "Варианты 2 и 3 объединены как одна карточка: меняется только знак у множителя, а решение симметрично через логарифмическую производную.",
+      "Для симуляции экзамена подходит multiple-choice на выбор корректного предельного поведения."
+    ]
+  }
+}

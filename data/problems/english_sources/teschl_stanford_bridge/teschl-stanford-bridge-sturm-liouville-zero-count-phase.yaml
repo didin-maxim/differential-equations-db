@@ -1,6 +1,6 @@
 {
   "id": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
-  "title": "Счет нулей собственных функций через фазовый угол",
+  "title": "Число нулей собственных функций через фазовый угол",
   "fragment": "boundary_value",
   "kind": {
     "primary": "theorem",

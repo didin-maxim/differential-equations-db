@@ -1,6 +1,6 @@
 {
   "id": "cluster-matrix-exp-recover-a-derivative-zero",
-  "title": "Восстановление A как производной e^{At} в нуле",
+  "title": "Производная матричной экспоненты в нуле",
   "fragment": "systems",
   "kind": {
     "primary": "lemma",

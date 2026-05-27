@@ -1,6 +1,6 @@
 {
   "id": "cluster-matrix-exp-det-trace-shortcut",
-  "title": "Определитель e^{At} через след A",
+  "title": "Определитель матричной экспоненты через след",
   "fragment": "systems",
   "kind": {
     "primary": "lemma",

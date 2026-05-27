@@ -1,6 +1,6 @@
 {
   "id": "mit-18034-pset05-second-order-picard-integral",
-  "title": "Итерации Пикара для уравнения второго порядка через интегральное ядро",
+  "title": "Интегральная форма Пикара для уравнения второго порядка",
   "fragment": "foundations",
   "kind": {
     "primary": "problem",

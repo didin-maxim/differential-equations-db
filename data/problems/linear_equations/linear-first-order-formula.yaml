@@ -21,7 +21,15 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "linear_first_order_equation"
+          "ordinary_differential_equation",
+          "solution",
+          "linear_first_order_equation",
+          "integrating_factor",
+          "general_solution",
+          "particular_solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "integral_curve"
         ]
       }
     ]
@@ -29,11 +37,16 @@
   "ideas": [
     {
       "id": "idea-main",
-      "title": "Линейная структура",
-      "text": "Используется фундаментальная система решений, вронскиан или экспонента оператора.",
+      "title": "Интегрирующий множитель",
+      "text": "Множитель μ=exp(∫p) выбирают так, чтобы левая часть стала производной произведения (μy)'.",
       "status": "ai_checked",
       "standard_idea_ids": [
-        "resonance_ansatz"
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "integrating_factor",
+        "general_solution"
       ]
     }
   ],
@@ -42,7 +55,15 @@
       "id": "sol-main",
       "title": "Доказательство",
       "text": "Пусть μ(x)=exp(∫p(x)dx). Тогда (μy)'=μq. Интегрируя, получаем μ(x)y(x)=C+∫ μ(x)q(x)dx, то есть y=μ^{-1}(C+∫μq). Проверка прямой подстановкой завершает доказательство.",
-      "status": "ai_checked"
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "general_solution",
+        "particular_solution"
+      ]
     }
   ],
   "differential_equations_profile": {
@@ -50,10 +71,12 @@
       "linear_equations"
     ],
     "methods": [
-      "resonance_ansatz"
+      "integrating_factor_linear"
     ],
     "objects": [
       "linear_first_order",
+      "integrating_factor",
+      "general_solution",
       "complete_proof"
     ],
     "goal": [

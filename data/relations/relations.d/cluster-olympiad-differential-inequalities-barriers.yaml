@@ -1,0 +1,202 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-from-existence",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Курс существования и продолжения объясняет локальную разрешимость и язык конечного конца решения, а олимпиадный блок показывает, как выбирать барьерную величину для конкретного неравенства.",
+      "backward_text": "Олимпиадные барьеры не заменяют Пикара-Линделефа или критерий продолжения: они дают априорную оценку, запрет выхода или противоречие с допустимым диапазоном вспомогательной величины.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-angle-lemma",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "olympiad-level-angle-speed-comparison",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет угол как счетчик скорости поворота для симметричных оценок на производные.",
+      "backward_text": "Угловая лемма является точной формой этого счетчика и сразу дает острую нижнюю оценку времени поворота.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-putnam-2023",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "putnam-modern-2023-a3",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "После распознавания угла задача Putnam 2023 A3 становится проверкой скорости theta' и построением острого примера cos/sin.",
+      "backward_text": "Putnam 2023 A3 является полной олимпиадной реализацией ветки angle_speed из методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-backward-lemma",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "olympiad-level-backward-positivity-derivative-lemma",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что глобальная положительность на всей прямой часто требует смотреть назад, а не вперед от начальной точки.",
+      "backward_text": "Лемма о положительности производных формализует backward estimate через тейлоровскую оценку, которая иначе дала бы отрицательное значение.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-putnam-1999",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "putnam-modern-1999-b4",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Методический блок указывает на backward estimates как на отдельный олимпиадный шаблон; Putnam 1999 B4 соединяет две такие оценки и финальную алгебру.",
+      "backward_text": "Putnam 1999 B4 является насыщенной задачей на ту же идею, где направление оценки важнее стандартной теоремы существования.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-nure-8-5",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "ru-misc-nure-8-5",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Ветка arctan/blow-up говорит заменить y на ограниченный счетчик arctan y и сравнить скорость его роста.",
+      "backward_text": "ХНУРЭ 8.5 является коротким примером: z=arctan y не может расти со скоростью хотя бы 1 на слишком длинном промежутке.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-nure-8-2",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "ru-misc-nure-8-2",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет интегрируемый хвост как способ получить ограниченность полного прироста решения.",
+      "backward_text": "ХНУРЭ 8.2 показывает этот прием в минимальной форме: производная мажорируется интегрируемой функцией от независимой переменной.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-nure-8-8",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "ru-misc-nure-8-8",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Та же ветка интегрируемого хвоста работает, когда зависимость от x скрыта в знаменателе через cos x.",
+      "backward_text": "ХНУРЭ 8.8 является близким представителем boundedness через конечный полный прирост.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-putnam-1997",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "putnam-modern-1997-b2",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Для ограниченности второго порядка навигатор предлагает искать энергию, производная которой имеет нужный знак в правильном направлении.",
+      "backward_text": "Putnam 1997 B2 является образцовым energy barrier: E=f^2+(f')^2 убывает к правому хвосту и контролируется при движении к нулю слева.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-putnam-1994",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "putnam-modern-1994-b3",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "При неравенстве f'>f методический блок предлагает вынести e^x и изучать монотонность e^{-x}f.",
+      "backward_text": "Putnam 1994 B3 показывает, как экспоненциально взвешенная величина дает точный порог роста и контрпример.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-putnam-2009",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "putnam-modern-2009-b5",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Ветвь инвариантных барьеров предлагает искать комбинации x+f и x-f, если само уравнение плохо читается в переменной f.",
+      "backward_text": "Putnam 2009 B5 является продвинутой реализацией: две монотонные комбинации создают коридор, после чего асимптотика следует из знака правой части.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-convex-two-zeros",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "convex-solution-two-zeros",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Выпуклость является самым простым барьером: граф не может подняться выше хорды между нулями.",
+      "backward_text": "Карточка с двумя нулями показывает экзаменационно чистую форму барьерного рассуждения без тяжелой теории.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-imc-2019",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "imc-2019-p3-convex-differential-inequality",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Если неравенство на производные похоже на вторую производную скрытой функции, надо восстановить эту функцию и применить выпуклый барьер.",
+      "backward_text": "IMC 2019 P3 является сильным примером: g=xf-x^2/2 превращает условие в g''>=0.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-yagtu-2001",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "ru-cis-extra-yagtu-2001-sine-barrier",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор рекомендует искать простую комбинацию переменных, если нелинейность вида sin(x+y) мешает прямому сравнению.",
+      "backward_text": "Задача ЯГТУ 2001 показывает, как u=x+y убирает синус из нижней оценки и дает явный параболический барьер.",
+      "status": "ai_checked",
+      "confidence": 0.89
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-yagtu-2014",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "ru-cis-extra-yagtu-2014-exp-minus-xy-limit",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Двухфазный барьер сначала загоняет решение в положительную область, а затем интегрируемый экспоненциальный хвост дает конечный предел.",
+      "backward_text": "Задача ЯГТУ 2014 является примером, где invariant region и forward tail estimate должны быть применены последовательно.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-seemous-2020",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "seemous-2020-p4-pole-fixed-point-series",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "При условии f'/f^2 около полюса навигатор предлагает перейти к обратной величине 1/f как к счетчику расстояния до барьера.",
+      "backward_text": "SEEMOUS 2020 P4 является олимпиадной асимптотической версией этого приема с фиксированными точками и рядами.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-smmc-2018",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "smmc-2018-a3-log-ratio-concavity",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Отношение y/x и логарифмическая переменная являются типичным способом превратить уравнение в фазовую прямую с глобальным барьером.",
+      "backward_text": "Simon Marais 2018 A3 соединяет этот переход с оценкой левого хвоста и единственным пересечением уровня.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-olympiad-barriers-guide-to-bme-2023",
+      "from": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+      "to": "bme-2023-p3-periodic-high-derivative-bound",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Повторяемый барьер через максимум и ближайший нуль является периодической версией оценки полного отклонения через производную.",
+      "backward_text": "BME 2023 P3 показывает, как один элементарный барьер второго порядка итеративно переносится на четные производные.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-wnt-liouville-to-method-guide",
+      "from": "liouville-wronskian-formula",
+      "to": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Формула Лиувилля дает главный переносимый факт: Вронскиан независимой пары либо нигде не зануляется на рабочем интервале, либо в специальной форме без y' постоянен.",
+      "backward_text": "Навигатор показывает, как этот линейный факт используется не для полного решения уравнения, а для нелинейных преобразований решений.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-wnt-abel-zero-to-method-guide",
+      "from": "local-du-standard-abel-wronskian-zero-lemma",
+      "to": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "type": "prerequisite",
+      "distance": 1,
+      "forward_text": "Лемма Абеля о W и простоте нулей объясняет, почему перед делением на решение или переходом к отношению надо отдельно контролировать нули.",
+      "backward_text": "Навигатор переносит эту лемму в олимпиадные задачи со степенями, отношениями и корнями из произведений решений.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-power-criterion",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "olympiad-level-power-solution-linear-ode-criterion",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет ветку, где нелинейное преобразование одного решения y -> y^m читается через логарифмическую производную y'/y.",
+      "backward_text": "Критерий для y и y^m является обобщающим representative этой ветки.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-nure-8-3",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "ru-misc-nure-8-3",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему в задаче ХНУРЭ сначала надо исключить нули y1, а затем перейти к логарифмической производной r=y1'/y1.",
+      "backward_text": "Задача ХНУРЭ является конкретной проверкой ветки guide про нелинейную степень одного решения.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-putnam-1975",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "putnam-early-1975-a5-wronskian-nonlinear-transform",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор заранее указывает ход Putnam 1975 A5: дифференцировать z^2=c^2 y1 y2 и свести остаток к квадрату постоянного Вронскиана.",
+      "backward_text": "Putnam 1975 A5 является главным representative ветки, где нелинейное уравнение строится из пары независимых линейных решений.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-linear-variable-guide",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Этот кластер берет из линейной теории только W, ФСР и контроль нулей для нелинейного преобразования; обычное построение ФСР, вариация параметров и формула Абеля остаются в linear-equations-variable-coefficients.",
+      "backward_text": "Навигатор по переменным коэффициентам дает широкий линейный фон, но не делает нелинейную комбинацию решений центральным объектом.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-sturm-guide",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Вронскианные рассуждения о простоте нулей и отношении решений остаются локальным инструментом; полноценное разделение, сравнение, осцилляция и спектральные следствия относятся к Штурму.",
+      "backward_text": "Штурмовский навигатор развивает ту же линейную базу к задачам о расположении нулей, но не к нелинейным преобразованиям пары решений.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-wnt-method-guide-to-riccati-bernoulli",
+      "from": "cluster-wronskian-nonlinear-transforms-method-guide",
+      "to": "cluster-riccati-bernoulli-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Нелинейность в этом кластере возникает из преобразования решений линейного уравнения и Вронскиана, а не из стандартной линеаризации уравнений Бернулли или Риккати.",
+      "backward_text": "Риккати-Бернулли навигатор полезен как соседняя граница: там нелинейное уравнение линеаризуется заменой, здесь линейное уравнение порождает нелинейную величину.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

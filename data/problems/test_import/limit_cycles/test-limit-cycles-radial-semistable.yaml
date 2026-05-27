@@ -1,0 +1,130 @@
+{
+  "id": "test-limit-cycles-radial-semistable",
+  "title": "Радиальные предельные циклы и их устойчивость",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": [
+      "test_import",
+      "multiple_choice"
+    ]
+  },
+  "language": "ru",
+  "authors": [
+    {
+      "name": "Деркач М.М.",
+      "role": "test_author",
+      "status": "xlsx_attributed"
+    }
+  ],
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Тестовая задача",
+        "text": "Рассмотрим систему x'=3y+x(x^2+y^2-1)(x^2+y^2-4)^2, y'=-3x+y(x^2+y^2-1)(x^2+y^2-4)^2. Какие предельные циклы r=1 и r=2 устойчивы?",
+        "source_ids": [
+          "src-test-du-limit-cycles"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "phase_line",
+          "equilibrium",
+          "lyapunov_stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Перейти к радиальному уравнению",
+      "text": "Для поля вида x'=-omega y+xF(r^2), y'=omega x+yF(r^2) окружности r=const проверяются по одному уравнению r'=rF(r^2). Простой корень меняет знак и дает устойчивый или неустойчивый цикл, а корень четной кратности дает полуустойчивость.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "radial_limit_cycle_stability",
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "В полярных координатах получаем phi'=-3 и r'=r(r^2-1)(r^2-4)^2. Вблизи r=1 множитель (r^2-4)^2 положителен, а r^2-1 меняет знак с минуса на плюс, поэтому при r<1 радиус убывает, а при r>1 растет. Окружность r=1 неустойчива. Вблизи r=2 множитель (r^2-4)^2 неотрицателен и знак r' определяется положительным r(r^2-1), поэтому r' положителен с обеих сторон от r=2. С внутренней стороны траектории приближаются к r=2, с внешней уходят от него: цикл r=2 полуустойчив.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "radial_limit_cycle_stability",
+        "phase_line_signs"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_planar_system",
+      "qualitative"
+    ],
+    "methods": [
+      "polar_coordinates",
+      "phase_line_signs",
+      "limit_cycle_stability"
+    ],
+    "objects": [
+      "limit_cycle",
+      "semistable_cycle",
+      "radial_equation"
+    ],
+    "goal": [
+      "classify_stability"
+    ],
+    "keywords": [
+      "limit_cycle",
+      "polar_coordinates",
+      "semistable",
+      "phase_line"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 7,
+    "idea_score": 6,
+    "technical_score": 4,
+    "comment": "Идейно это стандартная редукция к фазовой прямой для радиуса; техника короткая, но нужно аккуратно прочитать полуустойчивость корня четной кратности.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "phase_plane",
+    "stability",
+    "phase_line",
+    "polar_coordinates",
+    "periodic_solution",
+    "limit_cycle",
+    "test_import",
+    "advanced_standard_course",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-test-du-limit-cycles",
+      "role": "test_archive_problem",
+      "status": "source_verified",
+      "note": "Исходная тестовая задача 1 из PDF; близкая задача 2 с тем же планом решения не импортирована как дубль."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "test_limit_cycles_import",
+    "notes": [
+      "Тестовый формат уместен: нужно выбрать один из естественных вариантов устойчивый/неустойчивый/полуустойчивый для двух окружностей.",
+      "Автор взят из строки 'Исследование предельных циклов' файла C:\\Users\\Admin\\Downloads\\Тесты_ДУ.xlsx."
+    ]
+  }
+}

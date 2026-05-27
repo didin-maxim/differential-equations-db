@@ -54,6 +54,94 @@
       "backward_text": "Параметрический дискриминант 2022 года отделяет общий прием F_p=0 от стандартного сценария Лагранжа-Клеро с огибающей.",
       "status": "ai_checked",
       "confidence": 0.86
+    },
+    {
+      "id": "rel-implicit-method-guide-to-implicit-2022",
+      "from": "cluster-implicit-ode-discriminant-method-guide",
+      "to": "local-du-written-2022-implicit-discriminant",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический навигатор дает общий маршрут F=0, F_p=0 и отдельную проверку статуса дискриминантной кривой, которая является главным шагом письменной задачи 2022 года.",
+      "backward_text": "Параметрическая задача 2022 года является экзаменационной реализацией ветки навигатора: найти дискриминант и проверить, когда он сам является решением.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-implicit-method-guide-to-branch-switch",
+      "from": "cluster-implicit-ode-discriminant-method-guide",
+      "to": "cluster-implicit-branch-switch-square-root",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что на дискриминанте регулярные ветви могут склеиваться и давать неединственность задачи Коши.",
+      "backward_text": "Модель (y')^2=y конкретизирует эту ветку маршрута: y=0 является дискриминантом, решением и местом переключения p=+-sqrt(y).",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-implicit-method-guide-to-discriminant-not-solution",
+      "from": "cluster-implicit-ode-discriminant-method-guide",
+      "to": "cluster-implicit-discriminant-not-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор специально отделяет дискриминант как геометрическую границу от особого решения, требующего проверки графика y(x) и подстановки.",
+      "backward_text": "Пример (y')^2=x показывает ловушку из навигатора: x=0 найден из F=0,F_p=0, но не является решением в классе графиков y(x).",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-implicit-method-guide-to-clairaut-shifted",
+      "from": "cluster-implicit-ode-discriminant-method-guide",
+      "to": "local-du-written-2020-clairaut-shifted-envelope",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Раздел навигатора про Клеро объясняет, почему после дифференцирования надо сохранить ветвь p=const и вторую ветвь, дающую огибающую.",
+      "backward_text": "Сдвинутое уравнение Клеро является компактной письменной иллюстрацией соответствующей ветки методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-implicit-method-guide-to-lagrange",
+      "from": "cluster-implicit-ode-discriminant-method-guide",
+      "to": "local-du-written-2014-51-lagrange-singular-curves",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает лагранжев маршрут y=x f(p)+g(p): считать p параметром, получить уравнение для x(p) и отдельно проверить особые кривые.",
+      "backward_text": "Лагранжева письменная задача показывает более трудную ветку навигатора, где кроме регулярного семейства появляются две огибающие.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-existence-implicit-ivp-to-implicit-method-guide",
+      "from": "cluster-existence-implicit-ivp-local",
+      "to": "cluster-implicit-ode-discriminant-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Регулярная неявная задача Коши покрывает случай F_p != 0, где можно выбрать ветвь и вернуться к обычной теории существования и единственности.",
+      "backward_text": "Навигатор начинает с той же регулярной редукции, но затем показывает, что при F_p=0 нужны дискриминант, ветвление и проверка особого решения.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-recover-envelope-to-implicit-method-guide",
+      "from": "cluster-recover-translated-parabolas-envelope",
+      "to": "cluster-implicit-ode-discriminant-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В recover-задаче огибающая появляется из исходно заданного семейства кривых; методический блок implicit-ODE рассматривает обратную постановку, когда сначала дано F(x,y,p)=0.",
+      "backward_text": "Навигатор implicit-ODE полезно сравнить с recover-envelope: оба используют огибающую, но различают восстановление уравнения из семейства и анализ уже заданного неявного уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-linear-first-order-to-implicit-method-guide",
+      "from": "linear-first-order-formula",
+      "to": "cluster-implicit-ode-discriminant-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Линейная формула является примером нормальной формы y'=f(x,y), где через точку обычно задается одна ветвь поля направлений.",
+      "backward_text": "Навигатор implicit-ODE показывает, что для F(x,y,p)=0 сначала надо выбрать регулярную ветвь p=f_i(x,y), а на дискриминанте линейная логика одной правой части уже неприменима.",
+      "status": "ai_checked",
+      "confidence": 0.82
     }
   ]
 }

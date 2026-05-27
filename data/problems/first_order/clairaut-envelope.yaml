@@ -21,7 +21,12 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "ordinary_differential_equation"
+          "ordinary_differential_equation",
+          "solution",
+          "general_solution",
+          "singular_solution",
+          "integral_curve",
+          "discriminant_curve"
         ]
       }
     ]
@@ -34,6 +39,11 @@
       "status": "ai_checked",
       "standard_idea_ids": [
         "separate_variables"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "singular_solution",
+        "integral_curve"
       ]
     }
   ],

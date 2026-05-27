@@ -21,7 +21,11 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "boundary_value_problem"
+          "boundary_value_problem",
+          "functional",
+          "extremal",
+          "variation",
+          "transversality_condition"
         ]
       }
     ]
@@ -91,8 +95,7 @@
     "boundary_value",
     "resonance",
     "standard_course_methods",
-    "complete_proof",
-    "exam_score_6"
+    "complete_proof"
   ],
   "sources": [
     {
@@ -109,6 +112,7 @@
     "public_ready": true,
     "relations_status": "batch_links",
     "notes": [
+      "2026-05-27 precommit audit: removed exam_score_6 because technical_score=6; keep as written_exam technical practice, not a short oral simulation item.",
       "Импортирована как технически отличающаяся от ДУ_В_22 задачи 3: здесь есть свободный конец и естественное граничное условие.",
       "ДУ_В_23 задача 8 не импортирована: тот же план Эйлера-Лагранжа для квадратичного функционала, но с менее надежно выделенной сингулярной точкой x=0.",
       "Термин variational_calculus указан в профиле, но не добавлялся в общий taxonomy tags, чтобы не расширять чужую схему."

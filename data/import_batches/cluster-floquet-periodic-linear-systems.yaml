@@ -1,0 +1,21 @@
+{
+  "id": "cluster-floquet-periodic-linear-systems",
+  "title": "Кластерный аудит: периодические линейные системы и теория Флоке",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "linear_systems",
+    "periodic_coefficients",
+    "monodromy",
+    "floquet_theory"
+  ],
+  "problem_ids": [
+    "cluster-floquet-periodic-linear-systems-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет теоретико-методический блок для существующего кластера floquet-periodic-linear-systems.",
+    "Новая карточка не дублирует Teschl-цепочку и локальные задачи: она работает как навигатор по монодромии, мультипликаторам, устойчивости и периодическим решениям.",
+    "Полная нормальная форма Флоке явно отмечена как граница выхода за базовый курс."
+  ]
+}

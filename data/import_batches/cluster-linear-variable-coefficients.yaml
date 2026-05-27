@@ -5,9 +5,11 @@
   "scope": [
     "cluster_audit",
     "linear_equations",
-    "linear-equations-variable-coefficients"
+    "linear-equations-variable-coefficients",
+    "method_guide"
   ],
   "problem_ids": [
+    "cluster-linear-variable-method-guide",
     "cluster-linear-variable-graph-direct-tangency",
     "cluster-linear-variable-graph-scaled-tangency",
     "cluster-linear-variable-graph-ratio-maximum",
@@ -17,8 +19,9 @@
   ],
   "status": "ai_checked",
   "notes": [
-    "Пачка закрывает точечные дефициты кластера: графические запреты касания/масштабирования, вариация параметров для переменных коэффициентов и общее решение неоднородного уравнения по трем частным решениям.",
+    "Пачка закрывает точечные дефициты кластера: методический навигатор, графические запреты касания/масштабирования, вариация параметров для переменных коэффициентов и общее решение неоднородного уравнения по трем частным решениям.",
     "Вычислительные однотипные задачи с тяжелыми первообразными не добавлялись.",
+    "cluster-linear-variable-method-guide является теоретико-методическим блоком, а не новой вычислительной задачей.",
     "Связи этого аудита вынесены только в data/relations/relations.d/cluster-linear-variable-coefficients.yaml."
   ]
 }

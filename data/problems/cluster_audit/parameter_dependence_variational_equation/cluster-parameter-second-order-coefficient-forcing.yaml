@@ -1,6 +1,6 @@
 {
   "id": "cluster-parameter-second-order-coefficient-forcing",
-  "title": "Чувствительность второго порядка при параметре в коэффициенте и правой части",
+  "title": "Чувствительность решения второго порядка по параметру",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",

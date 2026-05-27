@@ -1,0 +1,315 @@
+{
+  "id": "cluster-nonlinear-second-order-order-reductions-method-guide",
+  "title": "Методический навигатор: нелинейные ОДУ второго порядка и понижение порядка",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Кластер nonlinear-second-order-order-reductions отвечает за нелинейные уравнения второго порядка, где порядок реально понижается до первого. Если уравнение не содержит y явно, вводят p(x)=y' и получают y''=p'(x); после решения первого порядка восстанавливают y интегрированием p. Если уравнение не содержит x явно, вводят p(y)=y' на участке, где y можно брать за локальную переменную, и используют y''=p dp/dy. В автономных или квазиконсервативных формах y''=f(y) или y''+V'(y)=0 этот же ход дает p dp/dy=f(y), то есть энергетический интеграл p^2/2+V(y)=C; затем знак y'=p выбирается начальными условиями и может меняться только через точку поворота p=0. Начальные данные переносятся в редуцированную задачу как p(x0)=y'(x0) или p(y0)=y'(x0), но надо отдельно проверить, что выбранная ветвь допустима около начальной точки. Главная опасность метода - потеря ветвей при делении на y', p, y или другой множитель: перед делением выделяют случаи p=0, постоянные решения, точки поворота и особые уровни энергии, а после решения подставляют результат в исходное уравнение.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-written-exams",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-teschl-ode-dynamical-systems"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "maximal_solution",
+          "autonomous_equation",
+          "first_integral",
+          "phase_trajectory",
+          "separable_equation",
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-absence-y",
+      "title": "Если нет y, снижать порядок через p(x)=y'",
+      "text": "Форма F(x,y',y'')=0 не требует угадывать y. Замена p(x)=y' переводит ее в первое уравнение F(x,p,p')=0, а y появляется только на последнем шаге как первообразная p. Начальное условие на y фиксирует интеграционную константу после восстановления, а условие на y' задает p(x0).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "linear_first_order_equation"
+      ]
+    },
+    {
+      "id": "idea-absence-x",
+      "title": "Если нет x, считать скорость функцией положения",
+      "text": "Форма F(y,y',y'')=0 допускает p=p(y) и замену y''=(dp/dx)=p dp/dy. Это локальный прием: он работает на участке, где выбранная ветвь y(x) позволяет использовать y как переменную. При y'=0 нельзя молча делить на p; нулевая ветвь или точка поворота проверяются отдельно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "autonomous_equation",
+        "initial_value_problem"
+      ]
+    },
+    {
+      "id": "idea-energy-branch",
+      "title": "Энергия дает первый интеграл, но не готовую ветвь y(x)",
+      "text": "Для y''+V'(y)=0 редукция p=p(y) дает (p^2/2+V(y))_y=0 на ненулевой ветви, то есть p^2/2+V(y)=E. Чтобы вернуться к решению, надо выбрать знак y'=p по начальному условию, отдельно обработать уровни с p=0 и проверить, не является ли уровень равновесием.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory",
+        "equilibrium"
+      ]
+    },
+    {
+      "id": "idea-initial-data-and-lost-branches",
+      "title": "Начальные условия и деление решают судьбу ветвей",
+      "text": "Редукция понижает порядок только после выбора регулярной ветви. Если в ходе решения делили на p, y, y-a или выражение Phi(y,p), то все случаи Phi=0 надо вернуть как кандидаты: постоянные решения, решения с нулевой начальной скоростью, особые уровни энергии и решения, проходящие через запрещенную при делении точку.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "solution",
+        "initial_value_problem",
+        "maximal_solution"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route-diagnose",
+      "title": "Маршрут диагностики редукции",
+      "text": "1. Проверить, отсутствует ли y явно, отсутствует ли x явно, или уравнение уже похоже на полную производную/энергию. 2. Для отсутствия y положить p(x)=y' и решить первое уравнение для p. 3. Для отсутствия x положить p(y)=y' и заменить y'' на p dp/dy, заранее выделив p=0 и точки, где y не может служить локальной переменной. 4. Если получилась форма y''+V'(y)=0, записать энергию p^2/2+V(y)=E и только затем выбирать знак p. 5. Перенести начальные условия в редуцированную задачу и восстановить y(x). 6. Подставить ответ в исходное уравнение и отдельно перечислить ветви, которые могли исчезнуть при делении.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "cauchy_problem",
+        "autonomous_equation",
+        "first_integral",
+        "separable_equation"
+      ]
+    },
+    {
+      "id": "guide-route-initial-conditions",
+      "title": "Как переносить начальные условия",
+      "text": "Для p(x)=y' условие y'(x0)=v0 сразу дает p(x0)=v0, а y(x0)=y0 используется после интегрирования y'=p(x). Для p(y)=y' условие y(x0)=y0, y'(x0)=v0 дает p(y0)=v0; если v0=0, надо проверить, является ли это равновесием, точкой поворота энергетического уровня или началом отдельной ветви. При переходе от p^2 к p знак выбирается v0, а при v0=0 знак нельзя выбрать без дополнительного анализа уравнения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "maximal_solution",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "guide-neighbor-boundaries",
+      "title": "Границы с соседними кластерами",
+      "text": "Если после редукции осталось обычное первое уравнение с разделяющимися переменными или однородной заменой, вычислительная часть близка к separable-homogeneous-first-order, но представитель этого кластера - именно распознавание второго порядка и безопасный переход к p. Если цель - фазовые уровни и первый интеграл системы, это first-integrals-plane-systems; если цель - качественный запрет или оценка через знак энергии, это energy-estimates-second-order-ode. Если же уравнение просто линейное второго порядка и используется известное решение, это другой кластер линейного понижения порядка.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "separable_equation",
+        "first_integral",
+        "phase_trajectory"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не делить на y' или p без отдельного случая p=0. Не считать p(y) глобальной функцией, если решение имеет точку поворота или самопересечение в проекции на y. Не терять знак при переходе от p^2 к p. Не переносить начальные условия только в энергетическую константу: скорость выбирает ветвь. Не относить сюда любую энергию второго порядка: если понижение порядка не нужно, а вся задача состоит в оценке E' или интегральном тождестве, это соседний энергетический кластер.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "solution",
+        "initial_value_problem",
+        "first_integral",
+        "maximal_solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "second_order_ode",
+      "nonlinear_second_order",
+      "autonomous_in_x",
+      "missing_dependent_variable",
+      "missing_independent_variable",
+      "initial_value_problem"
+    ],
+    "methods": [
+      "order_reduction",
+      "p_as_function_of_x",
+      "p_as_function_of_y",
+      "energy_first_integral",
+      "separable_after_reduction",
+      "branch_check"
+    ],
+    "objects": [
+      "p_y_prime",
+      "energy_level",
+      "turning_point",
+      "constant_solution",
+      "lost_branch",
+      "maximal_interval"
+    ],
+    "goal": [
+      "choose_method",
+      "reduce_order",
+      "solve_ivp",
+      "track_branches",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "nonlinear-second-order-order-reductions",
+      "method_guide",
+      "p(y)",
+      "p(x)",
+      "y missing",
+      "x missing",
+      "energy integral",
+      "lost branches",
+      "turning points"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет тяжелых вычислений; основная сложность в диагностике отсутствующей переменной, корректном переносе начальных условий и сохранении ветвей при делении.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "order_reduction_substitution",
+    "p_of_y_reduction",
+    "nonlinear_transform",
+    "first_integral",
+    "energy_method",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык курса: понижение порядка, задача Коши, автономные уравнения и первые интегралы."
+    },
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "local_exam_examples",
+      "status": "source_verified",
+      "note": "Письменные задачи с p(y), логарифмической производной и специальными полными производными."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_reference",
+      "status": "source_verified",
+      "note": "Задачный фон для автономных уравнений второго порядка и первых интегралов."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book_reference",
+      "status": "source_verified",
+      "note": "Классические упражнения на редукции, ветви и качественные проверки."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "note": "Открытые заметки с механической энергией и фазовой интерпретацией."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "note": "Строгий фон по автономным системам, фазовым траекториям и первым интегралам."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основная терминология курса."
+    },
+    {
+      "source_id": "src-local-du-written-exams",
+      "priority": 2,
+      "comment": "Локальные представители кластера."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Русскоязычный задачный фон."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 4,
+      "comment": "Дополнительные задачи на ветви и первые интегралы."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 5,
+      "comment": "Открытая поддержка энергетической интерпретации."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 6,
+      "comment": "Фазовая и автономная терминология."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-nonlinear-second-order-order-reductions",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера, а не как новая вычислительная задача.",
+      "Новые определения не добавлялись: использованы существующие definition_ids для ОДУ, решения, задачи Коши, максимального решения, автономного уравнения, первого интеграла, фазовой траектории, разделяющегося и линейного первого порядка.",
+      "Блок явно фиксирует случаи отсутствия y и x, замены p(x)=y' и p(y)=y', энергетическую ветвь, начальные условия и потерю ветвей при делении."
+    ]
+  }
+}

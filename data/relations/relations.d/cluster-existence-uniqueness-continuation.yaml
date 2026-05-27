@@ -109,6 +109,116 @@
       "backward_text": "Отложенные решения демонстрируют потерю единственности в ситуации, где существование по Пеано остается верным.",
       "status": "ai_checked",
       "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-existence-guide-picard",
+      "from": "picard-lindelof-theorem",
+      "to": "cluster-existence-uniqueness-continuation-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Пикар-Линделеф является базовым критерием локальной единственности, на котором строится методический выбор в кластере.",
+      "backward_text": "Навигатор показывает, когда теорему Пикара-Линделефа применять напрямую, а когда сначала нужна редукция к нормальной форме.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-existence-guide-peano",
+      "from": "peano-existence-theorem",
+      "to": "cluster-existence-uniqueness-continuation-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Пеано задает ветку маршрута, где непрерывность дает существование, но не дает единственность.",
+      "backward_text": "Навигатор отделяет применение Пеано от задач, где нужна липшицевость или контрпример к единственности.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-existence-guide-gronwall",
+      "from": "gronwall-inequality",
+      "to": "cluster-existence-uniqueness-continuation-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Гронуолл является общей оценкой для единственности, непрерывной зависимости и глобальности при линейном росте.",
+      "backward_text": "Навигатор объясняет, как распознать задачи, где надо оценивать разность решений или норму одного решения через Гронуолла.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-existence-guide-continuation",
+      "from": "maximal-continuation-theorem",
+      "to": "cluster-existence-uniqueness-continuation-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема продолжения превращает априорные оценки и барьеры в вывод о максимальном интервале решения.",
+      "backward_text": "Навигатор использует теорему продолжения как общий мост от локального существования к глобальности или альтернативе взрыва.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-existence-guide-linear-growth",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-existence-linear-growth-global",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический маршрут указывает, что линейный рост надо доказывать через оценку нормы и Гронуолла.",
+      "backward_text": "Лемма о линейном росте является конкретной реализацией ветки навигатора: оценка нормы плюс продолжение.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-existence-guide-blowup-alt",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-existence-blow-up-alternative",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что конечный конец максимального решения надо трактовать как выход из компактов области.",
+      "backward_text": "Альтернатива продолжения формализует соответствующую ветку методического маршрута.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-existence-guide-barrier",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-existence-inward-barrier-interval",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок выделяет барьерный аргумент через первый выход как стандартный способ получить инвариантность и продолжение.",
+      "backward_text": "Лемма об инвариантном отрезке является конкретной барьерной карточкой из маршрута.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-existence-guide-implicit",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "cluster-existence-implicit-ivp-local",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает, что регулярную неявную задачу сначала надо разрешить относительно производной.",
+      "backward_text": "Карточка о неявной задаче Коши раскрывает эту ветку маршрута через теорему о неявной функции.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-existence-guide-continuous-dependence",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "teschl-stanford-bridge-continuous-dependence-gronwall",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор относит непрерывную зависимость к задачам на оценку разности решений и Гронуолла.",
+      "backward_text": "Карточка Teschl/Stanford показывает количественное применение этой ветки маршрута.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-existence-guide-nonunique",
+      "from": "cluster-existence-uniqueness-continuation-method-guide",
+      "to": "weak-pass-nonunique-continuous-counterexample",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Методический блок предупреждает, что непрерывность правой части без Липшица не исключает несколько решений.",
+      "backward_text": "Контрпример для слабого экзамена является минимальной иллюстрацией этой ловушки.",
+      "status": "ai_checked",
+      "confidence": 0.9
     }
   ]
 }

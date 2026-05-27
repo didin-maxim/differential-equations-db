@@ -1,0 +1,25 @@
+{
+  "id": "cluster-olympiad-transformed-linear-mvt",
+  "title": "Методический блок кластера: олимпиадные линейные выражения, множитель, Ролль и среднее значение",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "olympiad-transformed-linear-mvt",
+    "method_guide",
+    "integrating_factor",
+    "rolle_theorem",
+    "mean_value_theorem",
+    "zero_counting"
+  ],
+  "problem_ids": [
+    "cluster-olympiad-transformed-linear-mvt-method-guide",
+    "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+    "cluster-olympiad-transformed-linear-mvt-zero-sign-exam"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет не новые архивные задачи, а методический блок, общую теорему и модельный экзаменационный representative для существующего олимпиадного кластера.",
+    "Новые определения не потребовались: использованы existing definitions для integrating_factor, linear_first_order_equation, wronskian и boundary_value_problem.",
+    "Сильному студенту на экзамене можно давать ветки model_parameter, higher_order_operator, cauchy_mean_value и zero_sign_count; простые замены множителя без нового выбора вспомогательной функции не добавлять как отдельные representatives."
+  ]
+}

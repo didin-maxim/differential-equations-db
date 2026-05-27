@@ -1,0 +1,24 @@
+{
+  "id": "cluster-linear-bvp-solvability-resonance",
+  "title": "Теоретико-методический блок кластера разрешимости линейных краевых задач",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "linear-bvp-solvability-resonance",
+    "method_guide",
+    "boundary_value",
+    "fredholm_alternative",
+    "adjoint_kernel",
+    "green_function",
+    "resonance"
+  ],
+  "problem_ids": [
+    "cluster-linear-bvp-solvability-resonance-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавление точечное: кластер уже содержит representative-задачи на стрельбу, Дирихле-резонанс, Trench-альтернативу и матричное двухточечное условие.",
+    "Новая карточка является теоретико-методическим навигатором по однородной BVP, резонансу, сопряженному ядру, Fredholm-условию, Green-функции, спектральным соседям, Штурму и вариационным задачам.",
+    "Связи записаны только в data/relations/relations.d/cluster-linear-bvp-solvability-resonance.yaml."
+  ]
+}

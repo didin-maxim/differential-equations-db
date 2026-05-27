@@ -90,8 +90,7 @@
     "order_reduction_substitution",
     "standard_course_methods",
     "advanced_standard_course",
-    "cluster_representative",
-    "exam_score_6"
+    "cluster_representative"
   ],
   "sources": [
     {
@@ -108,6 +107,7 @@
     "public_ready": true,
     "relations_status": "local_du_written_2007_2015_links",
     "notes": [
+      "2026-05-27 precommit audit: removed exam_score_6 because technical_score=6; keep as written_exam technical practice, not a short oral simulation item.",
       "Задача включена как представитель линейных уравнений второго порядка с переменными коэффициентами из письменных вариантов.",
       "Близкие задачи 2007-2008 и соседних вариантов 2014-2015 отфильтрованы: у них тот же план с подобранным степенно-экспоненциальным множителем."
     ]

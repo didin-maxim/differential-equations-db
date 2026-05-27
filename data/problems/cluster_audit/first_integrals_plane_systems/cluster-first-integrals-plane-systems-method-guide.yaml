@@ -1,0 +1,329 @@
+{
+  "id": "cluster-first-integrals-plane-systems-method-guide",
+  "title": "Методический навигатор: первые интегралы и фазовые траектории на плоскости",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для автономной системы на плоскости z'=F(z), z=(x,y), первый интеграл H ищут как функцию, постоянную вдоль поля: dH/dt=grad H(z) dot F(z)=H_x P+H_y Q=0. Если H уже предложен, главная проверка состоит именно в этом равенстве, а не в решении системы. Если H надо найти, используют вид поля: у гамильтонова поля x'=H_y, y'=-H_x интеграл виден по скрещенным производным; для уравнения второго порядка x''+V'(x)=0 переходят к системе x'=v, v'=-V'(x) и получают энергию E=v^2/2+V(x); для однородных, рациональных или симметричных систем пробуют отношение dy/dx=Q/P и ищут уровень H(x,y)=C. Регулярная фазовая траектория лежит в компоненте уровня H=C; равновесия и сепаратрисы появляются на особых уровнях, где поле зануляется или уровень перестает быть гладкой замкнутой кривой. Если около изолированного равновесия уровни H замкнуты и вложены, они дают центр и устойчивость по Ляпунову, но не асимптотическую устойчивость: ненулевая траектория сохраняет H и не может стремиться к равновесию. Поэтому первый интеграл надо отличать от функции Ляпунова: у первого интеграла производная вдоль поля равна нулю, а у функции Ляпунова знак производной используется для удержания или притяжения.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-teschl-ode-dynamical-systems",
+          "src-waterloo-amath250-notes",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "first_integral",
+          "phase_trajectory",
+          "equilibrium",
+          "lyapunov_stability",
+          "asymptotic_stability",
+          "lyapunov_function",
+          "integral_curve"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-check-before-solving",
+      "title": "Сначала проверять производную вдоль поля",
+      "text": "Первый интеграл не требует явной формулы решения: достаточно показать H_x P+H_y Q=0 на области, где рассматривается система. В задачах с уже данным уровнем полезно перенести все в вид H(x,y)=C и проверить, что векторное поле касательно этому уровню.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory"
+      ]
+    },
+    {
+      "id": "idea-level-geometry",
+      "title": "Фазовые кривые читать как компоненты уровней",
+      "text": "Регулярный уровень H=C может иметь несколько компонент; отдельная фазовая траектория лежит в одной компоненте, а не во всем множестве уровня. Особые уровни надо разбирать отдельно: там находятся равновесия, сепаратрисы, инвариантные оси или самопересечения уровня.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "phase_trajectory",
+        "equilibrium",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-energy-second-order",
+      "title": "Энергия второго порядка является первым интегралом системы",
+      "text": "Автономное уравнение x''+V'(x)=0 переводится в фазовую плоскость (x,v). Умножение на x' и запись E=v^2/2+V(x) являются тем же методом: E' = v(v'+V'(x))=0, поэтому фазовые кривые лежат на энергетических уровнях.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory"
+      ]
+    },
+    {
+      "id": "idea-center-not-attractor",
+      "title": "Замкнутые уровни дают центр, но не притяжение",
+      "text": "Если H имеет строгий локальный экстремум в равновесии, а малые уровни H=C замкнуты, они удерживают траектории в малой окрестности. Но сохранение H запрещает стремление ненулевой траектории к равновесию, поэтому получается устойчивость по Ляпунову без асимптотической устойчивости.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "equilibrium",
+        "lyapunov_stability",
+        "asymptotic_stability",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "idea-lyapunov-contrast",
+      "title": "Первый интеграл не заменять функцией Ляпунова",
+      "text": "При Hdot=0 уровни инвариантны и работают как геометрические барьеры. Для функции Ляпунова важен знак Vdot: Vdot<=0 дает удержание, а строгий отрицательный знак около равновесия дает притяжение. Ошибка состоит в том, чтобы из сохранения энергии сделать вывод об асимптотической устойчивости.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route-find-h",
+      "title": "Маршрут поиска первого интеграла",
+      "text": "1. Записать систему в виде x'=P(x,y), y'=Q(x,y) и область, где P,Q и предполагаемый H определены. 2. Если известна геометрия уровней, переписать ее как H(x,y)=C и проверить H_x P+H_y Q=0. 3. Если H не дан, рассмотреть дифференциальное уравнение траекторий dy/dx=Q/P на участках P != 0 или форму Q dx-P dy=0; точность или интегрирующий множитель дают H. 4. Для гамильтонова вида проверить P=H_y, Q=-H_x или подобрать потенциал по этим равенствам. 5. Для второго порядка x''=f(x) перейти к v=x' и умножить исходное уравнение на x', чтобы получить энергию. 6. После нахождения H обязательно проверить Hdot=0 прямой подстановкой, потому что похожая формула может быть только кандидатом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "guide-route-phase-curves",
+      "title": "Маршрут чтения фазовых кривых",
+      "text": "1. Найти равновесия F(z)=0: они являются точечными фазовыми траекториями. 2. На регулярных уровнях H=C выделить связные компоненты; каждая ненулевая траектория остается в одной такой компоненте. 3. Проверить, не содержит ли уровень особых точек, самопересечений, инвариантных прямых или сепаратрис. 4. Если компонент уровня компактна, гладкая и не содержит равновесий, движение по ней периодично. 5. Если уровни около равновесия образуют вложенные замкнутые кривые, использовать их как барьеры для устойчивости. 6. Если уровень некомпактен или подходит к седлу, не делать вывода о центре без отдельного анализа.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "state_vector_uniqueness"
+      ],
+      "definition_ids": [
+        "phase_trajectory",
+        "equilibrium",
+        "lyapunov_stability"
+      ]
+    },
+    {
+      "id": "guide-route-stability",
+      "title": "Маршрут связи с устойчивостью",
+      "text": "1. Если H имеет строгий локальный минимум или максимум в равновесии и малые уровни замкнуты, равновесие устойчиво по Ляпунову. 2. Если рядом есть ненулевые замкнутые уровни H=C, асимптотической устойчивости нет: H сохраняется и не может стремиться к H(O), если начальное значение другое. 3. Для доказательства асимптотической устойчивости искать не первый интеграл, а функцию Ляпунова с отрицательной производной вдоль поля или другой механизм притяжения. 4. В задачах с демпфированием энергия обычно уже не первый интеграл, а монотонная функция Ляпунова; это соседний энергетический метод, а не та же фазовая геометрия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не считать весь уровень H=C одной траекторией, если он распадается на несколько компонент. Не игнорировать точки, где P=0 при переходе к dy/dx=Q/P. Не объявлять замкнутый уровень периодической траекторией, если на нем есть равновесие. Не выводить асимптотическую устойчивость из Hdot=0. Не добавлять новую карточку в кластер только из-за новой первообразной V(x): если вывод снова состоит в E'=0 и овалах энергии, это дубль уже представленного метода.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "first_integral",
+        "phase_trajectory",
+        "equilibrium",
+        "asymptotic_stability"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_system",
+      "nonlinear_system",
+      "second_order_ode"
+    ],
+    "methods": [
+      "first_integral",
+      "phase_plane",
+      "energy_method",
+      "lyapunov_function",
+      "invariant_sets"
+    ],
+    "objects": [
+      "first_integral",
+      "phase_trajectory",
+      "level_curve",
+      "closed_level_curve",
+      "center",
+      "equilibrium",
+      "lyapunov_stability",
+      "asymptotic_stability"
+    ],
+    "goal": [
+      "choose_method",
+      "find_first_integral",
+      "read_phase_portrait",
+      "prove_stability",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "first-integrals-plane-systems",
+      "method_guide",
+      "first integral",
+      "phase trajectory",
+      "energy level",
+      "closed ovals",
+      "center",
+      "Lyapunov function"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную сложность; основная трудность в выборе между первым интегралом, энергетическим уровнем, функцией Ляпунова и фазовой классификацией.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "first_integral",
+    "phase_plane",
+    "energy_method",
+    "stability",
+    "lyapunov",
+    "nonlinear_system",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык курса: автономные системы, фазовые траектории, первые интегралы и устойчивость."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book_reference",
+      "status": "source_verified",
+      "locator": "§16, задачи о первых интегралах и центре",
+      "note": "Локальные задачи Романко дают главный пример: первый интеграл со строгим экстремумом и замкнутыми уровнями."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book_reference",
+      "status": "source_verified",
+      "locator": "§20, первые интегралы систем",
+      "note": "Филиппов полезен для геометрического смысла нескольких первых интегралов и интегральных кривых."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Autonomous systems, phase portraits and stability",
+      "note": "Строгий открытый источник для фазового потока и устойчивости."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Mechanical oscillators and phase portraits",
+      "note": "Учебные заметки с качественным чтением энергетических уровней и фазовой плоскости."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Phase plane and nonlinear systems material",
+      "note": "Видеокурс MIT OCW для визуального повторения фазовых портретов и устойчивости."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной язык стандартного курса."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Локальный источник для первых интегралов и центров."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Геометрические задачи на первые интегралы и интегральные кривые."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 4,
+      "comment": "Открытая строгая теория автономных систем."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 5,
+      "comment": "Открытые заметки с фазовыми портретами и механическими осцилляторами."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Видеолекции и конспекты для визуального повторения."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-first-integrals-plane-systems",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок к кластерам первых интегралов на плоскости, а не как новая вычислительная задача.",
+      "Определения не дублируются: первый интеграл, фазовая траектория, равновесие, устойчивость, функция Ляпунова и интегральная кривая связаны через definition_ids.",
+      "Карточка помечена task_cluster, method_guide и cluster_representative, чтобы индексироваться как теория/методический слой и находиться через кластер first-integrals-plane-systems."
+    ]
+  }
+}

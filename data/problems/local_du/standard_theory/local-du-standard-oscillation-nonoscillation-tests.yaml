@@ -1,6 +1,6 @@
 {
   "id": "local-du-standard-oscillation-nonoscillation-tests",
-  "title": "Осцилляция и неосцилляция уравнения y''+q(x)y=0",
+  "title": "Признаки осцилляции и неосцилляции для y''+q(x)y=0",
   "fragment": "qualitative",
   "kind": {
     "primary": "theorem",

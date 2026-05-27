@@ -1,0 +1,167 @@
+{
+  "id": "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+  "title": "Теорема: Ролль и среднее значение после линейного множителя",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Формулировка",
+        "text": "Пусть на [a,b] построена дифференцируемая вспомогательная функция F[y] и непрерывная функция mu, не обращающаяся в нуль на (a,b), такие что F'[y](x)=mu(x)(L[y](x)-A(x)), где L[y] - заданное линейное дифференциальное выражение от y. Если F[y](a)=F[y](b), то существует c in (a,b), для которого L[y](c)=A(c). Более общо, если вместе с F выбрана дифференцируемая функция G с G'(x) != 0 и применима теорема Коши о среднем, то существует c, для которого (L[y](c)-A(c))mu(c)/G'(c)=(F[y](b)-F[y](a))/(G(b)-G(a)). В частном случае L[y]=y'+p(x)y и u'+p u=0, u != 0, можно брать F[y]=y/u, потому что (y/u)'=(y'+p y)/u.",
+        "source_ids": [
+          "src-student-olympiad-folklore"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "linear_first_order_equation",
+          "integrating_factor"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-factor-first",
+      "title": "Множитель является частью условия применимости",
+      "text": "Теорема не говорит, что любой L[y] имеет нужную точку. Она работает только после явной проверки тождества F'=mu(L[y]-A) и ненулевости mu.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression"
+      ],
+      "definition_ids": [
+        "integrating_factor"
+      ]
+    },
+    {
+      "id": "idea-cmvt",
+      "title": "Теорема Коши о среднем дает отношения",
+      "text": "Когда в условии стоит логарифм, отношение или нормировка двумя функциями, Ролль часто заменяется теоремой Коши о среднем; производная F все равно должна быть линейным выражением с множителем.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    },
+    {
+      "id": "idea-wronskian-analogy",
+      "title": "Вронскиан является старшим родственником отношения",
+      "text": "Формула (y/u)'=(u y'-u' y)/u^2 показывает, что уже в первом порядке появляется вронскианный числитель. Во втором порядке тот же объект становится настоящим вронскианом двух решений и ведет к теоремам о нулях.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_invariant"
+      ],
+      "definition_ids": [
+        "wronskian"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "proof-main",
+      "title": "Доказательство",
+      "text": "Если F[y](a)=F[y](b), то по теореме Ролля существует c in (a,b), где F'[y](c)=0. По построению F'[y](c)=mu(c)(L[y](c)-A(c)), а mu(c) != 0, значит L[y](c)=A(c). Для версии с теоремой Коши о среднем применяем ее к F[y] и G: найдется c, где F'[y](c)/G'(c)=(F[y](b)-F[y](a))/(G(b)-G(a)); подстановка F'[y]=mu(L[y]-A) дает заявленную формулу. В первом порядке из u'+p u=0 получаем u'=-p u и (y/u)'=(u y'-u' y)/u^2=(y'+p y)/u, так что F=y/u является нужной вспомогательной функцией.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "rolle_on_transformed_expression",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "integrating_factor"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "olympiad",
+      "linear_first_order",
+      "linear_higher_order"
+    ],
+    "methods": [
+      "rolle_theorem",
+      "mean_value_theorem",
+      "cauchy_mean_value_theorem",
+      "integrating_factor_linear",
+      "homogeneous_solution_ratio",
+      "wronskian_relation"
+    ],
+    "objects": [
+      "linear_expression",
+      "integrating_factor",
+      "homogeneous_solution",
+      "differential_operator",
+      "wronskian"
+    ],
+    "goal": [
+      "prove_template",
+      "prove_existence",
+      "derive_transferable_pattern"
+    ],
+    "keywords": [
+      "olympiad-transformed-linear-mvt",
+      "factor_rolle_theorem",
+      "linear_expression",
+      "homogeneous_solution",
+      "Cauchy mean value theorem",
+      "wronskian numerator"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Теорема короткая, но экзаменационная ценность для сильного студента в том, чтобы самостоятельно подобрать F и отличить применимый шаблон от произвольного анализа функции.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "theory_bridge",
+    "olympiad_style",
+    "linear_first_order",
+    "linear_higher_order",
+    "differential_operator",
+    "integrating_factor",
+    "rolle_theorem",
+    "mean_value_theorem",
+    "wronskian",
+    "strong_student_check",
+    "theoretical_exam_task",
+    "exam_score_6",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "standard_olympiad_pattern",
+      "status": "needs_human_review"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-olympiad-transformed-linear-mvt",
+    "notes": [
+      "Карточка формализует общий ход, который раньше был представлен только леммой olympiad-level-rolle-after-homogeneous-factor и отдельными IMC-примерами.",
+      "Формулировка намеренно допускает Ролля, Лагранжа и Коши о среднем, но требует явного тождества для производной."
+    ]
+  }
+}

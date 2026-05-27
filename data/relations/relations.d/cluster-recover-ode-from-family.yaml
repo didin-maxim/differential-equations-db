@@ -65,6 +65,83 @@
       "backward_text": "Ортогональные траектории используют recover-ODE из семейства только как первый шаг; главная задача там другая - построить семейство, пересекающее исходное под прямым углом.",
       "status": "ai_checked",
       "confidence": 0.89
+    },
+    {
+      "id": "rel-recover-method-guide-to-waterloo-circles",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "waterloo-family-circles-recover-ode",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок дает общий маршрут: дифференцировать семейство при постоянном параметре и исключить его; Waterloo-окружности являются базовым геометрическим примером этого маршрута.",
+      "backward_text": "Окружности Waterloo конкретизируют общий recover-family метод на однопараметрическом неявном семействе с визуальной проверкой поля наклонов.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-recover-method-guide-to-order-diagnostic",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "cluster-recover-parameter-count-order-diagnostic",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему порядок ОДУ ожидается равным числу независимых параметров; диагностическая карточка проверяет это правило на коротких семействах.",
+      "backward_text": "Диагностическая карточка является компактной тренировкой к правилу из методического блока: считать независимые постоянные, а не просто символы C.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-recover-method-guide-to-parabola-envelope",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "cluster-recover-translated-parabolas-envelope",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок отдельно предупреждает об огибающих и особых решениях; сдвинутые параболы дают минимальный пример, где после исключения параметра появляется особая кривая.",
+      "backward_text": "Параболы с огибающей иллюстрируют раздел навигатора о том, что особое решение может возникнуть после восстановления ОДУ из заранее заданного семейства.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-recover-method-guide-to-written-lines-envelope",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "written-mipt-1998-lines-distance-one-envelope",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор готовит к геометрическому recover-family случаю: параметры прямой заменяются наклоном и свободным членом, затем проверяются дополнительные особые кривые.",
+      "backward_text": "Письменная задача 1998 года является более геометрическим продолжением метода: семейство задается расстоянием до начала координат, а не готовой формулой y=phi(x,C).",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-recover-method-guide-to-linear-first-order-formula",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "linear-first-order-formula",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В recover-family линейное уравнение может появиться как результат исключения параметра из готового семейства решений; в linear-first-order-formula исходным объектом уже является уравнение y'+p(x)y=q(x) и выводится его общее решение.",
+      "backward_text": "Формула линейного уравнения первого порядка полезна как соседняя теория, но не заменяет recover-family: там задача обратная, от семейства кривых к ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-recover-method-guide-to-orthogonal-trajectories",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "orthogonal-trajectories-circles",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Методический блок отделяет восстановление поля наклонов от задачи на ортогональные траектории: там после recover-шагa наклон заменяется на отрицательно обратный и строится новое семейство.",
+      "backward_text": "Базовая карточка ортогональных траекторий использует похожее исключение параметра только как промежуточный этап; ее цель - ортогональное семейство, а не само восстановленное ОДУ.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-recover-method-guide-to-implicit-discriminant",
+      "from": "cluster-recover-ode-from-family-method-guide",
+      "to": "cluster-implicit-discriminant-not-solution",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "В recover-family неявное F(x,y,y')=0 может появиться после исключения параметра; в implicit-discriminant исходное F уже дано, и главный вопрос - дискриминант, ветви p и статус особой кривой.",
+      "backward_text": "Карточка implicit-discriminant-not-solution полезна как граница: наличие дискриминантной кривой еще не означает, что задача была восстановлением ОДУ по семейству.",
+      "status": "ai_checked",
+      "confidence": 0.9
     }
   ]
 }

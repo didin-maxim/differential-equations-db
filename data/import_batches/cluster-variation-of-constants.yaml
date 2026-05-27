@@ -1,0 +1,21 @@
+{
+  "id": "cluster-variation-of-constants",
+  "title": "Кластерный аудит: вариация постоянных",
+  "created_at": "2026-05-27",
+  "scope": [
+    "cluster_audit",
+    "variation-of-constants",
+    "linear_equations",
+    "linear_systems",
+    "method_guide"
+  ],
+  "problem_ids": [
+    "cluster-variation-of-constants-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Пачка добавляет отдельный теоретико-методический блок к существующему кластеру variation-of-constants.",
+    "Новых вычислительных задач не добавлялось: цель - закрыть навигацию по первому порядку, высшим порядкам, системам, формуле Коши, резонансу и выбору между вариацией постоянных и неопределенными коэффициентами.",
+    "Связи вынесены в data/relations/relations.d/cluster-variation-of-constants.yaml."
+  ]
+}

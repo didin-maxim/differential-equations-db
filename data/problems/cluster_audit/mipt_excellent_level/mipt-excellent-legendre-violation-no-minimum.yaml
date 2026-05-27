@@ -24,7 +24,10 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "boundary_value_problem"
+          "boundary_value_problem",
+          "functional",
+          "extremal",
+          "variation"
         ]
       }
     ]

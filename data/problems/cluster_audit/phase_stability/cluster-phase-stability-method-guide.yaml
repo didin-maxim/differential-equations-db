@@ -1,0 +1,301 @@
+{
+  "id": "cluster-phase-stability-method-guide",
+  "title": "Методический навигатор: фазовая прямая, фазовый портрет и устойчивость",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера phase-line-stability сначала отделяют одномерную фазовую прямую y'=f(y) от фазовой плоскости z'=F(z). В одномерном случае равновесия находятся как нули f, а устойчивость читается по направлениям движения слева и справа. На плоскости сначала проверяют, является ли равновесие линейным или гиперболическим: спектр матрицы дает седло, узел, фокус или центр и решает устойчивость в гиперболических случаях. Если линейная часть не решает вопрос или требуется строгое доказательство, переходят к первому интегралу, функции Ляпунова, инвариантной области или прямой проверке определения устойчивости по Ляпунову.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-arnold-ode",
+          "src-teschl-ode-dynamical-systems",
+          "src-lebl-diffyqs",
+          "src-waterloo-amath250-notes",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "autonomous_equation",
+          "phase_line",
+          "equilibrium",
+          "phase_trajectory",
+          "lyapunov_stability",
+          "asymptotic_stability",
+          "linear_system",
+          "first_integral",
+          "lyapunov_function"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-router",
+      "title": "Сначала выбрать геометрический уровень задачи",
+      "text": "Фазовая прямая решается таблицей знаков, линейная фазовая плоскость решается спектром, а нелинейная негиперболическая точка требует отдельного инварианта или функции Ляпунова. Ошибка часто начинается с того, что к центру или нулевому собственному значению применяют гиперболическое правило.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "phase_line",
+        "phase_trajectory",
+        "equilibrium"
+      ]
+    },
+    {
+      "id": "idea-definitions",
+      "title": "Устойчивость и притяжение проверять раздельно",
+      "text": "Асимптотическая устойчивость состоит из двух требований: траектории из малой окрестности остаются малыми и стремятся к равновесию. Поэтому центр устойчив, но не асимптотически устойчив, а притяжение без удержания в окрестности не дает асимптотической устойчивости.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "idea-invariants",
+      "title": "Интеграл и функция Ляпунова заменяют явное решение",
+      "text": "Первый интеграл удерживает траектории на уровнях и обычно дает центр или неасимптотическую устойчивость. Функция Ляпунова с неположительной производной дает устойчивость, а с отрицательной производной в проколотой окрестности дает асимптотическую устойчивость.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-phase-line-route",
+      "title": "Маршрут для фазовой прямой",
+      "text": "1. Привести уравнение к автономному виду y'=f(y), если это возможно. 2. Найти равновесия f(a)=0 и упорядочить их на прямой. 3. На каждом промежутке между соседними равновесиями определить знак f. 4. Поставить стрелки: f>0 означает движение вправо, f<0 означает движение влево. 5. Если стрелки с обеих сторон направлены к равновесию, оно асимптотически устойчиво в одномерном смысле; если от него, оно неустойчиво; если с одной стороны к нему, а с другой от него, возникает полуустойчивость. 6. Для кратных корней не пользоваться одной только кратностью без знаков: важна реальная смена направления движения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "phase_line_signs"
+      ],
+      "definition_ids": [
+        "phase_line",
+        "equilibrium",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "guide-linear-plane-route",
+      "title": "Маршрут для линейной и гиперболической фазовой плоскости",
+      "text": "1. Для z'=Az найти след, определитель, дискриминант или собственные значения. 2. Если det A<0, получаем седло и неустойчивость. 3. Если собственные значения имеют отрицательные вещественные части, получаем асимптотически устойчивый узел или фокус; если есть положительная вещественная часть, равновесие неустойчиво. 4. Чисто мнимые собственные значения линейной невырожденной системы дают центр: устойчивость по Ляпунову есть, асимптотической устойчивости нет. 5. Для нелинейной системы z'=F(z) с F(0)=0 и гиперболической матрицей DF(0) использовать теорему линеаризации: знак вещественных частей сохраняет локальный вывод об устойчивости. 6. При нулевой вещественной части хотя бы одного собственного значения линеаризация не является ответом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "equilibrium",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "guide-lyapunov-integral-route",
+      "title": "Маршрут для первого интеграла и функций Ляпунова",
+      "text": "1. Если дана сохраняющаяся величина H, проверить, имеет ли H строгий локальный экстремум в равновесии и образуют ли близкие уровни замкнутые кривые. Тогда уровни работают как барьеры и дают устойчивость, но не сходимость к равновесию. 2. Если дана или подбирается V, проверить V(0)=0, V(z)>0 при z!=0 и знак Vdot=grad V dot F. 3. Условие Vdot<=0 дает устойчивость по Ляпунову через вложенные уровни. 4. Условие Vdot<0 вне равновесия дает асимптотическую устойчивость в стандартной локальной формулировке. 5. Если Vdot=0, нельзя автоматически писать асимптотическую устойчивость: это типичный источник центра.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_first_integral",
+        "energy_monotonicity"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "lyapunov_function",
+        "lyapunov_stability",
+        "asymptotic_stability"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не смешивать притяжение и устойчивость по Ляпунову: траектории могут стремиться к равновесию, но перед этим выходить из фиксированной малой окрестности. Не объявлять центр асимптотически устойчивым: ненулевые траектории на замкнутых уровнях не стремятся к центру. Не применять теорему линеаризации к негиперболическому равновесию без дополнительного анализа. Не добавлять в кластер новую вычислительную карточку только потому, что в матрице 2x2 поменялись числа: метод уже представлен классификационной карточкой.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "lyapunov_stability",
+        "asymptotic_stability",
+        "phase_trajectory"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "autonomous_equation",
+      "autonomous_system",
+      "linear_system",
+      "nonlinear_system"
+    ],
+    "methods": [
+      "phase_line_sign_analysis",
+      "phase_plane",
+      "eigenvalue_classification",
+      "linearization",
+      "first_integral",
+      "lyapunov_function",
+      "invariant_region"
+    ],
+    "objects": [
+      "equilibrium",
+      "phase_line",
+      "phase_trajectory",
+      "saddle",
+      "node",
+      "focus",
+      "center",
+      "lyapunov_stability",
+      "asymptotic_stability"
+    ],
+    "goal": [
+      "choose_method",
+      "classify_stability",
+      "read_phase_portrait",
+      "prove_stability",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "phase-line-stability",
+      "method_guide",
+      "phase_line",
+      "phase_plane",
+      "Lyapunov stability",
+      "asymptotic stability",
+      "linearization",
+      "first integral",
+      "Lyapunov function"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную нагрузку; сложность в выборе между фазовой прямой, спектральной классификацией, линеаризацией, первым интегралом и функцией Ляпунова.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "phase_line",
+    "phase_plane",
+    "stability",
+    "lyapunov",
+    "first_integral",
+    "linear_systems",
+    "equilibrium_linearization",
+    "energy_method",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовая русскоязычная программа по фазовой прямой, устойчивости, линеаризации и функциям Ляпунова."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическое изложение геометрического языка автономных систем и фазовых траекторий."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Chapter 6 and stability material",
+      "note": "Строгий открытый источник по автономным системам, потокам, линеаризации и устойчивости."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Sections on autonomous equations, critical points and linearization",
+      "note": "Доступное учебное изложение фазовой прямой, фазовой плоскости и типовых критических точек."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Qualitative sketches, phase portraits and mechanical oscillators",
+      "note": "Учебные заметки с качественным чтением фазовых портретов и устойчивости линейных систем."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "note": "Открытый курс с видеолекциями MIT OCW; полезен для повторения фазовой прямой, фазовой плоскости и устойчивости."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной язык стандартного курса."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 2,
+      "comment": "Классическая геометрическая перспектива."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 3,
+      "comment": "Открытый вводный текст для фазовой прямой и плоскости."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 4,
+      "comment": "Качественные портреты и линейная классификация."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Более строгая динамическая система и устойчивость."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Видеолекции для повторения визуальных и вычислительных приемов."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-phase-stability",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок к крупному кластеру phase-line-stability, а не как новая однотипная вычислительная задача.",
+      "Связи с определениями сделаны через definition_ids; graph-relations ведут к уже существующим теоретическим карточкам и ключевым задачам кластера.",
+      "Карточка помечена task_cluster, method_guide и primary=theorem, чтобы в viewer она попадала в теоретический слой, а не в режим обычных задач."
+    ]
+  }
+}

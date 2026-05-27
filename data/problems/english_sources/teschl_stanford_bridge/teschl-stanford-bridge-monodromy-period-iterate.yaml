@@ -1,6 +1,6 @@
 {
   "id": "teschl-stanford-bridge-monodromy-period-iterate",
-  "title": "Монодромия: фундаментальная матрица после нескольких периодов",
+  "title": "Лемма о сдвиге фундаментальной матрицы на период",
   "fragment": "systems",
   "kind": {
     "primary": "lemma",

@@ -1,6 +1,6 @@
 {
   "id": "cluster-phase-stability-linearization-hyperbolic",
-  "title": "Линеаризация гиперболического равновесия",
+  "title": "Теорема первого приближения для гиперболического равновесия",
   "fragment": "qualitative",
   "kind": {
     "primary": "theorem",

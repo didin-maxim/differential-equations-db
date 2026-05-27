@@ -120,6 +120,138 @@
       "backward_text": "Несколько неизвестных функций дают систему уравнений Эйлера без изопериметрического множителя.",
       "status": "ai_checked",
       "confidence": 0.76
+    },
+    {
+      "id": "rel-cluster-var-guide-to-fixed-euler-lagrange",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-standard-euler-lagrange-fixed-endpoints",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор начинает с базового случая: первая вариация при закрепленных концах дает уравнение Эйлера-Лагранжа.",
+      "backward_text": "Карточка Эйлера-Лагранжа является минимальным доказательным блоком первой ветки методического навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-var-guide-to-natural-boundary",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-standard-natural-boundary-conditions",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, что свободное значение на конце оставляет граничный член первой вариации и дает натуральное условие.",
+      "backward_text": "Карточка натуральных условий раскрывает одну из главных граничных веток навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-var-guide-to-transversality",
+      "from": "cluster-variational-method-guide",
+      "to": "cluster-variational-transversality-moving-endpoint",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет подвижный конец от обычного свободного значения и направляет к полному условию трансверсальности.",
+      "backward_text": "Модельная карточка с движущимся концом показывает, почему натуральное условие F_{y'}=0 здесь недостаточно.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-var-guide-to-isoperimetric-linear",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-romanko-isoperimetric-linear-constraint",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор указывает, что дополнительная интегральная связь требует множителя Лагранжа в расширенном лагранжиане.",
+      "backward_text": "Задача Романко является конкретным representative-примером изопериметрической ветки навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-cluster-var-guide-to-two-functions",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-romanko-variational-two-functions",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет несколько неизвестных функций как переход от одного уравнения Эйлера к системе.",
+      "backward_text": "Романко-карточка дает вычислительный representative для векторной вариации и системы уравнений Эйлера.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-var-guide-to-euler-poisson",
+      "from": "cluster-variational-method-guide",
+      "to": "cluster-variational-euler-poisson-general-order",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, когда повторное интегрирование по частям приводит к общей формуле Эйлера-Пуассона.",
+      "backward_text": "Общая карточка Эйлера-Пуассона формализует ветку навигатора для функционалов от высших производных.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-var-guide-to-legendre-jacobi",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-standard-legendre-jacobi-conditions",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит вопрос от стационарности к знаку второй вариации и условиям Лежандра-Якоби.",
+      "backward_text": "Карточка Лежандра-Якоби является основным теоретическим representative для проверки локального минимума.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-cluster-var-guide-to-quadratic-threshold",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-deficit-variational-quadratic-threshold",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что знак второй вариации может определяться спектральным порогом квадратичной формы.",
+      "backward_text": "Пороговая карточка является компактным примером различия между экстремалью и минимумом.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-var-guide-to-quadratic-coercive",
+      "from": "cluster-variational-method-guide",
+      "to": "cluster-variational-quadratic-coercive-minimizer",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет локальную проверку второй вариации от глобального минимума, который доказывается выпуклостью и коэрцитивностью.",
+      "backward_text": "Коэрцитивная теорема является representative-примером глобального минимума в вариационном кластере.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-var-guide-to-boundary-spectral",
+      "from": "cluster-variational-method-guide",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор использует собственные значения только как язык знака второй вариации или отношения Рэлея; вычисление спектра как цель относится к boundary-spectral-problems.",
+      "backward_text": "Базовая задача Дирихле задает соседний спектральный кластер, который нужен вариационному блоку как пороговый ориентир, а не как новый вариационный расчет.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-var-guide-to-linear-bvp-resonance",
+      "from": "cluster-variational-method-guide",
+      "to": "local-du-standard-resonant-linear-bvp-solvability",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор доводит экстремаль до линейной краевой задачи, но условие совместности неоднородной резонансной задачи принадлежит соседнему кластеру linear-bvp-solvability-resonance.",
+      "backward_text": "Резонансная краевая теория объясняет, что может пойти не так после формального вывода уравнения Эйлера-Лагранжа.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-cluster-var-guide-to-sturm-guide",
+      "from": "cluster-variational-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор обращается к Штурму только при сопряженных точках, дисконъюгированности и спектральном знаке второй вариации; самостоятельные задачи о нулях остаются в sturm-oscillation-comparison.",
+      "backward_text": "Штурмовский навигатор дает соседний язык нулей и дисконъюгированности, который в вариационном блоке используется как критерий Якоби.",
+      "status": "ai_checked",
+      "confidence": 0.88
     }
   ]
 }

@@ -23,7 +23,9 @@
         "definition_ids": [
           "linear_system",
           "equilibrium",
-          "stability"
+          "stability",
+          "phase_trajectory",
+          "lyapunov_stability"
         ]
       }
     ]

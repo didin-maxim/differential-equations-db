@@ -1,0 +1,92 @@
+{
+  "relations": [
+    {
+      "id": "rel-cluster-power-series-guide-to-middle-recurrence",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "mipt-middle-power-series-recurrence",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует общий ход: обычная точка, свободные начальные коэффициенты и рекурсия; карточка mipt-middle реализует этот ход на y''+xy=0.",
+      "backward_text": "Задача с полной рекурсией является главным вычислительным представителем ветки обычной точки.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-weak-first-coefficients",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "weak-pass-series-first-coefficients",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, почему начальные условия сразу задают a0 и a1, а первые коэффициенты находятся только после сдвига индексов.",
+      "backward_text": "Устная карточка проверяет минимальный вариант того же метода: получить несколько коэффициентов и не потерять начальные данные.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-airy",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "power-series-airy-at-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор задает общий шаблон коэффициентной рекурсии; уравнение Эйри является компактным примером с разбиением коэффициентов по классам индексов.",
+      "backward_text": "Эйри-карточка показывает, как один сдвиг xy меняет рекурсию, не меняя общий метод степенных рядов.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-frobenius-model",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "regular-singular-euler-frobenius",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет обычную точку от регулярной особой; модель Эйлера показывает первый фробениусовский шаг через y=x^r и индикаторное уравнение.",
+      "backward_text": "Фробениусовская карточка является ближайшим расширением обычного степенного ряда, когда центр разложения стал регулярной особой точкой.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-linear-variable-guide",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "cluster-linear-variable-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Метод рядов использует аналитичность коэффициентов как усиление общей линейной теории с переменными коэффициентами; ФСР, начальные данные и единственность остаются общими понятиями.",
+      "backward_text": "Навигатор линейных уравнений с переменными коэффициентами дает структурный фон, а степенные ряды добавляют локальную аналитическую конструкцию решения.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-sturm-guide",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Рядовая рекурсия строит локальное решение, но вопросы о нулях, осцилляции и сравнении коэффициентов должны переходить в sturm-oscillation-comparison.",
+      "backward_text": "Штурмовский навигатор использует линейную базу и иногда Бессель, но его цель - расположение нулей, а не вычисление коэффициентов локального ряда.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-cluster-power-series-guide-to-bessel-bounded-wronskian",
+      "from": "cluster-power-series-linear-ode-method-guide",
+      "to": "local-du-8-t1-bessel-bounded-wronskian",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отмечает Бессель как регулярную особую точку и мост к соседним методам; bounded-wronskian карточка решается не рекурсией ряда, а формулой Лиувилля для W=C/x.",
+      "backward_text": "Задача Бесселя у нуля показывает, почему не всякий вопрос около особой точки нужно решать полным фробениусовским разложением.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-cluster-power-series-frobenius-to-bessel-bounded-wronskian",
+      "from": "regular-singular-euler-frobenius",
+      "to": "local-du-8-t1-bessel-bounded-wronskian",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Эйлерова модель объясняет индикаторные степени у регулярной особой точки; в задаче Бесселя тот же центр x=0 важен, но достаточно вронскианного ограничения.",
+      "backward_text": "Бесселевская карточка является соседним применением линейной теории у особой точки без полного вычисления фробениусовских коэффициентов.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

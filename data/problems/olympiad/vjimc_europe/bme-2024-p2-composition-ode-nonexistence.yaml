@@ -1,6 +1,6 @@
 {
   "id": "bme-2024-p2-composition-ode-nonexistence",
-  "title": "BME 2024 P2: невозможность положительного решения f'=f∘f",
+  "title": "BME 2024 P2: положительные решения f'=f∘f",
   "fragment": "olympiad",
   "kind": {
     "primary": "problem",

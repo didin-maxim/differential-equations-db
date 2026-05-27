@@ -21,7 +21,8 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "riccati_equation"
+          "riccati_equation",
+          "particular_solution"
         ]
       }
     ]

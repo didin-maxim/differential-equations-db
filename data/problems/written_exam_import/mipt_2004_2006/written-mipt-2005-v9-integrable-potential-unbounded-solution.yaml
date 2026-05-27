@@ -1,0 +1,121 @@
+{
+  "id": "written-mipt-2005-v9-integrable-potential-unbounded-solution",
+  "title": "Неограниченное решение уравнения y''+q(x)y=0 при интегрируемом хвосте q",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2005/2006, последние задачи вариантов",
+        "text": "Докажите, что существует решение уравнения y'' sinh x + y=0, не ограниченное на интервале (1,+infty). Аналогичные варианты: x^3 y''+y=0, y'' cosh x+y=0, x^2 sqrt(x) y''+y=0.",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "На далеком хвосте построить решение, похожее на x-A",
+      "text": "После деления на старший коэффициент получаем y''+q(x)y=0, где q>=0 и int_A^infty (x-A)q(x)dx можно сделать малым. Интегральное уравнение тогда имеет решение y(x)=(x-A)+o(x-A), значит оно неограниченно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_iteration",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Рассмотрим общий факт. Пусть q>=0 непрерывна на [1,+infty) и для некоторого A>1 выполнено int_A^infty (t-A)q(t)dt<=1/3. Тогда интегральное уравнение y(x)=x-A-int_A^x (x-t)q(t)y(t)dt имеет решение на [A,+infty), удовлетворяющее |y(x)-(x-A)|<=(x-A)/2. Это следует из стандартного сжимающего/пикаровского аргумента в норме sup |y(x)-(x-A)|/(x-A): оператор переводит эту полосу в себя и становится сжимающим после выбора A с достаточно малым хвостовым интегралом. Для такого решения y(x)>=(x-A)/2, поэтому оно неограниченно. Дифференцирование интегрального уравнения дает y''+q(x)y=0, y(A)=0, y'(A)=1. Теперь для исходных вариантов q(x)=1/sinh x, 1/x^3, 1/cosh x или x^(-5/2). Во всех случаях int_A^infty (t-A)q(t)dt стремится к 0 при A->infty. Значит на некотором хвосте существует неограниченное решение; по теореме существования для линейного уравнения оно продолжается влево до всего интервала (1,+infty).",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_iteration",
+        "comparison_argument"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "variable_coefficients",
+      "qualitative"
+    ],
+    "methods": [
+      "integral_equation",
+      "tail_estimate",
+      "asymptotic_solution",
+      "continuation"
+    ],
+    "objects": [
+      "unbounded_solution",
+      "integrable_potential",
+      "positive_axis"
+    ],
+    "goal": [
+      "prove_existence"
+    ],
+    "keywords": [
+      "MIPT_2005_2006",
+      "problem_9",
+      "written_exam",
+      "integrable_potential",
+      "unbounded_solution"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 8,
+    "technical_score": 4,
+    "local_score": 8,
+    "comment": "Идейная последняя задача: явного решения нет, нужен хвостовой интегральный аргумент и продолжение линейного уравнения.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_higher_order",
+    "advanced_standard_course",
+    "boundedness",
+    "asymptotic",
+    "low_technical",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2005-2006.pdf",
+      "locator": "2005/2006, варианты 1-4, задача 9"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2004-2006",
+    "notes": [
+      "Четыре варианта объединены: во всех старший коэффициент делает q(x) с конечным первым моментом на хвосте.",
+      "Карточка не является дублем задачи 2009 года об ограниченности y''+xy=0: здесь хвостовой коэффициент мал, и требуется построить хотя бы одно неограниченное решение."
+    ]
+  }
+}

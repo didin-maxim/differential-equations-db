@@ -1,0 +1,116 @@
+{
+  "id": "written-mipt-2009-92-airy-bounded-positive-axis",
+  "title": "Ограниченность всех решений уравнения y''+xy=0 на полуоси",
+  "fragment": "qualitative",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2008/2009, вариант 92, задача 9",
+        "text": "Доказать, что любое решение уравнения y''+xy=0 ограничено на [0,+infty).",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Сделать лиувиллеву замену и получить убывающую энергию",
+      "text": "После замены t=2x^(3/2)/3, y=x^(-1/4)u(t) уравнение становится почти гармоническим: u_tt+(1+5/(36t^2))u=0. Коэффициент добавки убывает, поэтому соответствующая энергия не возрастает.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "На отрезке [0,1] решение ограничено по непрерывности. Рассмотрим x>=1 и положим t=2x^(3/2)/3, y=x^(-1/4)u(t). Прямая дифференциация дает уравнение u_tt+(1+5/(36t^2))u=0. Обозначим r(t)=5/(36t^2) и E(t)=u_t^2+(1+r(t))u^2. Тогда E'=2u_tu_tt+r'u^2+2(1+r)uu_t=r'u^2<=0, поскольку r'(t)<0. Значит E ограничена сверху на t>=2/3, а вместе с ней ограничена и u. Поэтому |y(x)|=x^(-1/4)|u(t)| ограничена при x>=1. Совмещая с ограниченностью на [0,1], получаем требуемое.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "energy_monotonicity"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_second_order",
+      "qualitative"
+    ],
+    "methods": [
+      "liouville_transform",
+      "energy_estimate",
+      "boundedness"
+    ],
+    "objects": [
+      "bounded_solution",
+      "positive_axis",
+      "increasing_potential"
+    ],
+    "goal": [
+      "prove"
+    ],
+    "keywords": [
+      "MIPT_2009",
+      "written_exam",
+      "ticket_92",
+      "Airy",
+      "boundedness"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "idea_score": 8,
+    "technical_score": 5,
+    "local_score": 8,
+    "comment": "Идейная письменная задача: нужна замена Лиувилля и энергетическая оценка; вычисления умеренные, но для симуляции лучше оставить self-check.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "linear_higher_order",
+    "liouville_transform",
+    "energy_method",
+    "boundedness",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\2009.pdf",
+      "note": "Вариант 92, задача 9; соседние варианты 91, 93, 94 содержат близкие утверждения для e^x, e^(2x), x^2."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2006-2010",
+    "notes": [
+      "Вариант с e^x не добавлен как близкий к уже имеющейся MSU-карточке о y''+e^t y=0.",
+      "Вариант с x^2 не добавлен как та же лиувиллева техника с другой степенью; выбран x как самый короткий представитель письменного сюжета."
+    ]
+  }
+}

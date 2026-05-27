@@ -1,0 +1,116 @@
+{
+  "id": "written-mipt-2010-01-matrix-sine-spectrum",
+  "title": "Спектр и определитель матричного синуса",
+  "fragment": "systems",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МФТИ ДУ, письменный экзамен 2009/2010, вариант 01, задача 9",
+        "text": "По определению sin A=(e^(iA)-e^(-iA))/(2i), где A - числовая квадратная матрица порядка n. Пусть матрица A имеет n различных вещественных собственных значений lambda_1,...,lambda_n, которым соответствуют собственные векторы h_1,...,h_n. а) Найти собственные значения и собственные векторы матрицы sin A. б) Вычислить det(sin A).",
+        "source_ids": [
+          "src-local-du-written-exams"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "matrix_exponential"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Применить функцию к собственным векторам",
+      "text": "Если Ah_j=lambda_j h_j, то e^(iA)h_j=e^(i lambda_j)h_j. Поэтому любая функция, заданная через ряд или матричную экспоненту, действует на h_j скалярно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Для каждого собственного вектора h_j имеем A h_j=lambda_j h_j, а значит A^k h_j=lambda_j^k h_j. Поэтому e^(iA)h_j=e^(i lambda_j)h_j и e^(-iA)h_j=e^(-i lambda_j)h_j. Следовательно, (sin A)h_j=((e^(i lambda_j)-e^(-i lambda_j))/(2i))h_j=sin(lambda_j)h_j. Так как собственные значения A различны, векторы h_1,...,h_n образуют базис. В этом базисе sin A диагональна с диагональными элементами sin(lambda_1),...,sin(lambda_n). Поэтому det(sin A)=prod_{j=1}^n sin(lambda_j). Если некоторые sin(lambda_j) совпадают или равны нулю, это не меняет вывода: h_j остаются собственными векторами, а определитель равен произведению диагональных элементов.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "matrix_function"
+    ],
+    "methods": [
+      "matrix_exponential",
+      "spectral_mapping",
+      "determinant_product"
+    ],
+    "objects": [
+      "matrix_sine",
+      "eigenvalues",
+      "eigenvectors",
+      "determinant"
+    ],
+    "goal": [
+      "compute",
+      "prove"
+    ],
+    "keywords": [
+      "MIPT_2010",
+      "written_exam",
+      "ticket_01",
+      "sin_A"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "idea_score": 6,
+    "technical_score": 2,
+    "local_score": 6,
+    "comment": "Хорошая устная задача на смысл матричной экспоненты и спектрального отображения: почти без вычислений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "local_du",
+    "written_exam",
+    "matrix_exponential",
+    "linear_systems",
+    "trace_determinant",
+    "standard_course_methods",
+    "exam_score_6"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-written-exams",
+      "role": "original_problem",
+      "status": "source_verified",
+      "local_path": "C:\\Users\\Admin\\Downloads\\DE2010.pdf",
+      "note": "Вариант МФТИ-01, задача 9."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "written-mipt-2006-2010",
+    "notes": [
+      "Добавлена вместо однотипных вычислительных систем из DE2010: задача проверяет переносимое свойство матричной экспоненты.",
+      "Для симуляции экзамена хорошо подходит multiple-choice или formula-вопрос без раскрытия полного решения."
+    ]
+  }
+}

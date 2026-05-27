@@ -1,0 +1,338 @@
+{
+  "id": "cluster-variation-of-constants-method-guide",
+  "title": "Методический навигатор: вариация постоянных",
+  "fragment": "linear_equations",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Вариация постоянных применяется к неоднородной линейной задаче после того, как однородная часть уже понята. Для уравнения первого порядка y'+p(x)y=q(x) однородное решение y_h=C e^{-P(x)}, P'=p, заменяют на y=c(x)e^{-P(x)} и получают c'(x)=q(x)e^{P(x)}; это тот же интегрирующий множитель, записанный как варьирование постоянной. Для уравнения n-го порядка a_n(x)y^{(n)}+...+a_0(x)y=f(x) на интервале, где a_n не обращается в нуль и известна фундаментальная система y_1,...,y_n, ищут y_p=sum y_j u_j. Условия sum y_j^{(k)}u_j'=0 для k=0,...,n-2 и sum y_j^{(n-1)}u_j'=f/a_n дают линейную систему с матрицей Вронскиана. Для системы x'=A(t)x+b(t) фундаментальная матрица X(t) однородной системы дает x(t)=X(t)c(t), c'=X^{-1}b, а нормированная матрица Коши Phi(t,s)=X(t)X(s)^{-1} записывает задачу Коши как x(t)=Phi(t,t0)x0+int_{t0}^t Phi(t,s)b(s)ds. При постоянной A эта формула превращается в интеграл с e^{A(t-s)}. Резонанс не является отдельным правилом: если правая часть совпадает с однородным режимом, интеграл вариации постоянных автоматически дает дополнительный множитель t или более высокую степень t. Метод неопределенных коэффициентов быстрее для постоянных коэффициентов и правых частей конечного типа; вариация постоянных лучше, когда коэффициенты переменные, фундаментальная система дана, правая часть произвольная, нужны начальные/краевые условия через фундаментальную матрицу или важно увидеть условие совместности.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-8-program-or-exam",
+          "src-romanko-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_first_order_equation",
+          "integrating_factor",
+          "linear_system",
+          "fundamental_matrix",
+          "wronskian",
+          "fundamental_system_solutions",
+          "particular_solution",
+          "general_solution",
+          "matrix_exponential",
+          "variation_of_constants_system",
+          "initial_value_problem",
+          "cauchy_problem"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-homogeneous-first",
+      "title": "Сначала решить однородную задачу",
+      "text": "Метод начинается не с правой части, а с базиса однородных решений: одного множителя e^{-P} для первого порядка, ФСР и Вронскиана для скалярного высшего порядка или фундаментальной матрицы для системы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "fundamental_system_solutions",
+        "fundamental_matrix",
+        "wronskian"
+      ]
+    },
+    {
+      "id": "idea-cauchy-operator",
+      "title": "Матрица Коши переносит вклад правой части",
+      "text": "Формула Phi(t,s)=X(t)X(s)^{-1} отделяет распространение однородной системы от накопления вынуждения. Поэтому одно и то же выражение работает для начальных условий, двухточечных условий и систем с переменными коэффициентами.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "fundamental_matrix",
+        "variation_of_constants_system",
+        "initial_value_problem"
+      ]
+    },
+    {
+      "id": "idea-resonance-integral",
+      "title": "Резонанс виден как лишнее интегрирование",
+      "text": "Когда правая часть пропорциональна однородному режиму, в формуле вариации постоянных интегрируется константа или полином. Отсюда появляются множители t, t^2 и далее, которые в методе неопределенных коэффициентов вводятся как правило резонансного анзаца.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "particular_solution",
+        "general_solution",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-method-choice",
+      "title": "Не всякое неоднородное уравнение надо интегрировать вручную",
+      "text": "Если коэффициенты постоянны, а правая часть является полиномом, экспонентой, синусом, косинусом или их произведением, метод неопределенных коэффициентов часто короче. Если же коэффициенты переменные, правая часть произвольная, ФСР уже дана или нужна операторная формула, вариация постоянных является основным маршрутом.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "particular_solution",
+        "fundamental_system_solutions",
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-cluster-boundaries",
+      "title": "Граница проходит по главному объекту задачи",
+      "text": "Если главный вопрос - Вронскиан, редукция порядка или сама ФСР переменно-коэффициентного скалярного уравнения, задача ближе к linear-equations-variable-coefficients. Если главное - свойства X(t), обратный поток или det X, это fundamental-matrix-linear-systems. Если главное - спектр постоянной матрицы или построение e^{At}, это constant-coefficient-linear-systems или matrix-exponential-methods. В variation-of-constants остается интеграл неоднородности и выбор частного решения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "wronskian",
+        "fundamental_matrix",
+        "matrix_exponential",
+        "particular_solution"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-method-route",
+      "title": "Маршрут применения метода",
+      "text": "1. Зафиксировать рабочий интервал непрерывности коэффициентов и правой части. 2. Решить однородное уравнение или выбрать фундаментальную матрицу X(t). 3. Для первого порядка положить y=c(x)y_h(x); для скалярного высшего порядка положить y_p=sum y_j u_j; для системы положить x=X(t)c(t). 4. Выписать уравнения на производные новых коэффициентов: одно уравнение первого порядка, систему с Вронскианом или c'=X^{-1}b. 5. Интегрировать с удобными нижними пределами; изменение пределов поглощается однородным решением. 6. Добавить общее однородное решение и только затем применять начальные, краевые или периодические условия. 7. Если коэффициенты постоянные и правая часть специальная, сравнить с методом неопределенных коэффициентов: часто он короче, но формула вариации объясняет резонанс и область применимости.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "fundamental_system_solutions",
+        "wronskian",
+        "fundamental_matrix",
+        "particular_solution",
+        "general_solution",
+        "variation_of_constants_system"
+      ]
+    },
+    {
+      "id": "guide-proof-route",
+      "title": "Как доказывать формулу",
+      "text": "Для первого порядка доказательство совпадает с интегрирующим множителем: y=c e^{-P} зануляет однородную часть и оставляет c'=q e^P. Для высших порядков дополнительные условия на u_j' убирают производные u_j выше первой; последняя строка дает правую часть, а обратимость Вронскиана обеспечивает единственность u_j'. Для системы подстановка x=Xc дает X'c+Xc'=AXc+b, после сокращения X'=AX остается Xc'=b. Интегрирование от t0 дает формулу Коши с Phi(t,s)=X(t)X(s)^{-1}.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "integrating_factor",
+        "wronskian",
+        "fundamental_matrix",
+        "variation_of_constants_system",
+        "cauchy_problem"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя использовать ФСР или фундаментальную матрицу за пределами интервала, где коэффициенты корректны и W или det X не обращаются в нуль. Нельзя забывать нормировку: X(t)c с неопределенной постоянной и Phi(t,t0)x0 имеют разные роли. Нельзя добавлять к частному решению произвольную комбинацию других частных решений; добавляется только решение однородной задачи. Нельзя автоматически выбирать вариацию постоянных для постоянных коэффициентов, если метод неопределенных коэффициентов дает короткий анзац. Нельзя считать резонанс ошибкой формулы: он проявляется в интеграле и должен остаться как множитель t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "fundamental_system_solutions",
+        "fundamental_matrix",
+        "particular_solution",
+        "matrix_exponential"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_first_order",
+      "linear_higher_order",
+      "linear_inhomogeneous_equation",
+      "linear_system",
+      "variable_coefficients",
+      "constant_coefficients"
+    ],
+    "methods": [
+      "variation_of_constants",
+      "variation_of_parameters",
+      "integrating_factor_linear",
+      "fundamental_system",
+      "fundamental_matrix",
+      "cauchy_formula",
+      "matrix_exponential",
+      "undetermined_coefficients_contrast",
+      "resonance_particular_solution"
+    ],
+    "objects": [
+      "particular_solution",
+      "general_solution",
+      "wronskian",
+      "fundamental_system",
+      "fundamental_matrix",
+      "cauchy_matrix",
+      "matrix_exponential",
+      "forcing_integral"
+    ],
+    "goal": [
+      "choose_method",
+      "construct_particular_solution",
+      "prove_formula",
+      "handle_initial_conditions",
+      "handle_boundary_conditions",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "variation-of-constants",
+      "method_guide",
+      "variation of parameters",
+      "Cauchy formula",
+      "fundamental matrix",
+      "resonance",
+      "particular solution",
+      "undetermined coefficients"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет тяжелых интегралов; сложность состоит в выборе правильной формы вариации постоянных, границах с соседними линейными кластерами и распознавании резонанса.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "linear_first_order",
+    "linear_higher_order",
+    "linear_systems",
+    "variation_of_parameters",
+    "wronskian",
+    "matrix_exponential",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовая терминология курса: линейные ОДУ, системы, фундаментальная матрица и вариация постоянных."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program",
+      "status": "source_verified",
+      "note": "Локальная программа явно включает ФСР, фундаментальную матрицу, формулу Коши и вариацию постоянных."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачный фон для вариации постоянных и параметров в скалярных линейных уравнениях."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "note": "Открытые notes по системам, фундаментальной матрице и формуле переноса вклада правой части."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "note": "Строгая открытая ссылка на линейные системы, фундаментальные матрицы и интегральную формулу."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "note": "Открытый видеокурс MIT OCW для повторения вариации параметров, систем и матричной экспоненты."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Локальная терминология и базовый маршрут метода."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 2,
+      "comment": "Локальная программа и экзаменационный контекст."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Типовые скалярные задачи."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 4,
+      "comment": "Операторная интерпретация фундаментальной матрицы."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Строгая теория линейных систем."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Учебное повторение вариации параметров и систем."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-variation-of-constants-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера variation-of-constants, а не как новая вычислительная задача.",
+      "Покрыты первый порядок, высшие порядки через Вронскиан, системы через фундаментальную матрицу и формулу Коши, резонанс и выбор между вариацией постоянных и неопределенными коэффициентами.",
+      "Соседние кластеры отделены по главному объекту: ФСР/Вронскиан, фундаментальная матрица, постоянные коэффициенты или матричная экспонента."
+    ]
+  }
+}

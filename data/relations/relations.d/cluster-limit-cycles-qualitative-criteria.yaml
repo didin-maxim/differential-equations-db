@@ -1,0 +1,92 @@
+{
+  "relations": [
+    {
+      "id": "rel-limit-cycles-guide-to-radial-semistable",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "test-limit-cycles-radial-semistable",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, как окружность r=r0 становится предельным циклом через изолированный корень радиального уравнения и как читать устойчивость по стрелкам для r.",
+      "backward_text": "Радиальная тестовая карточка является базовой реализацией ветки 'r'=R(r)' с устойчивым, неустойчивым или полуустойчивым циклом.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-bendixson-quadrants",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "test-limit-cycles-bendixson-quadrants",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор фиксирует область применимости Бендиксона: нужно выбрать односвязную область одного знака дивергенции и сделать только запретительный вывод.",
+      "backward_text": "Квадрантная тестовая карточка проверяет именно эту осторожность: критерий запрещает циклы в двух квадрантах, но не доказывает существование в остальных.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-index-inside",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "test-limit-cycles-index-inside",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор помечает индекс Пуанкаре как продвинутый слой и формулирует правило суммы индексов особых точек внутри цикла.",
+      "backward_text": "Индексная self-check карточка является representative-примером beyond_standard_course ветки: локальные типы равновесий складываются в глобальное ограничение.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-putnam-fluid",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "putnam-early-1960-b3-fluid-flow",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор дает язык радиальной динамики, инвариантной окружности и притяжения к циклу; Putnam-карточка совмещает это с локальным фазовым портретом у равновесия.",
+      "backward_text": "Putnam 1960 B3 показывает более насыщенный вариант той же качественной идеи: радиус контролируется не автономным r'=R(r), но окружность r=1 все равно является притягивающим циклом.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-bendixson-theorem",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "bendixson-no-cycles",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор размещает критерий Бендиксона внутри общей карты методов: это запретительный критерий для замкнутых траекторий в односвязной области.",
+      "backward_text": "Карточка Бендиксона дает короткое доказательство через поток и формулу Грина, на которое навигатор ссылается как на уже имеющийся теоретический узел.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-polar-stable-not-asymptotic",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "msu-ode-2026-5-polar-stable-not-asymptotic",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Навигатор предупреждает, что инвариантные окружности и накопление циклов надо читать через определения устойчивости и изолированности.",
+      "backward_text": "МГУ 2026/5 показывает тонкую границу: инвариантные окружности дают устойчивость нуля, но наличие ненулевых периодических траекторий запрещает асимптотическое притяжение.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-first-integrals-guide",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "cluster-first-integrals-plane-systems-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор по предельным циклам отделяет изолированную замкнутую траекторию от семейства замкнутых уровней первого интеграла.",
+      "backward_text": "Навигатор первых интегралов объясняет, почему регулярные уровни H=C дают центр и периодические траектории, но обычно не дают предельный цикл.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-limit-cycles-guide-to-phase-stability-guide",
+      "from": "cluster-limit-cycles-qualitative-criteria-method-guide",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор по предельным циклам переносит язык устойчивости с равновесий на замкнутые траектории, сохраняя различие между удержанием и притяжением.",
+      "backward_text": "Общий навигатор устойчивости дает базовые определения и фазовую плоскость, которые нужны перед обсуждением устойчивых и полуустойчивых циклов.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "cluster-existence-blow-up-alternative",
-  "title": "Альтернатива продолжения: конечный конец означает выход из компакта",
+  "title": "Альтернатива продолжения с выходом из компактов",
   "fragment": "foundations",
   "kind": {
     "primary": "lemma",

@@ -3,6 +3,7 @@ import json
 from lib import (
     ROOT,
     load_definitions,
+    data_files,
     load_problem_files,
     load_relations,
     load_sources,
@@ -25,8 +26,21 @@ def load_json_file(path, default):
 
 
 def load_task_clusters():
-    path = ROOT / "data" / "task_clusters" / "clusters.yaml"
-    return load_json_file(path, {}).get("clusters", [])
+    clusters = []
+    for path in data_files("task_clusters"):
+        clusters.extend(load_json_file(path, {}).get("clusters", []))
+    return clusters
+
+
+def load_exam_simulation_config():
+    base = ROOT / "data" / "exam_simulation"
+    config = load_json_file(base / "config.yaml", {})
+    questions = load_json_file(base / "questions.yaml", {})
+    if questions:
+        config["question_overlays"] = questions.get("questions", [])
+        config["question_overlay_coverage"] = questions.get("coverage", {})
+        config["question_overlay_notes"] = questions.get("notes", [])
+    return config
 
 
 def taxonomy():
@@ -111,6 +125,17 @@ def standard_idea_ids(problem):
     for block_name in ("ideas", "solutions"):
         for block in problem.get(block_name, []) or []:
             ids.extend(block.get("standard_idea_ids", []) or [])
+    return compact(ids)
+
+
+def definition_ids(problem):
+    ids = []
+    for group in (problem.get("statements") or {}).values():
+        for statement in group or []:
+            ids.extend(statement.get("definition_ids", []) or [])
+    for block_name in ("ideas", "solutions"):
+        for block in problem.get(block_name, []) or []:
+            ids.extend(block.get("definition_ids", []) or [])
     return compact(ids)
 
 
@@ -199,7 +224,7 @@ def cluster_memberships(problem_id, clusters):
     return compact(memberships)
 
 
-def build_cards(problem_files, clusters, sources, standard_ideas):
+def build_cards(problem_files, clusters, sources, standard_ideas, definitions):
     source_labels = {
         item.get("id"): item.get("short_name") or item.get("short_title") or item.get("title") or item.get("id")
         for item in sources
@@ -207,6 +232,10 @@ def build_cards(problem_files, clusters, sources, standard_ideas):
     idea_labels = {
         item.get("id"): item.get("title") or item.get("id")
         for item in standard_ideas
+    }
+    definition_labels = {
+        item.get("id"): item.get("title") or item.get("id")
+        for item in definitions
     }
     cluster_labels = {
         item.get("id"): item.get("title") or item.get("title_ru") or item.get("id")
@@ -219,6 +248,7 @@ def build_cards(problem_files, clusters, sources, standard_ideas):
         kind = problem.get("kind") or {}
         ids = source_ids(problem)
         idea_ids = standard_idea_ids(problem)
+        def_ids = definition_ids(problem)
         cluster_ids = cluster_memberships(problem.get("id"), clusters)
         authors = problem_authors(problem)
         assets = compact_assets(problem)
@@ -237,6 +267,8 @@ def build_cards(problem_files, clusters, sources, standard_ideas):
                 [source_labels.get(item, item) for item in ids],
                 idea_ids,
                 [idea_labels.get(item, item) for item in idea_ids],
+                def_ids,
+                [definition_labels.get(item, item) for item in def_ids],
                 cluster_ids,
                 [cluster_labels.get(item, item) for item in cluster_ids],
                 authors,
@@ -268,6 +300,8 @@ def build_cards(problem_files, clusters, sources, standard_ideas):
                 "cluster_labels": [cluster_labels.get(item, item) for item in cluster_ids],
                 "standard_idea_ids": idea_ids,
                 "standard_idea_labels": [idea_labels.get(item, item) for item in idea_ids],
+                "definition_ids": def_ids,
+                "definition_labels": [definition_labels.get(item, item) for item in def_ids],
                 "review_status": editorial.get("review_status"),
                 "public_ready": editorial.get("public_ready"),
                 "created_by": editorial.get("created_by"),
@@ -292,21 +326,25 @@ def build_data():
     )
     sources = load_sources()
     standard_ideas = load_standard_ideas()
+    definitions = load_definitions()
     clusters = load_task_clusters()
+    exam_simulation = load_exam_simulation_config()
     return {
         "problems": problems,
-        "cards": build_cards(problem_files, clusters, sources, standard_ideas),
+        "cards": build_cards(problem_files, clusters, sources, standard_ideas, definitions),
         "relations": load_relations(),
         "sources": sources,
-        "definitions": load_definitions(),
+        "definitions": definitions,
         "standard_ideas": standard_ideas,
         "task_clusters": clusters,
+        "exam_simulation": exam_simulation,
         "taxonomy": taxonomy(),
         "meta": {
             "card_count": len(problems),
             "problem_count": problem_count,
             "theory_count": theory_count,
             "cluster_count": len(clusters),
+            "exam_simulation_version": exam_simulation.get("exam_simulation_version"),
         },
     }
 

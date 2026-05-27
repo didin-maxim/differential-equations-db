@@ -22,7 +22,8 @@
         },
         "definition_ids": [
           "wronskian",
-          "ordinary_differential_equation"
+          "ordinary_differential_equation",
+          "linear_independence_solutions"
         ]
       }
     ]

@@ -21,7 +21,9 @@
           "status": "ai_checked"
         },
         "definition_ids": [
-          "ordinary_differential_equation"
+          "ordinary_differential_equation",
+          "general_solution",
+          "particular_solution"
         ]
       }
     ]

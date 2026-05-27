@@ -1,0 +1,24 @@
+{
+  "id": "cluster-boundary-spectral-problems",
+  "title": "Теоретико-методический блок кластера краевых спектральных задач",
+  "created_at": "2026-05-27",
+  "scope": [
+    "task_cluster",
+    "boundary-spectral-problems",
+    "method_guide",
+    "boundary_value",
+    "sturm_liouville",
+    "fredholm_alternative",
+    "green_function"
+  ],
+  "problem_ids": [
+    "cluster-boundary-spectral-method-guide"
+  ],
+  "status": "ai_checked",
+  "notes": [
+    "Добавление точечное: кластер уже saturated, поэтому новая карточка является теоретико-методическим навигатором, а не новой вычислительной спектральной задачей.",
+    "Блок связывает явный определитель краевых условий, регулярную Sturm-Liouville ортогональность, резонансную совместность, функцию Грина, Sturm-соседа и вариационный спектральный порог.",
+    "Новые определения не добавлялись: использованы существующие definition_ids и связи к theorem-карточкам.",
+    "Связи записаны только в data/relations/relations.d/cluster-boundary-spectral-problems.yaml."
+  ]
+}

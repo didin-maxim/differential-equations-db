@@ -1,0 +1,339 @@
+{
+  "id": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+  "title": "Методический навигатор: олимпиадные дифференциальные неравенства, барьеры и взрыв",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative",
+      "theory_bridge"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В олимпиадных задачах на дифференциальные неравенства обычно не требуется тяжелая теория существования: локальная разрешимость чаще является фоном, а главный ход состоит в выборе величины, у которой производная имеет знак или ограниченную скорость. Такой величиной бывает энергия, угол, arctan y, логарифм, отношение, x+y, x-f, e^{-x}f или расстояние до границы области. После выбора барьера задача сводится к одному из четырех маршрутов: сравнить с явным уравнением, доказать первый выход из области невозможным, накопить конечный прирост на бесконечном промежутке или показать, что преобразованная величина за конечное время обязана выйти за допустимый диапазон. Взрыв здесь читается не как формальное применение теоремы Пикара-Линделефа, а как противоречие между bounded transform вроде arctan y < pi/2 и нижней оценкой его роста. Forward estimates идут в сторону времени, где известен начальный знак или монотонность; backward estimates используют глобальное условие на всей прямой и смотрят назад, чтобы слишком большая производная не дала отрицательное значение. Инвариантная область появляется, когда на границе поле направлено внутрь или выбранная вспомогательная функция не может пересечь нулевой уровень. После трех-пяти задач шаблон распознается по вопросу: что здесь должно остаться в клетке, что должно слишком быстро повернуться или вырасти, и какая простая величина видит это без решения уравнения?",
+        "source_ids": [
+          "src-student-olympiad-folklore",
+          "src-putnam-archive",
+          "src-nure-student-olympiad-book",
+          "src-mipt-ode-course",
+          "src-arnold-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "initial_value_problem",
+          "differential_inequality",
+          "barrier_argument",
+          "invariant_region",
+          "finite_time_blowup",
+          "gronwall_inequality"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-transform-before-theorem",
+      "title": "Сначала найти видящую величину",
+      "text": "Неравенство редко интегрируют в исходных переменных. Его переносят на величину, которая уже знает ответ: угол видит поворот, arctan y видит конечный взрыв, энергия видит ограниченность, логарифм или отношение видит относительный рост.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison",
+        "energy_monotonicity",
+        "logarithmic_derivative",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "differential_inequality",
+        "barrier_argument"
+      ]
+    },
+    {
+      "id": "idea-comparison-and-blowup",
+      "title": "Взрыв доказывается через ограниченный счетчик",
+      "text": "Для роста типа y^2 удобно считать не y, а arctan y или -1/y. Если производная этого счетчика снизу отделена от нуля, а сам счетчик имеет конечный диапазон, глобальное продолжение на слишком длинный интервал невозможно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "angle_comparison"
+      ],
+      "definition_ids": [
+        "finite_time_blowup"
+      ]
+    },
+    {
+      "id": "idea-forward-backward-direction",
+      "title": "Направление оценки является частью идеи",
+      "text": "Forward estimate использует начальные данные и знак производной на будущем хвосте. Backward estimate появляется, когда функция положительна на всей R: слишком большая производная в точке при движении назад создала бы запрещенный нуль или отрицательное значение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument"
+      ],
+      "definition_ids": [
+        "differential_inequality"
+      ]
+    },
+    {
+      "id": "idea-invariant-region",
+      "title": "Инвариантная область заменяет явную формулу",
+      "text": "Если на предполагаемой границе знак производной не позволяет выйти наружу, первый выход невозможен. В олимпиадных задачах граница часто скрыта в простой замене: x+y, x-f, y/x, e^{-x}f или выпуклая комбинация.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "gronwall_estimate"
+      ],
+      "definition_ids": [
+        "barrier_argument",
+        "invariant_region"
+      ]
+    },
+    {
+      "id": "idea-border-with-standard-theory",
+      "title": "Это не замена теоремы существования",
+      "text": "Пикара-Линделефа и теорема продолжения отвечают на вопрос, существует ли локальная траектория и когда она может оборваться. Олимпиадный барьер отвечает на другой вопрос: почему траектория не может попасть в область, выйти из нее, остаться глобальной или сохранить заданный знак.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "picard_lindelof",
+        "comparison_argument"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "barrier_argument",
+        "finite_time_blowup"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут решения",
+      "text": "1. Определить, что требуется доказать: невозможность глобального решения, ограниченность, единственность пересечения, нижнюю оценку, асимптотику или острую константу. 2. Выбрать счетчик: энергия для ограниченности, угол или arctan для поворота и взрыва, логарифм или отношение для относительного роста, экспоненциальный множитель для линейного дрейфа, комбинация координат для скрытой монотонности. 3. Дифференцировать счетчик и получить знак, верхнюю или нижнюю оценку скорости. 4. Интегрировать в правильном направлении: вперед от начальных данных, назад от глобального условия или по всему хвосту, если производная мажорируется интегрируемой функцией. 5. Сравнить с диапазоном счетчика, границей области или примером равенства; если нужна острота, построить модель, где все неравенства становятся равенствами.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "angle_comparison",
+        "energy_monotonicity",
+        "logarithmic_derivative",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "differential_inequality",
+        "barrier_argument",
+        "invariant_region"
+      ]
+    },
+    {
+      "id": "guide-recognition",
+      "title": "Как распознать после нескольких задач",
+      "text": "После трех-пяти примеров полезно спрашивать не 'как решить ОДУ', а 'какая величина почти монотонна'. Если в условии есть y^2, ищут arctan y или 1/y; если есть две функции и симметричные оценки производных, ищут угол; если есть f'>f, выносят e^x; если правая часть мала на бесконечности, оценивают полный прирост; если функция положительна на всей прямой, пробуют смотреть назад; если появляется sin(x+y) или y/x, пробуют сложить переменные или перейти к отношению.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "angle_comparison",
+        "logarithmic_derivative",
+        "comparison_argument",
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "differential_inequality"
+      ]
+    },
+    {
+      "id": "guide-course-links",
+      "title": "Связь с курсом ДУ",
+      "text": "Из стандартного курса здесь реально используются интегрирующий множитель для линейного неравенства, Гронуолл для запрета одновременного зануления или выхода положительной части, энергия для уравнений второго порядка, фазовая прямая после замены y/x и критерий продолжения как язык для слова 'взрыв'. Но в олимпиадной задаче эти инструменты не подменяют выбор барьера: теорема существования не угадывает arctan, x+y или e^{-x}f.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "gronwall_estimate",
+        "energy_monotonicity",
+        "phase_line_signs",
+        "picard_lindelof"
+      ],
+      "definition_ids": [
+        "initial_value_problem",
+        "gronwall_inequality",
+        "finite_time_blowup"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не применять локальную теорему существования как доказательство глобальности: она не запрещает конечный взрыв. Не интегрировать неравенство в неверном направлении: backward estimate требует глобального условия слева или на всей прямой. Не забывать первый момент выхода при барьере: знак надо проверять на границе, а не только внутри. Не терять область допустимости преобразования arctan, log или y/x. Не превращать задачу в тяжелую теорию, если достаточно одной вспомогательной величины и интегрирования ее производной.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "comparison_argument",
+        "gronwall_estimate",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "barrier_argument",
+        "invariant_region",
+        "finite_time_blowup"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "linear_higher_order",
+      "nonlinear_ode",
+      "nonlinear_system",
+      "qualitative",
+      "olympiad"
+    ],
+    "methods": [
+      "comparison_argument",
+      "barrier_argument",
+      "invariant_region",
+      "angle_comparison",
+      "arctan_barrier",
+      "energy_monotonicity",
+      "logarithmic_derivative",
+      "integrating_factor",
+      "gronwall_estimate",
+      "backward_estimate",
+      "forward_estimate",
+      "blow_up_comparison"
+    ],
+    "objects": [
+      "differential_inequality",
+      "barrier",
+      "invariant_region",
+      "finite_time_blowup",
+      "global_solution",
+      "bounded_solution",
+      "auxiliary_function",
+      "sharp_constant"
+    ],
+    "goal": [
+      "choose_method",
+      "prove_bound",
+      "prove_nonexistence",
+      "prove_blowup",
+      "prove_asymptotic",
+      "recognize_pattern"
+    ],
+    "keywords": [
+      "olympiad-differential-inequalities-barriers",
+      "method_guide",
+      "barrier",
+      "comparison",
+      "blow_up",
+      "arctan",
+      "backward_estimate",
+      "forward_estimate",
+      "invariant_region"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 2,
+    "comment": "Методический блок сам по себе малотехнический; сложность в распознавании барьерной величины и переносе приема между олимпиадными задачами.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "theory_bridge",
+    "olympiad_style",
+    "differential_inequality",
+    "comparison",
+    "blow_up",
+    "finite_time_blowup",
+    "boundedness",
+    "global_solution",
+    "energy_method",
+    "invariant",
+    "standard_course_methods",
+    "advanced_standard_course",
+    "theoretical_exam_task",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "role": "pattern_source",
+      "status": "seed_reference",
+      "note": "Общий фольклорный слой олимпиадных барьерных приемов: угол, энергия, первый выход, вспомогательная функция."
+    },
+    {
+      "source_id": "src-putnam-archive",
+      "role": "problem_family",
+      "status": "source_verified",
+      "note": "Используется как семейство задач с угловым сравнением, backward estimates, экспоненциальным множителем, энергией и монотонными барьерами."
+    },
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "role": "problem_family",
+      "status": "source_verified",
+      "note": "Источник компактных задач на arctan-взрыв и интегрируемые оценки полного прироста."
+    },
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык задач Коши, продолжения, Гронуолла и сравнения."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классический геометрический фон для барьеров, фазового взгляда и продолжения решений."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-student-olympiad-folklore",
+      "priority": 1,
+      "comment": "Основной источник языка переносимых олимпиадных приемов."
+    },
+    {
+      "source_id": "src-putnam-archive",
+      "priority": 2,
+      "comment": "Семейство сильных представителей кластера."
+    },
+    {
+      "source_id": "src-nure-student-olympiad-book",
+      "priority": 3,
+      "comment": "Короткие задачи на blow-up и boundedness через дифференциальные неравенства."
+    },
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 4,
+      "comment": "Связь с базовым курсом ДУ."
+    },
+    {
+      "source_id": "src-arnold-ode",
+      "priority": 5,
+      "comment": "Геометрический контекст барьерных рассуждений."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-olympiad-differential-inequalities-barriers-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический представитель кластера olympiad-differential-inequalities-barriers.",
+      "Карточка не является новой вычислительной задачей; она связывает уже импортированные олимпиадные представители через переносимые барьерные идеи.",
+      "Покрыты сравнение, arctan/blow-up, forward/backward estimates, инвариантные области, отличие от стандартной теоремы существования и распознавание шаблона после нескольких задач."
+    ]
+  }
+}

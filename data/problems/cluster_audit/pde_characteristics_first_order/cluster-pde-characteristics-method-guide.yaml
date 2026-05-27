@@ -1,0 +1,318 @@
+{
+  "id": "cluster-pde-characteristics-method-guide",
+  "title": "Методический навигатор: характеристики линейных ЧП первого порядка",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для линейного уравнения первого порядка a(x)u_{x_1}+...+a_n(x)u_{x_n}+c(x)u=f(x) метод характеристик заменяет частную производную производной вдоль потока x'=a(x). В однородном случае c=f=0 значение u постоянно на характеристиках; в случае c или f не равных нулю вдоль характеристики остается линейное ОДУ для u. Задача Коши корректна локально там, где начальная кривая или поверхность нехарактеристична: характеристическое поле не лежит в ее касательном направлении. Глобально надо отдельно проверить, что каждая нужная характеристика пересекает данные ровно один раз и попадает в область задания данных; отсутствие пересечения дает незаданную область, повторное пересечение требует совместимости, а данные на самой характеристике обычно дают либо неединственность, либо несовместность.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-filippov-problem-book",
+          "src-romanko-problem-book",
+          "src-lebl-diffyqs",
+          "src-kth-method-characteristics-notes",
+          "src-umd-first-order-pde-characteristics"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "pde_characteristic_first_order",
+          "cauchy_problem",
+          "integral_curve",
+          "first_integral",
+          "solution"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-characteristic-system",
+      "title": "Характеристики - интегральные кривые поля коэффициентов",
+      "text": "Для уравнения a(x,y)u_x+b(x,y)u_y=0 характеристическая система x'=a(x,y), y'=b(x,y) задает кривые, касательные к направлению, в котором PDE измеряет производную u. В трех независимых переменных аналогично появляется система для x,y,z; общее решение ищут через независимые первые интегралы этой системы.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ],
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "integral_curve",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "idea-first-integrals",
+      "title": "Первый интеграл нумерует характеристики",
+      "text": "Если I постоянно вдоль характеристик, то в однородном двумерном случае u=F(I). В трехмерном случае нужны два независимых интеграла I1,I2, и общее решение имеет вид F(I1,I2). Начальные данные затем определяют произвольную функцию F, если отображение с начальной поверхности на набор инвариантов обратимо.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "cauchy_problem"
+      ]
+    },
+    {
+      "id": "idea-noncharacteristic-data",
+      "title": "Нехарактеристичность - локальная обратимость параметров",
+      "text": "Начальная кривая в плоскости годится как кривая Коши, когда ее касательное направление не совпадает с характеристическим полем. Тогда параметры 'точка на начальной кривой' и 'время вдоль характеристики' локально дают координаты в области решения. Для поверхности в пространстве аналогичное условие означает, что характеристическое поле не касательно поверхности.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "cauchy_problem",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-domain-continuation",
+      "title": "Область продолжения задается покрытием характеристиками",
+      "text": "Даже при локально хорошей кривой Коши данные могут быть заданы только на отрезке или части поверхности. Тогда решение определено именно в объединении характеристик, выходящих из этой части данных. Вне такой области значение произвольной функции инварианта не задано, а при двух попаданиях одной характеристики в данные требуется совпадение предписанных значений после учета ОДУ для u.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "cauchy_problem",
+        "pde_characteristic_first_order",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-characteristic-data",
+      "title": "Данные на характеристике не задают соседние характеристики",
+      "text": "Если начальная кривая сама является характеристикой, PDE уже диктует изменение u вдоль нее. Несовпадение с этим законом дает отсутствие решения; совпадение дает только значение на одной характеристике и оставляет соседние характеристики свободными, поэтому единственность теряется.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "cauchy_problem",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-flow-geometry",
+      "title": "Поток переносит профиль и его носитель",
+      "text": "Для транспортного уравнения u_t+a(x)u_x=0 поток x'=a(x) переносит начальную точку xi в текущую точку x(t;xi), а решение читается как u(t,x)=u_0(xi). Поэтому надо уметь читать не только формулу, но и геометрию: сдвиг, растяжение, сжатие или выход из заданной области.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "integral_curve"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут решения задачи",
+      "text": "1. Привести уравнение к виду производной вдоль поля: a u_x+b u_y+c u=f или его многомерному аналогу. 2. Записать характеристическую систему для независимых переменных; для u добавить уравнение du/ds=f-cu. 3. Найти первые интегралы или явный поток характеристик. 4. Подставить начальную кривую или поверхность и проверить нехарактеристичность: характеристическое направление не должно быть касательным к данным. 5. Проверить глобальную однократность попадания: каждая характеристика из рассматриваемой области должна встретить данные ровно один раз. 6. Если данные заданы только на части кривой, явно описать объединение покрытых характеристик. 7. Если начальные данные характеристичны или одна характеристика бьет по данным дважды, проверить совместимость значений вдоль одной характеристики; после совместимости отдельно сказать, есть ли единственность.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ],
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "cauchy_problem",
+        "first_integral"
+      ]
+    },
+    {
+      "id": "guide-method-choice",
+      "title": "Как выбирать между инвариантами и потоком",
+      "text": "Если коэффициенты постоянны или поле легко интегрируется, удобнее писать явный поток и переносить начальную точку назад к данным. Если уравнение задано в нескольких переменных и спрашивает общее решение, обычно удобнее искать первые интегралы характеристической системы. Для транспортного уравнения с временем t естественная нормировка - брать t параметром характеристики. Для задачи Коши на кривой или поверхности важна не сама красота интегралов, а обратимость перехода от начальных параметров к текущей точке.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "first_integral_difference"
+      ],
+      "definition_ids": [
+        "first_integral",
+        "integral_curve",
+        "cauchy_problem"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя считать любую начальную прямую допустимой: прямая может быть характеристикой. Нельзя ограничиться локальной нехарактеристичностью, если задача спрашивает всю область: одна характеристика может пересечь начальную кривую дважды или не пересечь ее вовсе. Нельзя переносить значение с одной точки характеристики, не проверив закон для u вдоль этой характеристики, если в уравнении есть член c u или правая часть f. Нельзя смешивать этот блок с PDE второго порядка и ударными волнами: здесь достаточно линейных однородных или простых линейных уравнений первого порядка из стандартного курса.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "pde_characteristic_first_order",
+        "cauchy_problem",
+        "solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order_pde",
+      "linear_first_order_pde",
+      "transport_equation",
+      "characteristic_system"
+    ],
+    "methods": [
+      "characteristics",
+      "method_of_characteristics",
+      "first_integrals",
+      "flow_map",
+      "cauchy_problem_geometry",
+      "compatibility_check"
+    ],
+    "objects": [
+      "linear_first_order_pde",
+      "characteristic_curve",
+      "characteristic_system",
+      "first_integral",
+      "noncharacteristic_curve",
+      "noncharacteristic_surface",
+      "domain_of_dependence",
+      "domain_of_continuation",
+      "solution_flow"
+    ],
+    "goal": [
+      "choose_method",
+      "solve",
+      "find_domain_of_solution",
+      "classify_well_posedness",
+      "diagnose_nonuniqueness",
+      "diagnose_incompatibility",
+      "describe_support_transport"
+    ],
+    "keywords": [
+      "pde-characteristics-first-order",
+      "method_guide",
+      "first_order_pde_characteristics",
+      "pde_characteristics",
+      "linear_first_order_pde",
+      "transport_equation",
+      "cauchy_problem",
+      "noncharacteristic_curve",
+      "domain_of_dependence",
+      "characteristic_cauchy_data"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную нагрузку; сложность в геометрической диагностике данных Коши, области продолжения и совместимости на характеристиках.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "first_order_pde_characteristics",
+    "pde_characteristics",
+    "linear_first_order_pde",
+    "transport_equation",
+    "cauchy_problem",
+    "noncharacteristic_curve",
+    "domain_of_dependence",
+    "characteristic_cauchy_data",
+    "first_integral",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "mipt_core",
+    "low_technical",
+    "complete_proof"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Блок программы о первых интегралах и линейных ЧП первого порядка",
+      "note": "Локальная программа задает границу: только базовый метод характеристик для линейных ЧП первого порядка."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "§27 по локальному обзору",
+      "note": "Использован как русскоязычный задачный фон по характеристическому методу; отдельная вычислительная карточка из Филиппова не добавлялась, чтобы не дублировать уже закрытые варианты."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "§17",
+      "note": "Романко дает локальный представитель с двумя первыми интегралами и поверхностью Коши."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "Раздел 8.1 по локальному импорту",
+      "note": "Открытые примеры transport, damping вдоль характеристики и obstruction для характеристических данных."
+    },
+    {
+      "source_id": "src-kth-method-characteristics-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Sections 2-4",
+      "note": "Открытый конспект с геометрическим выводом характеристической системы и обсуждением существования/единственности для данных на кривой."
+    },
+    {
+      "source_id": "src-umd-first-order-pde-characteristics",
+      "role": "course_notes",
+      "status": "source_verified",
+      "note": "Короткий открытый конспект по линейным ЧП первого порядка и характеристикам; удобен для быстрой сверки базовых формул."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Основная граница локальной программы."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 2,
+      "comment": "Русскоязычный задачный фон; использовать осторожно, без массового импорта однотипных вычислений."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Русскоязычный представитель задачи Коши с двумя инвариантами."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 4,
+      "comment": "Открытые базовые transport-примеры."
+    },
+    {
+      "source_id": "src-kth-method-characteristics-notes",
+      "priority": 5,
+      "comment": "Открытый теоретический конспект по геометрии характеристик."
+    },
+    {
+      "source_id": "src-umd-first-order-pde-characteristics",
+      "priority": 6,
+      "comment": "Короткая открытая памятка по first-order PDE."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-pde-characteristics-method-guide",
+    "notes": [
+      "Добавлено как теоретико-методический блок кластера, а не как новая вычислительная задача.",
+      "Новые определения не добавлялись: использованы существующие definition_ids pde_characteristic_first_order, cauchy_problem, integral_curve и first_integral; отдельных definitions для нехарактеристической кривой и области продолжения в слое definitions пока нет.",
+      "Блок намеренно ограничен линейными однородными и простыми линейными ЧП первого порядка стандартного курса."
+    ]
+  }
+}

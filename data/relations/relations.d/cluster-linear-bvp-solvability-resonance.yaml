@@ -1,0 +1,169 @@
+{
+  "relations": [
+    {
+      "id": "rel-linear-bvp-guide-to-shooting-model",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "shooting-linear-bvp",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор начинает с нерезонансной стороны: свободный начальный наклон определяется вторым краевым условием, поэтому однородное ядро отсутствует.",
+      "backward_text": "Модель стрельбы показывает простейшую обратимую двухточечную задачу до появления резонансных условий совместности.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-homogeneous-sine-kernel",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "resit-pass-3-dirichlet-sine-bvp",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, что нетривиальное семейство y=C sin x является ядром однородной краевой задачи и первым сигналом резонанса.",
+      "backward_text": "Устная задача дает минимальный пример ненулевого ядра без правой части; следующий шаг - проверить совместимость неоднородного члена.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-filippov-resonance-no-solution",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "local-du-filippov-763-dirichlet-resonance-no-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор дает общий диагноз: при ненулевом ядре Дирихле правая часть обязана удовлетворять условию совместности, иначе решения нет.",
+      "backward_text": "Филипповская карточка является коротким примером нарушения резонансной совместности в конкретной краевой задаче.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-dirichlet-resonance-condition",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "trench-bvp-dirichlet-resonance-sine-condition",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует ортогональность правой части к ядру; карточка Trench реализует это как условие на интеграл с sin x.",
+      "backward_text": "Dirichlet resonance является минимальным вычислительным представителем условия ортогональности в одномерном ядре.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-resonance-alternative",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "trench-bvp-resonance-solvability-alternative",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор дает учебную формулировку альтернативы Фредгольма; Trench-карточка раскрывает ее конструктивно через фундаментальные решения и Wronskian.",
+      "backward_text": "Конструктивная альтернатива является главным textbook-representative для резонансной ветки кластера.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-local-resonant-theorem",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "local-du-standard-resonant-linear-bvp-solvability",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор расширяет локальную самосопряженную формулировку до общего правила: в самосопряженном случае сопряженное ядро совпадает с исходным.",
+      "backward_text": "Локальная theorem-карточка является русскоязычной базовой формулировкой условия int f phi dx=0.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-two-point-fundamental-matrix",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "oral-exam-excellent-two-point-fundamental-matrix",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит разрешимость BVP в конечномерную систему; матричная карточка показывает это через Phi(b,a) и условие принадлежности образу.",
+      "backward_text": "Двухточечное условие через фундаментальную матрицу является системным representative того же Fredholm-рангового критерия.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-boundary-spectral-guide",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "cluster-boundary-spectral-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор берет из спектрального соседа только факт попадания в собственное значение как причину резонанса; вычисление самих lambda остается в boundary-spectral-problems.",
+      "backward_text": "Спектральный навигатор передает сюда неоднородные задачи, где главный вопрос - совместимость правой части при уже обнаруженном ядре.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-dirichlet-eigenvalues",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "dirichlet-eigenvalues-interval",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор использует модель Дирихле как источник резонансных параметров, но не заменяет задачу на вычисление спектра.",
+      "backward_text": "Собственные значения Дирихле дают список параметров, при которых неоднородная BVP должна проверяться на Fredholm-совместимость.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-green-guide",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "cluster-green-functions-bvp-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор проводит границу: при нулевом ядре можно строить Green-оператор, а при резонансе главный объект - условие совместности.",
+      "backward_text": "Green-навигатор опирается на этот критерий как предварительную проверку обратимости перед построением ядра.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-green-function-formula",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "trench-bvp-green-function-formula",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор объясняет, почему формула Green-функции требует отсутствия ненулевого решения однородной краевой задачи.",
+      "backward_text": "Формула Green-функции является нерезонансной реализацией обратного оператора для линейной BVP.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-sturm-guide",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор обращается к Штурму только для доказательства отсутствия ядра через запрет двух нулей; самостоятельные задачи о нулях остаются в sturm-oscillation-comparison.",
+      "backward_text": "Sturm-навигатор дает соседний способ доказать нерезонанс BVP без построения Green-функции и без вычисления полного спектра.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-sturm-nonresonance-lemma",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "Навигатор превращает отсутствие ненулевого решения с двумя нулями в единственность и разрешимость двухточечной задачи.",
+      "backward_text": "Лемма о Дирихле-нерезонансе дает конкретный Sturm-инструмент для проверки нулевого ядра.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-variational-guide",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "cluster-variational-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Навигатор отмечает вариационный мост: после первой вариации линейная BVP может стать условием для поправки или второй вариации, но исходная задача на экстремаль остается в вариационном кластере.",
+      "backward_text": "Вариационный навигатор использует linear-bvp-solvability-resonance для случаев, где уравнение Якоби или линейная поправка попадают в резонанс.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-linear-bvp-guide-to-variational-jacobi",
+      "from": "cluster-linear-bvp-solvability-resonance-method-guide",
+      "to": "local-du-standard-legendre-jacobi-conditions",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Навигатор связывает нетривиальное ядро линейной BVP с вариационным языком сопряженных точек и вырождения второй вариации.",
+      "backward_text": "Условия Лежандра-Якоби являются вариационной стороной той же проверки линейной краевой задачи на нулевое ядро.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    }
+  ]
+}

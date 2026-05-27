@@ -25,7 +25,8 @@
         "definition_ids": [
           "riccati_equation",
           "linear_first_order_equation",
-          "solution"
+          "solution",
+          "particular_solution"
         ]
       }
     ]

@@ -1,6 +1,6 @@
 {
   "id": "cluster-existence-inward-barrier-interval",
-  "title": "Инвариантность отрезка как барьерный аргумент",
+  "title": "Барьерный критерий инвариантности отрезка",
   "fragment": "foundations",
   "kind": {
     "primary": "problem",

@@ -1,6 +1,6 @@
 {
   "id": "olympiad-level-involution-functional-differential",
-  "title": "Функционально-дифференциальный шаблон: использовать инволюцию дважды",
+  "title": "Функционально-дифференциальное уравнение с инволюцией",
   "fragment": "olympiad",
   "kind": {
     "primary": "lemma",

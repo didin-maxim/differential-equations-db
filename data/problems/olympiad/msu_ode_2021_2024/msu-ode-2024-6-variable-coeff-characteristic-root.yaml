@@ -1,0 +1,112 @@
+{
+  "id": "msu-ode-2024-6-variable-coeff-characteristic-root",
+  "title": "Корень характеристического многочлена при переменных коэффициентах",
+  "fragment": "olympiad",
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "МГУ ОДУ 2024, задача 6",
+        "text": "Какие свойства линейных однородных дифференциальных уравнений с постоянными коэффициентами переносятся на уравнения с переменными коэффициентами и характеристическим многочленом L(lambda,t): а) если L(lambda,t) при каждом t имеет корень lambda=lambda_0, то y=e^{lambda_0 t} является решением, и обратно; б) если этот корень имеет кратность k>1 при каждом t, то y=t^{k-1}e^{lambda_0 t} является решением; в) если y=t^{k-1}e^{lambda_0 t} является решением при целом k>1, то lambda_0 является корнем L(lambda,t) кратности k при каждом t?",
+        "source_ids": [
+          "src-msu-ode-olympiad"
+        ],
+        "status": "source_solution_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Подстановка экспоненты и производные по параметру",
+      "text": "Для e^{lambda_0 t} оператор L(D,t) просто умножает на L(lambda_0,t). Для t^{m}e^{lambda_0 t} удобно помнить, что это производные по lambda от e^{lambda t}; кратность корня зануляет нужные производные L по lambda. Обратное утверждение ломается на уравнении меньшего порядка с особым коэффициентом.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Пусть L(D,t)y=sum_j a_j(t)D^j y. Для y=e^{lambda_0 t} имеем L(D,t)y=L(lambda_0,t)e^{lambda_0 t}, поэтому пункт а) верен. Если lambda_0 - корень кратности k, то при m=0,...,k-1 выполнено partial_lambda^m L(lambda_0,t)=0. Так как t^m e^{lambda_0 t}=partial_lambda^m e^{lambda t}|_{lambda=lambda_0}, то L(D,t)(t^m e^{lambda_0 t})=partial_lambda^m(L(lambda,t)e^{lambda t})|_{lambda=lambda_0}=0 для m<k; в частности, пункт б) верен. Пункт в) неверен: функция y=t e^t является решением уравнения первого порядка t y'-(t+1)y=0, но его характеристический многочлен L(lambda,t)=t lambda-(t+1) не имеет корня lambda=1 кратности 2.",
+      "status": "source_solution_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_equations",
+      "olympiad"
+    ],
+    "methods": [
+      "exponential_trial_solution",
+      "counterexample"
+    ],
+    "objects": [
+      "linear_higher_order",
+      "variable_coefficients",
+      "counterexample",
+      "complete_proof"
+    ],
+    "goal": [
+      "prove",
+      "disprove"
+    ],
+    "keywords": [
+      "msu-ode-2024-6",
+      "variable_coefficients",
+      "characteristic_polynomial",
+      "exponential_solution"
+    ],
+    "status": "source_solution_checked"
+  },
+  "difficulty": {
+    "main": "student_olympiad",
+    "idea_score": 8,
+    "technical_score": 4,
+    "local_score": 8,
+    "comment": "Задача короткая, но требует аккуратно отделить формальную подстановку экспоненты от ложной интуиции про кратность в обратную сторону.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_higher_order",
+    "counterexample",
+    "olympiad_style",
+    "complete_proof",
+    "advanced_standard_course",
+    "exam_score_8"
+  ],
+  "sources": [
+    {
+      "source_id": "src-msu-ode-olympiad",
+      "role": "original_problem_and_solution",
+      "status": "source_verified",
+      "url": "https://math.msu.ru/sites/default/files/odu_24_resheniya.pdf"
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "batch_links",
+    "notes": [
+      "Импортирована как содержательный недубль к кластеру линейных уравнений с переменными коэффициентами: вопрос не про вычисление решения, а про границу применимости постояннокэффициентной эвристики."
+    ]
+  }
+}

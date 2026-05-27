@@ -1,0 +1,48 @@
+{
+  "relations": [
+    {
+      "id": "rel-test-implicit-cauchy-to-existence-implicit-ivp",
+      "from": "test-implicit-cauchy-data-regular-branch",
+      "to": "cluster-existence-implicit-ivp-local",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Тестовая задача на выбор начальных данных использует тот же механизм: при F_p != 0 неявное уравнение локально становится обычной задачей Коши.",
+      "backward_text": "Локальная теорема для неявной задачи Коши объясняет, почему в тестовой задаче нужно задавать y(x0), а не произвольный y'(x0).",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-test-implicit-branch-count-to-branch-switch",
+      "from": "test-implicit-cubic-branch-count",
+      "to": "cluster-implicit-branch-switch-square-root",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "В кубической тестовой задаче единственный допустимый наклон регулярен, поэтому через точку проходит одна ветвь; в модели (y')^2=y дискриминант дает место склейки и неединственности.",
+      "backward_text": "Branch-switching пример полезно сравнить с регулярным подсчетом ветвей: число корней по p само по себе еще не вся история, нужно проверять F_p.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-test-special-contained-to-discriminant-not-solution",
+      "from": "test-implicit-special-solution-contained-in-discriminant",
+      "to": "cluster-implicit-discriminant-not-solution",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общее утверждение 'особая кривая лежит в дискриминанте, но дискриминант не обязан быть решением' подготавливает пример, где x=0 является только границей поля направлений.",
+      "backward_text": "Пример с (y')^2=x показывает, почему тестовое утверждение нельзя обратить: дискриминант найден, но не является особым решением.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-test-special-contained-to-clairaut-envelope",
+      "from": "test-implicit-special-solution-contained-in-discriminant",
+      "to": "clairaut-envelope",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "После общего принципа про дискриминант естественно смотреть Клеро: там дискриминантная огибающая действительно является особым решением.",
+      "backward_text": "Клеро дает положительный пример к общему тестовому принципу: особая огибающая лежит в p-дискриминанте.",
+      "status": "ai_checked",
+      "confidence": 0.88
+    }
+  ]
+}

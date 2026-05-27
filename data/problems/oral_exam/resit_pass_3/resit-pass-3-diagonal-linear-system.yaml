@@ -1,6 +1,6 @@
 {
   "id": "resit-pass-3-diagonal-linear-system",
-  "title": "Система 2x2 с диагональной матрицей",
+  "title": "Двумерная диагональная система",
   "fragment": "systems",
   "kind": {
     "primary": "problem",

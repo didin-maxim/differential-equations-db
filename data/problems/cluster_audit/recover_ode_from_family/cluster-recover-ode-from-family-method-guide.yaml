@@ -1,0 +1,296 @@
+{
+  "id": "cluster-recover-ode-from-family-method-guide",
+  "title": "Методический навигатор: восстановление ОДУ по семейству кривых",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В задачах кластера recover-ode-from-family исходным объектом является семейство кривых Phi(x,y,C1,...,Ck)=0 или y=phi(x,C1,...,Ck), которое требуется сделать семейством интегральных кривых некоторого ОДУ. Если C1,...,Ck - действительно независимые постоянные и семейство невырождено, ожидаемый минимальный порядок равен k: исходное равенство дифференцируют по x при фиксированных параметрах k раз и затем исключают параметры из системы Phi=0, dPhi/dx=0, ..., d^k Phi/dx^k=0. Для одного параметра обычно достаточно исходной формулы и первой производной; для двух параметров нужна вторая производная и проверка, что параметры не связаны скрытым условием. Полученное уравнение может быть записано явно y'=f(x,y), как линейное уравнение, или неявно F(x,y,y')=0; после исключения надо проверить область, деления, вырожденные кривые и обратное включение: каждая кривая исходного семейства действительно удовлетворяет ОДУ. Огибающая исходного семейства может стать особым решением восстановленного ОДУ, но это не меняет направления задачи: здесь сначала дано семейство, а ОДУ строится по нему. Поэтому recover-family отделяется от ортогональных траекторий, где после восстановления наклона нужно заменить его на отрицательно обратный и построить новое семейство, и от implicit-ode-discriminant, где исходно уже дано неявное ОДУ F(x,y,p)=0 и анализируются его ветви, дискриминант F=0, F_p=0 и особые решения.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-waterloo-amath250-notes",
+          "src-mit-1803sc-ode",
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "general_solution",
+          "particular_solution",
+          "integral_curve",
+          "singular_solution",
+          "discriminant_curve",
+          "orthogonal_trajectories",
+          "linear_first_order_equation"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-count-independent-parameters",
+      "title": "Считать независимые параметры, а не символы",
+      "text": "Порядок восстанавливаемого ОДУ определяется числом независимых произвольных постоянных. Фиксированная частная часть семейства не увеличивает порядок, а зависимость вида C2=2C1 уменьшает его; поэтому перед дифференцированием надо понять размерность семейства.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "particular_solution",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-differentiate-at-fixed-parameters",
+      "title": "Дифференцировать при постоянных параметрах",
+      "text": "При переходе от семейства к ОДУ параметры считаются постоянными вдоль каждой кривой. Это дает уравнения для y', y'', ... и позволяет исключить C1,...,Ck; дифференцирование по параметру решает другую задачу и относится к чувствительности решений.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ],
+      "definition_ids": [
+        "integral_curve",
+        "ordinary_differential_equation"
+      ]
+    },
+    {
+      "id": "idea-envelope-singular-solution",
+      "title": "Огибающая может появиться после восстановления",
+      "text": "Если семейство имеет огибающую, восстановленное неявное ОДУ часто допускает ее как особое решение. Нужно отличать эту проверку от задач Клеро, Лагранжа и общего implicit-discriminant: там ОДУ дано заранее, а здесь оно только строится по семейству кривых.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "singular_solution",
+        "discriminant_curve",
+        "integral_curve"
+      ]
+    },
+    {
+      "id": "idea-neighbor-boundaries",
+      "title": "Граница с соседними кластерами задается целью",
+      "text": "Если после исключения параметра требуется построить ортогональное семейство, задача уходит в orthogonal-trajectories. Если полученное уравнение просто линейное y'+p(x)y=q(x) и основной ход - интегрирующий множитель, это linear-first-order-ode. Если главный вопрос - число ветвей p, дискриминант F=0,F_p=0 или статус особой кривой у уже заданного F(x,y,p)=0, это implicit-ode-discriminant.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "integrating_factor_linear",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "orthogonal_trajectories",
+        "linear_first_order_equation",
+        "discriminant_curve"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-route",
+      "title": "Маршрут восстановления",
+      "text": "1. Записать семейство в удобной форме Phi(x,y,C)=0 или y=phi(x,C). 2. Определить число независимых параметров и ожидаемый минимальный порядок. 3. Дифференцировать по x при фиксированных параметрах столько раз, сколько нужно для исключения C. 4. Исключить параметры алгебраически, сохранив сведения о делениях и рабочей области. 5. Проверить подстановкой, что исходные кривые удовлетворяют полученному ОДУ. 6. Если появилось неявное уравнение F(x,y,y')=0, отдельно проверить огибающую и особые кривые, но не подменять этим исходную задачу на восстановление.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "ordinary_differential_equation",
+        "integral_curve",
+        "singular_solution"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не считать порядок по количеству букв C, если параметры связаны или часть семейства фиксирована. Не дифференцировать параметры как функции x. Не делить на выражение, которое может задавать отдельную кривую, без последующей проверки. Не относить все задачи с огибающей к Клеро: важен порядок постановки. Не отправлять задачу в orthogonal-trajectories, если ортогональное семейство не требуется. Не добавлять новые карточки, где меняется только вид элементарной функции, а метод остается тем же.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "general_solution",
+        "particular_solution",
+        "integral_curve",
+        "singular_solution",
+        "orthogonal_trajectories"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "second_order",
+      "implicit_ode",
+      "linear_first_order"
+    ],
+    "methods": [
+      "recover_ode_from_family",
+      "parameter_elimination",
+      "minimal_order",
+      "parameter_count",
+      "differentiate_family",
+      "envelope",
+      "singular_solution_check",
+      "neighbor_cluster_boundary"
+    ],
+    "objects": [
+      "family_of_curves",
+      "integral_curve",
+      "one_parameter_family",
+      "two_parameter_family",
+      "general_solution",
+      "particular_solution",
+      "singular_solution",
+      "discriminant_curve"
+    ],
+    "goal": [
+      "choose_method",
+      "derive",
+      "classify_order",
+      "avoid_duplicates",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "recover-ode-from-family",
+      "method_guide",
+      "recover_ode_from_family",
+      "differentiate and eliminate parameter",
+      "minimal order",
+      "envelope",
+      "singular solution",
+      "orthogonal trajectories boundary",
+      "implicit discriminant boundary"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок почти не добавляет вычислений; сложность в диагностике числа параметров, области исключения и границы с соседними сюжетами.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "recover_ode_from_family",
+    "graphical_construction",
+    "implicit_ode_discriminant",
+    "orthogonal_trajectories",
+    "linear_first_order",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "task_cluster",
+    "method_guide",
+    "theory_bridge",
+    "cluster_representative",
+    "duplicate_filtered",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовая локальная программа курса: порядок ОДУ, общее и частное решение, интегральные кривые, линейные уравнения первого порядка и неявные уравнения."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачник для сверки стандартной терминологии: семейства решений, исключение постоянных, особые решения и соседние задачи Клеро/Лагранжа."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник по ОДУ; полезен для границы между восстановлением уравнения по семейству, неразрешенными уравнениями и особыми решениями."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "course_notes",
+      "status": "source_verified",
+      "locator": "Problem Set 1 and Section 1.2.4",
+      "note": "Открытые конспекты с явными задачами на recovering a DE from a one-parameter family of curves и качественный эскиз семейств."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "open_course",
+      "status": "source_verified",
+      "locator": "Unit I, first-order differential equations",
+      "note": "Открытый курс MIT OCW для базового языка first-order ODE, slope fields, solution curves и linear equations."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "First-order equations",
+      "note": "Открытый учебник с компактным изложением уравнений первого порядка, полей направлений и интегральных кривых."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной локальный язык и ожидаемый уровень устного экзамена."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Русскоязычная задачная опора для исключения постоянных и особых решений."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Сверка границ с неявными уравнениями и особыми решениями."
+    },
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "priority": 4,
+      "comment": "Прямые representative-примеры recover-family в базе."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Открытый вспомогательный курс по уравнениям первого порядка."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 6,
+      "comment": "Открытый учебник для терминов solution curves и direction fields."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-recover-ode-from-family-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера recover-ode-from-family, без новых громоздких задач на исключение параметров.",
+      "Определения не дублируются: общее решение, частное решение, интегральная кривая, особое решение и дискриминантная кривая подключены через definition_ids.",
+      "Карточка помечена task_cluster, method_guide и cluster_representative, чтобы индексироваться как теория/методический блок и находиться через кластер."
+    ]
+  }
+}

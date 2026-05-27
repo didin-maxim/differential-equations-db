@@ -164,6 +164,138 @@
       "backward_text": "Визуальный центр можно понимать как фазовый портрет системы с первым интегралом и строгим экстремумом.",
       "status": "ai_checked",
       "confidence": 0.86
+    },
+    {
+      "id": "rel-cluster-phase-stability-definitions-to-method-guide",
+      "from": "cluster-phase-stability-lyapunov-definitions",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Определения устойчивости по Ляпунову и асимптотической устойчивости задают обязательную ветку методического навигатора.",
+      "backward_text": "Навигатор показывает, где определения применяются напрямую: по фазовому портрету, в центре и в примере притяжения без устойчивости.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-cluster-phase-stability-linear-classification-to-method-guide",
+      "from": "cluster-phase-stability-linear-plane-classification",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Линейная классификация является спектральной веткой навигатора для фазовой плоскости.",
+      "backward_text": "Навигатор помещает классификацию рядом с фазовой прямой, линеаризацией и функциями Ляпунова, чтобы не сводить кластер к матрицам 2x2.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-phase-stability-linearization-to-method-guide",
+      "from": "cluster-phase-stability-linearization-hyperbolic",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Теорема линеаризации объясняет, когда спектр Якобиана переносит вывод о локальной устойчивости на нелинейную систему.",
+      "backward_text": "Навигатор выделяет гиперболичность как границу применимости линеаризации и направляет негиперболические случаи к другим методам.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-phase-stability-lyapunov-direct-to-method-guide",
+      "from": "cluster-phase-stability-lyapunov-direct-method",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Прямой метод Ляпунова является веткой навигатора для строгого доказательства устойчивости без явного решения системы.",
+      "backward_text": "Навигатор указывает, когда переходить от спектра или рисунка к функции Ляпунова и знаку ее производной.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-cluster-phase-stability-first-integral-center-to-method-guide",
+      "from": "cluster-phase-stability-first-integral-center",
+      "to": "cluster-phase-stability-method-guide",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Первый интеграл и замкнутые уровни дают отдельную ветку навигатора: устойчивый центр без асимптотической устойчивости.",
+      "backward_text": "Навигатор связывает первый интеграл с определениями устойчивости и предупреждает, что сохранение энергии не дает притяжения.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-phase-line-basic",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "autonomous-phase-line-stability",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический маршрут начинается с таблицы знаков f(y), которая реализована в базовой карточке фазовой прямой.",
+      "backward_text": "Базовая фазовая прямая является минимальным вычислительным примером первой ветки навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-semistable",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "weak-pass-phase-line-semistable",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что кратный корень надо проверять по знакам справа и слева, а не только по кратности.",
+      "backward_text": "Полуустойчивая фазовая прямая является короткой проверкой этой ловушки навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-visual-sink",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "cluster-phase-stability-visual-asymptotic-sink",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор отделяет удержание в окрестности от сходимости; визуальный сток показывает случай, где выполнены оба требования.",
+      "backward_text": "Спиральный сток является наглядной иллюстрацией ветки асимптотической устойчивости в методическом блоке.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-filippov-889",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "local-du-filippov-889-attractive-not-lyapunov-stable",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор явно предупреждает, что притяжение без удержания в малой окрестности не является асимптотической устойчивостью.",
+      "backward_text": "Филиппов 889 является ключевым контрпримером к неверной эвристике 'все траектории стремятся к нулю, значит равновесие асимптотически устойчиво'.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-lyapunov-example",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "lyapunov-linearization-example",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор переводит задачу на устойчивость к выбору функции Ляпунова и проверке знака производной.",
+      "backward_text": "Карточка с конкретной функцией Ляпунова является простой реализацией соответствующей ветки навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-romanko-center",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "local-du-romanko-first-integral-center",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок подсказывает искать первый интеграл и замкнутые уровни, когда центр не следует из гиперболической линеаризации.",
+      "backward_text": "Задача Романко является содержательным примером ветки 'первый интеграл дает центр и неасимптотическую устойчивость'.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-cluster-phase-stability-method-guide-to-degenerate-linearization",
+      "from": "cluster-phase-stability-method-guide",
+      "to": "lebl-diffyqs-degenerate-linearization-critical-point",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор предупреждает, что при нулевой вещественной части или вырожденной линейной части спектр не решает вопрос.",
+      "backward_text": "Вырожденная карточка Lebl показывает границу применимости линейной классификации и необходимость анализа старших членов.",
+      "status": "ai_checked",
+      "confidence": 0.88
     }
   ]
 }

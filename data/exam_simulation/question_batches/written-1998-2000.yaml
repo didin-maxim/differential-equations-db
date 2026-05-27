@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "mode_id": "oral_exam_simulation",
+  "status": "proposal",
+  "source_batch_id": "written-mipt-1998-2000",
+  "questions": [
+    {
+      "id": "exam-sim-proposal-written-1998-lines-envelope",
+      "card_id": "written-mipt-1998-lines-distance-one-envelope",
+      "target_score": 8,
+      "topic": "first_order",
+      "question_type": "thought",
+      "answer_mode": "self_check",
+      "prompt_override": "Восстановите ОДУ для прямых на расстоянии 1 от начала координат и объясните, почему появляются еще две особые интегральные кривые.",
+      "rubric": [
+        "Записано условие (y-xy')^2=1+(y')^2.",
+        "Проверено, что все нужные прямые являются решениями.",
+        "Найдены огибающие y=+-sqrt(1-x^2), |x|<1."
+      ],
+      "recovery_topics": [
+        "implicit_ode",
+        "recover_ode_from_family"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-written-1998-bounded-linear",
+      "card_id": "written-mipt-1998-bounded-linear-halfline",
+      "target_score": 8,
+      "topic": "existence_uniqueness",
+      "question_type": "proof",
+      "answer_mode": "self_check",
+      "prompt_override": "Докажите существование и единственность ограниченного на [0,+infty) решения y'=a(t)y+b(t), если a(t)>=1 и |b(t)|<=1.",
+      "rubric": [
+        "Написана формула через интеграл от t до бесконечности.",
+        "Доказана ограниченность с помощью a(t)>=1.",
+        "Единственность получена из роста ненулевого решения однородного уравнения."
+      ],
+      "recovery_topics": [
+        "linear_equations",
+        "global_solution"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-written-2000-log-derivative-value",
+      "card_id": "written-mipt-2000-cauchy-log-derivative",
+      "target_score": 6,
+      "topic": "first_order",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "Для задачи yy'+2x(y')^2=xyy'', y(1)=1, y'(1)=-1 найдите y(2).",
+      "auto_check": {
+        "type": "numeric",
+        "value": 0.4,
+        "tolerance": 0.000001,
+        "accepted_text": [
+          "2/5",
+          "0.4"
+        ]
+      },
+      "recovery_topics": [
+        "order_reduction",
+        "riccati"
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-written-2000-pofy-guess-value",
+      "card_id": "written-mipt-2000-cauchy-p-of-y-guess",
+      "target_score": 7,
+      "topic": "first_order",
+      "question_type": "application",
+      "answer_mode": "numeric",
+      "prompt_override": "Для задачи y''(y-1)^2+(y')^2(y-1)=(y')^3, y(0)=2, y'(0)=2 найдите ln(y(1)-1).",
+      "auto_check": {
+        "type": "numeric",
+        "value": 2,
+        "tolerance": 0.000001,
+        "accepted_text": [
+          "2"
+        ]
+      },
+      "recovery_topics": [
+        "p_of_y_reduction",
+        "guess_cauchy_solution"
+      ]
+    }
+  ],
+  "notes": [
+    "Proposal не подключен к основному questions.yaml: перед вливанием нужно решить, не перегружает ли режим уровни 6-8 задачами первого порядка.",
+    "Задачи с полным письменным вычислением заменены на числовой или self-check формат, чтобы режим оставался устной симуляцией."
+  ]
+}

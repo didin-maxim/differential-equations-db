@@ -1,6 +1,6 @@
 {
   "id": "olympiad-level-rolle-after-homogeneous-factor",
-  "title": "Олимпиадный шаблон: Ролль после деления на решение однородного уравнения",
+  "title": "Краевое равенство и внутренняя точка Ролля",
   "fragment": "olympiad",
   "kind": {
     "primary": "lemma",

@@ -1,0 +1,334 @@
+{
+  "id": "cluster-riccati-bernoulli-method-guide",
+  "title": "Методический навигатор: редукции Риккати и Бернулли к линейным уравнениям",
+  "fragment": "first_order",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Кластер riccati-bernoulli-reductions покрывает нелинейные уравнения первого порядка, где главный шаг состоит не в самом интегрирующем множителе, а в распознавании замены, после которой появляется линейное уравнение. Для Бернулли y'+p(x)y=q(x)y^n при n != 0,1 на промежутке, где выбранная ветвь y допустима, делят на y^n и кладут z=y^{1-n}; тогда z'+(1-n)p(x)z=(1-n)q(x). Для Риккати y'=a(x)y^2+b(x)y+c(x) известное частное решение y0 переводит остальные решения заменой y=y0+1/u в линейное уравнение u'+(2a y0+b)u=-a. Если частное решение не дано, его обычно надо угадать из простых постоянных, линейных, рациональных или симметрийных кандидатов; без такого входа общее уравнение Риккати обычно сводится к линейному уравнению второго порядка заменой y=-u'/(a u), когда a не обращается в нуль, а не к еще одному линейному уравнению первого порядка. Каждая замена требует проверки потерь: при делении на y^n могут исчезнуть нулевые решения, при y=y0+1/u отдельно остается y0, нули u становятся полюсами y, а рабочий промежуток нельзя переносить через нули коэффициентов и точки, где выбрана другая ветвь степени. Граница с linear-first-order-ode проходит после замены: линейная формула решает уже новую неизвестную. Граница с separable-homogeneous-first-order проходит по главному распознаванию: если уравнение сразу разделяется или становится разделяющимся после y=xv, это соседний маршрут. Граница с implicit-ode-discriminant возникает, когда исходно задано F(x,y,y')=0 и нужно выбирать ветви или дискриминант, а не применять готовую форму Бернулли/Риккати. Матричное Риккати похоже названием и идеей линеаризации, но имеет собственные ограничения некоммутативности и обратимости матриц; его нельзя автоматически сводить к скалярной формуле y=y0+1/u.",
+        "source_ids": [
+          "src-local-du-8-program-or-exam",
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-mit-1803sc-ode",
+          "src-lebl-diffyqs"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "linear_first_order_equation",
+          "integrating_factor",
+          "general_solution",
+          "particular_solution",
+          "initial_value_problem",
+          "cauchy_problem",
+          "integral_curve",
+          "bernoulli_equation",
+          "riccati_equation",
+          "linear_system",
+          "discriminant_curve"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-bernoulli-power",
+      "title": "Бернулли линеаризуется степенью 1-n",
+      "text": "После деления на y^n выражение y^{-n}y' становится производной z=y^{1-n} с точностью до множителя 1-n. Именно поэтому n=0 и n=1 являются не редукцией Бернулли, а уже линейными пограничными случаями.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "bernoulli_equation",
+        "linear_first_order_equation",
+        "solution"
+      ]
+    },
+    {
+      "id": "idea-riccati-known-solution",
+      "title": "Известное решение Риккати надо вычесть, а не забыть",
+      "text": "Если y0 уже удовлетворяет Риккати, замена y=y0+1/u уничтожает свободный член в уравнении для разности и оставляет линейное уравнение для u. Само решение y0 при этом не получается ни при каком конечном u и должно быть записано отдельно.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution",
+        "integrating_factor_linear"
+      ],
+      "definition_ids": [
+        "riccati_equation",
+        "particular_solution",
+        "linear_first_order_equation"
+      ]
+    },
+    {
+      "id": "idea-guess-or-second-order",
+      "title": "Без частного решения Риккати ведет ко второму порядку",
+      "text": "Когда частное решение не указано, сначала проверяют простые кандидаты, подсказанные коэффициентами и начальными данными. Если такого решения нет, стандартная полная линеаризация использует замену y=-u'/(a u) и дает линейное уравнение второго порядка, поэтому это уже более широкий маршрут, чем обычный known-solution Riccati.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "riccati_equation",
+        "particular_solution",
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-loss-of-solutions",
+      "title": "Деление и обратная замена меняют множество решений",
+      "text": "Перед делением на y или на y^n надо проверить нулевую ветвь. Перед заменой y=y0+1/u надо помнить, что u=0 запрещено, а y0 является отдельным решением. После обратной замены нужно снова указать интервал, где знаменатели, степени и коэффициенты действительно определены.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution"
+      ],
+      "definition_ids": [
+        "solution",
+        "general_solution",
+        "particular_solution",
+        "bernoulli_equation",
+        "riccati_equation"
+      ]
+    },
+    {
+      "id": "idea-neighbor-boundaries",
+      "title": "Соседние кластеры отличаются первым решающим шагом",
+      "text": "Если исходное уравнение уже линейно, это linear-first-order-ode; если главный ход - разделение или y=xv, это separable-homogeneous-first-order; если надо анализировать F(x,y,p)=0, ветви p и дискриминант, это implicit-ode-discriminant. Матричное Риккати выделяется отдельно, потому что обратимость матрицы и порядок множителей становятся частью метода.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "separate_variables",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "bernoulli_equation",
+        "riccati_equation",
+        "discriminant_curve",
+        "linear_system"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-method-route",
+      "title": "Маршрут решения",
+      "text": "1. Привести уравнение к одной из форм: Бернулли y'+py=qy^n или Риккати y'=ay^2+by+c; если форма уже y'+py=q, отправить задачу в linear-first-order-ode. 2. Выбрать рабочий промежуток, где коэффициенты непрерывны и допустимы деления или степени. 3. Для Бернулли отдельно проверить особые ветви, особенно y=0, затем положить z=y^{1-n} и получить линейное уравнение для z. 4. Для Риккати проверить, дано ли или угадывается ли частное решение y0; после этого положить y=y0+1/u и решить линейное уравнение для u. 5. Если y0 не найдено, решить, требуется ли переход к линейному уравнению второго порядка через логарифмическую производную, или задача должна остаться на уровне качественного анализа. 6. Решить полученное линейное уравнение интегрирующим множителем. 7. Вернуться к y, добавить потерянные ветви и указать интервалы, где обратная замена имеет смысл.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "known_riccati_solution",
+        "logarithmic_derivative"
+      ],
+      "definition_ids": [
+        "linear_first_order_equation",
+        "integrating_factor",
+        "bernoulli_equation",
+        "riccati_equation",
+        "general_solution",
+        "particular_solution"
+      ]
+    },
+    {
+      "id": "guide-method-choice",
+      "title": "Как выбрать прием",
+      "text": "Бернулли узнается по одной нелинейной степени y^n рядом с линейной частью y'+py. Риккати узнается по квадратичному многочлену по y в правой части; если коэффициент при y^2 равен нулю, это уже линейное уравнение. Частное решение Риккати обычно пробуют искать среди постоянных, x, 1/x, простых сдвигов и выражений, видимых из коэффициентов. Если уравнение не разрешено относительно y' или содержит несколько возможных наклонов, сначала нужна диагностика ветвей, а не подстановка Бернулли или Риккати.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "known_riccati_solution",
+        "implicit_function_theorem"
+      ],
+      "definition_ids": [
+        "bernoulli_equation",
+        "riccati_equation",
+        "linear_first_order_equation",
+        "discriminant_curve"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Нельзя делить на y^n и затем забывать проверить y=0. Нельзя включать известное решение Риккати в семейство y0+1/u без отдельной записи. Нельзя объявлять ответ глобальным, если знаменатель u или выражение y^{1-n} обращается в нуль. Нельзя относить к этому кластеру любую замену, после которой возникло линейное уравнение: автономная редукция p=p(y), однородная замена y=xv и неявный дискриминант имеют собственные политики. Нельзя переносить скалярную формулу Риккати на матрицы без проверки обратимости и порядка умножения.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "integrating_factor_linear",
+        "known_riccati_solution"
+      ],
+      "definition_ids": [
+        "solution",
+        "bernoulli_equation",
+        "riccati_equation",
+        "linear_system"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "first_order",
+      "bernoulli",
+      "riccati",
+      "linear_first_order"
+    ],
+    "methods": [
+      "bernoulli_substitution",
+      "known_riccati_solution",
+      "riccati_to_linear",
+      "integrating_factor_linear",
+      "logarithmic_derivative",
+      "domain_check",
+      "neighbor_cluster_router"
+    ],
+    "objects": [
+      "bernoulli",
+      "riccati",
+      "particular_solution",
+      "linear_first_order",
+      "lost_solution",
+      "working_interval",
+      "matrix_riccati_boundary"
+    ],
+    "goal": [
+      "choose_method",
+      "linearize",
+      "solve",
+      "check_lost_solutions",
+      "control_domain",
+      "separate_neighbor_clusters"
+    ],
+    "keywords": [
+      "riccati-bernoulli-reductions",
+      "method_guide",
+      "bernoulli_substitution",
+      "z=y^{1-n}",
+      "known_riccati_solution",
+      "riccati_to_second_order_linear",
+      "lost_solutions",
+      "matrix_riccati_boundary"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 5,
+    "idea_score": 6,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет новый вычислительный шаблон; сложность в распознавании формы, выборе допустимой замены и проверке потерянных решений.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "task_cluster",
+    "cluster_representative",
+    "method_guide",
+    "bernoulli",
+    "riccati",
+    "linear_first_order",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "mipt_core",
+    "complete_proof",
+    "low_technical"
+  ],
+  "sources": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "course_baseline",
+      "status": "source_verified",
+      "locator": "Разделы программы по уравнениям первого порядка",
+      "note": "Локальная программа задает место Бернулли, Риккати, линейных уравнений первого порядка и стандартных замен."
+    },
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовая русскоязычная терминология для Бернулли, Риккати и интегрирующего множителя."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Задачный фон для типовых редукций первого порядка и проверки, что новые карточки не являются коэффициентными дублями."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник для сверки стандартных преобразований и областей допустимости."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Unit I, first-order differential equations",
+      "note": "Открытый курс с базовыми методами первого порядка и линейными уравнениями."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "role": "open_textbook",
+      "status": "source_verified",
+      "locator": "First-order equations",
+      "note": "Открытый учебник для сверки линейного этапа и стандартных first-order reductions."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 1,
+      "comment": "Основной локальный ориентир по составу темы."
+    },
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 2,
+      "comment": "Базовая терминология и seed-карточки."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 3,
+      "comment": "Русскоязычный задачный фон."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 4,
+      "comment": "Классические упражнения на аккуратность замен."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Открытый курс для линейного этапа после редукции."
+    },
+    {
+      "source_id": "src-lebl-diffyqs",
+      "priority": 6,
+      "comment": "Открытый конспект для first-order methods."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-riccati-bernoulli-reductions",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера riccati-bernoulli-reductions, без новых однотипных вычислительных задач.",
+      "Определения не дублируются: используются definition_ids для Бернулли, Риккати, линейного уравнения первого порядка, интегрирующего множителя, частного/общего решения и соседних объектов.",
+      "Блок специально фиксирует границы с linear-first-order-ode, separable-homogeneous-first-order, implicit-ode-discriminant и матричным Риккати."
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "relations": [
+    {
+      "id": "rel-written-2009-pde-after-local-2023",
+      "from": "written-mipt-2009-91-pde-positive-characteristics",
+      "to": "local-du-written-2023-characteristics-plane-data",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Задача 2009 года является более коротким входом в метод характеристик: один первый интеграл и явная кривая Коши.",
+      "backward_text": "Письменная задача 2023 года развивает тот же метод до трех переменных и двух инвариантов.",
+      "status": "ai_checked",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel-written-2009-pde-romanko-bridge",
+      "from": "written-mipt-2009-91-pde-positive-characteristics",
+      "to": "local-du-romanko-pde-two-invariants",
+      "type": "teaches_before",
+      "distance": 2,
+      "forward_text": "После явного первого интеграла y^2/x-ln x естественно переходить к задачам, где нужно найти два инварианта характеристической системы.",
+      "backward_text": "Романьковская карточка является более плотной версией того же переноса данных вдоль характеристик.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-written-2009-airy-msu-exp-bound",
+      "from": "written-mipt-2009-92-airy-bounded-positive-axis",
+      "to": "msu-ode-2003-3-bounded-exp-oscillator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Обе задачи доказывают ограниченность всех решений растущего осциллятора заменой независимой переменной и убывающей энергией.",
+      "backward_text": "MSU-задача с e^t является экспоненциальным аналогом письменной задачи y''+xy=0; в обеих нельзя просто выписать элементарное общее решение.",
+      "status": "ai_checked",
+      "confidence": 0.9
+    },
+    {
+      "id": "rel-written-2009-airy-energy-cluster",
+      "from": "written-mipt-2009-92-airy-bounded-positive-axis",
+      "to": "local-du-8-t2-exponential-coefficient-energy-bound",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Лиувиллева замена и энергетическая монотонность являются тем же механизмом, что и в теоретической карточке о коэффициенте e^x.",
+      "backward_text": "Письменный вариант с коэффициентом x показывает тот же прием на более мягком росте потенциала.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-written-2010-matrix-sine-after-exp-spectrum",
+      "from": "cluster-matrix-exp-spectrum-from-modes",
+      "to": "written-mipt-2010-01-matrix-sine-spectrum",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Умение читать спектр из режимов e^{lambda t} подготавливает к общему правилу: матричная функция действует на собственном векторе как соответствующая скалярная функция.",
+      "backward_text": "Задача про sin A является компактной письменной проверкой спектрального отображения для функции, заданной через матричную экспоненту.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-written-2010-matrix-sine-det-trace-neighbor",
+      "from": "written-mipt-2010-01-matrix-sine-spectrum",
+      "to": "cluster-matrix-exp-det-trace-shortcut",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "В обеих карточках определитель матричной функции считается на уровне собственных значений, без раскрытия матрицы по координатам.",
+      "backward_text": "Формула det(e^{At})=e^{t tr A} является специальным determinant-level чтением матричной экспоненты; sin A требует такого же взгляда через спектр.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-written-2010-matrix-sine-to-msu-trace-average",
+      "from": "written-mipt-2010-01-matrix-sine-spectrum",
+      "to": "msu-ode-2024-8-trace-average-bounded-change",
+      "type": "contrast",
+      "distance": 3,
+      "forward_text": "Матричный синус учит читать функцию от матрицы через спектр и determinant-level инварианты.",
+      "backward_text": "МГУ 2024/8 использует другой determinant-level инвариант: средний след как логарифмический рост фундаментальной матрицы.",
+      "status": "ai_checked",
+      "confidence": 0.72
+    }
+  ]
+}

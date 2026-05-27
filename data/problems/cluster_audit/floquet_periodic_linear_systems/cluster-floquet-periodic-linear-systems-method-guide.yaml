@@ -1,0 +1,289 @@
+{
+  "id": "cluster-floquet-periodic-linear-systems-method-guide",
+  "title": "Методический навигатор: периодические линейные системы и теория Флоке",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "В кластере floquet-periodic-linear-systems главный объект - не матрица A(t) в отдельный момент, а оператор перехода за один период. Для T-периодической однородной системы x'=A(t)x берут нормированную фундаментальную матрицу X(0)=I и матрицу монодромии M=X(T). Периодичность дает X(t+T)=X(t)M и X(nT)=M^n; при другой начальной точке монодромия заменяется подобной матрицей, поэтому ее собственные значения инвариантны. Эти собственные значения называются мультипликаторами Флоке. Устойчивость нулевого решения читается по степеням M: если все мультипликаторы лежат внутри единичного круга, то решение асимптотически устойчиво; если есть мультипликатор с модулем больше 1, то оно неустойчиво; на единичной окружности надо отдельно проверять жордановы клетки. Для неоднородной T-периодической системы x'=A(t)x+f(t) отображение за период имеет вид x0 -> Mx0+b; T-периодическое решение существует ровно тогда, когда (I-M)x0=b совместно, а все такие решения отличаются на Ker(I-M). Полная нормальная форма Флоке X(t)=P(t)e^{Bt} полезна как язык, но для стандартной программы часто достаточно монодромии, мультипликаторов, формулы Лиувилля det M=exp(int_0^T tr A(s) ds) и линейной алгебры; полная конструкция логарифма M и ветвления показателей Флоке помечается как выход за базовый курс.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-local-du-8-program-or-exam",
+          "src-filippov-problem-book",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "periodic_linear_system",
+          "fundamental_matrix",
+          "monodromy_matrix",
+          "floquet_multiplier",
+          "poincare_map_period",
+          "periodic_solution",
+          "variation_of_constants_system",
+          "lyapunov_stability",
+          "asymptotic_stability"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-period-map",
+      "title": "Сначала перейти к оператору за период",
+      "text": "Система с периодическими коэффициентами становится дискретной динамикой на сечении t=0: начальное значение x0 после одного периода переходит в Mx0, а после n периодов - в M^n x0. Поэтому почти все короткие задачи кластера сводятся к спектру, определителю или образу матрицы M.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "monodromy_matrix",
+        "floquet_multiplier",
+        "poincare_map_period"
+      ]
+    },
+    {
+      "id": "idea-multipliers-not-instant-spectrum",
+      "title": "Мультипликаторы не равны мгновенным собственным значениям",
+      "text": "Собственные значения A(t) при фиксированном t обычно не управляют устойчивостью за период. Инвариантен спектр M=X(T), а не спектр A(0) или средняя матрица без дополнительных условий коммутирования.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "periodic_linear_system",
+        "monodromy_matrix",
+        "floquet_multiplier"
+      ]
+    },
+    {
+      "id": "idea-liouville-product",
+      "title": "След дает произведение мультипликаторов",
+      "text": "Формула Лиувилля для det X(t) сразу дает det M=exp(int_0^T tr A(s) ds). Это не находит каждый мультипликатор, но часто запрещает или подтверждает возможную устойчивость, особенно в двумерных системах.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "wronskian",
+        "monodromy_matrix",
+        "floquet_multiplier"
+      ]
+    },
+    {
+      "id": "idea-periodic-forcing",
+      "title": "Неоднородность дает аффинное отображение Пуанкаре",
+      "text": "Для x'=A(t)x+f(t) формула вариации постоянных дает x(T)=Mx0+b. Периодическое решение - это неподвижная точка этого аффинного отображения: в нерезонансном случае I-M обратима, а при мультипликаторе 1 нужна совместность с образом I-M.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants"
+      ],
+      "definition_ids": [
+        "variation_of_constants_system",
+        "periodic_solution",
+        "monodromy_matrix"
+      ]
+    },
+    {
+      "id": "idea-course-boundary",
+      "title": "Держать границу со стандартной программой",
+      "text": "В стандартном курсе обычно достаточно построить X(T), использовать мультипликаторы, Лиувилля и линейную алгебру для периодического решения. Полная теорема Флоке с периодической матрицей P(t), логарифмом M и показателями Флоке является соседним более продвинутым слоем; такие карточки должны иметь явную пометку advanced или beyond.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "floquet_multiplier",
+        "monodromy_matrix"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-diagnostic-route",
+      "title": "Диагностический маршрут",
+      "text": "1. Проверить, что коэффициенты действительно T-периодичны и задача спрашивает свойство за период, а не обычное решение x'=Ax. 2. Выбрать нормированную фундаментальную матрицу X(0)=I и обозначить M=X(T). 3. Для повторения периодов использовать X(t+T)=X(t)M и X(nT)=M^n. 4. Для устойчивости перейти к степеням M: внутри единичного круга - асимптотическая устойчивость, вне круга - неустойчивость, на окружности - отдельная проверка жордановых блоков. 5. Для детерминанта применить Лиувилля, не раскрывая X(T) по элементам без необходимости. 6. Для неоднородной периодической системы выписать b=X(T) int_0^T X(s)^{-1}f(s) ds и решить (I-M)x0=b. 7. Если требуется полная нормальная форма Флоке, отметить, что это уже более продвинутый слой, и не смешивать его с базовым критерием через M.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "periodic_linear_system",
+        "fundamental_matrix",
+        "monodromy_matrix",
+        "floquet_multiplier",
+        "poincare_map_period",
+        "periodic_solution",
+        "variation_of_constants_system"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не заменять M на exp(A(0)T), если A(t) не постоянна и матрицы A(t) не коммутируют в нужном смысле. Не делать вывод об устойчивости по собственным значениям A(t) в одной точке периода. Не считать случай |mu|=1 автоматически устойчивым: нетривиальная жорданова клетка дает рост степеней M. Не путать периодическое решение неоднородной системы с периодичностью каждого решения: нужна неподвижная точка отображения x0 -> Mx0+b. Не отправлять в этот кластер задачи, где периодичность только украшает скалярное уравнение первого порядка или энергетический запрет; там владельцы - linear-first-order-ode, energy-estimates-second-order-ode или phase-line-stability.",
+      "status": "ai_checked",
+      "definition_ids": [
+        "monodromy_matrix",
+        "floquet_multiplier",
+        "periodic_solution"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_systems",
+      "nonautonomous",
+      "periodic_coefficients"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "monodromy",
+      "floquet_multipliers",
+      "liouville_formula",
+      "variation_of_constants",
+      "stability_analysis",
+      "linear_algebra"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "monodromy_matrix",
+      "floquet_multiplier",
+      "period_map",
+      "periodic_solution",
+      "unit_circle",
+      "kernel_of_I_minus_M",
+      "image_of_I_minus_M"
+    ],
+    "goal": [
+      "choose_method",
+      "classify_stability",
+      "derive",
+      "criterion",
+      "prove",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "floquet-periodic-linear-systems",
+      "method_guide",
+      "monodromy",
+      "Floquet multipliers",
+      "periodic linear system",
+      "periodic forcing",
+      "stability by multipliers",
+      "beyond standard course boundary"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_advanced",
+    "local_score": 8,
+    "idea_score": 8,
+    "technical_score": 3,
+    "comment": "Методический блок сам по себе технически короткий: трудность в переходе от непрерывной системы к оператору за период и в границе между стандартной монодромией и полной теорией Флоке.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "periodic_solution",
+    "floquet_theory",
+    "stability",
+    "variation_of_parameters",
+    "wronskian",
+    "trace_determinant",
+    "advanced_standard_course",
+    "beyond_standard_course",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "method_guide",
+    "cluster_representative"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Используется как граница стандартной программы по линейным системам, фундаментальной матрице, устойчивости и вариации постоянных."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "role": "local_program",
+      "status": "source_verified",
+      "locator": "Локальная программа и задания по ДУ",
+      "note": "Локальная привязка к стандартному языку линейных систем и периодических решений без обязательной полной нормальной формы Флоке."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "locator": "Раздел теоретических вопросов по линейным системам",
+      "note": "Используется для коротких задач на мультипликаторы и оценки монодромии."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "§3.6 Periodic linear systems",
+      "note": "Открытый строгий источник по монодромии, мультипликаторам Флоке, формуле Лиувилля и устойчивости."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "First-order systems and periodic forcing background",
+      "note": "Используется как соседний учебный фон по системам, матричным операторам и устойчивости."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной язык стандартной программы."
+    },
+    {
+      "source_id": "src-local-du-8-program-or-exam",
+      "priority": 2,
+      "comment": "Локальная граница экзаменационного материала."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Короткие локальные задачи на мультипликаторы."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 4,
+      "comment": "Строгий открытый источник для Floquet/monodromy facts."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 5,
+      "comment": "Учебный фон по линейным системам и устойчивости."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-floquet-periodic-linear-systems",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок кластера floquet-periodic-linear-systems.",
+      "Карточка связывает монодромию, мультипликаторы, устойчивость, периодические решения неоднородных систем и границу с полной теорией Флоке.",
+      "Полная нормальная форма Флоке отмечена как более продвинутый слой; базовый маршрут остается через X(T), M и линейную алгебру."
+    ]
+  }
+}

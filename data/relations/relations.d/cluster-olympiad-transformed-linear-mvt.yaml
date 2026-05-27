@@ -1,0 +1,147 @@
+{
+  "relations": [
+    {
+      "id": "rel-olympiad-transformed-guide-to-factor-theorem",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, когда надо искать тождество F'=mu L[y]; теорема формализует этот шаг через Ролля и теорему Коши о среднем.",
+      "backward_text": "Теорема является компактной формальной версией центрального маршрута из методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-olympiad-transformed-factor-theorem-to-zero-sign-exam",
+      "from": "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+      "to": "cluster-olympiad-transformed-linear-mvt-zero-sign-exam",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Общая теорема применима к F=y/u и превращает нули отношения в нули y'+p y.",
+      "backward_text": "Экзаменационный representative показывает, как из одной формулы получить подсчет нулей, знак и границу со Штурмом.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-zero-sign-exam",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "cluster-olympiad-transformed-linear-mvt-zero-sign-exam",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор выделяет ветку zero_sign_count: нули и знаки считаются у преобразованной функции, а не у произвольного графика.",
+      "backward_text": "Модельный вариант проверяет именно эту ветку и поэтому подходит сильному студенту на экзамене.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-olympiad-transformed-factor-theorem-to-old-rolle-lemma",
+      "from": "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+      "to": "olympiad-level-rolle-after-homogeneous-factor",
+      "type": "generalization",
+      "distance": 1,
+      "forward_text": "Новая теорема расширяет старую лемму: допускает явный A(x), версию Коши о среднем и формулирует условие F'=mu(L[y]-A).",
+      "backward_text": "Старая лемма остается коротким базовым частным случаем для деления на решение однородного уравнения.",
+      "status": "ai_checked",
+      "confidence": 0.93
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-imc-1994",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "imc-1994-p3-rolle-integrating-factor",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет высокопорядковую ветку: множитель e^{-x} заставляет телескопически сократиться сумму производных.",
+      "backward_text": "IMC 1994 P3 является representative-вариантом higher_order_operator для сильного студента.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-imc-2023",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "imc-2023-p7-boundary-linear-expression",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор описывает ветку model_parameter: сначала модель с постоянным f'-f, затем Ролль для преобразованной разности.",
+      "backward_text": "IMC 2023 P7 является хорошим экзаменационным вариантом на поиск точного параметра alpha.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-imc-2025",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "imc-2025-p6-derivative-of-f-over-x",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор показывает, что деление на x является простым first_order_ratio и может читаться как Ролль для (f-k)/x или как теорема Коши о среднем.",
+      "backward_text": "IMC 2025 P6 является коротким representative-вариантом cauchy_mean_value/first_order_ratio.",
+      "status": "ai_checked",
+      "confidence": 0.92
+    },
+    {
+      "id": "rel-olympiad-transformed-factor-theorem-to-linear-first-order-guide",
+      "from": "cluster-olympiad-transformed-linear-mvt-factor-rolle-theorem",
+      "to": "cluster-linear-first-order-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Олимпиадная теорема использует линейный множитель не для полного решения уравнения, а для одного MVT-вывода о точке или нуле.",
+      "backward_text": "Методический блок линейного первого порядка нужен, когда цель - решить y'+p y=q, подобрать константу или разобрать область определения, а не применить Ролля к специальной комбинации.",
+      "status": "ai_checked",
+      "confidence": 0.86
+    },
+    {
+      "id": "rel-olympiad-transformed-zero-sign-to-sturm-guide",
+      "from": "cluster-olympiad-transformed-linear-mvt-zero-sign-exam",
+      "to": "cluster-sturm-method-guide",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Экзаменационный вариант использует первый-порядковое отношение y/u и Ролля; он только подводит к штурмовскому языку нулей.",
+      "backward_text": "Штурмовский навигатор начинается там, где сравниваются решения второго порядка, потенциалы, разделение и дисконъюгированность.",
+      "status": "ai_checked",
+      "confidence": 0.84
+    },
+    {
+      "id": "rel-olympiad-transformed-zero-sign-to-liouville-wronskian",
+      "from": "cluster-olympiad-transformed-linear-mvt-zero-sign-exam",
+      "to": "liouville-wronskian-formula",
+      "type": "contrast",
+      "distance": 2,
+      "forward_text": "Формула для (y/u)' содержит вронскианный числитель, но не требует полной формулы Лиувилля для фундаментальной системы.",
+      "backward_text": "Формула Лиувилля является соседней линейной техникой; в этом олимпиадном кластере вронскиан используется только как объяснение отношения и нулей.",
+      "status": "ai_checked",
+      "confidence": 0.78
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-imc-2006",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "imc-2006-p6-real-root-differential-operator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор покрывает операторные варианты, где линейный дифференциальный оператор подбирается так, чтобы Ролль дал вещественный корень или нуль.",
+      "backward_text": "IMC 2006 P6 является более алгебраизированным representative-вариантом той же идеи линейного оператора и нулей.",
+      "status": "ai_checked",
+      "confidence": 0.82
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-msu-infinite-zeros",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "msu-ode-2023-2-infinite-zeros-linear-ode",
+      "type": "same_method",
+      "distance": 2,
+      "forward_text": "Навигатор включает ветку повторного применения Ролля и подсчета нулей для линейного выражения.",
+      "backward_text": "Задача МГУ с бесконечными нулями является более длинным representative-вариантом zero-counting, где важно не спутать ход с самостоятельной теорией Штурма.",
+      "status": "ai_checked",
+      "confidence": 0.8
+    },
+    {
+      "id": "rel-olympiad-transformed-guide-to-spbgeu-cubic-operator",
+      "from": "cluster-olympiad-transformed-linear-mvt-method-guide",
+      "to": "ru-cis-extra-spbgeu-2023-rolle-cubic-operator",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор покрывает кубический операторный вариант как повторение Ролля к специально выбранной линейной комбинации производных.",
+      "backward_text": "SPbGEU 2023 является representative-вариантом, где сильному студенту надо увидеть операторный шаблон, а не анализировать график вручную.",
+      "status": "ai_checked",
+      "confidence": 0.83
+    }
+  ]
+}

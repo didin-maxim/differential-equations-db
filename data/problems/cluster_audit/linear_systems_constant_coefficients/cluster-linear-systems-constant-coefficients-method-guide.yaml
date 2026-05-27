@@ -1,0 +1,315 @@
+{
+  "id": "cluster-linear-systems-constant-coefficients-method-guide",
+  "title": "Методический навигатор: линейные системы с постоянными коэффициентами",
+  "fragment": "systems",
+  "kind": {
+    "primary": "theorem",
+    "secondary": [
+      "task_cluster",
+      "method_guide",
+      "cluster_representative"
+    ]
+  },
+  "language": "ru",
+  "statements": {
+    "original": [
+      {
+        "id": "stmt-method-guide",
+        "title": "Методический блок кластера",
+        "text": "Для задач кластера constant-coefficient-linear-systems систему x'=Ax или x'=Ax+f(t) сначала читают как задачу о спектре постоянной матрицы A и фундаментальном операторе e^{At}. В однородном случае выбирают базис из собственных и присоединенных векторов: для жордановой цепочки v0,...,v_{m-1}, где (A-lambda I)v0=0 и (A-lambda I)v_j=v_{j-1}, решения имеют вид e^{lambda t}(v0, tv0+v1, ..., polynomial modes of degree m-1). Комплексную пару lambda=alpha+i beta с вектором p+iq переводят в вещественные решения e^{alpha t}(p cos beta t-q sin beta t) и e^{alpha t}(p sin beta t+q cos beta t); при кратной комплексной паре появляются те же множители t^k. Если система неоднородна, базовая формула x(t)=e^{A(t-t0)}x0+int_{t0}^t e^{A(t-s)}f(s) ds является главным маршрутом, а для правых частей типа e^{mu t}p(t), sin beta t, cos beta t или констант можно либо интегрировать эту формулу, либо подобрать частное решение, проверяя резонанс с жордановыми цепочками A. Фундаментальная матрица X(t)=e^{At} связывает все эти подходы: ее столбцы образуют базис решений, det X(t)=det X(0)e^{t tr A}, а фазовая устойчивость в плоскости читается по вещественным частям собственных значений и жордановым множителям.",
+        "source_ids": [
+          "src-mipt-ode-course",
+          "src-romanko-problem-book",
+          "src-filippov-problem-book",
+          "src-coddington-levinson",
+          "src-teschl-ode-dynamical-systems",
+          "src-mit-1803sc-ode"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution",
+          "linear_system",
+          "fundamental_matrix",
+          "matrix_exponential",
+          "wronskian"
+        ]
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "idea-diagnose-spectrum",
+      "title": "Сначала определить спектральный тип",
+      "text": "Различные вещественные собственные значения дают независимые моды e^{lambda t}v. Кратность требует сравнить алгебраическую и геометрическую кратности: если собственных векторов не хватает, достраивают жордановы цепочки и получают полиномиальные множители t^k.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-complex-to-real",
+      "title": "Комплексные моды переводить в вещественную пару",
+      "text": "Для вещественной системы комплексные собственные значения идут парами. Один комплексный режим e^{(alpha+i beta)t}(p+iq) дает две вещественные моды с cos beta t и sin beta t; знак alpha отвечает за рост или затухание, beta за вращение.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system"
+      ]
+    },
+    {
+      "id": "idea-inhomogeneous-route",
+      "title": "Неоднородность решать через оператор или анзац",
+      "text": "Вариация постоянных всегда дает интеграл с e^{A(t-s)}. Для правых частей из конечномерного класса, например констант, полиномов, экспонент и синусов, часто короче подобрать частное решение в том же классе, увеличивая степень t при резонансе со спектром A.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "fundamental_matrix",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-fundamental-matrix",
+      "title": "Фундаментальная матрица объединяет способы решения",
+      "text": "Для постоянной матрицы нормированная фундаментальная матрица равна e^{A(t-t0)}. Любая другая фундаментальная матрица отличается справа постоянной невырожденной матрицей, поэтому начальные и двухточечные условия переводятся в линейную алгебру.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "fundamental_matrix",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "idea-boundaries",
+      "title": "Отделять этот кластер от соседних",
+      "text": "Если главная цель задачи состоит в свойстве e^{At}, детерминанте или восстановлении A, это ближе к matrix-exponential-methods. Если главный объект X(t) для переменных коэффициентов или двухточечного условия, это fundamental-matrix-linear-systems. Если задача просит только классифицировать фазовый портрет или устойчивость, связь идет к phase-line-stability.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "wronskian_liouville"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "guide-homogeneous-route",
+      "title": "Маршрут для однородной системы",
+      "text": "1. Найти характеристический многочлен A и собственные значения с кратностями. 2. Для каждого lambda найти ker(A-lambda I) и понять, хватает ли собственных векторов. 3. Если не хватает, построить присоединенные векторы из уравнений (A-lambda I)v_j=v_{j-1}. 4. Для каждой цепочки записать моды e^{lambda t} times polynomial in t along the chain. 5. Для комплексной пары взять действительную и мнимую части комплексного решения. 6. Собрать общее решение или фундаментальную матрицу и подставить начальные условия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "matrix_exponential",
+        "fundamental_matrix"
+      ]
+    },
+    {
+      "id": "guide-inhomogeneous-route",
+      "title": "Маршрут для неоднородной системы",
+      "text": "1. Сначала решить однородную систему или выбрать X(t)=e^{At}. 2. Записать формулу вариации постоянных x(t)=X(t)c+X(t) int X(s)^{-1}f(s) ds; при нормировке от t0 она равна e^{A(t-t0)}x0+int_{t0}^t e^{A(t-s)}f(s) ds. 3. Если f(t) имеет специальный вид, проверить, короче ли анзац: постоянный вектор, e^{mu t}q(t), sin/cos или их произведения с полиномом. 4. При mu в спектре A или при совпадении частоты с комплексной парой увеличить степень полинома по правилу жордановой цепочки. 5. Добавить общее однородное решение и только затем использовать начальные или краевые условия.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "variation_of_constants",
+        "matrix_exponential"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "fundamental_matrix",
+        "matrix_exponential"
+      ]
+    },
+    {
+      "id": "guide-pitfalls",
+      "title": "Типовые ловушки",
+      "text": "Не считать алгебраическую кратность числом независимых решений: независимость дают собственные и присоединенные цепочки нужной длины. Не оставлять комплексный ответ для вещественной системы, если требуется вещественная фундаментальная система. Не решать неоднородную систему только подбором без проверки резонанса. Не раскрывать det(e^{At}) прямым счетом, если достаточно формулы det(e^{At})=e^{t tr A}. Не переносить автоматически устойчивость нелинейной системы из линейной части в негиперболическом случае.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "matrix_exponential",
+        "variation_of_constants",
+        "wronskian_liouville"
+      ],
+      "definition_ids": [
+        "linear_system",
+        "matrix_exponential",
+        "fundamental_matrix",
+        "wronskian"
+      ]
+    }
+  ],
+  "differential_equations_profile": {
+    "equation_type": [
+      "linear_system",
+      "constant_coefficients",
+      "autonomous_system"
+    ],
+    "methods": [
+      "eigenvalue_method",
+      "jordan_form",
+      "generalized_eigenvectors",
+      "real_form_complex_eigenvalues",
+      "matrix_exponential",
+      "fundamental_matrix",
+      "variation_of_constants",
+      "undetermined_coefficients",
+      "liouville_formula"
+    ],
+    "objects": [
+      "linear_systems",
+      "eigenvalues",
+      "eigenvectors",
+      "generalized_eigenvectors",
+      "jordan_chain",
+      "matrix_exponential",
+      "fundamental_matrix",
+      "trace",
+      "determinant",
+      "phase_portrait"
+    ],
+    "goal": [
+      "choose_method",
+      "solve",
+      "construct_fundamental_matrix",
+      "handle_resonance",
+      "classify_stability",
+      "avoid_duplicate_examples"
+    ],
+    "keywords": [
+      "constant-coefficient-linear-systems",
+      "method_guide",
+      "linear systems",
+      "constant coefficients",
+      "matrix exponential",
+      "Jordan chain",
+      "generalized eigenvectors",
+      "variation of constants",
+      "fundamental matrix",
+      "det exp trace"
+    ],
+    "status": "ai_checked"
+  },
+  "difficulty": {
+    "main": "course_core",
+    "local_score": 6,
+    "idea_score": 7,
+    "technical_score": 2,
+    "comment": "Методический блок не добавляет вычислительную нагрузку; сложность в выборе между спектром, жордановыми цепочками, вещественной формой комплексных мод, вариацией постоянных и свойствами фундаментальной матрицы.",
+    "status": "ai_checked"
+  },
+  "tags": [
+    "linear_systems",
+    "constant_coefficients",
+    "matrix_exponential",
+    "jordan_form",
+    "variation_of_parameters",
+    "trace_determinant",
+    "standard_course_methods",
+    "theoretical_exam_task",
+    "complete_proof",
+    "low_technical",
+    "task_cluster",
+    "cluster_representative",
+    "method_guide"
+  ],
+  "sources": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "role": "course_baseline",
+      "status": "seed_reference",
+      "note": "Базовый язык стандартного курса: спектр матрицы, фундаментальная матрица и вариация постоянных для систем."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Русскоязычный задачник с типовыми вычислениями для линейных систем и постоянных коэффициентов."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "role": "problem_book",
+      "status": "source_verified",
+      "note": "Классический задачник для проверки спектрального метода, фундаментальных матриц и устойчивости линейных систем."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "role": "classic_reference",
+      "status": "seed_reference",
+      "note": "Классическая теоретическая опора для линейных систем и фундаментальных матриц."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "role": "open_reference",
+      "status": "source_verified",
+      "locator": "Linear systems, matrix exponential and dynamical systems sections",
+      "note": "Открытая строгая ссылка для матричных потоков, фундаментальных матриц и связи со спектром."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "role": "video_course",
+      "status": "source_verified",
+      "locator": "Unit IV, First-order systems, Matrix exponentials",
+      "note": "Видеокурс MIT OCW с материалами по нормальным модам, матричной экспоненте и неоднородным линейным системам."
+    }
+  ],
+  "references": [
+    {
+      "source_id": "src-mipt-ode-course",
+      "priority": 1,
+      "comment": "Основной локальный курс и терминология."
+    },
+    {
+      "source_id": "src-romanko-problem-book",
+      "priority": 2,
+      "comment": "Русскоязычные тренировочные задачи."
+    },
+    {
+      "source_id": "src-filippov-problem-book",
+      "priority": 3,
+      "comment": "Классические задачи по линейным системам и устойчивости."
+    },
+    {
+      "source_id": "src-coddington-levinson",
+      "priority": 4,
+      "comment": "Теоретический фон линейных систем."
+    },
+    {
+      "source_id": "src-teschl-ode-dynamical-systems",
+      "priority": 5,
+      "comment": "Открытая строгая внешняя ссылка."
+    },
+    {
+      "source_id": "src-mit-1803sc-ode",
+      "priority": 6,
+      "comment": "Видео и notes для повторения матричной экспоненты."
+    }
+  ],
+  "editorial": {
+    "created_by": "ai",
+    "created_at": "2026-05-27",
+    "review_status": "ai_checked",
+    "public_ready": true,
+    "relations_status": "cluster-linear-systems-constant-coefficients-method-guide",
+    "notes": [
+      "Добавлено как отдельный теоретико-методический блок к крупному кластеру constant-coefficient-linear-systems, без новых однотипных вычислительных задач.",
+      "Определения не дублируются: связь с матричной экспонентой, фундаментальной матрицей и вронскианом задана через definition_ids и relations к существующим теоретическим карточкам.",
+      "Карточка помечена task_cluster, method_guide и cluster_representative, чтобы индексироваться как методический слой кластера."
+    ]
+  }
+}

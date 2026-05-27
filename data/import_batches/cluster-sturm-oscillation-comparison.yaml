@@ -6,10 +6,12 @@
     "task_cluster",
     "sturm-oscillation-comparison",
     "sturm_comparison",
+    "method_guide",
     "disconjugacy",
     "boundary_value"
   ],
   "problem_ids": [
+    "cluster-sturm-method-guide",
     "cluster-sturm-dirichlet-nonresonance-interpolation-lemma",
     "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
     "cluster-sturm-bvp-unit-endpoints-safe-threshold",
@@ -18,9 +20,10 @@
   ],
   "status": "ai_checked",
   "notes": [
-    "Добавление точечное: кластер уже saturated, поэтому новые карточки закрывают только обязательный блок y''+f(x)y=0, f(x)<C, y(a)=y(b)=1 и две связующие леммы.",
+    "Добавление точечное: кластер уже saturated, поэтому новые карточки закрывают только обязательный блок y''+f(x)y=0, f(x)<C, y(a)=y(b)=1, две связующие леммы и один методический навигатор.",
     "Центральный результат: на [0,L] универсальная гарантия существования и единственности для всех непрерывных f<C имеет место ровно при C<=pi^2/L^2; на [a,b] заменить L на b-a.",
     "Все новые карточки являются self-authored/model tasks М. Дидина; точный внешний источник для этих формулировок не найден.",
-    "Связи записаны только в data/relations/relations.d/cluster-sturm-oscillation-comparison.yaml."
+    "Связи записаны только в data/relations/relations.d/cluster-sturm-oscillation-comparison.yaml.",
+    "cluster-sturm-method-guide является теоретико-методическим блоком, а не новой вычислительной задачей."
   ]
 }

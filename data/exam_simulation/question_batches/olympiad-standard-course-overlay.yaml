@@ -1,0 +1,92 @@
+{
+  "id": "olympiad-standard-course-overlay",
+  "title": "Олимпиадные задачи, сведенные к стандартному устному экзамену",
+  "status": "proposal",
+  "created_at": "2026-05-27",
+  "notes": [
+    "Proposal-layer: эти вопросы не добавлены в основной questions.yaml.",
+    "Отобраны только короткие стандартные идеи без внешних теорем и без вычислительного монстра; исходные карточки сохраняют olympiad_style как источник/стиль."
+  ],
+  "questions": [
+    {
+      "id": "exam-sim-proposal-olympiad-touching-uniqueness",
+      "card_id": "two-solutions-touching",
+      "target_score": 5,
+      "topic": "existence_uniqueness",
+      "question_type": "proof",
+      "answer_mode": "self_check",
+      "prompt_override": "Пусть правая часть локально липшицева по y. Объясните, почему два решения y'=f(x,y), совпавшие в одной точке, совпадают на всем общем интервале.",
+      "rubric": [
+        "Сформулирована единственность задачи Коши в точке совпадения.",
+        "Пояснено, что оба решения имеют одни и те же начальные данные в этой точке.",
+        "Сделан вывод о совпадении на общей области продолжения, а не только локально."
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-olympiad-periodic-monotone",
+      "card_id": "periodic-solution-monotone-derivative",
+      "target_score": 4,
+      "topic": "qualitative",
+      "question_type": "understanding",
+      "answer_mode": "multiple_choice",
+      "prompt_override": "Почему уравнение y'=1+y^2 не имеет ненулевого периодического решения?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Любое решение строго возрастает, а периодическая функция не может быть строго возрастающей.",
+          "is_correct": true
+        },
+        {
+          "id": "b",
+          "text": "Потому что все решения линейны.",
+          "is_correct": false
+        },
+        {
+          "id": "c",
+          "text": "Потому что правая часть периодична по x.",
+          "is_correct": false
+        },
+        {
+          "id": "d",
+          "text": "Потому что у решения обязательно есть два одинаковых нуля.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "exam-sim-proposal-olympiad-arctan-blowup",
+      "card_id": "global-positive-impossible",
+      "target_score": 6,
+      "topic": "existence_uniqueness",
+      "question_type": "method",
+      "answer_mode": "formula",
+      "prompt_override": "Если y'>=1+y^2, какую производную удобно оценить снизу, чтобы увидеть невозможность глобального решения на всей прямой?",
+      "auto_check": {
+        "type": "formula",
+        "accepted_latex": [
+          "(\\arctan y)'",
+          "\\frac{y'}{1+y^2}"
+        ],
+        "accepted_text": [
+          "(arctan y)'",
+          "arctan(y)'",
+          "y'/(1+y^2)"
+        ]
+      }
+    },
+    {
+      "id": "exam-sim-proposal-olympiad-lyapunov-periodic-ban",
+      "card_id": "energy-no-nonconstant-decay-periodic",
+      "target_score": 6,
+      "topic": "qualitative",
+      "question_type": "proof",
+      "answer_mode": "self_check",
+      "prompt_override": "Объясните, почему строго убывающая вдоль непостоянных траекторий функция Ляпунова запрещает непостоянную периодическую траекторию.",
+      "rubric": [
+        "Рассмотрено значение функции Ляпунова вдоль предполагаемой периодической траектории.",
+        "Использована строгая убываемость на непостоянной траектории за один период.",
+        "Получено противоречие с равенством начального и конечного значения на периоде."
+      ]
+    }
+  ]
+}

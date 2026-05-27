@@ -87,6 +87,94 @@
       "backward_text": "Олимпиадная задача показывает, что восстановление A из экспоненты может иметь ветвление логарифма; lemma-card фиксирует простой однозначный локальный случай через производную в нуле.",
       "status": "ai_checked",
       "confidence": 0.88
+    },
+    {
+      "id": "rel-matrix-exp-guide-inverse",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "cluster-matrix-exp-inverse-by-negative-time",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок сначала фиксирует групповое свойство e^{A(t+s)}=e^{At}e^{As} и обратный оператор e^{-At}; lemma-card применяет этот факт к явной блочной формуле без обращения матрицы.",
+      "backward_text": "Карточка про обратное время является короткой проверкой одного из базовых свойств, перечисленных в методическом блоке.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-matrix-exp-guide-recover-generator",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "cluster-matrix-exp-recover-a-derivative-zero",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок формулирует локальное восстановление генератора A=E'(0); lemma-card дает минимальную тренировку этого приема на верхнетреугольной экспоненте.",
+      "backward_text": "Производная в нуле раскрывает один из главных диагностических пунктов методического навигатора.",
+      "status": "ai_checked",
+      "confidence": 0.97
+    },
+    {
+      "id": "rel-matrix-exp-guide-spectrum-modes",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "cluster-matrix-exp-spectrum-from-modes",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор объясняет, как рост, частота и множители t^k кодируют спектр и жорданову структуру; карточка spectrum-from-modes проверяет это чтение без характеристического многочлена.",
+      "backward_text": "Задача на чтение спектра является representative-примером раздела навигатора про spectral mapping и жордановы множители.",
+      "status": "ai_checked",
+      "confidence": 0.96
+    },
+    {
+      "id": "rel-matrix-exp-guide-det-trace",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "cluster-matrix-exp-det-trace-shortcut",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок выделяет det(e^{At})=e^{t tr A} как отдельный trace/determinant shortcut; lemma-card доказывает формулу и показывает быстрый расчет.",
+      "backward_text": "Карточка det/trace является локальным доказательством и примером одного из ключевых фактов методического блока.",
+      "status": "ai_checked",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel-matrix-exp-guide-jordan-block",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "linear-system-jordan-block",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Навигатор формулирует общий принцип e^{(lambda I+N)t}=e^{lambda t}e^{Nt}; базовая карточка с жордановым блоком дает минимальный вычислительный представитель этого принципа.",
+      "backward_text": "Жорданов блок показывает, откуда в методическом блоке берутся множители t и почему nilpotent-часть экспоненты является конечным полиномом.",
+      "status": "ai_checked",
+      "confidence": 0.94
+    },
+    {
+      "id": "rel-matrix-exp-guide-variation-system",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "inhomogeneous-linear-system-variation",
+      "type": "teaches_before",
+      "distance": 1,
+      "forward_text": "Методический блок показывает место формулы x(t)=e^{A(t-t0)}x0+int e^{A(t-s)}b(s)ds в операторном языке матричной экспоненты; theorem-card выводит эту формулу для неоднородной системы.",
+      "backward_text": "Формула вариации постоянных для систем является содержательной границей с кластером variation-of-constants: здесь важен оператор e^{A(t-s)}, а там - сам неоднородный интеграл.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-matrix-exp-guide-fundamental-flow",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "waterloo-fundamental-matrix-flow-inverse",
+      "type": "same_method",
+      "distance": 1,
+      "forward_text": "Навигатор связывает e^{At} с нормированной фундаментальной матрицей постоянной системы; Waterloo-card раскрывает ту же идею как свойство потока Phi(t+s)=Phi(t)Phi(s) и Phi(-t)=Phi(t)^{-1}.",
+      "backward_text": "Карточка про фундаментальную матрицу является содержательным мостом к соседнему кластеру fundamental-matrix-linear-systems, где главный объект - X(t), а не только e^{At}.",
+      "status": "ai_checked",
+      "confidence": 0.95
+    },
+    {
+      "id": "rel-matrix-exp-guide-constant-coeff-boundary",
+      "from": "cluster-matrix-exponential-method-guide",
+      "to": "cluster-linear-systems-constant-coefficients-method-guide",
+      "type": "contrast",
+      "distance": 1,
+      "forward_text": "Навигатор matrix-exponential-methods отбирает задачи, где свойство e^{At} само является главным ходом; соседний методический блок constant-coefficient-linear-systems отвечает за общее решение x'=Ax и x'=Ax+b(t) по спектру и жордановым цепочкам.",
+      "backward_text": "Методический блок постоянных коэффициентов указывает, когда задача остается обычной задачей на линейную систему, а когда ее лучше передать в кластер матричной экспоненты как самостоятельного объекта.",
+      "status": "ai_checked",
+      "confidence": 0.93
     }
   ]
 }
