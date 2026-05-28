@@ -45,7 +45,7 @@
     {
       "id": "proof-main",
       "title": "Доказательство",
-      "text": "Разделим уравнение на P0: y''+A(x)y'+B(x)y+lambda C(x)y=0, где A=P1/P0, B=P2/P0, C=R/P0. Возьмем mu(x)=\\(e^{int A(x)dx}\\) на [a,b]. Тогда mu y''+mu A y'=(mu y')', потому что mu'=A mu. После умножения получаем (mu y')'+mu B y+lambda mu C y=0. Значит p=mu, q=mu B, r=mu C. Поскольку mu>0 и C=R/P0>0, имеем p>0 и r>0.",
+      "text": "Разделим уравнение на P0: y''+A(x)y'+B(x)y+lambda C(x)y=0, где A=P1/P0, B=P2/P0, C=R/P0. Возьмем \\(\\mu(x)=e^{\\int A(x)\\,dx}\\) на [a,b]. Тогда mu y''+mu A y'=(mu y')', потому что mu'=A mu. После умножения получаем (mu y')'+mu B y+lambda mu C y=0. Значит p=mu, q=mu B, r=mu C. Поскольку mu>0 и C=R/P0>0, имеем p>0 и r>0.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "integrating_factor_linear"

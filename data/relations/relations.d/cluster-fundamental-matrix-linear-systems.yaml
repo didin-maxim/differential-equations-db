@@ -39,7 +39,7 @@
       "to": "oral-above-three-liouville-area-preservation",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Методический блок формулирует формулу Лиувилля det X(t)=det X(t_0) \\(e^{int tr A}\\); карточка про площадь является базовой геометрической проверкой случая tr A=0.",
+      "forward_text": "Методический блок формулирует формулу Лиувилля \\(\\det X(t)=\\det X(t_0)\\exp\\int_{t_0}^t \\operatorname{tr} A(s)\\,ds\\); карточка про площадь является базовой геометрической проверкой случая \\(\\operatorname{tr} A=0\\).",
       "backward_text": "Задача на сохранение площади иллюстрирует determinant/trace-ветку навигатора без явного вычисления фундаментальной матрицы.",
       "status": "ai_checked",
       "confidence": 0.95

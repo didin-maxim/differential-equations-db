@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Модельная лемма",
-        "text": "Пусть решения x_lambda и x_mu задач x'=f(t,x,lambda), x(0)=xi(lambda) существуют на [0,T]. Предположим, что |f(t,x,lambda)-f(t,y,mu)|≤L|x-y|+M|lambda-mu| и |xi(lambda)-xi(mu)|≤K|lambda-mu|. Докажите оценку |x_lambda(t)-x_mu(t)|≤(K+Mt)\\(e^{Lt}\\)|lambda-mu| для 0≤t≤T.",
+        "text": "Пусть решения \\(x_\\lambda\\) и \\(x_\\mu\\) задач \\(x'=f(t,x,\\lambda)\\), \\(x(0)=\\xi(\\lambda)\\) существуют на \\([0,T]\\). Предположим, что \\(|f(t,x,\\lambda)-f(t,y,\\mu)|\\le L|x-y|+M|\\lambda-\\mu|\\) и \\(|\\xi(\\lambda)-\\xi(\\mu)|\\le K|\\lambda-\\mu|\\). Докажите оценку \\(|x_\\lambda(t)-x_\\mu(t)|\\le (K+Mt)e^{Lt}|\\lambda-\\mu|\\) для \\(0\\le t\\le T\\).",
         "source_ids": [
           "src-mipt-oral-exam-model-tasks"
         ],
@@ -44,7 +44,7 @@
     {
       "id": "proof-main",
       "title": "Доказательство",
-      "text": "Из интегральной формы задач Коши получаем |x_lambda(t)-x_mu(t)|≤K|lambda-mu|+\\(\\int_0^t\\) (L|x_lambda(s)-x_mu(s)|+M|lambda-mu|) ds. Значит u(t)=|x_lambda(t)-x_mu(t)| удовлетворяет u(t)≤ (K+Mt)|lambda-mu|+L \\(\\int_0^t\\) u(s) ds. Так как K+Mt не убывает, неравенство Гронуолла дает u(t)≤(K+Mt)\\(e^{Lt}\\)|lambda-mu|.",
+      "text": "Из интегральной формы задач Коши получаем \\(|x_\\lambda(t)-x_\\mu(t)|\\le K|\\lambda-\\mu|+\\int_0^t (L|x_\\lambda(s)-x_\\mu(s)|+M|\\lambda-\\mu|) ds\\). Значит \\(u(t)=|x_\\lambda(t)-x_\\mu(t)|\\) удовлетворяет \\(u(t)\\le (K+Mt)|\\lambda-\\mu|+L \\int_0^t u(s) ds\\). Так как \\(K+Mt\\) не убывает, неравенство Гронуолла дает \\(u(t)\\le (K+Mt)e^{Lt}|\\lambda-\\mu|\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "gronwall_estimate"

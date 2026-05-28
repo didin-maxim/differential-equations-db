@@ -17,7 +17,7 @@
       "to": "teschl-stanford-bridge-floquet-determinant-liouville",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор выделяет det M=\\(e^{\\int_0^T tr A}\\) как быстрый инвариант; Teschl-карточка доказывает этот факт через формулу Лиувилля.",
+      "forward_text": "Навигатор выделяет \\(\\det M=\\exp\\int_0^T \\operatorname{tr} A(t)\\,dt\\) как быстрый инвариант; Teschl-карточка доказывает этот факт через формулу Лиувилля.",
       "backward_text": "Карточка про произведение мультипликаторов является representative-примером ветки навигатора, где след управляет детерминантом монодромии.",
       "status": "ai_checked",
       "confidence": 0.97

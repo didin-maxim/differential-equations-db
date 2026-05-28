@@ -108,6 +108,21 @@ RAW_ANYWHERE_PATTERNS = [
     ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|alpha|beta|gamma|le|ge|ne|to|infty|pi|cdot|times)\b")),
 ]
 
+HYBRID_TEX_PATTERNS = [
+    (
+        "hybrid-tex-left-factor",
+        re.compile(r"(?:[A-Za-z][A-Za-z0-9_']*|\d+|[)\]])\s*\\\((?:e\^|\\int|\\sum|\\prod|[A-Za-z]_\{|[A-Za-z]\^)"),
+    ),
+    (
+        "hybrid-tex-right-factor",
+        re.compile(r"\\\)[ \t]*(?:[A-Za-z][A-Za-z0-9_']*|\d+|[(\[])"),
+    ),
+    (
+        "hybrid-tex-binary-operator",
+        re.compile(r"(?:[A-Za-z0-9_')\]])\s*[+\-*/=]\s*\\\("),
+    ),
+]
+
 
 def strip_math(text):
     result = str(text or "")
@@ -148,7 +163,7 @@ def iter_visible_strings(obj, path=(), force_visible=False):
         yield path, obj
 
 
-def find_hits(text):
+def find_hits(text, check_hybrid_tex=False):
     original = str(text or "")
     hits = []
     for name, pattern in RAW_ANYWHERE_PATTERNS:
@@ -156,6 +171,12 @@ def find_hits(text):
             hits.append((name, match.group(0)))
             if len(hits) >= 5:
                 return hits
+    if check_hybrid_tex:
+        for name, pattern in HYBRID_TEX_PATTERNS:
+            for match in pattern.finditer(original):
+                hits.append((name, match.group(0)))
+                if len(hits) >= 5:
+                    return hits
     visible = strip_math(text)
     for name, pattern in RAW_PATTERNS:
         for match in pattern.finditer(visible):
@@ -330,6 +351,11 @@ def walk_fix(obj, force_visible=False):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--fix", action="store_true", help="Rewrite visible data strings mechanically.")
+    parser.add_argument(
+        "--check-hybrid-tex",
+        action="store_true",
+        help="Deprecated compatibility flag. Hybrid TeX is checked by default.",
+    )
     parser.add_argument("--max-items", type=int, default=80)
     args = parser.parse_args()
 
@@ -348,10 +374,10 @@ def main():
                 changed_files.append(path)
                 data = fixed
         for place, text in iter_visible_strings(data):
-            for kind, hit in find_hits(text):
+            for kind, hit in find_hits(text, True):
                 reports.append((path, ".".join(place), kind, hit))
     for path, place, text in iter_svg_text_nodes():
-        for kind, hit in find_hits(text):
+        for kind, hit in find_hits(text, True):
             reports.append((path, place, kind, hit))
 
     for path, place, kind, hit in reports[: args.max_items]:

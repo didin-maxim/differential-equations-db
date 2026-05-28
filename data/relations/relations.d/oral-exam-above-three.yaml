@@ -61,7 +61,7 @@
       "to": "oral-above-three-recover-system-from-fundamental-matrix",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Жорданова клетка дает фундаментальную матрицу \\(e^{t}\\)(I+tN).",
+      "forward_text": "Жорданова клетка дает фундаментальную матрицу \\(e^{t}(I+tN)\\).",
       "backward_text": "Восстановление A из X(t) распознает ту же жорданову структуру в обратном направлении.",
       "status": "ai_checked",
       "confidence": 0.9
