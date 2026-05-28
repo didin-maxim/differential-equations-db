@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "МФТИ ДУ, письменный экзамен 2011-2012, вариант 21, задача 9",
-        "text": "Пусть \\(y(x,\\alpha) -\\) решение задачи Коши\\(y'=\\alpha(1-x)+y-y^2, y(0)=0.\\)Найти \\(\\partial y/\\partial \\alpha\\) при \\(\\alpha=0\\) и\\(partial^2 y/partial \\alpha^2\\) при \\(\\alpha=0.\\)",
+        "text": "Пусть \\(y(x,\\alpha) -\\) решение задачи Коши\\(y'=\\alpha(1-x)+y-y^2, y(0)=0.\\)Найти \\(\\partial y/\\partial \\alpha\\) при \\(\\alpha=0\\) и \\(partial^2 y/partial \\alpha^2\\) при \\(\\alpha=0.\\)",
         "source_ids": [
           "src-local-du-written-exams"
         ],

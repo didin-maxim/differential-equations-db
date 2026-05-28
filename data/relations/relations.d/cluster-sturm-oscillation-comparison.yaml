@@ -17,7 +17,7 @@
       "to": "cluster-sturm-disconjugacy-strict-upper-bound-lemma",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Обе карточки используют эталонное расстояние π/sqrt(C) между нулями синуса.",
+      "forward_text": "Обе карточки используют эталонное расстояние π/\\sqrt{C} между нулями синуса.",
       "backward_text": "Новая лемма выделяет строгий критический случай \\(q<C\\), нужный для границы \\(C=\\pi^2/L^2\\).",
       "status": "ai_checked",
       "confidence": 0.93
@@ -160,7 +160,7 @@
       "to": "local-du-standard-sturm-zero-spacing-corollaries",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор направляет конечные оценки через эталонное расстояние π/sqrt(C) между нулями синуса.",
+      "forward_text": "Навигатор направляет конечные оценки через эталонное расстояние π/\\sqrt{C} между нулями синуса.",
       "backward_text": "Следствия о расстоянии между нулями являются готовым техническим блоком для сравнения с \\(y''+C y=0\\).",
       "status": "ai_checked",
       "confidence": 0.96

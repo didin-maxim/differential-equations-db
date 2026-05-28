@@ -133,6 +133,7 @@ RAW_ANYWHERE_PATTERNS = [
     ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|nu|xi|alpha|beta|gamma|theta|phi|varphi|psi|omega|le|ge|ne|to|infty|pi|cdot|times)\b")),
     ("double-open-inline-math-anywhere", re.compile(r"\\\(\s*\\\(")),
     ("tex-word-int-in-exponent", re.compile(r"e\^\{?-?int\b")),
+    ("tex-plain-sqrt-function", re.compile(r"(?<!\\)\bsqrt\s*\(")),
     ("tex-parenthesized-subscript-command", re.compile(r"\\(?:lim|sum|prod|int)_\(")),
     ("split-symbol-between-inline-math", re.compile(r"\\\)\s*(?:[A-Za-z]|\\(?:xi|varepsilon|alpha|beta|gamma|lambda|mu|nu|theta|phi|varphi|psi|omega))\s*\\\(")),
     ("split-restriction-bar-between-inline-math", re.compile(r"\\\([^)]*(?:\\partial|')([^)]*)\\\)\s*\|\s*\\\(")),
@@ -144,6 +145,30 @@ HYBRID_TEX_PATTERNS = [
     (
         "plain-parens-around-tex",
         re.compile(r"\([^\n()]{0,80}\\\([^\n]{1,120}\\\)[^\n()]{0,80}\)"),
+    ),
+    (
+        "hybrid-function-domain-split",
+        re.compile(r"\b[A-Za-z][A-Za-z0-9_']*\s*:\s*\\\([^)]*\\to"),
+    ),
+    (
+        "hybrid-absolute-value-split",
+        re.compile(r"\|\s*\\\([^)]{1,120}\\\)\s*\|"),
+    ),
+    (
+        "hybrid-plain-integral-limit",
+        re.compile(r"\\\((?:\\int|\\sum|\\prod|\\lim)[^)]*\\\)\s*\|\s*\\\("),
+    ),
+    (
+        "inline-math-glued-after-control-word",
+        re.compile(r"(?:Если|Тогда|Поэтому|Обозначим|Подстановка|Вычитая|Линейная независимость|Их отношение)\\\("),
+    ),
+    (
+        "inline-math-glued-russian-conjunction-between-formulas",
+        re.compile(r"\\\)(?:и|или|а)\\\("),
+    ),
+    (
+        "inline-math-glued-russian-conjunction-before-formula",
+        re.compile(r"(?<![А-Яа-яЁё])(?:и|или|а)\\\("),
     ),
     (
         "hybrid-tex-left-factor",
