@@ -18,7 +18,7 @@
   "notes": [
     "Добавление точечное: кластер уже содержит Trench-представителей, поэтому новая карточка является теоретико-методическим навигатором.",
     "Блок связывает явную формулу ядра, Robin-пример, Green identity, резонансную альтернативу и границы применимости.",
-    "Добавлены определения green_function_bvp, self_adjoint_boundary_problem и fredholm_alternative.",
+    "Добавлены определения \\(green_function_bvp, self_adjoint_boundary_problem\\) и \\(fredholm_alternative\\).",
     "Связи записаны только в data/relations/relations.d/cluster-green-functions-bvp.yaml."
   ]
 }

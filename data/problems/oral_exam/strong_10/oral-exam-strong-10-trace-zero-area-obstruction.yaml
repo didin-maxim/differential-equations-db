@@ -57,7 +57,7 @@
       "linear_systems"
     ],
     "methods": [
-      "liouville_formula",
+      "liouville_for\\mula",
       "fundamental_matrix"
     ],
     "objects": [
@@ -72,7 +72,7 @@
     "keywords": [
       "trace_zero",
       "area_preservation",
-      "liouville_formula",
+      "liouville_for\\mula",
       "fundamental_matrix"
     ],
     "status": "ai_checked"

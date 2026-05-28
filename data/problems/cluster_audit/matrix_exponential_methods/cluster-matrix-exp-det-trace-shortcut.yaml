@@ -34,7 +34,7 @@
     {
       "id": "idea-main",
       "title": "След управляет изменением объема",
-      "text": "Матричная экспонента умножает ориентированный объем на exp интеграла следа; для постоянной матрицы это \\(e^{t tr A}\\).",
+      "text": "Матричная экспонента умножает ориентированный объем на \\(\\exp\\) интеграла следа; для постоянной матрицы это \\(e^{t tr A}\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "matrix_exponential",
@@ -86,7 +86,7 @@
     "local_score": 4,
     "idea_score": 5,
     "technical_score": 2,
-    "comment": "idea_score=5: используется переносимый факт det exp = exp tr; technical_score=2: в примере нужно только взять след.",
+    "comment": "idea score=5: используется переносимый факт \\(det \\exp = \\exp tr; technical score=2\\): в примере нужно только взять след.",
     "status": "ai_checked"
   },
   "tags": [

@@ -39,7 +39,7 @@
       "to": "msu-ode-2019-3-nonzero-field-nonunique-plane",
       "type": "generalization",
       "distance": 1,
-      "forward_text": "Базовый пеановский пример y'=sqrt(|y|) дает задержанные решения.",
+      "forward_text": "Базовый пеановский пример \\(y'=sqrt(|y|)\\) дает задержанные решения.",
       "backward_text": "МГУ 2019/3 усиливает пример добавлением координаты-часов, чтобы все поле стало нигде не нулевым.",
       "status": "ai_checked",
       "confidence": 0.86

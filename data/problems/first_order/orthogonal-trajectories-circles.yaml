@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Найти ортогональные траектории семейства окружностей x^2+y^2=C.",
+        "text": "Найти ортогональные траектории семейства окружностей \\(x^2+y^2=C\\).",
         "source_ids": [
           "src-mipt-ode-course"
         ],
@@ -87,7 +87,7 @@
     "local_score": 3,
     "idea_score": 4,
     "technical_score": 3,
-    "comment": "idea_score=4: стандартная идея ортогональных наклонов; technical_score=3: простое разделение переменных.",
+    "comment": "idea-score=4: стандартная идея ортогональных наклонов; technical-score=3: простое разделение переменных.",
     "status": "ai_checked"
   },
   "tags": [

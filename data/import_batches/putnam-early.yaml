@@ -26,6 +26,6 @@
   "status": "ai_checked",
   "notes": [
     "Пачка соответствует include-кандидатам из docs/reviews/olympiad-scan-putnam.md за 1939-1975 годы.",
-    "Основной source_id во всех карточках: src-putnam-archive."
+    "Основной \\(source_id\\) во всех карточках: src-putnam-archive."
   ]
 }

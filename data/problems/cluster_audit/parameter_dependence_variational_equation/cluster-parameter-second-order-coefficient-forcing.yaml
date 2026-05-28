@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Модельная задача",
-        "text": "Пусть y(t,alpha) решает y''+(1+alpha)y=alpha t, y(0,alpha)=1+alpha, y'(0,alpha)=alpha. Найдите z(t)=partial y/partial alpha при alpha=0.",
+        "text": "Пусть \\(y(t,\\alpha)\\) решает \\(y''+(1+\\alpha)y=\\alpha t, y(0,\\alpha)=1+\\alpha, y'(0,\\alpha)=\\alpha\\). Найдите \\(z(t)=partial y/partial \\alpha\\) при \\(\\alpha=0\\).",
         "source_ids": [
           "src-mipt-oral-exam-model-tasks"
         ],
@@ -44,7 +44,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "При alpha=0 имеем y_0''+y_0=0, y_0(0)=1, y_0'(0)=0, поэтому y_0=cos t. Дифференцируя исходную задачу по alpha и подставляя alpha=0, получаем z''+z=t-y_0=t-cos t, z(0)=1, z'(0)=1. Отсюда z(t)=cos t+t-(t/2)sin t.",
+      "text": "При \\(\\alpha=0\\) имеем \\(y_0''+y_0=0, y_0(0)=1, y_0'(0)=0\\), поэтому \\(y_0=\\cos t\\). Дифференцируя исходную задачу по \\(\\alpha\\) и подставляя \\(\\alpha=0\\), получаем \\(z''+z=t-y_0=t-\\cos t, z(0)=1, z'(0)=1\\). Отсюда \\(z(t)=\\cos t+t-(t/2)\\sin t\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"

@@ -70,7 +70,7 @@
     ],
     "goal": [
       "solve",
-      "explain_method"
+      "\\(explain_method\\)"
     ],
     "keywords": [
       "oral_exam",
@@ -85,7 +85,7 @@
     "local_score": 5,
     "idea_score": 5,
     "technical_score": 4,
-    "comment": "idea_score=5: типовая жорданова клетка в системе с постоянными коэффициентами; technical_score=4: последовательное решение двух уравнений первого порядка.",
+    "comment": "Идейная сложность 5; техническая сложность 4.",
     "status": "ai_checked"
   },
   "tags": [

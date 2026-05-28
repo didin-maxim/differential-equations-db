@@ -7,7 +7,7 @@
       "type": "teaches_before",
       "distance": 1,
       "forward_text": "Lebl-карточка учит строить характеристики с переменным переносом без нелинейности вдоль характеристики.",
-      "backward_text": "Semilinear карточка добавляет к тому же характеристическому скелету вопрос максимального продолжения из-за уравнения v'=v^2.",
+      "backward_text": "Semilinear карточка добавляет к тому же характеристическому скелету вопрос максимального продолжения из-за уравнения \\(v'=v^2\\).",
       "status": "ai_checked",
       "confidence": 0.88
     },
@@ -17,7 +17,7 @@
       "to": "mipt-excellent-semilinear-characteristics-blowup",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Скалярная ОДУ-карточка показывает конечный blow-up для y'=y^2.",
+      "forward_text": "Скалярная ОДУ-карточка показывает конечный blow-up для \\(y'=y^2\\).",
       "backward_text": "PDE-карточка переносит тот же blow-up mechanism на каждую характеристику.",
       "status": "ai_checked",
       "confidence": 0.9

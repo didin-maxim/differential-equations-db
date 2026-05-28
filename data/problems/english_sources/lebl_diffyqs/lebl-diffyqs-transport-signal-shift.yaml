@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Lebl, раздел 1.9, пример 1.9.1",
-        "text": "Пусть alpha - постоянная. Решить линейное однородное уравнение alpha u_x+u_t=0 с начальным условием u(x,0)=f(x). Объяснить геометрически, куда движется профиль f.",
+        "text": "Пусть \\(\\alpha -\\) постоянная. Решить линейное однородное уравнение \\(\\alpha u_x+u_t=0\\) с начальным условием \\(u(x,0)=f(x).\\) Объяснить геометрически, куда движется профиль \\(f.\\)",
         "source_ids": [
           "src-lebl-diffyqs"
         ],
@@ -34,7 +34,7 @@
     {
       "id": "idea-main",
       "title": "Характеристика несет значение u без изменения",
-      "text": "В координатах xi=x-alpha t, s=t производная по s равна нулю. Значит начальный профиль не искажается, а только сдвигается вдоль прямых x-alpha t=const.",
+      "text": "В координатах \\(\\xi=x-\\alpha t, s=t\\) производная по \\(s\\) равна нулю. Значит начальный профиль не искажается, а только сдвигается вдоль прямых \\(x-\\alpha t=\\operatorname{const}.\\)",
       "status": "ai_checked",
       "standard_idea_ids": [
         "first_integral_difference"
@@ -45,7 +45,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Введем xi=x-alpha t и s=t. Тогда u_x=u_xi, а u_t=-alpha u_xi+u_s. Уравнение alpha u_x+u_t=0 превращается в u_s=0. Поэтому u=A(xi)=A(x-alpha t). Начальное условие дает A(x)=f(x), следовательно u(x,t)=f(x-alpha t). Если alpha>0, один и тот же уровень профиля находится при x=xi+alpha t, то есть профиль движется вправо со скоростью alpha; при alpha<0 он движется влево.",
+      "text": "Введем \\(\\xi=x-\\alpha t\\) и \\(s=t.\\) Тогда \\(u_x=u_\\xi,\\) а \\(u_t=-\\alpha u_\\xi+u_s.\\) Уравнение \\(\\alpha u_x+u_t=0\\) превращается в \\(u_s=0.\\) Поэтому \\(u=A(\\xi)=A(x-\\alpha t).\\) Начальное условие дает \\(A(x)=f(x),\\) следовательно \\(u(x,t)=f(x-\\alpha t).\\) Если \\(\\alpha>0,\\) один и тот же уровень профиля находится при \\(x=\\xi+\\alpha t,\\) то есть профиль движется вправо со скоростью \\(\\alpha\\); при \\(\\alpha<0\\) он движется влево.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "first_integral_difference"
@@ -82,7 +82,7 @@
     "local_score": 4,
     "idea_score": 4,
     "technical_score": 2,
-    "comment": "idea_score=4: минимальная геометрия характеристик как переноса начального профиля; technical_score=2: вычисления сводятся к одной замене.",
+    "comment": "Идейная сложность 4: минимальная геометрия характеристик как переноса начального профиля; техническая сложность 2: вычисления сводятся к одной замене.",
     "status": "ai_checked"
   },
   "tags": [
@@ -104,7 +104,8 @@
       "source_id": "src-lebl-diffyqs",
       "role": "textbook_example",
       "status": "source_verified",
-      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.1; web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+      "url": "https://www.jirka.org/diffyqs/html/fopde_section.html",
+      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.1."
     }
   ],
   "editorial": {

@@ -85,7 +85,7 @@
     "local_score": 5,
     "idea_score": 6,
     "technical_score": 3,
-    "comment": "idea_score=6: неоднородность резонирует с жордановой цепочкой и дает t^2; technical_score=3: после замены \\(x=e^t y\\) остается треугольная система.",
+    "comment": "idea score=6: неоднородность резонирует с жордановой цепочкой и дает \\(t^2; technical score=3\\): после замены \\(x=e^t y\\) остается треугольная система.",
     "status": "ai_checked"
   },
   "tags": [

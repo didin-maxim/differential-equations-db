@@ -2,7 +2,7 @@ import json
 from html import escape as html_escape
 
 from build_index import COURSE_TAGS, build_data
-from lib import ROOT
+from lib import ROOT, repair_mojibake_text
 
 
 def safe_json(data):
@@ -1372,6 +1372,8 @@ def build_html(data):
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 14px;
+      min-width: 0;
+      max-width: 100%;
       overflow-wrap: anywhere;
     }
 
@@ -1412,6 +1414,8 @@ def build_html(data):
       background: #fbfaf7;
       padding: 12px;
       margin-bottom: 12px;
+      min-width: 0;
+      max-width: 100%;
     }
 
     .single-card-nav h2 {
@@ -1534,6 +1538,7 @@ def build_html(data):
     .statement {
       margin: 10px 0 0;
       color: #2f3935;
+      min-width: 0;
       white-space: pre-wrap;
       max-width: 100%;
       overflow-wrap: anywhere;
@@ -1547,9 +1552,15 @@ def build_html(data):
     }
 
     .tex-content .katex-display {
+      display: block;
+      max-width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
       padding: 2px 0;
+    }
+
+    .tex-content .katex-display > .katex {
+      max-width: none;
     }
 
     .tex-content .katex {
@@ -2239,12 +2250,27 @@ def build_html(data):
 
     function fallbackFormulaText(text) {
       const compactGroup = value => String(value || '').replace(/\\s+/g, '');
+      const subChars = {
+        '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
+        '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎',
+        'a': 'ₐ', 'e': 'ₑ', 'h': 'ₕ', 'i': 'ᵢ', 'j': 'ⱼ', 'k': 'ₖ', 'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ',
+        'o': 'ₒ', 'p': 'ₚ', 'r': 'ᵣ', 's': 'ₛ', 't': 'ₜ', 'u': 'ᵤ', 'v': 'ᵥ', 'x': 'ₓ',
+      };
+      const superChars = {
+        '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+        '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾', 'n': 'ⁿ', 'i': 'ⁱ',
+      };
+      const unicodeScript = (value, table, marker) => {
+        const compact = compactGroup(value);
+        if (compact && [...compact].every(ch => table[ch])) return [...compact].map(ch => table[ch]).join('');
+        return marker + '(' + compact + ')';
+      };
       const wrappedGroup = value => {
         const compact = compactGroup(value);
         return compact.startsWith('(') && compact.endsWith(')') ? compact : '(' + compact + ')';
       };
-      const superscript = value => '^' + wrappedGroup(value);
-      const subscript = value => '_' + wrappedGroup(value);
+      const superscript = value => unicodeScript(value, superChars, '^');
+      const subscript = value => unicodeScript(value, subChars, '_');
       return String(text || '')
         .replace(/\\\\operatorname\\{([^{}]+)\\}/g, '$1')
         .replace(/\\\\operatorname\\s*([A-Za-z]+)/g, '$1')
@@ -2262,15 +2288,18 @@ def build_html(data):
         .replace(/\\\\geq?|\\\\ge/g, '>=')
         .replace(/\\\\ne/g, '!=')
         .replace(/\\\\to/g, '->')
-        .replace(/\\\\infty/g, 'infty')
-        .replace(/\\\\pi/g, 'pi')
-        .replace(/\\\\lambda/g, 'lambda')
-        .replace(/\\\\mu/g, 'mu')
-        .replace(/\\\\alpha/g, 'alpha')
-        .replace(/\\\\beta/g, 'beta')
-        .replace(/\\\\gamma/g, 'gamma')
-        .replace(/\\\\Delta/g, 'Delta')
-        .replace(/\\\\Phi/g, 'Phi')
+        .replace(/\\\\infty/g, '∞')
+        .replace(/\\\\pi/g, 'π')
+        .replace(/\\\\lambda/g, 'λ')
+        .replace(/\\\\mu/g, 'μ')
+        .replace(/\\\\alpha/g, 'α')
+        .replace(/\\\\beta/g, 'β')
+        .replace(/\\\\gamma/g, 'γ')
+        .replace(/\\\\xi/g, 'ξ')
+        .replace(/\\\\varphi/g, 'φ')
+        .replace(/\\\\phi/g, 'φ')
+        .replace(/\\\\Delta/g, 'Δ')
+        .replace(/\\\\Phi/g, 'Φ')
         .replace(/\\\\sin/g, 'sin')
         .replace(/\\\\cos/g, 'cos')
         .replace(/\\\\exp/g, 'exp')
@@ -2364,6 +2393,7 @@ def build_html(data):
         });
         return;
       }
+      if (document.readyState !== 'complete') return;
       renderFallbackMath(target);
     }
 
@@ -4840,11 +4870,11 @@ def main():
     data = build_data()
     viewer_out = ROOT / "viewer" / "index.html"
     viewer_out.parent.mkdir(exist_ok=True)
-    viewer_out.write_text(build_html(data), encoding="utf-8")
+    viewer_out.write_text(repair_mojibake_text(build_html(data)), encoding="utf-8")
     print(f"OK: wrote {viewer_out}")
 
     home_out = ROOT / "index.html"
-    home_out.write_text(build_home_html(data), encoding="utf-8")
+    home_out.write_text(repair_mojibake_text(build_home_html(data)), encoding="utf-8")
     print(f"OK: wrote {home_out}")
 
 

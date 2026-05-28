@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Lebl, раздел 5.1, упражнение 5.1.4",
-        "text": "Найти собственные значения и собственные функции задачи y''+lambda y=0, y(0)-y'(0)=0, y(1)=0.",
+        "text": "Найти собственные значения и собственные функции задачи \\(y''+\\lambda y=0, y(0)-y'(0)=0, y(1)=0.\\)",
         "source_ids": [
           "src-lebl-diffyqs"
         ],
@@ -31,7 +31,7 @@
     {
       "id": "idea-main",
       "title": "Смешанное условие дает не целые частоты, а уравнение на частоту",
-      "text": "Для lambda=mu^2 положительная частота mu должна удовлетворять sin mu+mu cos mu=0. Нулевой и отрицательный случаи исключаются отдельно.",
+      "text": "Для \\(\\lambda=\\mu^2\\) положительная частота \\(\\mu\\) должна удовлетворять \\(\\sin \\mu+\\mu \\cos \\mu=0.\\) Нулевой и отрицательный случаи исключаются отдельно.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "shooting_parameter"
@@ -42,7 +42,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Пусть lambda=mu^2>0. Тогда y=A cos(mu x)+B sin(mu x). Условие y(0)-y'(0)=0 дает A-mu B=0, то есть A=mu B. Условие y(1)=0 дает B(mu cos mu+sin mu)=0. Для нетривиального решения нужно sin mu+mu cos mu=0; тогда собственная функция пропорциональна mu cos(mu x)+sin(mu x). При lambda=0 имеем y=Ax+B, условия дают B-A=0 и A+B=0, откуда A=B=0. При lambda=-nu^2<0 имеем y=A cosh(nu x)+B sinh(nu x), первое условие дает A=nu B, а второе B(nu cosh nu+sinh nu)=0; выражение в скобках положительно при nu>0. Значит отрицательных собственных значений нет.",
+      "text": "Пусть \\(\\lambda=\\mu^2>0.\\) Тогда \\(y=A\\cos(\\mu x)+B\\sin(\\mu x).\\) Условие \\(y(0)-y'(0)=0\\) дает \\(A-\\mu B=0,\\) то есть \\(A=\\mu B.\\) Условие \\(y(1)=0\\) дает \\(B(\\mu \\cos \\mu+\\sin \\mu)=0.\\) Для нетривиального решения нужно \\(\\sin \\mu+\\mu \\cos \\mu=0\\); тогда собственная функция пропорциональна \\(\\mu \\cos(\\mu x)+\\sin(\\mu x).\\) При \\(\\lambda=0\\) имеем \\(y=Ax+B,\\) условия дают \\(B-A=0\\) и \\(A+B=0,\\) откуда \\(A=B=0.\\) При \\(\\lambda=-\\nu^2<0\\) имеем \\(y=A\\cosh(\\nu x)+B\\sinh(\\nu x),\\) первое условие дает \\(A=\\nu B,\\) а второе \\(B(\\nu\\cosh\\nu+\\sinh\\nu)=0\\); выражение в скобках положительно при \\(\\nu>0\\). Значит отрицательных собственных значений нет.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "shooting_parameter"
@@ -78,7 +78,7 @@
     "local_score": 5,
     "idea_score": 6,
     "technical_score": 4,
-    "comment": "idea_score=6: в отличие от чистой Дирихле-задачи спектр задается уравнением на частоту; technical_score=4: стандартный разбор трех знаков lambda.",
+    "comment": "идейная сложность 6: в отличие от чистой Дирихле-задачи спектр задается уравнением на частоту; техническая сложность 4: стандартный разбор трех знаков \\(\\lambda\\).",
     "status": "ai_checked"
   },
   "tags": [
@@ -94,7 +94,7 @@
       "source_id": "src-lebl-diffyqs",
       "role": "exercise_adapted",
       "status": "source_verified",
-      "note": "Раздел 5.1 Sturm-Liouville problems, Exercise 5.1.4; web: https://www.jirka.org/diffyqs/html/slproblems_section.html"
+      "note": "Раздел 5.1 Sturm-Liouville problems, Exercise 5.1.4; web: https://www.jirka.org/diffyqs/html/slproblems section.html"
     }
   ],
   "editorial": {

@@ -75,7 +75,7 @@
     "local_score": 3,
     "idea_score": 4,
     "technical_score": 3,
-    "comment": "idea_score=4: стандартная замена y=xv; technical_score=3: один элементарный интеграл.",
+    "comment": "idea-score=4: стандартная замена y=xv; technical-score=3: один элементарный интеграл.",
     "status": "ai_checked"
   },
   "tags": [

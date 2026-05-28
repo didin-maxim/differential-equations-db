@@ -78,7 +78,7 @@
     "local_score": 2,
     "idea_score": 2,
     "technical_score": 2,
-    "comment": "idea_score=2: стандартная сумма общего однородного и частного решения; technical_score=2: частное решение угадывается константой.",
+    "comment": "Идейная сложность 2; техническая сложность 2.",
     "status": "ai_checked"
   },
   "tags": [

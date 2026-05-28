@@ -84,7 +84,7 @@
     "local_score": 6,
     "idea_score": 6,
     "technical_score": 2,
-    "comment": "idea_score=6: нужно вывести или вспомнить критерий для множителя h(xy); technical_score=2: после множителя интеграл линейный.",
+    "comment": "idea score=6: нужно вывести или вспомнить критерий для множителя h(xy); technical score=2: после множителя интеграл линейный.",
     "status": "ai_checked"
   },
   "tags": [
@@ -103,7 +103,7 @@
       "source_id": "src-cluster-integrating-factor-exact-forms-audit",
       "role": "model_task_source",
       "status": "ai_generated_from_user_request",
-      "note": "Модельная задача на специальный множитель mu(xy); сделана с коротким первым интегралом."
+      "note": "Модельная задача на специальный множитель \\(\\mu(xy)\\); сделана с коротким первым интегралом."
     }
   ],
   "editorial": {

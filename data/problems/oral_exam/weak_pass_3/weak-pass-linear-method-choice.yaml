@@ -63,7 +63,7 @@
     ],
     "goal": [
       "solve",
-      "choose_method"
+      "\\(choose_method\\)"
     ],
     "keywords": [
       "oral_exam",
@@ -78,7 +78,7 @@
     "local_score": 3,
     "idea_score": 3,
     "technical_score": 2,
-    "comment": "idea_score=3: нужно отличить линейный метод от формального разделения; technical_score=2: один интегрирующий множитель и простое начальное условие.",
+    "comment": "Идейная сложность 3; техническая сложность 2.",
     "status": "ai_checked"
   },
   "tags": [

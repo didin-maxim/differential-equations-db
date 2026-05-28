@@ -68,7 +68,7 @@
     ],
     "goal": [
       "compute",
-      "recognize_property"
+      "\\(recognize_property\\)"
     ],
     "keywords": [
       "matrix_exponential_methods",
@@ -82,7 +82,7 @@
     "local_score": 4,
     "idea_score": 5,
     "technical_score": 2,
-    "comment": "idea_score=5: нужно распознать обратимость потока \\(e^{At}\\); technical_score=2: после этого только замена t на -t.",
+    "comment": "idea score 5: нужно распознать обратимость потока \\(e^{At}\\); technical score 2: после этого только замена t на -t.",
     "status": "ai_checked"
   },
   "tags": [
@@ -110,7 +110,7 @@
     "public_ready": true,
     "relations_status": "cluster-matrix-exponential-methods",
     "notes": [
-      "Показывает \\(e^{-At}\\)=(\\(e^{At}\\))^{-1} на читаемой смеси вращения и жорданова блока."
+      "Показывает \\(e^{-At}=(e^{At})^{-1}\\) на читаемой смеси вращения и жорданова блока."
     ]
   }
 }

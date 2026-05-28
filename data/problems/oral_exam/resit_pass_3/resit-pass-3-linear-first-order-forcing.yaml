@@ -77,7 +77,7 @@
     "local_score": 3,
     "idea_score": 3,
     "technical_score": 3,
-    "comment": "idea_score=3: стандартный интегрирующий множитель; technical_score=3: короткое интегрирование и начальное условие.",
+    "comment": "Идейная сложность 3; техническая сложность 3.",
     "status": "ai_checked"
   },
   "tags": [

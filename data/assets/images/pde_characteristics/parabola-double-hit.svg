@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" role="img" aria-labelledby="title desc">
   <title id="title">Две точки начальной кривой на одной характеристике</title>
-  <desc id="desc">Горизонтальные характеристики пересекают параболу y=x^2 в двух точках.</desc>
+  <desc id="desc">Горизонтальные характеристики пересекают параболу \(y=x^2\) в двух точках.</desc>
   <rect width="520" height="320" fill="#ffffff"/>
   <line x1="50" y1="260" x2="480" y2="260" stroke="#222" stroke-width="1.6"/>
   <line x1="260" y1="290" x2="260" y2="35" stroke="#222" stroke-width="1.6"/>
@@ -14,6 +14,6 @@
   <circle cx="337" cy="160" r="6" fill="#d14b3f"/>
   <text x="467" y="254" font-family="Arial, sans-serif" font-size="16" fill="#222">x</text>
   <text x="268" y="48" font-family="Arial, sans-serif" font-size="16" fill="#222">y</text>
-  <text x="96" y="94" font-family="Arial, sans-serif" font-size="15" fill="#6c7a89">характеристика y=const</text>
-  <text x="335" y="286" font-family="Arial, sans-serif" font-size="15" fill="#d14b3f">y=x^2</text>
+  <text x="96" y="94" font-family="Arial, sans-serif" font-size="15" fill="#6c7a89">характеристика \(y=\operatorname{const}\)</text>
+  <text x="335" y="286" font-family="Arial, sans-serif" font-size="15" fill="#d14b3f">\(y=x^2\)</text>
 </svg>

@@ -82,7 +82,7 @@
     "local_score": 4,
     "idea_score": 5,
     "technical_score": 2,
-    "comment": "idea_score=5: важный универсальный способ восстановить генератор; technical_score=2: дифференцируются простые функции.",
+    "comment": "idea score=5: важный универсальный способ восстановить генератор; technical score=2: дифференцируются простые функции.",
     "status": "ai_checked"
   },
   "tags": [

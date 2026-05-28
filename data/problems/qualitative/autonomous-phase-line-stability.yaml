@@ -76,7 +76,7 @@
     "local_score": 3,
     "idea_score": 4,
     "technical_score": 3,
-    "comment": "idea_score=4: стандартный анализ знаков на фазовой прямой; technical_score=3: простая таблица интервалов.",
+    "comment": "idea-score=4: стандартный анализ знаков на фазовой прямой; technical-score=3: простая таблица интервалов.",
     "status": "ai_checked"
   },
   "tags": [

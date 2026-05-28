@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Lebl, раздел 1.9, пример 1.9.3",
-        "text": "Решить задачу Коши x u_x+u_t+2u=0, u(x,0)=cos x.",
+        "text": "Решить задачу Коши\\(x_u x+u_t+2u=0, u(x,0)=\\cos x.\\)",
         "source_ids": [
           "src-lebl-diffyqs"
         ],
@@ -33,7 +33,7 @@
     {
       "id": "idea-main",
       "title": "Характеристика сама решает ОДУ с переменным коэффициентом",
-      "text": "Вместо прямых с постоянной скоростью возникает dx/dt=x. Начальная точка характеристики равна \\(\\xi=xe^{-t}\\), а значение u дополнительно умножается на \\(e^{-2t}\\).",
+      "text": "Вместо прямых с постоянной скоростью возникает\\(dx/dt=x.\\) Начальная точка характеристики равна \\(\\xi=xe^{-t},\\) а значение u дополнительно умножается на \\(e^{-2t}.\\)",
       "status": "ai_checked",
       "standard_idea_ids": [
         "first_integral_difference"
@@ -44,7 +44,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Параметризуем характеристику временем t. Тогда dx/dt=x, поэтому \\(x=\\xi e^t\\), где xi - точка пересечения характеристики с прямой t=0. Следовательно \\(\\xi=xe^{-t}\\). Вдоль характеристики d u/dt=xu_x+u_t, и уравнение дает du/dt+2u=0. При t=0 значение равно cos xi, значит \\(u=\\cos(\\xi)e^{-2t}\\). Возвращаясь к x,t, получаем \\(u(x,t)=e^{-2t}\\cos(xe^{-t})\\).",
+      "text": "Параметризуем характеристику временем t. Тогда\\(dx/dt=x,\\) поэтому \\(x=\\xi e^t,\\) где \\(\\xi -\\) точка пересечения характеристики с прямой \\(t=0.\\) Следовательно \\(\\xi=xe^{-t}.\\) Вдоль характеристики\\(d u/dt=xu x+u_t,\\)и уравнение дает \\(du/dt+2u=0.\\) При \\(t=0\\) значение равно \\(\\cos \\xi,\\) значит \\(u=\\cos(\\xi)e^{-2t}.\\) Возвращаясь к x,t, получаем \\(u(x,t)=e^{-2t}\\cos(xe^{-t}).\\)",
       "status": "ai_checked",
       "standard_idea_ids": [
         "first_integral_difference"
@@ -79,7 +79,7 @@
     "local_score": 5,
     "idea_score": 6,
     "technical_score": 3,
-    "comment": "idea_score=6: первый шаг от прямолинейного переноса к характеристической системе ОДУ; technical_score=3: решаются два элементарных ОДУ.",
+    "comment": "идейная сложность 6: первый шаг от прямолинейного переноса к характеристической системе ОДУ; идейная сложность 3: решаются два элементарных ОДУ.",
     "status": "ai_checked"
   },
   "tags": [
@@ -97,7 +97,7 @@
       "source_id": "src-lebl-diffyqs",
       "role": "textbook_example",
       "status": "source_verified",
-      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.3; web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+      "note": "Раздел 1.9 First-order linear PDEs, Example 1.9.3; web: https://www.jirka.org/diffyqs/html/fopde section.html"
     }
   ],
   "editorial": {

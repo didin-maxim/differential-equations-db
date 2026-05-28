@@ -77,7 +77,7 @@
     "local_score": 3,
     "idea_score": 3,
     "technical_score": 2,
-    "comment": "idea_score=3: надо применить общее решение к двум краевым условиям; technical_score=2: вычисление sin(π)=0.",
+    "comment": "Идейная сложность 3; техническая сложность 2.",
     "status": "ai_checked"
   },
   "tags": [

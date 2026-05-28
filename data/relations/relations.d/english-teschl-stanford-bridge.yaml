@@ -50,7 +50,7 @@
       "to": "teschl-stanford-bridge-floquet-multiplier-stability",
       "type": "prerequisite",
       "distance": 1,
-      "forward_text": "Критерий устойчивости использует равенство x(nT)=M^n x_0, то есть итерацию матрицы монодромии.",
+      "forward_text": "Критерий устойчивости использует равенство \\(x(nT)=M^n x_0\\), то есть итерацию матрицы монодромии.",
       "backward_text": "Устойчивость по мультипликаторам является главным качественным применением базовой монодромии.",
       "status": "ai_checked",
       "confidence": 0.97
@@ -105,7 +105,7 @@
       "to": "teschl-stanford-bridge-sturm-liouville-zero-count-phase",
       "type": "prerequisite",
       "distance": 1,
-      "forward_text": "Счет нулей использует критерий theta(b,lambda)=n π и перевод нулей решения в кратные значения фазового угла.",
+      "forward_text": "Счет нулей использует критерий \\(\\theta(b,\\lambda)=n π\\) и перевод нулей решения в кратные значения фазового угла.",
       "backward_text": "Теорема о n-1 нулях является спектральным применением фазового критерия собственных значений.",
       "status": "ai_checked",
       "confidence": 0.97

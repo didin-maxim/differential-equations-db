@@ -6,7 +6,7 @@
       "to": "local-du-written-2024-nonlinear-p-of-y",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор формулирует стандартный ход p(y)=y' и y''=p dp/dy, который является главным методом в локальной задаче 2024 года.",
+      "forward_text": "Навигатор формулирует стандартный ход \\(p(y)=y'\\) и \\(y''=p dp/dy\\), который является главным методом в локальной задаче 2024 года.",
       "backward_text": "Локальная задача 2024 года служит вычислительным representative ветви p(y) с начальным условием и выбором регулярной ветви.",
       "status": "ai_checked",
       "confidence": 0.97
@@ -28,7 +28,7 @@
       "to": "written-mipt-2000-cauchy-p-of-y-guess",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Навигатор объясняет, как переносить условия y(x_0), y'(x_0) в редуцированную задачу p(y_0)=y'(x_0).",
+      "forward_text": "Навигатор объясняет, как переносить условия \\(y(x_0), y'(x_0)\\) в редуцированную задачу \\(p(y_0)=y'(x_0)\\).",
       "backward_text": "MIPT 2000 является representative-задачей, где начальные условия выбирают нужную ветвь после редукции p(y).",
       "status": "ai_checked",
       "confidence": 0.95
@@ -72,7 +72,7 @@
       "to": "energy-integral-oscillator",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "Редукция p(y) для y''+V'(y)=0 дает энергетический интеграл p^2/2+V(y)=C, поэтому навигатор подводит к базовому representative энергетического уровня.",
+      "forward_text": "Редукция p(y) для \\(y''+V'(y)=0\\) дает энергетический интеграл \\(p^2/2+V(y)=C\\), поэтому навигатор подводит к базовому representative энергетического уровня.",
       "backward_text": "Энергетический осциллятор является соседним representative кластера energy-estimates-second-order-ode: здесь энергия уже используется как первый интеграл и фазовый уровень.",
       "status": "ai_checked",
       "confidence": 0.96
@@ -105,8 +105,8 @@
       "to": "oral-above-three-homogeneous-ratio-substitution",
       "type": "contrast",
       "distance": 2,
-      "forward_text": "Навигатор отделяет редукцию второго порядка от однородной замены первого порядка y=xv: обе могут приводить к разделению, но диагностируются по разным отсутствующим структурам.",
-      "backward_text": "Однородная замена y=xv является representative соседнего separable-homogeneous-first-order, а не самостоятельной редукцией y''.",
+      "forward_text": "Навигатор отделяет редукцию второго порядка от однородной замены первого порядка \\(y=xv\\): обе могут приводить к разделению, но диагностируются по разным отсутствующим структурам.",
+      "backward_text": "Однородная замена \\(y=xv\\) является representative соседнего separable-homogeneous-first-order, а не самостоятельной редукцией y''.",
       "status": "ai_checked",
       "confidence": 0.84
     },

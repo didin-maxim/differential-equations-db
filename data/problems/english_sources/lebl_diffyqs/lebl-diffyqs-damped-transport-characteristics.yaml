@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Lebl, раздел 1.9, упражнение 1.9.1(4)",
-        "text": "Решить задачу Коши π u_x+u_t+u=0, u(x,0)=sin x, при t>0.",
+        "text": "Решить задачу Коши \\(\\piu_x+u_t+u=0, u(x,0)=\\sin x,\\)при t>0.",
         "source_ids": [
           "src-lebl-diffyqs"
         ],
@@ -33,7 +33,7 @@
     {
       "id": "idea-main",
       "title": "По характеристике остается обычное линейное ОДУ",
-      "text": "На прямых x-π t=const значение u уже не постоянно: член +u дает уравнение du/dt+u=0 и множитель \\(e^{-t}\\).",
+      "text": "На прямых \\(x-\\pi t=const\\) значение u уже не постоянно: член +u дает уравнение \\(du/dt+u=0\\) и множитель \\(e^{-t}.\\)",
       "status": "ai_checked",
       "standard_idea_ids": [
         "integrating_factor_linear"
@@ -44,7 +44,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Характеристики задаются dx/dt=π, поэтому x-π t=xi. Вдоль такой прямой полная производная равна d/dt u(xi+π t,t)=π u_x+u_t. Уравнение превращается в du/dt+u=0. Если при t=0 характеристика стартует из точки xi, то u(0)=sin xi, значит \\(u=\\sin(\\xi)e^{-t}\\). Подставляя xi=x-π t, получаем \\(u(x,t)=e^{-t}\\sin(x-\\pi t)\\).",
+      "text": "Характеристики задаются\\(dx/dt=\\pi,\\) поэтому \\(x-\\pi t=\\xi.\\) Вдоль такой прямой полная производная равна \\(d/dt u(\\xi+\\pi t,t)=\\piu_x+u_t.\\)Уравнение превращается в \\(du/dt+u=0.\\) Если при \\(t=0\\) характеристика стартует из точки \\(\\xi,\\) то \\(u(0)=\\sin \\xi,\\) значит \\(u=\\sin(\\xi)e^{-t}.\\) Подставляя \\(\\xi=x-\\pi t,\\) получаем \\(u(x,t)=e^{-t}\\sin(x-\\pi t).\\)",
       "status": "ai_checked",
       "standard_idea_ids": [
         "integrating_factor_linear"
@@ -80,7 +80,7 @@
     "local_score": 4,
     "idea_score": 5,
     "technical_score": 3,
-    "comment": "idea_score=5: перенос данных совмещается с линейным ОДУ вдоль характеристики; technical_score=3: один экспоненциальный множитель.",
+    "comment": "идейная сложность 5: перенос данных совмещается с линейным ОДУ вдоль характеристики; идейная сложность 3: один экспоненциальный множитель.",
     "status": "ai_checked"
   },
   "tags": [
@@ -98,7 +98,7 @@
       "source_id": "src-lebl-diffyqs",
       "role": "exercise_adapted",
       "status": "source_verified",
-      "note": "Раздел 1.9, Exercise 1.9.1(4); web: https://www.jirka.org/diffyqs/html/fopde_section.html"
+      "note": "Раздел 1.9, Exercise 1.9.1(4); web: https://www.jirka.org/diffyqs/html/fopde section.html"
     }
   ],
   "editorial": {

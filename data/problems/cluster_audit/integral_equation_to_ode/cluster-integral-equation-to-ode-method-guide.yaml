@@ -246,7 +246,7 @@
     "relations_status": "cluster-integral-equation-to-ode-method-guide",
     "notes": [
       "Добавлено как теоретико-методический блок кластера integral-equation-to-ode, а не как новая вычислительная задача.",
-      "Аудит определений 2026-05-27: снят статус обычного MIPT-core/theoretical_exam_task; Volterra/Fredholm и Green/Fredholm vocabulary помечены как beyond_standard_course.",
+      "Аудит определений 2026-05-27: снят статус обычного MIPT-core/theoretical exam task; Volterra/Fredholm и Green/Fredholm vocabulary помечены как beyond standard course.",
       "Карточка закрывает дифференцирование интегрального уравнения, перенос условий, потерю констант, базовое различие Volterra/Fredholm и границы с чистыми интегральными уравнениями.",
       "Соседние связи вынесены в data/relations/relations.d/cluster-integral-equation-to-ode.yaml."
     ]

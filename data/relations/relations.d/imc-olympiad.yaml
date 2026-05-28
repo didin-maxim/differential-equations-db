@@ -50,7 +50,7 @@
       "to": "imc-2025-p6-derivative-of-f-over-x",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Множитель 1/x переводит уравнение f'-(1/x)f=-k/x в производную отношения.",
+      "forward_text": "Множитель 1/x переводит уравнение \\(f'-(1/x)f=-k/x\\) в производную отношения.",
       "backward_text": "IMC 2025 P6 распознает тот же линейный множитель внутри задачи на среднее значение.",
       "status": "ai_checked",
       "confidence": 0.88

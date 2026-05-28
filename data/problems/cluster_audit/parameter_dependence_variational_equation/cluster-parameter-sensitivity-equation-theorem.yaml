@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Базовая теорема",
-        "text": "Пусть f(t,x,lambda) непрерывна по t и непрерывно дифференцируема по (x,lambda) в окрестности графика решения задачи x'=f(t,x,lambda), x(t_0,lambda)=xi(lambda), где xi дифференцируема. Если решения существуют на одном фиксированном отрезке, то z(t)=partial x(t,lambda)/partial lambda удовлетворяет z'=D_x f(t,x(t,lambda),lambda)z+partial_lambda f(t,x(t,lambda),lambda), z(t_0)=xi'(lambda).",
+        "text": "Пусть \\(f(t,x,\\lambda)\\) непрерывна по t и непрерывно дифференцируема по \\((x,\\lambda)\\) в окрестности графика решения задачи \\(x'=f(t,x,\\lambda), x(t_0,\\lambda)=\\xi(\\lambda)\\), где \\(\\xi\\) дифференцируема. Если решения существуют на одном фиксированном отрезке, то \\(z(t)=partial x(t,\\lambda)/partial \\lambda\\) удовлетворяет \\(z'=D_x f(t,x(t,\\lambda),\\lambda)z+partial \\lambda f(t,x(t,\\lambda),\\lambda), z(t_0)=\\xi'(\\lambda)\\).",
         "source_ids": [
           "src-teschl-ode-dynamical-systems"
         ],
@@ -45,7 +45,7 @@
     {
       "id": "proof-main",
       "title": "Доказательство",
-      "text": "Интегральная форма имеет вид \\(x(t,\\lambda)=\\xi(\\lambda)+\\int_{t_0}^t f(s,x(s,\\lambda),\\lambda)\\,ds\\). Дифференцируя ее по lambda и используя гладкую зависимость решения от параметра, получаем \\(z(t)=\\xi'(\\lambda)+\\int_{t_0}^t [D_x f(s,x(s,\\lambda),\\lambda)z(s)+\\partial_\\lambda f(s,x(s,\\lambda),\\lambda)]\\,ds\\). Это интегральная форма заявленной линейной задачи Коши. Стандартная строгость получается из оценки остатка в формуле Тейлора для f и неравенства Гронуолла на фиксированном отрезке.",
+      "text": "Интегральная форма имеет вид \\(x(t,\\lambda)=\\xi(\\lambda)+\\int_{t_0}^t f(s,x(s,\\lambda),\\lambda)\\,ds\\).Дифференцируя ее по \\(\\lambda\\) и используя гладкую зависимость решения от параметра, получаем \\(z(t)=\\xi'(\\lambda)+\\int_{t_0}^t [D_x f(s,x(s,\\lambda),\\lambda)z(s)+\\partial_\\lambda f(s,x(s,\\lambda),\\lambda)]\\,ds\\). Это интегральная форма заявленной линейной задачи Коши. Стандартная строгость получается из оценки остатка в формуле Тейлора для f и неравенства Гронуолла на фиксированном отрезке.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants",

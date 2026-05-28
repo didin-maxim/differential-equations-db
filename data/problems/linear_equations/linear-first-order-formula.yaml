@@ -95,7 +95,7 @@
     "local_score": 3,
     "idea_score": 4,
     "technical_score": 4,
-    "comment": "idea_score=4: интегрирующий множитель для общей формулы; technical_score=4: аккуратная проверка формулы.",
+    "comment": "idea-score=4: интегрирующий множитель для общей формулы; technical-score=4: аккуратная проверка формулы.",
     "status": "ai_checked"
   },
   "tags": [

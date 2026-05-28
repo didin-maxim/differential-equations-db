@@ -81,7 +81,7 @@
     "local_score": 3,
     "idea_score": 3,
     "technical_score": 2,
-    "comment": "idea_score=3: стандартная фазовая прямая; technical_score=2: только знаки квадратного многочлена.",
+    "comment": "Идейная сложность 3; техническая сложность 2.",
     "status": "ai_checked"
   },
   "tags": [

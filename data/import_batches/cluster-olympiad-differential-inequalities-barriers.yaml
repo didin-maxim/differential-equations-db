@@ -15,7 +15,7 @@
   ],
   "status": "ai_checked",
   "notes": [
-    "Пачка добавляет только theorem/method_guide/cluster_representative для уже существующего олимпиадного кластера.",
+    "Пачка добавляет только \\(theorem/method_guide/cluster_representative\\) для уже существующего олимпиадного кластера.",
     "Новые архивные вычислительные задачи не импортировались: текущие representatives уже покрывают угол, arctan/blow-up, energy, backward positivity, интегрируемые хвосты, выпуклость, логарифмические отношения и асимптотические барьеры.",
     "Связи вынесены в data/relations/relations.d/cluster-olympiad-differential-inequalities-barriers.yaml.",
     "Экзаменационная пригодность представителей зафиксирована в docs/reviews/cluster-theory-olympiad-differential-inequalities-barriers.md."

@@ -117,7 +117,7 @@
       "type": "same_method",
       "distance": 1,
       "forward_text": "Обе задачи доказывают конечный взрыв интегрированием дифференциального неравенства.",
-      "backward_text": "Неравенство с 1+y^2 использует arctan вместо 1/y.",
+      "backward_text": "Неравенство с \\(1+y^2\\) использует arctan вместо 1/y.",
       "status": "ai_checked",
       "confidence": 0.85
     },
@@ -127,7 +127,7 @@
       "to": "regular-singular-euler-frobenius",
       "type": "same_method",
       "distance": 1,
-      "forward_text": "Оба решения начинаются с подстановки y=x^r.",
+      "forward_text": "Оба решения начинаются с подстановки \\(y=x^r\\).",
       "backward_text": "Уравнение Эйлера является моделью индикаторного уравнения Фробениуса.",
       "status": "ai_checked",
       "confidence": 0.85

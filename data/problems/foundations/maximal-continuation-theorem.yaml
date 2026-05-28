@@ -80,7 +80,7 @@
     "local_score": 5,
     "idea_score": 6,
     "technical_score": 5,
-    "comment": "idea_score=6: доказательство через компактность графика и продолжение; technical_score=5: умеренная работа с оценками и пределом.",
+    "comment": "idea-score=6: доказательство через компактность графика и продолжение; technical-score=5: умеренная работа с оценками и пределом.",
     "status": "ai_checked"
   },
   "tags": [

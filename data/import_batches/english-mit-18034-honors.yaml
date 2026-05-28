@@ -24,6 +24,6 @@
   "notes": [
     "Импорт намеренно выборочный: исключены массовые задачи на constant coefficients и Laplace transform, а также задачи, где MIT-лист ссылается на Birkhoff-Rota без самодостаточного условия.",
     "Перед добавлением выполнен поиск по кластерам и локальным формулам: resonance, Picard, one-sided Lipschitz, maximum principle, fundamental matrix, periodic solutions, Prufer/oscillation, first integral, Lyapunov.",
-    "Карточки помечены standard_course_methods, если полностью решаются методами стандартного курса, и advanced_standard_course, если являются аккуратным мостом за базовую программу."
+    "Карточки помечены \\(standard_course_methods\\), если полностью решаются методами стандартного курса, и \\(advanced_standard_course\\), если являются аккуратным мостом за базовую программу."
   ]
 }

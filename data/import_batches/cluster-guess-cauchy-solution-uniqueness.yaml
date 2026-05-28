@@ -21,7 +21,7 @@
   "notes": [
     "Добавление точечное: пять новых self-authored/model tasks закрывают основные варианты кластера без массового импорта однотипных равновесий.",
     "Маятник включен как классический сюжет, где общее решение связано с неэлементарными квадратурами, но выбранная задача Коши решается равновесием и единственностью.",
-    "Малую lemma-карточку не добавляли: в базе уже есть picard-lindelof-theorem, one-dimensional-autonomous-no-crossing, two-solutions-touching и standard idea state_vector_uniqueness.",
+    "Малую lemma-карточку не добавляли: в базе уже есть picard-lindelof-theorem, one-dimensional-autonomous-no-crossing, two-solutions-touching и \\(standard idea state_vector_uniqueness\\).",
     "Методический блок cluster-guess-cauchy-method-guide добавлен как теория/навигатор к кластеру, а не как новая вычислительная задача."
   ]
 }

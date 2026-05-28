@@ -41,7 +41,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Ищем H=dx-c ln x+by-a ln y. Тогда H_x=d-c/x, H_y=b-a/y. Производная вдоль решений равна (d-c/x)x(a-by)+(b-a/y)y(-c+dx)=(dx-c)(a-by)+(by-a)(-c+dx)=0. Значит H сохраняется.",
+      "text": "Ищем \\(H=dx-c\\ln x+by-a\\ln y\\). Тогда \\(H_x=d-c/x\\), \\(H_y=b-a/y\\). Производная вдоль решений равна \\((d-c/x)x(a-by)+(b-a/y)y(-c+dx)=(dx-c)(a-by)+(by-a)(-c+dx)=0\\). Значит H сохраняется.",
       "status": "ai_checked"
     }
   ],
@@ -72,7 +72,7 @@
     "local_score": 3,
     "idea_score": 5,
     "technical_score": 4,
-    "comment": "idea_score=5: подбор стандартного первого интеграла Лотки-Вольтерры; technical_score=4: аккуратная проверка производной.",
+    "comment": "idea-score=5: подбор стандартного первого интеграла Лотки-Вольтерры; technical-score=4: аккуратная проверка производной.",
     "status": "ai_checked"
   },
   "tags": [

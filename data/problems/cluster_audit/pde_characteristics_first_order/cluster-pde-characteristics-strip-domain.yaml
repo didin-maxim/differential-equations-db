@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Для уравнения u_x+u_y=0 заданы данные u(0,y)=f(y) только при |y|<1. На какую область плоскости эти данные однозначно продолжают решение? Схема: data/assets/images/pde_characteristics/strip-domain.svg.",
+        "text": "Для уравнения \\(u_x+u_y=0\\) заданы данные u(0,y)=f(y) только при |y|<1. На какую область плоскости эти данные однозначно продолжают решение? Схема: data/assets/images/pde characteristics/strip-domain.svg.",
         "source_ids": [
           "src-cluster-pde-characteristics-first-order-audit"
         ],

@@ -84,7 +84,7 @@
     "local_score": 5,
     "idea_score": 6,
     "technical_score": 2,
-    "comment": "idea_score=6: нужно читать спектр по функциональным режимам, включая жорданов множитель t; technical_score=2: счета почти нет.",
+    "comment": "idea score=6: нужно читать спектр по функциональным режимам, включая жорданов множитель t; technical score=2: счета почти нет.",
     "status": "ai_checked"
   },
   "tags": [

@@ -77,7 +77,7 @@
     "local_score": 3,
     "idea_score": 3,
     "technical_score": 2,
-    "comment": "idea_score=3: сведение к простейшему линейному уравнению; technical_score=2: минимальные вычисления.",
+    "comment": "idea-score=3: сведение к простейшему линейному уравнению; technical-score=2: минимальные вычисления.",
     "status": "ai_checked"
   },
   "tags": [

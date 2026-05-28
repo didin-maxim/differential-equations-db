@@ -15,7 +15,7 @@
       {
         "id": "stmt-original",
         "title": "Задача",
-        "text": "Пусть A(t) непрерывна и T-периодична, X'=A(t)X, X(0)=I, M=X(T). Докажите, что произведение всех мультипликаторов Флоке, считая алгебраические кратности, равно \\(\\det M=e^{\\int_0^T \\operatorname{tr} A(s)\\,ds}\\). В частности, для системы с tr A(t)=0 произведение мультипликаторов равно 1.",
+        "text": "Пусть A(t) непрерывна и T-периодична\\(, X'=A(t)X, X(0)=I, M=X(T).\\) Докажите, что произведение всех мультипликаторов Флоке, считая алгебраические кратности, равно \\(\\det M=e^{\\int_0^T \\operatorname{tr} A(s)\\,ds}.\\) В частности, для системы с \\(tr A(t)=0\\) произведение мультипликаторов равно 1.",
         "source_ids": [
           "src-teschl-ode-dynamical-systems"
         ],
@@ -46,7 +46,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "По формуле Лиувилля для матричного уравнения X'=A(t)X имеем (det X)'=tr A(t) det X. Так как X(0)=I, то det X(0)=1, и решение этого скалярного уравнения равно \\(\\det X(t)=e^{\\int_0^t \\operatorname{tr} A(s)\\,ds}\\). При t=T получаем \\(\\det M=\\det X(T)=e^{\\int_0^T \\operatorname{tr} A(s)\\,ds}\\). С другой стороны, мультипликаторы Флоке по определению являются собственными значениями M, а произведение собственных значений матрицы с учетом алгебраических кратностей равно ее определителю. Если tr A(t)=0 на всем периоде, интеграл равен нулю, значит det M=1. Это задача-мост: она использует стандартную формулу Лиувилля, но интерпретирует ее в языке теории Флоке.",
+      "text": "По формуле Лиувилля для матричного уравнения \\(X'=A(t)X\\) имеем \\((det X)'=tr A(t) det X.\\) Так как \\(X(0)=I,\\) то \\(det X(0)=1,\\) и решение этого скалярного уравнения равно \\(\\det X(t)=e^{\\int_0^t \\operatorname{tr} A(s)\\,ds}.\\) При \\(t=T\\) получаем \\(\\det M=\\det X(T)=e^{\\int_0^T \\operatorname{tr} A(s)\\,ds}.\\) С другой стороны, мультипликаторы Флоке по определению являются собственными значениями M, а произведение собственных значений матрицы с учетом алгебраических кратностей равно ее определителю. Если \\(tr A(t)=0\\) на всем периоде, интеграл равен нулю, значит \\(det M=1.\\) Это задача-мост: она использует стандартную формулу Лиувилля, но интерпретирует ее в языке теории Флоке.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "wronskian_liouville"
@@ -71,7 +71,7 @@
     ],
     "goal": [
       "prove",
-      "compute_invariant"
+      "compute invariant"
     ],
     "keywords": [
       "teschl_stanford_bridge",
@@ -86,7 +86,7 @@
     "local_score": 6,
     "idea_score": 6,
     "technical_score": 3,
-    "comment": "Технически это формула Лиувилля из стандартного курса; advanced_standard_course относится только к языку мультипликаторов Флоке.",
+    "comment": "Технически это формула Лиувилля из стандартного курса; advanced standard course относится только к языку мультипликаторов Флоке.",
     "status": "ai_checked"
   },
   "tags": [
@@ -103,7 +103,7 @@
       "source_id": "src-teschl-ode-dynamical-systems",
       "role": "problem_source",
       "status": "source_verified",
-      "note": "Teschl, §3.6 Periodic linear systems, Problem 3.43 on Floquet multipliers; uses Liouville's formula from the linear systems chapter."
+      "note": "Teschl, §3.6 Periodic linear systems, Problem 3.43 on Floquet multipliers; \\(uses Liouville's formula from the linear systems chapter.\\)"
     }
   ],
   "editorial": {

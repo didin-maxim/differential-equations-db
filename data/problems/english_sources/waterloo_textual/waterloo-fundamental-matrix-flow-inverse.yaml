@@ -2,39 +2,76 @@
   "id": "waterloo-fundamental-matrix-flow-inverse",
   "title": "Фундаментальная матрица и обратный поток",
   "fragment": "systems",
-  "kind": {"primary": "lemma", "secondary": []},
+  "kind": {
+    "primary": "lemma",
+    "secondary": []
+  },
   "language": "ru",
   "statements": {
-    "original": [{
-      "id": "stmt-original",
-      "title": "Фундаментальная матрица как поток",
-      "text": "Пусть Phi(t) - фундаментальная матрица системы x'=Ax, нормированная условием Phi(0)=I. Докажите геометрически и алгебраически, что Phi(t+s)=Phi(t)Phi(s) и Phi(-t)=Phi(t)^{-1}.",
-      "source_ids": ["src-waterloo-amath250-notes"],
-      "status": "ai_checked",
-      "self_contained": {"status": "ai_checked"},
-      "definition_ids": ["linear_system", "fundamental_matrix"]
-    }]
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Фундаментальная матрица как поток",
+        "text": "Пусть \\(\\Phi(t) -\\) фундаментальная матрица системы \\(x'=Ax,\\) нормированная условием \\(\\Phi(0)=I.\\) Докажите геометрически и алгебраически, что \\(\\Phi(t+s)=\\Phi(t)\\Phi(s)\\) и\\(\\Phi(-t)=\\Phi(t)^{-1}.\\)",
+        "source_ids": [
+          "src-waterloo-amath250-notes"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "linear_system",
+          "fundamental_matrix"
+        ]
+      }
+    ]
   },
-  "ideas": [{
-    "id": "idea-main",
-    "title": "Фундаментальная матрица переводит начальное состояние во время t",
-    "text": "Оператор Phi(t) - это сдвиг вдоль траекторий линейной автономной системы. Сдвиг сначала на s, потом на t равен сдвигу на t+s; обратный сдвиг получается движением на время -t.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["state_vector_uniqueness"]
-  }],
-  "solutions": [{
-    "id": "sol-main",
-    "title": "Доказательство",
-    "text": "Для любого начального вектора a решение имеет вид x(u)=Phi(u)a. Если сначала пройти время s, получим состояние b=Phi(s)a. Запуская ту же автономную систему из b еще на время t, получаем Phi(t)b=Phi(t)Phi(s)a. С другой стороны, это то же решение, прошедшее суммарное время t+s, то есть Phi(t+s)a. Так как a произволен, Phi(t+s)=Phi(t)Phi(s). Подставляя s=-t, имеем I=Phi(0)=Phi(t)Phi(-t). При t, замененном на -t, получаем также I=Phi(-t)Phi(t). Следовательно Phi(t) обратима, и ее обратная матрица равна Phi(-t).",
-    "status": "ai_checked",
-    "standard_idea_ids": ["state_vector_uniqueness"]
-  }],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Фундаментальная матрица переводит начальное состояние во время t",
+      "text": "Оператор \\(\\Phi(t) -\\) это сдвиг вдоль траекторий линейной автономной системы. Сдвиг сначала на s, потом на t равен сдвигу на t+s; обратный сдвиг получается движением на время -t.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Доказательство",
+      "text": "Для любого начального вектора a решение имеет вид \\(x(u)=\\Phi(u)a.\\) Если сначала пройти время s, получим состояние \\(b=\\Phi(s)a.\\) Запуская ту же автономную систему из b еще на время t, получаем \\(\\Phi(t)b=\\Phi(t)\\Phi(s)a.\\) С другой стороны, это то же решение, прошедшее суммарное время t+s, то есть \\(\\Phi(t+s)a.\\) Так как a произволен\\(, \\Phi(t+s)=\\Phi(t)\\Phi(s).\\) Подставляя \\(s=-t,\\) имеем \\(I=\\Phi(0)=\\Phi(t)\\Phi(-t).\\) При t, замененном на -t, получаем также \\(I=\\Phi(-t)\\Phi(t).\\) Следовательно \\(\\Phi(t)\\) обратима, и ее обратная матрица равна \\(\\Phi(-t).\\)",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "state_vector_uniqueness"
+      ]
+    }
+  ],
   "differential_equations_profile": {
-    "equation_type": ["linear_system"],
-    "methods": ["fundamental_matrix", "flow_property", "uniqueness"],
-    "objects": ["fundamental_matrix", "linear_flow", "inverse_operator"],
-    "goal": ["prove", "explain"],
-    "keywords": ["Waterloo", "fundamental_matrix", "flow_inverse"],
+    "equation_type": [
+      "linear_system"
+    ],
+    "methods": [
+      "fundamental_matrix",
+      "flow_property",
+      "uniqueness"
+    ],
+    "objects": [
+      "fundamental_matrix",
+      "linear_flow",
+      "inverse_operator"
+    ],
+    "goal": [
+      "prove",
+      "explain"
+    ],
+    "keywords": [
+      "Waterloo",
+      "fundamental_matrix",
+      "flow_inverse"
+    ],
     "status": "ai_checked"
   },
   "difficulty": {
@@ -45,19 +82,30 @@
     "comment": "Короткое доказательство, но важная концептуальная интерпретация фундаментальной матрицы как потока.",
     "status": "ai_checked"
   },
-  "tags": ["linear_systems", "matrix_exponential", "cauchy_uniqueness", "standard_course_methods", "complete_proof", "source_solution_checked"],
-  "sources": [{
-    "source_id": "src-waterloo-amath250-notes",
-    "role": "problem_style_source",
-    "status": "source_verified",
-    "note": "AMath 250 Course Notes, ed. 2.0, Section 5.5.1 and Problem Set 5, questions 11(c) and 12(d), PDF pp.164-166, 227-228."
-  }],
+  "tags": [
+    "linear_systems",
+    "matrix_exponential",
+    "cauchy_uniqueness",
+    "standard_course_methods",
+    "complete_proof",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "problem_style_source",
+      "status": "source_verified",
+      "note": "AMath 250 Course Notes, ed. 2.0, Section 5.5.1 and Problem Set 5, questions 11(c) and 12(d), PDF pp.164-166, 227-228."
+    }
+  ],
   "editorial": {
     "created_by": "ai",
     "created_at": "2026-05-26",
     "review_status": "ai_checked",
     "public_ready": true,
     "relations_status": "batch_links",
-    "notes": ["Добавлено как качественная/концептуальная карточка по фундаментальной матрице."]
+    "notes": [
+      "Добавлено как качественная/концептуальная карточка по фундаментальной матрице."
+    ]
   }
 }

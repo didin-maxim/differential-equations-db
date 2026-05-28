@@ -76,6 +76,7 @@ SKIP_KEYS = {
     "accepted_latex",
     "accepted_math",
     "correct_options",
+    "differential_equations_profile",
 }
 
 MATH_DELIMS = [
@@ -87,16 +88,37 @@ MATH_DELIMS = [
 
 RAW_PATTERNS = [
     ("visible-question-mark-run", re.compile(r"\?{4,}")),
+    ("replacement-character", re.compile(r"�")),
+    (
+        "mojibake-sequence",
+        re.compile(
+            r"(?:Р[ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏђ‘’“”•–—™љ›њќћџ]"
+            r"|С[ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏ]"
+            r"|О[»јЅ]|П[ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏ]|в[€‰†Ђ])"
+        ),
+    ),
     ("broken-mathbb-nesting", re.compile(r"\\mathbb\s+\\\(")),
     ("double-open-inline-math", re.compile(r"\\\(\s*\\\(")),
     ("double-close-inline-math", re.compile(r"\\\)\s*\\\)")),
     ("subscript-without-underscore", re.compile(r"\b[xtypuvwsz][0-9]\b")),
     ("raw-real-product", re.compile(r"\bR\s*x\s*R(?:\^n)?\b")),
     ("raw-exp", re.compile(r"(?<![\\A-Za-z])exp\(")),
+    ("raw-exp-word", re.compile(r"(?<![\\A-Za-z])\bexp\b")),
+    ("raw-int-word", re.compile(r"(?<![\\A-Za-z])\bint\b")),
     ("raw-e-power-paren", re.compile(r"(?<!\\)e\^\(")),
     ("raw-e-power", re.compile(r"(?<!\\)e\^(?:\{[^}\n]{1,120}\}|[A-Za-z0-9_+\-*/()]{1,120})")),
     ("raw-unicode-integral-limit", re.compile(r"∫_[A-Za-z0-9{}()'\\^+\-/]+")),
     ("raw-integral", re.compile(r"(?<!\\)\b(?:int|sum|prod|product|lim)_[A-Za-z0-9{}()'\\^+\-/]+")),
+    ("visible-underscore", re.compile(r"_")),
+    ("visible-caret", re.compile(r"\^")),
+    (
+        "raw-differential-form-term",
+        re.compile(r"(?:\([^()\n]{1,80}\)|\b[A-Z][A-Za-z0-9_]*(?:\([^()\n]{0,80}\))?|\b[a-z]\([^()\n]{0,80}\)|\b[0-9xy][0-9xy_^*/+\- ]{0,60}|\b[A-Z])\s*d[xy]\b"),
+    ),
+    (
+        "raw-latin-greek-name",
+        re.compile(r"(?<![\\A-Za-z])\b(?:alpha|beta|gamma|delta|epsilon|lambda|mu|nu|xi|phi|varphi|Phi|psi|theta|omega|Delta)\b"),
+    ),
     ("raw-pi", re.compile(r"(?<![\\A-Za-z])\bpi\b")),
     ("raw-infty", re.compile(r"(?<![\\A-Za-z])\binfty\b")),
     ("raw-arrow", re.compile(r"->")),
@@ -105,10 +127,16 @@ RAW_PATTERNS = [
 ]
 
 RAW_ANYWHERE_PATTERNS = [
-    ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|alpha|beta|gamma|le|ge|ne|to|infty|pi|cdot|times)\b")),
+    ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|nu|xi|alpha|beta|gamma|theta|phi|varphi|psi|omega|le|ge|ne|to|infty|pi|cdot|times)\b")),
+    ("double-open-inline-math-anywhere", re.compile(r"\\\(\s*\\\(")),
+    ("tex-word-int-in-exponent", re.compile(r"e\^\{?-?int\b")),
 ]
 
 HYBRID_TEX_PATTERNS = [
+    (
+        "plain-parens-around-tex",
+        re.compile(r"\([^\n()]{0,80}\\\([^\n]{1,120}\\\)[^\n()]{0,80}\)"),
+    ),
     (
         "hybrid-tex-left-factor",
         re.compile(r"(?:[A-Za-z][A-Za-z0-9_']*|\d+|[)\]])\s*\\\((?:e\^|\\int|\\sum|\\prod|[A-Za-z]_\{|[A-Za-z]\^)"),
@@ -120,6 +148,10 @@ HYBRID_TEX_PATTERNS = [
     (
         "hybrid-tex-binary-operator",
         re.compile(r"(?:[A-Za-z0-9_')\]])\s*[+\-*/=]\s*\\\("),
+    ),
+    (
+        "hybrid-function-call-split",
+        re.compile(r"\b(?:sin|cos|tan|tg|ctg|ln|log|exp|sh|ch|sinh|cosh)\s*\\\("),
     ),
 ]
 
@@ -217,6 +249,34 @@ def replace_balanced_function(text, name, renderer):
     return "".join(out)
 
 
+DIFFERENTIAL_TERM_RE = r"(?:\([^()\n]{1,100}\)|\b[A-Z][A-Za-z0-9_]*(?:\([^()\n]{0,100}\))?|\b[a-z]\([^()\n]{0,100}\)|\b[0-9xy][0-9xy_^*/+\- ]{0,60}|\b[A-Z])\s*d[xy]\b"
+
+
+def tex_differential_term(value):
+    value = re.sub(r"\s*d([xy])\b", r"\\,d\1", value.strip())
+    return value
+
+
+def wrap_differential_forms(value):
+    def wrap_two_terms(match):
+        left = tex_differential_term(match.group("left"))
+        right = tex_differential_term(match.group("right"))
+        tail = re.sub(r"\s+", "", match.group("tail") or "")
+        return rf"\({left}{match.group('op')}{right}{tail}\)"
+
+    value = re.sub(
+        rf"(?P<left>{DIFFERENTIAL_TERM_RE})\s*(?P<op>[+\-])\s*(?P<right>{DIFFERENTIAL_TERM_RE})(?P<tail>\s*=\s*0)?",
+        wrap_two_terms,
+        value,
+    )
+
+    def wrap_one_term(match):
+        term = tex_differential_term(match.group(0))
+        return rf"\({term}\)"
+
+    return re.sub(DIFFERENTIAL_TERM_RE, wrap_one_term, value)
+
+
 def transform_outside_math(text, transform):
     value = str(text)
     spans = []
@@ -310,6 +370,7 @@ def fix_text(text):
         )
         value = re.sub(r"(?<!\\)\b(?:int|sum|prod|product|lim)_[^\s,.;:!?]+", lambda m: r"\(\\" + m.group(0) + r"\)", value)
         value = re.sub(r"\\(?:int|sum|prod|product|lim)_[^\s,.;:!?]+", wrap_operator, value)
+        value = wrap_differential_forms(value)
         value = value.replace(r"\le", "≤").replace(r"\ge", "≥").replace(r"\ne", "≠").replace(r"\to", "→")
         value = value.replace(r"\pi", "π").replace(r"\infty", "∞")
         value = re.sub(r"(?<![\\A-Za-z])\bpi\b", "π", value)

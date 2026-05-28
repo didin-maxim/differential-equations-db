@@ -2,39 +2,75 @@
   "id": "waterloo-family-circles-recover-ode",
   "title": "Восстановление ОДУ по семейству касательных окружностей",
   "fragment": "first_order",
-  "kind": {"primary": "problem", "secondary": []},
+  "kind": {
+    "primary": "problem",
+    "secondary": []
+  },
   "language": "ru",
   "statements": {
-    "original": [{
-      "id": "stmt-original",
-      "title": "Восстановление ОДУ по семейству окружностей",
-      "text": "Семейство кривых задано уравнением k(x^2+y^2)=2y, где k - параметр. Восстановите дифференциальное уравнение первого порядка, для которого эти кривые являются интегральными, и опишите форму типичных кривых семейства.",
-      "source_ids": ["src-waterloo-amath250-notes"],
-      "status": "ai_checked",
-      "self_contained": {"status": "ai_checked"},
-      "definition_ids": ["ordinary_differential_equation", "solution"]
-    }]
+    "original": [
+      {
+        "id": "stmt-original",
+        "title": "Восстановление ОДУ по семейству окружностей",
+        "text": "Семейство кривых задано уравнением\\(k(x^2+y^2)=2y,\\) где k - параметр. Восстановите дифференциальное уравнение первого порядка, для которого эти кривые являются интегральными, и опишите форму типичных кривых семейства.",
+        "source_ids": [
+          "src-waterloo-amath250-notes"
+        ],
+        "status": "ai_checked",
+        "self_contained": {
+          "status": "ai_checked"
+        },
+        "definition_ids": [
+          "ordinary_differential_equation",
+          "solution"
+        ]
+      }
+    ]
   },
-  "ideas": [{
-    "id": "idea-main",
-    "title": "Исключить параметр дифференцированием",
-    "text": "Параметр k сначала выражается из самого семейства, а затем исключается из продифференцированного равенства. Геометрически это семейство окружностей с общей точкой касания, что помогает проверить знак наклона.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["differentiate_auxiliary_function"]
-  }],
-  "solutions": [{
-    "id": "sol-main",
-    "title": "Решение",
-    "text": "Из k(x^2+y^2)=2y получаем k=2y/(x^2+y^2) там, где кривая не выродилась. Дифференцируем исходное равенство по x: k(2x+2yy')=2y'. Подставляя k, имеем 2y(x+yy')=(x^2+y^2)y'. Отсюда (y^2-x^2)y'+2xy=0, или y'=2xy/(x^2-y^2). Если k>0, исходное равенство переписывается как x^2+(y-1/k)^2=1/k^2: это окружности, касающиеся оси Ox в начале координат сверху. При k<0 такие же окружности расположены снизу. Полученное поле наклонов согласуется с этой картиной.",
-    "status": "ai_checked",
-    "standard_idea_ids": ["differentiate_auxiliary_function"]
-  }],
+  "ideas": [
+    {
+      "id": "idea-main",
+      "title": "Исключить параметр дифференцированием",
+      "text": "Параметр k сначала выражается из самого семейства, а затем исключается из продифференцированного равенства. Геометрически это семейство окружностей с общей точкой касания, что помогает проверить знак наклона.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "sol-main",
+      "title": "Решение",
+      "text": "Из\\(k(x^2+y^2)=2y\\) получаем\\(k=2y/(x^2+y^2)\\) там, где кривая не выродилась. Дифференцируем исходное равенство по x: \\(k(2x+2yy')=2y'.\\) Подставляя k, имеем\\(2y(x+yy')=(x^2+y^2)y'.\\) Отсюда\\((y^2-x^2)y'+2xy=0,\\) или\\(y'=2xy/(x^2-y^2).\\) Если k>0, исходное равенство переписывается как\\(x^2+(y-1/k)^2=1/k^2\\): это окружности, касающиеся оси Ox в начале координат сверху. При k<0 такие же окружности расположены снизу. Полученное поле наклонов согласуется с этой картиной.",
+      "status": "ai_checked",
+      "standard_idea_ids": [
+        "differentiate_auxiliary_function"
+      ]
+    }
+  ],
   "differential_equations_profile": {
-    "equation_type": ["first_order", "implicit_family"],
-    "methods": ["parameter_elimination", "qualitative_sketch"],
-    "objects": ["integral_curves", "family_of_curves"],
-    "goal": ["derive", "sketch"],
-    "keywords": ["Waterloo", "recover_ode_from_family", "tangent_circles"],
+    "equation_type": [
+      "first_order",
+      "implicit_family"
+    ],
+    "methods": [
+      "parameter_elimination",
+      "qualitative_sketch"
+    ],
+    "objects": [
+      "integral_curves",
+      "family_of_curves"
+    ],
+    "goal": [
+      "derive",
+      "sketch"
+    ],
+    "keywords": [
+      "Waterloo",
+      "recover_ode_from_family",
+      "tangent_circles"
+    ],
     "status": "ai_checked"
   },
   "difficulty": {
@@ -45,19 +81,29 @@
     "comment": "Идея - исключить параметр из семейства и его производной; качественный контроль дает геометрия окружностей.",
     "status": "ai_checked"
   },
-  "tags": ["recover_ode_from_family", "graphical_construction", "standard_course_methods", "complete_proof", "source_solution_checked"],
-  "sources": [{
-    "source_id": "src-waterloo-amath250-notes",
-    "role": "problem_style_source",
-    "status": "source_verified",
-    "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 1, questions on recovering a DE from a one-parameter family of curves."
-  }],
+  "tags": [
+    "recover_ode_from_family",
+    "graphical_construction",
+    "standard_course_methods",
+    "complete_proof",
+    "source_solution_checked"
+  ],
+  "sources": [
+    {
+      "source_id": "src-waterloo-amath250-notes",
+      "role": "problem_style_source",
+      "status": "source_verified",
+      "note": "AMath 250 Course Notes, ed. 2.0, Problem Set 1, questions on recovering a DE from a one-parameter family of curves."
+    }
+  ],
   "editorial": {
     "created_by": "ai",
     "created_at": "2026-05-26",
     "review_status": "ai_checked",
     "public_ready": true,
     "relations_status": "batch_links",
-    "notes": ["Добавлено как текстово-геометрическая задача Waterloo; не является очередным примером решения разделяющегося уравнения."]
+    "notes": [
+      "Добавлено как текстово-геометрическая задача Waterloo; не является очередным примером решения разделяющегося уравнения."
+    ]
   }
 }

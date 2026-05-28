@@ -5,7 +5,7 @@
   "created_at": "2026-05-27",
   "notes": [
     "Исходные олимпиадные задачи часто слишком идейны для автопроверки; ниже оставлены только low-tech модификации.",
-    "Перед переносом в основной questions.yaml нужно проверить баланс уровней 7-9 и ручные distractor_rationale."
+    "Перед переносом в основной questions.yaml нужно проверить баланс уровней 7-9 и ручные distractor rationale."
   ],
   "questions": [
     {
@@ -15,7 +15,7 @@
       "topic": "first_order",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Для уравнения из МГУ 2024/1 после умножения на 1/x введите первый интеграл F(x,y).",
+      "prompt_override": "Для уравнения из МГУ 2024/1 после умножения на \\(1/x\\) введите первый интеграл \\(F(x,y)\\).",
       "auto_check": {
         "type": "formula",
         "accepted_latex": [
@@ -36,11 +36,11 @@
       "topic": "linear_equations",
       "question_type": "understanding",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Функция \\(t e^{t}\\) является решением t y'-(t+1)y=0. Что это показывает?",
+      "prompt_override": "Функция \\(t e^{t}\\) является решением \\(ty'-(t+1)y=0\\). Что это показывает?",
       "options": [
         {
           "id": "not_constant_coeff_characteristic",
-          "text": "Из решения \\(t e^{t}\\) не следует кратность корня lambda=1 у характеристического многочлена.",
+          "text": "Из решения \\(t e^{t}\\) не следует кратность корня \\(\\lambda=1\\) у характеристического многочлена.",
           "is_correct": true
         },
         {
@@ -67,7 +67,7 @@
       "topic": "systems_matrix_exponential",
       "question_type": "application",
       "answer_mode": "numeric",
-      "prompt_override": "В условиях карточки среднее значение tr A равно 0, а L и L^{-1} ограничены. Чему равно среднее значение tr B?",
+      "prompt_override": "В условиях карточки среднее значение \\(\\operatorname{tr} A\\) равно 0, а L и \\(L^{-1}\\) ограничены. Чему равно среднее значение \\(\\operatorname{tr} B\\)?",
       "auto_check": {
         "type": "numeric",
         "value": 0.0,

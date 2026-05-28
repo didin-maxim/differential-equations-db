@@ -102,7 +102,7 @@
       "source_id": "src-mipt-oral-exam-model-tasks",
       "role": "self_authored_problem",
       "status": "ai_generated_from_course_requirements",
-      "note": "Составлено как компактный представитель кластера recover-ode-from-family после проверки Waterloo и local_du."
+      "note": "Составлено как компактный представитель кластера recover-ode-from-family после проверки Waterloo и local du."
     }
   ],
   "editorial": {
@@ -112,7 +112,7 @@
     "public_ready": true,
     "relations_status": "cluster-recover-ode-from-family",
     "notes": [
-      "Не добавлять рядом очередные семейства вида y=phi(x)+C psi(x), если они отличаются только выбором phi и psi."
+      "Не добавлять рядом очередные семейства вида \\(y=\\phi(x)+C \\psi(x)\\), если они отличаются только выбором \\(\\phi\\) и \\(\\psi\\)."
     ]
   }
 }

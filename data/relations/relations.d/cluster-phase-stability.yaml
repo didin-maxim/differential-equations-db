@@ -17,7 +17,7 @@
       "to": "cluster-phase-stability-visual-asymptotic-sink",
       "type": "teaches_before",
       "distance": 1,
-      "forward_text": "После epsilon-delta определения визуальная карточка просит распознать случай, где выполнены и удержание, и сходимость.",
+      "forward_text": "После \\(\\varepsilon\\text{-}\\delta\\) определения визуальная карточка просит распознать случай, где выполнены и удержание, и сходимость.",
       "backward_text": "Спиральный сток иллюстрирует положительный пример асимптотической устойчивости из определения.",
       "status": "ai_checked",
       "confidence": 0.93

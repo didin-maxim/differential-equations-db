@@ -108,7 +108,7 @@
     "local_score": 5,
     "idea_score": 5,
     "technical_score": 3,
-    "comment": "idea_score=5: применение единственности к запрету пересечения равновесия; technical_score=3: вычислений почти нет.",
+    "comment": "idea-score=5: применение единственности к запрету пересечения равновесия; technical-score=3: вычислений почти нет.",
     "status": "ai_checked"
   },
   "tags": [

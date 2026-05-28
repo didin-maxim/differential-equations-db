@@ -41,7 +41,7 @@
     {
       "id": "proof-gronwall",
       "title": "Доказательство",
-      "text": "Обозначим \\(v(t)=a+\\int_{t_0}^{t} b(s)u(s)\\,ds\\). Тогда u(t)≤v(t), v(t)≥0 и v'(t)=b(t)u(t)≤b(t)v(t). Если a>0, делим на v(t) и получаем (ln v)'≤b(t). После интегрирования \\(v(t)\\le a e^{\\int_{t_0}^{t} b(s)\\,ds}\\). Значит и \\(u(t)\\le a e^{\\int_{t_0}^{t} b(s)\\,ds}\\). Если a=0, применим доказанное к a=epsilon и затем устремим epsilon к нулю.",
+      "text": "Обозначим \\(v(t)=a+\\int_{t_0}^{t} b(s)u(s)\\,ds\\). Тогда \\(u(t)\\le v(t)\\), \\(v(t)\\ge0\\) и \\(v'(t)=b(t)u(t)\\le b(t)v(t)\\). Если \\(a>0\\), делим на v(t) и получаем \\((\\ln v)'\\le b(t)\\). После интегрирования \\(v(t)\\le a e^{\\int_{t_0}^{t} b(s)\\,ds}\\). Значит и \\(u(t)\\le a e^{\\int_{t_0}^{t} b(s)\\,ds}\\). Если \\(a=0\\), применим доказанное к \\(a=\\varepsilon\\) и затем устремим \\(\\varepsilon\\) к нулю.",
       "status": "ai_checked",
       "standard_idea_ids": [
         "gronwall_estimate"
@@ -77,7 +77,7 @@
     "local_score": 3,
     "idea_score": 4,
     "technical_score": 4,
-    "comment": "idea_score=4: стандартная экспоненциальная оценка; technical_score=4: короткий счет с интегралом.",
+    "comment": "idea-score=4: стандартная экспоненциальная оценка; technical-score=4: короткий счет с интегралом.",
     "status": "ai_checked"
   },
   "tags": [

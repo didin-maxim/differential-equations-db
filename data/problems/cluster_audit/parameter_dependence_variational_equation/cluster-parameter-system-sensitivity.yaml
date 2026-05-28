@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Модельная задача",
-        "text": "Пусть x(t,a), y(t,a) решают систему x'=a x+y, y'=-x+a t, x(0,a)=1, y(0,a)=a. Найдите partial_a x(t,a)|_{a=0} и partial_a y(t,a)|_{a=0}.",
+        "text": "Пусть x(t,a), y(t,a) решают систему x'=a x+y, y'=-x+a t, x(0,a)=1, y(0,a)=a. Найдите \\(\\\\partial_a x(t,a)|_{a=0}\\) и \\(\\\\partial_a y(t,a)|_{a=0}\\).",
         "source_ids": [
           "src-mipt-oral-exam-model-tasks"
         ],
@@ -45,7 +45,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "При a=0 базовое решение равно x_0=cos t, y_0=-sin t. Обозначим p=partial_a x|_{a=0}, q=partial_a y|_{a=0}. Тогда p'=x_0+q, q'=-p+t, p(0)=0, q(0)=1. Исключая q, получаем p''+p=t-sin t, p(0)=0, p'(0)=2. Поэтому p(t)=t+(t/2)cos t+(1/2)sin t. Из q=p'-cos t находим q(t)=1-(t/2)sin t.",
+      "text": "При a=0 базовое решение равно \\(x_0=\\cos t, y_0=-\\sin t\\). Обозначим \\(p=\\\\partial_a x|_{a=0}, q=\\\\partial_a y|_{a=0}\\). Тогда \\(p'=x_0+q, q'=-p+t, p(0)=0, q(0)=1\\). Исключая q, получаем \\(p''+p=t-\\sin t, p(0)=0, p'(0)=2\\). Поэтому \\(p(t)=t+(t/2)\\cos t+(1/2)\\sin t\\). Из \\(q=p'-\\cos t\\) находим \\(q(t)=1-(t/2)\\sin t\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"

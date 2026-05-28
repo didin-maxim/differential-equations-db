@@ -18,7 +18,7 @@
   "status": "ai_checked",
   "notes": [
     "Добавлены только компактные идейные карточки без тяжелых интегралов и без массового расширения насыщенных кластеров.",
-    "Источник всех новых карточек: src-mipt-oral-exam-model-tasks; это self_authored модельные задачи, составленные для границы уровня отличника.",
-    "Связи вынесены только в data/relations/relations.d/cluster-mipt-excellent-level.yaml."
+    "Источник всех новых карточек: src-mipt-oral-exam-model-tasks; это \\(self_authored\\) модельные задачи, составленные для границы уровня отличника.",
+    "Связи вынесены только в data/relations/relations.d/cluster-mipt-excellent level.yaml."
   ]
 }

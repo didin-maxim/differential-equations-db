@@ -1,6 +1,6 @@
 {
   "id": "variation-of-parameters-sine",
-  "title": "Вариация постоянных для y''+y=sec x",
+  "title": "Вариация постоянных для \\(y''+y=sec x\\)",
   "fragment": "linear_equations",
   "kind": {
     "primary": "problem",
@@ -12,7 +12,7 @@
       {
         "id": "stmt-original",
         "title": "Формулировка",
-        "text": "Найти частное решение y''+y=sec x на промежутке, где cos x>0.",
+        "text": "Найти частное решение \\(y''+y=sec x\\) на промежутке, где \\(\\cos x>0\\).",
         "source_ids": [
           "src-mipt-ode-course"
         ],
@@ -41,7 +41,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Фундаментальные решения однородного уравнения: cos x и sin x, вронскиан равен 1. Формула вариации постоянных дает y_p=-cos x∫sin x sec x dx + sin x∫cos x sec x dx. Интегралы равны ∫tan x dx=-ln cos x и ∫1 dx=x. Поэтому y_p=cos x ln cos x + x sin x.",
+      "text": "Фундаментальные решения однородного уравнения: \\(\\cos x\\) и \\(\\sin x\\), вронскиан равен \\(1\\). Формула вариации постоянных дает \\(y_p=-\\cos x\\int \\sin x\\sec x\\,dx+\\sin x\\int \\cos x\\sec x\\,dx\\). Интегралы равны \\(\\int \\tan x\\,dx=-\\ln\\cos x\\) и \\(\\int 1\\,dx=x\\). Поэтому \\(y_p=\\cos x\\ln\\cos x+x\\sin x\\).",
       "status": "ai_checked"
     }
   ],
@@ -72,7 +72,7 @@
     "local_score": 3,
     "idea_score": 5,
     "technical_score": 5,
-    "comment": "idea_score=5: типовая вариация постоянных; technical_score=5: умеренные тригонометрические интегралы.",
+    "comment": "idea score 5: типовая вариация постоянных; technical score 5: умеренные тригонометрические интегралы.",
     "status": "ai_checked"
   },
   "tags": [
@@ -94,7 +94,7 @@
     "public_ready": true,
     "relations_status": "seed_links",
     "notes": [
-      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком/пособием перед публичным релизом."
+      "Первый архитектурный проход: карточка самодостаточна, но желательна сверка с конкретным листком\\(/\\)пособием перед публичным релизом."
     ]
   }
 }

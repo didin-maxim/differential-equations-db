@@ -14,11 +14,11 @@
       "topic": "first_order",
       "question_type": "application",
       "answer_mode": "numeric",
-      "prompt_override": "Для задачи yy''=(y')^2(y^2y'+1), y(0)=1, y'(0)=-3 найдите y(1/9). Введите численное значение.",
+      "prompt_override": "Для задачи \\(yy''=(y')^2(y^2y'+1)\\), \\(y(0)=1\\), \\(y'(0)=-3\\) найдите \\(y(1/9)\\). Введите численное значение.",
       "auto_check": {
         "type": "numeric",
         "value": 0,
-        "tolerance": 0.000001
+        "tolerance": 1e-06
       },
       "rationale": "Оригинал сводится к y^3=1-9x; вопрос проверяет ход без длинного ответа."
     },
@@ -29,7 +29,7 @@
       "topic": "first_order",
       "question_type": "method",
       "answer_mode": "multiple_choice",
-      "prompt_override": "Для xy'+ln x-ln y'-2y=0, x>0, y'>0, выберите верные утверждения.",
+      "prompt_override": "Для \\(xy'+\\ln x-\\ln y'-2y=0\\), \\(x>0,\\ y'>0\\), выберите верные утверждения.",
       "auto_check": {
         "type": "multiple_choice",
         "multiple": true,
@@ -40,19 +40,19 @@
         "options": [
           {
             "id": "regular_family",
-            "text": "Регулярное семейство имеет вид y=(Cx^2-ln C)/2, C>0."
+            "text": "Регулярное семейство имеет вид \\(y=(Cx^2-\\ln C)/2,\\ C>0\\)."
           },
           {
             "id": "singular_envelope",
-            "text": "Особая кривая y=1/2+ln x является огибающей этого семейства."
+            "text": "Особая кривая \\(y=1/2+\\ln x\\) является огибающей этого семейства."
           },
           {
             "id": "only_linear",
-            "text": "После замены z=ln y уравнение становится линейным первого порядка."
+            "text": "После замены \\(z=\\ln y\\) уравнение становится линейным первого порядка."
           },
           {
             "id": "no_singular",
-            "text": "Особых решений нет, потому что уравнение содержит ln y'."
+            "text": "Особых решений нет, потому что уравнение содержит \\(\\ln y'\\)."
           }
         ]
       },
@@ -65,7 +65,7 @@
       "topic": "pde_characteristics",
       "question_type": "application",
       "answer_mode": "formula",
-      "prompt_override": "Для характеристик dx/ds=xz, dy/ds=yz, dz/ds=x-x^2-y^2 введите простой первый интеграл, содержащий z^2.",
+      "prompt_override": "Для характеристик \\(dx/ds=xz,\\ dy/ds=yz,\\ dz/ds=x-x^2-y^2\\) введите простой первый интеграл, содержащий \\(z^2\\).",
       "auto_check": {
         "type": "formula",
         "accepted_text": [
@@ -86,11 +86,11 @@
       "topic": "first_order",
       "question_type": "application",
       "answer_mode": "numeric",
-      "prompt_override": "Для решения xyy''-2x(y')^2+yy'=0, y(1)=1, y'(1)=1 найдите y(sqrt(e)).",
+      "prompt_override": "Для решения \\(xyy''-2x(y')^2+yy'=0\\), \\(y(1)=1\\), \\(y'(1)=1\\) найдите \\(y(\\sqrt e)\\).",
       "auto_check": {
         "type": "numeric",
         "value": 2,
-        "tolerance": 0.000001
+        "tolerance": 1e-06
       },
       "rationale": "Проверяется распознавание y=1/(1-ln x), а не длинная письменная техника."
     }
