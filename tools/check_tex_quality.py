@@ -130,6 +130,8 @@ RAW_ANYWHERE_PATTERNS = [
     ("double-escaped-tex-command", re.compile(r"\\\\(?:int|sum|prod|lim|frac|left|right|ln|sin|cos|exp|operatorname|mathbb|Phi|Delta|lambda|mu|nu|xi|alpha|beta|gamma|theta|phi|varphi|psi|omega|le|ge|ne|to|infty|pi|cdot|times)\b")),
     ("double-open-inline-math-anywhere", re.compile(r"\\\(\s*\\\(")),
     ("tex-word-int-in-exponent", re.compile(r"e\^\{?-?int\b")),
+    ("glued-comparison-command", re.compile(r"\\(?:le|ge|ne|to)(?=[A-Za-z](?![A-Za-z]))")),
+    ("suspicious-time-factor-subscript", re.compile(r"\b[st]_f'")),
 ]
 
 HYBRID_TEX_PATTERNS = [
