@@ -2238,68 +2238,52 @@ def build_html(data):
     }
 
     function fallbackFormulaText(text) {
-      const superscript = {
-        '0': '?', '1': '?', '2': '?', '3': '?', '4': '?',
-        '5': '?', '6': '?', '7': '?', '8': '?', '9': '?',
-        '+': '?', '-': '?', '=': '?', '(': '?', ')': '?',
-        'a': '?', 'b': '?', 'c': '?', 'd': '?', 'e': '?',
-        'f': '?', 'g': '?', 'h': '?', 'i': '?', 'j': '?',
-        'k': '?', 'l': '?', 'm': '?', 'n': '?', 'o': '?',
-        'p': '?', 'r': '?', 's': '?', 't': '?', 'u': '?',
-        'v': '?', 'w': '?', 'x': '?', 'y': '?', 'z': '?',
-        'A': '?', 'B': '?', 'D': '?', 'E': '?', 'G': '?',
-        'H': '?', 'I': '?', 'J': '?', 'K': '?', 'L': '?',
-        'M': '?', 'N': '?', 'O': '?', 'P': '?', 'R': '?',
-        'T': '?', 'U': '?', 'V': '?', 'W': '?'
+      const compactGroup = value => String(value || '').replace(/\\s+/g, '');
+      const wrappedGroup = value => {
+        const compact = compactGroup(value);
+        return compact.startsWith('(') && compact.endsWith(')') ? compact : '(' + compact + ')';
       };
-      const subscript = {
-        '0': '?', '1': '?', '2': '?', '3': '?', '4': '?',
-        '5': '?', '6': '?', '7': '?', '8': '?', '9': '?',
-        '+': '?', '-': '?', '=': '?', '(': '?', ')': '?',
-        'a': '?', 'e': '?', 'h': '?', 'i': '?', 'j': '?',
-        'k': '?', 'l': '?', 'm': '?', 'n': '?', 'o': '?',
-        'p': '?', 'r': '?', 's': '?', 't': '?', 'u': '?',
-        'v': '?', 'x': '?'
-      };
-      const raiseLower = (value, map) => String(value || '').split('').map(char => map[char] || char).join('');
+      const superscript = value => '^' + wrappedGroup(value);
+      const subscript = value => '_' + wrappedGroup(value);
       return String(text || '')
-        .replace(/\\operatorname\\{([^{}]+)\\}/g, '$1')
-        .replace(/\\operatorname\\s*([A-Za-z]+)/g, '$1')
-        .replace(/\\mathbb\\s*R/g, '?')
-        .replace(/\\mathbb\\s*N/g, '?')
-        .replace(/\\mathbb\\s*Z/g, '?')
-        .replace(/\\ldots/g, '?')
-        .replace(/\\,/g, ' ')
-        .replace(/\\frac\\{([^{}]+)\\}\\{([^{}]+)\\}/g, '($1)/($2)')
-        .replace(/\\left|\\right/g, '')
-        .replace(/\\cdot/g, '?')
-        .replace(/\\times/g, '?')
-        .replace(/\\leq?|\\le/g, '?')
-        .replace(/\\geq?|\\ge/g, '?')
-        .replace(/\\ne/g, '?')
-        .replace(/\\to/g, '?')
-        .replace(/\\infty/g, '?')
-        .replace(/\\pi/g, '?')
-        .replace(/\\lambda/g, '?')
-        .replace(/\\mu/g, '?')
-        .replace(/\\alpha/g, '?')
-        .replace(/\\beta/g, '?')
-        .replace(/\\gamma/g, '?')
-        .replace(/\\Delta/g, '?')
-        .replace(/\\Phi/g, '?')
-        .replace(/\\sin/g, 'sin')
-        .replace(/\\cos/g, 'cos')
-        .replace(/\\exp/g, 'exp')
-        .replace(/\\ln/g, 'ln')
-        .replace(/\\int/g, '?')
-        .replace(/\\sum/g, '?')
-        .replace(/\\prod/g, '?')
-        .replace(/_\\{([^{}]+)\\}/g, (_, value) => raiseLower(value, subscript))
-        .replace(/\\^\\{([^{}]+)\\}/g, (_, value) => raiseLower(value, superscript))
-        .replace(/_([A-Za-z0-9+\\-=()]{1,8})/g, (_, value) => raiseLower(value, subscript))
-        .replace(/\\^([A-Za-z0-9+\\-=()]{1,8})/g, (_, value) => raiseLower(value, superscript))
+        .replace(/\\\\operatorname\\{([^{}]+)\\}/g, '$1')
+        .replace(/\\\\operatorname\\s*([A-Za-z]+)/g, '$1')
+        .replace(/\\\\mathbb\\s*R/g, 'R')
+        .replace(/\\\\mathbb\\s*N/g, 'N')
+        .replace(/\\\\mathbb\\s*Z/g, 'Z')
+        .replace(/\\\\ldots/g, '...')
+        .replace(/\\\\,/g, ' ')
+        .replace(/\\\\frac\\{([^{}]+)\\}\\{([^{}]+)\\}/g, '($1)/($2)')
+        .replace(/\\\\frac\\s*([A-Za-z0-9]+)\\s*([A-Za-z0-9]+)/g, '($1)/($2)')
+        .replace(/\\\\left|\\\\right/g, '')
+        .replace(/\\\\cdot/g, '*')
+        .replace(/\\\\times/g, 'x')
+        .replace(/\\\\leq?|\\\\le/g, '<=')
+        .replace(/\\\\geq?|\\\\ge/g, '>=')
+        .replace(/\\\\ne/g, '!=')
+        .replace(/\\\\to/g, '->')
+        .replace(/\\\\infty/g, 'infty')
+        .replace(/\\\\pi/g, 'pi')
+        .replace(/\\\\lambda/g, 'lambda')
+        .replace(/\\\\mu/g, 'mu')
+        .replace(/\\\\alpha/g, 'alpha')
+        .replace(/\\\\beta/g, 'beta')
+        .replace(/\\\\gamma/g, 'gamma')
+        .replace(/\\\\Delta/g, 'Delta')
+        .replace(/\\\\Phi/g, 'Phi')
+        .replace(/\\\\sin/g, 'sin')
+        .replace(/\\\\cos/g, 'cos')
+        .replace(/\\\\exp/g, 'exp')
+        .replace(/\\\\ln/g, 'ln')
+        .replace(/\\\\int/g, 'int')
+        .replace(/\\\\sum/g, 'sum')
+        .replace(/\\\\prod/g, 'prod')
+        .replace(/_\\{([^{}]+)\\}/g, (_, value) => subscript(value))
+        .replace(/\\^\\{([^{}]+)\\}/g, (_, value) => superscript(value))
+        .replace(/_([A-Za-z0-9']{1,8})/g, (_, value) => subscript(value))
+        .replace(/\\^([A-Za-z0-9']{1,8})/g, (_, value) => superscript(value))
         .replace(/[{}]/g, '')
-        .replace(/\\([A-Za-z]+)/g, '$1')
+        .replace(/\\\\([A-Za-z]+)/g, '$1')
         .replace(/\\s+/g, ' ')
         .trim();
     }
