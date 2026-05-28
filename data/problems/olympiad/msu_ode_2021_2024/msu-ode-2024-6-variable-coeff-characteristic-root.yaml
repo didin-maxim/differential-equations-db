@@ -41,7 +41,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "Пусть \\(L(D,t)y=\\sum_j a_j(t)D^j y.\\) Для \\(y=e^{\\lambda_0 t}\\) имеем \\(L(D,t)y=L(\\lambda_0,t)e^{\\lambda_0 t},\\) поэтому пункт а) верен. Если \\(\\lambda_0 -\\) корень кратности \\(k,\\) то при \\(m=0,...,k-1\\) выполнено \\(\\partial_\\lambda^m L(\\lambda_0,t)=0.\\) Так как \\(t^m e^{\\lambda_0 t}=\\partial_\\lambda^m e^{\\lambda t}\\)|\\(_{\\lambda=\\lambda_0},\\) то \\(L(D,t)(t^m e^{\\lambda_0 t})=\\partial_\\lambda^m(L(\\lambda,t)e^{\\lambda t})\\)|\\(_{\\lambda=\\lambda_0}=0\\) для \\(m<k\\); в частности, пункт б) верен. Пункт в) неверен: функция \\(y=t e^{t}\\) является решением уравнения первого порядка \\(t y'-(t+1)y=0,\\) но его характеристический многочлен \\(L(\\lambda,t)=t \\lambda-(t+1)\\) не имеет корня \\(\\lambda=1\\) кратности 2.",
+      "text": "Пусть \\(L(D,t)y=\\sum_j a_j(t)D^j y.\\) Для \\(y=e^{\\lambda_0 t}\\) имеем \\(L(D,t)y=L(\\lambda_0,t)e^{\\lambda_0 t},\\) поэтому пункт а) верен. Если \\(\\lambda_0 -\\) корень кратности \\(k,\\) то при \\(m=0,...,k-1\\) выполнено \\(\\partial_\\lambda^m L(\\lambda_0,t)=0.\\) Так как \\(t^m e^{\\lambda_0 t}=\\left.\\partial_\\lambda^m e^{\\lambda t}\\right|_{\\lambda=\\lambda_0}\\), то \\(L(D,t)(t^m e^{\\lambda_0 t})=\\left.\\partial_\\lambda^m(L(\\lambda,t)e^{\\lambda t})\\right|_{\\lambda=\\lambda_0}=0\\) для \\(m<k\\); в частности, пункт б) верен. Пункт в) неверен: функция \\(y=t e^{t}\\) является решением уравнения первого порядка \\(t y'-(t+1)y=0,\\) но его характеристический многочлен \\(L(\\lambda,t)=t \\lambda-(t+1)\\) не имеет корня \\(\\lambda=1\\) кратности 2.",
       "status": "source_solution_checked",
       "standard_idea_ids": [
         "differentiate_auxiliary_function"
