@@ -751,6 +751,19 @@ def build_html(data):
       list-style-position: inside;
     }
 
+    .facet-details {
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+      padding-top: 8px;
+    }
+
+    .facet-details summary {
+      color: var(--accent-dark);
+      cursor: pointer;
+      font-weight: 650;
+      list-style-position: inside;
+    }
+
     .advanced-filter-body {
       display: grid;
       gap: 9px;
@@ -1040,6 +1053,25 @@ def build_html(data):
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
+    }
+
+    .cluster-filter-details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf7;
+      padding: 0;
+    }
+
+    .cluster-filter-details summary {
+      min-height: 42px;
+      padding: 10px 12px;
+      cursor: pointer;
+      color: var(--accent-dark);
+      font-weight: 650;
+    }
+
+    .cluster-filter-details .chip-row {
+      padding: 0 12px 12px;
     }
 
     .cluster-search-inline {
@@ -1387,6 +1419,17 @@ def build_html(data):
       font-size: 17px;
     }
 
+    .related-card-details summary {
+      cursor: pointer;
+      color: var(--accent-dark);
+      font-weight: 650;
+      list-style-position: inside;
+    }
+
+    .related-card-details .related-card-list {
+      margin-top: 10px;
+    }
+
     .single-card-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1637,6 +1680,15 @@ def build_html(data):
         border-bottom: 1px solid var(--line);
       }
       body.sidebar-collapsed aside { display: none; }
+      body.cluster-focus-route aside h1,
+      body.cluster-focus-route aside .db-meta,
+      body.cluster-focus-route aside .filters,
+      body.cluster-focus-route aside #facets {
+        display: none;
+      }
+      body.cluster-focus-route aside .route-nav {
+        margin-top: 0;
+      }
       .filter-grid { grid-template-columns: 1fr; }
       .card-head { display: block; }
       .home-stats { grid-template-columns: 1fr 1fr; }
@@ -1677,22 +1729,22 @@ def build_html(data):
           <input id="q" type="search" placeholder="текст, id, метод, источник">
         </label>
 
-        <div class="filter-grid" data-filter-row>
-          <label data-filter-field="scoreRange">Уровень по баллам
-            <select id="score-range"></select>
-          </label>
-          <label data-filter-field="difficultyMain">Сложность
-            <select id="difficulty-main"></select>
-          </label>
-        </div>
-
-        <label data-filter-field="source">Источник
-          <select id="source"></select>
-        </label>
-
         <details id="advanced-filters">
           <summary>Дополнительные фильтры поиска</summary>
           <div class="advanced-filter-body">
+            <div class="filter-grid" data-filter-row>
+              <label data-filter-field="scoreRange">Уровень по баллам
+                <select id="score-range"></select>
+              </label>
+              <label data-filter-field="difficultyMain">Сложность
+                <select id="difficulty-main"></select>
+              </label>
+            </div>
+
+            <label data-filter-field="source">Источник
+              <select id="source"></select>
+            </label>
+
             <div class="filter-grid" data-filter-row>
               <label data-filter-field="ideaScore">Идейная сложность
                 <select id="idea-score"></select>
@@ -2186,30 +2238,70 @@ def build_html(data):
     }
 
     function fallbackFormulaText(text) {
+      const superscript = {
+        '0': '?', '1': '?', '2': '?', '3': '?', '4': '?',
+        '5': '?', '6': '?', '7': '?', '8': '?', '9': '?',
+        '+': '?', '-': '?', '=': '?', '(': '?', ')': '?',
+        'a': '?', 'b': '?', 'c': '?', 'd': '?', 'e': '?',
+        'f': '?', 'g': '?', 'h': '?', 'i': '?', 'j': '?',
+        'k': '?', 'l': '?', 'm': '?', 'n': '?', 'o': '?',
+        'p': '?', 'r': '?', 's': '?', 't': '?', 'u': '?',
+        'v': '?', 'w': '?', 'x': '?', 'y': '?', 'z': '?',
+        'A': '?', 'B': '?', 'D': '?', 'E': '?', 'G': '?',
+        'H': '?', 'I': '?', 'J': '?', 'K': '?', 'L': '?',
+        'M': '?', 'N': '?', 'O': '?', 'P': '?', 'R': '?',
+        'T': '?', 'U': '?', 'V': '?', 'W': '?'
+      };
+      const subscript = {
+        '0': '?', '1': '?', '2': '?', '3': '?', '4': '?',
+        '5': '?', '6': '?', '7': '?', '8': '?', '9': '?',
+        '+': '?', '-': '?', '=': '?', '(': '?', ')': '?',
+        'a': '?', 'e': '?', 'h': '?', 'i': '?', 'j': '?',
+        'k': '?', 'l': '?', 'm': '?', 'n': '?', 'o': '?',
+        'p': '?', 'r': '?', 's': '?', 't': '?', 'u': '?',
+        'v': '?', 'x': '?'
+      };
+      const raiseLower = (value, map) => String(value || '').split('').map(char => map[char] || char).join('');
       return String(text || '')
-        .replace(/\\\\frac\\{([^{}]+)\\}\\{([^{}]+)\\}/g, '($1)/($2)')
-        .replace(/\\\\left|\\\\right/g, '')
-        .replace(/\\\\cdot/g, '·')
-        .replace(/\\\\times/g, '×')
-        .replace(/\\\\leq?|\\\\le/g, '≤')
-        .replace(/\\\\geq?|\\\\ge/g, '≥')
-        .replace(/\\\\to/g, '→')
-        .replace(/\\\\infty/g, '∞')
-        .replace(/\\\\pi/g, 'π')
-        .replace(/\\\\lambda/g, 'λ')
-        .replace(/\\\\mu/g, 'μ')
-        .replace(/\\\\alpha/g, 'α')
-        .replace(/\\\\beta/g, 'β')
-        .replace(/\\\\gamma/g, 'γ')
-        .replace(/\\\\Delta/g, 'Δ')
-        .replace(/\\\\Phi/g, 'Φ')
-        .replace(/\\\\sin/g, 'sin')
-        .replace(/\\\\cos/g, 'cos')
-        .replace(/\\\\exp/g, 'exp')
-        .replace(/\\\\ln/g, 'ln')
-        .replace(/\\\\int/g, '∫')
-        .replace(/\\\\sum/g, '∑')
-        .replace(/[{}]/g, '');
+        .replace(/\\operatorname\\{([^{}]+)\\}/g, '$1')
+        .replace(/\\operatorname\\s*([A-Za-z]+)/g, '$1')
+        .replace(/\\mathbb\\s*R/g, '?')
+        .replace(/\\mathbb\\s*N/g, '?')
+        .replace(/\\mathbb\\s*Z/g, '?')
+        .replace(/\\ldots/g, '?')
+        .replace(/\\,/g, ' ')
+        .replace(/\\frac\\{([^{}]+)\\}\\{([^{}]+)\\}/g, '($1)/($2)')
+        .replace(/\\left|\\right/g, '')
+        .replace(/\\cdot/g, '?')
+        .replace(/\\times/g, '?')
+        .replace(/\\leq?|\\le/g, '?')
+        .replace(/\\geq?|\\ge/g, '?')
+        .replace(/\\ne/g, '?')
+        .replace(/\\to/g, '?')
+        .replace(/\\infty/g, '?')
+        .replace(/\\pi/g, '?')
+        .replace(/\\lambda/g, '?')
+        .replace(/\\mu/g, '?')
+        .replace(/\\alpha/g, '?')
+        .replace(/\\beta/g, '?')
+        .replace(/\\gamma/g, '?')
+        .replace(/\\Delta/g, '?')
+        .replace(/\\Phi/g, '?')
+        .replace(/\\sin/g, 'sin')
+        .replace(/\\cos/g, 'cos')
+        .replace(/\\exp/g, 'exp')
+        .replace(/\\ln/g, 'ln')
+        .replace(/\\int/g, '?')
+        .replace(/\\sum/g, '?')
+        .replace(/\\prod/g, '?')
+        .replace(/_\\{([^{}]+)\\}/g, (_, value) => raiseLower(value, subscript))
+        .replace(/\\^\\{([^{}]+)\\}/g, (_, value) => raiseLower(value, superscript))
+        .replace(/_([A-Za-z0-9+\\-=()]{1,8})/g, (_, value) => raiseLower(value, subscript))
+        .replace(/\\^([A-Za-z0-9+\\-=()]{1,8})/g, (_, value) => raiseLower(value, superscript))
+        .replace(/[{}]/g, '')
+        .replace(/\\([A-Za-z]+)/g, '$1')
+        .replace(/\\s+/g, ' ')
+        .trim();
     }
 
     function splitDelimitedMath(text) {
@@ -2288,7 +2380,7 @@ def build_html(data):
         });
         return;
       }
-      if (document.readyState === 'complete') renderFallbackMath(target);
+      renderFallbackMath(target);
     }
 
     function normalize(value) {
@@ -3063,7 +3155,7 @@ def build_html(data):
     }
 
     function renderFacets() {
-      byId('facets').innerHTML = [
+      const html = [
         renderFacet('kind', 'Типы'),
         renderFacet('scoreRange', 'Уровни по баллам'),
         renderFacet('assetFilter', 'Материалы'),
@@ -3075,6 +3167,13 @@ def build_html(data):
         renderFacet('standardIdea', 'Стандартные идеи', 10),
         renderFacet('tag', 'Теги', 16)
       ].join('');
+      const shouldCollapse = state.studyMode === 'clusters' && selectedClusterIds().length > 0;
+      byId('facets').innerHTML = shouldCollapse && html ? `
+        <details class="facet-details">
+          <summary>Показать списки быстрых фильтров</summary>
+          <div class="advanced-filter-body">${html}</div>
+        </details>
+      ` : html;
     }
 
     function statusPill(card) {
@@ -3666,8 +3765,9 @@ def build_html(data):
     }
 
     function renderClusterFilterBlock(key, title, limit = 14) {
-      const rows = facetCounts(key).slice(0, limit);
-      if (rows.length <= 1) return '';
+      const allRows = facetCounts(key);
+      const rows = allRows.slice(0, limit);
+      if (allRows.length <= 1) return '';
       const rowHtml = rows.map(row => {
         const active = selectionHas(key, row.value) ? 'active' : '';
         if (key === 'cluster') {
@@ -3683,6 +3783,23 @@ def build_html(data):
               </button>
             `;
       }).join('');
+      const hasActive = allRows.some(row => selectionHas(key, row.value));
+      const revealLabels = {
+        cluster: 'Показать темы / кластеры',
+        standardIdea: 'Показать список идей',
+        difficultyMain: 'Показать сложности',
+        source: 'Показать источники'
+      };
+      if (allRows.length > 2) {
+        return `
+          <details class="cluster-filter-block cluster-filter-details" ${hasActive ? 'open' : ''}>
+            <summary>${esc(revealLabels[key] || `Показать ${title.toLowerCase()}`)} ${renderPill(countText(allRows.length, 'пункт', 'пункта', 'пунктов'), 'code')}</summary>
+            <div class="chip-row">
+              ${rowHtml}
+            </div>
+          </details>
+        `;
+      }
       return `
         <div class="cluster-filter-block">
           <h3>${esc(title)}</h3>
@@ -3928,6 +4045,17 @@ def build_html(data):
       ` : `
           <div class="empty">Выберите кластер из каталога ниже. До выбора кластера задачи и методические карточки не выводятся общим списком.</div>
       `;
+      const clusterFilterBlocks = [
+        selectedClusters.length ? '' : renderClusterFilterBlock('cluster', 'Темы / кластеры', 12),
+        renderClusterFilterBlock('standardIdea', 'Идеи', 12),
+        renderClusterFilterBlock('difficultyMain', 'Сложности', 8),
+        renderClusterFilterBlock('source', 'Источники', 12)
+      ].filter(Boolean).join('');
+      const clusterFilters = clusterFilterBlocks ? `
+          <div class="cluster-filter-grid">
+            ${clusterFilterBlocks}
+          </div>
+      ` : '';
       return `
         <div class="cluster-focus" id="clusters-directory">
           <div class="cluster-page-head">
@@ -3937,13 +4065,7 @@ def build_html(data):
               ? esc(goals.join(' '))
               : 'Каталог сгруппирован по методам курса. Откройте кластер, чтобы увидеть его теоретический блок и затем список задач.'}</p>
           </div>
-          <div class="cluster-filter-grid">
-            ${selectedClusters.length ? '' : renderClusterFilterBlock('cluster', 'Темы / кластеры', 12)}
-            ${renderClusterFilterBlock('standardIdea', 'Идеи', 12)}
-            ${renderClusterFilterBlock('difficultyMain', 'Сложности', 8)}
-            ${renderClusterFilterBlock('source', 'Источники', 12)}
-          </div>
-          ${taskBlock}
+          ${selectedClusters.length ? `${taskBlock}${clusterFilters}` : `${clusterFilters}${taskBlock}`}
         </div>
       `;
     }
@@ -4040,6 +4162,7 @@ def build_html(data):
     function renderStudyHome(items) {
       if (state.studyMode === 'blocks' || state.studyMode === 'clusters') {
         byId('study-home').innerHTML = renderStudyDirectory();
+        renderMathIn(byId('study-home'));
         return;
       }
       const imageCount = countBy(card => card.has_image);
@@ -4071,6 +4194,7 @@ def build_html(data):
           <div class="home-stat"><strong>${imageCount}</strong><span>с рисунками</span></div>
         </div>
       `;
+      renderMathIn(byId('study-home'));
     }
 
     function hasActiveSearchContext() {
@@ -4277,7 +4401,8 @@ def build_html(data):
       const primaryClusterLink = navigation.fromCluster && clusterById[navigation.fromCluster]
         ? `<a class="button" href="${esc(clusterRouteHref(navigation.fromCluster))}" data-open-cluster="${esc(navigation.fromCluster)}">К кластеру: ${esc(labelFor('cluster', navigation.fromCluster))}</a>`
         : '';
-      const relatedLinks = relatedCardsFor(card).map(item => `
+      const relatedItems = relatedCardsFor(card);
+      const relatedLinks = relatedItems.map(item => `
         <a class="related-card-link" href="${esc(cardRouteHref(item.card.id))}" data-route-card-id="${esc(item.card.id)}">
           <span class="related-card-title tex-content">${renderMathText(item.card.title)}</span>
           <span class="related-card-meta">${esc(item.type)} · идея ${esc(item.card.idea_score ?? '-')} · техника ${esc(item.card.technical_score ?? '-')}</span>
@@ -4296,12 +4421,12 @@ def build_html(data):
         </section>
         ${renderCard(card, { single: true })}
         <section class="single-card-nav" aria-label="Связанные карточки">
-          <div>
-            <h2>Связанные карточки</h2>
+          <details class="related-card-details">
+            <summary>Показать близкие задачи ${renderPill(countText(relatedItems.length, 'карточка', 'карточки', 'карточек'), 'code')}</summary>
             <div class="related-card-list">
               ${relatedLinks || '<div class="empty">Связанные карточки не найдены.</div>'}
             </div>
-          </div>
+          </details>
         </section>
       `;
       renderMathIn(byId('results'));
@@ -4390,6 +4515,7 @@ def build_html(data):
         countText(clusterCount, 'кластер', 'кластера', 'кластеров')
       ].join(', ');
       document.body.classList.toggle('single-card-route', Boolean(navigation.cardId));
+      document.body.classList.toggle('cluster-focus-route', state.studyMode === 'clusters' && selectedClusterIds().length > 0);
       renderRouteNav();
       renderFilters();
       renderActiveFilters();

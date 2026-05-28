@@ -86,6 +86,10 @@ MATH_DELIMS = [
 ]
 
 RAW_PATTERNS = [
+    ("visible-question-mark-run", re.compile(r"\?{4,}")),
+    ("broken-mathbb-nesting", re.compile(r"\\mathbb\s+\\\(")),
+    ("double-open-inline-math", re.compile(r"\\\(\s*\\\(")),
+    ("double-close-inline-math", re.compile(r"\\\)\s*\\\)")),
     ("subscript-without-underscore", re.compile(r"\b[xtypuvwsz][0-9]\b")),
     ("raw-real-product", re.compile(r"\bR\s*x\s*R(?:\^n)?\b")),
     ("raw-exp", re.compile(r"(?<![\\A-Za-z])exp\(")),
@@ -248,6 +252,10 @@ def fix_text(text):
         "times",
     )
     text = str(text)
+    text = text.replace(r"\mathbb \(\mathbb R^n\)", r"\mathbb R^n")
+    text = text.replace(r"\mathbb \(\mathbb R\)", r"\mathbb R")
+    text = text.replace(r"\(\(\int", r"\int")
+    text = text.replace(r"\)\)", "")
     for command in double_escaped_commands:
         text = text.replace("\\\\" + command, "\\" + command)
 

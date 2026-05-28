@@ -14,7 +14,7 @@
       {
         "id": "stmt-original",
         "title": "Модельная задача",
-        "text": "Пусть y(t,lambda) решает y'=lambda y+t, y(0,lambda)=\\(e^{lambda}\\). Найдите partial y/partial lambda при lambda=0.",
+        "text": "Пусть \\(y(t,\\lambda)\\) решает \\(y'=\\lambda y+t\\), \\(y(0,\\lambda)=e^{\\lambda}\\). Найдите \\(\\partial y/\\partial \\lambda\\) при \\(\\lambda=0\\).",
         "source_ids": [
           "src-mipt-oral-exam-model-tasks"
         ],
@@ -34,7 +34,7 @@
     {
       "id": "idea-main",
       "title": "Начальное условие тоже дифференцируется",
-      "text": "В уравнении чувствительности появляется вклад y_0 из коэффициента lambda y, а в начальном условии - производная \\(e^{lambda}\\).",
+      "text": "В уравнении чувствительности появляется вклад \\(y_0\\) из коэффициента \\(\\lambda y\\), а в начальном условии - производная \\(e^{\\lambda}\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"
@@ -45,7 +45,7 @@
     {
       "id": "sol-main",
       "title": "Решение",
-      "text": "При lambda=0 имеем y_0'=t, y_0(0)=1, поэтому y_0=1+t^2/2. Для z=partial_lambda y|_{lambda=0} дифференцирование дает z'=y_0+lambda z|_{lambda=0}=1+t^2/2, z(0)=1. Следовательно z(t)=1+t+t^3/6.",
+      "text": "При \\(\\lambda=0\\) имеем \\(y_0'=t\\), \\(y_0(0)=1\\), поэтому \\(y_0=1+t^2/2\\). Для \\(z=\\partial_\\lambda y|_{\\lambda=0}\\) дифференцирование дает \\(z'=y_0+\\lambda z|_{\\lambda=0}=1+t^2/2\\), \\(z(0)=1\\). Следовательно \\(z(t)=1+t+t^3/6\\).",
       "status": "ai_checked",
       "standard_idea_ids": [
         "variation_of_constants"
