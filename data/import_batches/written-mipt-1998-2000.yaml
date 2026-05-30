@@ -19,9 +19,9 @@
   ],
   "status": "ai_checked",
   "notes": [
-    "Проверены PDF C:\\(\\Users\\Admin\\Downloads\\du^98.pdf, du^99.pdf, du^00.pdf\\).",
+    "Проверены PDF C:/Users/Admin/Downloads/du98.pdf, du99.pdf, du00.pdf.",
     "Основная масса задач 1-8 отсеяна как уже представленные письменные шаблоны: постоянные коэффициенты, линейные системы с заданным спектром, квадратичные функционалы, характеристики ЧП и неразрешенные ОДУ с тяжелой алгеброй.",
     "Взяты задачи с короткой переносимой идеей или хорошей устной low-tech модификацией для симуляции экзамена.",
-    "Интерактивы вынесены в proposal-файл \\(data/exam_simulation/question_batches/written-1998-2000.yaml\\) и не конфликтуют с основным questions.yaml."
+    "Интерактивы вынесены в proposal-файл data/exam simulation/question batches/written-1998-2000.yaml и не конфликтуют с основным questions.yaml."
   ]
 }

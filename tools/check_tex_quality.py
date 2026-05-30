@@ -2,6 +2,8 @@ import argparse
 import html
 import json
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -86,6 +88,13 @@ MATH_DELIMS = [
     re.compile(r"(?<!\\)\$.*?(?<!\\)\$", re.DOTALL),
 ]
 
+MATH_FRAGMENT_RE = re.compile(
+    r"(?P<dd>\$\$(?P<dd_tex>.*?)\$\$)|"
+    r"(?P<bracket>\\\[(?P<bracket_tex>.*?)\\\])|"
+    r"(?P<paren>\\\((?P<paren_tex>.*?)\\\))",
+    re.DOTALL,
+)
+
 RAW_PATTERNS = [
     ("visible-question-mark-run", re.compile(r"\?{4,}")),
     ("replacement-character", re.compile(r"�")),
@@ -114,6 +123,17 @@ RAW_PATTERNS = [
     ("raw-integral", re.compile(r"(?<!\\)\b(?:int|sum|prod|product|lim)_[A-Za-z0-9{}()'\\^+\-/]+")),
     ("visible-underscore", re.compile(r"_")),
     ("visible-caret", re.compile(r"\^")),
+    (
+        "raw-subscript-or-superscript-outside-math",
+        re.compile(
+            r"(?<![\w/.-])(?:"
+            r"[A-Za-zА-Яа-я]_\{[^}\n]{1,80}\}|"
+            r"[A-Za-zА-Яа-я]_[A-Za-z0-9]+|"
+            r"[A-Za-zА-Яа-я]\^\{[^}\n]{1,80}\}|"
+            r"[A-Za-zА-Яа-я]\^[A-Za-z0-9]+"
+            r")"
+        ),
+    ),
     (
         "raw-differential-form-term",
         re.compile(r"(?:\([^()\n]{1,80}\)|\b[A-Z][A-Za-z0-9_]*(?:\([^()\n]{0,80}\))?|\b[a-z]\([^()\n]{0,80}\)|\b[0-9xy][0-9xy_^*/+\- ]{0,60}|\b[A-Z])\s*d[xy]\b"),
@@ -208,6 +228,56 @@ def iter_svg_text_nodes():
         for index, match in enumerate(pattern.finditer(value)):
             text = re.sub(r"<[^>]+>", "", match.group(1))
             yield path, f"svg_text.{index}", html.unescape(text)
+
+
+def iter_math_fragments(text):
+    for match in MATH_FRAGMENT_RE.finditer(str(text or "")):
+        if match.group("dd") is not None:
+            yield match.group("dd_tex"), True
+        elif match.group("bracket") is not None:
+            yield match.group("bracket_tex"), True
+        elif match.group("paren") is not None:
+            yield match.group("paren_tex"), False
+
+
+def check_katex_fragments(fragments):
+    script = ROOT / "tools" / "parse_tex_with_katex.js"
+    if not fragments or not script.exists() or shutil.which("node") is None:
+        return []
+    try:
+        completed = subprocess.run(
+            ["node", str(script)],
+            input=json.dumps(fragments, ensure_ascii=False),
+            text=True,
+            encoding="utf-8",
+            capture_output=True,
+            cwd=ROOT,
+            timeout=20,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        return [("error", Path("tools/parse_tex_with_katex.js"), "<katex>", "katex-runner-failed", str(exc))]
+    if completed.returncode:
+        message = (completed.stderr or completed.stdout or "").strip()
+        return [("error", Path("tools/parse_tex_with_katex.js"), "<katex>", "katex-runner-failed", message)]
+    try:
+        errors = json.loads(completed.stdout or "[]")
+    except json.JSONDecodeError as exc:
+        return [("error", Path("tools/parse_tex_with_katex.js"), "<katex>", "katex-runner-invalid-json", str(exc))]
+    reports = []
+    for error in errors:
+        tex = str(error.get("tex", ""))
+        snippet = tex[:120].replace("\n", "\\n")
+        message = str(error.get("message", "")).replace("\n", " ")
+        reports.append(
+            (
+                "error",
+                ROOT / str(error.get("path", "")),
+                str(error.get("place", "")),
+                "katex-parse-error",
+                f"{snippet}: {message}",
+            )
+        )
+    return reports
 
 
 def is_visible_key(key):
@@ -454,6 +524,7 @@ def main():
     args = parser.parse_args()
 
     reports = []
+    math_fragments = []
     changed_files = []
     for path in iter_data_files():
         try:
@@ -470,9 +541,30 @@ def main():
         for place, text in iter_visible_strings(data):
             for kind, hit in find_hits(text, True):
                 reports.append((path, ".".join(place), kind, hit))
+            for tex, display in iter_math_fragments(text):
+                math_fragments.append(
+                    {
+                        "path": str(path.relative_to(ROOT)),
+                        "place": ".".join(place),
+                        "tex": tex,
+                        "display": display,
+                    }
+                )
     for path, place, text in iter_svg_text_nodes():
         for kind, hit in find_hits(text, True):
             reports.append((path, place, kind, hit))
+        for tex, display in iter_math_fragments(text):
+            math_fragments.append(
+                {
+                    "path": str(path.relative_to(ROOT)),
+                    "place": place,
+                    "tex": tex,
+                    "display": display,
+                }
+            )
+
+    for _, path, place, kind, hit in check_katex_fragments(math_fragments):
+        reports.append((path, place, kind, hit))
 
     for path, place, kind, hit in reports[: args.max_items]:
         rel = path.relative_to(ROOT)
